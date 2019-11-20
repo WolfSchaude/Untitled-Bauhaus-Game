@@ -23,7 +23,7 @@ public class zuweisen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("l") && !GameObject.Find("CanvasPersonalEinstellen").GetComponent<Canvas>().enabled)
+        if (Input.GetKeyDown("l") && !GameObject.Find("PersonalEinstellen - Canvas").GetComponent<Canvas>().enabled)
         {
             showBewerbungzugewiesen = !showBewerbungzugewiesen;
             if (showBewerbungzugewiesen)

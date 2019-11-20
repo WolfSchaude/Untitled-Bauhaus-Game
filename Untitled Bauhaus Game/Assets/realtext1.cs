@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class realtext1 : MonoBehaviour
+public class Realtext1 : MonoBehaviour
 {
     public Text bewerbung1text;
 

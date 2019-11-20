@@ -17,7 +17,7 @@ public class bewerbungvisible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k") && !GameObject.Find("CanvasPersonalZuweisen").GetComponent<Canvas>().enabled)
+        if (Input.GetKeyDown("k") && !GameObject.Find("PersonalZuweisen - Canvas").GetComponent<Canvas>().enabled)
         {
             showBewerbung = !showBewerbung;
             if (showBewerbung)
