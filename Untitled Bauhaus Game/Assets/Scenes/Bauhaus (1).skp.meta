@@ -1,0 +1,1162 @@
+fileFormatVersion: 2
+guid: 64c04eaba21d3844d8a35b4c5d819740
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 00000000010000000200000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009b0100009c0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000d0010000d1010000d2010000d3010000d4010000d5010000d6010000d7010000d8010000d9010000da010000db010000dc010000dd010000de010000df010000e0010000e1010000e2010000e3010000e4010000e5010000e6010000e7010000e8010000e9010000ea010000eb010000ec010000
+  assetHash:
+    serializedVersion: 2
+    Hash: 545b5c4ab94dc3d30e159e3c6561338e
+  longitude: 12.227354976616297
+  latitude: 51.83932356858325
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -16.235405, y: 24.203331, z: -114.27971}
+      lookAt: {x: -5.4649825, y: -34.63046, z: 193.75336}
+      up: {x: 0.0065518357, y: 0.9822653, z: 0.18738191}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B A U H A U S
+    100002: Balkon
+    100004: Balkon 1
+    100006: Balkon 10
+    100008: Balkon 11
+    100010: Balkon 12
+    100012: Balkon 13
+    100014: Balkon 14
+    100016: Balkon 15
+    100018: Balkon 2
+    100020: Balkon 3
+    100022: Balkon 4
+    100024: Balkon 5
+    100026: Balkon 6
+    100028: Balkon 7
+    100030: Balkon 8
+    100032: Balkon 9
+    100034: Balkon2
+    100036: Balkon2 1
+    100038: Balkon2 2
+    100040: Bauhaus
+    100042: //RootNode
+    100044: Eingang1
+    100046: Eingang2
+    100048: Fassade
+    100050: Fassade 1
+    100052: Fenster
+    100054: Fenster 1
+    100056: Fenster 2
+    100058: Fenster11
+    100060: Fenster11 1
+    100062: Fenster12
+    100064: Fenster12 1
+    100066: Fenster12 2
+    100068: Fenster13
+    100070: Fenster13 1
+    100072: Fenster13 10
+    100074: Fenster13 11
+    100076: Fenster13 12
+    100078: Fenster13 13
+    100080: Fenster13 14
+    100082: Fenster13 15
+    100084: Fenster13 16
+    100086: Fenster13 17
+    100088: Fenster13 18
+    100090: Fenster13 19
+    100092: Fenster13 2
+    100094: Fenster13 20
+    100096: Fenster13 21
+    100098: Fenster13 22
+    100100: Fenster13 23
+    100102: Fenster13 24
+    100104: Fenster13 25
+    100106: Fenster13 26
+    100108: Fenster13 27
+    100110: Fenster13 28
+    100112: Fenster13 29
+    100114: Fenster13 3
+    100116: Fenster13 30
+    100118: Fenster13 31
+    100120: Fenster13 32
+    100122: Fenster13 33
+    100124: Fenster13 34
+    100126: Fenster13 35
+    100128: Fenster13 36
+    100130: Fenster13 37
+    100132: Fenster13 38
+    100134: Fenster13 39
+    100136: Fenster13 4
+    100138: Fenster13 40
+    100140: Fenster13 41
+    100142: Fenster13 42
+    100144: Fenster13 43
+    100146: Fenster13 44
+    100148: Fenster13 45
+    100150: Fenster13 46
+    100152: Fenster13 47
+    100154: Fenster13 48
+    100156: Fenster13 49
+    100158: Fenster13 5
+    100160: Fenster13 50
+    100162: Fenster13 51
+    100164: Fenster13 52
+    100166: Fenster13 53
+    100168: Fenster13 6
+    100170: Fenster13 7
+    100172: Fenster13 8
+    100174: Fenster13 9
+    100176: Fenster2
+    100178: Fenster4
+    100180: Fenster4 1
+    100182: Fenster4 10
+    100184: Fenster4 11
+    100186: Fenster4 2
+    100188: Fenster4 3
+    100190: Fenster4 4
+    100192: Fenster4 5
+    100194: Fenster4 6
+    100196: Fenster4 7
+    100198: Fenster4 8
+    100200: Fenster4 9
+    100202: Fenster4#1
+    100204: Fenster4#1 1
+    100206: Fenster4#1 2
+    100208: Fenster4#1 3
+    100210: Fenster4#1 4
+    100212: Fenster4#1 5
+    100214: Fenster5
+    100216: Fenster5 1
+    100218: Fenster5 10
+    100220: Fenster5 11
+    100222: Fenster5 2
+    100224: Fenster5 3
+    100226: Fenster5 4
+    100228: Fenster5 5
+    100230: Fenster5 6
+    100232: Fenster5 7
+    100234: Fenster5 8
+    100236: Fenster5 9
+    100238: Fenster6
+    100240: Fenster6 1
+    100242: Fenster6 10
+    100244: Fenster6 11
+    100246: Fenster6 12
+    100248: Fenster6 13
+    100250: Fenster6 14
+    100252: Fenster6 15
+    100254: Fenster6 16
+    100256: Fenster6 17
+    100258: Fenster6 18
+    100260: Fenster6 19
+    100262: Fenster6 2
+    100264: Fenster6 20
+    100266: Fenster6 21
+    100268: Fenster6 22
+    100270: Fenster6 23
+    100272: Fenster6 24
+    100274: Fenster6 25
+    100276: Fenster6 3
+    100278: Fenster6 4
+    100280: Fenster6 5
+    100282: Fenster6 6
+    100284: Fenster6 7
+    100286: Fenster6 8
+    100288: Fenster6 9
+    100290: Fenster7
+    100292: Fenster7 1
+    100294: Fenster7 2
+    100296: Fenster7 3
+    100298: Fenster8
+    100300: Fenster8 1
+    100302: Fenster9
+    100304: Fenster9 1
+    100306: Fenster9 10
+    100308: Fenster9 11
+    100310: Fenster9 12
+    100312: Fenster9 13
+    100314: Fenster9 14
+    100316: Fenster9 15
+    100318: Fenster9 16
+    100320: Fenster9 17
+    100322: Fenster9 18
+    100324: Fenster9 2
+    100326: Fenster9 3
+    100328: Fenster9 4
+    100330: Fenster9 5
+    100332: Fenster9 6
+    100334: Fenster9 7
+    100336: Fenster9 8
+    100338: Fenster9 9
+    100340: Gelaender
+    100342: Gelaender 1
+    100344: Gelaender 10
+    100346: Gelaender 11
+    100348: Gelaender 12
+    100350: Gelaender 13
+    100352: Gelaender 14
+    100354: Gelaender 15
+    100356: Gelaender 2
+    100358: Gelaender 3
+    100360: Gelaender 4
+    100362: Gelaender 5
+    100364: Gelaender 6
+    100366: Gelaender 7
+    100368: Gelaender 8
+    100370: Gelaender 9
+    100372: Google Earth Terrain
+    100374: Group 11
+    100376: Group 13
+    100378: Group 33
+    100380: Group 35
+    100382: Group 37
+    100384: Group 7
+    100386: Group 9
+    100388: Kellerfenster
+    100390: Kellerfenster 1
+    100392: Kellerfenster 10
+    100394: Kellerfenster 11
+    100396: Kellerfenster 12
+    100398: Kellerfenster 13
+    100400: Kellerfenster 14
+    100402: Kellerfenster 2
+    100404: Kellerfenster 3
+    100406: Kellerfenster 4
+    100408: Kellerfenster 5
+    100410: Kellerfenster 6
+    100412: Kellerfenster 7
+    100414: Kellerfenster 8
+    100416: Kellerfenster 9
+    100418: Kippfenster
+    100420: Kippfenster 1
+    100422: Kippfenster 10
+    100424: Kippfenster 11
+    100426: Kippfenster 12
+    100428: Kippfenster 13
+    100430: Kippfenster 14
+    100432: Kippfenster 15
+    100434: Kippfenster 16
+    100436: Kippfenster 17
+    100438: Kippfenster 18
+    100440: Kippfenster 19
+    100442: Kippfenster 2
+    100444: Kippfenster 20
+    100446: Kippfenster 21
+    100448: Kippfenster 22
+    100450: Kippfenster 23
+    100452: Kippfenster 24
+    100454: Kippfenster 25
+    100456: Kippfenster 26
+    100458: Kippfenster 27
+    100460: Kippfenster 28
+    100462: Kippfenster 29
+    100464: Kippfenster 3
+    100466: Kippfenster 30
+    100468: Kippfenster 31
+    100470: Kippfenster 4
+    100472: Kippfenster 5
+    100474: Kippfenster 6
+    100476: Kippfenster 7
+    100478: Kippfenster 8
+    100480: Kippfenster 9
+    100482: Tuer
+    100484: Tuer 1
+    100486: Tuer 2
+    100488: Tuer2
+    100490: Tuer2 1
+    100492: Tuer2 2
+    400000: B A U H A U S
+    400002: Balkon
+    400004: Balkon 1
+    400006: Balkon 10
+    400008: Balkon 11
+    400010: Balkon 12
+    400012: Balkon 13
+    400014: Balkon 14
+    400016: Balkon 15
+    400018: Balkon 2
+    400020: Balkon 3
+    400022: Balkon 4
+    400024: Balkon 5
+    400026: Balkon 6
+    400028: Balkon 7
+    400030: Balkon 8
+    400032: Balkon 9
+    400034: Balkon2
+    400036: Balkon2 1
+    400038: Balkon2 2
+    400040: Bauhaus
+    400042: //RootNode
+    400044: Eingang1
+    400046: Eingang2
+    400048: Fassade
+    400050: Fassade 1
+    400052: Fenster
+    400054: Fenster 1
+    400056: Fenster 2
+    400058: Fenster11
+    400060: Fenster11 1
+    400062: Fenster12
+    400064: Fenster12 1
+    400066: Fenster12 2
+    400068: Fenster13
+    400070: Fenster13 1
+    400072: Fenster13 10
+    400074: Fenster13 11
+    400076: Fenster13 12
+    400078: Fenster13 13
+    400080: Fenster13 14
+    400082: Fenster13 15
+    400084: Fenster13 16
+    400086: Fenster13 17
+    400088: Fenster13 18
+    400090: Fenster13 19
+    400092: Fenster13 2
+    400094: Fenster13 20
+    400096: Fenster13 21
+    400098: Fenster13 22
+    400100: Fenster13 23
+    400102: Fenster13 24
+    400104: Fenster13 25
+    400106: Fenster13 26
+    400108: Fenster13 27
+    400110: Fenster13 28
+    400112: Fenster13 29
+    400114: Fenster13 3
+    400116: Fenster13 30
+    400118: Fenster13 31
+    400120: Fenster13 32
+    400122: Fenster13 33
+    400124: Fenster13 34
+    400126: Fenster13 35
+    400128: Fenster13 36
+    400130: Fenster13 37
+    400132: Fenster13 38
+    400134: Fenster13 39
+    400136: Fenster13 4
+    400138: Fenster13 40
+    400140: Fenster13 41
+    400142: Fenster13 42
+    400144: Fenster13 43
+    400146: Fenster13 44
+    400148: Fenster13 45
+    400150: Fenster13 46
+    400152: Fenster13 47
+    400154: Fenster13 48
+    400156: Fenster13 49
+    400158: Fenster13 5
+    400160: Fenster13 50
+    400162: Fenster13 51
+    400164: Fenster13 52
+    400166: Fenster13 53
+    400168: Fenster13 6
+    400170: Fenster13 7
+    400172: Fenster13 8
+    400174: Fenster13 9
+    400176: Fenster2
+    400178: Fenster4
+    400180: Fenster4 1
+    400182: Fenster4 10
+    400184: Fenster4 11
+    400186: Fenster4 2
+    400188: Fenster4 3
+    400190: Fenster4 4
+    400192: Fenster4 5
+    400194: Fenster4 6
+    400196: Fenster4 7
+    400198: Fenster4 8
+    400200: Fenster4 9
+    400202: Fenster4#1
+    400204: Fenster4#1 1
+    400206: Fenster4#1 2
+    400208: Fenster4#1 3
+    400210: Fenster4#1 4
+    400212: Fenster4#1 5
+    400214: Fenster5
+    400216: Fenster5 1
+    400218: Fenster5 10
+    400220: Fenster5 11
+    400222: Fenster5 2
+    400224: Fenster5 3
+    400226: Fenster5 4
+    400228: Fenster5 5
+    400230: Fenster5 6
+    400232: Fenster5 7
+    400234: Fenster5 8
+    400236: Fenster5 9
+    400238: Fenster6
+    400240: Fenster6 1
+    400242: Fenster6 10
+    400244: Fenster6 11
+    400246: Fenster6 12
+    400248: Fenster6 13
+    400250: Fenster6 14
+    400252: Fenster6 15
+    400254: Fenster6 16
+    400256: Fenster6 17
+    400258: Fenster6 18
+    400260: Fenster6 19
+    400262: Fenster6 2
+    400264: Fenster6 20
+    400266: Fenster6 21
+    400268: Fenster6 22
+    400270: Fenster6 23
+    400272: Fenster6 24
+    400274: Fenster6 25
+    400276: Fenster6 3
+    400278: Fenster6 4
+    400280: Fenster6 5
+    400282: Fenster6 6
+    400284: Fenster6 7
+    400286: Fenster6 8
+    400288: Fenster6 9
+    400290: Fenster7
+    400292: Fenster7 1
+    400294: Fenster7 2
+    400296: Fenster7 3
+    400298: Fenster8
+    400300: Fenster8 1
+    400302: Fenster9
+    400304: Fenster9 1
+    400306: Fenster9 10
+    400308: Fenster9 11
+    400310: Fenster9 12
+    400312: Fenster9 13
+    400314: Fenster9 14
+    400316: Fenster9 15
+    400318: Fenster9 16
+    400320: Fenster9 17
+    400322: Fenster9 18
+    400324: Fenster9 2
+    400326: Fenster9 3
+    400328: Fenster9 4
+    400330: Fenster9 5
+    400332: Fenster9 6
+    400334: Fenster9 7
+    400336: Fenster9 8
+    400338: Fenster9 9
+    400340: Gelaender
+    400342: Gelaender 1
+    400344: Gelaender 10
+    400346: Gelaender 11
+    400348: Gelaender 12
+    400350: Gelaender 13
+    400352: Gelaender 14
+    400354: Gelaender 15
+    400356: Gelaender 2
+    400358: Gelaender 3
+    400360: Gelaender 4
+    400362: Gelaender 5
+    400364: Gelaender 6
+    400366: Gelaender 7
+    400368: Gelaender 8
+    400370: Gelaender 9
+    400372: Google Earth Terrain
+    400374: Group 11
+    400376: Group 13
+    400378: Group 33
+    400380: Group 35
+    400382: Group 37
+    400384: Group 7
+    400386: Group 9
+    400388: Kellerfenster
+    400390: Kellerfenster 1
+    400392: Kellerfenster 10
+    400394: Kellerfenster 11
+    400396: Kellerfenster 12
+    400398: Kellerfenster 13
+    400400: Kellerfenster 14
+    400402: Kellerfenster 2
+    400404: Kellerfenster 3
+    400406: Kellerfenster 4
+    400408: Kellerfenster 5
+    400410: Kellerfenster 6
+    400412: Kellerfenster 7
+    400414: Kellerfenster 8
+    400416: Kellerfenster 9
+    400418: Kippfenster
+    400420: Kippfenster 1
+    400422: Kippfenster 10
+    400424: Kippfenster 11
+    400426: Kippfenster 12
+    400428: Kippfenster 13
+    400430: Kippfenster 14
+    400432: Kippfenster 15
+    400434: Kippfenster 16
+    400436: Kippfenster 17
+    400438: Kippfenster 18
+    400440: Kippfenster 19
+    400442: Kippfenster 2
+    400444: Kippfenster 20
+    400446: Kippfenster 21
+    400448: Kippfenster 22
+    400450: Kippfenster 23
+    400452: Kippfenster 24
+    400454: Kippfenster 25
+    400456: Kippfenster 26
+    400458: Kippfenster 27
+    400460: Kippfenster 28
+    400462: Kippfenster 29
+    400464: Kippfenster 3
+    400466: Kippfenster 30
+    400468: Kippfenster 31
+    400470: Kippfenster 4
+    400472: Kippfenster 5
+    400474: Kippfenster 6
+    400476: Kippfenster 7
+    400478: Kippfenster 8
+    400480: Kippfenster 9
+    400482: Tuer
+    400484: Tuer 1
+    400486: Tuer 2
+    400488: Tuer2
+    400490: Tuer2 1
+    400492: Tuer2 2
+    2100000: _defaultMat
+    2100002: Google Earth Snapshot1
+    2100004: _6
+    2100006: Putz
+    2100008: _14
+    2100010: _8
+    2100012: _9
+    2100014: Concrete_Gray
+    2100016: _32
+    2100018: Grau
+    2100020: _15
+    2100022: _22
+    2100024: _1
+    2100026: _Charcoal_
+    2100028: _Gray6_
+    2100030: Color_004
+    2100032: _12
+    2100034: _19
+    2100036: _21
+    2100038: _24
+    2100040: _23
+    2100042: _26
+    2100044: _20
+    2100046: _31
+    2100048: _30
+    2100050: _29
+    2100052: _4
+    2100054: _25
+    2100056: _16
+    2100058: Translucent_Glass_Gray
+    2100060: _34
+    2100062: _27
+    2100064: _13
+    2100066: _3
+    2100068: _7
+    2100070: _17
+    2100072: _18
+    2100074: _33
+    2300000: B A U H A U S
+    2300002: Balkon
+    2300004: Balkon 1
+    2300006: Balkon 10
+    2300008: Balkon 11
+    2300010: Balkon 12
+    2300012: Balkon 13
+    2300014: Balkon 14
+    2300016: Balkon 15
+    2300018: Balkon 2
+    2300020: Balkon 3
+    2300022: Balkon 4
+    2300024: Balkon 5
+    2300026: Balkon 6
+    2300028: Balkon 7
+    2300030: Balkon 8
+    2300032: Balkon 9
+    2300034: Balkon2
+    2300036: Balkon2 1
+    2300038: Balkon2 2
+    2300040: Bauhaus
+    2300042: Eingang1
+    2300044: Eingang2
+    2300046: Fassade
+    2300048: Fassade 1
+    2300050: Fenster
+    2300052: Fenster 1
+    2300054: Fenster 2
+    2300056: Fenster12
+    2300058: Fenster12 1
+    2300060: Fenster12 2
+    2300062: Fenster13
+    2300064: Fenster13 1
+    2300066: Fenster13 10
+    2300068: Fenster13 11
+    2300070: Fenster13 12
+    2300072: Fenster13 13
+    2300074: Fenster13 14
+    2300076: Fenster13 15
+    2300078: Fenster13 16
+    2300080: Fenster13 17
+    2300082: Fenster13 18
+    2300084: Fenster13 19
+    2300086: Fenster13 2
+    2300088: Fenster13 20
+    2300090: Fenster13 21
+    2300092: Fenster13 22
+    2300094: Fenster13 23
+    2300096: Fenster13 24
+    2300098: Fenster13 25
+    2300100: Fenster13 26
+    2300102: Fenster13 27
+    2300104: Fenster13 28
+    2300106: Fenster13 29
+    2300108: Fenster13 3
+    2300110: Fenster13 30
+    2300112: Fenster13 31
+    2300114: Fenster13 32
+    2300116: Fenster13 33
+    2300118: Fenster13 34
+    2300120: Fenster13 35
+    2300122: Fenster13 36
+    2300124: Fenster13 37
+    2300126: Fenster13 38
+    2300128: Fenster13 39
+    2300130: Fenster13 4
+    2300132: Fenster13 40
+    2300134: Fenster13 41
+    2300136: Fenster13 42
+    2300138: Fenster13 43
+    2300140: Fenster13 44
+    2300142: Fenster13 45
+    2300144: Fenster13 46
+    2300146: Fenster13 47
+    2300148: Fenster13 48
+    2300150: Fenster13 49
+    2300152: Fenster13 5
+    2300154: Fenster13 50
+    2300156: Fenster13 51
+    2300158: Fenster13 52
+    2300160: Fenster13 53
+    2300162: Fenster13 6
+    2300164: Fenster13 7
+    2300166: Fenster13 8
+    2300168: Fenster13 9
+    2300170: Fenster2
+    2300172: Fenster4
+    2300174: Fenster4 1
+    2300176: Fenster4 10
+    2300178: Fenster4 11
+    2300180: Fenster4 2
+    2300182: Fenster4 3
+    2300184: Fenster4 4
+    2300186: Fenster4 5
+    2300188: Fenster4 6
+    2300190: Fenster4 7
+    2300192: Fenster4 8
+    2300194: Fenster4 9
+    2300196: Fenster4#1
+    2300198: Fenster4#1 1
+    2300200: Fenster4#1 2
+    2300202: Fenster4#1 3
+    2300204: Fenster4#1 4
+    2300206: Fenster4#1 5
+    2300208: Fenster5
+    2300210: Fenster5 1
+    2300212: Fenster5 10
+    2300214: Fenster5 11
+    2300216: Fenster5 2
+    2300218: Fenster5 3
+    2300220: Fenster5 4
+    2300222: Fenster5 5
+    2300224: Fenster5 6
+    2300226: Fenster5 7
+    2300228: Fenster5 8
+    2300230: Fenster5 9
+    2300232: Fenster6
+    2300234: Fenster6 1
+    2300236: Fenster6 10
+    2300238: Fenster6 11
+    2300240: Fenster6 12
+    2300242: Fenster6 13
+    2300244: Fenster6 14
+    2300246: Fenster6 15
+    2300248: Fenster6 16
+    2300250: Fenster6 17
+    2300252: Fenster6 18
+    2300254: Fenster6 19
+    2300256: Fenster6 2
+    2300258: Fenster6 20
+    2300260: Fenster6 21
+    2300262: Fenster6 22
+    2300264: Fenster6 23
+    2300266: Fenster6 24
+    2300268: Fenster6 25
+    2300270: Fenster6 3
+    2300272: Fenster6 4
+    2300274: Fenster6 5
+    2300276: Fenster6 6
+    2300278: Fenster6 7
+    2300280: Fenster6 8
+    2300282: Fenster6 9
+    2300284: Fenster7
+    2300286: Fenster7 1
+    2300288: Fenster7 2
+    2300290: Fenster7 3
+    2300292: Fenster8
+    2300294: Fenster8 1
+    2300296: Fenster9
+    2300298: Fenster9 1
+    2300300: Fenster9 10
+    2300302: Fenster9 11
+    2300304: Fenster9 12
+    2300306: Fenster9 13
+    2300308: Fenster9 14
+    2300310: Fenster9 15
+    2300312: Fenster9 16
+    2300314: Fenster9 17
+    2300316: Fenster9 18
+    2300318: Fenster9 2
+    2300320: Fenster9 3
+    2300322: Fenster9 4
+    2300324: Fenster9 5
+    2300326: Fenster9 6
+    2300328: Fenster9 7
+    2300330: Fenster9 8
+    2300332: Fenster9 9
+    2300334: Gelaender
+    2300336: Gelaender 1
+    2300338: Gelaender 10
+    2300340: Gelaender 11
+    2300342: Gelaender 12
+    2300344: Gelaender 13
+    2300346: Gelaender 14
+    2300348: Gelaender 15
+    2300350: Gelaender 2
+    2300352: Gelaender 3
+    2300354: Gelaender 4
+    2300356: Gelaender 5
+    2300358: Gelaender 6
+    2300360: Gelaender 7
+    2300362: Gelaender 8
+    2300364: Gelaender 9
+    2300366: Google Earth Terrain
+    2300368: Group 11
+    2300370: Group 13
+    2300372: Group 33
+    2300374: Group 35
+    2300376: Group 37
+    2300378: Group 7
+    2300380: Group 9
+    2300382: Kellerfenster
+    2300384: Kellerfenster 1
+    2300386: Kellerfenster 10
+    2300388: Kellerfenster 11
+    2300390: Kellerfenster 12
+    2300392: Kellerfenster 13
+    2300394: Kellerfenster 14
+    2300396: Kellerfenster 2
+    2300398: Kellerfenster 3
+    2300400: Kellerfenster 4
+    2300402: Kellerfenster 5
+    2300404: Kellerfenster 6
+    2300406: Kellerfenster 7
+    2300408: Kellerfenster 8
+    2300410: Kellerfenster 9
+    2300412: Kippfenster
+    2300414: Kippfenster 1
+    2300416: Kippfenster 10
+    2300418: Kippfenster 11
+    2300420: Kippfenster 12
+    2300422: Kippfenster 13
+    2300424: Kippfenster 14
+    2300426: Kippfenster 15
+    2300428: Kippfenster 16
+    2300430: Kippfenster 17
+    2300432: Kippfenster 18
+    2300434: Kippfenster 19
+    2300436: Kippfenster 2
+    2300438: Kippfenster 20
+    2300440: Kippfenster 21
+    2300442: Kippfenster 22
+    2300444: Kippfenster 23
+    2300446: Kippfenster 24
+    2300448: Kippfenster 25
+    2300450: Kippfenster 26
+    2300452: Kippfenster 27
+    2300454: Kippfenster 28
+    2300456: Kippfenster 29
+    2300458: Kippfenster 3
+    2300460: Kippfenster 30
+    2300462: Kippfenster 31
+    2300464: Kippfenster 4
+    2300466: Kippfenster 5
+    2300468: Kippfenster 6
+    2300470: Kippfenster 7
+    2300472: Kippfenster 8
+    2300474: Kippfenster 9
+    2300476: Tuer
+    2300478: Tuer 1
+    2300480: Tuer 2
+    2300482: Tuer2
+    2300484: Tuer2 1
+    2300486: Tuer2 2
+    3300000: B A U H A U S
+    3300002: Balkon
+    3300004: Balkon 1
+    3300006: Balkon 10
+    3300008: Balkon 11
+    3300010: Balkon 12
+    3300012: Balkon 13
+    3300014: Balkon 14
+    3300016: Balkon 15
+    3300018: Balkon 2
+    3300020: Balkon 3
+    3300022: Balkon 4
+    3300024: Balkon 5
+    3300026: Balkon 6
+    3300028: Balkon 7
+    3300030: Balkon 8
+    3300032: Balkon 9
+    3300034: Balkon2
+    3300036: Balkon2 1
+    3300038: Balkon2 2
+    3300040: Bauhaus
+    3300042: Eingang1
+    3300044: Eingang2
+    3300046: Fassade
+    3300048: Fassade 1
+    3300050: Fenster
+    3300052: Fenster 1
+    3300054: Fenster 2
+    3300056: Fenster12
+    3300058: Fenster12 1
+    3300060: Fenster12 2
+    3300062: Fenster13
+    3300064: Fenster13 1
+    3300066: Fenster13 10
+    3300068: Fenster13 11
+    3300070: Fenster13 12
+    3300072: Fenster13 13
+    3300074: Fenster13 14
+    3300076: Fenster13 15
+    3300078: Fenster13 16
+    3300080: Fenster13 17
+    3300082: Fenster13 18
+    3300084: Fenster13 19
+    3300086: Fenster13 2
+    3300088: Fenster13 20
+    3300090: Fenster13 21
+    3300092: Fenster13 22
+    3300094: Fenster13 23
+    3300096: Fenster13 24
+    3300098: Fenster13 25
+    3300100: Fenster13 26
+    3300102: Fenster13 27
+    3300104: Fenster13 28
+    3300106: Fenster13 29
+    3300108: Fenster13 3
+    3300110: Fenster13 30
+    3300112: Fenster13 31
+    3300114: Fenster13 32
+    3300116: Fenster13 33
+    3300118: Fenster13 34
+    3300120: Fenster13 35
+    3300122: Fenster13 36
+    3300124: Fenster13 37
+    3300126: Fenster13 38
+    3300128: Fenster13 39
+    3300130: Fenster13 4
+    3300132: Fenster13 40
+    3300134: Fenster13 41
+    3300136: Fenster13 42
+    3300138: Fenster13 43
+    3300140: Fenster13 44
+    3300142: Fenster13 45
+    3300144: Fenster13 46
+    3300146: Fenster13 47
+    3300148: Fenster13 48
+    3300150: Fenster13 49
+    3300152: Fenster13 5
+    3300154: Fenster13 50
+    3300156: Fenster13 51
+    3300158: Fenster13 52
+    3300160: Fenster13 53
+    3300162: Fenster13 6
+    3300164: Fenster13 7
+    3300166: Fenster13 8
+    3300168: Fenster13 9
+    3300170: Fenster2
+    3300172: Fenster4
+    3300174: Fenster4 1
+    3300176: Fenster4 10
+    3300178: Fenster4 11
+    3300180: Fenster4 2
+    3300182: Fenster4 3
+    3300184: Fenster4 4
+    3300186: Fenster4 5
+    3300188: Fenster4 6
+    3300190: Fenster4 7
+    3300192: Fenster4 8
+    3300194: Fenster4 9
+    3300196: Fenster4#1
+    3300198: Fenster4#1 1
+    3300200: Fenster4#1 2
+    3300202: Fenster4#1 3
+    3300204: Fenster4#1 4
+    3300206: Fenster4#1 5
+    3300208: Fenster5
+    3300210: Fenster5 1
+    3300212: Fenster5 10
+    3300214: Fenster5 11
+    3300216: Fenster5 2
+    3300218: Fenster5 3
+    3300220: Fenster5 4
+    3300222: Fenster5 5
+    3300224: Fenster5 6
+    3300226: Fenster5 7
+    3300228: Fenster5 8
+    3300230: Fenster5 9
+    3300232: Fenster6
+    3300234: Fenster6 1
+    3300236: Fenster6 10
+    3300238: Fenster6 11
+    3300240: Fenster6 12
+    3300242: Fenster6 13
+    3300244: Fenster6 14
+    3300246: Fenster6 15
+    3300248: Fenster6 16
+    3300250: Fenster6 17
+    3300252: Fenster6 18
+    3300254: Fenster6 19
+    3300256: Fenster6 2
+    3300258: Fenster6 20
+    3300260: Fenster6 21
+    3300262: Fenster6 22
+    3300264: Fenster6 23
+    3300266: Fenster6 24
+    3300268: Fenster6 25
+    3300270: Fenster6 3
+    3300272: Fenster6 4
+    3300274: Fenster6 5
+    3300276: Fenster6 6
+    3300278: Fenster6 7
+    3300280: Fenster6 8
+    3300282: Fenster6 9
+    3300284: Fenster7
+    3300286: Fenster7 1
+    3300288: Fenster7 2
+    3300290: Fenster7 3
+    3300292: Fenster8
+    3300294: Fenster8 1
+    3300296: Fenster9
+    3300298: Fenster9 1
+    3300300: Fenster9 10
+    3300302: Fenster9 11
+    3300304: Fenster9 12
+    3300306: Fenster9 13
+    3300308: Fenster9 14
+    3300310: Fenster9 15
+    3300312: Fenster9 16
+    3300314: Fenster9 17
+    3300316: Fenster9 18
+    3300318: Fenster9 2
+    3300320: Fenster9 3
+    3300322: Fenster9 4
+    3300324: Fenster9 5
+    3300326: Fenster9 6
+    3300328: Fenster9 7
+    3300330: Fenster9 8
+    3300332: Fenster9 9
+    3300334: Gelaender
+    3300336: Gelaender 1
+    3300338: Gelaender 10
+    3300340: Gelaender 11
+    3300342: Gelaender 12
+    3300344: Gelaender 13
+    3300346: Gelaender 14
+    3300348: Gelaender 15
+    3300350: Gelaender 2
+    3300352: Gelaender 3
+    3300354: Gelaender 4
+    3300356: Gelaender 5
+    3300358: Gelaender 6
+    3300360: Gelaender 7
+    3300362: Gelaender 8
+    3300364: Gelaender 9
+    3300366: Google Earth Terrain
+    3300368: Group 11
+    3300370: Group 13
+    3300372: Group 33
+    3300374: Group 35
+    3300376: Group 37
+    3300378: Group 7
+    3300380: Group 9
+    3300382: Kellerfenster
+    3300384: Kellerfenster 1
+    3300386: Kellerfenster 10
+    3300388: Kellerfenster 11
+    3300390: Kellerfenster 12
+    3300392: Kellerfenster 13
+    3300394: Kellerfenster 14
+    3300396: Kellerfenster 2
+    3300398: Kellerfenster 3
+    3300400: Kellerfenster 4
+    3300402: Kellerfenster 5
+    3300404: Kellerfenster 6
+    3300406: Kellerfenster 7
+    3300408: Kellerfenster 8
+    3300410: Kellerfenster 9
+    3300412: Kippfenster
+    3300414: Kippfenster 1
+    3300416: Kippfenster 10
+    3300418: Kippfenster 11
+    3300420: Kippfenster 12
+    3300422: Kippfenster 13
+    3300424: Kippfenster 14
+    3300426: Kippfenster 15
+    3300428: Kippfenster 16
+    3300430: Kippfenster 17
+    3300432: Kippfenster 18
+    3300434: Kippfenster 19
+    3300436: Kippfenster 2
+    3300438: Kippfenster 20
+    3300440: Kippfenster 21
+    3300442: Kippfenster 22
+    3300444: Kippfenster 23
+    3300446: Kippfenster 24
+    3300448: Kippfenster 25
+    3300450: Kippfenster 26
+    3300452: Kippfenster 27
+    3300454: Kippfenster 28
+    3300456: Kippfenster 29
+    3300458: Kippfenster 3
+    3300460: Kippfenster 30
+    3300462: Kippfenster 31
+    3300464: Kippfenster 4
+    3300466: Kippfenster 5
+    3300468: Kippfenster 6
+    3300470: Kippfenster 7
+    3300472: Kippfenster 8
+    3300474: Kippfenster 9
+    3300476: Tuer
+    3300478: Tuer 1
+    3300480: Tuer 2
+    3300482: Tuer2
+    3300484: Tuer2 1
+    3300486: Tuer2 2
+    4300000: Mesh Google Earth Terrain
+    4300002: Mesh Bauhaus
+    4300004: Mesh Group 7
+    4300006: Mesh Group 9
+    4300008: Mesh Group 11
+    4300010: Mesh Group 13
+    4300012: Mesh Balkon
+    4300014: Mesh Gelaender
+    4300016: Mesh B A U H A U S
+    4300018: Mesh Group 33
+    4300020: Mesh Group 35
+    4300022: Mesh Fenster
+    4300024: Mesh Fenster2
+    4300026: Mesh Fenster4
+    4300028: Mesh Fenster
+    4300030: Mesh Balkon2
+    4300032: Mesh Tuer
+    4300034: Mesh Eingang1
+    4300036: Mesh Fenster5
+    4300038: Mesh Fenster6
+    4300040: Mesh Tuer2
+    4300042: Mesh Fenster9
+    4300044: Mesh Fenster8
+    4300046: Mesh Fassade
+    4300048: Mesh Kippfenster
+    4300050: Mesh Kellerfenster
+    4300052: Mesh Fenster7
+    4300054: Mesh Fenster4#1
+    4300056: Mesh Fenster12
+    4300058: Mesh Eingang2
+    4300060: Mesh Fenster13
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
