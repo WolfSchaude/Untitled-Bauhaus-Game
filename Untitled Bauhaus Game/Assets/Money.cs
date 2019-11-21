@@ -25,7 +25,7 @@ public class Money : MonoBehaviour
     public void Gehalt()
     {
 
-        money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * (GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
+        money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
     }
 
 	public void Spende(int spende)
