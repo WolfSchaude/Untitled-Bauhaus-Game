@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Politikmeter : MonoBehaviour
 {
-	private int Politiklevel = 0;
+	private int Politiklevel = 100;
 	public Text PolitikText;
     public Slider PolitikOutput;
 
@@ -23,8 +23,8 @@ public class Politikmeter : MonoBehaviour
 
 		PolitikText.text = "Aktuelle Politische Ausrichtung: " + Politiklevel;
         PolitikOutput.value = Politiklevel;
-        PolitikOutput.maxValue = 100;
-        PolitikOutput.minValue = -100;
+        PolitikOutput.maxValue = 200;
+        PolitikOutput.minValue = 0;
     }
 
 	public void ManipulatePolitics(int manipulator)
