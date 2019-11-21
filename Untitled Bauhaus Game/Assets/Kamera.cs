@@ -9,17 +9,17 @@ namespace UntitledBauhausGame
         public GameObject Modul1;
         public GameObject bauhaushaupt;
 
-        public GameObject NextModule;
+        //public GameObject NextModule;
 
         public Module Hallol;
         public bauhausmain Hallil;
 
-        public Module TheSecondOne;
+        //public Module TheSecondOne;
 
         private bool Clicked;
         private bool OneIsSpawned;
 
-        //public Vector3 NodeTest;
+        public Vector3 NodeTest;
 
         void Start()
         {
@@ -64,19 +64,25 @@ namespace UntitledBauhausGame
             {
                 if (Clicked == false)
                 {
-                    //NodeTest = Hallil.Node3;
-                    Hallol.PlaceModule(Hallil.Node1, 1);
+                    NodeTest = Hallil.Node2;
+                    Hallol.PlaceModule(Hallil.Node1, 3);
                     Clicked = true;
                     Hallol.ModuleSet = true;
                 }
                 if (Clicked == true && OneIsSpawned == false)
                 {
-                    NextModule = Instantiate(GameObject.Find("Module"));
-                    TheSecondOne = NextModule.GetComponent<Module>();
+                    GameObject NextModule = Instantiate(GameObject.Find("Module"));
+                    Module TheSecondOne = NextModule.GetComponent<Module>();
                     //NodeTest = Hallol.Node4;
-                    TheSecondOne.PlaceModule(Hallol.Node3, 1);
+                    TheSecondOne.PlaceModule(Hallol.Node2, 4);
                     TheSecondOne.ModuleSet = true;
                     OneIsSpawned = true;
+
+                    GameObject OtherModule = Instantiate(GameObject.Find("Module"));
+                    Module TheThirdOne = OtherModule.GetComponent<Module>();
+                    //NodeTest = TheSecondOne.Node4
+                    TheThirdOne.PlaceModule(Hallol.Node4, 2);
+                    TheSecondOne.ModuleSet = true;
                 }
             }
         }
