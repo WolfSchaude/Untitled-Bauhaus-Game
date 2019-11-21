@@ -30,32 +30,5 @@ public class Studenten : MonoBehaviour
         monthlyStudenten = 5f * sliderPercentage;
 
         StudentenAnzahl += monthlyStudenten;
-        //StudentenAnzahl += (GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value * monthlyStudenten) / 2;
-
-        //    if (GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value <= 4 && GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value > 0) //Access sliderUI.value from another script
-        //    {
-        //        monthlyStudenten = 2;
-        //    }
-        //    if (GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value <= 7 && GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value > 4) 
-        //    {
-        //        monthlyStudenten = 5;
-        //    }
-        //    if (GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value <= 10 && GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value > 7)
-        //    {
-        //        monthlyStudenten = 10;
-        //    }
-
-        //if (((GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value / GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.maxValue) * 100) <= 50)
-        //{
-        //    monthlyStudenten = 5;
-        //}
-        //else
-        //{
-        //    monthlyStudenten = 10;
-        //}
-
-        // StudentenAnzahl += monthlyStudenten;
-
-
     }
 }
