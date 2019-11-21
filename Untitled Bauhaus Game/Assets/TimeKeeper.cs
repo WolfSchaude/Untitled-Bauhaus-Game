@@ -35,6 +35,7 @@ public class TimeKeeper : MonoBehaviour
 		gameTime += StartMonth * MonthToSec;
 		gameTime += StartYear * YearToSec;
 
+		InvokeRepeating("AddTimeTic", 0.1f, 5);
 	}
 
 	public void AddYear(int years)
@@ -55,32 +56,30 @@ public class TimeKeeper : MonoBehaviour
 	{
 		gameTime += sec;
 	}
+	public void AddTimeTic()
+	{
+		AddTime((float)1 * DayToSec);
+	}
 	public string[] GetTime()
 	{
 		float currentTime = gameTime;
 
 		int currentYear = (int)(gameTime / YearToSec);
-		currentTime -= currentYear;
+		currentTime -= currentYear * YearToSec;
 
-		int currentMonth = (int)(gameTime / MonthToSec);
-		currentTime -= currentMonth;
+		int currentMonth = (int)(currentTime / MonthToSec);
+		currentTime -= currentMonth * MonthToSec;
 
-		int currentDay = (int)(gameTime / DayToSec);
-		currentTime -= currentMonth;
+		int currentDay = (int)(currentTime / DayToSec);
+		currentTime -= currentMonth * DayToSec;
 
-		int currentHour = (int)(gameTime / HourToSec);
-		currentTime -= currentHour;
+		int currentHour = (int)(currentTime / HourToSec);
+		currentTime -= currentHour * HourToSec;
 
-		int currentMinute = (int)(gameTime / MinToSec);
-		currentTime -= currentMinute;
+		int currentMinute = (int)(currentTime / MinToSec);
+		currentTime -= currentMinute * MinToSec;
 
 		int currentSecond = (int)gameTime;
-
-		//sb.Append(currentYear);
-		//sb.Append("//");
-		//sb.Append(currentMonth);
-		//sb.Append("//");
-		//sb.Append(currentDay);
 
 		string[] times = new string[3];
 		times[0] = currentYear.ToString();
@@ -88,15 +87,15 @@ public class TimeKeeper : MonoBehaviour
 		times[2] = currentDay.ToString();
 
 		return times;
-
-		//return sb.ToString();
 	}
 
 	void Update()
 	{
 		string[] times = GetTime();
 
-		DateDisplay.text = times[0] + " : " + times[1] + " : " + times[2];
+		DateDisplay.text = times[2] + " . " + times[1] + " . " + times[0];
+
+		gameTime += Time.deltaTime * 10000;
 	}
 
 
