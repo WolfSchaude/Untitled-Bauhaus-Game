@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class Politikmeter : MonoBehaviour
 {
-<<<<<<< HEAD
-	private int Politiklevel = 100;
-=======
+
 	public int Politiklevel = 100;
+
 	public Text PolitikText;
->>>>>>> money
+
     public Slider PolitikOutput;
 
 
@@ -33,19 +32,19 @@ public class Politikmeter : MonoBehaviour
 	public void ManipulatePolitics(int manipulator)
 	{
 		Politiklevel += manipulator;
-<<<<<<< HEAD
+
 		if (Politiklevel <= 0)
 		{
 			Politiklevel = 0;
 		}
 		if (Politiklevel >= 200)
-=======
+
 		if (Politiklevel <= PolitikOutput.minValue)
 		{
 			Politiklevel = 0;
 		}
 		if (Politiklevel >= PolitikOutput.maxValue)
->>>>>>> money
+
 		{
 			Politiklevel = 200;
 		}
