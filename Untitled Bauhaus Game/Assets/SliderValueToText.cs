@@ -15,7 +15,7 @@ public class SliderValueToText : MonoBehaviour
 
     public void ShowSliderValue()
     {
-        string sliderMessage = "ANSEHEN = " + sliderUI.value;
+        string sliderMessage = sliderUI.value.ToString();
         textSliderValue.text = sliderMessage;
     }
 }

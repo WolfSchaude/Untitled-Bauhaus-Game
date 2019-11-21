@@ -10,7 +10,7 @@ public class Money : MonoBehaviour
 		
     void Update()
     {
-		moneyText.text = "Kapital: " + money + " RM";
+		moneyText.text = money + " RM";
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			money -= 1000;

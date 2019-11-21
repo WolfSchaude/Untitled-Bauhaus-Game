@@ -35,7 +35,7 @@ public class TimeKeeper : MonoBehaviour
 		gameTime += StartMonth * MonthToSec;
 		gameTime += StartYear * YearToSec;
 
-		InvokeRepeating("AddTimeTic", 0.1f, 5);
+		InvokeRepeating("AddTimeTic", 0.1f, 3);
 	}
 
 	public void AddYear(int years)

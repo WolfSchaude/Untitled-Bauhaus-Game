@@ -20,7 +20,7 @@ public class Studenten : MonoBehaviour
 
     void Update()
     {
-        studDisplay.text = "STUDENTEN : " + StudentenAnzahl.ToString("0"); //Display StudentenAnzahl in UI
+        studDisplay.text = StudentenAnzahl.ToString("0"); //Display StudentenAnzahl in UI
     }
 
     public void addStudenten()

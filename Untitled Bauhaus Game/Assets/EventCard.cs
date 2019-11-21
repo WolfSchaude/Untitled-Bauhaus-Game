@@ -8,7 +8,10 @@ public class EventCard : MonoBehaviour
 
 	public GameObject EventMenuUI;
 
-    // Update is called once per frame
+    void Start()
+	{
+		gameObject.SetActive(false);
+	}
     void Update()
     {
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -20,12 +23,13 @@ public class EventCard : MonoBehaviour
 
 		}
     }
-	void TriggerEvent()
+	public void TriggerEvent()
 	{
 		if (!isEvent)
 		{
 			isEvent = true;
-			EventMenuUI.SetActive(true);
+			//EventMenuUI.SetActive(true);
+			this.gameObject.SetActive(true);
 			Time.timeScale = 0f;
 		}
 	}
@@ -35,6 +39,7 @@ public class EventCard : MonoBehaviour
 		{
 			isEvent = false;
 			EventMenuUI.SetActive(false);
+			gameObject.SetActive(false);
 			Time.timeScale = 1f;
 		}
 	}
