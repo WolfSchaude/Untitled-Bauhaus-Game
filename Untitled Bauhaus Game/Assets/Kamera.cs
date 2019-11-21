@@ -19,7 +19,7 @@ namespace UntitledBauhausGame
         private bool Clicked;
         private bool OneIsSpawned;
 
-        public Vector3 NodeTest;
+        //public Vector3 NodeTest;
 
         void Start()
         {
@@ -64,7 +64,8 @@ namespace UntitledBauhausGame
             {
                 if (Clicked == false)
                 {
-                    Hallol.PlaceModule(Hallil.Node3, 1);
+                    //NodeTest = Hallil.Node3;
+                    Hallol.PlaceModule(Hallil.Node1, 1);
                     Clicked = true;
                     Hallol.ModuleSet = true;
                 }
@@ -72,8 +73,8 @@ namespace UntitledBauhausGame
                 {
                     NextModule = Instantiate(GameObject.Find("Module"));
                     TheSecondOne = NextModule.GetComponent<Module>();
-                    NodeTest = Hallol.Node4;
-                    TheSecondOne.PlaceModule(Hallol.Node2, 4);
+                    //NodeTest = Hallol.Node4;
+                    TheSecondOne.PlaceModule(Hallol.Node3, 1);
                     TheSecondOne.ModuleSet = true;
                     OneIsSpawned = true;
                 }
