@@ -3092,6 +3092,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ee2d6b18e91d842b83f21c8d6319eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  Politiklevel: 100
+  PolitikText: {fileID: 1309515040}
+>>>>>>> money
   PolitikOutput: {fileID: 2127398154}
 --- !u!222 &1309515041
 CanvasRenderer:
@@ -4565,11 +4570,11 @@ RectTransform:
   m_Father: {fileID: 1363842785}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 692, y: -417.9}
-  m_SizeDelta: {x: 82.34, y: 16.34}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -29.400024, y: 10.5}
+  m_SizeDelta: {x: 82.339966, y: 16.339996}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1766543280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5305,6 +5310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ee2d6b18e91d842b83f21c8d6319eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  Politiklevel: 100
+  PolitikText: {fileID: 0}
+>>>>>>> money
   PolitikOutput: {fileID: 2127398154}
 --- !u!114 &2127398154
 MonoBehaviour:
