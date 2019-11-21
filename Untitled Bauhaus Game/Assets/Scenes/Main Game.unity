@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 64789092}
   - component: {fileID: 64789094}
   - component: {fileID: 64789093}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 148723481}
   - component: {fileID: 148723480}
   - component: {fileID: 148723479}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 168331619}
   - component: {fileID: 168331621}
   - component: {fileID: 168331620}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 205212964}
   - component: {fileID: 205212966}
   - component: {fileID: 205212965}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 207709793}
   - component: {fileID: 207709792}
   - component: {fileID: 207709795}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Option 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 253165754}
   - component: {fileID: 253165756}
   - component: {fileID: 253165755}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: eingestellter3_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   - component: {fileID: 258124082}
   - component: {fileID: 258124081}
   - component: {fileID: 258124084}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: EventText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 302945840}
   - component: {fileID: 302945842}
   - component: {fileID: 302945841}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bewerbung1_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 428787213}
   - component: {fileID: 428787212}
   - component: {fileID: 428787214}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: eingestellter1_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1740,7 +1740,7 @@ GameObject:
   - component: {fileID: 501654731}
   - component: {fileID: 501654730}
   - component: {fileID: 501654732}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Event PopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ GameObject:
   - component: {fileID: 561446711}
   - component: {fileID: 561446713}
   - component: {fileID: 561446712}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1904,7 +1904,7 @@ GameObject:
   - component: {fileID: 603367907}
   - component: {fileID: 603367906}
   - component: {fileID: 603367905}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: PersonalZuweisen - Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 667644255}
   - component: {fileID: 667644257}
   - component: {fileID: 667644256}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,7 +2127,7 @@ GameObject:
   - component: {fileID: 778577795}
   - component: {fileID: 778577794}
   - component: {fileID: 778577793}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Event PopUp - Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2332,7 +2332,7 @@ GameObject:
   - component: {fileID: 955218106}
   - component: {fileID: 955218108}
   - component: {fileID: 955218107}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_eingestellter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2408,7 +2408,7 @@ GameObject:
   - component: {fileID: 969575492}
   - component: {fileID: 969575491}
   - component: {fileID: 969575494}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2594,7 +2594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -349.72, y: 161.13}
+  m_AnchoredPosition: {x: -349.72, y: 128}
   m_SizeDelta: {x: 82.52, y: 42.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976415181
@@ -2695,7 +2695,7 @@ GameObject:
   - component: {fileID: 1060745583}
   - component: {fileID: 1060745582}
   - component: {fileID: 1060745581}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2830,7 @@ GameObject:
   - component: {fileID: 1089848736}
   - component: {fileID: 1089848738}
   - component: {fileID: 1089848737}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: "\xFCberschrift"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2928,10 +2928,10 @@ RectTransform:
   m_Father: {fileID: 1363842785}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 450}
+  m_SizeDelta: {x: 800, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169305341
 MonoBehaviour:
@@ -2979,7 +2979,7 @@ GameObject:
   - component: {fileID: 1209282185}
   - component: {fileID: 1209282187}
   - component: {fileID: 1209282186}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_eingestellter2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3092,11 +3092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ee2d6b18e91d842b83f21c8d6319eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
   Politiklevel: 100
-  PolitikText: {fileID: 1309515040}
->>>>>>> money
+  PolitikText: {fileID: 0}
   PolitikOutput: {fileID: 2127398154}
 --- !u!222 &1309515041
 CanvasRenderer:
@@ -3227,7 +3224,7 @@ GameObject:
   - component: {fileID: 1323499400}
   - component: {fileID: 1323499399}
   - component: {fileID: 1323499398}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: PersonalEinstellen - Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3415,7 +3412,7 @@ GameObject:
   - component: {fileID: 1359374056}
   - component: {fileID: 1359374058}
   - component: {fileID: 1359374057}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3601,7 +3598,7 @@ GameObject:
   - component: {fileID: 1404297747}
   - component: {fileID: 1404297746}
   - component: {fileID: 1404297745}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3736,7 +3733,7 @@ GameObject:
   - component: {fileID: 1411811356}
   - component: {fileID: 1411811358}
   - component: {fileID: 1411811357}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3813,7 +3810,7 @@ GameObject:
   - component: {fileID: 1437922109}
   - component: {fileID: 1437922111}
   - component: {fileID: 1437922110}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3963,7 +3960,7 @@ GameObject:
   - component: {fileID: 1472307931}
   - component: {fileID: 1472307930}
   - component: {fileID: 1472307929}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4088,7 +4085,7 @@ GameObject:
   - component: {fileID: 1580421628}
   - component: {fileID: 1580421627}
   - component: {fileID: 1580421626}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4212,7 +4209,7 @@ GameObject:
   - component: {fileID: 1629272549}
   - component: {fileID: 1629272551}
   - component: {fileID: 1629272550}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_eingestellter3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4286,7 +4283,7 @@ GameObject:
   - component: {fileID: 1636187666}
   - component: {fileID: 1636187668}
   - component: {fileID: 1636187667}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4363,7 +4360,7 @@ GameObject:
   - component: {fileID: 1671713929}
   - component: {fileID: 1671713931}
   - component: {fileID: 1671713930}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_bewerbung1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4437,7 +4434,7 @@ GameObject:
   - component: {fileID: 1687292842}
   - component: {fileID: 1687292844}
   - component: {fileID: 1687292843}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_bewerbung2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4654,7 +4651,7 @@ GameObject:
   - component: {fileID: 1777589108}
   - component: {fileID: 1777589110}
   - component: {fileID: 1777589109}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: "\xFCberschrift"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4731,7 +4728,7 @@ GameObject:
   - component: {fileID: 1782869245}
   - component: {fileID: 1782869247}
   - component: {fileID: 1782869246}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4881,7 +4878,7 @@ GameObject:
   - component: {fileID: 1878514584}
   - component: {fileID: 1878514583}
   - component: {fileID: 1878514582}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5041,7 +5038,7 @@ GameObject:
   - component: {fileID: 1992672252}
   - component: {fileID: 1992672254}
   - component: {fileID: 1992672253}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: eingestellter2_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5195,7 +5192,7 @@ GameObject:
   - component: {fileID: 2109107690}
   - component: {fileID: 2109107692}
   - component: {fileID: 2109107691}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: bild_bewerbung3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5310,11 +5307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ee2d6b18e91d842b83f21c8d6319eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
   Politiklevel: 100
   PolitikText: {fileID: 0}
->>>>>>> money
   PolitikOutput: {fileID: 2127398154}
 --- !u!114 &2127398154
 MonoBehaviour:
@@ -5374,7 +5368,7 @@ GameObject:
   - component: {fileID: 2143607826}
   - component: {fileID: 2143607828}
   - component: {fileID: 2143607827}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
