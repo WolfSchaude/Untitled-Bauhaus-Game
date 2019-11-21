@@ -49,7 +49,7 @@ namespace UntitledBauhausGame
                 this.gameObject.transform.SetPositionAndRotation(new Vector3(this.gameObject.transform.position.x + 0.1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z - 0.1f), this.gameObject.transform.rotation);
             }
 
-            if (Input.GetKey(KeyCode.Escape))
+			if (Input.GetKey(KeyCode.Escape))
             {
                 Application.Quit();
             }

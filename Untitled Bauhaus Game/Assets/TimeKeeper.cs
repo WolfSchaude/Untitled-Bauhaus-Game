@@ -96,7 +96,7 @@ public class TimeKeeper : MonoBehaviour
 	{
 		string[] times = GetTime();
 
-		DateDisplay.text = times[0] + " : " + times[1] + " : " + times[2];
+		DateDisplay.text = times[2] + " : " + times[1] + " : " + times[0];
 	}
 
 
