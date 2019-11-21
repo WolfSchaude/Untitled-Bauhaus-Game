@@ -6,21 +6,27 @@ namespace UntitledBauhausGame
 {
     public class Kamera : MonoBehaviour
     {
-        public GameObject Modul;
+        public GameObject Modul1;
         public GameObject bauhaushaupt;
+
+        public GameObject NextModule;
 
         public Module Hallol;
         public bauhausmain Hallil;
 
+        public Module TheSecondOne;
+
         private bool Clicked;
         private bool OneIsSpawned;
 
+        public Vector3 NodeTest;
+
         void Start()
         {
-            Modul = GameObject.Find("Module");
+            Modul1 = GameObject.Find("Module");
             bauhaushaupt = GameObject.Find("bauhausmain");
 
-            Hallol = Modul.GetComponent<Module>();
+            Hallol = Modul1.GetComponent<Module>();
             Hallil = bauhaushaupt.GetComponent<bauhausmain>();
 
             Clicked = false;
@@ -58,14 +64,17 @@ namespace UntitledBauhausGame
             {
                 if (Clicked == false)
                 {
-                    Hallol.PlaceObject(Hallil.Node1);
+                    Hallol.PlaceModule(Hallil.Node3, 1);
                     Clicked = true;
+                    Hallol.ModuleSet = true;
                 }
                 if (Clicked == true && OneIsSpawned == false)
                 {
-                    GameObject NextModule = Instantiate(GameObject.Find("Module"));
-                    Module TheSecondOne = NextModule.GetComponent<Module>();
-                    TheSecondOne.PlaceObject(Hallol.Node1);
+                    NextModule = Instantiate(GameObject.Find("Module"));
+                    TheSecondOne = NextModule.GetComponent<Module>();
+                    NodeTest = Hallol.Node4;
+                    TheSecondOne.PlaceModule(Hallol.Node2, 4);
+                    TheSecondOne.ModuleSet = true;
                     OneIsSpawned = true;
                 }
             }
