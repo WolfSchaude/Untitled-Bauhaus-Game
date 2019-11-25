@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-public class Teacher
+public class Teacher : MonoBehaviour
 {
-	readonly string Name;
-	readonly Sprite Picture;
+	readonly public string Name;
+	readonly public Sprite Picture;
+	public GameObject Occupation;
+	public Status TeacherStatus;
 	readonly public Beruf TeacherBeruf;
 
-	GameObject Occupation;
-	public Status TeacherStatus;
 	bool Hireable;
 
 	public enum Status
