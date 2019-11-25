@@ -2019,7 +2019,6 @@ GameObject:
   - component: {fileID: 410550908}
   - component: {fileID: 410550907}
   - component: {fileID: 410550906}
-  - component: {fileID: 410550910}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2113,19 +2112,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &410550910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410550905}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fc1034d4aabb541a91a83493d26900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventMenuUI: {fileID: 501654728}
 --- !u!1 &421715862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,7 +2237,6 @@ GameObject:
   - component: {fileID: 428787211}
   - component: {fileID: 428787213}
   - component: {fileID: 428787212}
-  - component: {fileID: 428787214}
   m_Layer: 8
   m_Name: eingestellter1_text
   m_TagString: Untagged
@@ -2318,18 +2303,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428787210}
   m_CullTransparentMesh: 0
---- !u!114 &428787214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428787210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24019a106fb2bb749b0f20c335fdb19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &441103464
 GameObject:
   m_ObjectHideFlags: 0
@@ -21395,6 +21368,7 @@ GameObject:
   - component: {fileID: 121323585086049254}
   - component: {fileID: 121323585084722054}
   - component: {fileID: 121323585083754950}
+  - component: {fileID: 121323585085757319}
   m_Layer: 0
   m_Name: Bauhaus
   m_TagString: Untagged
@@ -21402,6 +21376,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &121323585085757319
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121323585085757318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: 64c04eaba21d3844d8a35b4c5d819740, type: 3}
 --- !u!1 &121323585085757320
 GameObject:
   m_ObjectHideFlags: 0
@@ -27237,7 +27225,17 @@ PrefabInstance:
     - target: {fileID: 1828998659984442157, guid: 11606d8b251f6754db3053ea1f5d7206,
         type: 3}
       propertyPath: field of view
-      value: 49.7
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828998659984442157, guid: 11606d8b251f6754db3053ea1f5d7206,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828998659984442157, guid: 11606d8b251f6754db3053ea1f5d7206,
+        type: 3}
+      propertyPath: m_FocalLength
+      value: 15.638705
       objectReference: {fileID: 0}
     - target: {fileID: 4374549817622964399, guid: 11606d8b251f6754db3053ea1f5d7206,
         type: 3}
