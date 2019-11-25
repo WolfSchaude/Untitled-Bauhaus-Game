@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartYear: 1919
-  StartMonth: 5
+  StartMonth: 11
   StartDay: 20
   StartHour: 12
   StartMinute: 0

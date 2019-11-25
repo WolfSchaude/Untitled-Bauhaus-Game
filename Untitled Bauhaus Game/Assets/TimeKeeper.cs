@@ -23,8 +23,8 @@ public class TimeKeeper : MonoBehaviour
 	private const float MinToSec = 60;
 	private const float HourToSec = 60 * 60;
 	private const float DayToSec = 60 * 60 * 24;
-	private const float MonthToSec = 60 * 60 * 24 * 30;
-	private const float YearToSec = 60 * 60 * 24 * 30 * 12;
+	private const float MonthToSec = 60 * 60 * 24 * 31;
+	private const float YearToSec = 60 * 60 * 24 * 31 * 13;
 
 	void Start()
 	{
@@ -81,6 +81,16 @@ public class TimeKeeper : MonoBehaviour
 		currentTime -= currentMinute * MinToSec;
 
 		int currentSecond = (int)gameTime;
+
+        if (currentDay == 0)
+        {
+            currentDay = 1;
+        }
+
+        if (currentMonth == 0)
+        {
+            currentMonth = 1;
+        }
         
 		string[] times = new string[3];
 		times[0] = currentYear.ToString();
