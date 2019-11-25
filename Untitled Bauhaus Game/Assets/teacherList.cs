@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeacherList : MonoBehaviour
 {
-	List<Teacher> Teachers;
+	public static List<Teacher> Teachers;
 
 	public void AddTeacher(Teacher teacher)
 	{

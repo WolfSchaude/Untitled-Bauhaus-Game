@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TeacherBuffer : MonoBehaviour
 {
-	// Start is called before the first frame update
-	public List<Teacher> TeacherBufferList;
+	public static List<Teacher> TeacherBufferList;
+
     void Start()
     {
 		TeacherBufferList.Add(new Teacher("Lyonel Feininger",	Resources.Load("Personen/Person1") as Sprite, Teacher.Status.NotHired, Teacher.Beruf.Kunstmaler));

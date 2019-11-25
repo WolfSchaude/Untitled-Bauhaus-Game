@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-public class Teacher
+public class Teacher : MonoBehaviour
 {
-	readonly string Name;
-	readonly Sprite Picture;
-	readonly GameObject Employed;
+	readonly public string Name;
+	readonly public Sprite Picture;
+	readonly public GameObject Employed;
 	readonly public Status TeacherStatus;
 	readonly public Beruf TeacherBeruf;
 
