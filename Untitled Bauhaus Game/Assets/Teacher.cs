@@ -3,9 +3,11 @@ public class Teacher
 {
 	readonly string Name;
 	readonly Sprite Picture;
-	readonly GameObject Employed;
-	readonly public Status TeacherStatus;
 	readonly public Beruf TeacherBeruf;
+
+	GameObject Occupation;
+	public Status TeacherStatus;
+	bool Hireable;
 
 	public enum Status
 	{
@@ -16,19 +18,22 @@ public class Teacher
 		Architekt, Kunstmaler, Bildhauer, Schlosser
 	}
 
-	public Teacher(string name, Sprite sprite, Status status, Beruf beruf)
+	public Teacher(string name, Sprite sprite, Status status, Beruf beruf, bool hireable)
 	{
 		Name = name;
 		Picture = sprite;
 		TeacherStatus = status;
 		TeacherBeruf = beruf;
+		Hireable = hireable;
+	}
+	
+	public void ChangeStatus(Status status)
+	{
+		TeacherStatus = status;
 	}
 
-	//public Teacher(string name, Sprite sprite, Status status, Beruf beruf)
-	//{
-	//	Name = name;
-	//	Picture = sprite;
-	//	TeacherStatus = status;
-	//	TeacherBeruf = beruf;
-	//}
+	public void ChangeOccupation(GameObject gameObject)
+	{
+		Occupation = gameObject;
+	}
 }

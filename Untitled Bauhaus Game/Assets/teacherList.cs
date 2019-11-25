@@ -16,6 +16,11 @@ public class TeacherList : MonoBehaviour
 		Teachers.Remove(Teachers.Find(i => i.Equals(teacher)));
 	}
 
+	public Teacher GetTeacher(int index)
+	{
+		return Teachers[index];
+	}
+
     void Start()
     {
         
