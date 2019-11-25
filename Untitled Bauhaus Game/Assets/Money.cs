@@ -16,17 +16,17 @@ public class Money : MonoBehaviour
 
     void Start()
     {
-        lastMonth = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
+        
     }
 
     void Update()
     {
         moneyText.text = money + " RM";
 
-        checkMonth();
+        //checkMonth();
     }
 
-    public void Gehalt() //Monatliches Gehalt abhängig von der Studentenanzahl und dem Politikmeter
+    public void addGehalt() //Monatliches Gehalt abhängig von der Studentenanzahl und dem Politikmeter
     {
         money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
     }
@@ -36,14 +36,6 @@ public class Money : MonoBehaviour
         if (spende > 0)
         {
             money += spende;
-        }
-    }
-    public void checkMonth() //Check if the month has changed
-    {
-        if (GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth != lastMonth)
-        {
-            Gehalt();
-            lastMonth = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
         }
     }
 }

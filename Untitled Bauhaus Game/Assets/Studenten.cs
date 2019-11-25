@@ -15,7 +15,7 @@ public class Studenten : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("addStudenten", 0.1f, 2.0f); //repeats a function every x seconds
+        //InvokeRepeating("addStudenten", 0.1f, 2.0f); //repeats a function every x seconds
     }
 
     void Update()

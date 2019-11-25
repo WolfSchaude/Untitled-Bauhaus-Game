@@ -8,7 +8,6 @@ using System.Text;
 public class TimeKeeper : MonoBehaviour
 {
 
-	// Set this in the inspector
 	public int StartYear;
 	public int StartMonth;
 	public int StartDay;
@@ -100,5 +99,5 @@ public class TimeKeeper : MonoBehaviour
 		gameTime += Time.deltaTime * 10000;
 	}
 
-
+    
 }
