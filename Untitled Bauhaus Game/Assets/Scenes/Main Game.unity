@@ -1671,7 +1671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -83.4, y: 0}
+  m_AnchoredPosition: {x: -85, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &336543483
@@ -2015,10 +2015,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartYear: 1919
   StartMonth: 5
-  StartDay: 16
+  StartDay: 20
   StartHour: 12
   StartMinute: 0
   StartSecond: 0
+  currentMonth: 0
   DateDisplay: {fileID: 421715866}
 --- !u!114 &421715866
 MonoBehaviour:
@@ -6147,7 +6148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.05047798, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

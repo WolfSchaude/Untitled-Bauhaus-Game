@@ -16,6 +16,8 @@ public class TimeKeeper : MonoBehaviour
 	public int StartMinute;
 	public int StartSecond;
 
+    public int currentMonth;
+
 	public Text DateDisplay;
 
 	private float gameTime;
@@ -67,7 +69,7 @@ public class TimeKeeper : MonoBehaviour
 		int currentYear = (int)(gameTime / YearToSec);
 		currentTime -= currentYear * YearToSec;
 
-		int currentMonth = (int)(currentTime / MonthToSec);
+		currentMonth = (int)(currentTime / MonthToSec);
 		currentTime -= currentMonth * MonthToSec;
 
 		int currentDay = (int)(currentTime / DayToSec);
@@ -80,7 +82,7 @@ public class TimeKeeper : MonoBehaviour
 		currentTime -= currentMinute * MinToSec;
 
 		int currentSecond = (int)gameTime;
-
+        
 		string[] times = new string[3];
 		times[0] = currentYear.ToString();
 		times[1] = currentMonth.ToString();
