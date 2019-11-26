@@ -16,6 +16,7 @@ public class TimeKeeper : MonoBehaviour
 	public int StartSecond;
 
     public int currentMonth;
+    public int currentDay;
 
 	public Text DateDisplay;
 
@@ -71,7 +72,7 @@ public class TimeKeeper : MonoBehaviour
 		currentMonth = (int)(currentTime / MonthToSec);
 		currentTime -= currentMonth * MonthToSec;
 
-		int currentDay = (int)(currentTime / DayToSec);
+		currentDay = (int)(currentTime / DayToSec);
 		currentTime -= currentMonth * DayToSec;
 
 		int currentHour = (int)(currentTime / HourToSec);
