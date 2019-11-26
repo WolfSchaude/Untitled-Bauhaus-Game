@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class TeacherBuffer : MonoBehaviour
 {
-<<<<<<< HEAD
-	public List<Teacher> TeacherBufferList;
-=======
 	public static List<Teacher> TeacherBufferList;
->>>>>>> bd55bd44f48c8be909b8eda9883d3f5747a0c4b5
 
     void Start()
     {
