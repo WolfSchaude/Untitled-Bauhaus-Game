@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class Teacher : MonoBehaviour
+public class Teacher
 {
 	readonly public string Name;
 	readonly public Sprite Picture;
@@ -25,6 +25,15 @@ public class Teacher : MonoBehaviour
 		TeacherStatus = status;
 		TeacherBeruf = beruf;
 		Hireable = hireable;
+	}
+
+	public Teacher()
+	{
+		Name = "Max Musterman";
+		Picture = null;
+		TeacherStatus = Status.NotHired;
+		TeacherBeruf = Beruf.Architekt;
+		Hireable = true;
 	}
 	
 	public void ChangeStatus(Status status)

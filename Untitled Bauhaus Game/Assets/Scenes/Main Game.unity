@@ -802,7 +802,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1398400738}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1972,6 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24019a106fb2bb749b0f20c335fdb19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bewerbung1text: {fileID: 428787212}
 --- !u!1 &501654728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2507,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 633069565}
   m_HandleRect: {fileID: 633069564}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3067,7 +3068,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 818741144}
   m_HandleRect: {fileID: 818741143}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3741,9 +3742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9c1f244ee627a4dada0ca067009675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bewerbung: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615,
-    type: 3}
-  parent: {fileID: 1051190735}
+  bewerbung: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!1 &1060745579
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,7 +4144,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1024202386}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
