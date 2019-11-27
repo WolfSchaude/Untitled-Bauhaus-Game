@@ -17,6 +17,9 @@ public class Teacher
 	public int Politik;
 
 	[XmlElement("ImagePath")]
+	public string ImagePath;
+
+	[XmlIgnore]
 	public Sprite Picture;
 
 	[XmlIgnore]

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TeacherLoader : MonoBehaviour
 {
 	private const string path = "XML_Files/LehrerTestList";
-	public TeacherBuffer tb;
+	public static TeacherBuffer tb;
 
 	void Start()
 	{
@@ -13,8 +13,7 @@ public class TeacherLoader : MonoBehaviour
 
 		foreach (Teacher teacher in tb.Buffer)
 		{
-			print(teacher.Name);
-			print(teacher.Gehalt);
+			teacher.Picture = Resources.Load<Sprite>(teacher.ImagePath);
 		}
 	}
 }

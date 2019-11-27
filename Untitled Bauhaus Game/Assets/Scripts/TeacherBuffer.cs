@@ -9,7 +9,7 @@ public class TeacherBuffer
 {
 	[XmlArray("Teachers")]
 	[XmlArrayItem("Teacher")]
-	public List<Teacher>Buffer;
+	public List<Teacher> Buffer;
 
 	public static TeacherBuffer Load(string path)
 	{
