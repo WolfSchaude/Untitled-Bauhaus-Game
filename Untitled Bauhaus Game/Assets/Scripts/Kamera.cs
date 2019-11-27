@@ -19,7 +19,7 @@ namespace UntitledBauhausGame
         void Start()
         {
 			moveSpeed = 5;
-			rotateSpeed = 45;
+			rotateSpeed = 90;
 			height = 10;
 
             BuildManager = GameObject.Find("buildingsystemmanager"); //Eigennotiz: nach knapp 6 Stunden, bei GameObject.Find den Assetnamen und nicht den Klassennamen nutzen!
