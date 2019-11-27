@@ -18,7 +18,7 @@ public class TeacherList : MonoBehaviour
 
     void Start()
     {
-        
+		Teachers = new List<Teacher>();
     }
 
     // Update is called once per frame
