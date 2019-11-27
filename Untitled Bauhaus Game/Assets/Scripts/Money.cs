@@ -38,4 +38,9 @@ public class Money : MonoBehaviour
             money += spende;
         }
     }
+
+    public void Bezahlen(int preis)
+    {
+        money -= preis;
+    }
 }

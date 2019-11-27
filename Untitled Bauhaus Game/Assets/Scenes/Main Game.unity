@@ -2000,6 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca762c4848dd5849a2a94885f1748e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Preis: {fileID: 780421959}
   werk1: {fileID: 1869246093}
   werk2: {fileID: 1659913880}
   werk3: {fileID: 1163785624}
@@ -2015,6 +2016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9d06ad6d726ac4f8059935142c28a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PreisL: {fileID: 399953607}
   lehr1: {fileID: 1884695511}
   lehr2: {fileID: 1512953703}
   lehr3: {fileID: 767511069}
@@ -2030,6 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f06a682139e3946a252c4b3c2afec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PreisW: {fileID: 1595834461}
   heim1: {fileID: 2102026957}
   heim2: {fileID: 1498093239}
   heim3: {fileID: 1138531212}
@@ -5907,7 +5910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 18}
+  m_AnchoredPosition: {x: 4, y: 10.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1523318089
@@ -29150,7 +29153,7 @@ PrefabInstance:
     - target: {fileID: 7528088358153255769, guid: 388d50c1fac0dcb4489081f0521bc5d8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.07
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 7528088358153255769, guid: 388d50c1fac0dcb4489081f0521bc5d8,
         type: 3}
