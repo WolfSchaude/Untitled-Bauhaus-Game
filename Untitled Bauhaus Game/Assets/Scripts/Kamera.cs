@@ -37,6 +37,7 @@ namespace UntitledBauhausGame
 			transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 
 			transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
+
             if (Input.GetKey(KeyCode.Escape))
             {
                 Application.Quit();
