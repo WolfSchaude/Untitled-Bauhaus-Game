@@ -29,7 +29,6 @@ public class Teacher
 	[XmlIgnore]
 	public bool Hireable = true;
 
-
 	public enum Status
 	{
 		Employed, NotEmployed, WorkingOnExponate, NotHired
@@ -71,5 +70,4 @@ public class Teacher
 	{
 		Occupation = gameObject;
 	}
-
 }
