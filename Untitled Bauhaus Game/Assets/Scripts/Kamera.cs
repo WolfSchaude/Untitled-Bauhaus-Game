@@ -26,7 +26,13 @@ namespace UntitledBauhausGame
 
 		void Update()
         {
-			transform.Translate(new Vector3(moveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
+            if (Input.GetKey("left shift"))
+            {
+                moveSpeed = 10;
+            }
+            else moveSpeed = 5;
+
+            transform.Translate(new Vector3(moveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
 
 			transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 
