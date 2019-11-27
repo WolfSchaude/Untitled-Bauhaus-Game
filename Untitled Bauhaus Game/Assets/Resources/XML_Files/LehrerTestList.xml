@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<TeacherCollection>
+  <Teachers>
+    
+	  <Teacher ID ="1">
+		  <Name>Lyonel Feininger</Name>
+		  <Beruf>Kunstmaler</Beruf>
+      <Gehalt>2000</Gehalt>
+      <Politik>100</Politik>
+		  <ImagePath>Sprites/Person1</ImagePath>
+	  </Teacher>
+	
+	  <Teacher ID ="2">
+		  <Name>Josef Albers</Name>
+		  <Beruf>Kunstmaler</Beruf>
+      <Gehalt>2200</Gehalt>
+      <Politik>90</Politik>
+		  <ImagePath>Sprites/Person2</ImagePath>
+	  </Teacher>
+	
+	  <Teacher ID ="3">
+		  <Name>Johannes Itten </Name>
+		  <Beruf>Kunstmaler</Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+	  </Teacher>
+	
+	  <Teacher ID ="">
+		  <Name></Name>
+		  <Beruf></Beruf>
+      <Gehalt>0</Gehalt>
+      <Politik>100</Politik>
+		  <ImagePath></ImagePath>
+	  </Teacher>
+    
+  </Teachers>
+</TeacherCollection>
