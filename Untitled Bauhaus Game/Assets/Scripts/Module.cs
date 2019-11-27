@@ -16,6 +16,9 @@ namespace UntitledBauhausGame
         public bool Node4Used;
         public bool ModuleSet;
 
+        public int WerkstattTyp;
+
+
         public Vector3 TargetNodeControll1;
         public Vector3 TargetNodeControll2;
         public Vector3 TargetNodeControll3;
@@ -45,41 +48,54 @@ namespace UntitledBauhausGame
                 TargetNodeControll1 = TargetNode;
 
                 Node1 = TargetNode;
-                this.transform.position = new Vector3(Node1.x, 1, Node1.z - 0.5f);
-                Node2 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
-                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
-                Node4 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+
+                this.transform.position = new Vector3(Node1.x, 1, Node1.z + 0.5f);
+                Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
+                Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node1Used = true;
+
             }
             if (OwnNode == 2)
             {
                 TargetNodeControll2 = TargetNode;
 
                 Node2 = TargetNode;
-                this.transform.position = new Vector3(Node2.x - 0.5f, 1, Node2.z);
-                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
-                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
-                Node4 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+
+                this.transform.position = new Vector3(Node2.x + 0.5f, 1, Node2.z);
+                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
+                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
+                Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node2Used = true;
+
             }
             if (OwnNode == 3)
             {
                 TargetNodeControll3 = TargetNode;
 
                 Node3 = TargetNode;
-                this.transform.position = new Vector3(Node3.x, 1, Node3.z + 0.5f);
-                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
-                Node2 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
-                Node4 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+
+                this.transform.position = new Vector3(Node3.x, 1, Node3.z - 0.5f);
+                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
+                Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+                Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node3Used = true;
+
             }
             if (OwnNode == 4)
             {
                 TargetNodeControll4 = TargetNode;
 
                 Node4 = TargetNode;
-                this.transform.position = new Vector3(Node4.x + 0.5f, 1, Node4.z);
-                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
-                Node2 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
-                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
+
+                this.transform.position = new Vector3(Node4.x - 0.5f, 1, Node4.z);
+                Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
+                Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
+                Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
+                Node4Used = true;
             }
+            ModuleSet = true;
+
         }
     }
 }

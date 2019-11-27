@@ -6,55 +6,37 @@ namespace UntitledBauhausGame
 {
     public class Kamera : MonoBehaviour
     {
-        public GameObject Modul1;
-        public GameObject bauhaushaupt;
+		public float moveSpeed;
+		public float rotateSpeed;
+		public float height;
 
-        public GameObject NextModule;
-
-        public Module Hallol;
-        public bauhausmain Hallil;
-
-        public Module TheSecondOne;
-
-        private bool Clicked;
-        private bool OneIsSpawned;
-
-        public Vector3 NodeTest;
+        public GameObject BuildManager;
+        public buildingsystemmanager BuildingSystemManager;
+        private bool LongKeyDown;
 
         void Start()
         {
-            Modul1 = GameObject.Find("Module");
-            bauhaushaupt = GameObject.Find("bauhausmain");
+			moveSpeed = 5;
+			rotateSpeed = 45;
+			height = 10;
 
-            Hallol = Modul1.GetComponent<Module>();
-            Hallil = bauhaushaupt.GetComponent<bauhausmain>();
-
-            Clicked = false;
-            OneIsSpawned = false;
+            BuildManager = GameObject.Find("buildingsystemmanager"); //Eigennotiz: nach knapp 6 Stunden, bei GameObject.Find den Assetnamen und nicht den Klassennamen nutzen!
+            BuildingSystemManager = BuildManager.GetComponent<buildingsystemmanager>();
         }
-        void Update()
+
+		void Update()
         {
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey("left shift"))
             {
-                //this.gameObject.transform.Translate(Vector3.forward * 10f * Time.deltaTime);
-                this.gameObject.transform.SetPositionAndRotation(new Vector3(this.gameObject.transform.position.x + 0.1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z + 0.1f), this.gameObject.transform.rotation);
+                moveSpeed = 10;
             }
+            else moveSpeed = 5;
 
-            if (Input.GetKey(KeyCode.W))
-            {
-                this.gameObject.transform.SetPositionAndRotation(new Vector3(this.gameObject.transform.position.x - 0.1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z - 0.1f), this.gameObject.transform.rotation);
-            }
+            transform.Translate(new Vector3(moveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
 
-            if (Input.GetKey(KeyCode.D))
-            {
-                this.gameObject.transform.SetPositionAndRotation(new Vector3(this.gameObject.transform.position.x - 0.1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z + 0.1f), this.gameObject.transform.rotation);
-            }
+			transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                this.gameObject.transform.SetPositionAndRotation(new Vector3(this.gameObject.transform.position.x + 0.1f, this.gameObject.transform.position.y, this.gameObject.transform.position.z - 0.1f), this.gameObject.transform.rotation);
-            }
-
+			transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
             if (Input.GetKey(KeyCode.Escape))
             {
                 Application.Quit();
@@ -62,21 +44,16 @@ namespace UntitledBauhausGame
 
             if (Input.GetKey(KeyCode.Space))
             {
-                if (Clicked == false)
+                if (LongKeyDown == false)
                 {
-                    Hallol.PlaceModule(Hallil.Node3, 1);
-                    Clicked = true;
-                    Hallol.ModuleSet = true;
+                    BuildingSystemManager.PlaceWorkshop(1);
+                    LongKeyDown = true;
                 }
-                if (Clicked == true && OneIsSpawned == false)
-                {
-                    NextModule = Instantiate(GameObject.Find("Module"));
-                    TheSecondOne = NextModule.GetComponent<Module>();
-                    NodeTest = Hallol.Node4;
-                    TheSecondOne.PlaceModule(Hallol.Node2, 4);
-                    TheSecondOne.ModuleSet = true;
-                    OneIsSpawned = true;
-                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                LongKeyDown = false;
             }
         }
     }

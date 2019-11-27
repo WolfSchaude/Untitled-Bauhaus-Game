@@ -2,26 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Money : MonoBehaviour
 {
-	private int money = 20000;
-	public Text moneyText;
+    /*
+       (Bug) FUNKTIONIERT ZWAR, "Gehalt" WIRD ABER DIREKT AM ANFANG EIN MAL AUSGEFÜHRT
+    */    
 
-		
-    void Update()
+    private float money = 20000;
+    public Text moneyText;
+
+    private int lastMonth;
+
+    void Start()
     {
-		moneyText.text = money + " RM";
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			money -= 1000;
-		}
+        
     }
 
-	public void Spende(int spende)
-	{
-		if (spende > 0)
-		{
-			money += spende;
-		}
-	}
+    void Update()
+    {
+        moneyText.text = money + " RM";
+
+        //checkMonth();
+    }
+
+    public void addGehalt() //Monatliches Gehalt abhängig von der Studentenanzahl und dem Politikmeter
+    {
+        money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
+    }
+
+    public void Spende(int spende)
+    {
+        if (spende > 0)
+        {
+            money += spende;
+        }
+    }
+
 }

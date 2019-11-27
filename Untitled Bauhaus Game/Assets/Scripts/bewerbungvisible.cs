@@ -6,21 +6,26 @@ using UnityEngine;
 public class bewerbungvisible : MonoBehaviour
 {
 
+
     public GameObject bewerbungGameObject;
     public bool showBewerbung;
     public GameObject zuweisenGameObject;
     public bool showZuweisen;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         bewerbungGameObject.SetActive(false);
         zuweisenGameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown("k") && !showZuweisen)
         {
             showBewerbung = !showBewerbung;
@@ -37,6 +42,7 @@ public class bewerbungvisible : MonoBehaviour
                 zuweisenGameObject.SetActive(true);
             else if (!showZuweisen)
                 zuweisenGameObject.SetActive(false);
+
         }
     }
 }
