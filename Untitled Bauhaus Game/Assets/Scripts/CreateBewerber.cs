@@ -27,25 +27,16 @@ public class CreateBewerber : MonoBehaviour
             GameObject bewerbung3 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
             bewerbung3.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[2].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[2].TeacherBeruf;
             bewerbung3.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[2].Picture;
-
-            GameObject eingestellter1 = Instantiate(bewerbung, parent.transform);
-            GameObject eingestellter2 = Instantiate(bewerbung, parent.transform);
-            GameObject eingestellter3 = Instantiate(bewerbung, parent.transform);
-
-            //CreateEingestellter();
+            
+            CreateEingestellter();
         }
-
-        //GameObject bewerbung4 = Instantiate(bewerbung, GameObject.Find("Content").transform);
-        //GameObject bewerbung5 = Instantiate(bewerbung, GameObject.Find("Content").transform);
-        //GameObject bewerbung6 = Instantiate(bewerbung, GameObject.Find("Content").transform);
-
     }
 
     void CreateEingestellter()
     {
-        GameObject eingestellter1 = Instantiate(bewerbung, GameObject.Find("ContentZuweisen").transform);
-        GameObject eingestellter2 = Instantiate(bewerbung, GameObject.Find("ContentZuweisen").transform);
-        GameObject eingestellter3 = Instantiate(bewerbung, GameObject.Find("ContentZuweisen").transform);
+        GameObject eingestellter1 = Instantiate(bewerbung, parent.transform);
+        GameObject eingestellter2 = Instantiate(bewerbung, parent.transform);
+        GameObject eingestellter3 = Instantiate(bewerbung, parent.transform);
     }
 
     // Update is called once per frame
