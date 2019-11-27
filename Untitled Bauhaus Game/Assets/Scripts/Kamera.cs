@@ -12,6 +12,7 @@ namespace UntitledBauhausGame
 
         public GameObject BuildManager;
         public buildingsystemmanager BuildingSystemManager;
+        private bool LongKeyDown;
 
         void Start()
         {
@@ -38,8 +39,17 @@ namespace UntitledBauhausGame
 
             if (Input.GetKey(KeyCode.Space))
             {
-                BuildingSystemManager.PlaceWorkshop(1);
+                if (LongKeyDown == false)
+                {
+                    BuildingSystemManager.PlaceWorkshop(1);
+                    LongKeyDown = true;
+                }
             }
-		}
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                LongKeyDown = false;
+            }
+        }
     }
 }
