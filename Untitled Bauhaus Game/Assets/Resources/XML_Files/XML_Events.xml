@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<EventCollection>
+  <Events>
+
+    <Event ID="1">
+      <EventText></EventText>
+      <EventOption1></EventOption1>
+      <Option1_Politik></Option1_Politik>
+      <Option2_Ansehen></Option2_Ansehen>
+      <EventOption2></EventOption2>
+      <Option2_Politik></Option2_Politik>
+      <Option2_Ansehen></Option2_Ansehen>
+    </Event>
+
+    <Event ID="">
+      <EventText></EventText>
+      <EventOption1></EventOption1>
+      <Option1_Politik></Option1_Politik>
+      <Option2_Ansehen></Option2_Ansehen>
+      <EventOption2></EventOption2>
+      <Option2_Politik></Option2_Politik>
+      <Option2_Ansehen></Option2_Ansehen>
+    </Event>
+  </Events>
+</EventCollection>
