@@ -40,9 +40,9 @@ namespace UntitledBauhausGame
                 Scripts[i] = Werkstätte[i].GetComponent<Module>();
             }
 
-            ArrayPointer = 0;
-            bauhaushaupt = GameObject.Find("bauhausmain");
-            Center = bauhaushaupt.GetComponent<bauhausmain>();
+            //ArrayPointer = 0;
+            //bauhaushaupt = GameObject.Find("bauhausmain");
+            //Center = bauhaushaupt.GetComponent<bauhausmain>();
 
             ConNotCenter = false;
             ConCenter = false;
