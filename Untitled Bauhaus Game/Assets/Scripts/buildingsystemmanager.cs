@@ -9,6 +9,7 @@ namespace UntitledBauhausGame
 
         public GameObject[] Werkstätte;
         public GameObject bauhaushaupt;
+        public GameObject ModulParent;
         public GameObject[] Baum;
 
         public Module[] Scripts;
@@ -36,7 +37,7 @@ namespace UntitledBauhausGame
 
             for (int i = 0; i <= 255; i++)
             {
-                Werkstätte[i] = Instantiate(GameObject.Find("Module"));
+                Werkstätte[i] = Instantiate(GameObject.Find("Module"),ModulParent.transform);
                 Scripts[i] = Werkstätte[i].GetComponent<Module>();
             }
 
