@@ -10,9 +10,9 @@ public class CreateBewerber : MonoBehaviour
     public GameObject bewerbung;
     public GameObject parent;
 
-    public bool eingestellter1active = false;
-    public bool eingestellter2active = false;
-    public bool eingestellter3active = false;
+    public static bool eingestellter1active = false;
+    public static bool eingestellter2active = false;
+    public static bool eingestellter3active = false;
 
     // Start is called before the first frame update
     void Start()

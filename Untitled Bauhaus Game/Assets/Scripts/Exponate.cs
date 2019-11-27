@@ -25,25 +25,14 @@ public class Exponate : MonoBehaviour
 
         createExponat();
 
-        //Debug.Log(dayCounter);
+		//Debug.Log(dayCounter);
 
-        //if (Random.Range(0, 2000) == 5 && !exponatInProgress) //Random Herstellung
-        //{
-        //    expoText.text = "Wird hergestellt...";
-        //    exponatInProgress = true;
-        //}
-
-        if ((GameObject.Find("eingestellter1").activeSelf == true || GameObject.Find("eingestellter2").activeSelf) == true || GameObject.Find("eingestellter3").activeSelf == true)
-		{
-            GameObject.Find("Exponate").SetActive(true);
-            GameObject.Find("ExponatSlider").SetActive(true);
-        }
-        else
-		{
-			GameObject.Find("Exponate").SetActive(false);
-			GameObject.Find("ExponatSlider").SetActive(false);
-		}
-    }
+		//if (Random.Range(0, 2000) == 5 && !exponatInProgress) //Random Herstellung
+		//{
+		//    expoText.text = "Wird hergestellt...";
+		//    exponatInProgress = true;
+		//}
+	}
 
     public void checkForButtonPress() //Herstellung mit Button
     {
