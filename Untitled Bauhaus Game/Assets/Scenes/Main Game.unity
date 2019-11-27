@@ -947,7 +947,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lehne ihn ab!
+  m_Text: Verweigere jegliche Aussage!
 --- !u!222 &168331621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2877,7 +2877,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Akzeptiere das Angebot!
+  m_Text: "Kooperiere mit den Beh\xF6rden!"
 --- !u!222 &667644257
 CanvasRenderer:
   m_ObjectHideFlags: 0
