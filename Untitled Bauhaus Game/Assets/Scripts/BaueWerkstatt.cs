@@ -10,7 +10,6 @@ public class BaueWerkstatt : MonoBehaviour
     public GameObject werk2;
     public GameObject werk3;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +20,7 @@ public class BaueWerkstatt : MonoBehaviour
     {
         
     }
+
 
     public void NeueWerkstatt()
     {
