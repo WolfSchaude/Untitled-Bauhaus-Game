@@ -15,6 +15,7 @@ namespace UntitledBauhausGame
         public bool Node3Used;
         public bool Node4Used;
         public bool ModuleSet;
+        public int WerkstattTyp;
 
         public Vector3 TargetNodeControll1;
         public Vector3 TargetNodeControll2;
@@ -49,6 +50,7 @@ namespace UntitledBauhausGame
                 Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
                 Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
                 Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node1Used = true;
             }
             if (OwnNode == 2)
             {
@@ -59,6 +61,7 @@ namespace UntitledBauhausGame
                 Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
                 Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
                 Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node2Used = true;
             }
             if (OwnNode == 3)
             {
@@ -69,6 +72,7 @@ namespace UntitledBauhausGame
                 Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
                 Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
                 Node4 = new Vector3(this.transform.position.x + 0.5f, 1, this.transform.position.z);
+                Node3Used = true;
             }
             if (OwnNode == 4)
             {
@@ -79,7 +83,9 @@ namespace UntitledBauhausGame
                 Node1 = new Vector3(this.transform.position.x, 1, this.transform.position.z - 0.5f);
                 Node2 = new Vector3(this.transform.position.x - 0.5f, 1, this.transform.position.z);
                 Node3 = new Vector3(this.transform.position.x, 1, this.transform.position.z + 0.5f);
+                Node4Used = true;
             }
+            ModuleSet = true;
         }
     }
 }
