@@ -23,6 +23,9 @@ namespace UntitledBauhausGame
         public bool ConBreakOut;
         public Vector3 ConAttachedNode;
 
+        public bool[] FreeTiles; //Übergangssystem
+        public Vector3[] TilePositions; //Übergangssystem
+
         void Start()
         {
             Werkstätte = new GameObject[256];
@@ -44,6 +47,17 @@ namespace UntitledBauhausGame
             ConNotCenter = false;
             ConCenter = false;
             ConBreakOut = false;
+
+            //Übergangssystem; Notiz: bauhausmain node2 module pos: x: -1, y: 1, z: -0.25
+            FreeTiles = new bool[256];
+            
+            for (int i = 0; i <= 255; i++)
+            {
+                FreeTiles[i] = false;
+            }
+
+            TilePositions = new Vector3[256];
+            TilePositions[0] = new Vector3();
         }
 
         void Update()
