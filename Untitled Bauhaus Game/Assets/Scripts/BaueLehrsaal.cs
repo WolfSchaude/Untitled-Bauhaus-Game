@@ -22,7 +22,7 @@ public class BaueLehrsaal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PreisL.text = "Lehrsaal: " + AktPreisL + " DM";
+        PreisL.text = "Lehrsaal: " + AktPreisL + " RM";
     }
     public void NeuerLehrsaal()
     {

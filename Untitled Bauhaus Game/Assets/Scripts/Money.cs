@@ -41,9 +41,6 @@ public class Money : MonoBehaviour
 
     public void Bezahlen(int preis)
     {
-        if (preis < 0)
-        {
-            money -= preis;
-        }
+		money -= preis;
     }
 }

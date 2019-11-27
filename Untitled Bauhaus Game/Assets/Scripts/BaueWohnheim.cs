@@ -23,7 +23,7 @@ public class BaueWohnheim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PreisW.text = "Wohnheim: " + AktPreisW + " DM";
+        PreisW.text = "Wohnheim: " + AktPreisW + " RM";
     }
     public void NeuesWohnheim()
     {
@@ -45,7 +45,7 @@ public class BaueWohnheim : MonoBehaviour
                 heim3.SetActive(true);
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(4000);
-                AktPreisW = 1000000000;
+                AktPreisW = 10000000;
                 break;
             case 3:
                 break;
