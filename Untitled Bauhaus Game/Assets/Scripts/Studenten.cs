@@ -30,6 +30,5 @@ public class Studenten : MonoBehaviour
         monthlyStudenten = 5f * sliderPercentage;
 
         StudentenAnzahl += monthlyStudenten;
-
     }
 }

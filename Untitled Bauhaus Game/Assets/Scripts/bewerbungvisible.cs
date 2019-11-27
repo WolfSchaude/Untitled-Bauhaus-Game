@@ -6,43 +6,24 @@ using UnityEngine;
 public class bewerbungvisible : MonoBehaviour
 {
 
-
-    public GameObject bewerbungGameObject;
     public bool showBewerbung;
-    public GameObject zuweisenGameObject;
-    public bool showZuweisen;
-
 
     // Start is called before the first frame update
     void Start()
     {
-
-        bewerbungGameObject.SetActive(false);
-        zuweisenGameObject.SetActive(false);
-
+        this.GetComponent<Canvas>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown("k") && !showZuweisen)
+        if (Input.GetKeyDown("k") && !GameObject.Find("PersonalZuweisen - Canvas").GetComponent<Canvas>().enabled)
         {
             showBewerbung = !showBewerbung;
             if (showBewerbung)
-                bewerbungGameObject.SetActive(true);
+                this.GetComponent<Canvas>().enabled = true;
             else if (!showBewerbung)
-                bewerbungGameObject.SetActive(false);
-        }
-
-        if (Input.GetKeyDown("l") && !showBewerbung)
-        {
-            showZuweisen = !showZuweisen;
-            if (showZuweisen)
-                zuweisenGameObject.SetActive(true);
-            else if (!showZuweisen)
-                zuweisenGameObject.SetActive(false);
-
+                this.GetComponent<Canvas>().enabled = false;
         }
     }
 }

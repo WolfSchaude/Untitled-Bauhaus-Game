@@ -8,14 +8,12 @@ using System.Text;
 public class TimeKeeper : MonoBehaviour
 {
 
-
 	public int StartYear;
 	public int StartMonth;
 	public int StartDay;
 	public int StartHour;
 	public int StartMinute;
 	public int StartSecond;
-
 
     public int currentMonth;
     public int currentDay;
@@ -26,10 +24,8 @@ public class TimeKeeper : MonoBehaviour
 	private const float MinToSec = 60;
 	private const float HourToSec = 60 * 60;
 	private const float DayToSec = 60 * 60 * 24;
-
 	private const float MonthToSec = 60 * 60 * 24 * 31;
 	private const float YearToSec = 60 * 60 * 24 * 31 * 13;
-
 
 	void Start()
 	{
@@ -73,12 +69,10 @@ public class TimeKeeper : MonoBehaviour
 		int currentYear = (int)(gameTime / YearToSec);
 		currentTime -= currentYear * YearToSec;
 
-
 		currentMonth = (int)(currentTime / MonthToSec);
 		currentTime -= currentMonth * MonthToSec;
 
 		currentDay = (int)(currentTime / DayToSec);
-
 		currentTime -= currentMonth * DayToSec;
 
 		int currentHour = (int)(currentTime / HourToSec);
@@ -98,7 +92,7 @@ public class TimeKeeper : MonoBehaviour
         {
             currentMonth = 1;
         }
-
+        
 		string[] times = new string[3];
 		times[0] = currentYear.ToString();
 		times[1] = currentMonth.ToString();
@@ -116,5 +110,5 @@ public class TimeKeeper : MonoBehaviour
 		gameTime += Time.deltaTime * 10000;
 	}
 
-
+    
 }
