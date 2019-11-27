@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TeacherList : MonoBehaviour
 {
-	List<Teacher> Teachers;
+
+	public static List<Teacher> Teachers;
+
 
 	public void AddTeacher(Teacher teacher)
 	{
@@ -16,9 +18,16 @@ public class TeacherList : MonoBehaviour
 		Teachers.Remove(Teachers.Find(i => i.Equals(teacher)));
 	}
 
+
+	public Teacher GetTeacher(int index)
+	{
+		return Teachers[index];
+	}
+
     void Start()
     {
-        
+		Teachers = new List<Teacher>();
+
     }
 
     // Update is called once per frame

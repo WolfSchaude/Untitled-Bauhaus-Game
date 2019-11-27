@@ -10,6 +10,7 @@ namespace UntitledBauhausGame
 
         public Vector3 Node1;
         public Vector3 Node2;
+
         public Vector3 Node4;
         public bool Node1Used;
         public bool Node2Used;
@@ -32,6 +33,7 @@ namespace UntitledBauhausGame
             Node4.x = this.gameObject.transform.position.x + 0.5f;
             Node4.y = this.gameObject.transform.position.y - 0.75f;
             Node4.z = this.gameObject.transform.position.z - 0.25f;
+
         }
     }
 }
