@@ -27789,19 +27789,6 @@ Transform:
   m_Father: {fileID: 121323585086049276}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &795373614179035499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5893768027852564252, guid: 3ad83f4e18fb49641a6aafd18dd2e543,
-    type: 3}
-  m_PrefabInstance: {fileID: 6540179789232787063}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3841919876690955877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9625885ad1a7a41821ed8693f0164c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1828998659477842301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28071,7 +28058,6 @@ GameObject:
   - component: {fileID: 3841919876690955878}
   - component: {fileID: 3841919876690955879}
   - component: {fileID: 3841919876690955876}
-  - component: {fileID: 795373614179035499}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -28106,7 +28092,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 639a253845fb685438cf5721cccf4233, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28152,6 +28138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039592842328637458, guid: 3ad83f4e18fb49641a6aafd18dd2e543,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8039592842328637454, guid: 3ad83f4e18fb49641a6aafd18dd2e543,
         type: 3}
@@ -28223,7 +28214,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 90.83404
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3ad83f4e18fb49641a6aafd18dd2e543, type: 3}
 --- !u!1001 &6764204271196070853
 PrefabInstance:
