@@ -30,7 +30,7 @@ namespace UntitledBauhausGame
 
 		void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 moveSpeed = 10;
             }
