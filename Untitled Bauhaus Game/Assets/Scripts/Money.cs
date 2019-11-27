@@ -38,4 +38,5 @@ public class Money : MonoBehaviour
             money += spende;
         }
     }
+
 }

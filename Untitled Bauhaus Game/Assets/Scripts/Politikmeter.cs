@@ -45,6 +45,7 @@ public class Politikmeter : MonoBehaviour
 		}
 		if (Politiklevel >= PolitikOutput.maxValue)
 
+
 		{
 			Politiklevel = 200;
 		}
