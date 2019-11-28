@@ -29,22 +29,28 @@ public class BaueLehrsaal : MonoBehaviour
         switch (AnzahlLehrsaal)
         {
             case 0:
-                lehr1.SetActive(true);
-                AnzahlLehrsaal++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(1000);
-                AktPreisL = AktPreisL * 2;
+				if (GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL))
+				{
+					lehr1.SetActive(true);
+					AnzahlLehrsaal++;
+					AktPreisL = AktPreisL * 2;
+				}
                 break;
             case 1:
-                lehr2.SetActive(true);
-                AnzahlLehrsaal++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(2000);
-                AktPreisL = AktPreisL * 2;
+				if (GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL))
+				{
+					lehr2.SetActive(true);
+					AnzahlLehrsaal++;
+					AktPreisL = AktPreisL * 2;
+				}
                 break;
             case 2:
-                lehr3.SetActive(true);
-                AnzahlLehrsaal++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(4000);
-                AktPreisL = 1000000000;
+				if (GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL))
+				{
+					lehr3.SetActive(true);
+					AnzahlLehrsaal++;
+					AktPreisL = 1000000000;
+				}
                 break;
             case 3:
                 break;
