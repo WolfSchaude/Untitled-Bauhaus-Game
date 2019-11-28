@@ -28,6 +28,7 @@ public class CreateBewerber : MonoBehaviour
                 bewerbungen[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[i].TeacherBeruf;
                 bewerbungen[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[i].Picture;
                 bewerbungen[i].GetComponent<Button>().onClick.AddListener(() => { TeacherLoader.HiredTeachers.Add(TeacherLoader.tb.GetTeacher(i)); });
+				bewerbungen[i].GetComponent<Button>().onClick.AddListener(() => { bewerbungen[i].SetActive(false); });
             }
         }
 
@@ -63,7 +64,7 @@ public class CreateBewerber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		for (int i = 0; i < TeacherLoader.HiredTeachers.Count - 1; i++)
+		for (int i = 0; i < TeacherLoader.HiredTeachers.Count; i++)
 		{
 			if (!TeacherLoader.HiredTeachers[i].IsAdded)
 			{

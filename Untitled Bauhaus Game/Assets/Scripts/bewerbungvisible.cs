@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bewerbungvisible : MonoBehaviour
 {
 
     public GameObject bewerbungGameObject;
-    public bool showBewerbung;
     public GameObject zuweisenGameObject;
-    public bool showZuweisen;
 
     // Start is called before the first frame update
     void Start()
@@ -21,22 +20,36 @@ public class bewerbungvisible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k") && !showZuweisen)
-        {
-            showBewerbung = !showBewerbung;
-            if (showBewerbung)
-                bewerbungGameObject.SetActive(true);
-            else if (!showBewerbung)
-                bewerbungGameObject.SetActive(false);
-        }
 
-        if (Input.GetKeyDown("l") && !showBewerbung)
-        {
-            showZuweisen = !showZuweisen;
-            if (showZuweisen)
-                zuweisenGameObject.SetActive(true);
-            else if (!showZuweisen)
-                zuweisenGameObject.SetActive(false);
-        }
     }
+
+	public void ToggleBewerbung()
+	{
+		if (!zuweisenGameObject.activeSelf)
+		{
+			if (bewerbungGameObject.activeSelf)
+			{
+				bewerbungGameObject.SetActive(false);
+			}
+			else
+			{
+				bewerbungGameObject.SetActive(true);
+			}
+		}
+	}
+
+	public void ToggleZuweisen()
+	{
+		if (!bewerbungGameObject.activeSelf)
+		{
+			if (zuweisenGameObject.activeSelf)
+			{
+				zuweisenGameObject.SetActive(false);
+			}
+			else
+			{
+				zuweisenGameObject.SetActive(true);
+			}
+		}
+	}
 }
