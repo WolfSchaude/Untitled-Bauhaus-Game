@@ -1,26 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 
 <EventCollection>
   <Events>
 
     <Event ID="1">
-      <EventText></EventText>
-      <EventOption1></EventOption1>
-      <Option1_Politik></Option1_Politik>
-      <Option2_Ansehen></Option2_Ansehen>
-      <EventOption2></EventOption2>
-      <Option2_Politik></Option2_Politik>
-      <Option2_Ansehen></Option2_Ansehen>
+      <Datum>
+        <Tag>23</Tag>
+        <Monat>2</Monat>
+        <Jahr>1933</Jahr>
+      </Datum>
+      <EventText>Joa Mei</EventText>
+      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <Option1_Politik>23</Option1_Politik>
+      <Option2_Ansehen>3</Option2_Ansehen>
+      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <Option2_Politik>-23</Option2_Politik>
+      <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
 
-    <Event ID="">
-      <EventText></EventText>
-      <EventOption1></EventOption1>
-      <Option1_Politik></Option1_Politik>
-      <Option2_Ansehen></Option2_Ansehen>
-      <EventOption2></EventOption2>
-      <Option2_Politik></Option2_Politik>
-      <Option2_Ansehen></Option2_Ansehen>
-    </Event>
+
   </Events>
 </EventCollection>

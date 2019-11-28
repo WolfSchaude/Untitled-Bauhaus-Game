@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EventScript : MonoBehaviour
+{
+	public GameObject prefab;
+	public GameObject parent;
+
+	public List<GameObject> AllEvents = new List<GameObject>();
+
+	private const string path = "XML_Files/XML_Events";
+
+    // Start is called before the first frame update
+    void Start()
+    {
+		for (int i = 0; i < EventLoader.ec.events.Count; i++)
+		{
+			AllEvents.Add(Instantiate(prefab, parent.transform));
+			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.events[i].EventText;
+
+			AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text 
+				= EventLoader.ec.events[i].EventOption1 + Environment.NewLine
+				+ "Ansehensveränderung" + EventLoader.ec.events[i].Option1_Ansehen + Environment.NewLine
+				+ "Politische Tragweite" + EventLoader.ec.events[i].Option1_Politik;
+
+			AllEvents[i].GetComponentsInChildren<Button>()[0].onClick.AddListener(() => {
+				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += EventLoader.ec.events[i].Option1_Ansehen;
+				GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += EventLoader.ec.events[i].Option1_Politik;
+			});
+
+			AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+				= EventLoader.ec.events[i].EventOption1 + Environment.NewLine
+				+ "Ansehensveränderung" + EventLoader.ec.events[i].Option2_Ansehen + Environment.NewLine
+				+ "Politische Tragweite" + EventLoader.ec.events[i].Option2_Politik;
+
+			AllEvents[i].GetComponentsInChildren<Button>()[1].onClick.AddListener(() => {
+				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += EventLoader.ec.events[i].Option2_Ansehen;
+				GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += EventLoader.ec.events[i].Option2_Politik;
+			});
+		}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+	public void LoadFromXml(int EventID)
+	{
+
+	}
+}
