@@ -506,7 +506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Zuweisen
 --- !u!222 &83583473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2119,9 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bewerbungGameObject: {fileID: 4474210237657922295}
-  showBewerbung: 0
   zuweisenGameObject: {fileID: 2957053225309383928}
-  showZuweisen: 0
 --- !u!114 &381768621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2497,7 +2495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: netter Mensch einstellen
+  m_Text: Einstellen
 --- !u!222 &441103467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6558,9 +6556,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2957053225309383928}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2106401898}
+        m_MethodName: ToggleZuweisen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7862,9 +7860,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4474210237657922295}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2106401898}
+        m_MethodName: ToggleBewerbung
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7918,6 +7916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106401896}
   - component: {fileID: 2106401897}
+  - component: {fileID: 2106401898}
   m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
@@ -7969,6 +7968,20 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!114 &2106401898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106401895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f026bb6deeee14483e59ef7963e477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bewerbungGameObject: {fileID: 4474210237657922295}
+  zuweisenGameObject: {fileID: 2957053225309383928}
 --- !u!1 &2120600190
 GameObject:
   m_ObjectHideFlags: 0

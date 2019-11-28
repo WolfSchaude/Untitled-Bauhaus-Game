@@ -7,21 +7,21 @@ using UnityEngine.UI;
 public class bewerbungvisible : MonoBehaviour
 {
 
-    public GameObject bewerbungGameObject;
-    public GameObject zuweisenGameObject;
+	public GameObject bewerbungGameObject;
+	public GameObject zuweisenGameObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        bewerbungGameObject.SetActive(false);
-        zuweisenGameObject.SetActive(false);
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		bewerbungGameObject.SetActive(false);
+		zuweisenGameObject.SetActive(false);
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
 
-    }
+	}
 
 	public void ToggleBewerbung()
 	{
