@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BaueWohnheim : MonoBehaviour
 {
     int AnzahlWohnheime = 0;
-    int AktPreisW = 1000;
+    public int AktPreisW = 1000;
 
     public Text PreisW;
 
