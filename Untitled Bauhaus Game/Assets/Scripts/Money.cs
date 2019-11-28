@@ -9,7 +9,7 @@ public class Money : MonoBehaviour
        (Bug) FUNKTIONIERT ZWAR, "Gehalt" WIRD ABER DIREKT AM ANFANG EIN MAL AUSGEFÜHRT
     */    
 
-    private float money = 20000;
+    public float money = 20000;
     public Text moneyText;
 
     private int lastMonth;
@@ -39,8 +39,17 @@ public class Money : MonoBehaviour
         }
     }
 
-    public void Bezahlen(int preis)
+    public bool Bezahlen(int preis)
     {
-		money -= preis;
+		if (money - preis <= 0)
+		{
+			return false;
+		}
+		else
+		{
+			money -= preis;
+			return true;
+		}
+		
     }
 }
