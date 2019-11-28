@@ -27,7 +27,7 @@
       <ImagePath>Sprites/Person3</ImagePath>
 	  </Teacher>
 	
-	  <Teacher ID ="">
+	  <Teacher ID ="4">
 		  <Name></Name>
 		  <Beruf></Beruf>
       <Gehalt>0</Gehalt>
