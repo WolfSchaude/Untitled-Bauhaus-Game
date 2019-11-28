@@ -9,7 +9,7 @@ public class Money : MonoBehaviour
        (Bug) FUNKTIONIERT ZWAR, "Gehalt" WIRD ABER DIREKT AM ANFANG EIN MAL AUSGEFÜHRT
     */    
 
-    private float money = 20000;
+    public float money = 20000;
     public Text moneyText;
 
     private int lastMonth;
