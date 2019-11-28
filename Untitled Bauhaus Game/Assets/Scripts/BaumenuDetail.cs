@@ -10,6 +10,8 @@ public class BaumenuDetail : MonoBehaviour
 	public GameObject dropdownContainerB; //Bau Dropdown
     public GameObject dropdownContainerD; //Dozenten Dropdown
 
+    public GameObject overviewWindow;
+
     public GameObject werkButton;
 	public GameObject lehrButton;
 	public GameObject wohnButton;
@@ -43,6 +45,8 @@ public class BaumenuDetail : MonoBehaviour
 		{
 			dropdownContainerB.SetActive(false);
             dropdownContainerD.SetActive(false);
+
+            overviewWindow.SetActive(false);
         }
 
         checkWindow(); //Checks if detail window is open
@@ -62,7 +66,7 @@ public class BaumenuDetail : MonoBehaviour
 		}
 	}
 
-    public void checkWindow()
+    public void checkWindow()   //Checks if detail window is open
     {
         if (werkstattDetailOpen)
         {
@@ -92,8 +96,8 @@ public class BaumenuDetail : MonoBehaviour
 		wohnheimDetailOpen = !wohnheimDetailOpen;
 	}
 
-	public void updateContent()
-	{
+	public void updateContent() //Updates detail windows content depending on which button was pressed
+    {
 		switch (buttonCount)
 		{
 			case 1:
@@ -135,7 +139,7 @@ public class BaumenuDetail : MonoBehaviour
 		}
 	}
 
-    public void checkCloseButton()
+    public void checkCloseButton()  //Checks if the Close Button was pressed
     {
         werkstattDetailOpen = false;
         lehrsaalDetailOpen = false;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BaueWerkstatt : MonoBehaviour
 {
-    int AnzahlWerkstaette = 0;
+    public int AnzahlWerkstaette = 0;
     public int AktPreis = 1000;
 
     public Text Preis;
