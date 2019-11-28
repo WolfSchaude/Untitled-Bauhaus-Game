@@ -7,9 +7,10 @@ public class BaumenuDetail : MonoBehaviour
 {
 	public GameObject detailWindow;
 
-	public GameObject dropdownContainer;
+	public GameObject dropdownContainerB; //Bau Dropdown
+    public GameObject dropdownContainerD; //Dozenten Dropdown
 
-	public GameObject werkButton;
+    public GameObject werkButton;
 	public GameObject lehrButton;
 	public GameObject wohnButton;
 
@@ -33,35 +34,24 @@ public class BaumenuDetail : MonoBehaviour
 
 	void Update()
 	{
-		if (!detailWindow.activeSelf)
+        if (!detailWindow.activeSelf) //Disables all dropdown menus when detail window is open
 		{
-			dropdownContainer.SetActive(true);
-		}
+			dropdownContainerB.SetActive(true);
+            dropdownContainerD.SetActive(true);
+        }
 		else
 		{
-			dropdownContainer.SetActive(false);
-		}
+			dropdownContainerB.SetActive(false);
+            dropdownContainerD.SetActive(false);
+        }
 
-		if (werkstattDetailOpen)
-		{
-			buttonCount = 1;
-		}
+        checkWindow(); //Checks if detail window is open
+		updateContent(); //Updates detail windows content depending on which button was pressed
+        checkCloseButton(); //Checks if the Close Button was pressed
+    }
 
-		if (lehrsaalDetailOpen)
-		{
-			buttonCount = 2;
-		}
-
-		if (wohnheimDetailOpen)
-		{
-			buttonCount = 3;
-		}
-
-		updateContent();
-	}
-
-	public void showWindow() //show background
-	{
+	public void showWindow() //Sets detail window active
+    {
 		if (!detailWindow.activeSelf)
 		{
 			detailWindow.SetActive(true);
@@ -71,6 +61,24 @@ public class BaumenuDetail : MonoBehaviour
 			detailWindow.SetActive(false);
 		}
 	}
+
+    public void checkWindow()
+    {
+        if (werkstattDetailOpen)
+        {
+            buttonCount = 1;
+        }
+
+        if (lehrsaalDetailOpen)
+        {
+            buttonCount = 2;
+        }
+
+        if (wohnheimDetailOpen)
+        {
+            buttonCount = 3;
+        }
+    }
 	public void toggleWerkstatt()
 	{
 		werkstattDetailOpen = !werkstattDetailOpen;
@@ -126,4 +134,11 @@ public class BaumenuDetail : MonoBehaviour
 				break;
 		}
 	}
+
+    public void checkCloseButton()
+    {
+        werkstattDetailOpen = false;
+        lehrsaalDetailOpen = false;
+        wohnheimDetailOpen = false;
+    }
 }
