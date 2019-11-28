@@ -7,16 +7,13 @@ using System.Xml.Serialization;
 
 public class Event
 {
-	[XmlArray("Datum")]
-	[XmlArrayItem("Tag")]
+	[XmlElement("Tag")]
 	public int Tag;
 
-	[XmlArray("Datum")]
-	[XmlArrayItem("Monat")]
+	[XmlElement("Monat")]
 	public int Monat;
 
-	[XmlArray("Datum")]
-	[XmlArrayItem("Jahr")]
+	[XmlElement("Jahr")]
 	public int Jahr;
 
 	[XmlElement("EventText")]

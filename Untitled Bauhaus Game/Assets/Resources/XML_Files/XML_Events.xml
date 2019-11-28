@@ -4,11 +4,9 @@
   <Events>
 
     <Event ID="1">
-      <Datum>
-        <Tag>23</Tag>
-        <Monat>2</Monat>
-        <Jahr>1933</Jahr>
-      </Datum>
+      <Tag>23</Tag>
+      <Monat>2</Monat>
+      <Jahr>1933</Jahr>
       <EventText>Joa Mei</EventText>
       <EventOption1>Ich will ne Kartoffel</EventOption1>
       <Option1_Politik>23</Option1_Politik>

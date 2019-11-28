@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
@@ -25,17 +24,6 @@ public class TeacherBuffer
 
 		return teachers;
 	}
-
-    void Start()
-    {
-		//Buffer = new List<Teacher>
-		//{
-		//	new Teacher("Lyonel Feininger", Teacher.Beruf.Kunstmaler, 2000, 100, Resources.Load("Personen/Person1") as Sprite, true),
-		//	new Teacher("Josef Albers",		Teacher.Beruf.Kunstmaler, 2000, 100, Resources.Load("Personen/Person2") as Sprite, true),
-		//	new Teacher("Johannes Itten",	Teacher.Beruf.Kunstmaler, 2000, 100, Resources.Load("Personen/Person3") as Sprite, true)
-		//};
-	}
-
 	public Teacher GetTeacher(int index)
 	{
 		return Buffer[index];

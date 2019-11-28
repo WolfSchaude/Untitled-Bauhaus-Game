@@ -17,12 +17,10 @@ public class ExponateVisible : MonoBehaviour
     {
 		if (CreateBewerber.eingestellter1active || CreateBewerber.eingestellter2active || CreateBewerber.eingestellter3active)
 		{
-			Debug.Log("true");
 			ExponateUI.SetActive(true);
 		}
 		else
 		{
-			Debug.Log("false");
 			ExponateUI.SetActive(false);
 		}
 	}
