@@ -696,8 +696,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550910}
-        m_MethodName: NeueWerkstatt
+      - m_Target: {fileID: 410550912}
+        m_MethodName: NeuesWohnheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2262,7 +2262,7 @@ RectTransform:
   - {fileID: 901831224}
   - {fileID: 2106401896}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2745,8 +2745,8 @@ RectTransform:
   - {fileID: 1363842785}
   - {fileID: 108597467}
   - {fileID: 509407486}
-  - {fileID: 336543482}
   - {fileID: 754967058}
+  - {fileID: 336543482}
   - {fileID: 481280393}
   - {fileID: 778577792}
   - {fileID: 4474210237657922292}
@@ -3746,8 +3746,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550910}
-        m_MethodName: NeueWerkstatt
+      - m_Target: {fileID: 410550911}
+        m_MethodName: NeuerLehrsaal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4212,7 +4212,7 @@ RectTransform:
   - {fileID: 730915668}
   - {fileID: 1043049320}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
