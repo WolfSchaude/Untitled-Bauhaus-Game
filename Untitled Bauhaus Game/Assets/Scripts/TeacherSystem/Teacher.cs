@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 public class Teacher
 {
 
+	[XmlAttribute("ID")]
+	public int ID;
+
 	[XmlElement("Name")]
 	public string Name;
 
