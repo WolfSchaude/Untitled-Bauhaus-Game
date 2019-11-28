@@ -36,9 +36,12 @@ public class Exponate : MonoBehaviour
 
     public void checkForButtonPress() //Herstellung mit Button
     {
-        expoText.text = "Exponat herstellen...";
-        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(7500);
-        exponatInProgress = true;
+		if (exponatCreateTimer == expoSlider.minValue)
+		{
+			expoText.text = "Exponat herstellen...";
+			GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(7500);
+			exponatInProgress = true;
+		}
     }
 
     //public void countDays() //Herstellung im Intervall von x Tagen
@@ -64,7 +67,7 @@ public class Exponate : MonoBehaviour
             {
                 expoText.text = "Exponat hergestellt!";
 
-                int randomExponat = Random.Range(1, 3); //random number between 1 and 2
+                //int randomExponat = Random.Range(1, 3); //random number between 1 and 2
                 //switch (randomExponat) //switch for different types of exhibits
                 //{
                 //    case 1:
@@ -83,7 +86,7 @@ public class Exponate : MonoBehaviour
 
                 isExponatDone = true;
                 exponatInProgress = false;
-                exponatCreateTimer = -1000;
+                //exponatCreateTimer = -1000;
             }
         }
 
@@ -91,11 +94,20 @@ public class Exponate : MonoBehaviour
         {
             textCooldown--;
 
+			if (exponatCreateTimer != expoSlider.minValue)
+			{
+				exponatCreateTimer -= 2;
+			}
+			if(exponatCreateTimer == expoSlider.minValue)
+			{
+				isExponatDone = false;
+			}
+
             if (textCooldown <= 0)
             {
                 expoText.text = "Exponat-Herstellung";
                 textCooldown = 200;
-                isExponatDone = false;
+                
             }
         }
     }
