@@ -13,6 +13,10 @@ public class BaueWerkstatt : MonoBehaviour
     public GameObject werk1;
     public GameObject werk2;
     public GameObject werk3;
+    public GameObject werk4;
+    public GameObject werk5;
+    public GameObject werk6;
+    public GameObject werk7;
 
     // Start is called before the first frame update
     void Start()
@@ -33,22 +37,44 @@ public class BaueWerkstatt : MonoBehaviour
             case 0:
                 werk1.SetActive(true);
                 AnzahlWerkstaette++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(1000);
-                AktPreis = 2000;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
                 break;
             case 1:
                 werk2.SetActive(true);
                 AnzahlWerkstaette++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(2000);
-                AktPreis = 4000;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
                 break;
             case 2:
                 werk3.SetActive(true);
                 AnzahlWerkstaette++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(4000);
-                AktPreis =  1000000000;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
                 break;
             case 3:
+                werk4.SetActive(true);
+                AnzahlWerkstaette++;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
+                break;
+            case 4:
+                werk5.SetActive(true);
+                AnzahlWerkstaette++;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
+                break;
+            case 5:
+                werk6.SetActive(true);
+                AnzahlWerkstaette++;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = AktPreis * 2;
+                break;
+            case 6:
+                werk7.SetActive(true);
+                AnzahlWerkstaette++;
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+                AktPreis = int.MaxValue;
                 break;
             default:
                 break;

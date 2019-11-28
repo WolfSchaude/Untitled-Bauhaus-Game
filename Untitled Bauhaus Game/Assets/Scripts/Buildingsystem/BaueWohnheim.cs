@@ -32,22 +32,20 @@ public class BaueWohnheim : MonoBehaviour
             case 0:
                 heim1.SetActive(true);
                 AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(1000);
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                 AktPreisW = AktPreisW * 2;
                 break;
             case 1:
                 heim2.SetActive(true);
                 AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(2000);
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                 AktPreisW = AktPreisW * 2;
                 break;
             case 2:
                 heim3.SetActive(true);
                 AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(4000);
-                AktPreisW = 10000000;
-                break;
-            case 3:
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                AktPreisW = int.MaxValue;
                 break;
             default:
                 break;
