@@ -9,8 +9,6 @@ public class BaueWohnheim : MonoBehaviour
 	public int studKapazitätWohn = 200;
 	public int AktPreisW = 1000;
 
-    public Text PreisW;
-
     public GameObject heim1;
     public GameObject heim2;
     public GameObject heim3;
@@ -24,32 +22,41 @@ public class BaueWohnheim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PreisW.text = "Wohnheim: " + AktPreisW + " RM";
+
     }
     public void NeuesWohnheim()
     {
         switch (AnzahlWohnheime)
         {
             case 0:
-                heim1.SetActive(true);
-                AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                AktPreisW = AktPreisW * 2;
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                {
+                    heim1.SetActive(true);
+                    AnzahlWohnheime++;
+                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+                    AktPreisW = AktPreisW * 2;
+                }
 				break;
             case 1:
-                heim2.SetActive(true);
-                AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
-				AktPreisW = AktPreisW * 2;
+                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                {
+                    heim2.SetActive(true);
+                    AnzahlWohnheime++;
+                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+                    AktPreisW = AktPreisW * 2;
+                }
                 break;
             case 2:
-                heim3.SetActive(true);
-                AnzahlWohnheime++;
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
-				AktPreisW = int.MaxValue;
+                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                {
+                    heim3.SetActive(true);
+                    AnzahlWohnheime++;
+                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+                    AktPreisW = int.MaxValue;
+                }
                 break;
             default:
                 break;
