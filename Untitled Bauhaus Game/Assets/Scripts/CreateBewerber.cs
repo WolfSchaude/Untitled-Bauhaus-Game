@@ -26,9 +26,15 @@ public class CreateBewerber : MonoBehaviour
 			{
 				bewerbungen.Add(Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform));
 				bewerbungen[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[i].TeacherBeruf;
+				bewerbungen[i].name = "Bewerber " + (i + 1);
 				bewerbungen[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[i].Picture;
 				bewerbungen[i].GetComponent<Button>().onClick.AddListener(() => { TeacherLoader.HiredTeachers.Add(TeacherLoader.tb.GetTeacher(i)); });
-				bewerbungen[i].GetComponent<Button>().onClick.AddListener(() => { bewerbungen[i].SetActive(false); });
+				bewerbungen[i].GetComponent<Button>().onClick.AddListener(() => { TeacherLoader.tb.Buffer[i].Hireable = false; });
+
+			}
+			if (TeacherLoader.tb.Buffer[i].Hireable == false)
+			{
+				bewerbungen[i].SetActive(false);
 			}
 		}
 
@@ -64,16 +70,20 @@ public class CreateBewerber : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		for (int i = 0; i < TeacherLoader.HiredTeachers.Count; i++)
+		for (int j = 0; j < TeacherLoader.tb.Buffer.Count - 1; j++)
 		{
-			if (!TeacherLoader.HiredTeachers[i].IsAdded)
+			for (int i = 0; i < TeacherLoader.HiredTeachers.Count; i++)
 			{
-				eingestellter.Add(Instantiate(bewerbung, parent.transform));
-				eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[i].TeacherBeruf;
-				eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[i].Picture;
-				eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?" + i); });
-				TeacherLoader.HiredTeachers[i].IsAdded = true;
+				if (!TeacherLoader.HiredTeachers[i].IsAdded)
+				{
+					eingestellter.Add(Instantiate(bewerbung, parent.transform));
+					eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[j].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[j].TeacherBeruf;
+					eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[j].Picture;
+					eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?" + j); });
+					TeacherLoader.HiredTeachers[j].IsAdded = true;
+				}
 			}
 		}
+		Debug.Log(TeacherLoader.HiredTeachers);
 	}
 }
