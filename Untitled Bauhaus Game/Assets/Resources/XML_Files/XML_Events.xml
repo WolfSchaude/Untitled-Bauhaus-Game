@@ -3,7 +3,22 @@
 <EventCollection>
   <Events>
 
-    <Event ID="1">
+    <Event>
+      <ID>1</ID>
+      <Tag>23</Tag>
+      <Monat>2</Monat>
+      <Jahr>1933</Jahr>
+      <EventText>Joa Mei, des isch aberamol a feins Säckle Riewe. Do tuds aber en paar mea Stunnen uffm Fotzenhobel daste dodemol wos nogriegschd.</EventText>
+      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <Option1_Politik>23</Option1_Politik>
+      <Option2_Ansehen>3</Option2_Ansehen>
+      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <Option2_Politik>-23</Option2_Politik>
+      <Option2_Ansehen>-2</Option2_Ansehen>
+    </Event>
+
+    <Event>
+      <ID>2</ID>
       <Tag>23</Tag>
       <Monat>2</Monat>
       <Jahr>1933</Jahr>
@@ -16,6 +31,47 @@
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
 
+    <Event>
+      <ID>3</ID>
+      <Tag>23</Tag>
+      <Monat>2</Monat>
+      <Jahr>1933</Jahr>
+      <EventText>Joa Mei</EventText>
+      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <Option1_Politik>23</Option1_Politik>
+      <Option2_Ansehen>3</Option2_Ansehen>
+      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <Option2_Politik>-23</Option2_Politik>
+      <Option2_Ansehen>-2</Option2_Ansehen>
+    </Event>
+
+    <Event>
+      <ID>4</ID>
+      <Tag>23</Tag>
+      <Monat>2</Monat>
+      <Jahr>1933</Jahr>
+      <EventText>Joa Mei</EventText>
+      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <Option1_Politik>23</Option1_Politik>
+      <Option2_Ansehen>3</Option2_Ansehen>
+      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <Option2_Politik>-23</Option2_Politik>
+      <Option2_Ansehen>-2</Option2_Ansehen>
+    </Event>
+
+    <Event>
+      <ID>5</ID>
+      <Tag>23</Tag>
+      <Monat>2</Monat>
+      <Jahr>1933</Jahr>
+      <EventText>Joa Mei</EventText>
+      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <Option1_Politik>23</Option1_Politik>
+      <Option2_Ansehen>3</Option2_Ansehen>
+      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <Option2_Politik>-23</Option2_Politik>
+      <Option2_Ansehen>-2</Option2_Ansehen>
+    </Event>
 
   </Events>
 </EventCollection>

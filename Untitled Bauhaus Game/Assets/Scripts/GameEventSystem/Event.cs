@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 public class Event
 {
+	[XmlElement("ID")]
+	public int ID;
+
 	[XmlElement("Tag")]
 	public int Tag;
 

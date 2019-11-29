@@ -64,10 +64,5 @@ namespace UntitledBauhausGame
                 LongKeyDown = false;
             }
         }
-
-		public void ToggleMovement()
-		{
-			AbleToMove = !AbleToMove;
-		}
     }
 }

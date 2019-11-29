@@ -9,7 +9,9 @@ public class EventScript : MonoBehaviour
 	public GameObject prefab;
 	public GameObject parent;
 
-	public List<GameObject> AllEvents;
+	public GameObject UIToBlendIn;
+
+	public static List<GameObject> AllEvents;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,13 @@ public class EventScript : MonoBehaviour
 		{
 			AllEvents.Add(Instantiate(prefab, parent.transform));
 			AllEvents[i].AddComponent<Event_Memory>();
-			AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+			AllEvents[i].GetComponent<Event_Memory>().SetMemory(
+				EventLoader.ec.Events[i].Option1_Politik,
+				EventLoader.ec.Events[i].Option2_Politik,
+				EventLoader.ec.Events[i].Option1_Ansehen,
+				EventLoader.ec.Events[i].Option2_Ansehen,
+				EventLoader.ec.Events[i]);
+
 			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
 			AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text 
@@ -29,26 +37,28 @@ public class EventScript : MonoBehaviour
 				+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
-			AllEvents[i].GetComponentsInChildren<Button>()[0].onClick.AddListener(() => {
-				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += EventLoader.ec.Events[i].Option1_Ansehen;
-				GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += EventLoader.ec.Events[i].Option1_Politik;
-			});
-
 			AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
 				= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
 				+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
 				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
-
-			AllEvents[i].GetComponentsInChildren<Button>()[1].onClick.AddListener(() => {
-				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += EventLoader.ec.Events[i].Option2_Ansehen;
-				GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += EventLoader.ec.Events[i].Option2_Politik;
-			});
 		}
-    }
+	}
 
     // Update is called once per frame
     void Update()
     {
         
     }
+
+	public void ToggleEvent()
+	{
+		if (gameObject.activeSelf)
+		{
+			gameObject.SetActive(false);
+		}
+		else
+		{
+			gameObject.SetActive(true);
+		}
+	}
 }
