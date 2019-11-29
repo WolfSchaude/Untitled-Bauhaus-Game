@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StudentenKapazitaet : MonoBehaviour
 {
 	public int studKapazität = 500; //Anfangskapazität
-	public Text studText;
+	//public Text studText;
 
 	void Start()
 	{
@@ -15,7 +15,7 @@ public class StudentenKapazitaet : MonoBehaviour
 
 	void Update()
 	{
-		studText.text = "Studentenkapazität: " + studKapazität;
+		//studText.text = "Studentenkapazität: " + studKapazität;
 	}
 }
 

@@ -39,49 +39,49 @@ public class BaueWerkstatt : MonoBehaviour
                 werk1.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 1:
                 werk2.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 2:
                 werk3.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 3:
                 werk4.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 4:
                 werk5.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 5:
                 werk6.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = AktPreis * 2;
                 break;
             case 6:
                 werk7.SetActive(true);
                 AnzahlWerkstaette++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
 				AktPreis = int.MaxValue;
                 break;
             default:

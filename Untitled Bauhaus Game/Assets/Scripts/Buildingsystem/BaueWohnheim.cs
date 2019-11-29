@@ -35,20 +35,20 @@ public class BaueWohnheim : MonoBehaviour
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                 AktPreisW = AktPreisW * 2;
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
 				break;
             case 1:
                 heim2.SetActive(true);
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
 				AktPreisW = AktPreisW * 2;
                 break;
             case 2:
                 heim3.SetActive(true);
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
 				AktPreisW = int.MaxValue;
                 break;
             default:

@@ -20,15 +20,20 @@ public class Studenten : MonoBehaviour
 
     void Update()
     {
-        studDisplay.text = StudentenAnzahl.ToString("0"); //Display StudentenAnzahl in UI
+        studDisplay.text = StudentenAnzahl.ToString("0") + " / " + GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität.ToString(); //Display StudentenAnzahl in UI
     }
 
     public void addStudenten()
     {
-        sliderPercentage = ((GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value / GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.maxValue) * 100);
+		sliderPercentage = ((GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value / GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.maxValue) * 100);
 
-        monthlyStudenten = 5f * sliderPercentage;
+		monthlyStudenten = 5f * sliderPercentage;
 
-        StudentenAnzahl += monthlyStudenten;
+		StudentenAnzahl += monthlyStudenten;
+
+		if (StudentenAnzahl >= GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität)
+		{
+			StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
+		}
     }
 }
