@@ -23,7 +23,11 @@ public class BaumenuDetail : MonoBehaviour
 
 	public Image buildingImage;
 
-	bool werkstattDetailOpen = false;
+	bool archwerkstattDetailOpen = false;
+	bool malereiDetailOpen = false;
+	bool ausstellungDetailOpen = false;
+	bool metallwerkstattDetailOpen = false;
+	bool tischlereiDetailOpen = false;
 	bool lehrsaalDetailOpen = false;
 	bool wohnheimDetailOpen = false;
 
@@ -36,7 +40,7 @@ public class BaumenuDetail : MonoBehaviour
 
 	void Update()
 	{
-        if (!detailWindow.activeSelf) //Disables all dropdown menus when detail window is open
+		if (!detailWindow.activeSelf) //Disables all dropdown menus when detail window is open
 		{
 			dropdownContainerB.SetActive(true);
             dropdownContainerD.SetActive(true);
@@ -68,24 +72,54 @@ public class BaumenuDetail : MonoBehaviour
 
     public void checkWindow()   //Checks if detail window is open
     {
-        if (werkstattDetailOpen)
+        if (archwerkstattDetailOpen)
         {
             buttonCount = 1;
         }
-
-        if (lehrsaalDetailOpen)
+		if (malereiDetailOpen)
+		{
+			buttonCount = 2;
+		}
+		if (ausstellungDetailOpen)
+		{
+			buttonCount = 3;
+		}
+		if (metallwerkstattDetailOpen)
+		{
+			buttonCount = 4;
+		}
+		if (tischlereiDetailOpen)
+		{
+			buttonCount = 5;
+		}
+		if (lehrsaalDetailOpen)
         {
-            buttonCount = 2;
+            buttonCount = 6;
         }
-
         if (wohnheimDetailOpen)
         {
-            buttonCount = 3;
+            buttonCount = 7;
         }
-    }
-	public void toggleWerkstatt()
+	}
+	public void toggleArchitekturwerkstatt()
 	{
-		werkstattDetailOpen = !werkstattDetailOpen;
+		archwerkstattDetailOpen = !archwerkstattDetailOpen;
+	}
+	public void toggleMalerei()
+	{
+		malereiDetailOpen = !malereiDetailOpen;
+	}
+	public void toggleAusstellungsgestaltung()
+	{
+		ausstellungDetailOpen = !ausstellungDetailOpen;
+	}
+	public void toggleMetallwerkstatt()
+	{
+		metallwerkstattDetailOpen = !metallwerkstattDetailOpen;
+	}
+	public void toggleTischlerei()
+	{
+		tischlereiDetailOpen = !tischlereiDetailOpen;
 	}
 	public void toggleLehrsaal()
 	{
@@ -101,7 +135,7 @@ public class BaumenuDetail : MonoBehaviour
 		switch (buttonCount)
 		{
 			case 1:
-				buildingNameText.text = "Werkstatt";
+				buildingNameText.text = "Archtekturwerkstatt";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
@@ -113,6 +147,54 @@ public class BaumenuDetail : MonoBehaviour
 				wohnButton.SetActive(false);
 				break;
 			case 2:
+				buildingNameText.text = "Malerei";
+				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
+				buildingTeacherText.text = "Dozentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
+
+				//buildingImage.sprite
+
+				werkButton.SetActive(true);
+				lehrButton.SetActive(false);
+				wohnButton.SetActive(false);
+				break;
+			case 3:
+				buildingNameText.text = "Ausstellungsgestaltung";
+				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
+				buildingTeacherText.text = "Dozentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
+
+				//buildingImage.sprite
+
+				werkButton.SetActive(true);
+				lehrButton.SetActive(false);
+				wohnButton.SetActive(false);
+				break;
+			case 4:
+				buildingNameText.text = "Metallwerkstatt";
+				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
+				buildingTeacherText.text = "Dozentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
+
+				//buildingImage.sprite
+
+				werkButton.SetActive(true);
+				lehrButton.SetActive(false);
+				wohnButton.SetActive(false);
+				break;
+			case 5:
+				buildingNameText.text = "Tischlerei";
+				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
+				buildingTeacherText.text = "Dozentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
+
+				//buildingImage.sprite
+
+				werkButton.SetActive(true);
+				lehrButton.SetActive(false);
+				wohnButton.SetActive(false);
+				break;
+			case 6:
 				buildingNameText.text = "Lehrsaal";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AktPreisL.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
@@ -124,7 +206,7 @@ public class BaumenuDetail : MonoBehaviour
 				lehrButton.SetActive(true);
 				wohnButton.SetActive(false);
 				break;
-			case 3:
+			case 7:
 				buildingNameText.text = "Wohnheim";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().AktPreisW.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
@@ -141,8 +223,12 @@ public class BaumenuDetail : MonoBehaviour
 
     public void checkCloseButton()  //Checks if the Close Button was pressed
     {
-        werkstattDetailOpen = false;
-        lehrsaalDetailOpen = false;
+        archwerkstattDetailOpen = false;
+		malereiDetailOpen = false;
+		ausstellungDetailOpen = false;
+		metallwerkstattDetailOpen = false;
+		tischlereiDetailOpen = false;
+		lehrsaalDetailOpen = false;
         wohnheimDetailOpen = false;
     }
 }
