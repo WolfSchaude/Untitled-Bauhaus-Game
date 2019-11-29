@@ -11,8 +11,6 @@ public class EventScript : MonoBehaviour
 
 	public List<GameObject> AllEvents;
 
-	private const string path = "XML_Files/XML_Events";
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +19,6 @@ public class EventScript : MonoBehaviour
 		for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 		{
 			AllEvents.Add(Instantiate(prefab, parent.transform));
-			//AllEvents[i].gameObject.transform.localPosition.
 			AllEvents[i].AddComponent<Event_Memory>();
 			AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
 			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
@@ -54,9 +51,4 @@ public class EventScript : MonoBehaviour
     {
         
     }
-
-	public void LoadFromXml(int EventID)
-	{
-
-	}
 }
