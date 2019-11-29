@@ -20,6 +20,7 @@ public class BaumenuDetail : MonoBehaviour
 	public Text buildingPriceText;
 	public Text buildingTeacherText;
 	public Text buildingStudentText;
+	public Text buildingStilText;
 
 	public Image buildingImage;
 
