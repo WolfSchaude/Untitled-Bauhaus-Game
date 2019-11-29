@@ -21,7 +21,7 @@ public class BaueLehrsaal : MonoBehaviour
 
     void Update()
     {
-        PreisL.text = "Lehrsaal: " + AktPreisL + " RM";
+        //PreisL.text = "Lehrsaal: " + AktPreisL + " RM";
     }
     public void NeuerLehrsaal()
     {

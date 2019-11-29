@@ -26,7 +26,7 @@ public class BaueWerkstatt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Preis.text = "Werkstatt: " + AktPreis + " RM";
+        //Preis.text = "Werkstatt: " + AktPreis + " RM";
     }
 
 

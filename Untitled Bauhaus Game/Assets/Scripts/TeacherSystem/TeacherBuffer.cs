@@ -24,7 +24,7 @@ public class TeacherBuffer
 
 		return teachers;
 	}
-	public Teacher GetTeacher(int index)
+	public Teacher GetBufferTeacher(int index)
 	{
 		return Buffer[index];
 	}

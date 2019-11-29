@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 public class Teacher
 {
 
-	[XmlAttribute("ID")]
+	[XmlElement("ID", typeof(int))]
 	public int ID;
 
 	[XmlElement("Name")]
@@ -74,5 +74,10 @@ public class Teacher
 	public void ChangeOccupation(GameObject gameObject)
 	{
 		Occupation = gameObject;
+	}
+
+	public void NowHired()
+	{
+		Hireable = false;
 	}
 }
