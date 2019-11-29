@@ -104,7 +104,7 @@ public class BaumenuDetail : MonoBehaviour
 				buildingNameText.text = "Werkstatt";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
-				buildingStudentText.text = "Studentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
 				//buildingImage.sprite
 
@@ -116,7 +116,7 @@ public class BaumenuDetail : MonoBehaviour
 				buildingNameText.text = "Lehrsaal";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AktPreisL.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
-				buildingStudentText.text = "Studentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().studKapazitätLehr.ToString();
 
 				//buildingImage.sprite
 
@@ -128,7 +128,7 @@ public class BaumenuDetail : MonoBehaviour
 				buildingNameText.text = "Wohnheim";
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().AktPreisW.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
-				buildingStudentText.text = "Studentenkapazität: ";
+				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().studKapazitätWohn.ToString();
 
 				//buildingImage.sprite
 

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class BaueWohnheim : MonoBehaviour
 {
     public int AnzahlWohnheime = 0;
-    public int AktPreisW = 1000;
+	public int studKapazitätWohn = 200;
+	public int AktPreisW = 1000;
 
     public Text PreisW;
 
@@ -34,18 +35,21 @@ public class BaueWohnheim : MonoBehaviour
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                 AktPreisW = AktPreisW * 2;
-                break;
+				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				break;
             case 1:
                 heim2.SetActive(true);
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                AktPreisW = AktPreisW * 2;
+				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				AktPreisW = AktPreisW * 2;
                 break;
             case 2:
                 heim3.SetActive(true);
                 AnzahlWohnheime++;
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                AktPreisW = int.MaxValue;
+				GameObject.Find("Studentenkap").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+				AktPreisW = int.MaxValue;
                 break;
             default:
                 break;
