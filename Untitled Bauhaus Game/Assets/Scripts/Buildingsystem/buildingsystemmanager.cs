@@ -74,7 +74,6 @@ namespace UntitledBauhausGame
         {
             if (ArrayPointer >= 0 && ArrayPointer <= 255)
             {
-                LoopBreakOut = false;
 
                 //if (Center.Node2Used == true)
                 //{
