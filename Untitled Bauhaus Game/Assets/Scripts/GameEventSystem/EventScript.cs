@@ -30,7 +30,7 @@ public class EventScript : MonoBehaviour
 				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
 			AllEvents[i].GetComponentsInChildren<Button>()[0].onClick.AddListener(() => {
-				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += GetComponent<Event_Memory>().Memory.Option1_Ansehen;
+				GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += EventLoader.ec.Events[i].Option1_Ansehen;
 				GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += EventLoader.ec.Events[i].Option1_Politik;
 			});
 

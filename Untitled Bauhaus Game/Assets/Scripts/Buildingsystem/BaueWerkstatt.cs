@@ -31,7 +31,6 @@ public class BaueWerkstatt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
 
@@ -61,6 +60,7 @@ public class BaueWerkstatt : MonoBehaviour
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
                     AktPreis = AktPreis * 2;
+                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
                 }
                 break;
             case 2:
@@ -73,6 +73,7 @@ public class BaueWerkstatt : MonoBehaviour
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
                     AktPreis = AktPreis * 2;
+                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
                 }
                 break;
             case 3:
@@ -85,6 +86,7 @@ public class BaueWerkstatt : MonoBehaviour
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
                     AktPreis = AktPreis * 2;
+                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
                 }
                 break;
             case 4:
@@ -97,6 +99,7 @@ public class BaueWerkstatt : MonoBehaviour
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
                     AktPreis = AktPreis * 2;
+                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
                 }
                 break;
             case 5:
@@ -109,6 +112,7 @@ public class BaueWerkstatt : MonoBehaviour
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
                     GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
                     AktPreis = AktPreis * 2;
+                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
                 }
                 break;
             case 6:

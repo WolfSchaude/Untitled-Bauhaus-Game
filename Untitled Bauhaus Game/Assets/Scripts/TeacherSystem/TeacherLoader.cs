@@ -35,4 +35,9 @@ public class TeacherLoader : MonoBehaviour
 	{
 		return HiredTeachers[index];
 	}
+
+	public Teacher GetBufferTeacher(int index)
+	{
+		return tb.Buffer[index];
+	}
 }

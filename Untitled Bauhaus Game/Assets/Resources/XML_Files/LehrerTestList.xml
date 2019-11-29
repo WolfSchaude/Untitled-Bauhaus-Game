@@ -3,7 +3,8 @@
 <TeacherCollection>
   <Teachers>
     
-	  <Teacher ID ="1">
+	  <Teacher>
+      <ID>1</ID>
 		  <Name>Lyonel Feininger</Name>
 		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>2000</Gehalt>
@@ -11,7 +12,8 @@
 		  <ImagePath>Sprites/Person1</ImagePath>
 	  </Teacher>
 	
-	  <Teacher ID ="2">
+	  <Teacher>
+      <ID>2</ID>
 		  <Name>Josef Albers</Name>
 		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>2200</Gehalt>
@@ -19,7 +21,8 @@
 		  <ImagePath>Sprites/Person2</ImagePath>
 	  </Teacher>
 	
-	  <Teacher ID ="3">
+	  <Teacher>
+      <ID>3</ID>
 		  <Name>Johannes Itten </Name>
 		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>1800</Gehalt>
@@ -27,7 +30,8 @@
       <ImagePath>Sprites/Person3</ImagePath>
 	  </Teacher>
 	
-	  <Teacher ID ="4">
+	  <Teacher>
+      <ID>4</ID>
 		  <Name></Name>
 		  <Beruf></Beruf>
       <Gehalt>0</Gehalt>
