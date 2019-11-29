@@ -21,9 +21,22 @@ public class Exponate : MonoBehaviour
 
     void Update()
     {
-        expoSlider.value = exponatCreateTimer; //set slider value to int value
+		//Debug.Log("expoinprog" + exponatInProgress);
+		//Debug.Log("expodone" + isExponatDone);
+		//Debug.Log(exponatCreateTimer);
+
+		expoSlider.value = exponatCreateTimer; //set slider value to int value
 
         createExponat();
+
+		if (Time.timeScale == 3)
+		{
+			expoSlider.maxValue = -600;
+		}
+		else if (Time.timeScale == 1)
+		{
+			expoSlider.maxValue = 0;
+		}
 
 		//Debug.Log(dayCounter);
 
@@ -63,7 +76,7 @@ public class Exponate : MonoBehaviour
         if (exponatInProgress)
         {
             exponatCreateTimer++;
-            if (exponatCreateTimer >= 0)
+            if (exponatCreateTimer >= expoSlider.maxValue)
             {
                 expoText.text = "Exponat hergestellt!";
 
@@ -96,9 +109,20 @@ public class Exponate : MonoBehaviour
 
 			if (exponatCreateTimer != expoSlider.minValue)
 			{
-				exponatCreateTimer -= 2;
+				if (Time.timeScale == 1)
+				{
+					exponatCreateTimer -= 2;
+				}
+				else if (Time.timeScale == 3)
+				{
+					exponatCreateTimer -= 6;
+				}
 			}
-			if(exponatCreateTimer == expoSlider.minValue)
+			if (exponatCreateTimer < expoSlider.minValue)
+			{
+				exponatCreateTimer = (int)expoSlider.minValue;
+			}
+			if (exponatCreateTimer == expoSlider.minValue)
 			{
 				isExponatDone = false;
 			}
