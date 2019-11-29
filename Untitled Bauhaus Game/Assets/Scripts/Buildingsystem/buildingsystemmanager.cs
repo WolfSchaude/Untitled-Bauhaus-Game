@@ -16,7 +16,6 @@ namespace UntitledBauhausGame
         public bauhausmain Center;
 
         public int ArrayPointer;
-        private bool LoopBreakOut;
 
         public bool ConNotCenter;
         public bool ConCenter;
