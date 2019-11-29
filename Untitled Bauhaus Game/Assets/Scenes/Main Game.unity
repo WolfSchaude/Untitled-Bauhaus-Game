@@ -3080,7 +3080,7 @@ MonoBehaviour:
   buildingTeacherText: {fileID: 1105296469}
   buildingStudentText: {fileID: 340489075}
   buildingStilText: {fileID: 1597889749}
-  buildingQualityText: {fileID: 0}
+  buildingQualityText: {fileID: 1152304554}
   buildingImage: {fileID: 1308199491}
 --- !u!114 &381768624
 MonoBehaviour:
