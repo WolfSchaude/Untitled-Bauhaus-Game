@@ -8,6 +8,7 @@ public class BaueWerkstatt : MonoBehaviour
     public int AnzahlWerkstaette = 0;
 	public int studKapazitätWerk = 200;
 	public int AktPreis = 1000;
+    public int werkBuildTimeInMonths = 2;
 
     public float MinQualität;
     public float MaxQualitaet;
@@ -21,18 +22,11 @@ public class BaueWerkstatt : MonoBehaviour
     public GameObject werk6;
     public GameObject werk7;
 
-    // Start is called before the first frame update
     void Start()
     {
         MaxQualitaet = 1.5f;
         MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
     public void NeueWerkstatt()
     {
