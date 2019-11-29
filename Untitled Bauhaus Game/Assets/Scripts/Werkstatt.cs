@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Werkstatt : MonoBehaviour
 {
+    public enum WerkstattTyp { Malerei, Architektur, Ausstellungsgestaltung, Metallwerkstatt, Tischlerei };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class Werkstatt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
