@@ -5,35 +5,35 @@ using UnityEngine.UI;
 
 public class BaumenuDetail : MonoBehaviour
 {
-	public GameObject detailWindow;
+	public	GameObject	detailWindow						;
 
-	public GameObject dropdownContainerB; //Bau Dropdown
-    public GameObject dropdownContainerD; //Dozenten Dropdown
+	public	GameObject	dropdownContainerB					; //Bau Dropdown
+    public	GameObject	dropdownContainerD					; //Dozenten Dropdown
 
-    public GameObject overviewWindow;
+    public	GameObject	overviewWindow						;
 
-    public GameObject werkButton;
-	public GameObject lehrButton;
-	public GameObject wohnButton;
+    public	GameObject	werkButton							;
+	public	GameObject	lehrButton							;
+	public	GameObject	wohnButton							;
 
-	public Text buildingNameText;
-	public Text buildingPriceText;
-	public Text buildingTeacherText;
-	public Text buildingStudentText;
-	public Text buildingStilText;
-	public Text buildingQualityText;
-    public Text buildingTimeTotalText;
-    public Text buildingTimeLeftText;
+	public	Text		buildingNameText					;
+	public	Text		buildingPriceText					;
+	public	Text		buildingTeacherText					;
+	public	Text		buildingStudentText					;
+	public	Text		buildingStilText					;
+	public	Text		buildingQualityText					;
+    public	Text		buildingTimeTotalText				;
+    public	Text		buildingTimeLeftText				;
 
-	public Image buildingImage;
+	public	Image		buildingImage						;
 
-	bool archwerkstattDetailOpen = false;
-	bool malereiDetailOpen = false;
-	bool ausstellungDetailOpen = false;
-	bool metallwerkstattDetailOpen = false;
-	bool tischlereiDetailOpen = false;
-	bool lehrsaalDetailOpen = false;
-	bool wohnheimDetailOpen = false;
+			bool		archwerkstattDetailOpen		= false	;
+			bool		malereiDetailOpen			= false	;
+			bool		ausstellungDetailOpen		= false	;
+			bool		metallwerkstattDetailOpen	= false	;
+			bool		tischlereiDetailOpen		= false	;
+			bool		lehrsaalDetailOpen			= false	;
+			bool		wohnheimDetailOpen			= false	;
 
 	int buttonCount = 0;
 

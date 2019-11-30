@@ -91,16 +91,11 @@ public class CreateBewerber : MonoBehaviour
 			bewerbung3.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[2].Picture;
 			bewerbung3.GetComponent<Button>().onClick.AddListener(() => { eingestellter3.SetActive(true); eingestellter3.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[2].Picture; eingestellter3.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[2].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[2].TeacherBeruf; bewerbung3.SetActive(false); eingestellter3active = true; });
 
-			//	}
-			//}
-
-
 
 
 			// Update is called once per frame
 			void Update()
 			{
-
 				//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
 				//{
 				//	for (int j = 0; j < TeacherLoader.HiredTeachers.Count; j++)
@@ -161,11 +156,6 @@ public class CreateBewerber : MonoBehaviour
 				//	}
 
 				//}
-
-
-				{
-
-				}
 			}
 		}
 	}
