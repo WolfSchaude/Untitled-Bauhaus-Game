@@ -96,6 +96,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 0:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk1.transform.position = new Vector3(-2.5f, 3.15f, -6.25f);
+                        werk1.transform.localScale = new Vector3(3.5f, 5f, 6.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk1.SetActive(true);
@@ -106,6 +108,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 1:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk2.transform.position = new Vector3(-7.25f, 3.15f, -4.5f);
+                        werk2.transform.localScale = new Vector3(6f, 5f, 3.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk2.SetActive(true);
@@ -117,6 +121,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 2:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk3.transform.position = new Vector3(-7.25f, 3.15f, -8.125f);
+                        werk3.transform.localScale = new Vector3(6f, 5f, 3.75f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk3.SetActive(true);
@@ -127,6 +133,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 3:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk4.transform.position = new Vector3(-7.25f, 3.15f, -11.75f);
+                        werk4.transform.localScale = new Vector3(6f, 5f, 3.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk4.SetActive(true);
@@ -137,6 +145,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 4:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk5.transform.position = new Vector3(-7.25f, 3.15f, -15.25f);
+                        werk5.transform.localScale = new Vector3(6f, 5f, 3.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk5.SetActive(true);
@@ -147,6 +157,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 5:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk6.transform.position = new Vector3(-7.25f, 3.15f, -18.75f);
+                        werk6.transform.localScale = new Vector3(6f, 5f, 3.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk6.SetActive(true);
@@ -157,6 +169,8 @@ public class BaueWerkstatt : MonoBehaviour
                 case 6:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
                     {
+                        werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.15f);
+                        werk7.transform.localScale = new Vector3(6f, 5f, 3.5f);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk7.SetActive(true);

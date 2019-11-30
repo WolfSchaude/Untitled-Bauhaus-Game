@@ -22,6 +22,18 @@ public class Teacher
 	[XmlElement("ImagePath")]
 	public string ImagePath;
 
+	[XmlElement("Geburtsdatum")]
+	public string Geburtsdatum;
+
+	[XmlElement("Interessen")]
+	public string Interessen;
+
+	[XmlElement("Einstellungskosten")]
+	public int Einstellungskosten;
+
+	[XmlElement("FortlaufendeKosten")]
+	public int FortlaufendeKosten;
+
 	[XmlIgnore]
 	public Sprite Picture;
 

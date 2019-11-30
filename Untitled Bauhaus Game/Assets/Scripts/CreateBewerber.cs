@@ -73,90 +73,134 @@ public class CreateBewerber : MonoBehaviour
 			GameObject bewerbung1 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter1 = Instantiate(bewerbung, parent.transform);
 			eingestellter1.SetActive(false);
-			bewerbung1.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[0].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[0].TeacherBeruf;
-			bewerbung1.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[0].Picture;
-			bewerbung1.GetComponent<Button>().onClick.AddListener(() => { eingestellter1.SetActive(true); eingestellter1.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[0].Picture; eingestellter1.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[0].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[0].TeacherBeruf; bewerbung1.SetActive(false); eingestellter1active = true; });
+			bewerbung1.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[0].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[0].Interessen;
+			bewerbung1.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[0].Name;
+			bewerbung1.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[0].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[0].FortlaufendeKosten;
+			bewerbung1.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[0].Picture;
+			bewerbung1.GetComponent<Button>().onClick.AddListener(() => 
+			{
+				eingestellter1.SetActive(true);
+				eingestellter1.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[0].Picture;
+				eingestellter1.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[0].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[0].Interessen;
+				eingestellter1.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[0].Name;
+				eingestellter1.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[0].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[0].FortlaufendeKosten;
+				eingestellter1.GetComponentsInChildren<Text>()[3].text = "";
+				bewerbung1.SetActive(false);
+				eingestellter1active = true;
+			});
 
 			GameObject bewerbung2 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter2 = Instantiate(bewerbung, parent.transform);
 			eingestellter2.SetActive(false);
-			bewerbung2.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[1].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[1].TeacherBeruf;
-			bewerbung2.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[1].Picture;
-			bewerbung2.GetComponent<Button>().onClick.AddListener(() => { eingestellter2.SetActive(true); eingestellter2.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[1].Picture; eingestellter2.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[1].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[1].TeacherBeruf; bewerbung2.SetActive(false); eingestellter2active = true; });
+			bewerbung2.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[1].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[1].Interessen;
+			bewerbung2.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[1].Name;
+			bewerbung2.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[1].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[1].FortlaufendeKosten;
+			bewerbung2.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[1].Picture;
+			bewerbung2.GetComponent<Button>().onClick.AddListener(() =>
+			{
+				eingestellter2.SetActive(true);
+				eingestellter2.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[1].Picture;
+				eingestellter2.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[1].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[1].Interessen;
+				eingestellter2.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[1].Name;
+				eingestellter2.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[1].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[1].FortlaufendeKosten;
+				eingestellter2.GetComponentsInChildren<Text>()[3].text = "";
+				bewerbung2.SetActive(false);
+				eingestellter1active = true;
+			});
 
 			GameObject bewerbung3 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter3 = Instantiate(bewerbung, parent.transform);
 			eingestellter3.SetActive(false);
-			bewerbung3.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[2].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[2].TeacherBeruf;
-			bewerbung3.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[2].Picture;
-			bewerbung3.GetComponent<Button>().onClick.AddListener(() => { eingestellter3.SetActive(true); eingestellter3.GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[2].Picture; eingestellter3.GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[2].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[2].TeacherBeruf; bewerbung3.SetActive(false); eingestellter3active = true; });
-
-
-
-			// Update is called once per frame
-			void Update()
+			bewerbung3.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[2].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[2].Interessen;
+			bewerbung3.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[2].Name;
+			bewerbung3.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[2].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[2].FortlaufendeKosten;
+			bewerbung3.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[2].Picture;
+			bewerbung3.GetComponent<Button>().onClick.AddListener(() =>
 			{
-				//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
-				//{
-				//	for (int j = 0; j < TeacherLoader.HiredTeachers.Count; j++)
-				//	{
-				//		if (TeacherLoader.tb.Buffer[i].Hireable == false)
-				//		{
-				//			bewerbungen[i].GetComponent<Button>().onClick.AddListener(() =>
-				//			{
-				//				Debug.Log("Anzahl der HiredTeacher: " + TeacherLoader.HiredTeachers.Count);
-				//				eingestellter.Add(Instantiate(bewerbung, parent.transform));
-				//				TeacherLoader.tb.Buffer[i].NowHired();
-				//				eingestellter[j].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.HiredTeachers[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.HiredTeachers[i].TeacherBeruf;
-				//				eingestellter[j].GetComponent<Image>().sprite = TeacherLoader.HiredTeachers[i].Picture;
-				//				eingestellter[j].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?"); });
-				//				TeacherLoader.HiredTeachers[i].IsAdded = true;
-				//			});
-				//		}
-				//		if(i >= 3) { i = 0; }
-				//		//TeacherLoader.tb.Buffer[i].Hireable = false;
-				//		//bewerbungen[i].SetActive(false);
-				//	}
+				eingestellter3.SetActive(true);
+				eingestellter3.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[2].Picture;
+				eingestellter3.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[2].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[2].Interessen;
+				eingestellter3.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[2].Name;
+				eingestellter3.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[2].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[2].FortlaufendeKosten;
+				eingestellter3.GetComponentsInChildren<Text>()[3].text = "";
+				bewerbung3.SetActive(false);
+				eingestellter1active = true;
+			});
 
-				//}
 
-				//for (int j = 0; j < TeacherLoader.tb.Buffer.Count - 1; j++)
-				//{
-				//	for (int i = 0; i < TeacherLoader.HiredTeachers.Count; i++)
-				//	{
-				//		if (!TeacherLoader.HiredTeachers[i].IsAdded)
-				//		{
-				//			eingestellter.Add(Instantiate(bewerbung, parent.transform));
-				//			eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[j].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[j].TeacherBeruf;
-				//			eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[j].Picture;
-				//			eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?" + j); });
-				//			TeacherLoader.HiredTeachers[j].IsAdded = true;
-				//		}
-				//	}
-				//}
+		}
+	}
+	// Update is called once per frame
+	void Update()
+	{
 
-				//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
-				//{
-				//	for (int j = 0; j < TeacherLoader.HiredTeachers.Count; j++)
-				//	{
-				//		//Debug.Log(TeacherLoader.tb.Buffer[i].Hireable);
-				//		if (TeacherLoader.tb.Buffer[i].Hireable == false)
-				//		{
-				//			bewerbungen[i].SetActive(false);
-				//		}
+		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
+		//{
+		//	for (int j = 0; j < TeacherLoader.HiredTeachers.Count; j++)
+		//	{
+		//		if (TeacherLoader.tb.Buffer[i].Hireable == false)
+		//		{
+		//			bewerbungen[i].GetComponent<Button>().onClick.AddListener(() =>
+		//			{
+		//				Debug.Log("Anzahl der HiredTeacher: " + TeacherLoader.HiredTeachers.Count);
+		//				eingestellter.Add(Instantiate(bewerbung, parent.transform));
+		//				TeacherLoader.tb.Buffer[i].NowHired();
+		//				eingestellter[j].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.HiredTeachers[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.HiredTeachers[i].TeacherBeruf;
+		//				eingestellter[j].GetComponent<Image>().sprite = TeacherLoader.HiredTeachers[i].Picture;
+		//				eingestellter[j].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?"); });
+		//				TeacherLoader.HiredTeachers[i].IsAdded = true;
+		//			});
+		//		}
+		//		if(i >= 3) { i = 0; }
+		//		//TeacherLoader.tb.Buffer[i].Hireable = false;
+		//		//bewerbungen[i].SetActive(false);
+		//	}
 
-				//		if (!TeacherLoader.HiredTeachers[j].IsAdded)
-				//		{
-				//			eingestellter.Add(Instantiate(bewerbung, parent.transform));
-				//			eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.HiredTeachers[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.HiredTeachers[i].TeacherBeruf;
-				//			eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.HiredTeachers[i].Picture;
-				//			eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?"); });
-				//			TeacherLoader.HiredTeachers[i].IsAdded = true;
-				//		}
-				//	}
+		//}
 
-				//}
-			}
+		//for (int j = 0; j < TeacherLoader.tb.Buffer.Count - 1; j++)
+		//{
+		//	for (int i = 0; i < TeacherLoader.HiredTeachers.Count; i++)
+		//	{
+		//		if (!TeacherLoader.HiredTeachers[i].IsAdded)
+		//		{
+		//			eingestellter.Add(Instantiate(bewerbung, parent.transform));
+		//			eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.tb.Buffer[j].Name + Environment.NewLine + "Beruf: " + TeacherLoader.tb.Buffer[j].TeacherBeruf;
+		//			eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.tb.Buffer[j].Picture;
+		//			eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?" + j); });
+		//			TeacherLoader.HiredTeachers[j].IsAdded = true;
+		//		}
+		//	}
+		//}
+
+		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
+		//{
+		//	for (int j = 0; j < TeacherLoader.HiredTeachers.Count; j++)
+		//	{
+		//		//Debug.Log(TeacherLoader.tb.Buffer[i].Hireable);
+		//		if (TeacherLoader.tb.Buffer[i].Hireable == false)
+		//		{
+		//			bewerbungen[i].SetActive(false);
+		//		}
+
+		//		if (!TeacherLoader.HiredTeachers[j].IsAdded)
+		//		{
+		//			eingestellter.Add(Instantiate(bewerbung, parent.transform));
+		//			eingestellter[i].GetComponentInChildren<Text>().text = "Name: " + TeacherLoader.HiredTeachers[i].Name + Environment.NewLine + "Beruf: " + TeacherLoader.HiredTeachers[i].TeacherBeruf;
+		//			eingestellter[i].GetComponent<Image>().sprite = TeacherLoader.HiredTeachers[i].Picture;
+		//			eingestellter[i].GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Du willst einen Angestellten zuweisen?"); });
+		//			TeacherLoader.HiredTeachers[i].IsAdded = true;
+		//		}
+		//	}
+
+		//}
+
+
+		{
+
 		}
 	}
 }
+
+
+

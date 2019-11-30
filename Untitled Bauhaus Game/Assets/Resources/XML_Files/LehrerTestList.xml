@@ -10,6 +10,10 @@
       <Gehalt>2000</Gehalt>
       <Politik>100</Politik>
 		  <ImagePath>Sprites/Person1</ImagePath>
+      <Geburtsdatum>17. Juli 1871</Geburtsdatum>#
+      <Interessen>Malerei, Karikaturist</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
 	  </Teacher>
 	
 	  <Teacher>
@@ -19,15 +23,23 @@
       <Gehalt>2200</Gehalt>
       <Politik>90</Politik>
 		  <ImagePath>Sprites/Person2</ImagePath>
+      <Geburtsdatum>19. März 1888</Geburtsdatum>
+      <Interessen>Malerei, Kunsttheorie und -pädagogik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
 	  </Teacher>
 	
 	  <Teacher>
       <ID>3</ID>
-		  <Name>Johannes Itten </Name>
+		  <Name>Johannes Itten</Name>
 		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>11. November 1888</Geburtsdatum>
+      <Interessen>Malerei, Kunsttherorie, Kunstpädagogik, Farblehre</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
 	  </Teacher>
 	
 	  <Teacher>
@@ -37,6 +49,8 @@
       <Gehalt>0</Gehalt>
       <Politik>100</Politik>
 		  <ImagePath></ImagePath>
+      <Geburtsdatum></Geburtsdatum>
+      <Interessen></Interessen>
 	  </Teacher>
     
   </Teachers>
