@@ -41,10 +41,14 @@ public class Event_Memory : MonoBehaviour
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
+
+		this.gameObject.SetActive(false);
 	}
 	public void EventEffect2()
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
+
+		this.gameObject.SetActive(false);
 	}
 }
