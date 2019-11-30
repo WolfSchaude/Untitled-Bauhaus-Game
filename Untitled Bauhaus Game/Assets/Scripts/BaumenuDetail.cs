@@ -143,68 +143,118 @@ public class BaumenuDetail : MonoBehaviour
 				buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().werkBuildTimeInMonths + " Monat(e)";
                 buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
-				//buildingImage.sprite
+                //buildingImage.sprite
 
-				werkButton.SetActive(true);
-				lehrButton.SetActive(false);
+                if (GameObject.Find("UI").GetComponent<BaueWerkstatt>().buildInProgress)
+                {
+                    werkButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    werkButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
+                lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
 				break;
 			case 2:
 				buildingNameText.text = "Malerei";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().werkBuildTimeInMonths + " Monat(e)";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
-				//buildingImage.sprite
+                //buildingImage.sprite
 
-				werkButton.SetActive(true);
-				lehrButton.SetActive(false);
+                if (GameObject.Find("UI").GetComponent<BaueWerkstatt>().buildInProgress)
+                {
+                    werkButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    werkButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
+                lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
 				break;
 			case 3:
 				buildingNameText.text = "Ausstellungsgestaltung";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().werkBuildTimeInMonths + " Monat(e)";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
-				//buildingImage.sprite
+                //buildingImage.sprite
 
-				werkButton.SetActive(true);
-				lehrButton.SetActive(false);
+                if (GameObject.Find("UI").GetComponent<BaueWerkstatt>().buildInProgress)
+                {
+                    werkButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    werkButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
+                lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
 				break;
 			case 4:
 				buildingNameText.text = "Metallwerkstatt";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().werkBuildTimeInMonths + " Monat(e)";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
-				//buildingImage.sprite
+                //buildingImage.sprite
 
-				werkButton.SetActive(true);
-				lehrButton.SetActive(false);
+                if (GameObject.Find("UI").GetComponent<BaueWerkstatt>().buildInProgress)
+                {
+                    werkButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    werkButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
+                lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
 				break;
 			case 5:
 				buildingNameText.text = "Tischlerei";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().werkBuildTimeInMonths + " Monat(e)";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AktPreis.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWerkstatt>().studKapazitätWerk.ToString();
 
-				//buildingImage.sprite
+                //buildingImage.sprite
 
-				werkButton.SetActive(true);
+                if (GameObject.Find("UI").GetComponent<BaueWerkstatt>().buildInProgress)
+                {
+                    werkButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    werkButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
 				lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
 				break;
@@ -212,6 +262,7 @@ public class BaumenuDetail : MonoBehaviour
 				buildingNameText.text = "Lehrsaal";
 				buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
+                buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehrBuildTimeInMonths + " Monat(e)";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AktPreisL.ToString() + " RM";
 				buildingTeacherText.text = "Dozentenkapazität: ";
 				buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().studKapazitätLehr.ToString();
@@ -219,7 +270,16 @@ public class BaumenuDetail : MonoBehaviour
 				//buildingImage.sprite
 
 				werkButton.SetActive(false);
-				lehrButton.SetActive(true);
+                if (GameObject.Find("UI").GetComponent<BaueLehrsaal>().buildInProgress)
+                {
+                    lehrButton.SetActive(false);
+                    buildingTimeLeftText.enabled = true;
+                }
+                else
+                {
+                    lehrButton.SetActive(true);
+                    buildingTimeLeftText.enabled = false;
+                }
 				wohnButton.SetActive(false);
 				break;
 			case 7:

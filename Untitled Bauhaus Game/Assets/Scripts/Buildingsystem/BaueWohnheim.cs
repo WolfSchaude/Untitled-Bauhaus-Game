@@ -53,6 +53,10 @@ public class BaueWohnheim : MonoBehaviour
             }
             heim1.SetActive(true);
 
+            GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+            GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
+            MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
+
             AnzahlWohnheime++;
             wohnBuildTimeInMonths = 2;
             buildInProgress = false;
@@ -72,10 +76,7 @@ public class BaueWohnheim : MonoBehaviour
                         buildInProgress = true;
                         //heim1.SetActive(true);
                         //AnzahlWohnheime++;
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                        GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
                         AktPreisW = AktPreisW * 2;
-                        MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
                     }
                     break;
                 case 1:
@@ -85,10 +86,7 @@ public class BaueWohnheim : MonoBehaviour
                         buildInProgress = true;
                         //heim2.SetActive(true);
                         //AnzahlWohnheime++;
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                        GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
                         AktPreisW = AktPreisW * 2;
-                        MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
                     }
                     break;
                 case 2:
@@ -98,10 +96,7 @@ public class BaueWohnheim : MonoBehaviour
                         buildInProgress = true;
                         //heim3.SetActive(true);
                         //AnzahlWohnheime++;
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
-                        GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
                         AktPreisW = int.MaxValue;
-                        MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
                     }
                     break;
                 default:

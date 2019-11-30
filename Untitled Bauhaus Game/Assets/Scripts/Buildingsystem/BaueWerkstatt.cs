@@ -22,107 +22,151 @@ public class BaueWerkstatt : MonoBehaviour
     public GameObject werk6;
     public GameObject werk7;
 
+    public bool buildInProgress = false;
+
     void Start()
     {
         MaxQualitaet = 1.5f;
         MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
     }
 
+    void Update()
+    {
+        buildStructure();
+    }
+
+    public void checkMonth() //Wird bei Monatswechsel ausgeführt
+    {
+        if (buildInProgress)
+        {
+            werkBuildTimeInMonths--;
+        }
+    }
+
+    public void buildStructure() //Baut die Struktur, nachdem die Bauzeit abgelaufen ist.
+    {
+        if (buildInProgress && werkBuildTimeInMonths == 0)
+        {
+            if (werk6.activeSelf)
+            {
+                werk7.SetActive(true);
+            }
+            if (werk5.activeSelf)
+            {
+                werk6.SetActive(true);
+            }
+            if (werk4.activeSelf)
+            {
+                werk5.SetActive(true);
+            }
+            if (werk3.activeSelf)
+            {
+                werk4.SetActive(true);
+            }
+            if (werk2.activeSelf)
+            {
+                werk3.SetActive(true);
+            }
+            if (werk1.activeSelf)
+            {
+                werk2.SetActive(true);
+            }
+            werk1.SetActive(true);
+
+            GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+            if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
+            {
+                GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+            }
+            GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
+            MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
+
+            AnzahlWerkstaette++;
+            werkBuildTimeInMonths = 2;
+            buildInProgress = false;
+        }
+    }
+
     public void NeueWerkstatt()
     {
-        switch (AnzahlWerkstaette)
+        if (!buildInProgress)
         {
-            case 0:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk1.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 1:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk2.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 2:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk3.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 3:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk4.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 4:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk5.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 5:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk6.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = AktPreis * 2;
-                    MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-                }
-                break;
-            case 6:
-                if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-                {
-                    Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
-                    werk7.SetActive(true);
-                    AnzahlWerkstaette++;
-                    GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
-                    GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
-                    AktPreis = int.MaxValue;
-                }
-                break;
-            default:
-                break;
+            switch (AnzahlWerkstaette)
+            {
+                case 0:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk1.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+                    }
+                    break;
+                case 1:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk2.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+
+                    }
+                    break;
+                case 2:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk3.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+                    }
+                    break;
+                case 3:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk4.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+                    }
+                    break;
+                case 4:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk5.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+                    }
+                    break;
+                case 5:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk6.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = AktPreis * 2;
+                    }
+                    break;
+                case 6:
+                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+                    {
+                        Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
+                        buildInProgress = true;
+                        //werk7.SetActive(true);
+                        //AnzahlWerkstaette++;
+                        AktPreis = int.MaxValue;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
