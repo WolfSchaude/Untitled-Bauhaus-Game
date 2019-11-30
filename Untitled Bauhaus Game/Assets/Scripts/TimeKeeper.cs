@@ -15,6 +15,7 @@ public class TimeKeeper : MonoBehaviour
 	public int StartMinute;
 	public int StartSecond;
 
+	public int currentYear;
     public int currentMonth;
     public int currentDay;
 
@@ -66,7 +67,7 @@ public class TimeKeeper : MonoBehaviour
 	{
 		float currentTime = gameTime;
 
-		int currentYear = (int)(gameTime / YearToSec);
+		currentYear = (int)(gameTime / YearToSec);
 		currentTime -= currentYear * YearToSec;
 
 		currentMonth = (int)(currentTime / MonthToSec);

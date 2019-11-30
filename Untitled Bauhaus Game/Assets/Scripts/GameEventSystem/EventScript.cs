@@ -23,10 +23,10 @@ public class EventScript : MonoBehaviour
 			AllEvents.Add(Instantiate(prefab, parent.transform));
 			//AllEvents[i].AddComponent<Event_Memory>();
 			AllEvents[i].GetComponent<Event_Memory>().SetMemory(
-				EventLoader.ec.Events[i].Option1_Politik,
-				EventLoader.ec.Events[i].Option2_Politik,
-				EventLoader.ec.Events[i].Option1_Ansehen,
-				EventLoader.ec.Events[i].Option2_Ansehen,
+				//EventLoader.ec.Events[i].Option1_Politik,
+				//EventLoader.ec.Events[i].Option2_Politik,
+				//EventLoader.ec.Events[i].Option1_Ansehen,
+				//EventLoader.ec.Events[i].Option2_Ansehen,
 				EventLoader.ec.Events[i]);
 
 			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
