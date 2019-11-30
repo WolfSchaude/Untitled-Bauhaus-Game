@@ -21,7 +21,7 @@ public class EventScript : MonoBehaviour
 		for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 		{
 			AllEvents.Add(Instantiate(prefab, parent.transform));
-			AllEvents[i].AddComponent<Event_Memory>();
+			//AllEvents[i].AddComponent<Event_Memory>();
 			AllEvents[i].GetComponent<Event_Memory>().SetMemory(
 				EventLoader.ec.Events[i].Option1_Politik,
 				EventLoader.ec.Events[i].Option2_Politik,
@@ -31,9 +31,8 @@ public class EventScript : MonoBehaviour
 
 			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
-			AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text 
-				= EventLoader.ec.Events[i].Tag + "." + EventLoader.ec.Events[i].Monat + "." + EventLoader.ec.Events[i].Jahr + Environment.NewLine
-				+ EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
+			AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
+				= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
 				+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
@@ -47,8 +46,8 @@ public class EventScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+		
+	}
 
 	public void ToggleEvent()
 	{
