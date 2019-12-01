@@ -10,8 +10,8 @@ public class bewerbungvisible : MonoBehaviour
 	public GameObject bewerbungGameObject;
 	public GameObject zuweisenGameObject;
 
-	// Start is called before the first frame update
-	void Start()
+    // Start is called before the first frame update
+    void Start()
 	{
 		bewerbungGameObject.SetActive(false);
 		zuweisenGameObject.SetActive(false);
@@ -24,7 +24,7 @@ public class bewerbungvisible : MonoBehaviour
 		{
 			
 		}
-	}
+    }
 
 	public void ToggleBewerbung()
 	{
