@@ -9,6 +9,7 @@ public class CreateBewerber : MonoBehaviour
 
 	public GameObject bewerbung;
 	public GameObject parent;
+	public GameObject DropdownGebaeude;
 
 	public List<GameObject> bewerbungen = new List<GameObject>();
 	public List<GameObject> eingestellter = new List<GameObject>();
@@ -70,6 +71,7 @@ public class CreateBewerber : MonoBehaviour
 
 		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count; i++)
 		{
+			#region Bewerbung1
 			GameObject bewerbung1 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter1 = Instantiate(bewerbung, parent.transform);
 			eingestellter1.SetActive(false);
@@ -88,9 +90,12 @@ public class CreateBewerber : MonoBehaviour
 				bewerbung1.SetActive(false);
 				eingestellter1active = true;
 			});
+			#endregion
 
+			#region Bewerbung2
 			GameObject bewerbung2 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter2 = Instantiate(bewerbung, parent.transform);
+			Instantiate(DropdownGebaeude, transform.position - new Vector3(-200, 67, 0), Quaternion.identity, eingestellter2.transform);
 			eingestellter2.SetActive(false);
 			bewerbung2.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[1].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[1].Interessen;
 			bewerbung2.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[1].Name;
@@ -104,10 +109,17 @@ public class CreateBewerber : MonoBehaviour
 				eingestellter2.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[1].Name;
 				eingestellter2.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + TeacherLoader.tb.Buffer[1].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[1].FortlaufendeKosten;
 				eingestellter2.GetComponentsInChildren<Text>()[3].text = "";
+				TeacherLoader.tb.Buffer[1].ChangeStatus(Teacher.Status.Employed);
+				//bewerbung2.GetComponent<Button>().onClick.AddListener(() =>
+				//{
+				//	Instantiate(DropdownGebaeude, eingestellter2.transform);
+				//});
 				bewerbung2.SetActive(false);
 				eingestellter1active = true;
 			});
+			#endregion
 
+			#region Bewerbung3
 			GameObject bewerbung3 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter3 = Instantiate(bewerbung, parent.transform);
 			eingestellter3.SetActive(false);
@@ -126,8 +138,7 @@ public class CreateBewerber : MonoBehaviour
 				bewerbung3.SetActive(false);
 				eingestellter1active = true;
 			});
-
-
+			#endregion
 		}
 	}
 	// Update is called once per frame

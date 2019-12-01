@@ -20,10 +20,7 @@ public class bewerbungvisible : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
-		{
-			
-		}
+		
 
     }
 
