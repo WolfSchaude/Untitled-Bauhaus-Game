@@ -3726,12 +3726,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9803922, g: 0.5568628, b: 0.09411766, a: 1}
+  m_Color: {r: 0.96470594, g: 0.5529412, b: 0.10588236, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ca141044b77e5674d82da75be7718850, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31917,7 +31917,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 25
   m_Viewport: {fileID: 2957053224788816735}
   m_HorizontalScrollbar: {fileID: 2957053225195407641}
   m_VerticalScrollbar: {fileID: 2957053224654590533}
@@ -32722,7 +32722,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 25
   m_Viewport: {fileID: 4474210236591371564}
   m_HorizontalScrollbar: {fileID: 4474210237146594701}
   m_VerticalScrollbar: {fileID: 4474210236375328982}

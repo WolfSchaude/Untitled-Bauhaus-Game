@@ -24,6 +24,7 @@ public class bewerbungvisible : MonoBehaviour
 		{
 			
 		}
+
     }
 
 	public void ToggleBewerbung()
@@ -37,7 +38,9 @@ public class bewerbungvisible : MonoBehaviour
 			else
 			{
 				bewerbungGameObject.SetActive(true);
-			}
+                GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
+
+            }
 		}
 	}
 
@@ -52,7 +55,8 @@ public class bewerbungvisible : MonoBehaviour
 			else
 			{
 				zuweisenGameObject.SetActive(true);
-			}
+                GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
+            }
 		}
 	}
 }

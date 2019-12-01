@@ -42,15 +42,15 @@ public class BaumenuDetail : MonoBehaviour
 
     void Update()
     {
-        if (!detailWindow.activeSelf && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.activeSelf && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.activeSelf) //Disables all dropdown menus when window is open
+        if (!detailWindow.activeSelf/* && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.activeSelf && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.activeSelf*/) //Disables all dropdown menus when window is open
         {
             dropdownContainerB.SetActive(true);
-            dropdownContainerD.SetActive(true);
+            //dropdownContainerD.SetActive(true);
         }
         else
         {
             dropdownContainerB.SetActive(false);
-            dropdownContainerD.SetActive(false);
+            //dropdownContainerD.SetActive(false);
 
             overviewWindow.SetActive(false);
         }
@@ -65,6 +65,8 @@ public class BaumenuDetail : MonoBehaviour
         if (!detailWindow.activeSelf)
         {
             detailWindow.SetActive(true);
+            GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
+            GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
         }
         else
         {
