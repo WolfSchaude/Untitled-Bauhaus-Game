@@ -78,7 +78,6 @@ public class BaueLehrsaal : MonoBehaviour
             }
             lehr1.SetActive(true);
 
-            GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
             GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätLehr;
             MinQualität = 0.5f + (AnzahlLehrsaal * 0.05f);
 
@@ -97,6 +96,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 0:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr1.transform.position = new Vector3(1f, 3.15f, -8f);
                         lehr1.transform.localScale = new Vector3(3.75f, 5f, 4f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -109,6 +109,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 1:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr2.transform.position = new Vector3(1f, 3.15f, 10.5f);
                         lehr2.transform.localScale = new Vector3(3.75f, 5f, 3f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -121,6 +122,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 2:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr3.transform.position = new Vector3(1f, 3.15f, 14f);
                         lehr3.transform.localScale = new Vector3(3.75f, 5f, 4f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -133,6 +135,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 3:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr4.transform.position = new Vector3(-2.5f, 3.15f, 12.5f);
                         lehr4.transform.localScale = new Vector3(3.25f, 5f, 7f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -145,6 +148,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 4:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr5.transform.position = new Vector3(-7.1f, 3.15f, 11f);
                         lehr5.transform.localScale = new Vector3(6f, 5f, 4f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -157,6 +161,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 5:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr6.transform.position = new Vector3(-6.6f, 3.15f, 14.5f);
                         lehr6.transform.localScale = new Vector3(5f, 5f, 3f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -169,6 +174,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 6:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr7.transform.position = new Vector3(-11.1f, 3.15f, 14.5f);
                         lehr7.transform.localScale = new Vector3(4f, 5f, 3f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -181,6 +187,7 @@ public class BaueLehrsaal : MonoBehaviour
                 case 7:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
                         lehr8.transform.position = new Vector3(-11.6f, 3.15f, 11f);
                         lehr8.transform.localScale = new Vector3(3f, 5f, 4f);
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);

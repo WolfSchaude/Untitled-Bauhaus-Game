@@ -11,6 +11,7 @@ public class Exponate : MonoBehaviour
     int exponatCreateTimer = -1000;
     //private int dayCounter = 3; //Intervall in Tagen, wie oft ein Exponat hergestellt werden soll.
     private int textCooldown = 200;
+    private int expoPrice = 7500; //Herstellungspreis
 
     private bool exponatInProgress;
     private bool isExponatDone = false;
@@ -49,12 +50,15 @@ public class Exponate : MonoBehaviour
 
     public void checkForButtonPress() //Herstellung mit Button
     {
-		if (exponatCreateTimer == expoSlider.minValue)
-		{
-			expoText.text = "Exponat herstellen...";
-			GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(7500);
-			exponatInProgress = true;
-		}
+        if (GameObject.Find("Money Display").GetComponent<Money>().money > expoPrice) //Exponate können nur hergestellt werden, wenn man das benötigte Geld dafür hat.
+        {
+            if (exponatCreateTimer == expoSlider.minValue)
+            {
+                expoText.text = "Exponat herstellen...";
+                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(expoPrice);
+                exponatInProgress = true;
+            }
+        }
     }
 
     //public void countDays() //Herstellung im Intervall von x Tagen

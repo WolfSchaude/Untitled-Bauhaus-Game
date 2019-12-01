@@ -19,7 +19,7 @@ public class GebäudeÜbersicht : MonoBehaviour
     void Update()
     {
         werkstattCount.text = "Gebaute Werkstätte: \n" + GameObject.Find("UI").GetComponent<BaueWerkstatt>().AnzahlWerkstaette.ToString() + " / 7"; 
-        lehrsaalCount.text = "Gebaute Lehrsääle: \n" + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal.ToString() + " / 8"; 
+        lehrsaalCount.text = "Gebaute Lehrsäle: \n" + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal.ToString() + " / 8"; 
         wohnheimCount.text = "Gebaute Wohnheime: \n" + GameObject.Find("UI").GetComponent<BaueWohnheim>().AnzahlWohnheime.ToString() + " / 3"; 
     }
 

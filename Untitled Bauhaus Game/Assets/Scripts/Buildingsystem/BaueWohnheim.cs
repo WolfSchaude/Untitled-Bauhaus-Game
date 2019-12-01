@@ -53,7 +53,6 @@ public class BaueWohnheim : MonoBehaviour
             }
             heim1.SetActive(true);
 
-            GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
             GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
             MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
 
@@ -72,6 +71,7 @@ public class BaueWohnheim : MonoBehaviour
                 case 0:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         heim1.transform.position = new Vector3(6.75f, 1.5f, -7.5f);
                         heim1.transform.localScale = new Vector3(8f, 1.75f, 5f);
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
@@ -84,6 +84,7 @@ public class BaueWohnheim : MonoBehaviour
                 case 1:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         heim2.transform.position = new Vector3(12.75f, 2.4f, -6.5f);
                         heim2.transform.localScale = new Vector3(4f, 3.5f, 7f);
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
@@ -96,6 +97,7 @@ public class BaueWohnheim : MonoBehaviour
                 case 2:
                     if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
                     {
+                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         heim3.transform.position = new Vector3(12.75f, 5.6f, -6.5f);
                         heim3.transform.localScale = new Vector3(4f, 3.5f, 7f);
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
