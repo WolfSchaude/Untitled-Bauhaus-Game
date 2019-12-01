@@ -32446,6 +32446,8 @@ MonoBehaviour:
   bewerbung: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615,
     type: 3}
   parent: {fileID: 2957053224773068096}
+  DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
+    type: 3}
   bewerbungen: []
   eingestellter: []
 --- !u!1 &4474210237068353045

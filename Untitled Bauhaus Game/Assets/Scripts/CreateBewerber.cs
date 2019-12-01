@@ -74,6 +74,7 @@ public class CreateBewerber : MonoBehaviour
 			#region Bewerbung1
 			GameObject bewerbung1 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter1 = Instantiate(bewerbung, parent.transform);
+			Instantiate(DropdownGebaeude, transform.position - new Vector3(-200, 67, 0), Quaternion.identity, eingestellter1.transform);
 			eingestellter1.SetActive(false);
 			bewerbung1.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[0].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[0].Interessen;
 			bewerbung1.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[0].Name;
@@ -122,6 +123,7 @@ public class CreateBewerber : MonoBehaviour
 			#region Bewerbung3
 			GameObject bewerbung3 = Instantiate(bewerbung, GameObject.Find("ContentEinstellen").transform);
 			GameObject eingestellter3 = Instantiate(bewerbung, parent.transform);
+			Instantiate(DropdownGebaeude, transform.position - new Vector3(-200, 67, 0), Quaternion.identity, eingestellter3.transform);
 			eingestellter3.SetActive(false);
 			bewerbung3.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[2].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[2].Interessen;
 			bewerbung3.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[2].Name;
