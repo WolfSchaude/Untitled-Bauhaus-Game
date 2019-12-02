@@ -19,6 +19,7 @@ public class BaueWohnheim : MonoBehaviour
     public GameObject heim3;
 
     public bool buildInProgress = false;
+	public bool teacherAssigned = false;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class BaueWohnheim : MonoBehaviour
     void Update()
     {
         buildStructure();
-    }
+	}
 
     public void checkMonth() //Wird bei Monatswechsel ausgeführt
     {

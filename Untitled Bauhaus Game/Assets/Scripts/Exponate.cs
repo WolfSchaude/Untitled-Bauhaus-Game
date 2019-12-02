@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Exponate : MonoBehaviour
 {
+	public UnityEvent exponatDone;
     public Slider expoSlider;
     public Text expoText;
 
@@ -22,10 +24,6 @@ public class Exponate : MonoBehaviour
 
     void Update()
     {
-		//Debug.Log("expoinprog" + exponatInProgress);
-		//Debug.Log("expodone" + isExponatDone);
-		//Debug.Log(exponatCreateTimer);
-
 		expoSlider.value = exponatCreateTimer; //set slider value to int value
 
         createExponat();
@@ -88,19 +86,18 @@ public class Exponate : MonoBehaviour
                 //switch (randomExponat) //switch for different types of exhibits
                 //{
                 //    case 1:
-                        Debug.Log("+rep");
                         GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
                         GameObject.Find("Money Display").GetComponent<Money>().Spende(Random.Range(5000, 25001));
-                //        break;
-                //    case 2:
-                //        Debug.Log("-rep");
-                //        GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value--; //Ansehen -
-                //        break;
-                //    default:
-                //        Debug.Log("default case");
-                //        break;
-                //}
-
+				//        break;
+				//    case 2:
+				//        Debug.Log("-rep");
+				//        GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value--; //Ansehen -
+				//        break;
+				//    default:
+				//        Debug.Log("default case");
+				//        break;
+				//}
+				exponatDone.Invoke();
                 isExponatDone = true;
                 exponatInProgress = false;
                 //exponatCreateTimer = -1000;
