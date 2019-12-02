@@ -181,78 +181,7 @@ public class Event_Memory : MonoBehaviour
 
 	public static int BerechneTage(int StartTag, int StartMonat, int Startjahr, int EndTag, int EndMonat, int EndJahr)
 	{
-		int Buffer = 0;
-
-		if (EndTag - StartTag >= 0)
-		{
-			Buffer += (EndTag - StartTag) * 1;
-			{
-				if (EndMonat - StartMonat >= 0)
-				{
-					Buffer += (EndMonat - StartMonat) * 30;
-					{
-						if (EndJahr - Startjahr >= 0)
-						{
-							Buffer += (EndJahr - Startjahr) * 360;
-						}
-						else
-						{
-							Buffer += (EndJahr + 1 - Startjahr - 1) * 360;
-						}
-					}
-				}
-				else
-				{
-					Buffer += (EndMonat + 12 - StartMonat) * 30;
-					{
-						if (EndJahr - Startjahr - 1 >= 0)
-						{
-							Buffer += (EndJahr - Startjahr - 1) * 360;
-						}
-						else
-						{
-							Buffer += (EndJahr + 1 - Startjahr - 1) * 360;
-						}
-					}
-				}
-			}
-		}
-		else
-		{
-			Buffer += (EndTag + 30 - StartTag) * 1;
-			{
-				if (EndMonat - StartMonat >= 0)
-				{
-					Buffer += (EndMonat - StartMonat) * 30;
-					{
-						if (EndJahr - Startjahr >= 0)
-						{
-							Buffer += (EndJahr - Startjahr) * 360;
-						}
-						else
-						{
-							Buffer += (EndJahr + 1 - Startjahr - 1) * 360;
-						}
-					}
-				}
-				else
-				{
-					Buffer += (EndMonat + 12 - StartMonat) * 30;
-					{
-						if (EndJahr - Startjahr - 1 >= 0)
-						{
-							Buffer += (EndJahr - Startjahr - 1) * 360;
-						}
-						else
-						{
-							Buffer += (EndJahr + 1 - Startjahr - 1) * 360;
-						}
-					}
-				}
-			}
-		}
-
-		return Buffer;
+		return ((EndTag + (EndMonat * 30) + (EndJahr * 360)) - (StartTag + (StartMonat * 30) + (Startjahr * 360)));
 	}
 
 	public void SelectOption1()
