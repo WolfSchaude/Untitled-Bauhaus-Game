@@ -8,7 +8,7 @@ public class BaueWohnheim : MonoBehaviour
     public int AnzahlWohnheime = 0;
 	public int studKapazitätWohn = 200;
 	public int AktPreisW = 1000;
-    public int wohnBuildTimeInMonths = 0;
+    public int wohnBuildTimeInMonths = 2;
 
     public float MinQualität;
     public float MaxQualitaet;
@@ -57,7 +57,7 @@ public class BaueWohnheim : MonoBehaviour
             MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
 
             AnzahlWohnheime++;
-            wohnBuildTimeInMonths = 0;
+            wohnBuildTimeInMonths = 2;
             buildInProgress = false;
         }
     }

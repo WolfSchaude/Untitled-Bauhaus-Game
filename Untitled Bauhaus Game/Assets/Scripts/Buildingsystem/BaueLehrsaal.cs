@@ -8,7 +8,7 @@ public class BaueLehrsaal : MonoBehaviour
     public int AnzahlLehrsaal = 0;
 	public int studKapazitätLehr = 200;
     public int AktPreisL = 1000;
-    public int lehrBuildTimeInMonths = 0;
+    public int lehrBuildTimeInMonths = 2;
 
     public float MinQualität;
     public float MaxQualitaet;
@@ -82,7 +82,7 @@ public class BaueLehrsaal : MonoBehaviour
             MinQualität = 0.5f + (AnzahlLehrsaal * 0.05f);
 
             AnzahlLehrsaal++;
-            lehrBuildTimeInMonths = 0;
+            lehrBuildTimeInMonths = 2;
             buildInProgress = false;
         }
     }
