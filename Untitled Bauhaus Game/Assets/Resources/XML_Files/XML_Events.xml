@@ -5,9 +5,9 @@
 
     <Event>
       <ID>1</ID>
-      <Starten_Tag>29</Starten_Tag>
-      <Starten_Monat>11</Starten_Monat>
-      <Starten_Jahr>1919</Starten_Jahr>
+      <Event_Tag>29</Event_Tag>
+      <Event_Monat>11</Event_Monat>
+      <Event_Jahr>1919</Event_Jahr>
       
       <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
@@ -26,9 +26,9 @@
 
     <Event>
       <ID>2</ID>
-      <Starten_Tag>23</Starten_Tag>
-      <Starten_Monat>12</Starten_Monat>
-      <Starten_Jahr>1919</Starten_Jahr>
+      <Event_Tag>23</Event_Tag>
+      <Event_Monat>12</Event_Monat>
+      <Event_Jahr>1919</Event_Jahr>
       
       <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
@@ -47,9 +47,9 @@
 
     <Event>
       <ID>3</ID>
-      <Starten_Tag>23</Starten_Tag>
-      <Starten_Monat>2</Starten_Monat>
-      <Starten_Jahr>1919</Starten_Jahr>
+      <Event_Tag>23</Event_Tag>
+      <Event_Monat>2</Event_Monat>
+      <Event_Jahr>1920</Event_Jahr>
       
       <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
@@ -68,13 +68,13 @@
 
     <Event>
       <ID>4</ID>
-      <Starten_Tag>23</Starten_Tag>
-      <Starten_Monat>2</Starten_Monat>
-      <Starten_Jahr>1933</Starten_Jahr>
+      <Event_Tag>14</Event_Tag>
+      <Event_Monat>3</Event_Monat>
+      <Event_Jahr>1920</Event_Jahr>
       
-      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      <Einblenden_Ab_Tag>1</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>12</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>1919</Einblenden_Ab_Jahr>
       
       <EventText>Event Description, Event Prescript 4</EventText>
       <EventOption1>Event Option 1, Event Example 4</EventOption1>
@@ -89,9 +89,9 @@
 
     <Event>
       <ID>5</ID>
-      <Starten_Tag>23</Starten_Tag>
-      <Starten_Monat>2</Starten_Monat>
-      <Starten_Jahr>1933</Starten_Jahr>
+      <Event_Tag>23</Event_Tag>
+      <Event_Monat>2</Event_Monat>
+      <Event_Jahr>1933</Event_Jahr>
       
       <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>

@@ -10,14 +10,14 @@ public class Event
 	[XmlElement("ID")]
 	public int ID;
 
-	[XmlElement("Starten_Tag")]
-	public int Starten_Tag;
+	[XmlElement("Event_Tag")]
+	public int Event_Tag;
 
-	[XmlElement("Starten_Monat")]
-	public int Starten_Monat;
+	[XmlElement("Event_Monat")]
+	public int Event_Monat;
 
-	[XmlElement("Starten_Jahr")]
-	public int Starten_Jahr;
+	[XmlElement("Event_Jahr")]
+	public int Event_Jahr;
 
 	[XmlElement("Einblenden_Ab_Tag")]
 	public int Einblenden_Ab_Tag;
