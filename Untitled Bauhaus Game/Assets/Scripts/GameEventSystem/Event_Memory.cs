@@ -78,9 +78,9 @@ public class Event_Memory : MonoBehaviour
 		Geld1 = Memory.Option1_Geld;
 		Geld2 = Memory.Option2_Geld;
 
-		Datum_Tag = Memory.Starten_Tag;
-		Datum_Monat = Memory.Starten_Monat;
-		Datum_Jahr = Memory.Starten_Jahr;
+		Datum_Tag = Memory.Event_Tag;
+		Datum_Monat = Memory.Event_Monat;
+		Datum_Jahr = Memory.Event_Jahr;
 
 		GameObject.Find("EventSystem").GetComponent<Events>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
 
@@ -162,8 +162,16 @@ public class Event_Memory : MonoBehaviour
 		}
 
 		TimerCounter = BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
-
-		Vorlauf = 90;
+		
+		//Wenn ein spezielles Einblenddatum gegeben ist, wird das berechnet, ansonsten werden 90 Tage verwendet 
+		if (Memory.Einblenden_Ab_Tag != 0 && ( Memory.Einblenden_Ab_Monat != 0 && Memory.Einblenden_Ab_Jahr != 0))
+		{
+			Vorlauf = BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Datum_Tag, Datum_Monat, Datum_Jahr);
+		}
+		else
+		{
+			Vorlauf = 90;
+		}
 
 		if (TimerCounter > Vorlauf)
 		{
@@ -256,7 +264,7 @@ public class Event_Memory : MonoBehaviour
 			gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
 			gameObject.GetComponentsInChildren<Button>()[0].Select();
 
-			var colours = gameObject.GetComponentsInChildren<Button>()[0].colors;	//Highlight Button with a different Color
+			var colours = gameObject.GetComponentsInChildren<Button>()[0].colors;   //Highlight Button with selected Option with a different Color
 			colours.disabledColor = new Color32(155, 0, 0, 255);
 			gameObject.GetComponentsInChildren<Button>()[0].colors = colours;
 
@@ -276,7 +284,7 @@ public class Event_Memory : MonoBehaviour
 			gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
 			gameObject.GetComponentsInChildren<Button>()[1].Select();
 
-			var colours = gameObject.GetComponentsInChildren<Button>()[1].colors;   //Highlight Button with a different Color
+			var colours = gameObject.GetComponentsInChildren<Button>()[1].colors;   //Highlight Button with selected Option with a different Color
 			colours.disabledColor = new Color32(155, 0, 0, 255);
 			gameObject.GetComponentsInChildren<Button>()[1].colors = colours;
 		}
