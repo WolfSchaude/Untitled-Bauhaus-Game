@@ -8,7 +8,7 @@ public class BaueWerkstatt : MonoBehaviour
     public int AnzahlWerkstaette = 0;
 	public int studKapazitätWerk = 200;
 	public int AktPreis = 1000;
-    public int werkBuildTimeInMonths = 2;
+    public int werkBuildTimeInMonths = 0;
 
     public float MinQualität;
     public float MaxQualitaet;
@@ -81,7 +81,7 @@ public class BaueWerkstatt : MonoBehaviour
             MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
 
             AnzahlWerkstaette++;
-            werkBuildTimeInMonths = 2;
+            werkBuildTimeInMonths = 0;
             buildInProgress = false;
         }
     }

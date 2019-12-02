@@ -3060,7 +3060,7 @@ MonoBehaviour:
   AnzahlWerkstaette: 0
   "studKapazit\xE4tWerk": 200
   AktPreis: 1000
-  werkBuildTimeInMonths: 2
+  werkBuildTimeInMonths: 0
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   werk1: {fileID: 1869246093}
@@ -3086,7 +3086,7 @@ MonoBehaviour:
   AnzahlLehrsaal: 0
   "studKapazit\xE4tLehr": 200
   AktPreisL: 1000
-  lehrBuildTimeInMonths: 2
+  lehrBuildTimeInMonths: 0
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   lehr1: {fileID: 1884695511}
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   AnzahlWohnheime: 0
   "studKapazit\xE4tWohn": 200
   AktPreisW: 1000
-  wohnBuildTimeInMonths: 2
+  wohnBuildTimeInMonths: 0
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   heim1: {fileID: 2102026957}
