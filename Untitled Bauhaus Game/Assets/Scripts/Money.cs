@@ -52,4 +52,9 @@ public class Money : MonoBehaviour
 		}
 		
     }
+
+	public void Geld(int value)
+	{
+		money += value;
+	}
 }

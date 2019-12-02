@@ -5,72 +5,107 @@
 
     <Event>
       <ID>1</ID>
-      <Tag>29</Tag>
-      <Monat>11</Monat>
-      <Jahr>1919</Jahr>
+      <Starten_Tag>29</Starten_Tag>
+      <Starten_Monat>11</Starten_Monat>
+      <Starten_Jahr>1919</Starten_Jahr>
+      
+      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      
       <EventText>Event Description, Event Prescript 1</EventText>
       <EventOption1>Event Option 1, Event Example 1</EventOption1>
       <Option1_Politik>23</Option1_Politik>
-      <Option2_Ansehen>3</Option2_Ansehen>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>100000</Option1_Geld>
       <EventOption2>Event Option 2, Event Example 1</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
     </Event>
 
     <Event>
       <ID>2</ID>
-      <Tag>23</Tag>
-      <Monat>12</Monat>
-      <Jahr>1919</Jahr>
+      <Starten_Tag>23</Starten_Tag>
+      <Starten_Monat>12</Starten_Monat>
+      <Starten_Jahr>1919</Starten_Jahr>
+      
+      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      
       <EventText>Event Description, Event Prescript 2</EventText>
       <EventOption1>Event Option 1, Event Example 2</EventOption1>
       <Option1_Politik>23</Option1_Politik>
-      <Option2_Ansehen>3</Option2_Ansehen>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
       <EventOption2>Event Option 2, Event Example 2</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
+      <Option2_Geld>1000</Option2_Geld>
     </Event>
 
     <Event>
       <ID>3</ID>
-      <Tag>23</Tag>
-      <Monat>2</Monat>
-      <Jahr>1919</Jahr>
+      <Starten_Tag>23</Starten_Tag>
+      <Starten_Monat>2</Starten_Monat>
+      <Starten_Jahr>1919</Starten_Jahr>
+      
+      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      
       <EventText>Event Description, Event Prescript 3</EventText>
       <EventOption1>Event Option 1, Event Example 3</EventOption1>
       <Option1_Politik>23</Option1_Politik>
-      <Option2_Ansehen>3</Option2_Ansehen>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
       <EventOption2>Event Option 2, Event Example 3</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
     </Event>
 
     <Event>
       <ID>4</ID>
-      <Tag>23</Tag>
-      <Monat>2</Monat>
-      <Jahr>1933</Jahr>
+      <Starten_Tag>23</Starten_Tag>
+      <Starten_Monat>2</Starten_Monat>
+      <Starten_Jahr>1933</Starten_Jahr>
+      
+      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      
       <EventText>Event Description, Event Prescript 4</EventText>
       <EventOption1>Event Option 1, Event Example 4</EventOption1>
       <Option1_Politik>23</Option1_Politik>
-      <Option2_Ansehen>3</Option2_Ansehen>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
       <EventOption2>Event Option 2, Event Example 4</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
     </Event>
 
     <Event>
       <ID>5</ID>
-      <Tag>23</Tag>
-      <Monat>2</Monat>
-      <Jahr>1933</Jahr>
+      <Starten_Tag>23</Starten_Tag>
+      <Starten_Monat>2</Starten_Monat>
+      <Starten_Jahr>1933</Starten_Jahr>
+      
+      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      
       <EventText>Event Description, Event Prescript 5</EventText>
       <EventOption1>Event Option 2, Event Example 5</EventOption1>
       <Option1_Politik>23</Option1_Politik>
-      <Option2_Ansehen>3</Option2_Ansehen>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
       <EventOption2>Event Option 2, Event Example 5</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
     </Event>
 
   </Events>

@@ -13,7 +13,6 @@ public class EventScript : MonoBehaviour
 
 	public static List<GameObject> AllEvents;
 
-    // Start is called before the first frame update
     void Start()
     {
 		AllEvents = new List<GameObject>();
@@ -21,13 +20,8 @@ public class EventScript : MonoBehaviour
 		for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 		{
 			AllEvents.Add(Instantiate(prefab, parent.transform));
-			//AllEvents[i].AddComponent<Event_Memory>();
-			AllEvents[i].GetComponent<Event_Memory>().SetMemory(
-				//EventLoader.ec.Events[i].Option1_Politik,
-				//EventLoader.ec.Events[i].Option2_Politik,
-				//EventLoader.ec.Events[i].Option1_Ansehen,
-				//EventLoader.ec.Events[i].Option2_Ansehen,
-				EventLoader.ec.Events[i]);
+
+			AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
 
 			AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
@@ -43,10 +37,16 @@ public class EventScript : MonoBehaviour
 		}
 	}
 
-    // Update is called once per frame
     void Update()
     {
-		
+		if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count)
+		{
+			if (gameObject.activeSelf)
+			{
+				gameObject.SetActive(false); //Wenn keine Events mehr aktiv sind, blende das Menue aus
+				GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = false; //Sorgt dafür, das der Button nicht mehr funktioniert, damit man kein Flackern erzeugen kann
+			}
+		}
 	}
 
 	public void ToggleEvent()

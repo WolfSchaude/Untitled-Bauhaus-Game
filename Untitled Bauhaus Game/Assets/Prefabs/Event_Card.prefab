@@ -247,15 +247,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Politik1: 0
-  Ansehen1: 0
   Politik2: 0
+  Ansehen1: 0
   Ansehen2: 0
+  Geld1: 0
+  Geld2: 0
   Vorlauf: 0
   Datum_Tag: 0
   Datum_Monat: 0
   Datum_Jahr: 0
   TimerCounter: 0
   Timer: {fileID: 5891789932909716720}
+  IsFinished: 0
 --- !u!1 &841084718255526948
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +374,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3535790427307561922}
-        m_MethodName: EventEffect1
+        m_MethodName: SelectOption1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -727,7 +730,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3535790427307561922}
-        m_MethodName: EventEffect2
+        m_MethodName: SelectOption2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

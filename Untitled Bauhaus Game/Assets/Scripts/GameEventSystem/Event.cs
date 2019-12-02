@@ -10,14 +10,23 @@ public class Event
 	[XmlElement("ID")]
 	public int ID;
 
-	[XmlElement("Tag")]
-	public int Tag;
+	[XmlElement("Starten_Tag")]
+	public int Starten_Tag;
 
-	[XmlElement("Monat")]
-	public int Monat;
+	[XmlElement("Starten_Monat")]
+	public int Starten_Monat;
 
-	[XmlElement("Jahr")]
-	public int Jahr;
+	[XmlElement("Starten_Jahr")]
+	public int Starten_Jahr;
+
+	[XmlElement("Einblenden_Ab_Tag")]
+	public int Einblenden_Ab_Tag;
+
+	[XmlElement("Einblenden_Ab_Monat")]
+	public int Einblenden_Ab_Monat;
+
+	[XmlElement("Einblenden_Ab_Jahr")]
+	public int Einblenden_Ab_Jahr;
 
 	[XmlElement("EventText")]
 	public string EventText;
@@ -33,6 +42,8 @@ public class Event
 	[XmlElement("Option1_Ansehen")]
 	public int Option1_Ansehen;
 
+	[XmlElement("Option1_Geld")]
+	public int Option1_Geld;
 
 
 	[XmlElement("EventOption2")]
@@ -44,4 +55,6 @@ public class Event
 	[XmlElement("Option2_Ansehen")]
 	public int Option2_Ansehen;
 
+	[XmlElement("Option2_Geld")]
+	public int Option2_Geld;
 }
