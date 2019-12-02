@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class DropdownDoz : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-	private GameObject dropdownB;
+    public GameObject buttons;
+    private GameObject dropdownB;
 	private GameObject overviewB;
  
 	public RectTransform container;
@@ -28,17 +29,23 @@ public class DropdownDoz : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	void Start()
 	{
-		transVector = new Vector3(0, 70, 0);
-		
-		dropdownB = GameObject.Find("Dropdown Gebäude");
+        StartCoroutine(WaitUntilEndOfFrame());
+
+        dropdownB = GameObject.Find("Dropdown Gebäude");
 		overviewB = GameObject.Find("Übersicht Gebäude");
 
 		container = transform.Find("Container").GetComponent<RectTransform>();
 		isOpen = false;
 	}
 
-	// Update is called once per frame
-	void Update()
+    IEnumerator WaitUntilEndOfFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        transVector = new Vector3(0, GetComponent<RectTransform>().rect.height + (buttons.GetComponent<RectTransform>().rect.height * 2), 0);
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
 		Vector3 scale = container.localScale;
 		scale.y = Mathf.Lerp(scale.y, isOpen ? 1 : 0, Time.deltaTime * 12);
