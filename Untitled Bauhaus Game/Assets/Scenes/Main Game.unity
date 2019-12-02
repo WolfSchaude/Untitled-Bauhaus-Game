@@ -10717,6 +10717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e5b4925bb9f74f90b33912915d4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exponatDone:
+    m_PersistentCalls:
+      m_Calls: []
   expoSlider: {fileID: 1914841643}
   expoText: {fileID: 1141301272}
 --- !u!1 &1918243733
