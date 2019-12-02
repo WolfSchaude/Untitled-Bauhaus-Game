@@ -58,6 +58,7 @@ public class EventScript : MonoBehaviour
 		else
 		{
 			gameObject.SetActive(true);
+			GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false); //schließt Baumenu
 		}
 	}
 }
