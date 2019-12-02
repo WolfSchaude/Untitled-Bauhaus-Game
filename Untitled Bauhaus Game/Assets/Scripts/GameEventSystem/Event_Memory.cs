@@ -22,6 +22,8 @@ public class Event_Memory : MonoBehaviour
 
 	public Event Memory;
 
+	public bool IsFinished = false;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -172,6 +174,8 @@ public class Event_Memory : MonoBehaviour
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
 
+
+		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	public void EventEffect2()
@@ -179,13 +183,14 @@ public class Event_Memory : MonoBehaviour
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
 
+		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	public void DecreaseTimerCounter()
 	{
 		TimerCounter--;
 
-		if (TimerCounter <= Vorlauf && TimerCounter > 0)
+		if ((TimerCounter <= Vorlauf && TimerCounter > 0) && !IsFinished)
 		{
 			gameObject.SetActive(true);
 		}

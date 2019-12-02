@@ -8,11 +8,11 @@
       <Tag>29</Tag>
       <Monat>11</Monat>
       <Jahr>1919</Jahr>
-      <EventText>Joa Mei, des isch aberamol a feins Säckle Riewe. Do tuds aber en paar mea Stunnen uffm Fotzenhobel daste dodemol wos nogriegschd.</EventText>
-      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <EventText>Event Description, Event Prescript 1</EventText>
+      <EventOption1>Event Option 1, Event Example 1</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option2_Ansehen>3</Option2_Ansehen>
-      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <EventOption2>Event Option 2, Event Example 1</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
@@ -22,11 +22,11 @@
       <Tag>23</Tag>
       <Monat>12</Monat>
       <Jahr>1919</Jahr>
-      <EventText>Joa Mei</EventText>
-      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <EventText>Event Description, Event Prescript 2</EventText>
+      <EventOption1>Event Option 1, Event Example 2</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option2_Ansehen>3</Option2_Ansehen>
-      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <EventOption2>Event Option 2, Event Example 2</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
@@ -36,11 +36,11 @@
       <Tag>23</Tag>
       <Monat>2</Monat>
       <Jahr>1919</Jahr>
-      <EventText>Joa Mei</EventText>
-      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <EventText>Event Description, Event Prescript 3</EventText>
+      <EventOption1>Event Option 1, Event Example 3</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option2_Ansehen>3</Option2_Ansehen>
-      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <EventOption2>Event Option 2, Event Example 3</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
@@ -50,11 +50,11 @@
       <Tag>23</Tag>
       <Monat>2</Monat>
       <Jahr>1933</Jahr>
-      <EventText>Joa Mei</EventText>
-      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <EventText>Event Description, Event Prescript 4</EventText>
+      <EventOption1>Event Option 1, Event Example 4</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option2_Ansehen>3</Option2_Ansehen>
-      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <EventOption2>Event Option 2, Event Example 4</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
@@ -64,11 +64,11 @@
       <Tag>23</Tag>
       <Monat>2</Monat>
       <Jahr>1933</Jahr>
-      <EventText>Joa Mei</EventText>
-      <EventOption1>Ich will ne Kartoffel</EventOption1>
+      <EventText>Event Description, Event Prescript 5</EventText>
+      <EventOption1>Event Option 2, Event Example 5</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option2_Ansehen>3</Option2_Ansehen>
-      <EventOption2>Ich will gleich Vodka</EventOption2>
+      <EventOption2>Event Option 2, Event Example 5</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
     </Event>
