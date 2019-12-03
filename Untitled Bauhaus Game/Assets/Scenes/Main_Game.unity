@@ -2525,6 +2525,7 @@ GameObject:
   - component: {fileID: 381768617}
   - component: {fileID: 381768616}
   - component: {fileID: 381768619}
+  - component: {fileID: 381768627}
   - component: {fileID: 381768623}
   - component: {fileID: 381768624}
   - component: {fileID: 381768625}
@@ -2782,6 +2783,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0025b26acf6e284f84981de06f88d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &381768627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381768615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e848a9862e377340b8b74ee585cda67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  politikmeterSkript: {fileID: 0}
 --- !u!1 &398429655
 GameObject:
   m_ObjectHideFlags: 0
