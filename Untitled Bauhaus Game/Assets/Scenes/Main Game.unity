@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &159439757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &171415045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3105,13 @@ MonoBehaviour:
   werk5: {fileID: 171393007}
   werk6: {fileID: 1521138415}
   werk7: {fileID: 151450147}
+  Script1: {fileID: 1869246098}
+  Script2: {fileID: 1659913885}
+  Script3: {fileID: 1163785629}
+  Script4: {fileID: 2123304684}
+  Script5: {fileID: 171393012}
+  Script6: {fileID: 1521138420}
+  Script7: {fileID: 151450152}
   WerkstattTyp: 0
   buildInProgress: 0
 --- !u!114 &410550911
@@ -6903,6 +6912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1168632090
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,6 +8811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1527862017
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,6 +9624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1662343420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10502,6 +10514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1884695511
 GameObject:
   m_ObjectHideFlags: 0
@@ -11668,6 +11681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &2127398151
 GameObject:
   m_ObjectHideFlags: 0
