@@ -6,10 +6,14 @@ using UnityEngine;
 public class ZuweisenOnChange : MonoBehaviour
 {
 
+	public bewerbungvisible Script;
+	public bool checkeingestellt = false;
+
 	void Start()
     {
-        
-    }
+		Script = GameObject.Find("EventSystem").GetComponent<bewerbungvisible>();
+
+	}
 
     void Update()
     {
@@ -22,9 +26,20 @@ public class ZuweisenOnChange : MonoBehaviour
 		{
 			case 0:
 				Debug.Log("Nicht zugewiesen");
+				//Script.zugewiesenenCounter--;
+				//if (Script.zugewiesenenCounter < 0)
+				//{
+				//	Script.zugewiesenenCounter = 0;
+				//}
 				break;
 			case 1:
 				Debug.Log("Ist der Architekturwerkstatt zugewiesen");
+				//Script.zugewiesenenCounter--;
+				//if(Script.zugewiesenenCounter < 0)
+				//{
+				//	Script.zugewiesenenCounter = 0;
+				//}
+				//	Script.zugewiesenenCounter++;
 				break;
 			case 2:
 				Debug.Log("Ist der Malerei zugewiesen");
@@ -47,6 +62,17 @@ public class ZuweisenOnChange : MonoBehaviour
 			default:
 				Debug.Log("Nicht zugewiesen");
 				break;
+		}
+
+		if(val > 0 && !checkeingestellt)
+		{
+			Script.zugewiesenenCounter++;
+			checkeingestellt = true;
+		}
+		if(val == 0 && checkeingestellt)
+		{
+			Script.zugewiesenenCounter--;
+			checkeingestellt = false;
 		}
 	}
 
