@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BaumenuDetail : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class BaumenuDetail : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main_Menu");
+        }
+
         if (!detailWindow.activeSelf/* && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.activeSelf && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.activeSelf*/) //Disables all dropdown menus when window is open
         {
             dropdownContainerB.SetActive(true);
