@@ -6,11 +6,15 @@ public class Werkstatt : MonoBehaviour
 {
     public enum WerkstattTyp { Undefiniert, Architektur, Malerei, Ausstellungsgestaltung, Metallwerkstatt, Tischlerei };
     public WerkstattTyp EigenerTyp;
+
     public bool IstEinemDozentenZugewiesen;
+
+    public int DebugWST;
 
     // Start is called before the first frame update
     void Start()
     {
+        DebugWST = 0;
         IstEinemDozentenZugewiesen = false;
         EigenerTyp = WerkstattTyp.Undefiniert;
     }
@@ -23,17 +27,23 @@ public class Werkstatt : MonoBehaviour
 
     public void SetType(int Typ)
     {
-        switch(Typ)
+        DebugWST = Typ;
+        switch (Typ)
         {
-            case 0: EigenerTyp = WerkstattTyp.Architektur;
+            case 1:
+                EigenerTyp = WerkstattTyp.Architektur;
                 break;
-            case 1: EigenerTyp = WerkstattTyp.Malerei;
+            case 2:
+                EigenerTyp = WerkstattTyp.Malerei;
                 break;
-            case 2: EigenerTyp = WerkstattTyp.Ausstellungsgestaltung;
+            case 3:
+                EigenerTyp = WerkstattTyp.Ausstellungsgestaltung;
                 break;
-            case 3: EigenerTyp = WerkstattTyp.Metallwerkstatt;
+            case 4:
+                EigenerTyp = WerkstattTyp.Metallwerkstatt;
                 break;
-            case 4: EigenerTyp = WerkstattTyp.Tischlerei;
+            case 5:
+                EigenerTyp = WerkstattTyp.Tischlerei;
                 break;
         }
     }

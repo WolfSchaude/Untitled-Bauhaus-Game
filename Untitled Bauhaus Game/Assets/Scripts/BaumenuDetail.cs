@@ -33,7 +33,7 @@ public class BaumenuDetail : MonoBehaviour
     bool lehrsaalDetailOpen = false;
     bool wohnheimDetailOpen = false;
 
-    int buttonCount = 0;
+    public int buttonCount = 0;
 
     void Start()
     {

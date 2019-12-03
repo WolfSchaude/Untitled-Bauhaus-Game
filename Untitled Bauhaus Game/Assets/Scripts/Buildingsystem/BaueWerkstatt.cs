@@ -22,13 +22,16 @@ public class BaueWerkstatt : MonoBehaviour
     public GameObject werk6;
     public GameObject werk7;
 
+    public int WerkstattTyp;
+
     public bool buildInProgress = false;
 
     void Start()
     {
         MaxQualitaet = 1.5f;
         MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-    }
+        WerkstattTyp = 0;
+}
 
     void Update()
     {
@@ -86,9 +89,14 @@ public class BaueWerkstatt : MonoBehaviour
         }
     }
 
-    public void NeueWerkstatt(/*int Typ*/)
+    public void SetType()
     {
-        int Typ = 0;
+        WerkstattTyp = GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().buttonCount;
+    }
+
+    public void NeueWerkstatt()
+    {
+        //int Typ = 0;
         if (!buildInProgress)
         {
             switch (AnzahlWerkstaette)
@@ -99,7 +107,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk1.transform.position = new Vector3(-2.5f, 3.15f, -6.25f);
                         werk1.transform.localScale = new Vector3(3.5f, 5f, 6.5f);
-                        werk1.GetComponent<Werkstatt>().SetType(Typ);
+                        werk1.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk1.SetActive(true);
@@ -113,7 +121,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk2.transform.position = new Vector3(-7.25f, 3.15f, -4.5f);
                         werk2.transform.localScale = new Vector3(6f, 5f, 3.5f);
-                        werk2.GetComponent<Werkstatt>().SetType(Typ);
+                        werk2.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk2.SetActive(true);
@@ -128,7 +136,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk3.transform.position = new Vector3(-7.25f, 3.15f, -8.125f);
                         werk3.transform.localScale = new Vector3(6f, 5f, 3.75f);
-                        werk3.GetComponent<Werkstatt>().SetType(Typ);
+                        werk3.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk3.SetActive(true);
@@ -142,7 +150,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk4.transform.position = new Vector3(-7.25f, 3.15f, -11.75f);
                         werk4.transform.localScale = new Vector3(6f, 5f, 3.5f);
-                        werk4.GetComponent<Werkstatt>().SetType(Typ);
+                        werk4.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk4.SetActive(true);
@@ -156,7 +164,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk5.transform.position = new Vector3(-7.25f, 3.15f, -15.25f);
                         werk5.transform.localScale = new Vector3(6f, 5f, 3.5f);
-                        werk5.GetComponent<Werkstatt>().SetType(Typ);
+                        werk5.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk5.SetActive(true);
@@ -170,7 +178,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk6.transform.position = new Vector3(-7.25f, 3.15f, -18.75f);
                         werk6.transform.localScale = new Vector3(6f, 5f, 3.5f);
-                        werk6.GetComponent<Werkstatt>().SetType(Typ);
+                        werk6.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk6.SetActive(true);
@@ -184,7 +192,7 @@ public class BaueWerkstatt : MonoBehaviour
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
                         werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.15f);
                         werk7.transform.localScale = new Vector3(6f, 5f, 3.5f);
-                        werk7.GetComponent<Werkstatt>().SetType(Typ);
+                        werk7.GetComponent<Werkstatt>().SetType(WerkstattTyp);
                         Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
                         buildInProgress = true;
                         //werk7.SetActive(true);
