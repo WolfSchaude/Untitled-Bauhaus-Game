@@ -7,6 +7,7 @@ public class WinLose : MonoBehaviour
 
 	public Politikmeter politikmeterSkript;
 	public Money moneySkript;
+	public Studenten studentenSkript;
 	public int tage;
 
 	public int StartMonth;
@@ -26,6 +27,7 @@ public class WinLose : MonoBehaviour
     {
 		politikmeterSkript = GameObject.Find("Politikmeter").GetComponent<Politikmeter>();
 		moneySkript = GameObject.Find("Money Display").GetComponent<Money>();
+		studentenSkript = GameObject.Find("Studenten Counter").GetComponent<Studenten>();
 
 		gameTime += StartSecond;
 		gameTime += StartMinute * MinToSec;
@@ -50,6 +52,11 @@ public class WinLose : MonoBehaviour
 		if(moneySkript.money < 0)
 		{
 			//Bruh muss ich noch machen
+		}
+		if(studentenSkript.StudentenAnzahl <= 0)
+		{
+			Application.Quit();
+			Debug.Log("bruh exit again");
 		}
 
     }
