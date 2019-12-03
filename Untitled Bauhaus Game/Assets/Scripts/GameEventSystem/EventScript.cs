@@ -30,10 +30,13 @@ public class EventScript : MonoBehaviour
 				+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
-			AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-				= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-				+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-				+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
+			if (EventLoader.ec.Events[i].SpezialEvent == 0)
+			{
+				AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+					= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
+					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
+					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
+			}
 		}
 	}
 
