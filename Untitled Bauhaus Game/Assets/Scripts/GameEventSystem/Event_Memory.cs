@@ -30,9 +30,9 @@ public class Event_Memory : MonoBehaviour
 	private bool SelectedOption1		= false;
 	private bool SelectedOption2		= false;
 
-	private bool ExponateCounterStartet	= false;
-	private int ExponateCounter			= 0;
-	private int ExponateNeeded			= 0;
+	public bool ExponateCounterStartet	= false;
+	public int ExponateCounter			= 0;
+	public int ExponateNeeded			= 0;
 
 	// Start is called before the first frame update
 	void Start()
@@ -68,10 +68,19 @@ public class Event_Memory : MonoBehaviour
 			this.gameObject.SetActive(false);
 		}
 
+		if (TimerCounter <= Vorlauf && TimerCounter > 0 && ExponateNeeded != 0 && !ExponateCounterStartet)
+		{
+			ExponateCounterFunktion();
+		}
 		if (ExponateCounterStartet)
 		{
 			gameObject.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text = ExponateCounter + " von " + ExponateNeeded + " Exponaten hergestellt.";
 		}
+		if (ExponateCounter >= ExponateNeeded && ExponateNeeded != 0 && ExponateCounterStartet)
+		{
+			SelectOption1();
+		}
+
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
@@ -186,13 +195,9 @@ public class Event_Memory : MonoBehaviour
 			this.gameObject.SetActive(false);
 		}
 
-		//Das Muss später noch in die Update() Funktion, damit er erst anfägt zu zählen, wenn das Event zu sehen ist, momentan zum Debuggen hier
 		if (Memory.SpezialEvent != 0)
 		{
 			ExponateNeeded = Memory.SpezialEvent;
-
-			//Das Muss später noch in die Update() Funktion, damit er erst anfägt zu zählen, wenn das Event zu sehen ist, momentan zum Debuggen hier
-			ExponateCounterFunktion();
 		}
 	}
 
@@ -214,8 +219,11 @@ public class Event_Memory : MonoBehaviour
 			colours.disabledColor = new Color32(155, 0, 0, 255);
 			gameObject.GetComponentsInChildren<Button>()[0].colors = colours;
 
-			gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[1].Select();
+			if (ExponateNeeded == 0)
+			{
+				gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
+				gameObject.GetComponentsInChildren<Button>()[1].Select();
+			}
 		}
 	}
 	public void SelectOption2()
@@ -264,6 +272,7 @@ public class Event_Memory : MonoBehaviour
 		if ((TimerCounter <= Vorlauf && TimerCounter > 0) && !IsFinished)
 		{
 			gameObject.SetActive(true);
+
 			GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = true;
 		}
 	}
@@ -272,11 +281,7 @@ public class Event_Memory : MonoBehaviour
 	{
 		ExponateCounterStartet = true;
 
-		//GameObject.Find("Exponate").GetComponentInChildren<Exponate>().exponatDone.AddListener(() => { IncreaseExponateCounter(); });
-
-		Debug.Log(GameObject.Find("ExponatSlider").ToString());
-
-		Debug.Log(GameObject.Find("ExponatSlider").GetComponent<Exponate>().ToString());
+		FindInActiveObjectByName("ExponatSlider").GetComponent<Exponate>().exponatDone.AddListener(() => { IncreaseExponateCounter(); });
 
 		gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
 		gameObject.GetComponentsInChildren<Button>()[1].gameObject.SetActive(false);
@@ -288,5 +293,21 @@ public class Event_Memory : MonoBehaviour
 		{
 			ExponateCounter++;
 		}
+	}
+
+	GameObject FindInActiveObjectByName(string name)
+	{
+		Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
+		for (int i = 0; i < objs.Length; i++)
+		{
+			if (objs[i].hideFlags == HideFlags.None)
+			{
+				if (objs[i].name == name)
+				{
+					return objs[i].gameObject;
+				}
+			}
+		}
+		return null;
 	}
 }
