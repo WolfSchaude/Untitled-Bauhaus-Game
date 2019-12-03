@@ -10,7 +10,7 @@ public class Exponate : MonoBehaviour
     public Slider expoSlider;
     public Text expoText;
 
-    int exponatCreateTimer = -1000;
+    int exponatCreateTimer = -5000;
     //private int dayCounter = 3; //Intervall in Tagen, wie oft ein Exponat hergestellt werden soll.
     private int textCooldown = 200;
     private int expoPrice = 7500; //Herstellungspreis
@@ -30,7 +30,7 @@ public class Exponate : MonoBehaviour
 
 		if (Time.timeScale == 3)
 		{
-			expoSlider.maxValue = -600;
+			expoSlider.maxValue = -2000;
 		}
 		else if (Time.timeScale == 1)
 		{
@@ -77,8 +77,9 @@ public class Exponate : MonoBehaviour
     {
         if (exponatInProgress)
         {
-            exponatCreateTimer++;
-            if (exponatCreateTimer >= expoSlider.maxValue)
+			exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter);
+
+			if (exponatCreateTimer >= expoSlider.maxValue)
             {
                 expoText.text = "Exponat hergestellt!";
 
