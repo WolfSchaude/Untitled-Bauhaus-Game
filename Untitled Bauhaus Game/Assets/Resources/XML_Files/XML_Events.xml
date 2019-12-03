@@ -3,28 +3,7 @@
 <EventCollection>
   <Events>
 
-    <Event>
-      <ID>2</ID>
-      <Event_Tag>23</Event_Tag>
-      <Event_Monat>4</Event_Monat>
-      <Event_Jahr>1921</Event_Jahr>
-      
-      <Einblenden_Ab_Tag>4</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>4</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>1921</Einblenden_Ab_Jahr>
-      
-      <EventText>In Vorträgen und Kursen wendet sich Theo van Doesburg gegen die expressionistische und handwerkliche Ausrichtung des Bauhauses.
-
-, Starte eine Aufklärungskampagne um spätere Konflikte zu vermeiden.</EventText>
-      <EventOption1>Organisiere einen Vortrag</EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>1</Option1_Ansehen>
-      <Option1_Geld>-1000</Option1_Geld>
-      <EventOption2>Ignorieren</EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>-3</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-    </Event>
+   
 
     <Event>
       <ID>1</ID>
@@ -46,6 +25,27 @@
       <EventOption2>Ignorieren</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-4</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+    </Event>
+    
+     <Event>
+      <ID>2</ID>
+      <Event_Tag>23</Event_Tag>
+      <Event_Monat>4</Event_Monat>
+      <Event_Jahr>1921</Event_Jahr>
+      
+      <Einblenden_Ab_Tag>4</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>4</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>1921</Einblenden_Ab_Jahr>
+      
+      <EventText>In Vorträgen und Kursen wendet sich Theo van Doesburg gegen die expressionistische und handwerkliche Ausrichtung des Bauhauses. , Starte eine Aufklärungskampagne um spätere Konflikte zu vermeiden.</EventText>
+      <EventOption1>Organisiere einen Vortrag</EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>1</Option1_Ansehen>
+      <Option1_Geld>-1000</Option1_Geld>
+      <EventOption2>Ignorieren</EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>-3</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
     </Event>
 
@@ -74,19 +74,21 @@
 
     <Event>
       <ID>4</ID>
-      <Event_Tag>14</Event_Tag>
-      <Event_Monat>3</Event_Monat>
-      <Event_Jahr>1920</Event_Jahr>
+      <Event_Tag>25</Event_Tag>
+      <Event_Monat>6</Event_Monat>
+      <Event_Jahr>1923</Event_Jahr>
       
-      <Einblenden_Ab_Tag>1</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>12</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>1919</Einblenden_Ab_Jahr>
+      <Einblenden_Ab_Tag>25</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>8</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>1923</Einblenden_Ab_Jahr>
       
-      <EventText>Event Description, Event Prescript 4</EventText>
+      <EventText>Nehme an der Leipziger Herbst-Messe teil. Hierfür brauchst du mindestens 4 Exponate.</EventText>
+      
       <EventOption1>Event Option 1, Event Example 4</EventOption1>
       <Option1_Politik>23</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
+      
       <EventOption2>Event Option 2, Event Example 4</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
@@ -95,20 +97,22 @@
 
     <Event>
       <ID>5</ID>
-      <Event_Tag>23</Event_Tag>
-      <Event_Monat>2</Event_Monat>
-      <Event_Jahr>1933</Event_Jahr>
+      <Event_Tag>1</Event_Tag>
+      <Event_Monat>4</Event_Monat>
+      <Event_Jahr>1925</Event_Jahr>
       
-      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
+      <Einblenden_Ab_Tag>26</Einblenden_Ab_Tag>
+      <Einblenden_Ab_Monat>12</Einblenden_Ab_Monat>
+      <Einblenden_Ab_Jahr>1924</Einblenden_Ab_Jahr>
       
-      <EventText>Event Description, Event Prescript 5</EventText>
-      <EventOption1>Event Option 2, Event Example 5</EventOption1>
-      <Option1_Politik>23</Option1_Politik>
-      <Option1_Ansehen>3</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-      <EventOption2>Event Option 2, Event Example 5</EventOption2>
+      <EventText>Nach den Wahlen zum Thüringer Landtag erklären die Meister die Auflösung des Bauhauses zum 1. April 1925. Unternimm etwas dagegen!</EventText>
+      
+      <EventOption1>Gründe den Verein „Kreis der Freunde des Bauhauses“</EventOption1>
+      <Option1_Politik>-20</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>-10000</Option1_Geld>
+      
+      <EventOption2>Ignorieren (Lose condition)</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
