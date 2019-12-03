@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &159439757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &171415045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3878,7 +3880,7 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 2
+  m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_GateFitMode: 2
@@ -6903,6 +6905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1168632090
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,6 +8804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1527862017
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,6 +9617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1662343420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10112,7 +10117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a046f78ae39eeaa49a21f00b90bdd265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 55555556
+  money: 5555555
   moneyText: {fileID: 1766543281}
 --- !u!114 &1766543281
 MonoBehaviour:
@@ -10502,6 +10507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &1884695511
 GameObject:
   m_ObjectHideFlags: 0
@@ -11213,7 +11219,7 @@ Transform:
   m_GameObject: {fileID: 2020878074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 113.90082, y: 1.4009, z: 123.565475}
+  m_LocalScale: {x: 4619.02, y: 1.3, z: 4363.5913}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -11668,6 +11674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
+  DebugWST: 0
 --- !u!1 &2127398151
 GameObject:
   m_ObjectHideFlags: 0
@@ -30224,7 +30231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121323585085757316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.811099, y: 0.5, z: -85.03705}
+  m_LocalPosition: {x: 10.811099, y: 0.4, z: -85.03705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 121323585086049254}
