@@ -26,6 +26,8 @@
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-4</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+
+      <SpezialEvent>0</SpezialEvent>
     </Event>
     
      <Event>
@@ -47,6 +49,8 @@
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-3</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+
+       <SpezialEvent>0</SpezialEvent>
     </Event>
 
     <Event>
@@ -70,6 +74,8 @@
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+
+      <SpezialEvent>2</SpezialEvent>
     </Event>
 
     <Event>
@@ -93,6 +99,8 @@
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+
+      <SpezialEvent>4</SpezialEvent>
     </Event>
 
     <Event>
@@ -116,7 +124,8 @@
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
-    </Event>
 
+      <SpezialEvent>0</SpezialEvent>
+    </Event>
   </Events>
 </EventCollection>

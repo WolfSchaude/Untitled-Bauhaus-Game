@@ -5,30 +5,34 @@ using UnityEngine.UI;
 
 public class Event_Memory : MonoBehaviour
 {
-	public int Politik1				= 0;
-	public int Politik2				= 0;
-	public int Ansehen1				= 0;
-	public int Ansehen2				= 0;
-	public int Geld1				= 0;
-	public int Geld2				= 0;
+	public int Politik1					= 0;
+	public int Politik2					= 0;
+	public int Ansehen1					= 0;
+	public int Ansehen2					= 0;
+	public int Geld1					= 0;
+	public int Geld2					= 0;
 
-	public int Vorlauf				= 90;
+	public int Vorlauf					= 90;
 
-	public int Datum_Tag			= 0;
-	public int Datum_Monat			= 0;
-	public int Datum_Jahr			= 0;
-
-	public int TimerCounter			= 0;
+	public int Datum_Tag				= 0;
+	public int Datum_Monat				= 0;
+	public int Datum_Jahr				= 0;
+	
+	public int TimerCounter				= 0;
 
 	public Text Timer;
 
 	public Event Memory;
 
-	public bool IsFinished			= false;
+	public bool IsFinished				= false;
 
-	private bool SelectedOne		= false;
-	private bool SelectedOption1	= false;
-	private bool SelectedOption2	= false;
+	private bool SelectedOne			= false;
+	private bool SelectedOption1		= false;
+	private bool SelectedOption2		= false;
+
+	private bool ExponateCounterStartet	= false;
+	private int ExponateCounter			= 0;
+	private int ExponateNeeded			= 0;
 
 	// Start is called before the first frame update
 	void Start()
@@ -64,6 +68,10 @@ public class Event_Memory : MonoBehaviour
 			this.gameObject.SetActive(false);
 		}
 
+		if (ExponateCounterStartet)
+		{
+			gameObject.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text = ExponateCounter + " von " + ExponateNeeded + " Exponaten hergestellt.";
+		}
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
@@ -177,6 +185,15 @@ public class Event_Memory : MonoBehaviour
 		{
 			this.gameObject.SetActive(false);
 		}
+
+		//Das Muss später noch in die Update() Funktion, damit er erst anfägt zu zählen, wenn das Event zu sehen ist, momentan zum Debuggen hier
+		if (Memory.SpezialEvent != 0)
+		{
+			ExponateNeeded = Memory.SpezialEvent;
+
+			//Das Muss später noch in die Update() Funktion, damit er erst anfägt zu zählen, wenn das Event zu sehen ist, momentan zum Debuggen hier
+			ExponateCounterFunktion();
+		}
 	}
 
 	public static int BerechneTage(int StartTag, int StartMonat, int Startjahr, int EndTag, int EndMonat, int EndJahr)
@@ -201,7 +218,6 @@ public class Event_Memory : MonoBehaviour
 			gameObject.GetComponentsInChildren<Button>()[1].Select();
 		}
 	}
-
 	public void SelectOption2()
 	{
 		if (!SelectedOne)
@@ -218,7 +234,6 @@ public class Event_Memory : MonoBehaviour
 			gameObject.GetComponentsInChildren<Button>()[1].colors = colours;
 		}
 	}
-
 	private void EventEffect1()
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
@@ -250,6 +265,28 @@ public class Event_Memory : MonoBehaviour
 		{
 			gameObject.SetActive(true);
 			GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = true;
+		}
+	}
+
+	public void ExponateCounterFunktion()
+	{
+		ExponateCounterStartet = true;
+
+		//GameObject.Find("Exponate").GetComponentInChildren<Exponate>().exponatDone.AddListener(() => { IncreaseExponateCounter(); });
+
+		Debug.Log(GameObject.Find("ExponatSlider").ToString());
+
+		Debug.Log(GameObject.Find("ExponatSlider").GetComponent<Exponate>().ToString());
+
+		gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
+		gameObject.GetComponentsInChildren<Button>()[1].gameObject.SetActive(false);
+	}
+
+	public void IncreaseExponateCounter()
+	{
+		if (ExponateCounterStartet)
+		{
+			ExponateCounter++;
 		}
 	}
 }
