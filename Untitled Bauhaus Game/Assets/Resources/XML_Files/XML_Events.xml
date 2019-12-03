@@ -5,9 +5,9 @@
 
     <Event>
       <ID>1</ID>
-      <Event_Tag>29</Event_Tag>
-      <Event_Monat>11</Event_Monat>
-      <Event_Jahr>1919</Event_Jahr>
+      <Event_Tag>12</Event_Tag>
+      <Event_Monat>2</Event_Monat>
+      <Event_Jahr>1921</Event_Jahr>
       
       <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
@@ -34,15 +34,15 @@
       <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
       <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
       
-      <EventText>Event Description, Event Prescript 2</EventText>
-      <EventOption1>Event Option 1, Event Example 2</EventOption1>
-      <Option1_Politik>23</Option1_Politik>
+      <EventText>Entwerfe das erste Gemeinschaftsprojekt der Hochschule und baue ein Haus in Berlin.</EventText>
+      <EventOption1>Das Haus bauen.</EventOption1>
+      <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-      <EventOption2>Event Option 2, Event Example 2</EventOption2>
-      <Option2_Politik>-23</Option2_Politik>
-      <Option2_Ansehen>-2</Option2_Ansehen>
-      <Option2_Geld>1000</Option2_Geld>
+      <Option1_Geld>-1000</Option1_Geld>
+      <EventOption2>Ignorieren</EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>-4</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
     </Event>
 
     <Event>

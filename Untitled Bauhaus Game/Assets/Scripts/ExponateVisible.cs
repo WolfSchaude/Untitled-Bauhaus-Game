@@ -15,7 +15,7 @@ public class ExponateVisible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (CreateBewerber.eingestellter1active || CreateBewerber.eingestellter2active || CreateBewerber.eingestellter3active)
+		if (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter > 0)
 		{
 			ExponateUI.SetActive(true);
 		}

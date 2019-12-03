@@ -10,6 +10,8 @@ public class bewerbungvisible : MonoBehaviour
 	public GameObject bewerbungGameObject;
 	public GameObject zuweisenGameObject;
 
+	public int zugewiesenenCounter;
+
     // Start is called before the first frame update
     void Start()
 	{
@@ -20,8 +22,10 @@ public class bewerbungvisible : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
-
+		if(zugewiesenenCounter < 0)
+		{
+			zugewiesenenCounter = 0;
+		}
     }
 
 	public void ToggleBewerbung()
