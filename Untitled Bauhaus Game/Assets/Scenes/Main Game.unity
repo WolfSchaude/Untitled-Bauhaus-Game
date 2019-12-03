@@ -1273,7 +1273,6 @@ GameObject:
   - component: {fileID: 151450151}
   - component: {fileID: 151450150}
   - component: {fileID: 151450149}
-  - component: {fileID: 151450152}
   m_Layer: 0
   m_Name: Werkstatt_7
   m_TagString: Untagged
@@ -1353,21 +1352,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151450147}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &151450152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151450147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &159439757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,7 +1505,6 @@ GameObject:
   - component: {fileID: 171393011}
   - component: {fileID: 171393010}
   - component: {fileID: 171393009}
-  - component: {fileID: 171393012}
   m_Layer: 0
   m_Name: Werkstatt_5
   m_TagString: Untagged
@@ -1601,21 +1584,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171393007}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &171393012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171393007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &171415045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,14 +3073,6 @@ MonoBehaviour:
   werk5: {fileID: 171393007}
   werk6: {fileID: 1521138415}
   werk7: {fileID: 151450147}
-  Script1: {fileID: 1869246098}
-  Script2: {fileID: 1659913885}
-  Script3: {fileID: 1163785629}
-  Script4: {fileID: 2123304684}
-  Script5: {fileID: 171393012}
-  Script6: {fileID: 1521138420}
-  Script7: {fileID: 151450152}
-  WerkstattTyp: 0
   buildInProgress: 0
 --- !u!114 &410550911
 MonoBehaviour:
@@ -6818,7 +6778,6 @@ GameObject:
   - component: {fileID: 1163785628}
   - component: {fileID: 1163785627}
   - component: {fileID: 1163785626}
-  - component: {fileID: 1163785629}
   m_Layer: 0
   m_Name: Werkstatt_3
   m_TagString: Untagged
@@ -6898,21 +6857,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163785624}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1163785629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163785624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &1168632090
 GameObject:
   m_ObjectHideFlags: 0
@@ -8717,7 +8661,6 @@ GameObject:
   - component: {fileID: 1521138419}
   - component: {fileID: 1521138418}
   - component: {fileID: 1521138417}
-  - component: {fileID: 1521138420}
   m_Layer: 0
   m_Name: Werkstatt_6
   m_TagString: Untagged
@@ -8797,21 +8740,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521138415}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1521138420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521138415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &1527862017
 GameObject:
   m_ObjectHideFlags: 0
@@ -9530,7 +9458,6 @@ GameObject:
   - component: {fileID: 1659913884}
   - component: {fileID: 1659913883}
   - component: {fileID: 1659913882}
-  - component: {fileID: 1659913885}
   m_Layer: 0
   m_Name: Werkstatt_2
   m_TagString: Untagged
@@ -9610,21 +9537,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659913880}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1659913885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659913880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &1662343420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10420,7 +10332,6 @@ GameObject:
   - component: {fileID: 1869246097}
   - component: {fileID: 1869246096}
   - component: {fileID: 1869246095}
-  - component: {fileID: 1869246098}
   m_Layer: 0
   m_Name: Werkstatt_1
   m_TagString: Untagged
@@ -10500,21 +10411,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869246093}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1869246098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869246093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &1884695511
 GameObject:
   m_ObjectHideFlags: 0
@@ -11587,7 +11483,6 @@ GameObject:
   - component: {fileID: 2123304683}
   - component: {fileID: 2123304682}
   - component: {fileID: 2123304681}
-  - component: {fileID: 2123304684}
   m_Layer: 0
   m_Name: Werkstatt_4
   m_TagString: Untagged
@@ -11667,21 +11562,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123304679}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2123304684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123304679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8f09833c37d64448bd726c88a82fcbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EigenerTyp: 0
-  IstEinemDozentenZugewiesen: 0
-  DebugWST: 0
 --- !u!1 &2127398151
 GameObject:
   m_ObjectHideFlags: 0
