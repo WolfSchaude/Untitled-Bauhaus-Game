@@ -8,7 +8,6 @@ public class ZuweisenOnChange : MonoBehaviour
 
 	public bewerbungvisible Script;
 	public bool checkeingestellt = false;
-
 	void Start()
     {
 		Script = GameObject.Find("EventSystem").GetComponent<bewerbungvisible>();
