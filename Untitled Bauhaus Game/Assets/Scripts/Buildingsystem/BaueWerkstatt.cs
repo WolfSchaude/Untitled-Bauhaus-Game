@@ -86,8 +86,9 @@ public class BaueWerkstatt : MonoBehaviour
         }
     }
 
-    public void NeueWerkstatt(int Typ)
+    public void NeueWerkstatt(/*int Typ*/)
     {
+        int Typ = 0;
         if (!buildInProgress)
         {
             switch (AnzahlWerkstaette)
