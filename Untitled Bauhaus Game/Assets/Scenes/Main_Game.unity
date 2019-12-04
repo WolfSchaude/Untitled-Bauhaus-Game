@@ -2795,7 +2795,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 410550910}
-        m_MethodName: NeueAusstellungsgestaltung
+        m_MethodName: checkMonth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2806,7 +2806,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 410550915}
-        m_MethodName: NeueMetallwerkstatt
+        m_MethodName: checkMonth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2817,7 +2817,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 410550916}
-        m_MethodName: NeueTischlerei
+        m_MethodName: checkMonth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2969,6 +2969,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   politikmeterSkript: {fileID: 0}
+  moneySkript: {fileID: 0}
+  studentenSkript: {fileID: 0}
+  tage: 0
+  StartMonth: 0
+  StartDay: 0
+  StartHour: 0
+  StartMinute: 0
+  StartSecond: 0
 --- !u!1 &398429655
 GameObject:
   m_ObjectHideFlags: 0
