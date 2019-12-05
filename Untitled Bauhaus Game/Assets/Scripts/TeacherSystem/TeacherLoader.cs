@@ -9,7 +9,7 @@ public class TeacherLoader : MonoBehaviour
 
 	public static List<Teacher> HiredTeachers;
 
-	void Start()
+	void Awake()
 	{
 		tb = TeacherBuffer.Load(path);
 
