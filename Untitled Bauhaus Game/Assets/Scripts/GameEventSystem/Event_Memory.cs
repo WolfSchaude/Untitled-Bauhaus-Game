@@ -274,6 +274,7 @@ public class Event_Memory : MonoBehaviour
 			gameObject.SetActive(true);
 
 			GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = true;
+			//GameObject.Find("Event Menu Button").GetComponent<Button>().gameObject.SetActive(true);
 		}
 	}
 
@@ -295,7 +296,7 @@ public class Event_Memory : MonoBehaviour
 		}
 	}
 
-	GameObject FindInActiveObjectByName(string name)
+	public static GameObject FindInActiveObjectByName(string name)
 	{
 		Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];
 		for (int i = 0; i < objs.Length; i++)

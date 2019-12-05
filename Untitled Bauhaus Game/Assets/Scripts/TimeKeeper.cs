@@ -28,7 +28,7 @@ public class TimeKeeper : MonoBehaviour
 	private const float MonthToSec = 60 * 60 * 24 * 31;
 	private const float YearToSec = 60 * 60 * 24 * 31 * 13;
 
-	void Start()
+	void Awake()
 	{
 
 		gameTime += StartSecond;
@@ -37,6 +37,10 @@ public class TimeKeeper : MonoBehaviour
 		gameTime += StartDay * DayToSec;
 		gameTime += StartMonth * MonthToSec;
 		gameTime += StartYear * YearToSec;
+
+		currentDay = StartDay;
+		currentMonth = StartMonth;
+		currentYear = StartYear;
 
 		InvokeRepeating("AddTimeTic", 0.1f, 3);
 	}

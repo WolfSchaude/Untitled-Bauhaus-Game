@@ -8,10 +8,13 @@ public class Politikmeter : MonoBehaviour
 
 	public int Politiklevel = 100;
 
-	public Text PolitikText;
-
     public Slider PolitikOutput;
 
+	void Start()
+	{
+		PolitikOutput.maxValue = 200;
+		PolitikOutput.minValue = 0;
+	}
 
     void Update()
     {
@@ -24,9 +27,7 @@ public class Politikmeter : MonoBehaviour
 			ManipulatePolitics(-10);
 		}
 
-        PolitikOutput.value = Politiklevel;
-        PolitikOutput.maxValue = 200;
-        PolitikOutput.minValue = 0;
+		PolitikOutput.value = Politiklevel;
     }
 
 	public void ManipulatePolitics(int manipulator)

@@ -8,7 +8,7 @@ public class EventLoader : MonoBehaviour
 
 	public static EventContainer ec;
 
-	void Start()
+	void Awake()
     {
 		ec = EventContainer.Load(path);
     }

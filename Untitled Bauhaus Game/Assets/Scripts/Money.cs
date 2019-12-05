@@ -21,7 +21,7 @@ public class Money : MonoBehaviour
 
     void Update()
     {
-        moneyText.text = money + " RM";
+		moneyText.text = "Geld: " + money.ToString("N") + " RM";
 
         //checkMonth();
     }
