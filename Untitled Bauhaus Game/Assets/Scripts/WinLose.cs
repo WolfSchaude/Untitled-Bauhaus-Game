@@ -53,11 +53,11 @@ public class WinLose : MonoBehaviour
 		{
 			//Bruh muss ich noch machen
 		}
-		if(studentenSkript.StudentenAnzahl <= 0)
-		{
-			Application.Quit();
-			Debug.Log("bruh exit again");
-		}
+		//if(studentenSkript.StudentenAnzahl <= 0)
+		//{
+		//	Application.Quit();
+		//	Debug.Log("bruh exit again");
+		//}
 
     }
 }

@@ -7,35 +7,34 @@ public class ChangeMatOnClick : MonoBehaviour
 	public Material StandardMat;
 	public Material OnClickMat;
 
-	private bool outlineShown = false;
+	public bool isSelected = false;
 	private bool mouseOver = false;
 
 	void Start()
     {
-		//Fetch the Material from the Renderer of the GameObject
-		//StandardMat = GetComponent<Renderer>().material;
+
 	}
 
     void Update()
     {
-		if (Input.GetMouseButtonDown(0) && outlineShown && !mouseOver)
+		if (Input.GetMouseButtonDown(0) && !mouseOver)
 		{
 			GetComponent<MeshRenderer>().material = StandardMat;
-			outlineShown = false;
+			isSelected = false;
 		}
 	}
 
-	void OnMouseOver()
+	void OnMouseOver() //Checks if the mouse is over the object
 	{
 		mouseOver = true;
-		if (Input.GetMouseButtonDown(0) || outlineShown)
+		if (Input.GetMouseButtonDown(0))
 		{
 			GetComponent<MeshRenderer>().material = OnClickMat;
-			outlineShown = true;
+			isSelected = true;
 		}
 	}
 
-	void OnMouseExit()
+	void OnMouseExit() //Checks if the mouse exits the object
 	{
 		mouseOver = false;
 	}
