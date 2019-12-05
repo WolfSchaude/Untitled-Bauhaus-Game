@@ -150,7 +150,7 @@ public class BaumenuDetail : MonoBehaviour
         switch (buttonCount)
         {
             case 1:
-                buildingNameText.text = "Archtekturwerkstatt";
+                buildingNameText.text = "Architekturwerkstatt";
                 buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AktPreis.ToString() + " RM";
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";

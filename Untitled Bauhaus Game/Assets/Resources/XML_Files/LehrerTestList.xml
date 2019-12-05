@@ -41,9 +41,282 @@
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
 	  </Teacher>
-	
-	  <Teacher>
+    
+    <Teacher>
       <ID>4</ID>
+		  <Name>László Moholy-Nagy</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>20. Juli 1895</Geburtsdatum>
+      <Interessen>Malerei, Fotografie, Typographie, Bühnenbild</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+    
+    <Teacher>
+      <ID>5</ID>
+		  <Name>Georg Muche</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>6. Mai 1995</Geburtsdatum>
+      <Interessen>Malerei, Grafik, Holzschnitzerei, Weberei</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+
+    <Teacher>
+      <ID>6</ID>
+		  <Name>Paul Klee</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>18. Dezember 1897</Geburtsdatum>
+      <Interessen>Malerei, Grafik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+
+    <Teacher>
+      <ID>7</ID>
+		  <Name>Marianne Brandt</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>1. Oktober 1893</Geburtsdatum>
+      <Interessen>Design, Fotografie, Malerei, Bildhauerei</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+
+<Teacher>
+      <ID>8</ID>
+		  <Name>Alfred Arndt</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>26. November 1898</Geburtsdatum>
+      <Interessen>Zeichnen, Malerei, Metall- und Möbelherstellung</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+
+    <Teacher>
+      <ID>9</ID>
+		  <Name>Marcel Lajos Breuer</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>21. Mai 1902</Geburtsdatum>
+      <Interessen>Tischlerei</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+    
+      <Teacher>
+      <ID>10</ID>
+		  <Name>Walter Peterhans</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>12. Juni 1897</Geburtsdatum>
+      <Interessen>Fotografie</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>11</ID>
+		  <Name>Oskar Schlemmer</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>4. September 1888</Geburtsdatum>
+      <Interessen>Malerei, Bildhauerei, Bühnenbild</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+    	
+    <Teacher>
+      <ID>12</ID>
+		  <Name>Wassity Kandinsky</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>16. Dezember 1866</Geburtsdatum>
+      <Interessen>Malerei, Kunsttheorie, Grafik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+    	
+    <Teacher>
+      <ID>13</ID>
+		  <Name>Lothar Schreyer</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>19. Oktober 1886</Geburtsdatum>
+      <Interessen>Jura, Drama, Theater</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>14</ID>
+		  <Name>Gerhard Marcks</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>18. Februar 1889</Geburtsdatum>
+      <Interessen>Bildhauerei, Grafik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+    	
+    <Teacher>
+      <ID>15</ID>
+		  <Name>Ludwig Mies van der Rohe</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>27. März 1886</Geburtsdatum>
+      <Interessen>Architektur</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>16</ID>
+		  <Name>Hannes Meyer</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>18. November 1889</Geburtsdatum>
+      <Interessen>Architektur, Stadtforschung</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>17</ID>
+		  <Name>Adolf Meyer</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>17. Juni 1881</Geburtsdatum>
+      <Interessen>Architektur, Design, Tischlerei</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>18</ID>
+		  <Name>Joost Schmidt</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>5. Januar 1893</Geburtsdatum>
+      <Interessen>Typografie, Malerei, Lehren</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>19</ID>
+		  <Name>Getrud Grunow</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>8. Juli 1870</Geburtsdatum>
+      <Interessen>Singen, Klavier</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>20</ID>
+		  <Name>Christian Dell</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>24. Februar 1893</Geburtsdatum>
+      <Interessen>Silberschmieden, Industriedesign</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>21</ID>
+		  <Name>Naum Slutzky</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>28. Februar 1894</Geburtsdatum>
+      <Interessen>Goldschmieden, Industriedesign</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>22</ID>
+		  <Name>Gunta Stötzl</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>5. März 1897</Geburtsdatum>
+      <Interessen>Weben, Textil</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>23</ID>
+		  <Name>Anni Albers</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>12. Juni 1899</Geburtsdatum>
+      <Interessen>Textilkünstlerei, Weberei, Grafik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+	
+    <Teacher>
+      <ID>24</ID>
+		  <Name>Max Krehan</Name>
+		  <Beruf></Beruf>
+      <Gehalt>1800</Gehalt>
+      <Politik>120</Politik>
+      <ImagePath>Sprites/Person3</ImagePath>
+      <Geburtsdatum>11. Juli 1875</Geburtsdatum>
+      <Interessen>Keramik</Interessen>
+      <Einstellungskosten>30</Einstellungskosten>
+      <FortlaufendeKosten>100</FortlaufendeKosten>
+	  </Teacher>
+
+	  <Teacher>
+      <ID>25</ID>
 		  <Name></Name>
 		  <Beruf></Beruf>
       <Gehalt>0</Gehalt>

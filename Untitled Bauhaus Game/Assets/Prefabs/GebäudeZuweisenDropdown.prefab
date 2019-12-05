@@ -698,7 +698,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: Nicht zugewiesen
       m_Image: {fileID: 21300000, guid: f89f5aae6f8f80149a3215c89e4c97d1, type: 3}
-    - m_Text: Archtitekturwerkstatt
+    - m_Text: Architekturwerkstatt
       m_Image: {fileID: 21300000, guid: f89f5aae6f8f80149a3215c89e4c97d1, type: 3}
     - m_Text: Malerei
       m_Image: {fileID: 21300000, guid: f89f5aae6f8f80149a3215c89e4c97d1, type: 3}
