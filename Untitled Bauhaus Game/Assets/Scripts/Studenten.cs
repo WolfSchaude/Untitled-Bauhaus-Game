@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Studenten : MonoBehaviour
 {
 
-    public float StudentenAnzahl = 0;
+    public float StudentenAnzahl = 50;
     private float monthlyStudenten = 50;
     private float sliderPercentage;
 
@@ -15,7 +15,8 @@ public class Studenten : MonoBehaviour
 
     void Start()
     {
-        //InvokeRepeating("addStudenten", 0.1f, 2.0f); //repeats a function every x seconds
+		//InvokeRepeating("addStudenten", 0.1f, 2.0f); //repeats a function every x seconds
+		StudentenAnzahl = 50;
     }
 
     void Update()

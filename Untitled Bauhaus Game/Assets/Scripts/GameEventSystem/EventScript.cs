@@ -83,7 +83,7 @@ public class EventScript : MonoBehaviour
     {
 		if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count)
 		{
-			if (gameObject.activeSelf)
+			if (UIToBlendIn.activeSelf)
 			{
 				UIToBlendIn.SetActive(false); //Wenn keine Events mehr aktiv sind, blende das Menue aus
 				//GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = false; //Sorgt dafür, das der Button nicht mehr funktioniert, damit man kein Flackern erzeugen kann
@@ -103,13 +103,13 @@ public class EventScript : MonoBehaviour
 
 	public void ToggleEvent()
 	{
-		if (gameObject.activeSelf)
+		if (UIToBlendIn.activeSelf)
 		{
-			gameObject.SetActive(false);
+			UIToBlendIn.SetActive(false);
 		}
 		else
 		{
-			gameObject.SetActive(true);
+			UIToBlendIn.SetActive(true);
 			GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false); //schließt Baumenu
 		}
 	}

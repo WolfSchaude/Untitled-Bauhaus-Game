@@ -10,17 +10,17 @@ public class DropdownBau : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		isOpen = true;
+		//isOpen = true;
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		isOpen = false;
+		//isOpen = false;
 	}
 
 	void Start()
 	{
-		container = transform.Find("Container").GetComponent<RectTransform>();
+		container = transform.Find("Container Bauen").GetComponent<RectTransform>();
 		isOpen = false;
 	}
 

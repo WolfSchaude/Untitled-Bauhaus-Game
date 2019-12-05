@@ -273,7 +273,7 @@ public class Event_Memory : MonoBehaviour
 		{
 			gameObject.SetActive(true);
 
-			GameObject.Find("Event Menu Button").GetComponent<Button>().interactable = true;
+			GameObject.Find("Button - Event Menu").GetComponent<Button>().interactable = true;
 			//GameObject.Find("Event Menu Button").GetComponent<Button>().gameObject.SetActive(true);
 		}
 	}
