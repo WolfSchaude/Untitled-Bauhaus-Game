@@ -58,6 +58,6 @@ public class Event
 	[XmlElement("Option2_Geld")]
 	public int Option2_Geld;
 
-	[XmlElement("SpezialEvent")]
-	public int SpezialEvent;
+	[XmlElement("Exponate_Needed")]
+	public int Exponate_Needed;
 }

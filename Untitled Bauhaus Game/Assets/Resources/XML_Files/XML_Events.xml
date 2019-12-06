@@ -27,7 +27,7 @@
       <Option2_Ansehen>-4</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
-      <SpezialEvent>0</SpezialEvent>
+      <Exponate_Needed>0</Exponate_Needed>
     </Event>
     
      <Event>
@@ -50,7 +50,7 @@
       <Option2_Ansehen>-3</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
-       <SpezialEvent>0</SpezialEvent>
+       <Exponate_Needed>0</Exponate_Needed>
     </Event>
 
     <Event>
@@ -75,7 +75,7 @@
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
-      <SpezialEvent>2</SpezialEvent>
+      <Exponate_Needed>2</Exponate_Needed>
     </Event>
 
     <Event>
@@ -100,7 +100,7 @@
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
-      <SpezialEvent>4</SpezialEvent>
+      <Exponate_Needed>4</Exponate_Needed>
     </Event>
 
     <Event>
@@ -125,7 +125,7 @@
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
-      <SpezialEvent>0</SpezialEvent>
+      <Exponate_Needed>0</Exponate_Needed>
     </Event>
   </Events>
 </EventCollection>

@@ -36,7 +36,7 @@ public class EventScript : MonoBehaviour
 					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
-				if (EventLoader.ec.Events[i].SpezialEvent == 0)
+				if (EventLoader.ec.Events[i].Exponate_Needed == 0)
 				{
 					AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
 						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
@@ -67,7 +67,7 @@ public class EventScript : MonoBehaviour
 					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
-				if (EventLoader.ec.Events[i].SpezialEvent == 0)
+				if (EventLoader.ec.Events[i].Exponate_Needed == 0)
 				{
 					AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
 						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine

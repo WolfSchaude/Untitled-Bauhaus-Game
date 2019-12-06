@@ -195,9 +195,9 @@ public class Event_Memory : MonoBehaviour
 			this.gameObject.SetActive(false);
 		}
 
-		if (Memory.SpezialEvent != 0)
+		if (Memory.Exponate_Needed != 0)
 		{
-			ExponateNeeded = Memory.SpezialEvent;
+			ExponateNeeded = Memory.Exponate_Needed;
 		}
 	}
 
