@@ -7,6 +7,7 @@ public class NewMenu : MonoBehaviour
 {
 	public GameObject MenuWindow;
 	public GameObject MenuPanel;
+	public GameObject MenuDropdown;
 	public Text Name;
 
 	Vector3 menuPos;
@@ -23,8 +24,10 @@ public class NewMenu : MonoBehaviour
 	void Update()
 	{
 		//Set UI to GameObject position
-		Name.transform.position = menuPos;
-		MenuPanel.transform.position = menuPos;
+		//Name.transform.position = menuPos;
+		//MenuPanel.transform.position = menuPos;
+		//MenuDropdown.transform.position = menuPos;
+		MenuWindow.transform.position = menuPos;
 
 		if (!IsClicked)
 		{
@@ -36,9 +39,10 @@ public class NewMenu : MonoBehaviour
 		{
 			IsClicked = false;
 		}
-		activate();
+		
 		checkActive();
 		setMenu();
+		activate();
 	}
 
 	public void activate()
