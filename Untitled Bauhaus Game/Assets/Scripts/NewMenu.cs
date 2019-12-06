@@ -7,9 +7,10 @@ public class NewMenu : MonoBehaviour
 {
 	public GameObject MenuWindow;
 	public GameObject MenuPanel;
-	public GameObject MenuDropdown;
+	public Dropdown MenuDropdown;
 	public Text Name;
 
+	public int oldValue = 0;
 	Vector3 menuPos;
 
 	public bool IsClicked;
@@ -23,10 +24,11 @@ public class NewMenu : MonoBehaviour
 
 	void Update()
 	{
+		checkActive();
+		setMenu();
+		activate();
+
 		//Set UI to GameObject position
-		//Name.transform.position = menuPos;
-		//MenuPanel.transform.position = menuPos;
-		//MenuDropdown.transform.position = menuPos;
 		MenuWindow.transform.position = menuPos;
 
 		if (!IsClicked)
@@ -39,10 +41,6 @@ public class NewMenu : MonoBehaviour
 		{
 			IsClicked = false;
 		}
-		
-		checkActive();
-		setMenu();
-		activate();
 	}
 
 	public void activate()
@@ -75,6 +73,15 @@ public class NewMenu : MonoBehaviour
 		switch (activeChecker)
 		{
 			case 1:
+				//MenuDropdown.options.Add(new Dropdown.OptionData() { text = "test" });
+				//for (int x = 0; x < MenuDropdown.options.Count; x++)
+				//{
+				//	if (MenuDropdown.options[x].text == "test")
+				//	{
+				//		MenuDropdown.options.RemoveAt(x);
+				//		//break;
+				//	}
+				//}
 				Name.text = "Architekturwerkstatt";
 				break;
 			case 2:

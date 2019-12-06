@@ -33,7 +33,7 @@ public class ChangeMatOnClick : MonoBehaviour
 	void OnMouseOver() //Checks if the mouse is over the object
 	{
 		mouseOver = true;
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) && !GameObject.Find("TestCube1").GetComponent<ChangeMatOnClick>().isSelected && !GameObject.Find("TestCube2").GetComponent<ChangeMatOnClick>().isSelected && !GameObject.Find("TestCube3").GetComponent<ChangeMatOnClick>().isSelected && !GameObject.Find("TestCube4").GetComponent<ChangeMatOnClick>().isSelected && !GameObject.Find("TestCube5").GetComponent<ChangeMatOnClick>().isSelected)
 		{
 			GetComponent<MeshRenderer>().material = OnClickMat;
 			isSelected = true;
