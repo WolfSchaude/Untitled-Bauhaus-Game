@@ -2695,7 +2695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &357005294
 Transform:
   m_ObjectHideFlags: 0
@@ -2709,8 +2709,8 @@ Transform:
   m_Children:
   - {fileID: 165606716}
   - {fileID: 1525679792}
-  m_Father: {fileID: 410550909}
-  m_RootOrder: 8
+  m_Father: {fileID: 1363842785}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381768615
 GameObject:
@@ -3065,8 +3065,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuWindow: {fileID: 357005293}
+  MenuPanel: {fileID: 165606715}
   Name: {fileID: 1525679793}
   IsClicked: 0
+  activeChecker: 0
 --- !u!1 &386968682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3436,7 +3438,6 @@ RectTransform:
   - {fileID: 4474210237657922292}
   - {fileID: 2957053225309383931}
   - {fileID: 185289912}
-  - {fileID: 357005294}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9135,6 +9136,7 @@ RectTransform:
   - {fileID: 421715863}
   - {fileID: 108597467}
   - {fileID: 509407486}
+  - {fileID: 357005294}
   m_Father: {fileID: 410550909}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
