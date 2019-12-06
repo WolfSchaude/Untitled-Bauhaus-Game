@@ -34,6 +34,8 @@ public class Event_Memory : MonoBehaviour
 	public int ExponateCounter			= 0;
 	public int ExponateNeeded			= 0;
 
+	public GameObject FeedbackTicker;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -248,6 +250,34 @@ public class Event_Memory : MonoBehaviour
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld1);
 
+		if (Ansehen1 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verbessert.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verschlechtert.");
+		}
+
+		if (Politik1 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 + " nach rechts verschoben.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 + " nach links verschoben.");
+		}
+
+		if (Geld1 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1 + " RM eingebracht.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld1 + " RM verloren.");
+		}
+		
+
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
@@ -256,6 +286,33 @@ public class Event_Memory : MonoBehaviour
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
+
+		if (Ansehen2 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verbessert.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verschlechtert.");
+		}
+
+		if (Politik2 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 + " nach rechts verschoben.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 + " nach links verschoben.");
+		}
+
+		if (Geld2 > 0)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + " RM eingebracht.");
+		}
+		else
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld2 + " RM verloren.");
+		}
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);

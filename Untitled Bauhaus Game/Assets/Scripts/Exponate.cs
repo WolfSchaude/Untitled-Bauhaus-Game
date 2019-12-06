@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class Exponate : MonoBehaviour
 {
+	public GameObject FeedbackTicker;
+
 	public UnityEvent exponatDone;
     public Slider expoSlider;
     public Text expoText;
@@ -88,7 +90,10 @@ public class Exponate : MonoBehaviour
                 //{
                 //    case 1:
                         GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-                        GameObject.Find("Money Display").GetComponent<Money>().Spende(Random.Range(5000, 25001));
+						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+						var i = Random.Range(5000, 25001);
+						GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
+						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
 				//        break;
 				//    case 2:
 				//        Debug.Log("-rep");

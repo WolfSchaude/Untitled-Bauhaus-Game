@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class EventScript : MonoBehaviour
 {
+	public GameObject FeedbackTicker;
+
 	public GameObject prefab;
 	public GameObject parent;
 
@@ -28,6 +30,7 @@ public class EventScript : MonoBehaviour
 				AllEvents.Add(Instantiate(prefab, parent.transform));
 
 				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+				AllEvents[i].GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
 				AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
@@ -59,6 +62,7 @@ public class EventScript : MonoBehaviour
 				AllEvents.Add(Instantiate(prefab, parent.transform));
 
 				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+				AllEvents[i].GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
 				AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
