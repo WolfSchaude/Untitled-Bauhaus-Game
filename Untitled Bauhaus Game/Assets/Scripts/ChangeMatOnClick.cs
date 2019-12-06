@@ -20,10 +20,15 @@ public class ChangeMatOnClick : MonoBehaviour
 
 	}
 
-	public void closeWindow(string menuname)
+	public void closeWindow()
 	{
-		GameObject.Find(menuname).GetComponent<ChangeMatOnClick>().isSelected = false;
-		GetComponent<MeshRenderer>().material = StandardMat;
+		string[] menuname = {"TestCube1", "TestCube2", "TestCube3", "TestCube4", "TestCube5"};
+		for (int i = 0; i < menuname.Length; i++)
+		{
+			GameObject.Find(menuname[i]).GetComponent<ChangeMatOnClick>().isSelected = false;
+			GameObject.Find(menuname[i]).GetComponent<MeshRenderer>().material = StandardMat;
+		}
+		
 	}
 	void OnMouseOver() //Checks if the mouse is over the object
 	{
