@@ -7,7 +7,10 @@ public class NewMenu : MonoBehaviour
 {
 	public GameObject MenuWindow;
 	public GameObject MenuPanel;
-	public Dropdown MenuDropdown;
+	public GameObject Prefab;
+
+	GameObject[] dropdownArr;
+
 	public Text Name;
 
 	public int oldValue = 0;
@@ -20,6 +23,13 @@ public class NewMenu : MonoBehaviour
 	void Start()
 	{
 		IsClicked = false;
+
+		dropdownArr = new GameObject[5];
+		dropdownArr[0] = (GameObject)Instantiate(Prefab, MenuWindow.transform);
+		dropdownArr[1] = (GameObject)Instantiate(Prefab, MenuWindow.transform);
+		dropdownArr[2] = (GameObject)Instantiate(Prefab, MenuWindow.transform);
+		dropdownArr[3] = (GameObject)Instantiate(Prefab, MenuWindow.transform);
+		dropdownArr[4] = (GameObject)Instantiate(Prefab, MenuWindow.transform);
 	}
 
 	void Update()
@@ -82,19 +92,44 @@ public class NewMenu : MonoBehaviour
 				//		//break;
 				//	}
 				//}
-				Name.text = "Architekturwerkstatt";
+				Name.text = "Werkstatt 1";
+				dropdownArr[0].SetActive(true);
+				dropdownArr[1].SetActive(false);
+				dropdownArr[2].SetActive(false);
+				dropdownArr[3].SetActive(false);
+				dropdownArr[4].SetActive(false);
 				break;
 			case 2:
-				Name.text = "Malerei";
+				Name.text = "Werkstatt 2";
+				dropdownArr[0].SetActive(false);
+				dropdownArr[1].SetActive(true);
+				dropdownArr[2].SetActive(false);
+				dropdownArr[3].SetActive(false);
+				dropdownArr[4].SetActive(false);
 				break;
 			case 3:
-				Name.text = "Ausstellungsgestaltung";
+				Name.text = "Werkstatt 3";
+				dropdownArr[0].SetActive(false);
+				dropdownArr[1].SetActive(false);
+				dropdownArr[2].SetActive(true);
+				dropdownArr[3].SetActive(false);
+				dropdownArr[4].SetActive(false);
 				break;
 			case 4:
-				Name.text = "Metallwerkstatt";
+				Name.text = "Werkstatt 4";
+				dropdownArr[0].SetActive(false);
+				dropdownArr[1].SetActive(false);
+				dropdownArr[2].SetActive(false);
+				dropdownArr[3].SetActive(true);
+				dropdownArr[4].SetActive(false);
 				break;
 			case 5:
-				Name.text = "Tischlerei";
+				Name.text = "Werkstatt 5";
+				dropdownArr[0].SetActive(false);
+				dropdownArr[1].SetActive(false);
+				dropdownArr[2].SetActive(false);
+				dropdownArr[3].SetActive(false);
+				dropdownArr[4].SetActive(true);
 				break;
 		}
 	}
