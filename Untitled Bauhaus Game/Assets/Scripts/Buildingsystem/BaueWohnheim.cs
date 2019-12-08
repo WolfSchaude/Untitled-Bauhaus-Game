@@ -57,6 +57,7 @@ public class BaueWohnheim : MonoBehaviour
             GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWohn;
             MinQualität = 0.5f + (AnzahlWohnheime * 0.05f);
 
+            GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Das Wohnheim wurde fertiggestellt!");
             AnzahlWohnheime++;
             wohnBuildTimeInMonths = 2;
             buildInProgress = false;

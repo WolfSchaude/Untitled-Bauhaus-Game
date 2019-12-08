@@ -79,7 +79,8 @@ public class BaueMalerei : MonoBehaviour
 			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätMal * (float)Qualität);
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
-			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
+            GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Malerei wurde fertiggestellt!");
+            GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
 			malBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

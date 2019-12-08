@@ -80,7 +80,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätArch * (float)Qualität);
 			MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
 
-			AnzahlWerkstaette++;
+            GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Architekturwerkstatt wurde fertiggestellt!");
+            AnzahlWerkstaette++;
 			archBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

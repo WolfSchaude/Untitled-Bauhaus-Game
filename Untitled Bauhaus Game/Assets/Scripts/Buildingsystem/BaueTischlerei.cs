@@ -79,7 +79,8 @@ public class BaueTischlerei : MonoBehaviour
 			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätTisch * (float)Qualität);
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
-			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
+            GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Tischlerei wurde fertiggestellt!");
+            GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
 			tischBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}
