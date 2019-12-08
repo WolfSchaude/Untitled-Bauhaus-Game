@@ -14,7 +14,7 @@ namespace UntitledBauhausGame
         public buildingsystemmanager BuildingSystemManager;
 
         private bool LongKeyDown;
-		bool AbleToMove;
+		public static bool AbleToMove;
 
         void Start()
         {
@@ -22,7 +22,7 @@ namespace UntitledBauhausGame
 			rotateSpeed = 90;
 			height = 10;
 
-            BuildManager = GameObject.Find("buildingsystemmanager"); //Eigennotiz: nach knapp 6 Stunden, bei GameObject.Find den Assetnamen und nicht den Klassennamen nutzen!
+            BuildManager = GameObject.Find("buildingsystemmanager"); 
             BuildingSystemManager = BuildManager.GetComponent<buildingsystemmanager>();
 
 			AbleToMove = true;
@@ -45,10 +45,10 @@ namespace UntitledBauhausGame
 				transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
 			}
 
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
+            //if (Input.GetKey(KeyCode.Escape))
+            //{
+            //    Application.Quit();
+            //}
 
             if (Input.GetKey(KeyCode.Space))
             {

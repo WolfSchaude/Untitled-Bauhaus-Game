@@ -8,6 +8,8 @@ public class FastForward : MonoBehaviour
     public bool fastForwarding = false;
     private bool justToggled = false;
 
+    public static float oldTimeScale = 1;
+
     public Text fastForwardText;
 
     void Start()
@@ -23,11 +25,13 @@ public class FastForward : MonoBehaviour
             {
                 fastForwardText.text = ">>>";
                 Time.timeScale = 3;
+                oldTimeScale = 3f;
             }
             else
             { 
                 fastForwardText.text = ">";
                 Time.timeScale = 1;
+                oldTimeScale = 1f;
             }
             justToggled = false;
         }
