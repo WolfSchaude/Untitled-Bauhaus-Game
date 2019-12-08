@@ -14,7 +14,7 @@ public class FastForward : MonoBehaviour
 
     void Start()
     {
-        
+        fastForwardText.text = "▸";
     }
 
     void Update()
@@ -23,13 +23,13 @@ public class FastForward : MonoBehaviour
         {
             if (fastForwarding)
             {
-                fastForwardText.text = ">>>";
+                fastForwardText.text = "▸▸▸";
                 Time.timeScale = 3;
                 oldTimeScale = 3f;
             }
             else
             { 
-                fastForwardText.text = ">";
+                fastForwardText.text = "▸";
                 Time.timeScale = 1;
                 oldTimeScale = 1f;
             }
