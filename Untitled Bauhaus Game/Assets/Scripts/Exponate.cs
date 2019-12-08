@@ -17,10 +17,11 @@ public class Exponate : MonoBehaviour
     private int textCooldown = 200;
     private int expoPrice = 7500; //Herstellungspreis
 
-    private bool exponatInProgress;
-    private bool isExponatDone = false;
+    public bool exponatInProgress;
+    public bool isExponatDone = false;
     void Start()
     {
+        expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
         expoSlider.minValue = exponatCreateTimer;
     }
 
@@ -54,7 +55,7 @@ public class Exponate : MonoBehaviour
         {
             if (exponatCreateTimer == expoSlider.minValue)
             {
-                expoText.text = "Exponat herstellen...";
+                expoText.text = "Wird hergestellt...\n -Klicken zum abbrechen-";
                 GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(expoPrice);
                 exponatInProgress = true;
             }
@@ -136,10 +137,22 @@ public class Exponate : MonoBehaviour
 
             if (textCooldown <= 0)
             {
-                expoText.text = "Exponat-Herstellung";
+                expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
                 textCooldown = 200;
                 
             }
+        }
+    }
+
+    public void cancelExponat()
+    {
+        if(exponatInProgress && !isExponatDone && exponatCreateTimer >= -4970)
+        {
+            exponatInProgress = false;
+            isExponatDone = false;
+            exponatCreateTimer = -5000;
+            FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Exponat-Herstellung abgebrochen.");
+            expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
         }
     }
 }
