@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00005340576}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 568044906}
   - component: {fileID: 568044905}
   m_Layer: 5
-  m_Name: ExponateInventoryButton
+  m_Name: Button - ExponateInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7054,7 +7054,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 0.99999976
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8225,7 +8225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978475643}
   m_Layer: 10
-  m_Name: Exponate Inventar
+  m_Name: Menu - Exponate Inventar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35934,8 +35934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3121724f171604948aa52ca6997d5afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildManager: {fileID: 0}
-  BuildingSystemManager: {fileID: 0}
 --- !u!114 &2957053224654590532
 MonoBehaviour:
   m_ObjectHideFlags: 0
