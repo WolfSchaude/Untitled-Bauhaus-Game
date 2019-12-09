@@ -146,7 +146,7 @@ public class Exponate : MonoBehaviour
 
     public void cancelExponat()
     {
-        if(exponatInProgress && !isExponatDone && exponatCreateTimer >= -4970)
+        if (exponatInProgress && !isExponatDone && exponatCreateTimer >= -4970)
         {
             exponatInProgress = false;
             isExponatDone = false;
