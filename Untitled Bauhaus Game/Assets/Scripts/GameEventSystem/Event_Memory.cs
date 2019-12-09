@@ -101,84 +101,11 @@ public class Event_Memory : MonoBehaviour
 		Datum_Monat = Memory.Event_Monat;
 		Datum_Jahr = Memory.Event_Jahr;
 
-		GameObject.Find("EventSystem").GetComponent<Events>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
+		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
 
 		var TagBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentDay;
 		var MonatBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
 		var JahrBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentYear;
-
-		{
-			/*
-			if (Datum_Tag - TagBuffer >= 0)
-			{
-				TimerCounter += (Datum_Tag - TagBuffer) * 1;
-				{
-					if (Datum_Monat - MonatBuffer >= 0)
-					{
-						TimerCounter += (Datum_Monat - MonatBuffer) * 30;
-						{
-							if (Datum_Jahr - JahrBuffer >= 0)
-							{
-								TimerCounter += (Datum_Jahr - JahrBuffer) * 360;
-							}
-							else
-							{
-								TimerCounter += (Datum_Jahr + 1 - JahrBuffer - 1) * 360;
-							}
-						}
-					}
-					else
-					{
-						TimerCounter += (Datum_Monat + 12 - MonatBuffer) * 30;
-						{
-							if (Datum_Jahr - JahrBuffer - 1 >= 0)
-							{
-								TimerCounter += (Datum_Jahr - JahrBuffer - 1) * 360;
-							}
-							else
-							{
-								TimerCounter += (Datum_Jahr + 1 - JahrBuffer - 1) * 360;
-							}
-						}
-					}
-				}
-			}
-			else
-			{
-				TimerCounter += (Datum_Tag + 30 - TagBuffer) * 1;
-				{
-					if (Datum_Monat - MonatBuffer >= 0)
-					{
-						TimerCounter += (Datum_Monat - MonatBuffer) * 30;
-						{
-							if (Datum_Jahr - JahrBuffer >= 0)
-							{
-								TimerCounter += (Datum_Jahr - JahrBuffer) * 360;
-							}
-							else
-							{
-								TimerCounter += (Datum_Jahr + 1 - JahrBuffer - 1) * 360;
-							}
-						}
-					}
-					else
-					{
-						TimerCounter += (Datum_Monat + 12 - MonatBuffer) * 30;
-						{
-							if (Datum_Jahr - JahrBuffer - 1 >= 0)
-							{
-								TimerCounter += (Datum_Jahr - JahrBuffer - 1) * 360;
-							}
-							else
-							{
-								TimerCounter += (Datum_Jahr + 1 - JahrBuffer - 1) * 360;
-							}
-						}
-					}
-				}
-			}
-			*/
-		}
 
 		TimerCounter = BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
 		
