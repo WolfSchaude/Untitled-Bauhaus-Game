@@ -12,34 +12,80 @@ public class FastForward : MonoBehaviour
 
     public Text fastForwardText;
 
+	public static TimeMode Mode = TimeMode.Normal;
+
+	public enum TimeMode
+	{
+		Normal, FastForward, Stop
+	}
+
+
+
     void Start()
     {
         fastForwardText.text = "▸";
+
+		Mode = TimeMode.Normal;
     }
 
     void Update()
     {
-        if (justToggled)
-        {
-            if (fastForwarding)
-            {
-                fastForwardText.text = "▸▸▸";
-                Time.timeScale = 3;
-                oldTimeScale = 3f;
-            }
-            else
-            { 
-                fastForwardText.text = "▸";
-                Time.timeScale = 1;
-                oldTimeScale = 1f;
-            }
-            justToggled = false;
-        }
+		if (justToggled)
+		{
+			switch (Mode)
+			{
+				case TimeMode.Normal:
+
+					fastForwardText.text = "▸";
+					Time.timeScale = 1;
+					oldTimeScale = 1f;
+
+					break;
+				case TimeMode.FastForward:
+
+					fastForwardText.text = "▸▸▸";
+					Time.timeScale = 3;
+					oldTimeScale = 3f;
+
+					break;
+				case TimeMode.Stop:
+
+					fastForwardText.text = "∥";
+					Time.timeScale = 0;
+					oldTimeScale = 0f;
+
+					break;
+				default:
+					break;
+			}
+
+			justToggled = false;
+		}
     }
 
     public void toggleFastForward() //Fast forward the game
     {
-        fastForwarding = !fastForwarding;
-        justToggled = true;
-    }
+		switch (Mode)
+		{
+			case TimeMode.Normal:
+
+				Mode = TimeMode.FastForward;
+
+				break;
+			case TimeMode.FastForward:
+
+				Mode = TimeMode.Stop;
+
+				break;
+			case TimeMode.Stop:
+
+				Mode = TimeMode.Normal;
+
+				break;
+			default:
+				break;
+		}
+
+		justToggled = true;
+	}
 }

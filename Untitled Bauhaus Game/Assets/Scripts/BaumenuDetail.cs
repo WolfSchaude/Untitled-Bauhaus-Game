@@ -5,9 +5,6 @@ public class BaumenuDetail : MonoBehaviour
 {
     public GameObject detailWindow;
 
-    public GameObject dropdownContainerB; //Bau Dropdown
-    public GameObject dropdownContainerD; //Dozenten Dropdown
-
     public GameObject overviewWindow;
 
     public GameObject archButton;
@@ -46,20 +43,6 @@ public class BaumenuDetail : MonoBehaviour
 
     void Update()
     {
-
-        if (!detailWindow.activeSelf/* && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.activeSelf && !GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.activeSelf*/) //Disables all dropdown menus when window is open
-        {
-            dropdownContainerB.SetActive(true);
-            //dropdownContainerD.SetActive(true);
-        }
-        else
-        {
-            dropdownContainerB.SetActive(false);
-            //dropdownContainerD.SetActive(false);
-
-            overviewWindow.SetActive(false);
-        }
-
         checkWindow(); //Checks if detail window is open
         updateContent(); //Updates detail windows content depending on which button was pressed
         checkCloseButton(); //Checks if the Close Button was pressed

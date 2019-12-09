@@ -3,31 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AnimationStarter : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AnimationStarter : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler*/
 {
 	public Animator SecondMenu;
 	public Animator SelfDropDown;
 
-	public void OnPointerEnter(PointerEventData eventData)
-	{
-		if (SecondMenu != null)
-		{
-			SecondMenu.SetBool("InsideBool", true);
-		}
-		SelfDropDown.SetBool("InsideBool", true);
-	}
+	public bool IsOpened;
 
-	public void OnPointerExit(PointerEventData eventData)
+	//public void OnPointerEnter(PointerEventData eventData)
+	//{
+	//	if (SecondMenu != null)
+	//	{
+	//		SecondMenu.SetBool("InsideBool", true);
+	//	}
+	//	SelfDropDown.SetBool("InsideBool", true);
+	//}
+
+	//public void OnPointerExit(PointerEventData eventData)
+	//{
+	//	if (SecondMenu != null)
+	//	{
+	//		SecondMenu.SetBool("InsideBool", false);
+	//	}
+	//	SelfDropDown.SetBool("InsideBool", false);
+	//}
+
+	public void ToggleOpened()
 	{
-		if (SecondMenu != null)
+		if (IsOpened)
 		{
-			SecondMenu.SetBool("InsideBool", false);
+			if (SecondMenu != null)
+			{
+				SecondMenu.SetBool("InsideBool", false);
+			}
+			SelfDropDown.SetBool("InsideBool", false);
+
+			IsOpened = false;
 		}
-		SelfDropDown.SetBool("InsideBool", false);
+		else
+		{
+			if (SecondMenu != null)
+			{
+				SecondMenu.SetBool("InsideBool", true);
+			}
+			SelfDropDown.SetBool("InsideBool", true);
+
+			IsOpened = true;
+		}
 	}
 
 	void Start()
 	{
+		IsOpened = false;
 	}
 	void Update()
 	{
