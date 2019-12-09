@@ -22,12 +22,45 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	public GameObject werk6;
 	public GameObject werk7;
 
+	public Werkstatt Script1;
+	public Werkstatt Script2;
+	public Werkstatt Script3;
+	public Werkstatt Script4;
+	public Werkstatt Script5;
+	public Werkstatt Script6;
+	public Werkstatt Script7;
+
 	public bool buildInProgress = false;
 
 	void Start()
 	{
 		MaxQualitaet = 1.5f;
 		MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
+		werk1 = GameObject.Find("Werkstatt_1");
+		werk2 = GameObject.Find("Werkstatt_2");
+		werk3 = GameObject.Find("Werkstatt_3");
+		werk4 = GameObject.Find("Werkstatt_4");
+		werk5 = GameObject.Find("Werkstatt_5");
+		werk6 = GameObject.Find("Werkstatt_6");
+		werk7 = GameObject.Find("Werkstatt_7");
+
+		Script1 = werk1.GetComponent<Werkstatt>();
+		Script2 = werk2.GetComponent<Werkstatt>();
+		Script3 = werk3.GetComponent<Werkstatt>();
+		Script4 = werk4.GetComponent<Werkstatt>();
+		Script5 = werk5.GetComponent<Werkstatt>();
+		Script6 = werk6.GetComponent<Werkstatt>();
+		Script7 = werk7.GetComponent<Werkstatt>();
+
+		//Event_Memory.FindInActiveObjectByName("InsertNameHere");
+
+		werk1.SetActive(false);
+		werk2.SetActive(false);
+		werk3.SetActive(false);
+		werk4.SetActive(false);
+		werk5.SetActive(false);
+		werk6.SetActive(false);
+		werk7.SetActive(false);
 	}
 
 	void Update()
@@ -74,6 +107,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 			if (AnzahlWerkstaette == 0)
 			{
 				werk1.SetActive(true);
+				Script1.SetType(1);
 			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
