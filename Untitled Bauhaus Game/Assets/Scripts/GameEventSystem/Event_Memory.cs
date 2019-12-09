@@ -270,11 +270,11 @@ public class Event_Memory : MonoBehaviour
 
 		if (Geld1 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1 + " RM eingebracht.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1  * -1 + " RM eingebracht.");
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld1 + " RM verloren.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld1 * -1 + " RM verloren.");
 		}
 		
 
@@ -307,11 +307,11 @@ public class Event_Memory : MonoBehaviour
 
 		if (Geld2 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + " RM eingebracht.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + -1 + " RM eingebracht.");
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld2 + " RM verloren.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld2 * -1 + " RM verloren.");
 		}
 
 		IsFinished = true;
