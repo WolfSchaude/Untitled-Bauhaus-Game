@@ -8,7 +8,6 @@ public class TeacherScript : MonoBehaviour
 {
 	public GameObject prefab;
 	public GameObject parent;
-	public GameObject DropdownGebaeude;
 	public GameObject hiredParent;
 	public GameObject Ticker;
 
@@ -156,7 +155,7 @@ public class TeacherScript : MonoBehaviour
 		{
 			var x = Instantiate(prefab, parent.transform);
 
-			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, DropdownGebaeude, Ticker);
+			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, Ticker);
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[i].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[i].Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[i].Name;
 			x.GetComponentsInChildren<Text>()[2].text = "EInstellungskosten: " + TeacherLoader.tb.Buffer[i].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[i].FortlaufendeKosten;
