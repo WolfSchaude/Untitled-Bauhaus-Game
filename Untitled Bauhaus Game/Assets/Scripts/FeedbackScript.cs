@@ -12,13 +12,9 @@ public class FeedbackScript : MonoBehaviour
 
 	public List<GameObject> FeedbackTicks;
 
-	private bool once;
-
     void Start()
     {
 		FeedbackTicks = new List<GameObject>();
-
-		once = true;
     }
 
     // Update is called once per frame
@@ -52,18 +48,9 @@ public class FeedbackScript : MonoBehaviour
 
 		FeedbackTicks.Add(newthing);
 
-		//Canvas.ForceUpdateCanvases();
-		//UIToBlendIn.GetComponent<ScrollRect>().normalizedPosition = new Vector2(0, 1);
-		//Canvas.ForceUpdateCanvases();
-
-		//ScrollToBottom(UIToBlendIn.GetComponent<ScrollRect>());
+		UIToBlendIn.SetActive(true);
 
 		StartCoroutine(ScrollToBottom());
-	}
-
-	public static void ScrollToBottom(ScrollRect scrollRect)
-	{
-		scrollRect.normalizedPosition = new Vector2(0, 0);
 	}
 
 	IEnumerator ScrollToBottom()

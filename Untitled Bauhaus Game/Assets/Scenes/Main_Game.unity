@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000022888184}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -2150,7 +2150,6 @@ GameObject:
   - component: {fileID: 336543486}
   - component: {fileID: 336543485}
   - component: {fileID: 336543484}
-  - component: {fileID: 336543483}
   - component: {fileID: 336543487}
   m_Layer: 5
   m_Name: Dropdown Dozenten
@@ -2181,25 +2180,6 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: -10}
   m_SizeDelta: {x: 500, y: 75}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &336543483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336543481}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1599a1d77ccfc524993d7f4d3ba85adf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttons: {fileID: 2102139197}
-  dropdownB: {fileID: 754967057}
-  container: {fileID: 0}
-  isOpen: 0
-  x: 0
-  y: 0
-  z: 0
 --- !u!114 &336543484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,7 +2219,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 336543485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336543487}
+        m_MethodName: ToggleOpened
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &336543485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,6 +2280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecondMenu: {fileID: 754967063}
   SelfDropDown: {fileID: 397381466}
+  IsOpened: 0
 --- !u!1 &344506620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,8 +2782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detailWindow: {fileID: 1292603755}
-  dropdownContainerB: {fileID: 1662807171}
-  dropdownContainerD: {fileID: 397381464}
   overviewWindow: {fileID: 1168632090}
   archButton: {fileID: 1788956529}
   malButton: {fileID: 1562314354}
@@ -3574,7 +3564,6 @@ GameObject:
   - component: {fileID: 421715867}
   - component: {fileID: 421715866}
   - component: {fileID: 421715865}
-  - component: {fileID: 421715864}
   m_Layer: 5
   m_Name: Datum
   m_TagString: Untagged
@@ -3601,21 +3590,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &421715864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421715862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23137255}
-  m_EffectDistance: {x: -3, y: -3}
-  m_UseGraphicAlpha: 1
 --- !u!114 &421715865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6265,7 +6239,6 @@ GameObject:
   - component: {fileID: 754967062}
   - component: {fileID: 754967061}
   - component: {fileID: 754967060}
-  - component: {fileID: 754967059}
   - component: {fileID: 754967063}
   - component: {fileID: 754967064}
   m_Layer: 5
@@ -6297,20 +6270,6 @@ RectTransform:
   m_AnchoredPosition: {x: 700, y: -95}
   m_SizeDelta: {x: 500, y: 75}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &754967059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754967057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f15a446dd9dc848899c6e02f1b2d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  container: {fileID: 0}
-  isOpen: 0
 --- !u!114 &754967060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6350,7 +6309,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 754967061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 754967064}
+        m_MethodName: ToggleOpened
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &754967061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6419,6 +6389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecondMenu: {fileID: 0}
   SelfDropDown: {fileID: 1662807173}
+  IsOpened: 0
 --- !u!1 &759203501
 GameObject:
   m_ObjectHideFlags: 0
@@ -6792,8 +6763,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2124088794}
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11256,8 +11227,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797595454}
   m_HandleRect: {fileID: 1797595453}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

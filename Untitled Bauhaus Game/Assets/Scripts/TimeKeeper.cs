@@ -112,8 +112,6 @@ public class TimeKeeper : MonoBehaviour
 
 		DateDisplay.text = times[2] + " . " + times[1] + " . " + times[0];
 
-		gameTime += Time.deltaTime * 10000;
+		//StopCoroutine("AddTimeTic");
 	}
-
-    
 }
