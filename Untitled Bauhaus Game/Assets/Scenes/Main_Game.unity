@@ -3652,6 +3652,13 @@ MonoBehaviour:
   werk5: {fileID: 171393007}
   werk6: {fileID: 1521138415}
   werk7: {fileID: 151450147}
+  Script1: {fileID: 1869246098}
+  Script2: {fileID: 1659913885}
+  Script3: {fileID: 1163785629}
+  Script4: {fileID: 2123304684}
+  Script5: {fileID: 178547714}
+  Script6: {fileID: 1521138420}
+  Script7: {fileID: 151450152}
   buildInProgress: 0
 --- !u!114 &410550915
 MonoBehaviour:
@@ -12813,7 +12820,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797595454}
   m_HandleRect: {fileID: 1797595453}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -39149,8 +39156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615, type: 3}
   parent: {fileID: 4474210237068353045}
-  DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
-    type: 3}
   hiredParent: {fileID: 2957053224773068096}
   Ticker: {fileID: 1413785168}
 --- !u!224 &4474210237093471832

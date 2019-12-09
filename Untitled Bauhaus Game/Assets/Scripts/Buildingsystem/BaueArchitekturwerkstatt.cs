@@ -36,31 +36,9 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	{
 		MaxQualitaet = 1.5f;
 		MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
-		werk1 = GameObject.Find("Werkstatt_1");
-		werk2 = GameObject.Find("Werkstatt_2");
-		werk3 = GameObject.Find("Werkstatt_3");
-		werk4 = GameObject.Find("Werkstatt_4");
-		werk5 = GameObject.Find("Werkstatt_5");
-		werk6 = GameObject.Find("Werkstatt_6");
-		werk7 = GameObject.Find("Werkstatt_7");
-
-		Script1 = werk1.GetComponent<Werkstatt>();
-		Script2 = werk2.GetComponent<Werkstatt>();
-		Script3 = werk3.GetComponent<Werkstatt>();
-		Script4 = werk4.GetComponent<Werkstatt>();
-		Script5 = werk5.GetComponent<Werkstatt>();
-		Script6 = werk6.GetComponent<Werkstatt>();
-		Script7 = werk7.GetComponent<Werkstatt>();
 
 		//Event_Memory.FindInActiveObjectByName("InsertNameHere");
 
-		werk1.SetActive(false);
-		werk2.SetActive(false);
-		werk3.SetActive(false);
-		werk4.SetActive(false);
-		werk5.SetActive(false);
-		werk6.SetActive(false);
-		werk7.SetActive(false);
 	}
 
 	void Update()
@@ -83,31 +61,37 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 			if (AnzahlWerkstaette == 6)
 			{
 				werk7.SetActive(true);
+				Script7.SetType(1);
 			}
 			if (AnzahlWerkstaette == 5)
 			{
 				werk6.SetActive(true);
+				Script6.SetType(1);
 			}
 			if (AnzahlWerkstaette == 4)
 			{
 				werk5.SetActive(true);
+				Script5.SetType(1);
 			}
 			if (AnzahlWerkstaette == 3)
 			{
 				werk4.SetActive(true);
+				Script4.SetType(1);
 			}
 			if (AnzahlWerkstaette == 2)
 			{
 				werk3.SetActive(true);
+				Script3.SetType(1);
 			}
 			if (AnzahlWerkstaette == 1)
 			{
 				werk2.SetActive(true);
+				Script2.SetType(1);
 			}
 			if (AnzahlWerkstaette == 0)
 			{
 				werk1.SetActive(true);
-				Script1.SetType(1);
+				werk1.GetComponent<Werkstatt>().SetType(1); //Funktioniert
 			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt

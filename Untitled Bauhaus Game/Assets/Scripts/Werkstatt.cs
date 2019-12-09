@@ -13,10 +13,7 @@ public class Werkstatt : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.SetActive(true);
-        DebugWST = 0;
         IstEinemDozentenZugewiesen = false;
-        EigenerTyp = WerkstattTyp.Undefiniert;
         Debug.Log("hi");
     }
 
