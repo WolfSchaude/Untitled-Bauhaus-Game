@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Teacher_Memory : MonoBehaviour
 {
+    public GameObject Parent;
+
     public Teacher Memory;
 
     void Start()
@@ -17,9 +19,10 @@ public class Teacher_Memory : MonoBehaviour
         
     }
 
-    public void SetMemory(Teacher teacher)
+    public void SetMemory(Teacher teacher, GameObject parent)
     {
         Memory = teacher;
+        Parent = parent; 
     }
 
     public void StelleEin()
