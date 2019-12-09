@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    
+
     public void Quit()
     {
 
@@ -21,9 +23,6 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    SceneManager.LoadScene("Main_Menu");
-        //}
+       
     }
 }
