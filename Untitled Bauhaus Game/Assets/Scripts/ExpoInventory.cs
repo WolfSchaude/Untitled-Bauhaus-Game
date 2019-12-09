@@ -1,20 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UntitledBauhausGame;
 
 public class ExpoInventory : MonoBehaviour
 {
 	public GameObject inventoryWindow;
+	public GameObject prefab; //Exponate Prefab
+	public GameObject parent; //ScrollView Content
+
+	public static List<GameObject> Exponat = new List<GameObject>();
 
 	void Start()
     {
+
 		inventoryWindow.SetActive(false);
-    }
+	}
 
     void Update()
     {
-        
-    }
+		if (Exponate.isExponatDone)
+		{
+			Exponat.Add(Instantiate(prefab, parent.transform));
+		}
+	}
 
 	public void showWindow() //Sets detail window active
 	{
