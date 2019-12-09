@@ -30,6 +30,8 @@ public class Studenten : MonoBehaviour
 
 		monthlyStudenten = 5f * sliderPercentage;
 
+		GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
+
 		StudentenAnzahl += monthlyStudenten;
 
 		if (StudentenAnzahl >= GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität)
