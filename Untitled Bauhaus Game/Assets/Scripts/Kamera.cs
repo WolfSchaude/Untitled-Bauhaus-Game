@@ -14,7 +14,7 @@ namespace UntitledBauhausGame
         //public GameObject BuildManager;
         //public buildingsystemmanager BuildingSystemManager;
 
-        private bool LongKeyDown;
+        //private bool LongKeyDown;
 		public static bool AbleToMove;
 
         void Start()
@@ -84,10 +84,10 @@ namespace UntitledBauhausGame
             //    }
             //}
 
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                LongKeyDown = false;
-            }
+            //if (Input.GetKeyUp(KeyCode.Space))
+            //{
+            //    LongKeyDown = false;
+            //}
         }
 
         public void ChangeCameraSpeed(float newSpeed)
