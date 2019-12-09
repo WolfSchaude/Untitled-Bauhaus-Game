@@ -47,31 +47,34 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	{
 		if (buildInProgress && archBuildTimeInMonths == 0)
 		{
-			if (werk6.activeSelf)
+			if (AnzahlWerkstaette == 6)
 			{
 				werk7.SetActive(true);
 			}
-			if (werk5.activeSelf)
+			if (AnzahlWerkstaette == 5)
 			{
 				werk6.SetActive(true);
 			}
-			if (werk4.activeSelf)
+			if (AnzahlWerkstaette == 4)
 			{
 				werk5.SetActive(true);
 			}
-			if (werk3.activeSelf)
+			if (AnzahlWerkstaette == 3)
 			{
 				werk4.SetActive(true);
 			}
-			if (werk2.activeSelf)
+			if (AnzahlWerkstaette == 2)
 			{
 				werk3.SetActive(true);
 			}
-			if (werk1.activeSelf)
+			if (AnzahlWerkstaette == 1)
 			{
 				werk2.SetActive(true);
 			}
-			werk1.SetActive(true);
+			if (AnzahlWerkstaette == 0)
+			{
+				werk1.SetActive(true);
+			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
 			{
