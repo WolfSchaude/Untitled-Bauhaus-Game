@@ -1650,7 +1650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00005340576}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -11554,8 +11554,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797595454}
   m_HandleRect: {fileID: 1797595453}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -37067,25 +37067,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &4474210237068353038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474210237068353045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9c1f244ee627a4dada0ca067009675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bewerbung: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615,
-    type: 3}
-  parent: {fileID: 2957053224773068096}
-  DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
-    type: 3}
-  bewerbungen: []
-  eingestellter: []
 --- !u!1 &4474210237068353045
 GameObject:
   m_ObjectHideFlags: 0
@@ -37095,7 +37076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4474210237068353034}
-  - component: {fileID: 4474210237068353038}
+  - component: {fileID: 4474210237068353046}
   - component: {fileID: 4474210237068353033}
   - component: {fileID: 4474210237068353032}
   - component: {fileID: 4474210237068353035}
@@ -37106,6 +37087,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4474210237068353046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474210237068353045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a42cdb364bdcb947bbf0a0a72fe3ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615, type: 3}
+  parent: {fileID: 4474210237068353045}
+  DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
+    type: 3}
+  hiredParent: {fileID: 2957053224773068096}
 --- !u!224 &4474210237093471832
 RectTransform:
   m_ObjectHideFlags: 0
