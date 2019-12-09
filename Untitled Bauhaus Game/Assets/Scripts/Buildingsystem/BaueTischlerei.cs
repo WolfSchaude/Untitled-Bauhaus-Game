@@ -177,7 +177,7 @@ public class BaueTischlerei : MonoBehaviour
 					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
 					{
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.15f);
+						werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.1f);
 						werk7.transform.localScale = new Vector3(6f, 5f, 3.5f);
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
