@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UntitledBauhausGame;
 
 public class ExpoInventory : MonoBehaviour
@@ -13,19 +14,15 @@ public class ExpoInventory : MonoBehaviour
 
 	void Start()
     {
-
-		inventoryWindow.SetActive(false);
+		Resources.Load("Person1");
 	}
 
     void Update()
     {
-		if (Exponate.isExponatDone)
-		{
-			Exponat.Add(Instantiate(prefab, parent.transform));
-		}
+			
 	}
 
-	public void showWindow() //Sets detail window active
+	public void showWindow() //Sets inventory window active
 	{
 		if (!inventoryWindow.activeSelf)
 		{
@@ -38,5 +35,10 @@ public class ExpoInventory : MonoBehaviour
 		{
 			inventoryWindow.SetActive(false);
 		}
+	}
+
+	public void addToInventory() //Gebunden an Exponat Done Event
+	{
+		Exponat.Add(Instantiate(prefab, parent.transform));
 	}
 }
