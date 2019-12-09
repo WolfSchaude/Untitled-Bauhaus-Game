@@ -10,24 +10,6 @@ public class AnimationStarter : MonoBehaviour/*, IPointerEnterHandler, IPointerE
 
 	public bool IsOpened;
 
-	//public void OnPointerEnter(PointerEventData eventData)
-	//{
-	//	if (SecondMenu != null)
-	//	{
-	//		SecondMenu.SetBool("InsideBool", true);
-	//	}
-	//	SelfDropDown.SetBool("InsideBool", true);
-	//}
-
-	//public void OnPointerExit(PointerEventData eventData)
-	//{
-	//	if (SecondMenu != null)
-	//	{
-	//		SecondMenu.SetBool("InsideBool", false);
-	//	}
-	//	SelfDropDown.SetBool("InsideBool", false);
-	//}
-
 	public void ToggleOpened()
 	{
 		if (IsOpened)
