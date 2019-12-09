@@ -10,13 +10,14 @@ public class TeacherScript : MonoBehaviour
 	public GameObject parent;
 	public GameObject DropdownGebaeude;
 	public GameObject hiredParent;
+	public GameObject Ticker;
 
 	public static List<GameObject> Bewerbungen = new List<GameObject>();
 	public static List<GameObject> Eingestellte = new List<GameObject>();
 
-	public static bool eingestellter1active = false;
-	public static bool eingestellter2active = false;
-	public static bool eingestellter3active = false;
+	//public static bool eingestellter1active = false;
+	//public static bool eingestellter2active = false;
+	//public static bool eingestellter3active = false;
 
 
 	// Start is called before the first frame update
@@ -146,7 +147,7 @@ public class TeacherScript : MonoBehaviour
 			#endregion
 		}
 		*/
-	}
+		}
 
 		Bewerbungen = new List<GameObject>();
 		Eingestellte = new List<GameObject>();
@@ -155,7 +156,7 @@ public class TeacherScript : MonoBehaviour
 		{
 			var x = Instantiate(prefab, parent.transform);
 
-			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent);
+			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, DropdownGebaeude, Ticker);
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[i].Geburtsdatum + Environment.NewLine + "Interessen: " + TeacherLoader.tb.Buffer[i].Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[i].Name;
 			x.GetComponentsInChildren<Text>()[2].text = "EInstellungskosten: " + TeacherLoader.tb.Buffer[i].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[i].FortlaufendeKosten;
@@ -167,6 +168,13 @@ public class TeacherScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		foreach (var item in Eingestellte)
+		{
+			if (!item.activeSelf)
+			{
+				item.SetActive(true);
+			}
+		}
 
 		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count - 1; i++)
 		//{
@@ -228,11 +236,6 @@ public class TeacherScript : MonoBehaviour
 		//	}
 
 		//}
-
-
-		{
-
-		}
 	}
 }
 

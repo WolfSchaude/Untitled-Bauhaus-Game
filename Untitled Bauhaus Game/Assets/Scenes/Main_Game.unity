@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 171393011}
   - component: {fileID: 171393010}
   - component: {fileID: 171393009}
-  - component: {fileID: 171393012}
+  - component: {fileID: 178547714}
   m_Layer: 0
   m_Name: Werkstatt_5
   m_TagString: Untagged
@@ -1436,7 +1436,6 @@ GameObject:
   m_Component:
   - component: {fileID: 178547713}
   - component: {fileID: 178547715}
-  - component: {fileID: 178547714}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1478,27 +1477,6 @@ MonoBehaviour:
   EigenerTyp: 0
   IstEinemDozentenZugewiesen: 0
   DebugWST: 0
-  m_GameObject: {fileID: 178547712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!222 &178547715
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7593,7 +7571,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999976
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -38619,7 +38597,7 @@ MonoBehaviour:
   m_Content: {fileID: 2957053224773068099}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -39137,27 +39115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &4474210237068353038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4474210237068353045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9c1f244ee627a4dada0ca067009675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bewerbung: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615,
-    type: 3}
-  parent: {fileID: 2957053224773068096}
-  DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
-    type: 3}
-  bewerbungen: []
-  eingestellter: []
 --- !u!1 &4474210237068353045
 GameObject:
   m_ObjectHideFlags: 0
@@ -39194,7 +39151,7 @@ MonoBehaviour:
   parent: {fileID: 4474210237068353045}
   DropdownGebaeude: {fileID: 8642788975763561713, guid: b0d65f5599b965547a34f8c0e1374c60,
     type: 3}
-  hiredParent: {fileID: 0}
+  hiredParent: {fileID: 2957053224773068096}
 --- !u!224 &4474210237093471832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39445,7 +39402,7 @@ MonoBehaviour:
   m_Content: {fileID: 4474210237068353034}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135

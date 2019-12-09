@@ -43,8 +43,6 @@ public class Teacher
 	public Status TeacherStatus = Status.NotHired;
 	[XmlIgnore]
 	public bool Hireable = true;
-    [XmlIgnore]
-    public bool IsAdded = false;
 
 	public enum Status
 	{
