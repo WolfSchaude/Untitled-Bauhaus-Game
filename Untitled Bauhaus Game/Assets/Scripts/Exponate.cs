@@ -18,7 +18,7 @@ public class Exponate : MonoBehaviour
     private int expoPrice = 7500; //Herstellungspreis
 
     private bool exponatInProgress;
-    private bool isExponatDone = false;
+    public static bool isExponatDone = false;
     void Start()
     {
         expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
