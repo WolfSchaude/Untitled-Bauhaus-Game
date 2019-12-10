@@ -59,6 +59,14 @@ public class FeedbackScript : MonoBehaviour
 		UIToBlendIn.SetActive(true);
 
 		StartCoroutine(ScrollToBottom());
+
+		if (Collapsed)
+		{
+			TickerFieldAnimator.SetTrigger("Click");
+			ButtonAnimator.SetTrigger("Click");
+
+			Collapsed = !Collapsed;
+		}
 	}
 
 	IEnumerator ScrollToBottom()

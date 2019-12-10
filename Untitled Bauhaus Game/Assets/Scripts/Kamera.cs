@@ -7,6 +7,7 @@ namespace UntitledBauhausGame
     public class Kamera : MonoBehaviour
     {
 		float moveSpeed;
+        float actmoveSpeed;
 		float rotateSpeed;
 		float height;
         float mDelta;
@@ -34,9 +35,9 @@ namespace UntitledBauhausGame
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = 10;
+                actmoveSpeed = moveSpeed * 2;
             }
-            else moveSpeed = 5;
+            else actmoveSpeed = moveSpeed;
 
             Vector3 targetPos = Vector3.zero;
 
@@ -45,22 +46,22 @@ namespace UntitledBauhausGame
                 if (Input.mousePosition.x >= Screen.width - mDelta)
                 {
                     // Move the camera
-                    targetPos.x += Time.deltaTime * moveSpeed;
+                    targetPos.x += Time.deltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.x <= 0 + mDelta)
                 {
                     // Move the camera
-                    targetPos.x -= Time.deltaTime * moveSpeed;
+                    targetPos.x -= Time.deltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.y >= Screen.height - mDelta)
                 {
                     // Move the camera
-                    targetPos.z += Time.deltaTime * moveSpeed;
+                    targetPos.z += Time.deltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.y <= 0 + mDelta)
                 {
                     // Move the camera
-                    targetPos.z -= Time.deltaTime * moveSpeed;
+                    targetPos.z -= Time.deltaTime * actmoveSpeed;
                 }
             }
 
@@ -68,7 +69,7 @@ namespace UntitledBauhausGame
 			{
                 transform.Translate(targetPos, Space.Self);
 
-                transform.Translate(new Vector3(moveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, moveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
+                transform.Translate(new Vector3(actmoveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, actmoveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
 
 				transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 

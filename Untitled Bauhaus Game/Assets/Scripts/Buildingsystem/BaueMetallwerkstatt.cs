@@ -99,11 +99,11 @@ public class BaueMetallwerkstatt : MonoBehaviour
 	{
 		if (!buildInProgress)
 		{
-			switch (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette)
+			if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
 			{
-				case 0:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+				switch (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette)
+				{
+					case 0:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk1.transform.position = new Vector3(-2.5f, 3.15f, -6.25f);
 						werk1.transform.localScale = new Vector3(3.5f, 5f, 6.5f);
@@ -112,11 +112,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk1.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 1:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 1:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk2.transform.position = new Vector3(-7.25f, 3.15f, -4.5f);
 						werk2.transform.localScale = new Vector3(6f, 5f, 3.5f);
@@ -125,11 +123,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk2.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 2:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 2:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk3.transform.position = new Vector3(-7.25f, 3.15f, -8.125f);
 						werk3.transform.localScale = new Vector3(6f, 5f, 3.75f);
@@ -138,11 +134,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk3.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 3:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 3:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk4.transform.position = new Vector3(-7.25f, 3.15f, -11.75f);
 						werk4.transform.localScale = new Vector3(6f, 5f, 3.5f);
@@ -151,11 +145,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk4.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 4:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 4:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk5.transform.position = new Vector3(-7.25f, 3.15f, -15.25f);
 						werk5.transform.localScale = new Vector3(6f, 5f, 3.5f);
@@ -164,11 +156,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk5.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 5:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 5:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk6.transform.position = new Vector3(-7.25f, 3.15f, -18.75f);
 						werk6.transform.localScale = new Vector3(6f, 5f, 3.5f);
@@ -177,11 +167,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk6.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = AktPreis * 2;
-					}
-					break;
-				case 6:
-					if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
-					{
+						break;
+
+					case 6:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.1f);
 						werk7.transform.localScale = new Vector3(6f, 5f, 3.5f);
@@ -190,10 +178,11 @@ public class BaueMetallwerkstatt : MonoBehaviour
 						//werk7.SetActive(true);
 						//AnzahlWerkstaette++;
 						AktPreis = int.MaxValue;
-					}
-					break;
-				default:
-					break;
+						break;
+
+					default:
+						break;
+				}
 			}
 		}
 	}
