@@ -11,9 +11,9 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	public int archBuildTimeInMonths = 2;
 	public int BauStil;
 
-	private int[] BauStilePosnum = new int[2]; 
+	public int[] BauStilePosnum = new int[2]; 
 
-	public Vector3[,,] StilNum0Pos1Scal = new Vector3[3,7,2];
+	public Vector3[,,] StilNum0Pos1Scal = new Vector3[2,7,2];
 
 	public float MinQualität;
 	public float MaxQualitaet;
@@ -135,8 +135,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					case 0:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
 						werk1.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
-						werk1.transform.position = new Vector3(-2.5f, 3.15f, -6.25f);
-						werk1.transform.localScale = new Vector3(3.5f, 5f, 6.5f);
+						werk1.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk1.SetActive(true);
@@ -146,8 +145,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 1:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk2.transform.position = new Vector3(-7.25f, 3.15f, -4.5f);
-						werk2.transform.localScale = new Vector3(6f, 5f, 3.5f);
+						werk2.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk2.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk2.SetActive(true);
@@ -157,8 +156,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 2:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk3.transform.position = new Vector3(-7.25f, 3.15f, -8.125f);
-						werk3.transform.localScale = new Vector3(6f, 5f, 3.75f);
+						werk3.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk3.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk3.SetActive(true);
@@ -168,8 +167,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 3:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk4.transform.position = new Vector3(-7.25f, 3.15f, -11.75f);
-						werk4.transform.localScale = new Vector3(6f, 5f, 3.5f);
+						werk4.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk4.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk4.SetActive(true);
@@ -179,8 +178,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 4:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk5.transform.position = new Vector3(-7.25f, 3.15f, -15.25f);
-						werk5.transform.localScale = new Vector3(6f, 5f, 3.5f);
+						werk5.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk5.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk5.SetActive(true);
@@ -190,8 +189,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 5:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk6.transform.position = new Vector3(-7.25f, 3.15f, -18.75f);
-						werk6.transform.localScale = new Vector3(6f, 5f, 3.5f);
+						werk6.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk6.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk6.SetActive(true);
@@ -201,8 +200,8 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					
 					case 6:
 						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
-						werk7.transform.position = new Vector3(-7.25f, 3.15f, -22.1f);
-						werk7.transform.localScale = new Vector3(6f, 5f, 3.5f);
+						werk7.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+						werk7.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
 						Qualität = Random.Range(0.5f + (AnzahlWerkstaette * 0.05f), 1.5f);
 						buildInProgress = true;
 						//werk7.SetActive(true);
@@ -213,6 +212,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 					default:
 						break;
 				}
+				BauStilePosnum[BauStil]++;
 			}
 		}
 	}
