@@ -47,6 +47,11 @@ public class Exponate : MonoBehaviour
 		//    expoText.text = "Wird hergestellt...";
 		//    exponatInProgress = true;
 		//}
+
+		if(Input.GetKeyDown(KeyCode.J))
+		{
+			exponatDone.Invoke();
+		}
 	}
 
     public void checkForButtonPress() //Herstellung mit Button
@@ -90,11 +95,11 @@ public class Exponate : MonoBehaviour
                 //switch (randomExponat) //switch for different types of exhibits
                 //{
                 //    case 1:
-                        GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-						var i = Random.Range(5000, 25001);
-						GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
-						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
+      //                  GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
+						//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+						//var i = Random.Range(5000, 25001);
+						//GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
+						//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
 				//        break;
 				//    case 2:
 				//        Debug.Log("-rep");
