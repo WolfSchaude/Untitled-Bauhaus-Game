@@ -42,7 +42,7 @@ public class TimeKeeper : MonoBehaviour
 		currentMonth = StartMonth;
 		currentYear = StartYear;
 
-		InvokeRepeating("AddTimeTic", 0.1f, 3);
+		InvokeRepeating("AddTimeTic", 0.1f, 1);
 	}
 
 	public void AddYear(int years)
