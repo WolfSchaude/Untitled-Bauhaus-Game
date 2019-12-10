@@ -47,6 +47,11 @@ public class Exponate : MonoBehaviour
 		//    expoText.text = "Wird hergestellt...";
 		//    exponatInProgress = true;
 		//}
+
+		if(Input.GetKeyDown(KeyCode.J))
+		{
+			exponatDone.Invoke();
+		}
 	}
 
     public void checkForButtonPress() //Herstellung mit Button
@@ -86,15 +91,15 @@ public class Exponate : MonoBehaviour
             {
                 expoText.text = "Exponat hergestellt!";
 
-                //int randomExponat = Random.Range(1, 3); //random number between 1 and 2
-                //switch (randomExponat) //switch for different types of exhibits
-                //{
-                //    case 1:
-                        GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-						var i = Random.Range(5000, 25001);
-						GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
-						FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
+				//int randomExponat = Random.Range(1, 3); //random number between 1 and 2
+				//switch (randomExponat) //switch for different types of exhibits
+				//{
+				//    case 1:
+				//                  GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
+				//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+				//var i = Random.Range(5000, 25001);
+				//GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
+				//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
 				//        break;
 				//    case 2:
 				//        Debug.Log("-rep");
@@ -104,6 +109,8 @@ public class Exponate : MonoBehaviour
 				//        Debug.Log("default case");
 				//        break;
 				//}
+				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Ein Exponat wurde dem Inventar hinzugefügt.");
+
 				exponatDone.Invoke();
                 isExponatDone = true;
                 exponatInProgress = false;

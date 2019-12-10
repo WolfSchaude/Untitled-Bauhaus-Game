@@ -17,6 +17,9 @@ public class EventScript : MonoBehaviour
 
 	public Text AnzahlEvents;
 
+	public Animator EventsAnimator;
+
+
 	private bool AlreadyGenerated = false;
 
     void Start()
@@ -107,14 +110,15 @@ public class EventScript : MonoBehaviour
 
 	public void ToggleEvent()
 	{
-		if (UIToBlendIn.activeSelf)
-		{
-			UIToBlendIn.SetActive(false);
-		}
-		else
-		{
-			UIToBlendIn.SetActive(true);
-			GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false); //schließt Baumenu
-		}
+		//if (UIToBlendIn.activeSelf)
+		//{
+		//	UIToBlendIn.SetActive(false);
+		//}
+		//else
+		//{
+		//	UIToBlendIn.SetActive(true);
+		//}
+
+		EventsAnimator.SetTrigger("Click");
 	}
 }
