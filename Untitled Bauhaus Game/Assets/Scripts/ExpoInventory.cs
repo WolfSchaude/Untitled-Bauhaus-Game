@@ -12,12 +12,7 @@ public class ExpoInventory : MonoBehaviour
 	public GameObject prefab; //Exponate Prefab
 	public GameObject parent; //ScrollView Content
 
-	private Ray ray; // The ray
-	private RaycastHit hit; // What we hit
-
 	public static List<GameObject> Exponat = new List<GameObject>();
-
-
 
 	void Start()
     {
@@ -51,8 +46,6 @@ public class ExpoInventory : MonoBehaviour
 		var i = Random.Range(5000, 25001);
 		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
-
-		//Destroy(x);
 	}
 
 	/*
@@ -78,34 +71,24 @@ public class ExpoInventory : MonoBehaviour
 				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Person3");
 				break;
 		}
+			
+		int herstellerText = Random.Range(1, 25);
 
-		int herstellerText = Random.Range(1, 4);
+		x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + TeacherLoader.tb.Buffer[herstellerText].Name;
 
-		switch (herstellerText)
-		{
-			case 1:
-				x.GetComponentsInChildren<Text>()[0].text = "Hersteller: Job Bonson";
-				break;
-			case 2:
-				x.GetComponentsInChildren<Text>()[0].text = "Hersteller: Boomar";
-				break;
-			case 3:
-				x.GetComponentsInChildren<Text>()[0].text = "Hersteller: Omar";
-				break;
-		}
 
 		int stilText = Random.Range(1, 4);
 
 		switch (stilText)
 		{
 			case 1:
-				x.GetComponentsInChildren<Text>()[1].text = "Stilrichtung: KA1";
+				x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Rechts";
 				break;
 			case 2:
-				x.GetComponentsInChildren<Text>()[1].text = "´Stilrichtung: KA2";
+				x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Links";
 				break;
 			case 3:
-				x.GetComponentsInChildren<Text>()[1].text = "Stilrichtung: KA3";
+				x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Neutral";
 				break;
 		}
 
@@ -130,7 +113,5 @@ public class ExpoInventory : MonoBehaviour
 		x.GetComponentInChildren<Button>().onClick.AddListener(() => {checkSellButton(); Destroy(x); });
 
 		Exponat.Add(x);
-
-		
 	}
 }
