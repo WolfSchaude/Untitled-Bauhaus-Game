@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZuweisenOnChange : MonoBehaviour
 {
@@ -12,15 +13,83 @@ public class ZuweisenOnChange : MonoBehaviour
 	public int oldVal = 0;
 
 	void Start()
-    {
+	{
 		Script = GameObject.Find("EventSystem").GetComponent<bewerbungvisible>();
 
 	}
 
-    void Update()
-    {
-        
-    }
+	void Update()
+	{
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Architekturwerkstatt", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Architekturwerkstatt", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMalerei > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Malerei", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMalerei == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Malerei", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlAustellung > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Ausstellungsgestaltung", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlAustellung == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Ausstellungsgestaltung", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMetall > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Metallwerkstatt", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMetall == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Metallwerkstatt", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlTisch > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Tischlerei", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlTisch == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Tischlerei", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Lehrsaal", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Lehrsaal", false);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn > 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Wohnheim", true);
+		}
+
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn == 0)
+		{
+			GetComponent<DropDownController>().EnableOption("Wohnheim", false);
+		}
+	}
 
 	void HandleInputData(int val)
 	{
@@ -32,7 +101,7 @@ public class ZuweisenOnChange : MonoBehaviour
 		bool active6 = false;
 		bool active7 = false;
 
-		switch (val)
+				switch (val)
 		{
 			case 0:
 				Debug.Log("Nicht zugewiesen");
@@ -134,54 +203,17 @@ public class ZuweisenOnChange : MonoBehaviour
 				break;
 		}
 
-		oldVal = val;
+		oldVal = val; 
 
 		if (val > 0 && !checkeingestellt)
 		{
 			Script.zugewiesenenCounter++;
 			checkeingestellt = true;
 		}
-		if(val == 0 && checkeingestellt)
+		if (val == 0 && checkeingestellt)
 		{
 			Script.zugewiesenenCounter--;
 			checkeingestellt = false;
 		}
 	}
-
-
-	//void OnChange()
-	//{
-	//	switch (Convert.ToInt32(this.GetComponent<Dropdown>()))
-	//	{
-	//		case 0:
-	//			Debug.Log("nicht zugewiesen");
-	//			break;
-	//		case 1:
-	//			Debug.Log("Ist der Architekturwerkstatt zugewiesen");
-	//			break;
-	//		case 2:
-	//			Debug.Log("Ist der Malerei zugewiesen");
-	//			break;
-	//		case 3:
-	//			Debug.Log("Ist der Ausstellungsgestaltung zugewiesen");
-	//			break;
-	//		case 4:
-	//			Debug.Log("Ist der Metallwerkstatt zugewiesen");
-	//			break;
-	//		case 5:
-	//			Debug.Log("Ist der Tischlerei zugewiesen");
-	//			break;
-	//		case 6:
-	//			Debug.Log("Ist dem Lehrsaal zugewiesen");
-	//			break;
-	//		case 7:
-	//			Debug.Log("Ist dem Wohnheim zugewiesen");
-	//			break;
-	//		default:
-	//			Debug.Log("Nicht zugewiesen");
-	//			break;
-	//	}
-	//}
-
-
 }

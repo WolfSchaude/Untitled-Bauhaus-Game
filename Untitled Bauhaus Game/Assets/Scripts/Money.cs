@@ -36,7 +36,7 @@ public class Money : MonoBehaviour
 		GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Monatliches Gehalt: + " + (money - oldMoney) + " RM.");
 	}
 
-	public void Spende(int spende)
+	public void Spende(float spende)
     {
         if (spende > 0)
         {

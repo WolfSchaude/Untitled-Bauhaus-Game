@@ -5,12 +5,11 @@
     
 	  <Teacher>
       <ID>1</ID>
-		  <Name>Lyonel Feininger</Name>
-		  <Beruf>Kunstmaler</Beruf>
+      <Name>Lyonel Feininger</Name>
       <Gehalt>2000</Gehalt>
       <Politik>100</Politik>
 		  <ImagePath>Sprites/Person1</ImagePath>
-      <Geburtsdatum>17. Juli 1871</Geburtsdatum>#
+      <Geburtsdatum>17. Juli 1871</Geburtsdatum>
       <Interessen>Malerei, Karikaturist</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
@@ -19,7 +18,6 @@
 	  <Teacher>
       <ID>2</ID>
 		  <Name>Josef Albers</Name>
-		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>2200</Gehalt>
       <Politik>90</Politik>
 		  <ImagePath>Sprites/Person2</ImagePath>
@@ -32,7 +30,6 @@
 	  <Teacher>
       <ID>3</ID>
 		  <Name>Johannes Itten</Name>
-		  <Beruf>Kunstmaler</Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -45,7 +42,6 @@
     <Teacher>
       <ID>4</ID>
 		  <Name>László Moholy-Nagy</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -58,7 +54,6 @@
     <Teacher>
       <ID>5</ID>
 		  <Name>Georg Muche</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -71,7 +66,6 @@
     <Teacher>
       <ID>6</ID>
 		  <Name>Paul Klee</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -84,7 +78,6 @@
     <Teacher>
       <ID>7</ID>
 		  <Name>Marianne Brandt</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -97,7 +90,6 @@
 <Teacher>
       <ID>8</ID>
 		  <Name>Alfred Arndt</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -110,7 +102,6 @@
     <Teacher>
       <ID>9</ID>
 		  <Name>Marcel Lajos Breuer</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -123,7 +114,6 @@
       <Teacher>
       <ID>10</ID>
 		  <Name>Walter Peterhans</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -136,7 +126,6 @@
     <Teacher>
       <ID>11</ID>
 		  <Name>Oskar Schlemmer</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -149,7 +138,6 @@
     <Teacher>
       <ID>12</ID>
 		  <Name>Wassity Kandinsky</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -162,7 +150,6 @@
     <Teacher>
       <ID>13</ID>
 		  <Name>Lothar Schreyer</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -175,7 +162,6 @@
     <Teacher>
       <ID>14</ID>
 		  <Name>Gerhard Marcks</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -188,7 +174,6 @@
     <Teacher>
       <ID>15</ID>
 		  <Name>Ludwig Mies van der Rohe</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -201,7 +186,6 @@
     <Teacher>
       <ID>16</ID>
 		  <Name>Hannes Meyer</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -214,7 +198,6 @@
     <Teacher>
       <ID>17</ID>
 		  <Name>Adolf Meyer</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -227,7 +210,6 @@
     <Teacher>
       <ID>18</ID>
 		  <Name>Joost Schmidt</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -240,7 +222,6 @@
     <Teacher>
       <ID>19</ID>
 		  <Name>Getrud Grunow</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -253,7 +234,6 @@
     <Teacher>
       <ID>20</ID>
 		  <Name>Christian Dell</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -266,7 +246,6 @@
     <Teacher>
       <ID>21</ID>
 		  <Name>Naum Slutzky</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -279,7 +258,6 @@
     <Teacher>
       <ID>22</ID>
 		  <Name>Gunta Stötzl</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -292,7 +270,6 @@
     <Teacher>
       <ID>23</ID>
 		  <Name>Anni Albers</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -305,7 +282,6 @@
     <Teacher>
       <ID>24</ID>
 		  <Name>Max Krehan</Name>
-		  <Beruf></Beruf>
       <Gehalt>1800</Gehalt>
       <Politik>120</Politik>
       <ImagePath>Sprites/Person3</ImagePath>
@@ -318,7 +294,6 @@
 	  <Teacher>
       <ID>25</ID>
 		  <Name></Name>
-		  <Beruf></Beruf>
       <Gehalt>0</Gehalt>
       <Politik>100</Politik>
 		  <ImagePath></ImagePath>
