@@ -100,6 +100,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Architekturwerkstatt wurde fertiggestellt!");
             AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur++;
 			archBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}
