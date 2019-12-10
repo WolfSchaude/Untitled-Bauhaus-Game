@@ -1731,7 +1731,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: "Schlie\xDFen"
 --- !u!222 &217156354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1774,7 +1774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000038146973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -2049,7 +2049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -31900}
+  m_AnchoredPosition: {x: 0, y: -34800}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -2799,6 +2799,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4474210237068353046}
+        m_MethodName: laufendeKosten
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   changedDay:
     m_PersistentCalls:
       m_Calls:
@@ -2913,6 +2924,7 @@ MonoBehaviour:
   werkstattCount: {fileID: 1193729359}
   lehrsaalCount: {fileID: 2017386128}
   wohnheimCount: {fileID: 1813437916}
+  Collapsed: 0
 --- !u!114 &381768625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,6 +3550,8 @@ MonoBehaviour:
   "studKapazit\xE4tLehr": 200
   AktPreisL: 1000
   lehrBuildTimeInMonths: 2
+  BauStil: 0
+  BauStilePosnum: 0000000000000000
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   lehr1: {fileID: 1884695511}
@@ -3565,6 +3579,8 @@ MonoBehaviour:
   "studKapazit\xE4tWohn": 200
   AktPreisW: 1000
   wohnBuildTimeInMonths: 2
+  BauStil: 0
+  BauStilePosnum: 0000000000000000
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   heim1: {fileID: 2102026957}
@@ -3613,6 +3629,8 @@ MonoBehaviour:
   "studKapazit\xE4tArch": 200
   AktPreis: 1000
   archBuildTimeInMonths: 2
+  BauStil: 0
+  BauStilePosnum: 0000000000000000
   "MinQualit\xE4t": 0
   MaxQualitaet: 0
   werk1: {fileID: 1869246093}
@@ -3622,13 +3640,6 @@ MonoBehaviour:
   werk5: {fileID: 171393007}
   werk6: {fileID: 1521138415}
   werk7: {fileID: 151450147}
-  Script1: {fileID: 1869246098}
-  Script2: {fileID: 1659913885}
-  Script3: {fileID: 1163785629}
-  Script4: {fileID: 2123304684}
-  Script5: {fileID: 178547714}
-  Script6: {fileID: 1521138420}
-  Script7: {fileID: 151450152}
   buildInProgress: 0
 --- !u!114 &410550915
 MonoBehaviour:
@@ -7253,8 +7264,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2124088794}
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9307,7 +9318,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 115262155}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10740,6 +10751,7 @@ MonoBehaviour:
   werkstattCount: {fileID: 1193729359}
   lehrsaalCount: {fileID: 2017386128}
   wohnheimCount: {fileID: 1813437916}
+  Collapsed: 0
 --- !u!1 &1382382681
 GameObject:
   m_ObjectHideFlags: 0
@@ -12132,8 +12144,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797595454}
   m_HandleRect: {fileID: 1797595453}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13366,7 +13378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -13552,7 +13564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: "Schlie\xDFen"
 --- !u!222 &1738739817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15171,8 +15183,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 70466745}
   m_HandleRect: {fileID: 70466744}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

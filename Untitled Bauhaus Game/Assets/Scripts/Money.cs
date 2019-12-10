@@ -33,7 +33,7 @@ public class Money : MonoBehaviour
     {
 		oldMoney = money;
 		money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
-		GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Monatliches Gehalt: + " + (money - oldMoney) + " RM.");
+		GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
 	}
 
 	public void Spende(float spende)
