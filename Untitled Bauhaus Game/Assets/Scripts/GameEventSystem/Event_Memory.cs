@@ -161,8 +161,6 @@ public class Event_Memory : MonoBehaviour
 		{
 			SelectedOption2 = true;
 			SelectedOne = true;
-			gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[0].Select();
 			gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
 			gameObject.GetComponentsInChildren<Button>()[1].Select();
 
@@ -183,7 +181,10 @@ public class Event_Memory : MonoBehaviour
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verschlechtert.");
+			if (Ansehen1 < 0)
+			{
+				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 * -1 + " verschlechtert.");
+			}
 		}
 
 		if (Politik1 > 0)
@@ -192,16 +193,16 @@ public class Event_Memory : MonoBehaviour
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 + " nach links verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 * -1 + " nach links verschoben.");
 		}
 
 		if (Geld1 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1  * -1 + " RM eingebracht.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1  + " RM eingebracht.");
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld1 * -1 + " RM verloren.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld1 * -1 + " RM verloren.");
 		}
 		
 
@@ -220,7 +221,10 @@ public class Event_Memory : MonoBehaviour
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verschlechtert.");
+			if (Ansehen2 < 0)
+			{
+				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 * -1 + " verschlechtert.");
+			}
 		}
 
 		if (Politik2 > 0)
@@ -229,12 +233,12 @@ public class Event_Memory : MonoBehaviour
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 + " nach links verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 * -1 + " nach links verschoben.");
 		}
 
 		if (Geld2 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + -1 + " RM eingebracht.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + " RM eingebracht.");
 		}
 		else
 		{
