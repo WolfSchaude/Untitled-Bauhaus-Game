@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TeacherScript : MonoBehaviour
 {
+	private int milch;
+
 	public GameObject prefab;
 	public GameObject parent;
 	public GameObject hiredParent;
@@ -42,6 +44,16 @@ public class TeacherScript : MonoBehaviour
 			{
 				item.SetActive(true);
 			}
+		}
+	}
+
+	public void laufendeKosten()
+	{
+		if (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter > 0)
+		{
+			milch = TeacherLoader.tb.Buffer[1].FortlaufendeKosten * GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter;
+			GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(milch);
+			GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Gehälter in Höhe von " + milch + " RM bezahlt.");
 		}
 	}
 }

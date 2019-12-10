@@ -10,6 +10,8 @@ public class Teacher_Memory : MonoBehaviour
 
     public Teacher Memory;
 
+	public int Kosten;
+
     string Name;
 
     void Start()
@@ -34,7 +36,12 @@ public class Teacher_Memory : MonoBehaviour
     {
         var x = gameObject;
 
-        x.transform.SetParent(Parent.transform, true);
+		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count; i++)
+		//	GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(TeacherLoader.tb.Buffer[i].Einstellungskosten);
+		GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(1500);
+
+
+		x.transform.SetParent(Parent.transform, true);
         x.GetComponentsInChildren<Text>()[2].text = "";
         x.GetComponentsInChildren<Text>()[3].text = "";
         x.GetComponent<Button>().interactable = false;
@@ -46,4 +53,6 @@ public class Teacher_Memory : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+
 }
