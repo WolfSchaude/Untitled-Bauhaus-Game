@@ -1754,7 +1754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: 0.00005340576}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -2639,6 +2639,7 @@ GameObject:
   - component: {fileID: 381768620}
   - component: {fileID: 381768622}
   - component: {fileID: 381768626}
+  - component: {fileID: 381768630}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2995,6 +2996,18 @@ MonoBehaviour:
   inventoryWindow: {fileID: 978475642}
   prefab: {fileID: 1900135597758144853, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
+--- !u!114 &381768630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381768615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a5b7f24c1933347a41a1b15fe66a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &397381464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7320,7 +7333,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
