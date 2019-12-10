@@ -22,12 +22,23 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	public GameObject werk6;
 	public GameObject werk7;
 
+	public Werkstatt Script1;
+	public Werkstatt Script2;
+	public Werkstatt Script3;
+	public Werkstatt Script4;
+	public Werkstatt Script5;
+	public Werkstatt Script6;
+	public Werkstatt Script7;
+
 	public bool buildInProgress = false;
 
 	void Start()
 	{
 		MaxQualitaet = 1.5f;
 		MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
+
+		//Event_Memory.FindInActiveObjectByName("InsertNameHere");
+
 	}
 
 	void Update()
@@ -47,33 +58,37 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	{
 		if (buildInProgress && archBuildTimeInMonths == 0)
 		{
-			if (AnzahlWerkstaette == 6)
-			{
-				werk7.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 5)
-			{
-				werk6.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 4)
-			{
-				werk5.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 3)
-			{
-				werk4.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 2)
-			{
-				werk3.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 1)
-			{
-				werk2.SetActive(true);
-			}
-			if (AnzahlWerkstaette == 0)
-			{
-				werk1.SetActive(true);
+			switch (AnzahlWerkstaette) {
+				case 6:
+					werk7.SetActive(true);
+					werk7.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 5:
+					werk6.SetActive(true);
+					werk6.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 4:
+					werk5.SetActive(true);
+					werk5.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 3:
+					werk4.SetActive(true);
+					werk4.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 2:
+					werk3.SetActive(true);
+					werk3.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 1:
+					werk2.SetActive(true);
+					werk2.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 0:
+					werk1.SetActive(true);
+					werk1.GetComponent<Werkstatt>().SetType(1);
+					break;
+				default:
+					break;
 			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
@@ -85,6 +100,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Architekturwerkstatt wurde fertiggestellt!");
             AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur++;
 			archBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

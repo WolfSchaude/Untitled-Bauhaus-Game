@@ -82,7 +82,8 @@ public class BaueLehrsaal : MonoBehaviour
             MinQualität = 0.5f + (AnzahlLehrsaal * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Der Lehrsaal wurde fertiggestellt!");
-            AnzahlLehrsaal++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr++;
+			AnzahlLehrsaal++;
             lehrBuildTimeInMonths = 2;
             buildInProgress = false;
         }

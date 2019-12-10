@@ -11,19 +11,10 @@ public class Werkstatt : MonoBehaviour
 
     public int DebugWST;
 
-    // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.SetActive(true);
-        DebugWST = 0;
         IstEinemDozentenZugewiesen = false;
-        EigenerTyp = WerkstattTyp.Undefiniert;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Debug.Log("hi");
     }
 
     public void SetType(int Typ)
