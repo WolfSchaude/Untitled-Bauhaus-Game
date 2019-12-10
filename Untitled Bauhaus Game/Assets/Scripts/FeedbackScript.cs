@@ -12,9 +12,14 @@ public class FeedbackScript : MonoBehaviour
 
 	public List<GameObject> FeedbackTicks;
 
+	public Animator TickerFieldAnimator;
+	public Animator ButtonAnimator;
+	public bool Collapsed;
+
     void Start()
     {
 		FeedbackTicks = new List<GameObject>();
+		Collapsed = false;
     }
 
     // Update is called once per frame
@@ -28,14 +33,17 @@ public class FeedbackScript : MonoBehaviour
 
 	public void ToggleFeedback()
 	{
-		if (UIToBlendIn.activeSelf)
+		TickerFieldAnimator.SetTrigger("Click");
+		ButtonAnimator.SetTrigger("Click");
+
+		Collapsed = !Collapsed;
+
+		if (Collapsed)
 		{
-			UIToBlendIn.SetActive(false);
 			gameObject.GetComponentInChildren<Text>().text = "▲";
 		}
 		else
 		{
-			UIToBlendIn.SetActive(true);
 			gameObject.GetComponentInChildren<Text>().text = "▼";
 		}
 	}
