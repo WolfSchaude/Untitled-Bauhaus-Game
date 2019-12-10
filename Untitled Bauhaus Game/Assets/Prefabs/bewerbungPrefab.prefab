@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 7130709982651731044}
   - component: {fileID: 7130709982651731043}
   - component: {fileID: 1482623619947325978}
+  - component: {fileID: 5004946010987679254}
   m_Layer: 5
   m_Name: "Geb\xE4udeZuweisenDropdown"
   m_TagString: Untagged
@@ -1439,6 +1440,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Script: {fileID: 0}
   checkeingestellt: 0
+  oldVal: 0
+--- !u!114 &5004946010987679254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7130709982651731041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7480dce4a260eb4794ececb93fbd32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexesToDisable: 01000000020000000300000004000000050000000600000007000000
 --- !u!1 &7130709982658172357
 GameObject:
   m_ObjectHideFlags: 0
