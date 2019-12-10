@@ -12,6 +12,8 @@ public class ExpoInventory : MonoBehaviour
 	public GameObject prefab; //Exponate Prefab
 	public GameObject parent; //ScrollView Content
 
+	private float Qualität;
+
 	public static List<GameObject> Exponat = new List<GameObject>();
 
 	void Start()
@@ -42,10 +44,14 @@ public class ExpoInventory : MonoBehaviour
 	public void checkSellButton()
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-		var i = Random.Range(5000, 25001);
+		if (GameObject.Find("AnsehenProgressBar").GetComponent<Slider>().value != 10)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+		}
+		//var i = Random.Range(5000, 25001);
+		var i = 15000 * Qualität;
 		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i.ToString("0") + " RM eingebracht.");
 	}
 
 	/*
@@ -62,13 +68,13 @@ public class ExpoInventory : MonoBehaviour
 		switch(images)
 		{
 			case 1:
-				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Person1");
+				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat1");
 				break;
 			case 2:
-				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Person2");
+				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat2");
 				break;
 			case 3:
-				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Person3");
+				x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat3");
 				break;
 		}
 			
@@ -92,23 +98,9 @@ public class ExpoInventory : MonoBehaviour
 				break;
 		}
 
-		int qualitätText = Random.Range(1, 5);
+		Qualität = Random.Range(0.5f, 1.5f);
+		x.GetComponentsInChildren<Text>()[2].text = "Qualität: " + Qualität.ToString("0.0");
 
-		switch (qualitätText)
-		{
-			case 1:
-				x.GetComponentsInChildren<Text>()[2].text = "Qualität: Super";
-				break;
-			case 2:
-				x.GetComponentsInChildren<Text>()[2].text = "Qualität: Beschissen";
-				break;
-			case 3:
-				x.GetComponentsInChildren<Text>()[2].text = "Qualität: Ich kotze gleich";
-				break;
-			case 4:
-				x.GetComponentsInChildren<Text>()[2].text = "Qualität: WOOOOOW";
-				break;
-		}
 
 		x.GetComponentInChildren<Button>().onClick.AddListener(() => {checkSellButton(); Destroy(x); });
 

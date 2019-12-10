@@ -56,8 +56,6 @@ public class FeedbackScript : MonoBehaviour
 
 		FeedbackTicks.Add(newthing);
 
-		UIToBlendIn.SetActive(true);
-
 		StartCoroutine(ScrollToBottom());
 
 		if (Collapsed)
@@ -72,7 +70,7 @@ public class FeedbackScript : MonoBehaviour
 	IEnumerator ScrollToBottom()
 	{
 		yield return new WaitForEndOfFrame();
-		//scrollRect.gameObject.SetActive(true);
+
 		UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
 	}
 }
