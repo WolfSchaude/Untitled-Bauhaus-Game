@@ -4,112 +4,68 @@
   <Events>
     <RandomEvent>
       
-      <EventText></EventText>
+      <EventText>Deine Hochschule wird beschuldigt sich mit Feinden des Vaterlandes einzulassen.</EventText>
 
-      <EventOption1></EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
+      <EventOption1>Ignoriere die Anschuldigungen</EventOption1>
+      <Option1_Politik>-10</Option1_Politik>
+      <Option1_Ansehen>-3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
 
-      <EventOption2></EventOption2>
+      <EventOption2>Widerspreche den Anschuldigungen und las Nachforschungen anstellen.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>0</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
+      <Option2_Geld>-10000</Option2_Geld>
       
     </RandomEvent>
     <RandomEvent>
 
-      <EventText></EventText>
+      <EventText>Einer deiner Studenten hat finanzielle Probleme und kann sich das weitere Studium nicht mehr leisten.</EventText>
 
-      <EventOption1></EventOption1>
+      <EventOption1>Ignoriere das Problem</EventOption1>
       <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Ansehen>-5</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
 
-      <EventOption2></EventOption2>
+      <EventOption2>Unterstüze den Studenten Finanziell.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
+      <Option2_Ansehen>5</Option2_Ansehen>
+      <Option2_Geld>-10000</Option2_Geld>
 
     </RandomEvent>
+
+      
     <RandomEvent>
+      <EventText>Eine Werkstatt braucht Renovierungen</EventText>
 
-      <EventText></EventText>
 
-      <EventOption1></EventOption1>
+      <EventOption1>Renoviere sie.</EventOption1>
       <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
+      <Option1_Ansehen>3</Option1_Ansehen>
+      <Option1_Geld>5000</Option1_Geld>
 
-      <EventOption2></EventOption2>
+      <EventOption2>Ignoriere die Renovation.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Ansehen>-5</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
     </RandomEvent>
     
     <RandomEvent>
 
-      <EventText></EventText>
+      <EventText>Ein Dozent will eine Extrazahlung.</EventText>
 
-      <EventOption1></EventOption1>
+      <EventOption1>Zahle.</EventOption1>
       <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
+      <Option1_Ansehen>1</Option1_Ansehen>
+      <Option1_Geld>-1000</Option1_Geld>
 
-      <EventOption2></EventOption2>
+      <EventOption2>Zahle nicht.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
 
     </RandomEvent>
     
-    <RandomEvent>
-
-      <EventText></EventText>
-
-      <EventOption1></EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-
-      <EventOption2></EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-
-    </RandomEvent>
     
-    <RandomEvent>
-
-      <EventText></EventText>
-
-      <EventOption1></EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-
-      <EventOption2></EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-
-    </RandomEvent>
-    
-    <RandomEvent>
-
-      <EventText></EventText>
-
-      <EventOption1></EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-
-      <EventOption2></EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>0</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-
-    </RandomEvent>
   </Events>
 </EventCollection>
