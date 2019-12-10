@@ -46,33 +46,38 @@ public class BaueMetallwerkstatt : MonoBehaviour
 	{
 		if (buildInProgress && metallBuildTimeInMonths == 0)
 		{
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 6)
+			switch (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette)
 			{
-				werk7.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 5)
-			{
-				werk6.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 4)
-			{
-				werk5.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 3)
-			{
-				werk4.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 2)
-			{
-				werk3.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 1)
-			{
-				werk2.SetActive(true);
-			}
-			if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette == 0)
-			{
-				werk1.SetActive(true);
+				case 6:
+					werk7.SetActive(true);
+					werk7.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 5:
+					werk6.SetActive(true);
+					werk6.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 4:
+					werk5.SetActive(true);
+					werk5.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 3:
+					werk4.SetActive(true);
+					werk4.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 2:
+					werk3.SetActive(true);
+					werk3.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 1:
+					werk2.SetActive(true);
+					werk2.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 0:
+					werk1.SetActive(true);
+					werk1.GetComponent<Werkstatt>().SetType(4);
+					break;
+				default:
+					break;
 			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
@@ -83,7 +88,8 @@ public class BaueMetallwerkstatt : MonoBehaviour
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Metallwerkstatt wurde fertiggestellt!");
-            GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMetall++;
+			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
 			metallBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

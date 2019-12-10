@@ -58,40 +58,37 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 	{
 		if (buildInProgress && archBuildTimeInMonths == 0)
 		{
-			if (AnzahlWerkstaette == 6)
-			{
-				werk7.SetActive(true);
-				Script7.SetType(1);
-			}
-			if (AnzahlWerkstaette == 5)
-			{
-				werk6.SetActive(true);
-				Script6.SetType(1);
-			}
-			if (AnzahlWerkstaette == 4)
-			{
-				werk5.SetActive(true);
-				Script5.SetType(1);
-			}
-			if (AnzahlWerkstaette == 3)
-			{
-				werk4.SetActive(true);
-				Script4.SetType(1);
-			}
-			if (AnzahlWerkstaette == 2)
-			{
-				werk3.SetActive(true);
-				Script3.SetType(1);
-			}
-			if (AnzahlWerkstaette == 1)
-			{
-				werk2.SetActive(true);
-				Script2.SetType(1);
-			}
-			if (AnzahlWerkstaette == 0)
-			{
-				werk1.SetActive(true);
-				werk1.GetComponent<Werkstatt>().SetType(1); //Funktioniert
+			switch (AnzahlWerkstaette) {
+				case 6:
+					werk7.SetActive(true);
+					werk7.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 5:
+					werk6.SetActive(true);
+					werk6.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 4:
+					werk5.SetActive(true);
+					werk5.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 3:
+					werk4.SetActive(true);
+					werk4.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 2:
+					werk3.SetActive(true);
+					werk3.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 1:
+					werk2.SetActive(true);
+					werk2.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 0:
+					werk1.SetActive(true);
+					werk1.GetComponent<Werkstatt>().SetType(1);
+					break;
+				default:
+					break;
 			}
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
@@ -103,6 +100,7 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Architekturwerkstatt wurde fertiggestellt!");
             AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur++;
 			archBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

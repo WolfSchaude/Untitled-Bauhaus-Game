@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  DropdownPrefab: {fileID: 0}
   Ticker: {fileID: 0}
 --- !u!1 &6852908209051168772
 GameObject:
