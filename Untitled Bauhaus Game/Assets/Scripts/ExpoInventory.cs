@@ -42,9 +42,12 @@ public class ExpoInventory : MonoBehaviour
 	public void checkSellButton()
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+		if (GameObject.Find("AnsehenProgressBar").GetComponent<Slider>().value != 10)
+		{
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+		}
 		var i = Random.Range(5000, 25001);
-		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
+		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);	
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
 	}
 

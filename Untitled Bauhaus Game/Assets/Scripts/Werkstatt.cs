@@ -14,7 +14,7 @@ public class Werkstatt : MonoBehaviour
     void Start()
     {
         IstEinemDozentenZugewiesen = false;
-        Debug.Log("hi");
+        //Debug.Log("hi");
     }
 
     public void SetType(int Typ)
