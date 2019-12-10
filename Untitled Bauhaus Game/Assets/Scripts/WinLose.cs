@@ -26,13 +26,13 @@ public class WinLose : MonoBehaviour
     {
         if(politikmeterSkript.Politiklevel >= 200)
 		{
-			Application.Quit();
-			Debug.Log("Bruh exit");
+			SceneManager.LoadScene("Main_Menu");
+			Debug.Log("Du bist zu weit rechts");
 		}
 		if(politikmeterSkript.Politiklevel <= 0)
 		{
-			Application.Quit();
-			Debug.Log("also bruh exit");
+			SceneManager.LoadScene("Main_Menu");
+			Debug.Log("Du bist zu weit links");
 		}
 		if(PleiteCounter >= PleiteThreshold)
 		{
@@ -41,8 +41,8 @@ public class WinLose : MonoBehaviour
 		}
 		if(studentenSkript.StudentenAnzahl <= 0)
 		{
-			Application.Quit();
-			Debug.Log("bruh exit again");
+			SceneManager.LoadScene("Main_Menu");
+			Debug.Log("Du hast keine Studenten mehr");
 		}
     }
 
