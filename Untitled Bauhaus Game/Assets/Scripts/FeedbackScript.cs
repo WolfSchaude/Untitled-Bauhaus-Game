@@ -48,6 +48,19 @@ public class FeedbackScript : MonoBehaviour
 		}
 	}
 
+	public void CloseFeedback()
+	{
+		if (!Collapsed)
+		{
+			TickerFieldAnimator.SetTrigger("Click");
+			ButtonAnimator.SetTrigger("Click");
+
+			Collapsed = !Collapsed;
+
+			gameObject.GetComponentInChildren<Text>().text = "▲";
+		}
+	}
+
 	public void NewTick(string message)
 	{
 		var newthing = Instantiate(prefab, parent.transform);

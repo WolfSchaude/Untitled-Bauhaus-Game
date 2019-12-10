@@ -13,8 +13,11 @@ public class GebäudeÜbersicht : MonoBehaviour
     public Text lehrsaalCount;
     public Text wohnheimCount;
 
+    public bool Collapsed;
+
     void Start()
-    {  
+    {
+        Collapsed = false;
     }
 
     void Update()
@@ -27,5 +30,17 @@ public class GebäudeÜbersicht : MonoBehaviour
     public void showWindow() //Sets overview window active
     {
         OverviewAnimator.SetTrigger("Click");
+
+        Collapsed = !Collapsed;
+    }
+
+    public void CloseOverview()
+    {
+        if (!Collapsed)
+        {
+            OverviewAnimator.SetTrigger("Click");
+
+            Collapsed = !Collapsed;
+        }
     }
 }

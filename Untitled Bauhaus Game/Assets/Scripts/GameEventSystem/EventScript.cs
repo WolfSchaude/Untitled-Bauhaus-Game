@@ -151,4 +151,14 @@ public class EventScript : MonoBehaviour
 
 		Collapsed = !Collapsed;
 	}
+
+	public void CloseEvent()
+	{
+		if (!Collapsed)
+		{
+			EventsAnimator.SetTrigger("Click");
+
+			Collapsed = !Collapsed;
+		}
+	}
 }

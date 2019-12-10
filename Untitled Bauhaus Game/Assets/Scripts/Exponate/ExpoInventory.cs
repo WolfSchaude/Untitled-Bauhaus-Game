@@ -14,11 +14,16 @@ public class ExpoInventory : MonoBehaviour
 
 	private float Qualität;
 
+	private bool IsShown;
+
+	public Animator InventoryAnimator;
+
 	public static List<GameObject> Exponat = new List<GameObject>();
 
 	void Start()
     {
 		Resources.Load("Person1");
+		IsShown = false; 
 	}
 
     void Update()
@@ -28,16 +33,25 @@ public class ExpoInventory : MonoBehaviour
 
 	public void showWindow() //Sets inventory window active
 	{
-		if (!inventoryWindow.activeSelf)
+		InventoryAnimator.SetTrigger("Click");
+
+		IsShown = !IsShown;
+
+		if (IsShown)
 		{
-			inventoryWindow.SetActive(true);
 			GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
 			GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
 			GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
 		}
-		else
+	}
+
+	public void CloseWindow()
+	{
+		if (!IsShown)
 		{
-			inventoryWindow.SetActive(false);
+			InventoryAnimator.SetTrigger("Click)");
+
+			IsShown = !IsShown;
 		}
 	}
 

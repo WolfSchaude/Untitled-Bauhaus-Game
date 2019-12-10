@@ -9,6 +9,11 @@ public class BaueLehrsaal : MonoBehaviour
 	public int studKapazitätLehr = 200;
     public int AktPreisL = 1000;
     public int lehrBuildTimeInMonths = 2;
+    public int BauStil;
+
+    public int[] BauStilePosnum = new int[2];
+
+    public Vector3[,,] StilNum0Pos1Scal = new Vector3[2, 8, 2];
 
     public float MinQualität;
     public float MaxQualitaet;
