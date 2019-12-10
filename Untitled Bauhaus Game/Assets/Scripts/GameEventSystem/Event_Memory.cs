@@ -189,11 +189,11 @@ public class Event_Memory : MonoBehaviour
 
 		if (Politik1 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 + " nach rechts verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 + " nach rechts verschoben.");
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik1 * -1 + " nach links verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 * -1 + " nach links verschoben.");
 		}
 
 		if (Geld1 > 0)
@@ -229,11 +229,11 @@ public class Event_Memory : MonoBehaviour
 
 		if (Politik2 > 0)
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 + " nach rechts verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 + " nach rechts verschoben.");
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event deine politische Position des Bauhaus um " + Politik2 * -1 + " nach links verschoben.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 * -1 + " nach links verschoben.");
 		}
 
 		if (Geld2 > 0)
@@ -242,7 +242,7 @@ public class Event_Memory : MonoBehaviour
 		}
 		else
 		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Doch das Event hast du " + Geld2 * -1 + " RM verloren.");
+			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld2 * -1 + " RM verloren.");
 		}
 
 		IsFinished = true;
