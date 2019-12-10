@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<EventCollection>
+  <Events>
+    <RandomEvent>
+      
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+      
+    </RandomEvent>
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+    
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+    
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+    
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+    
+    <RandomEvent>
+
+      <EventText></EventText>
+
+      <EventOption1></EventOption1>
+      <Option1_Politik>0</Option1_Politik>
+      <Option1_Ansehen>0</Option1_Ansehen>
+      <Option1_Geld>0</Option1_Geld>
+
+      <EventOption2></EventOption2>
+      <Option2_Politik>0</Option2_Politik>
+      <Option2_Ansehen>0</Option2_Ansehen>
+      <Option2_Geld>0</Option2_Geld>
+
+    </RandomEvent>
+  </Events>
+</EventCollection>
