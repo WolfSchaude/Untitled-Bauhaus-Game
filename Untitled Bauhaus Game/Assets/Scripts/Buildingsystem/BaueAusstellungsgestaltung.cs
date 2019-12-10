@@ -88,7 +88,8 @@ public class BaueAusstellungsgestaltung : MonoBehaviour
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Ausstellungsgestaltung wurde fertiggestellt!");
-            GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlAustellung++;
+			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
 			ausBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}

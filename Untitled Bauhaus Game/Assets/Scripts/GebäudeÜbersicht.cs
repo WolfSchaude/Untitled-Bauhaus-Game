@@ -7,13 +7,15 @@ public class GebäudeÜbersicht : MonoBehaviour
 {
     public GameObject overviewWindow;
 
+    public Animator OverviewAnimator;
+
     public Text werkstattCount;
     public Text lehrsaalCount;
     public Text wohnheimCount;
 
     void Start()
     {
-        overviewWindow.SetActive(false);   
+        //overviewWindow.SetActive(false);   
     }
 
     void Update()
@@ -25,13 +27,15 @@ public class GebäudeÜbersicht : MonoBehaviour
 
     public void showWindow() //Sets overview window active
     {
-        if (!overviewWindow.activeSelf)
-        {
-            overviewWindow.SetActive(true);
-        }
-        else
-        {
-            overviewWindow.SetActive(false);
-        }
+        //if (!overviewWindow.activeSelf)
+        //{
+        //    overviewWindow.SetActive(true);
+        //}
+        //else
+        //{
+        //    overviewWindow.SetActive(false);
+        //}
+
+        OverviewAnimator.SetTrigger("Click");
     }
 }

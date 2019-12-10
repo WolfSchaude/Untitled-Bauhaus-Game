@@ -88,7 +88,8 @@ public class BaueMetallwerkstatt : MonoBehaviour
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Metallwerkstatt wurde fertiggestellt!");
-            GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
+			GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMetall++;
+			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette++;
 			metallBuildTimeInMonths = 2;
 			buildInProgress = false;
 		}
