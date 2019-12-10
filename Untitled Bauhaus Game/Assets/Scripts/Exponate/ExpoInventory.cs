@@ -41,19 +41,6 @@ public class ExpoInventory : MonoBehaviour
 		}
 	}
 
-	public void checkSellButton()
-	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-		if (GameObject.Find("AnsehenProgressBar").GetComponent<Slider>().value != 10)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-		}
-		//var i = Random.Range(5000, 25001);
-		var i = 15000 * Qualität;
-		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i.ToString("0") + " RM eingebracht.");
-	}
-
 	/*
 	⚠️⚠️⚠️VORSICHT HÄSSLICHER CODE AHEAD⚠️⚠️⚠️
 	⚠️⚠️⚠️VORSICHT HÄSSLICHER CODE AHEAD⚠️⚠️⚠️
@@ -99,10 +86,11 @@ public class ExpoInventory : MonoBehaviour
 		}
 
 		Qualität = Random.Range(0.5f, 1.5f);
-		x.GetComponentsInChildren<Text>()[2].text = "Qualität: " + Qualität.ToString("0.0");
+		x.GetComponentsInChildren<Text>()[2].text = Qualität.ToString("0.0");
+		x.GetComponentInChildren<Exponat_Memory>().Qualitaet = Qualität;
+		x.GetComponentInChildren<Exponat_Memory>().FeedbackTicker = FeedbackTicker;
 
-
-		x.GetComponentInChildren<Button>().onClick.AddListener(() => {checkSellButton(); Destroy(x); });
+		x.GetComponentInChildren<Button>().onClick.AddListener(() => {Destroy(x); });
 
 		Exponat.Add(x);
 	}
