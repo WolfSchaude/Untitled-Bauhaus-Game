@@ -251,7 +251,12 @@ public class Event_Memory : MonoBehaviour
 	public void TooLate() //To Apologize
 	{
 		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value -= 5;
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(-50000);
+
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event zu verpassen hat dein Ansehen um 5 verschlechtert.");
+
+		GameObject.Find("Money Display").GetComponent<Money>().Geld(-5000);
+
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das verpasste Event hast du 5000 RM verloren.");
 	}
 	public void DecreaseTimerCounter()
 	{
