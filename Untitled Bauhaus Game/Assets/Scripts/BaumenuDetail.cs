@@ -55,9 +55,8 @@ public class BaumenuDetail : MonoBehaviour
             detailWindow.SetActive(true);
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
-            GameObject.Find("EventSystem").GetComponent<ExpoInventory>().showWindow();
+            //GameObject.Find("EventSystem").GetComponent<ExpoInventory>().showWindow();
 
-            GameObject.Find("Event_Overview").GetComponent<EventScript>().CloseEvent();
         }
         else
         {
