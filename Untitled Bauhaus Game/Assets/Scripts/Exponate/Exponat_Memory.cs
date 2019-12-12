@@ -21,11 +21,14 @@ public class Exponat_Memory : MonoBehaviour
 
 	public void checkSellButton()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-		if (GameObject.Find("AnsehenProgressBar").GetComponent<Slider>().value != 10)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-		}
+		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
+		//if (GameObject.Find("AnsehenProgressBar").GetComponent<Slider>().value != 10)
+		//{
+		//	FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
+		//}
+
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(1); //Ansehen +
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
 
 		var i = 15000 * Qualitaet;
 		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
