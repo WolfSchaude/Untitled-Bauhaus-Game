@@ -36,7 +36,7 @@ public class BlockColorScript : MonoBehaviour
 
 		if (PolitiklevelScript > 100 && PolitiklevelScript <= 200)
 		{
-			GetComponent<MeshRenderer>().material.color = Color.Lerp(Color.white, new Color32(62, 42, 20, 255), (ColorLerp - 0.5f)*2);
+			GetComponent<MeshRenderer>().material.color = Color.Lerp(Color.white, new Color32(108, 71, 15, 255), (ColorLerp - 0.5f)*2);
 		}
 	}
 }
