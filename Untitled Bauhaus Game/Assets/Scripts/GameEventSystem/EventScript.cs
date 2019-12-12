@@ -60,6 +60,32 @@ public class EventScript : MonoBehaviour
 		}
 	}
 
+    void Update()
+    {
+		if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count && !ThatOneRandomEvent.activeSelf)
+		{
+			if (!Collapsed)
+			{
+				EventsAnimator.SetTrigger("Click");
+
+				Collapsed = true;
+			}
+		}
+		if (AllEvents.FindAll(actives => actives.activeSelf == true).Count == 1)
+		{
+			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Event aktiv";
+		}
+		else
+		{
+			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Events aktiv";
+		}
+
+		if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
+		{
+			ThatOneRandomEvent = NewRandomEvent();
+		}
+	}
+
 	public void GenerateList()
 	{
 		if (!AlreadyGenerated)
@@ -119,32 +145,6 @@ public class EventScript : MonoBehaviour
 		return x;
 	}
 
-    void Update()
-    {
-		if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count && !ThatOneRandomEvent.activeSelf)
-		{
-			if (!Collapsed)
-			{
-				EventsAnimator.SetTrigger("Click");
-
-				Collapsed = !Collapsed;
-			}
-		}
-		if (AllEvents.FindAll(actives => actives.activeSelf == true).Count == 1)
-		{
-			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Event aktiv";
-		}
-		else
-		{
-			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Events aktiv";
-		}
-
-		if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
-		{
-			ThatOneRandomEvent = NewRandomEvent();
-		}
-	}
-
 	public void ToggleEvent()
 	{
 		EventsAnimator.SetTrigger("Click");
@@ -158,7 +158,7 @@ public class EventScript : MonoBehaviour
 		{
 			EventsAnimator.SetTrigger("Click");
 
-			Collapsed = !Collapsed;
+			Collapsed = true;
 		}
 	}
 }

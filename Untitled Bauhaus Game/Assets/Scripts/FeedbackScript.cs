@@ -62,7 +62,7 @@ public class FeedbackScript : MonoBehaviour
 			TickerFieldAnimator.SetTrigger("Click");
 			ButtonAnimator.SetTrigger("Click");
 
-			Collapsed = !Collapsed;
+			Collapsed = true;
 
 			gameObject.GetComponentInChildren<Text>().text = "▲";
 		}
@@ -84,7 +84,7 @@ public class FeedbackScript : MonoBehaviour
 			TickerFieldAnimator.SetTrigger("Click");
 			ButtonAnimator.SetTrigger("Click");
 
-			Collapsed = !Collapsed;
+			Collapsed = false;
 		}
 	}
 

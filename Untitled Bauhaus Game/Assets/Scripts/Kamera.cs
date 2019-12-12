@@ -41,27 +41,27 @@ namespace UntitledBauhausGame
 
             Vector3 targetPos = Vector3.zero;
 
-            if (Input.GetKey(KeyCode.Mouse2))
+            if (Input.GetKey(KeyCode.Mouse2) && AbleToMove)
             {
                 if (Input.mousePosition.x >= Screen.width - mDelta)
                 {
                     // Move the camera
-                    targetPos.x += Time.deltaTime * actmoveSpeed;
+                    targetPos.x += Time.unscaledDeltaTime* actmoveSpeed;
                 }
                 if (Input.mousePosition.x <= 0 + mDelta)
                 {
                     // Move the camera
-                    targetPos.x -= Time.deltaTime * actmoveSpeed;
+                    targetPos.x -= Time.unscaledDeltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.y >= Screen.height - mDelta)
                 {
                     // Move the camera
-                    targetPos.z += Time.deltaTime * actmoveSpeed;
+                    targetPos.z += Time.unscaledDeltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.y <= 0 + mDelta)
                 {
                     // Move the camera
-                    targetPos.z -= Time.deltaTime * actmoveSpeed;
+                    targetPos.z -= Time.unscaledDeltaTime * actmoveSpeed;
                 }
             }
 
