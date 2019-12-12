@@ -24,6 +24,8 @@ public class EventScript : MonoBehaviour
 
 	private bool AlreadyGenerated = false;
 
+	private int ActiveEvents;
+
     void Start()
     {
 		if (!AlreadyGenerated)
@@ -62,6 +64,12 @@ public class EventScript : MonoBehaviour
 
     void Update()
     {
+		ActiveEvents = AllEvents.FindAll(actives => actives.activeSelf == true).Count;
+		if (ThatOneRandomEvent.activeSelf)
+		{
+			ActiveEvents++;
+		}
+
 		if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count && !ThatOneRandomEvent.activeSelf)
 		{
 			if (!Collapsed)
@@ -71,13 +79,13 @@ public class EventScript : MonoBehaviour
 				Collapsed = true;
 			}
 		}
-		if (AllEvents.FindAll(actives => actives.activeSelf == true).Count == 1)
+		if (ActiveEvents == 1)
 		{
-			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Event aktiv";
+			AnzahlEvents.text = ActiveEvents + " Event aktiv";
 		}
 		else
 		{
-			AnzahlEvents.text = AllEvents.FindAll(actives => actives.activeSelf == true).Count + " Events aktiv";
+			AnzahlEvents.text = ActiveEvents + " Events aktiv";
 		}
 
 		if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
