@@ -155,7 +155,13 @@ public class BaumenuDetail : MonoBehaviour
 				tischbutton.SetActive(false);
                 lehrButton.SetActive(false);
                 wohnButton.SetActive(false);
-                break;
+
+				if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette >= 7)
+				{
+					archButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
+				break;
             case 2:
                 buildingNameText.text = "Malerei";
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueMalerei>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueMalerei>().MaxQualitaet.ToString();
@@ -183,6 +189,12 @@ public class BaumenuDetail : MonoBehaviour
 				tischbutton.SetActive(false);
 				lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
+
+				if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette >= 7)
+				{
+					malButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
 				break;
             case 3:
                 buildingNameText.text = "Ausstellungsgestaltung";
@@ -211,6 +223,12 @@ public class BaumenuDetail : MonoBehaviour
 				tischbutton.SetActive(false);
 				lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
+
+				if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette >= 7)
+				{
+					ausButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
 				break;
             case 4:
                 buildingNameText.text = "Metallwerkstatt";
@@ -239,6 +257,12 @@ public class BaumenuDetail : MonoBehaviour
 				tischbutton.SetActive(false);
 				lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
+
+				if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette >= 7)
+				{
+					metallButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
 				break;
             case 5:
                 buildingNameText.text = "Tischlerei";
@@ -267,6 +291,12 @@ public class BaumenuDetail : MonoBehaviour
 				metallButton.SetActive(false);
 				lehrButton.SetActive(false);
 				wohnButton.SetActive(false);
+
+				if (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette >= 7)
+				{
+					tischbutton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
 				break;
             case 6:
                 buildingNameText.text = "Lehrsaal";
@@ -296,6 +326,12 @@ public class BaumenuDetail : MonoBehaviour
 				metallButton.SetActive(false);
 				tischbutton.SetActive(false);
 				wohnButton.SetActive(false);
+
+				if (GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal >= 8)
+				{
+					lehrButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
 				break;
             case 7:
                 buildingNameText.text = "Wohnheim";
@@ -314,6 +350,7 @@ public class BaumenuDetail : MonoBehaviour
 				metallButton.SetActive(false);
 				tischbutton.SetActive(false);
 				lehrButton.SetActive(false);
+
 				if (GameObject.Find("UI").GetComponent<BaueWohnheim>().buildInProgress)
                 {
                     wohnButton.SetActive(false);
@@ -324,7 +361,13 @@ public class BaumenuDetail : MonoBehaviour
                     wohnButton.SetActive(true);
                     buildingTimeLeftText.enabled = false;
                 }
-                break;
+
+				if (GameObject.Find("UI").GetComponent<BaueWohnheim>().AnzahlWohnheime >= 3)
+				{
+					wohnButton.SetActive(false);
+					buildingPriceText.text = "Preis: Ausverkauft";
+				}
+				break;
         }
     }
 
