@@ -16,17 +16,17 @@ public class FastForward : MonoBehaviour
 
 	public enum TimeMode
 	{
-		Normal, FastForward, Stop
+		Normal, Stop, FastForward
 	}
 
 
 
     void Start()
     {
-        fastForwardText.text = "▸";
+		Mode = TimeMode.Stop;
 
-		Mode = TimeMode.Normal;
-    }
+		justToggled = true;
+	}
 
     void Update()
     {
@@ -41,6 +41,14 @@ public class FastForward : MonoBehaviour
 					oldTimeScale = 1f;
 
 					break;
+
+				case TimeMode.Stop:
+
+					fastForwardText.text = "∥";
+					Time.timeScale = 0;
+					oldTimeScale = 0f;
+					break;
+
 				case TimeMode.FastForward:
 
 					fastForwardText.text = "▸▸▸";
@@ -48,13 +56,7 @@ public class FastForward : MonoBehaviour
 					oldTimeScale = 3f;
 
 					break;
-				case TimeMode.Stop:
 
-					fastForwardText.text = "∥";
-					Time.timeScale = 0;
-					oldTimeScale = 0f;
-
-					break;
 				default:
 					break;
 			}
@@ -72,16 +74,19 @@ public class FastForward : MonoBehaviour
 				Mode = TimeMode.FastForward;
 
 				break;
-			case TimeMode.FastForward:
 
-				Mode = TimeMode.Stop;
-
-				break;
 			case TimeMode.Stop:
 
 				Mode = TimeMode.Normal;
 
 				break;
+
+			case TimeMode.FastForward:
+
+				Mode = TimeMode.Stop;
+
+				break;
+
 			default:
 				break;
 		}
