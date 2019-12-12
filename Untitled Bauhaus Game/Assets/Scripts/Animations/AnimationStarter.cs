@@ -12,26 +12,13 @@ public class AnimationStarter : MonoBehaviour/*, IPointerEnterHandler, IPointerE
 
 	public void ToggleOpened()
 	{
-		if (IsOpened)
+		SelfDropDown.SetTrigger("Click");
+		if (SecondMenu != null)
 		{
-			if (SecondMenu != null)
-			{
-				SecondMenu.SetBool("InsideBool", false);
-			}
-			SelfDropDown.SetBool("InsideBool", false);
-
-			IsOpened = false;
+			SecondMenu.SetTrigger("Click)");
 		}
-		else
-		{
-			if (SecondMenu != null)
-			{
-				SecondMenu.SetBool("InsideBool", true);
-			}
-			SelfDropDown.SetBool("InsideBool", true);
 
-			IsOpened = true;
-		}
+		IsOpened = !IsOpened;
 	}
 
 	void Start()
