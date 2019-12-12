@@ -8,6 +8,8 @@ public class EasterEgg : MonoBehaviour
     public GameObject UI;
 
     private bool EasterEggBool = false;
+
+    private Quaternion buffer;
     void Start()
     {
         
@@ -25,6 +27,8 @@ public class EasterEgg : MonoBehaviour
 
             EasterEggBool = true;
 
+            buffer = UI.transform.rotation;
+
             StartCoroutine("RemoveAfter10Secs");
         }
     }
@@ -36,6 +40,8 @@ public class EasterEgg : MonoBehaviour
         foreach (Transform transform in UI.transform)
         {
             Destroy(transform.gameObject.GetComponent<Beyblade>());
+
+            transform.rotation = buffer;
         }
 
         EasterEggBool = false;
