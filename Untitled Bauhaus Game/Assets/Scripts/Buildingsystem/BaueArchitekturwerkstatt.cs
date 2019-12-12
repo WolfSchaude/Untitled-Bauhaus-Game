@@ -31,6 +31,9 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 
 	void Start()
 	{
+		BauStilePosnum[0] = 0;
+		BauStilePosnum[1] = 0;
+
 		StilNum0Pos1Scal[0, 0, 0] = new Vector3(-2.5f, 3.15f, -6.25f);
 		StilNum0Pos1Scal[0, 0, 1] = new Vector3(3.5f, 5f, 6.5f);
 
