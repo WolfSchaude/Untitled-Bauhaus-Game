@@ -22,11 +22,16 @@ public class RandomEvent_Memory : MonoBehaviour
 
 	public bool IsFinished = false;
 
-	private bool SelectedOne = false;
-	private bool SelectedOption1 = false;
-	private bool SelectedOption2 = false;
+	public bool SelectedOption1 = false;
+	public bool SelectedOption2 = false;
 
 	public GameObject FeedbackTicker;
+
+	public Button Option1;
+	public Button Option2;
+
+	public Sprite SpriteNormal;
+	public Sprite SpriteSelected;
 
 	void Start()
     {
@@ -89,35 +94,32 @@ public class RandomEvent_Memory : MonoBehaviour
 
 	public void SelectOption1()
 	{
-		if (!SelectedOne)
-		{
-			SelectedOption1 = true;
-			SelectedOne = true;
-			gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[0].Select();
+		SelectedOption1 = true;
 
-			var colours = gameObject.GetComponentsInChildren<Button>()[0].colors;   //Highlight Button with selected Option with a different Color
-			colours.disabledColor = new Color32(155, 0, 0, 255);
-			gameObject.GetComponentsInChildren<Button>()[0].colors = colours;
+		if (SelectedOption2)
+		{
+			SelectedOption2 = false;
+			Option2.image.sprite = SpriteNormal;
 		}
+
+		Option1.image.sprite = SpriteSelected;
 	}
 	public void SelectOption2()
 	{
-		if (!SelectedOne)
-		{
-			SelectedOption2 = true;
-			SelectedOne = true;
-			gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[1].Select();
+		SelectedOption2 = true;
 
-			var colours = gameObject.GetComponentsInChildren<Button>()[1].colors;   //Highlight Button with selected Option with a different Color
-			colours.disabledColor = new Color32(155, 0, 0, 255);
-			gameObject.GetComponentsInChildren<Button>()[1].colors = colours;
+		if (SelectedOption1)
+		{
+			SelectedOption1 = false;
+			Option1.image.sprite = SpriteNormal;
 		}
+
+		Option2.image.sprite = SpriteSelected;
 	}
 	private void EventEffect1()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
+		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen1);
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld1);
 
@@ -154,7 +156,8 @@ public class RandomEvent_Memory : MonoBehaviour
 	}
 	private void EventEffect2()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
+		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen2);
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
 
@@ -190,7 +193,8 @@ public class RandomEvent_Memory : MonoBehaviour
 	}
 	public void TooLate() //To Apologize
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value -= 5;
+		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value -= 5;
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(-50000);
 	}
 
