@@ -11,6 +11,7 @@ public class FeedbackScript : MonoBehaviour
 	public GameObject UIToBlendIn;
 
 	public List<GameObject> FeedbackTicks;
+	public List<GameObject> TicksCount;
 
 	public Animator TickerFieldAnimator;
 	public Animator ButtonAnimator;
@@ -28,6 +29,12 @@ public class FeedbackScript : MonoBehaviour
 		if (FeedbackTicks.Count >= 100)
 		{
 			FeedbackTicks.RemoveRange(100, FeedbackTicks.Count - 100);
+		}
+
+		if(TicksCount.Count>=36)
+		{
+			Destroy(TicksCount[0]);
+			TicksCount.Remove(TicksCount[0]);
 		}
     }
 
@@ -68,6 +75,7 @@ public class FeedbackScript : MonoBehaviour
 		newthing.GetComponentInChildren<Text>().text = message;
 
 		FeedbackTicks.Add(newthing);
+		TicksCount.Add(newthing);
 
 		StartCoroutine(ScrollToBottom());
 
