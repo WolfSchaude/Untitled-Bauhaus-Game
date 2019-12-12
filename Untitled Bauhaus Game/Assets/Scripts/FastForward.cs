@@ -20,7 +20,6 @@ public class FastForward : MonoBehaviour
 	}
 
 
-
     void Start()
     {
 		Mode = TimeMode.Stop;
