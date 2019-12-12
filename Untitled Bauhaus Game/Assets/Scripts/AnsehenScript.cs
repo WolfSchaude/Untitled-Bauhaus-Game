@@ -17,22 +17,22 @@ public class AnsehenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
-        {
-            Ansehen--;
+		//if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
+		//{
+		//    Ansehen--;
 
-            if (Ansehen <= 1)
-            {
-                Ansehen = 1;
-            }
-        }
+		if (Ansehen <= 1)
+		{
+			Ansehen = 1;
+		}
+		//}
 
-        if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
-        {
-            Ansehen++;
-        }
+		//if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
+		//{
+		//    Ansehen++;
+		//}
 
-        AnsehenText.text = "Ansehen: " + Ansehen;
+		AnsehenText.text = "Ansehen: " + Ansehen;
     }
 
     public void ManipulateAnsehen(int wert)

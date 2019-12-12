@@ -18,14 +18,14 @@ public class Politikmeter : MonoBehaviour
 
     void Update()
     {
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			ManipulatePolitics(10);
-		}
-		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			ManipulatePolitics(-10);
-		}
+		//if (Input.GetKeyDown(KeyCode.UpArrow))
+		//{
+		//	ManipulatePolitics(10);
+		//}
+		//if (Input.GetKeyDown(KeyCode.DownArrow))
+		//{
+		//	ManipulatePolitics(-10);
+		//}
 
 		PolitikOutput.value = Politiklevel;
     }

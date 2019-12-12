@@ -21,6 +21,11 @@ public class Studenten : MonoBehaviour
 
     void Update()
     {
+		if (StudentenAnzahl < 0)
+		{
+			StudentenAnzahl = 0;
+		}
+
         studDisplay.text = "Studenten: " + StudentenAnzahl.ToString("0") + " / " + GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität.ToString(); //Display StudentenAnzahl in UI
     }
 

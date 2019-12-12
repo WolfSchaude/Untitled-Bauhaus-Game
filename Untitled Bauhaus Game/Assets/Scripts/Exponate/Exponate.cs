@@ -48,10 +48,7 @@ public class Exponate : MonoBehaviour
 		//    exponatInProgress = true;
 		//}
 
-		if(Input.GetKeyDown(KeyCode.J))
-		{
-			exponatDone.Invoke();
-		}
+
 	}
 
     public void checkForButtonPress() //Herstellung mit Button
