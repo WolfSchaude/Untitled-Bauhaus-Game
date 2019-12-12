@@ -66,15 +66,15 @@ namespace UntitledBauhausGame
             }
 
             if (AbleToMove)
-			{
+            {
                 transform.Translate(targetPos, Space.Self);
 
                 transform.Translate(new Vector3(actmoveSpeed * Input.GetAxis("Horizontal") * Time.unscaledDeltaTime, 0f, actmoveSpeed * Input.GetAxis("Vertical") * Time.unscaledDeltaTime), Space.Self);
 
-				transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
+                transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 
-				transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
-			}
+                transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
+            }
 
             //if (Input.GetKey(KeyCode.Space))
             //{
