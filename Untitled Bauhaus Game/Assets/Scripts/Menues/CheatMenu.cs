@@ -65,15 +65,11 @@ public class CheatMenu : MonoBehaviour
 
 	public void AnsehenPlus()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++;
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().Ansehen++;
 	}
 	public void AnsehenMinus()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value--;
-	}
-	public void aaaaaaaaaaaa()
-	{
-		Debug.Log("hallol");
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().Ansehen--;
 	}
 
 	public void StudentenPlus()
@@ -87,11 +83,11 @@ public class CheatMenu : MonoBehaviour
 	}
 	public void PolitikPlus()
 	{
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += 20;
+		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += 10;
 	}
 	public void PolitikMinus()
 	{
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel -= 20;
+		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel -= 10;
 	}
 
 	public void cheatExponat()
