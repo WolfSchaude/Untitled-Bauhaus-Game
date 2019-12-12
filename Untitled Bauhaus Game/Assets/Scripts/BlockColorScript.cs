@@ -21,8 +21,6 @@ public class BlockColorScript : MonoBehaviour
 
 		ColorLerp = (float)(PolitiklevelScript/2)/100;
 
-		Debug.Log(ColorLerp);
-
 		//GetComponent<MeshRenderer>().material.color = Color.Lerp(new Color(62, 42, 20), Color.red, ColorLerp);
 
 		if (PolitiklevelScript > 0 && PolitiklevelScript < 100)
