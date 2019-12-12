@@ -239,6 +239,7 @@ public class BaueLehrsaal : MonoBehaviour
                 default:
                     break;
             }
+            BauStilePosnum[BauStil]++;
         }
     }
 }
