@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AnimationStarter : MonoBehaviour/*, IPointerEnterHandler, IPointerExitHandler*/
+public class AnimationStarter : MonoBehaviour
 {
-	public Animator SecondMenu;
 	public Animator SelfDropDown;
 
-	public bool IsOpened;
+	public bool Collapsed;
 
 	public void ToggleOpened()
 	{
-		SelfDropDown.SetTrigger("Click");
-		if (SecondMenu != null)
-		{
-			SecondMenu.SetTrigger("Click)");
-		}
+		//SelfDropDown.SetTrigger("Click");
 
-		IsOpened = !IsOpened;
+		Collapsed = !Collapsed;
+	}
+
+	public void CloseMenu()
+	{
+		//if (!Collapsed)
+		//{
+			//SelfDropDown.SetTrigger("Click)");
+
+			Collapsed = true;
+		//}
 	}
 
 	void Start()
 	{
-		IsOpened = false;
+		Collapsed = true;
 	}
 	void Update()
 	{
+		SelfDropDown.SetBool("Bool", Collapsed);
 	}
-
-
 }

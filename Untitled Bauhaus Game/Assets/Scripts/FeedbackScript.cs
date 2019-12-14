@@ -14,7 +14,7 @@ public class FeedbackScript : MonoBehaviour
 	public List<GameObject> TicksCount;
 
 	public Animator TickerFieldAnimator;
-	public Animator ButtonAnimator;
+	//public Animator ButtonAnimator;
 	public bool Collapsed;
 
     void Start()
@@ -41,7 +41,7 @@ public class FeedbackScript : MonoBehaviour
 	public void ToggleFeedback()
 	{
 		TickerFieldAnimator.SetTrigger("Click");
-		ButtonAnimator.SetTrigger("Click");
+		//ButtonAnimator.SetTrigger("Click");
 
 		Collapsed = !Collapsed;
 
@@ -53,6 +53,8 @@ public class FeedbackScript : MonoBehaviour
 		{
 			gameObject.GetComponentInChildren<Text>().text = "▼";
 		}
+
+		StartCoroutine(ScrollToBottomSec());
 	}
 
 	public void CloseFeedback()
@@ -60,7 +62,7 @@ public class FeedbackScript : MonoBehaviour
 		if (!Collapsed)
 		{
 			TickerFieldAnimator.SetTrigger("Click");
-			ButtonAnimator.SetTrigger("Click");
+			//ButtonAnimator.SetTrigger("Click");
 
 			Collapsed = true;
 
@@ -82,7 +84,7 @@ public class FeedbackScript : MonoBehaviour
 		if (Collapsed)
 		{
 			TickerFieldAnimator.SetTrigger("Click");
-			ButtonAnimator.SetTrigger("Click");
+			//ButtonAnimator.SetTrigger("Click");
 
 			Collapsed = false;
 		}
@@ -91,6 +93,13 @@ public class FeedbackScript : MonoBehaviour
 	IEnumerator ScrollToBottom()
 	{
 		yield return new WaitForEndOfFrame();
+
+		UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+	}
+
+	IEnumerator ScrollToBottomSec()
+	{
+		yield return new WaitForSecondsRealtime(0.6f);
 
 		UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
 	}

@@ -1785,7 +1785,7 @@ RectTransform:
   - {fileID: 1940757302}
   - {fileID: 1890753742}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2767,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -88820}
+  m_AnchoredPosition: {x: 0, y: -101300}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -3070,7 +3070,7 @@ GameObject:
   - component: {fileID: 336543487}
   - component: {fileID: 336543488}
   m_Layer: 5
-  m_Name: Dropdown Formmeister
+  m_Name: Sidebar - Dropdown Formmeister
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3091,7 +3091,7 @@ RectTransform:
   - {fileID: 901831224}
   - {fileID: 397381465}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3157,6 +3157,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 754967064}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1357314984}
+        m_MethodName: CloseOverview
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 336543487}
         m_MethodName: ToggleOpened
         m_Mode: 1
@@ -3215,9 +3237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondMenu: {fileID: 0}
   SelfDropDown: {fileID: 336543483}
-  IsOpened: 0
+  Collapsed: 0
 --- !u!114 &336543488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3746,7 +3767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4a86c06bd8ffe4da57b1e26fe1ff77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overviewWindow: {fileID: 0}
   OverviewAnimator: {fileID: 0}
   werkstattCount: {fileID: 1193729359}
   lehrsaalCount: {fileID: 2017386128}
@@ -4336,7 +4356,6 @@ RectTransform:
   - {fileID: 400080706}
   - {fileID: 1382382682}
   - {fileID: 1902710786}
-  - {fileID: 1357314980}
   - {fileID: 976415180}
   - {fileID: 1413785169}
   - {fileID: 978475643}
@@ -4344,6 +4363,7 @@ RectTransform:
   - {fileID: 1876372768}
   - {fileID: 336543482}
   - {fileID: 754967058}
+  - {fileID: 1357314980}
   - {fileID: 1292603756}
   - {fileID: 4474210237657922292}
   - {fileID: 2957053225309383931}
@@ -7635,7 +7655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &730915669
@@ -7846,7 +7866,7 @@ GameObject:
   - component: {fileID: 754967064}
   - component: {fileID: 754967059}
   m_Layer: 5
-  m_Name: "Dropdown Geb\xE4ude"
+  m_Name: "Sidebar - Dropdown Geb\xE4ude"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7867,7 +7887,7 @@ RectTransform:
   - {fileID: 730915668}
   - {fileID: 1662807172}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -7927,6 +7947,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 336543487}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1357314984}
+        m_MethodName: CloseOverview
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 754967064}
         m_MethodName: ToggleOpened
         m_Mode: 1
@@ -8004,9 +8046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondMenu: {fileID: 0}
   SelfDropDown: {fileID: 754967063}
-  IsOpened: 0
+  Collapsed: 0
 --- !u!1 &759203501
 GameObject:
   m_ObjectHideFlags: 0
@@ -9006,7 +9047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &884109369
@@ -9078,7 +9119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &901831225
@@ -9851,7 +9892,7 @@ RectTransform:
   - {fileID: 1999433687}
   - {fileID: 658325856}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -9996,7 +10037,7 @@ RectTransform:
   m_Children:
   - {fileID: 567905609}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -12545,7 +12586,7 @@ GameObject:
   - component: {fileID: 1357314986}
   - component: {fileID: 1357314985}
   m_Layer: 5
-  m_Name: "Button - \xDCbersicht Geb\xE4ude"
+  m_Name: "Sidebar - \xDCbersicht Geb\xE4ude"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12566,7 +12607,7 @@ RectTransform:
   - {fileID: 884109368}
   - {fileID: 1168632091}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 10
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -12613,8 +12654,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 336543487}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 754967064}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1357314984}
-        m_MethodName: showWindow
+        m_MethodName: ToggleOpened
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12671,7 +12734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4a86c06bd8ffe4da57b1e26fe1ff77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overviewWindow: {fileID: 1168632090}
   OverviewAnimator: {fileID: 1357314985}
   werkstattCount: {fileID: 1193729359}
   lehrsaalCount: {fileID: 2017386128}
@@ -12918,7 +12980,6 @@ GameObject:
   - component: {fileID: 1413785171}
   - component: {fileID: 1413785170}
   - component: {fileID: 1413785173}
-  - component: {fileID: 1413785174}
   m_Layer: 5
   m_Name: Button - Feedback Ticker
   m_TagString: Untagged
@@ -12939,7 +13000,7 @@ RectTransform:
   m_Children:
   - {fileID: 979879526}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13050,27 +13111,7 @@ MonoBehaviour:
   FeedbackTicks: []
   TicksCount: []
   TickerFieldAnimator: {fileID: 1876372772}
-  ButtonAnimator: {fileID: 1413785174}
   Collapsed: 0
---- !u!95 &1413785174
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413785168}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5fd3c0dd7b316b7409e3c231f6048285, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1417058745
 GameObject:
   m_ObjectHideFlags: 0
@@ -16711,7 +16752,7 @@ RectTransform:
   - {fileID: 1550831097}
   - {fileID: 824486151}
   m_Father: {fileID: 410550909}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

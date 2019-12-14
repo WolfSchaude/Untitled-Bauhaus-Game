@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class GebäudeÜbersicht : MonoBehaviour
 {
-    public GameObject overviewWindow;
-
     public Animator OverviewAnimator;
 
     public Text werkstattCount;
@@ -17,30 +15,32 @@ public class GebäudeÜbersicht : MonoBehaviour
 
     void Start()
     {
-        Collapsed = false;
+        Collapsed = true;
     }
 
     void Update()
     {
+        OverviewAnimator.SetBool("Bool", Collapsed);
+
         werkstattCount.text = "Gebaute Werkstätte: \n" + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette.ToString() + " / 7"; 
         lehrsaalCount.text = "Gebaute Lehrsäle: \n" + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal.ToString() + " / 8"; 
         wohnheimCount.text = "Gebaute Wohnheime: \n" + GameObject.Find("UI").GetComponent<BaueWohnheim>().AnzahlWohnheime.ToString() + " / 3"; 
     }
 
-    public void showWindow() //Sets overview window active
+    public void ToggleOpened() //Sets overview window active
     {
-        OverviewAnimator.SetTrigger("Click");
+        //OverviewAnimator.SetTrigger("Click");
 
         Collapsed = !Collapsed;
     }
 
     public void CloseOverview()
     {
-        if (!Collapsed)
-        {
-            OverviewAnimator.SetTrigger("Click");
+        //if (!Collapsed)
+        //{
+        //    OverviewAnimator.SetTrigger("Click");
 
-            Collapsed = !Collapsed;
-        }
+            Collapsed = true;
+        //}
     }
 }
