@@ -34,10 +34,6 @@ public class WinLose : MonoBehaviour
 			Time.timeScale = 0;
 			Kamera.AbleToMove = false;
 		}
-		else
-		{
-			Time.timeScale = FastForward.oldTimeScale;
-		}
         if(politikmeterSkript.Politiklevel >= 200)
 		{
 			//SceneManager.LoadScene("Main_Menu");

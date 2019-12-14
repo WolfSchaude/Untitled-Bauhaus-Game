@@ -5,91 +5,52 @@ using UnityEngine.UI;
 
 public class FastForward : MonoBehaviour
 {
-    public bool fastForwarding = false;
-    private bool justToggled = false;
+	public TimeMode Mode;
 
-    public static float oldTimeScale = 1;
+	public Sprite Normal;
 
-    public Text fastForwardText;
-
-	public static TimeMode Mode = TimeMode.Normal;
+	public Sprite Selected;
 
 	public enum TimeMode
 	{
-		Normal, Stop, FastForward
+		Pause, Normal, FastForward
 	}
 
 
     void Start()
     {
-		Mode = TimeMode.Stop;
-
-		justToggled = true;
+		SetPause();
 	}
 
     void Update()
     {
-		if (justToggled)
-		{
-			switch (Mode)
-			{
-				case TimeMode.Normal:
 
-					fastForwardText.text = "▸";
-					Time.timeScale = 1;
-					oldTimeScale = 1f;
-
-					break;
-
-				case TimeMode.Stop:
-
-					fastForwardText.text = "∥";
-					Time.timeScale = 0;
-					oldTimeScale = 0f;
-					break;
-
-				case TimeMode.FastForward:
-
-					fastForwardText.text = "▸▸▸";
-					Time.timeScale = 3;
-					oldTimeScale = 3f;
-
-					break;
-
-				default:
-					break;
-			}
-
-			justToggled = false;
-		}
     }
 
-    public void toggleFastForward() //Fast forward the game
-    {
-		switch (Mode)
-		{
-			case TimeMode.Normal:
+	public void SetPause()
+	{
+		Mode = TimeMode.Pause;
 
-				Mode = TimeMode.FastForward;
+		gameObject.GetComponentsInChildren<Image>()[1].sprite = Selected;
+		gameObject.GetComponentsInChildren<Image>()[2].sprite = Normal;
+		gameObject.GetComponentsInChildren<Image>()[3].sprite = Normal;
+	}
 
-				break;
+	public void SetNormal()
+	{
+		Mode = TimeMode.Normal;
 
-			case TimeMode.Stop:
+		gameObject.GetComponentsInChildren<Image>()[1].sprite = Normal;
+		gameObject.GetComponentsInChildren<Image>()[2].sprite = Selected;
+		gameObject.GetComponentsInChildren<Image>()[3].sprite = Normal;
+	}
 
-				Mode = TimeMode.Normal;
+	public void SetFastforward()
+	{
+		Mode = TimeMode.FastForward;
 
-				break;
-
-			case TimeMode.FastForward:
-
-				Mode = TimeMode.Stop;
-
-				break;
-
-			default:
-				break;
-		}
-
-		justToggled = true;
+		gameObject.GetComponentsInChildren<Image>()[1].sprite = Normal;
+		gameObject.GetComponentsInChildren<Image>()[2].sprite = Normal;
+		gameObject.GetComponentsInChildren<Image>()[3].sprite = Selected;
 	}
 }

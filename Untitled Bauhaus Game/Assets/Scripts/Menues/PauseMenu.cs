@@ -27,7 +27,9 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = FastForward.oldTimeScale;
+
+        Time.timeScale = 1;
+
         GamePaused = false;
         Kamera.AbleToMove = true;
     }
@@ -35,7 +37,9 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+
+        Time.timeScale = 0;
+
         GamePaused = true;
         Kamera.AbleToMove = false;
     }

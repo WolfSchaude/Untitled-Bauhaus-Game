@@ -7,6 +7,7 @@ using System.Text;
  
 public class TimeKeeper : MonoBehaviour
 {
+	public GameObject FastForwardScriptObject;
 
 	public int StartYear;
 	public int StartMonth;
@@ -21,12 +22,17 @@ public class TimeKeeper : MonoBehaviour
 
 	public Text DateDisplay;
 
-	private float gameTime;
+	public float gameTime;
+
+	public float TimeTimescale;
+
 	private const float MinToSec = 60;
 	private const float HourToSec = 60 * 60;
 	private const float DayToSec = 60 * 60 * 24;
 	private const float MonthToSec = 60 * 60 * 24 * 31;
 	private const float YearToSec = 60 * 60 * 24 * 31 * 13;
+
+	bool AlreadyRunningCoroutine = false;
 
 	void Awake()
 	{
@@ -41,8 +47,6 @@ public class TimeKeeper : MonoBehaviour
 		currentDay = StartDay;
 		currentMonth = StartMonth;
 		currentYear = StartYear;
-
-		InvokeRepeating("AddTimeTic", 0.1f, 2);
 	}
 
 	public void AddYear(int years)
@@ -106,12 +110,77 @@ public class TimeKeeper : MonoBehaviour
 		return times;
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
+		switch (FastForwardScriptObject.GetComponent<FastForward>().Mode)
+		{
+			case FastForward.TimeMode.Normal:
+
+				//gameTime += DayToSec * Time.deltaTime;
+
+				if (!AlreadyRunningCoroutine)
+				{
+					StartCoroutine(ZweiSekundenEinTag());
+				}
+
+				break;
+
+			case FastForward.TimeMode.Pause:
+
+				//Kein Zeitvergehen
+
+				break;
+
+			case FastForward.TimeMode.FastForward:
+
+				//gameTime += DayToSec * 3 * Time.deltaTime;
+
+				if (!AlreadyRunningCoroutine)
+				{
+					StartCoroutine(HalbeSekundeEinTage());
+				}
+
+				break;
+
+			default:
+				break;
+		}
+
 		string[] times = GetTime();
 
 		DateDisplay.text = times[2] + " . " + times[1] + " . " + times[0];
+	}
 
-		//StopCoroutine("AddTimeTic");
+	IEnumerator EineSekundeEinTag()
+	{
+		AlreadyRunningCoroutine = true;
+
+		yield return new WaitForSeconds(1);
+
+		AddDay(1);
+
+		AlreadyRunningCoroutine = false;
+	}
+
+	IEnumerator ZweiSekundenEinTag()
+	{
+		AlreadyRunningCoroutine = true;
+
+		yield return new WaitForSeconds(2);
+
+		AddDay(1);
+
+		AlreadyRunningCoroutine = false;
+	}
+
+	IEnumerator HalbeSekundeEinTage()
+	{
+		AlreadyRunningCoroutine = true;
+
+		yield return new WaitForSeconds(0.5f);
+
+		AddDay(1);
+
+		AlreadyRunningCoroutine = false;
 	}
 }
