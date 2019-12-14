@@ -2829,7 +2829,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115220}
+  m_AnchoredPosition: {x: 0, y: -125300}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -3890,6 +3890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FeedbackTicker: {fileID: 1413785168}
+  EventSystem: {fileID: 381768615}
   inventoryWindow: {fileID: 978475642}
   prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
