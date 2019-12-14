@@ -8,6 +8,8 @@ public class Teacher_Memory : MonoBehaviour
     public GameObject Parent;
     public GameObject Ticker;
 
+    public GameObject EventSystem;
+
     public Teacher Memory;
 
 	public int Kosten;
@@ -30,6 +32,8 @@ public class Teacher_Memory : MonoBehaviour
         Ticker = ticker;
 
         Name = Memory.Name;
+
+        EventSystem = GameObject.Find("EventSystem");
     }
 
     public void StelleEin()
@@ -48,6 +52,8 @@ public class Teacher_Memory : MonoBehaviour
         x.transform.GetChild(5).gameObject.SetActive(true);
 
         TeacherScript.Eingestellte.Add(x);
+
+        EventSystem.GetComponent<TeacherLoader>().HiredTeachers.Find(i => i.Name == Name).Hired = true;
 
         Ticker.GetComponent<FeedbackScript>().NewTick("Du hast den Formmeister " + Name + " eingestellt.");
 

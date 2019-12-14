@@ -7,7 +7,7 @@ public class TeacherLoader : MonoBehaviour
 	private const string path = "XML_Files/LehrerTestList";
 	public static TeacherBuffer tb;
 
-	public static List<Teacher> HiredTeachers;
+	public List<Teacher> HiredTeachers;
 
 	void Awake()
 	{
@@ -19,6 +19,7 @@ public class TeacherLoader : MonoBehaviour
 		}
 
 		HiredTeachers = new List<Teacher>();
+		HiredTeachers = tb.Buffer;
 	}
 
 	public void AddTeacher(Teacher teacher)

@@ -101,7 +101,7 @@ public class ZuweisenOnChange : MonoBehaviour
 		bool active6 = false;
 		bool active7 = false;
 
-				switch (val)
+		switch (val)
 		{
 			case 0:
 				Debug.Log("Nicht zugewiesen");

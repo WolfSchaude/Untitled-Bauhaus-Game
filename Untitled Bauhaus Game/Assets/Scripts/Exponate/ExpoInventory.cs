@@ -7,6 +7,7 @@ using UntitledBauhausGame;
 public class ExpoInventory : MonoBehaviour
 {
 	public GameObject FeedbackTicker;
+	public GameObject EventSystem;
 
 	public GameObject inventoryWindow;
 	public GameObject prefab; //Exponate Prefab
@@ -79,9 +80,9 @@ public class ExpoInventory : MonoBehaviour
 				break;
 		}
 			
-		int herstellerText = Random.Range(1, 25);
+		int herstellerText = Random.Range(0, EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true).Count);
 
-		x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + TeacherLoader.tb.Buffer[herstellerText].Name;
+		x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true)[herstellerText].Name;
 
 
 		int stilText = Random.Range(1, 4);

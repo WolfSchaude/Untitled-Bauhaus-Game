@@ -42,7 +42,9 @@ public class Teacher
 	[XmlIgnore]
 	public Status TeacherStatus = Status.NotHired;
 	[XmlIgnore]
-	public bool Hireable = true;
+	public bool Hired = false;
+	[XmlIgnore]
+	public bool Zugewiesen = false;
 
 	public enum Status
 	{
@@ -84,10 +86,5 @@ public class Teacher
 	public void ChangeOccupation(GameObject gameObject)
 	{
 		Occupation = gameObject;
-	}
-
-	public void NowHired()
-	{
-		Hireable = false;
 	}
 }
