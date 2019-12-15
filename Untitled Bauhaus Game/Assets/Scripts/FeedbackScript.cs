@@ -14,7 +14,6 @@ public class FeedbackScript : MonoBehaviour
 	public List<GameObject> TicksCount;
 
 	public Animator TickerFieldAnimator;
-	//public Animator ButtonAnimator;
 	public bool Collapsed;
 
     void Start()
@@ -45,16 +44,17 @@ public class FeedbackScript : MonoBehaviour
 
 		Collapsed = !Collapsed;
 
-		if (Collapsed)
-		{
-			gameObject.GetComponentInChildren<Text>().text = "▲";
-		}
-		else
-		{
-			gameObject.GetComponentInChildren<Text>().text = "▼";
-		}
+		//if (Collapsed)
+		//{
+		//	gameObject.GetComponentInChildren<Text>().text = "▲";
+		//}
+		//else
+		//{
+		//	gameObject.GetComponentInChildren<Text>().text = "▼";
+		//}
 
 		StartCoroutine(ScrollToBottomSec());
+		StartCoroutine(WaitToChangeSymbol());
 	}
 
 	public void CloseFeedback()
@@ -102,5 +102,19 @@ public class FeedbackScript : MonoBehaviour
 		yield return new WaitForSecondsRealtime(0.6f);
 
 		UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+	}
+
+	IEnumerator WaitToChangeSymbol()
+	{
+		yield return new WaitForSecondsRealtime(0.6f);
+
+		if (Collapsed)
+		{
+			gameObject.GetComponentInChildren<Text>().text = "▲";
+		}
+		else
+		{
+			gameObject.GetComponentInChildren<Text>().text = "▼";
+		}
 	}
 }
