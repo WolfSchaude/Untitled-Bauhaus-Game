@@ -21,13 +21,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
-      <Option1_EffectTicker>Kartoffel....</Option1_EffectTicker>
+      <Option1_EffectTicker>Das Haus wurde erfolgreich gebaut. Es wurden 1000 Reichsmarkt benötigt aber dafür ist deine Hochschule jetzt weiter bekannt.</Option1_EffectTicker>
       
       <EventOption2>Ignorieren</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-4</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Die Zeitungen berichten über deine Weigerung. Dein Ansehen hat sich um 4 verschlechtert.</Option2_EffectTicker>
 
       <Exponate_Needed>0</Exponate_Needed>
     </Event>
@@ -47,13 +47,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>1</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Der Vortrag kam gut an. Er kostete 1000 Reichsmark aber dein Ansehen wurde um 1 verbessert.</Option1_EffectTicker>
        
       <EventOption2>Ignorieren</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-3</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Doesburgs unbeantworteten Vorträge leuchten mit einem schlechten Licht auf deine Hochschule. Dein Ansehen wurde um 3 verschlechtert.</Option2_EffectTicker>
 
        <Exponate_Needed>0</Exponate_Needed>
     </Event>

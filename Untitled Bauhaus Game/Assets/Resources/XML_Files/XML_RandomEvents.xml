@@ -10,13 +10,13 @@
       <Option1_Politik>-10</Option1_Politik>
       <Option1_Ansehen>-3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Deine Untätigkeit hat deine Hochschule in einem schlechten Licht dastehen lassen. Du hast 3 Ansehen verloren und deine Politische Position hat sich nach Links verändert.</Option1_EffectTicker>
 
       <EventOption2>Widerspreche den Anschuldigungen und lasse Nachforschungen anstellen.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>0</Option2_Ansehen>
       <Option2_Geld>-10000</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Du musstest die Nachforschungen aus eigener Kasse zahlen. Das ganze hat dich 10000 Reichsmark gekostet.</Option2_EffectTicker>
 
     </RandomEvent>
     <RandomEvent>
@@ -27,13 +27,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>-5</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Deine passive Einstellung wirft kein gutes Licht auf deine Hochschule. Dein Ansehen hat sich um 5 verschlechtert.</Option1_EffectTicker>
 
       <EventOption2>Unterstüze den Studenten Finanziell.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>5</Option2_Ansehen>
       <Option2_Geld>-10000</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Deine helfende Einstellung gefällt den Leuten. Dein Ansehen hat sich um 5 verbessert, aber du musstest 10000 Reichsmark aufbringen um den Studenten zu unterstützen.</Option2_EffectTicker>
 
     </RandomEvent>
 
@@ -46,13 +46,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>5000</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Die Renovationen sind gut angekommen. Dein Ansehen hat sich um 3 verbessert, doch hat das ganze 5000 Reichsmark gekostet.</Option1_EffectTicker>
 
       <EventOption2>Ignoriere die Renovation.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-5</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Deine Studenten sind nicht begeistert in einem heruntergekommenen Teil zu lernen. Dein Ansehen hat sich um 5 verschlechtert.</Option2_EffectTicker>
 
     </RandomEvent>
     
@@ -64,13 +64,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>1</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Deine Unterstützung kam gut an. Du hast 1000 Reichsmark gezahlt aber dein Ansehen wurde um 1 verbessert.</Option1_EffectTicker>
 
       <EventOption2>Zahle nicht.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+      <Option2_EffectTicker>Der Dozent hat deine Verweigerung nicht gut aufgenommen. Dein Ansehen hat sich um 2 verschlechtert.</Option2_EffectTicker>
 
     </RandomEvent>
     
