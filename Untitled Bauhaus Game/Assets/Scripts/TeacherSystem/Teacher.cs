@@ -34,6 +34,15 @@ public class Teacher
 	[XmlElement("FortlaufendeKosten")]
 	public int FortlaufendeKosten;
 
+	[XmlElement("SichtbarAb_Tag")]
+	public int SichtbarAb_Tag;
+
+	[XmlElement("SichtbarAb_Monat")]
+	public int SichtbarAb_Monat;
+
+	[XmlElement("SichtbarAb_Jahr")]
+	public int SichtbarAb_Jahr;
+
 	[XmlIgnore]
 	public Sprite Picture;
 

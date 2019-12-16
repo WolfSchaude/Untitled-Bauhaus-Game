@@ -75,6 +75,11 @@ public class Event_Memory : MonoBehaviour
 			this.gameObject.SetActive(false);
 		}
 
+		if (TimerCounter == 7)
+		{
+			GameObject.Find("Button - Event Menu").GetComponent<EventScript>().OpenEvent();
+		}
+
 		if (TimerCounter <= Vorlauf && TimerCounter > 0 && ExponateNeeded != 0 && !ExponateCounterStartet)
 		{
 			ExponateCounterFunktion();
@@ -108,9 +113,11 @@ public class Event_Memory : MonoBehaviour
 
 		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
 
-		var TagBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentDay;
-		var MonatBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
-		var JahrBuffer = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentYear;
+		var x = GameObject.Find("Datum").GetComponent<TimeKeeper>();
+
+		var TagBuffer = x.currentDay;
+		var MonatBuffer = x.currentMonth;
+		var JahrBuffer = x.currentYear;
 
 		TimerCounter = BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
 		
@@ -284,7 +291,6 @@ public class Event_Memory : MonoBehaviour
 			gameObject.SetActive(true);
 
 			GameObject.Find("Button - Event Menu").GetComponent<Button>().interactable = true;
-			//GameObject.Find("Event Menu Button").GetComponent<Button>().gameObject.SetActive(true);
 		}
 	}
 

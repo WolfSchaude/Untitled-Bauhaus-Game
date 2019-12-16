@@ -55,7 +55,7 @@ public class EventScript : MonoBehaviour
 				}
 			}
 			AlreadyGenerated = true;
-			Collapsed = false;
+			Collapsed = true;
 
 
 			ThatOneRandomEvent = NewRandomEvent();
@@ -167,6 +167,16 @@ public class EventScript : MonoBehaviour
 			EventsAnimator.SetTrigger("Click");
 
 			Collapsed = true;
+		}
+	}
+
+	public void OpenEvent()
+	{
+		if (Collapsed)
+		{
+			EventsAnimator.SetTrigger("Click");
+
+			Collapsed = false;
 		}
 	}
 }

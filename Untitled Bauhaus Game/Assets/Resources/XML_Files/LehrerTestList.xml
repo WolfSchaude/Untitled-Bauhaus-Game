@@ -13,6 +13,11 @@
       <Interessen>Malerei, Karikaturist</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
+      
+      <SichtbarAb_Tag>20</SichtbarAb_Tag>
+      <SichtbarAb_Monat>11</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1919</SichtbarAb_Jahr>
+      
 	  </Teacher>
 	
 	  <Teacher>
@@ -25,6 +30,11 @@
       <Interessen>Malerei, Kunsttheorie und -pädagogik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
+
+      <SichtbarAb_Tag>20</SichtbarAb_Tag>
+      <SichtbarAb_Monat>11</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1919</SichtbarAb_Jahr>
+      
 	  </Teacher>
 	
 	  <Teacher>
@@ -37,7 +47,12 @@
       <Interessen>Malerei, Kunsttherorie, Kunstpädagogik, Farblehre</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>20</SichtbarAb_Tag>
+      <SichtbarAb_Monat>11</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1919</SichtbarAb_Jahr>
+
+    </Teacher>
     
     <Teacher>
       <ID>4</ID>
@@ -49,7 +64,12 @@
       <Interessen>Malerei, Fotografie, Typographie, Bühnenbild</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>12</SichtbarAb_Tag>
+      <SichtbarAb_Monat>12</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1919</SichtbarAb_Jahr>
+
+    </Teacher>
     
     <Teacher>
       <ID>5</ID>
@@ -61,7 +81,12 @@
       <Interessen>Malerei, Grafik, Holzschnitzerei, Weberei</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 
     <Teacher>
       <ID>6</ID>
@@ -73,7 +98,12 @@
       <Interessen>Malerei, Grafik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 
     <Teacher>
       <ID>7</ID>
@@ -85,7 +115,12 @@
       <Interessen>Design, Fotografie, Malerei, Bildhauerei</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 
 <Teacher>
       <ID>8</ID>
@@ -97,6 +132,11 @@
       <Interessen>Zeichnen, Malerei, Metall- und Möbelherstellung</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
+  
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+      
 	  </Teacher>
 
     <Teacher>
@@ -109,7 +149,12 @@
       <Interessen>Tischlerei</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
     
       <Teacher>
       <ID>10</ID>
@@ -121,6 +166,11 @@
       <Interessen>Fotografie</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
+        
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+      
 	  </Teacher>
 	
     <Teacher>
@@ -133,7 +183,12 @@
       <Interessen>Malerei, Bildhauerei, Bühnenbild</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
     	
     <Teacher>
       <ID>12</ID>
@@ -145,7 +200,12 @@
       <Interessen>Malerei, Kunsttheorie, Grafik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
     	
     <Teacher>
       <ID>13</ID>
@@ -157,7 +217,12 @@
       <Interessen>Jura, Drama, Theater</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>14</ID>
@@ -169,7 +234,12 @@
       <Interessen>Bildhauerei, Grafik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
     	
     <Teacher>
       <ID>15</ID>
@@ -181,7 +251,12 @@
       <Interessen>Architektur</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>16</ID>
@@ -193,7 +268,12 @@
       <Interessen>Architektur, Stadtforschung</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>17</ID>
@@ -205,7 +285,12 @@
       <Interessen>Architektur, Design, Tischlerei</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>18</ID>
@@ -217,7 +302,12 @@
       <Interessen>Typografie, Malerei, Lehren</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>19</ID>
@@ -229,7 +319,12 @@
       <Interessen>Singen, Klavier</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>20</ID>
@@ -241,7 +336,12 @@
       <Interessen>Silberschmieden, Industriedesign</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>21</ID>
@@ -253,7 +353,12 @@
       <Interessen>Goldschmieden, Industriedesign</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>22</ID>
@@ -265,7 +370,12 @@
       <Interessen>Weben, Textil</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>23</ID>
@@ -277,7 +387,12 @@
       <Interessen>Textilkünstlerei, Weberei, Grafik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
+
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
 	
     <Teacher>
       <ID>24</ID>
@@ -289,17 +404,12 @@
       <Interessen>Keramik</Interessen>
       <Einstellungskosten>30</Einstellungskosten>
       <FortlaufendeKosten>100</FortlaufendeKosten>
-	  </Teacher>
 
-	  <Teacher>
-      <ID>25</ID>
-		  <Name></Name>
-      <Gehalt>0</Gehalt>
-      <Politik>100</Politik>
-		  <ImagePath></ImagePath>
-      <Geburtsdatum></Geburtsdatum>
-      <Interessen></Interessen>
-	  </Teacher>
+      <SichtbarAb_Tag>1</SichtbarAb_Tag>
+      <SichtbarAb_Monat>1</SichtbarAb_Monat>
+      <SichtbarAb_Jahr>1920</SichtbarAb_Jahr>
+
+    </Teacher>
     
   </Teachers>
 </TeacherCollection>
