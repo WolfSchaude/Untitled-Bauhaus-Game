@@ -11,6 +11,8 @@ public class RandomEvent_Memory : MonoBehaviour
 	public int Ansehen2 = 0;
 	public int Geld1 = 0;
 	public int Geld2 = 0;
+	public string Effect1 = "";
+	public string Effect2 = "";
 
 	public int Vorlauf = 90;
 
@@ -79,6 +81,8 @@ public class RandomEvent_Memory : MonoBehaviour
 		Ansehen2 = Memory.Option2_Ansehen;
 		Geld1 = Memory.Option1_Geld;
 		Geld2 = Memory.Option2_Geld;
+		Effect1 = Memory.Option1_EffectTicker;
+		Effect2 = Memory.Option2_EffectTicker;
 
 		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
 
@@ -123,6 +127,9 @@ public class RandomEvent_Memory : MonoBehaviour
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld1);
 
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect1);
+
+		/*
 		if (Ansehen1 > 0)
 		{
 			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verbessert.");
@@ -149,7 +156,7 @@ public class RandomEvent_Memory : MonoBehaviour
 		{
 			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld1 * -1 + " RM verloren.");
 		}
-
+		*/
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
@@ -161,6 +168,9 @@ public class RandomEvent_Memory : MonoBehaviour
 		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
 		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
 
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect2);
+
+		/*
 		if (Ansehen2 > 0)
 		{
 			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verbessert.");
@@ -187,6 +197,7 @@ public class RandomEvent_Memory : MonoBehaviour
 		{
 			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld2 * -1 + " RM verloren.");
 		}
+		*/
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);

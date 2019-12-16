@@ -30,6 +30,8 @@ public class RandomEvent
     [XmlElement("Option1_Geld")]
     public int Option1_Geld;
 
+    [XmlElement("Option1_EffectTicker")]
+    public string Option1_EffectTicker;
 
     [XmlElement("EventOption2")]
     public string EventOption2;
@@ -42,4 +44,7 @@ public class RandomEvent
 
     [XmlElement("Option2_Geld")]
     public int Option2_Geld;
+
+    [XmlElement("Option2_EffectTicker")]
+    public string Option2_EffectTicker;
 }

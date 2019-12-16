@@ -10,12 +10,14 @@
       <Option1_Politik>-10</Option1_Politik>
       <Option1_Ansehen>-3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
 
-      <EventOption2>Widerspreche den Anschuldigungen und las Nachforschungen anstellen.</EventOption2>
+      <EventOption2>Widerspreche den Anschuldigungen und lasse Nachforschungen anstellen.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>0</Option2_Ansehen>
       <Option2_Geld>-10000</Option2_Geld>
-      
+      <Option2_EffectTicker></Option2_EffectTicker>
+
     </RandomEvent>
     <RandomEvent>
 
@@ -25,11 +27,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>-5</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
 
       <EventOption2>Unterstüze den Studenten Finanziell.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>5</Option2_Ansehen>
       <Option2_Geld>-10000</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
     </RandomEvent>
 
@@ -42,11 +46,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>5000</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
 
       <EventOption2>Ignoriere die Renovation.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-5</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
     </RandomEvent>
     
@@ -58,11 +64,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>1</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
 
       <EventOption2>Zahle nicht.</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
     </RandomEvent>
     

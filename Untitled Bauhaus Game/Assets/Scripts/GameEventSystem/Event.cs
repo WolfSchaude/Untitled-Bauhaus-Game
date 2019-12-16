@@ -45,6 +45,8 @@ public class Event
 	[XmlElement("Option1_Geld")]
 	public int Option1_Geld;
 
+	[XmlElement("Option1_EffectTicker")]
+	public string Option1_EffectTicker;
 
 	[XmlElement("EventOption2")]
 	public string EventOption2;
@@ -57,6 +59,10 @@ public class Event
 
 	[XmlElement("Option2_Geld")]
 	public int Option2_Geld;
+
+	[XmlElement("Option2_EffectTicker")]
+	public string Option2_EffectTicker;
+
 
 	[XmlElement("Exponate_Needed")]
 	public int Exponate_Needed;

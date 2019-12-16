@@ -21,11 +21,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
+      <Option1_EffectTicker>Kartoffel....</Option1_EffectTicker>
       
       <EventOption2>Ignorieren</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-4</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
       <Exponate_Needed>0</Exponate_Needed>
     </Event>
@@ -45,10 +47,13 @@
       <Option1_Politik>0</Option1_Politik>
       <Option1_Ansehen>1</Option1_Ansehen>
       <Option1_Geld>-1000</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
+       
       <EventOption2>Ignorieren</EventOption2>
       <Option2_Politik>0</Option2_Politik>
       <Option2_Ansehen>-3</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
        <Exponate_Needed>0</Exponate_Needed>
     </Event>
@@ -69,11 +74,13 @@
       <Option1_Politik>23</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
       
       <EventOption2>Event Option 2, Event Example 3</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
       <Exponate_Needed>2</Exponate_Needed>
     </Event>
@@ -94,11 +101,13 @@
       <Option1_Politik>23</Option1_Politik>
       <Option1_Ansehen>3</Option1_Ansehen>
       <Option1_Geld>0</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
       
       <EventOption2>Event Option 2, Event Example 4</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
       <Exponate_Needed>4</Exponate_Needed>
     </Event>
@@ -119,11 +128,13 @@
       <Option1_Politik>-20</Option1_Politik>
       <Option1_Ansehen>0</Option1_Ansehen>
       <Option1_Geld>-10000</Option1_Geld>
+      <Option1_EffectTicker></Option1_EffectTicker>
       
       <EventOption2>Ignorieren (Lose condition)</EventOption2>
       <Option2_Politik>-23</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
+      <Option2_EffectTicker></Option2_EffectTicker>
 
       <Exponate_Needed>0</Exponate_Needed>
     </Event>
