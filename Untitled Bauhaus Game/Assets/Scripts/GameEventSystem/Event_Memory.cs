@@ -96,15 +96,11 @@ public class Event_Memory : MonoBehaviour
 			SelectOption1();
 		}
 
-		Debug.Log(Memory.EventText.ToString());
-
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
 	public void SetMemory(Event ev)
 	{
-		Debug.Log("SetMemory");
-
 		Memory = ev;
 
 		Politik1 = Memory.Option1_Politik;
