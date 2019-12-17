@@ -166,8 +166,8 @@ public class Event_Memory : MonoBehaviour
 
 		if (ExponateNeeded != 0)
 		{
-			gameObject.GetComponentsInChildren<Button>()[1].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[1].Select();
+			gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
+			gameObject.GetComponentsInChildren<Button>()[0].Select();
 		}
 	}
 	public void SelectOption2()

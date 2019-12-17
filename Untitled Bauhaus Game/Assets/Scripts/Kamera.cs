@@ -76,16 +76,18 @@ namespace UntitledBauhausGame
                 transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
 
                 //Change camera height with Mouse Scroolwheel
-                var d = Input.GetAxis("Mouse ScrollWheel");
-                if (d > 0f && height < 25)
+                if (Input.GetKey(KeyCode.Mouse1))
                 {
-                    height++;
+                    var d = Input.GetAxis("Mouse ScrollWheel");
+                    if (d > 0f && height < 25)
+                    {
+                        height++;
+                    }
+                    else if (d < 0f && height > 3)
+                    {
+                        height--;
+                    }
                 }
-                else if (d < 0f && height > 3)
-                {
-                    height--;
-                }
-
             }
 
             //if (Input.GetKey(KeyCode.Space))

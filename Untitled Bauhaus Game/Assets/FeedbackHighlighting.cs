@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class FeedbackHighlighting : MonoBehaviour
 {
     int x = 0;
+    public GameObject RedBorder;
+    public GameObject WhiteFrame;
+
     void Start()
     {
         GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => Increment());
@@ -22,7 +25,7 @@ public class FeedbackHighlighting : MonoBehaviour
 
     public void DisableRedBorder()
     {
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(380, 60);
+        RedBorder.GetComponent<RectTransform>().sizeDelta = Vector2.zero;
     }
 
     void Increment()

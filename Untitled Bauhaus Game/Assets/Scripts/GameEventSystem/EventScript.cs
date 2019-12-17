@@ -61,12 +61,6 @@ public class EventScript : MonoBehaviour
 			AlreadyGenerated = true;
 			Collapsed = true;
 
-			Debug.Log(AllEvents.ToString());
-			Debug.Log(AllEvents[0].ToString());
-			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Memory.ToString());
-			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Memory.Option1_EffectTicker.ToString());
-			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Effect1.ToString());
-
 
 			ThatOneRandomEvent = NewRandomEvent();
 		}
