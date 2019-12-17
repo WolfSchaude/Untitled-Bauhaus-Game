@@ -46,12 +46,13 @@ public class Event_Memory : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Memory = new Event();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if (Memory == null) Start();
+
 		if (TimerCounter > Vorlauf)
 		{
 			this.gameObject.SetActive(false);
@@ -95,11 +96,15 @@ public class Event_Memory : MonoBehaviour
 			SelectOption1();
 		}
 
+		Debug.Log(Memory.EventText.ToString());
+
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
 	public void SetMemory(Event ev)
 	{
+		Debug.Log("SetMemory");
+
 		Memory = ev;
 
 		Politik1 = Memory.Option1_Politik;
@@ -110,7 +115,6 @@ public class Event_Memory : MonoBehaviour
 		Geld2 = Memory.Option2_Geld;
 		Effect1 = Memory.Option1_EffectTicker;
 		Effect2 = Memory.Option2_EffectTicker;
-
 
 		Datum_Tag = Memory.Event_Tag;
 		Datum_Monat = Memory.Event_Monat;
@@ -235,11 +239,15 @@ public class Event_Memory : MonoBehaviour
 	private void EventEffect2()
 	{
 		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen2);
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
+		//GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen2);
+		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
+		//GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
+		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Memory.Option2_Politik;
+		//GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
+		GameObject.Find("Money Display").GetComponent<Money>().Geld(Memory.Option2_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect2);
+		//FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect2);
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
 
 		/*
 		if (Ansehen2 > 0)

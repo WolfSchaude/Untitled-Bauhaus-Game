@@ -34,28 +34,38 @@ public class EventScript : MonoBehaviour
 
 			for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 			{
-				AllEvents.Add(Instantiate(prefab, parent.transform));
+				var x = Instantiate(prefab, parent.transform);
 
-				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
-				AllEvents[i].GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
+				x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+				x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
-				AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
+				x.GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
 
-				AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
+				x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
 					= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
 					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
 					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
 
 				if (EventLoader.ec.Events[i].Exponate_Needed == 0)
 				{
-					AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+					x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
 						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
 						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
 						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
 				}
+
+				AllEvents.Add(x);
+
+				x = null;
 			}
 			AlreadyGenerated = true;
 			Collapsed = true;
+
+			Debug.Log(AllEvents.ToString());
+			Debug.Log(AllEvents[0].ToString());
+			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Memory.ToString());
+			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Memory.Option1_EffectTicker.ToString());
+			Debug.Log(AllEvents[0].GetComponent<Event_Memory>().Effect1.ToString());
 
 
 			ThatOneRandomEvent = NewRandomEvent();

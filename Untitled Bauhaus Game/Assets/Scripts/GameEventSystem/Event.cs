@@ -8,10 +8,10 @@ using System.Xml.Serialization;
 public class Event
 {
 	[XmlElement("ID")]
-	public int ID;
+	public int ID = 0;
 
 	[XmlElement("Event_Tag")]
-	public int Event_Tag;
+	public int Event_Tag = 0;
 
 	[XmlElement("Event_Monat")]
 	public int Event_Monat;
@@ -29,7 +29,7 @@ public class Event
 	public int Einblenden_Ab_Jahr;
 
 	[XmlElement("EventText")]
-	public string EventText;
+	public string EventText = "Hello World!";
 
 
 
