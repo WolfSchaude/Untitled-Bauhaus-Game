@@ -128,10 +128,10 @@
       <Option1_Politik>-20</Option1_Politik>
       <Option1_Ansehen>0</Option1_Ansehen>
       <Option1_Geld>-10000</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
+      <Option1_EffectTicker>Den Verein zu Gründen hat dich 10000 Reichsmark gekostet. Deine Politische Position hat sich um 20 nach Links verschoben.</Option1_EffectTicker>
       
-      <EventOption2>Ignorieren (Lose condition)</EventOption2>
-      <Option2_Politik>-23</Option2_Politik>
+      <EventOption2>Ignorieren</EventOption2>
+      <Option2_Politik>-201</Option2_Politik>
       <Option2_Ansehen>-2</Option2_Ansehen>
       <Option2_Geld>0</Option2_Geld>
       <Option2_EffectTicker></Option2_EffectTicker>
