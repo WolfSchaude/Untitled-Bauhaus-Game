@@ -6,6 +6,7 @@ public class RandomSpawnPrefabs : MonoBehaviour
 {
 	public Transform[] teleport;
 	public GameObject[] prefab;
+	public GameObject parent;
 
 	void Start()
     {
@@ -29,7 +30,7 @@ public class RandomSpawnPrefabs : MonoBehaviour
 			int tele_num = Random.Range(0, 8);
 			int prefeb_num = Random.Range(0, 3);
 
-			Instantiate(prefab[prefeb_num], spawnPosition, Quaternion.identity);
+			Instantiate(prefab[prefeb_num], spawnPosition, Quaternion.identity, parent.transform);
 		}
 	}
 }

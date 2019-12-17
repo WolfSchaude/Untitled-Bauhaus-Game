@@ -23,11 +23,11 @@ public class CheatMenu : MonoBehaviour
 
 	public void showWindow()
 	{
-		if (Input.GetKeyDown(KeyCode.F1) && !CheatMenuWindow.activeSelf)
+		if (Input.GetKeyDown(KeyCode.F11) && !CheatMenuWindow.activeSelf)
 		{
 			CheatMenuWindow.SetActive(true);
 		}
-		else if (Input.GetKeyDown(KeyCode.F1) && CheatMenuWindow.activeSelf)
+		else if (Input.GetKeyDown(KeyCode.F11) && CheatMenuWindow.activeSelf)
 		{
 			CheatMenuWindow.SetActive(false);
 		}
