@@ -6,32 +6,32 @@ namespace UntitledBauhausGame
 {
     public class Kamera : MonoBehaviour
     {
-		float moveSpeed;
+        float moveSpeed;
         float actmoveSpeed;
-		float rotateSpeed;
-		float height;
+        float rotateSpeed;
+        float height;
         float mDelta;
 
         //public GameObject BuildManager;
         //public buildingsystemmanager BuildingSystemManager;
 
         //private bool LongKeyDown;
-		public static bool AbleToMove;
+        public static bool AbleToMove;
 
         void Start()
         {
-			moveSpeed = 5;
-			rotateSpeed = 90;
-			height = 10;
+            moveSpeed = 10;
+            rotateSpeed = 90;
+            height = 10;
             mDelta = 10;
 
             //BuildManager = GameObject.Find("buildingsystemmanager"); 
             //BuildingSystemManager = BuildManager.GetComponent<buildingsystemmanager>();
 
-			AbleToMove = true;
+            AbleToMove = true;
         }
 
-		void Update()
+        void Update()
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -46,7 +46,7 @@ namespace UntitledBauhausGame
                 if (Input.mousePosition.x >= Screen.width - mDelta)
                 {
                     // Move the camera
-                    targetPos.x += Time.unscaledDeltaTime* actmoveSpeed;
+                    targetPos.x += Time.unscaledDeltaTime * actmoveSpeed;
                 }
                 if (Input.mousePosition.x <= 0 + mDelta)
                 {
@@ -74,6 +74,18 @@ namespace UntitledBauhausGame
                 transform.SetPositionAndRotation(new Vector3(transform.position.x, height, transform.position.z), transform.rotation);
 
                 transform.RotateAround(transform.position, Vector3.up, rotateSpeed * Input.GetAxis("Rotate") * Time.unscaledDeltaTime);
+
+                //Change camera height with Mouse Scroolwheel
+                var d = Input.GetAxis("Mouse ScrollWheel");
+                if (d > 0f && height < 25)
+                {
+                    height++;
+                }
+                else if (d < 0f && height > 3)
+                {
+                    height--;
+                }
+
             }
 
             //if (Input.GetKey(KeyCode.Space))
