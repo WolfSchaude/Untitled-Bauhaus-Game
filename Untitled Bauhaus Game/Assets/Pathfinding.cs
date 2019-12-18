@@ -9,6 +9,8 @@ public class Pathfinding : MonoBehaviour
 	private NavMeshAgent nav;
 	private int destPoint;
 
+	public GameObject FastForwardObject;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -18,6 +20,10 @@ public class Pathfinding : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Pause)
+		{
+			return;
+		}
 		if (!nav.pathPending && nav.remainingDistance < 0.5f)
 			GoToNextPoint();
 	}
