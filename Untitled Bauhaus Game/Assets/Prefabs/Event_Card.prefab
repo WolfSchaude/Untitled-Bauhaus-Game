@@ -269,8 +269,8 @@ MonoBehaviour:
   FeedbackTicker: {fileID: 0}
   Option1: {fileID: 841084718255526950}
   Option2: {fileID: 7230581002230046344}
-  SpriteNormal: {fileID: 21300000, guid: ca141044b77e5674d82da75be7718850, type: 3}
-  SpriteSelected: {fileID: 21300000, guid: 192f916d96aa9324fa7c7af4cbe6a7c8, type: 3}
+  SpriteNormal: {fileID: 21300000, guid: 937ff0a71e753c548a7729a9da438a9c, type: 3}
+  SpriteSelected: {fileID: 21300000, guid: 0739817f77b36dc4fb7f4f3e9fb8f1ac, type: 3}
 --- !u!1 &841084718255526948
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca141044b77e5674d82da75be7718850, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 937ff0a71e753c548a7729a9da438a9c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca141044b77e5674d82da75be7718850, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 937ff0a71e753c548a7729a9da438a9c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
