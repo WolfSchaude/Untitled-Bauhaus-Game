@@ -327,7 +327,7 @@ public class BaumenuDetail : MonoBehaviour
 				tischbutton.SetActive(false);
 				wohnButton.SetActive(false);
 
-				if (GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal >= 8)
+				if (GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal >= 7)
 				{
 					lehrButton.SetActive(false);
 					buildingPriceText.text = "Preis: Ausverkauft";
