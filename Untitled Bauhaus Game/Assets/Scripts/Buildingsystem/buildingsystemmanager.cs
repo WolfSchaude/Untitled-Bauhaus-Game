@@ -34,11 +34,11 @@ namespace UntitledBauhausGame
 
             Baum = new GameObject[256];
 
-            for (int i = 0; i <= 255; i++)
-            {
-                Werkstätte[i] = Instantiate(GameObject.Find("Module"),ModulParent.transform);
-                Scripts[i] = Werkstätte[i].GetComponent<Module>();
-            }
+            //for (int i = 0; i <= 255; i++)
+            //{
+            //    Werkstätte[i] = Instantiate(GameObject.Find("Module"),ModulParent.transform);
+            //    Scripts[i] = Werkstätte[i].GetComponent<Module>();
+            //}
 
             //ArrayPointer = 0;
             //bauhaushaupt = GameObject.Find("bauhausmain");
