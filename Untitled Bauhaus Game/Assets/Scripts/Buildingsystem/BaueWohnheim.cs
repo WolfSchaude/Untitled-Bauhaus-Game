@@ -98,7 +98,7 @@ public class BaueWohnheim : MonoBehaviour
                     {
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim1.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
-                        heim1.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
+                        //heim1.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
                         buildInProgress = true;
                         //heim1.SetActive(true);
@@ -111,7 +111,7 @@ public class BaueWohnheim : MonoBehaviour
                     {
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim2.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
-                        heim2.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
+                        //heim2.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
                         buildInProgress = true;
                         //heim2.SetActive(true);
@@ -124,7 +124,7 @@ public class BaueWohnheim : MonoBehaviour
                     {
                         GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim3.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
-                        heim3.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
+                        //heim3.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
                         buildInProgress = true;
                         //heim3.SetActive(true);

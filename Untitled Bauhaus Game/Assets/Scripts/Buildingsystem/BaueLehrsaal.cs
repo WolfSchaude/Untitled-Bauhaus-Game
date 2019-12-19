@@ -26,7 +26,7 @@ public class BaueLehrsaal : MonoBehaviour
     public GameObject lehr5;
     public GameObject lehr6;
     public GameObject lehr7;
-    public GameObject lehr8;
+    //public GameObject lehr8;
 
     public bool buildInProgress = false;
 
@@ -82,9 +82,9 @@ public class BaueLehrsaal : MonoBehaviour
         {
             switch (AnzahlLehrsaal)
             {
-                case 7:
-                    lehr8.SetActive(true);
-                    break;
+                //case 7:
+                //    lehr8.SetActive(true);
+                //    break;
 
                 case 6:
                     lehr7.SetActive(true);
@@ -220,22 +220,22 @@ public class BaueLehrsaal : MonoBehaviour
                         buildInProgress = true;
                         //lehr7.SetActive(true);
                         //AnzahlLehrsaal++;
-                        AktPreisL = AktPreisL * 2;
-                    }
-                    break;
-                case 7:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
-                    {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
-                       // lehr8.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
-                        //lehr8.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
-                        Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
-                        buildInProgress = true;
-                        //lehr8.SetActive(true);
-                        //AnzahlLehrsaal++;
                         AktPreisL = int.MaxValue;
                     }
                     break;
+                //case 7:
+                //    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                //    {
+                //        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                //        //lehr8.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
+                //        //lehr8.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
+                //        Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
+                //        buildInProgress = true;
+                //        //lehr8.SetActive(true);
+                //        //AnzahlLehrsaal++;
+                //        AktPreisL = int.MaxValue;
+                //    }
+                //    break;
                 default:
                     break;
             }

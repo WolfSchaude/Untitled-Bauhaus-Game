@@ -22,7 +22,7 @@ namespace UntitledBauhausGame
         {
             moveSpeed = 10;
             rotateSpeed = 90;
-            height = 10;
+            height = 20;
             mDelta = 10;
 
             //BuildManager = GameObject.Find("buildingsystemmanager"); 
