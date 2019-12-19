@@ -113,6 +113,9 @@ public class BaueLehrsaal : MonoBehaviour
                 case 0:
                     lehr1.SetActive(true);
                     break;
+
+                default:
+                    break;
             }
 
             GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätLehr;
