@@ -20,9 +20,23 @@ public class Pathfinding : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Pause)
+		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Pause) //Pause
 		{
-			return;
+			nav.speed = 0;
+			nav.acceleration = 0;
+			nav.angularSpeed = 0;
+		}
+		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Normal) //Normal
+		{
+			nav.speed = 3.5f;
+			nav.acceleration = 8;
+			nav.angularSpeed = 120;
+		}
+		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.FastForward) //Schnell
+		{
+			nav.speed = 14f;
+			nav.acceleration = 32;
+			nav.angularSpeed = 480;
 		}
 		if (!nav.pathPending && nav.remainingDistance < 0.5f)
 			GoToNextPoint();
