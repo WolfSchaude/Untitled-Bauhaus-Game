@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class DatumRelatedEvents : MonoBehaviour //Event to check if the day or month has changed
 {
+    public GameObject Datum;
+
     public UnityEvent changedMonth;
     public UnityEvent changedDay;
 
@@ -13,8 +15,8 @@ public class DatumRelatedEvents : MonoBehaviour //Event to check if the day or m
 
     void Start()
     {
-        lastMonth = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
-        lastDay = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentDay;
+        lastMonth = Datum.GetComponent<TimeKeeper>().currentMonth;
+        lastDay = Datum.GetComponent<TimeKeeper>().currentDay;
     }
 
     void Update()
@@ -25,19 +27,19 @@ public class DatumRelatedEvents : MonoBehaviour //Event to check if the day or m
 
     public void checkMonth()  //Check if the month has changed
     {
-        if (GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth != lastMonth) 
+        if (Datum.GetComponent<TimeKeeper>().currentMonth != lastMonth) 
         {
             changedMonth.Invoke();
-            lastMonth = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentMonth;
+            lastMonth = Datum.GetComponent<TimeKeeper>().currentMonth;
         }
     }
 
     public void checkDay()  //Check if the day has changed
     {
-        if (GameObject.Find("Datum").GetComponent<TimeKeeper>().currentDay != lastDay) 
+        if (Datum.GetComponent<TimeKeeper>().currentDay != lastDay) 
         {
             changedDay.Invoke();
-            lastDay = GameObject.Find("Datum").GetComponent<TimeKeeper>().currentDay;
+            lastDay = Datum.GetComponent<TimeKeeper>().currentDay;
         }
     }
 }

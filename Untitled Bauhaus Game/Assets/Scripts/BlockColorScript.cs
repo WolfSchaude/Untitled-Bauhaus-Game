@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlockColorScript : MonoBehaviour
 {
+	public GameObject Politikmeter;
+
 	public int PolitiklevelScript;
 
 	private float ColorLerp;
@@ -17,7 +19,7 @@ public class BlockColorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		PolitiklevelScript = GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel;
+		PolitiklevelScript = Politikmeter.GetComponent<Politikmeter>().Politiklevel;
 
 		ColorLerp = (float)(PolitiklevelScript/2)/100;
 
