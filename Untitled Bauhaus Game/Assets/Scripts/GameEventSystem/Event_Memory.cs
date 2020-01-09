@@ -124,12 +124,12 @@ public class Event_Memory : MonoBehaviour
 		var MonatBuffer = x.CurrentMonth;
 		var JahrBuffer = x.CurrentYear;
 
-		TimerCounter = BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
+		TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
 		
 		//Wenn ein spezielles Einblenddatum gegeben ist, wird das berechnet, ansonsten werden 90 Tage verwendet 
 		if (Memory.Einblenden_Ab_Tag != 0 && ( Memory.Einblenden_Ab_Monat != 0 && Memory.Einblenden_Ab_Jahr != 0))
 		{
-			Vorlauf = BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Datum_Tag, Datum_Monat, Datum_Jahr);
+			Vorlauf = NewTimeKeeper.BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Datum_Tag, Datum_Monat, Datum_Jahr);
 		}
 		else
 		{
@@ -145,11 +145,6 @@ public class Event_Memory : MonoBehaviour
 		{
 			ExponateNeeded = Memory.Exponate_Needed;
 		}
-	}
-
-	public static int BerechneTage(int StartTag, int StartMonat, int Startjahr, int EndTag, int EndMonat, int EndJahr)
-	{
-		return ((EndTag + (EndMonat * 30) + (EndJahr * 360)) - (StartTag + (StartMonat * 30) + (Startjahr * 360)));
 	}
 
 	public void SelectOption1()

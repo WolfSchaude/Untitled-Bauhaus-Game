@@ -53,7 +53,7 @@ public class Teacher_Memory : MonoBehaviour
         var MonatBuffer = x.CurrentMonth;
         var JahrBuffer = x.CurrentYear;
 
-        TimerCounter = Event_Memory.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
+        TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
 
         if (TimerCounter > Vorlauf)
         {

@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -133,5 +133,13 @@ public class NewTimeKeeper : MonoBehaviour
         AddDay();
 
         AlreadyRunningCoroutine = false;
+    }
+
+    public static int BerechneTage(int StartTag, int StartMonat, int StartJahr, int Endtag, int EndMonat, int EndJahr)
+    {
+        DateTime Start = new DateTime(StartJahr, StartMonat, StartTag);
+        DateTime Ende = new DateTime(EndJahr, EndMonat, Endtag);
+
+        return (Ende - Start).Days;
     }
 }

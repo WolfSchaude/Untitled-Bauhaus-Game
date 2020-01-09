@@ -8,13 +8,15 @@ public class DatumRelatedEvents : MonoBehaviour //Event to check if the day or m
     public UnityEvent changedMonth;
     public UnityEvent changedDay;
 
+    public GameObject Timekeeper;
+
     private int lastMonth;
     private int lastDay;
 
     void Start()
     {
-        lastMonth = GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentMonth;
-        lastDay = GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentDay;
+        lastMonth = Timekeeper.GetComponent<NewTimeKeeper>().CurrentMonth;
+        lastDay = Timekeeper.GetComponent<NewTimeKeeper>().CurrentDay;
     }
 
     void Update()
@@ -25,19 +27,19 @@ public class DatumRelatedEvents : MonoBehaviour //Event to check if the day or m
 
     public void checkMonth()  //Check if the month has changed
     {
-        if (GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentMonth != lastMonth) 
+        if (Timekeeper.GetComponent<NewTimeKeeper>().CurrentMonth != lastMonth) 
         {
             changedMonth.Invoke();
-            lastMonth = GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentMonth;
+            lastMonth = Timekeeper.GetComponent<NewTimeKeeper>().CurrentMonth;
         }
     }
 
     public void checkDay()  //Check if the day has changed
     {
-        if (GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentDay != lastDay) 
+        if (Timekeeper.GetComponent<NewTimeKeeper>().CurrentDay != lastDay) 
         {
             changedDay.Invoke();
-            lastDay = GameObject.Find("Datum").GetComponent<NewTimeKeeper>().CurrentDay;
+            lastDay = Timekeeper.GetComponent<NewTimeKeeper>().CurrentDay;
         }
     }
 }
