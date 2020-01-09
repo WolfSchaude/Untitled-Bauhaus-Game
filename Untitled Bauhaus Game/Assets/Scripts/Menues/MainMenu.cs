@@ -2,27 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public void ChangeScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    
+    public GameObject Open1;
+    public GameObject Open2;
 
     public void Quit()
     {
-
         Application.Quit();
-
-
-
     }
 
-    private void Update()
+    void Start()
+    {
+        
+    }
+
+    void Update()
     {
        
     }
+
+    public void OpenSecondaryMenu()
+    {
+        Open1.SetActive(true);
+        Open2.SetActive(true);
+    }
+
+
 }

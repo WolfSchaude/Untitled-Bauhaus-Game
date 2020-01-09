@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NewTimeKeeper : MonoBehaviour
 {
     public GameObject FastForwardScriptObject;
+    public GameObject SaveGameKeeper;
 
     public int StartDay = 20;
     public int StartMonth = 11;
@@ -141,5 +142,23 @@ public class NewTimeKeeper : MonoBehaviour
         DateTime Ende = new DateTime(EndJahr, EndMonat, Endtag);
 
         return (Ende - Start).Days;
+    }
+
+    public void Save()
+    {
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentDay = CurrentDay;
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMonth = CurrentMonth;
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentYear = CurrentYear;
+
+        SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[0] = true;
+    }
+
+    public void Load(Save save)
+    {
+        CurrentDay = save.CurrentDay;
+        CurrentMonth = save.CurrentMonth;
+        CurrentYear = save.CurrentYear;
+
+        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[0] = true;
     }
 }

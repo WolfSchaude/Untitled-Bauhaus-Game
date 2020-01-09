@@ -10,6 +10,8 @@ public class Politikmeter : MonoBehaviour
 
     public Slider PolitikOutput;
 
+	public GameObject SaveGameKeeper;
+
 	void Start()
 	{
 		PolitikOutput.maxValue = 200;
@@ -49,5 +51,17 @@ public class Politikmeter : MonoBehaviour
 		{
 			Politiklevel = 200;
 		}
+	}
+
+	public void Save()
+	{
+		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentPolitics = Politiklevel;
+		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[3] = true;
+	}
+
+	public void Load(Save save)
+	{
+		Politiklevel = save.CurrentPolitics;
+		//SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[3] = true;
 	}
 }

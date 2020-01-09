@@ -11,7 +11,8 @@ public class Studenten : MonoBehaviour
     private float sliderPercentage;
 
     public Text studDisplay;
-    
+
+    public GameObject SaveGameKeeper;
 
     void Start()
     {
@@ -45,5 +46,15 @@ public class Studenten : MonoBehaviour
 		{
 			StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
 		}
+    }
+    public void Save()
+    {
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;
+        SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[4] = true;
+    }
+    public void Load(Save save)
+    {
+        StudentenAnzahl = save.StudentenAnzahl;
+        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[4] = true;
     }
 }

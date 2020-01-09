@@ -6,9 +6,10 @@ using UntitledBauhausGame;
 
 public class Money : MonoBehaviour
 {
-    /*
+	/*
        (Bug) FUNKTIONIERT ZWAR, "Gehalt" WIRD ABER DIREKT AM ANFANG EIN MAL AUSGEFÜHRT
-    */    
+    */
+	public GameObject SaveGameKeeper;
 
     public float money = 200000;
 	private float oldMoney = 0;
@@ -88,5 +89,19 @@ public class Money : MonoBehaviour
 			}
 			isToggleOn = true;
 		}
+	}
+
+	public void Save()
+	{
+		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMoney = money;
+
+		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[1] = true;
+	}
+
+	public void Load(Save save)
+	{
+		money = save.CurrentMoney;
+
+		//SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[1] = true;
 	}
 }

@@ -50,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         GamePaused = false;
+        Destroy(GameObject.Find("SceneSwitcher"));
         SceneManager.LoadScene("Main_Menu");
     }
 

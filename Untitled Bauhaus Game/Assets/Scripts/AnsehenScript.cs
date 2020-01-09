@@ -9,6 +9,8 @@ public class AnsehenScript : MonoBehaviour
 
     public Text AnsehenText;
 
+    public GameObject SaveGameKeeper;
+
     void Start()
     {
         Ansehen = 1;
@@ -17,20 +19,10 @@ public class AnsehenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		//if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
-		//{
-		//    Ansehen--;
-
 		if (Ansehen <= 1)
 		{
 			Ansehen = 1;
 		}
-		//}
-
-		//if (Input.GetKeyDown(KeyCode.A) && Input.GetKey(KeyCode.LeftControl))
-		//{
-		//    Ansehen++;
-		//}
 
 		AnsehenText.text = "Ansehen: " + Ansehen;
     }
@@ -43,5 +35,19 @@ public class AnsehenScript : MonoBehaviour
         {
             Ansehen = 0;
         }
+    }
+
+    public void Save()
+    {
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentAnsehen = Ansehen;
+
+        SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[2] = true;
+    }
+
+    public void Load(Save save)
+    {
+        Ansehen = save.CurrentAnsehen;
+
+        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[2] = true;
     }
 }
