@@ -2558,7 +2558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000022888184}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -3225,7 +3225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -83040}
+  m_AnchoredPosition: {x: 0, y: -85920}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -5259,7 +5259,7 @@ GameObject:
   - component: {fileID: 421715863}
   - component: {fileID: 421715867}
   - component: {fileID: 421715866}
-  - component: {fileID: 421715865}
+  - component: {fileID: 421715864}
   m_Layer: 5
   m_Name: Datum
   m_TagString: Untagged
@@ -5286,7 +5286,7 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 0}
   m_SizeDelta: {x: 300, y: 75}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &421715865
+--- !u!114 &421715864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5295,22 +5295,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 421715862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35008f916788c764a91bcde5f119cd20, type: 3}
+  m_Script: {fileID: 11500000, guid: b6330a29aeaa13d4d9f5136911bf68eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FastForwardScriptObject: {fileID: 1382382681}
-  StartYear: 1919
-  StartMonth: 11
   StartDay: 20
-  StartHour: 12
-  StartMinute: 0
-  StartSecond: 0
-  currentYear: 0
-  currentMonth: 0
-  currentDay: 0
-  DateDisplay: {fileID: 421715866}
-  gameTime: 0
-  TimeTimescale: 0
+  StartMonth: 11
+  StartYear: 1919
+  CurrentDay: 0
+  CurrentMonth: 0
+  CurrentYear: 0
+  Display: {fileID: 421715866}
 --- !u!114 &421715866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,7 +5331,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 80
-    m_Alignment: 3
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
@@ -9977,7 +9972,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2124088793}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18466,7 +18461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0.000061035156, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599

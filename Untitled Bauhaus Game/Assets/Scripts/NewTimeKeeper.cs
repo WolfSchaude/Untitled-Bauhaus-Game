@@ -1,0 +1,137 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class NewTimeKeeper : MonoBehaviour
+{
+    public GameObject FastForwardScriptObject;
+
+    public int StartDay = 20;
+    public int StartMonth = 11;
+    public int StartYear = 1919;
+
+    public int CurrentDay;
+    public int CurrentMonth;
+    public int CurrentYear;
+
+    public Text Display;
+
+    bool AlreadyRunningCoroutine = false;
+
+    private void Awake()
+    {
+        CurrentDay = StartDay;
+        CurrentMonth = StartMonth;
+        CurrentYear = StartYear;
+    }
+    void Start()
+    {
+    }
+
+    void FixedUpdate()
+    {
+        switch (FastForwardScriptObject.GetComponent<FastForward>().Mode)
+        {
+            case FastForward.TimeMode.Pause:
+
+                //Keine Zeit vergeht
+
+                break;
+
+            case FastForward.TimeMode.Normal:
+
+                if (!AlreadyRunningCoroutine)
+                {
+                    StartCoroutine(ZweiSekundenEinTag());
+                }
+
+                break;
+
+            case FastForward.TimeMode.FastForward:
+
+                if (!AlreadyRunningCoroutine)
+                {
+                    StartCoroutine(HalbeSekundeEinTag());
+                }
+
+                break;
+
+            default:
+                break;
+        }
+
+        Display.text = CurrentDay + "." + CurrentMonth + "." + CurrentYear;
+    }
+    void Update()
+    {
+        
+    }
+
+    private void AddDay()
+    {
+        switch (CurrentDay)
+        {
+            case 28:
+                if (CurrentMonth == 2)
+                {
+                    CurrentDay = 1;
+                    CurrentMonth++;
+                }
+                else
+                {
+                    CurrentDay++;
+                }
+                break;
+            case 30:
+                if (CurrentMonth == 4 || CurrentMonth == 6 || CurrentMonth == 9 || CurrentMonth == 11)
+                {
+                    CurrentDay = 1;
+                    CurrentMonth++;
+                }
+                else
+                {
+                    CurrentDay++;
+                }
+                break;
+            case 31:
+                CurrentDay = 1;
+
+                if (CurrentMonth == 12)
+                {
+                    CurrentMonth = 1;
+                    CurrentYear++;
+                }
+                else
+                {
+                    CurrentMonth++;
+                }
+                break;
+            default:
+                CurrentDay++;
+                break;
+        }
+    }
+
+    IEnumerator ZweiSekundenEinTag()
+    {
+        AlreadyRunningCoroutine = true;
+
+        yield return new WaitForSeconds(2);
+
+        AddDay();
+
+        AlreadyRunningCoroutine = false;
+    }
+
+    IEnumerator HalbeSekundeEinTag()
+    {
+        AlreadyRunningCoroutine = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        AddDay();
+
+        AlreadyRunningCoroutine = false;
+    }
+}

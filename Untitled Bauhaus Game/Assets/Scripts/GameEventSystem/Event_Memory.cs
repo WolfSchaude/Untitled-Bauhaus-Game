@@ -118,11 +118,11 @@ public class Event_Memory : MonoBehaviour
 
 		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
 
-		var x = GameObject.Find("Datum").GetComponent<TimeKeeper>();
+		var x = GameObject.Find("Datum").GetComponent<NewTimeKeeper>();
 
-		var TagBuffer = x.currentDay;
-		var MonatBuffer = x.currentMonth;
-		var JahrBuffer = x.currentYear;
+		var TagBuffer = x.CurrentDay;
+		var MonatBuffer = x.CurrentMonth;
+		var JahrBuffer = x.CurrentYear;
 
 		TimerCounter = BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
 		

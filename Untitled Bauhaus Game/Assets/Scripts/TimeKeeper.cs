@@ -36,7 +36,6 @@ public class TimeKeeper : MonoBehaviour
 
 	void Awake()
 	{
-
 		gameTime += StartSecond;
 		gameTime += StartMinute * MinToSec;
 		gameTime += StartHour * HourToSec;
