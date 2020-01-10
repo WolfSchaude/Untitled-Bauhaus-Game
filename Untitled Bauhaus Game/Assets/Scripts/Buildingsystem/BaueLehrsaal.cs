@@ -245,4 +245,70 @@ public class BaueLehrsaal : MonoBehaviour
             BauStilePosnum[BauStil]++;
         }
     }
+
+    public void SaveBuildings(List<int> SaveBuildingsList)
+    {
+        if (lehr1.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr2.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr3.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr4.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr5.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr6.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+
+        if (lehr7.activeSelf == true)
+        {
+            SaveBuildingsList.Add(7);
+        }
+        else
+        {
+            SaveBuildingsList.Add(0);
+        }
+    }
 }

@@ -138,4 +138,34 @@ public class BaueWohnheim : MonoBehaviour
             BauStilePosnum[BauStil]++;
         }
     }
+
+    public void SaveBuildings(List<int> SaveBuildings)
+    {
+        if (heim1.activeSelf == true)
+        {
+            SaveBuildings.Add(6);
+        }
+        else
+        {
+            SaveBuildings.Add(0);
+        }
+
+        if (heim2.activeSelf == true)
+        {
+            SaveBuildings.Add(6);
+        }
+        else
+        {
+            SaveBuildings.Add(0);
+        }
+
+        if (heim3.activeSelf == true)
+        {
+            SaveBuildings.Add(6);
+        }
+        else
+        {
+            SaveBuildings.Add(0);
+        }
+    }
 }
