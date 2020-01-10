@@ -292,7 +292,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897657926}
-        m_MethodName: ChangeScene
+        m_MethodName: ChangeSceneNormal
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -769,7 +769,6 @@ GameObject:
   - component: {fileID: 1897657924}
   - component: {fileID: 1897657923}
   - component: {fileID: 1897657926}
-  - component: {fileID: 1897657927}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -853,18 +852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d5073d2ea6d8640afa5ce6df4350cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1897657927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897657922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3121724f171604948aa52ca6997d5afb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Open1: {fileID: 0}
+  Open2: {fileID: 0}
 --- !u!1 &2095954909
 GameObject:
   m_ObjectHideFlags: 0
