@@ -16,7 +16,7 @@ public class SaveGameManager : MonoBehaviour
 
     public Save Savestate;
 
-    public List<bool> WhoHasSaved = new List<bool>(5);
+    public List<bool> WhoHasSaved = new List<bool>(6);
 
     enum WerSpeichert
     {
@@ -28,7 +28,7 @@ public class SaveGameManager : MonoBehaviour
         //if (LoadGameEvent == null)
         //    LoadGameEvent = new SaveEvent();
 
-        WhoHasSaved = new List<bool>(new bool[5]);
+        WhoHasSaved = new List<bool>(new bool[6]);
 
         if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
         {
