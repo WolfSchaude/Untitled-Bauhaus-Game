@@ -22,6 +22,8 @@ public class BaueWerkstatt : MonoBehaviour
 	public GameObject werk6;
 	public GameObject werk7;
 
+	public GameObject Playervariables;
+
 	public bool buildInProgress = false;
 
 	void Start()
@@ -75,9 +77,9 @@ public class BaueWerkstatt : MonoBehaviour
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
 			{
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätWerk;
+				Playervariables.GetComponent<Studenten>().studKapazitaet += studKapazitätWerk;
 			}
-			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätWerk * (float)Qualität);
+			Playervariables.GetComponent<Studenten>().studKapazitaet += (int)((float)studKapazitätWerk * (float)Qualität);
 			MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
 
 			AnzahlWerkstaette++;

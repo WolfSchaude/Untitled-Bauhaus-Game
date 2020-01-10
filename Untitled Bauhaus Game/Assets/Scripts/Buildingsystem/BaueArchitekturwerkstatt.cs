@@ -116,9 +116,9 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
 			{
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätArch;
+				Playervariables.GetComponent<Studenten>().studKapazitaet += studKapazitätArch;
 			}
-			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätArch * (float)Qualität);
+			Playervariables.GetComponent<Studenten>().studKapazitaet += (int)((float)studKapazitätArch * (float)Qualität);
 			MinQualität = 0.5f + (AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Architekturwerkstatt wurde fertiggestellt!");

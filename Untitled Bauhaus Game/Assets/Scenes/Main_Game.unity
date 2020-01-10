@@ -2525,7 +2525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -104160}
+  m_AnchoredPosition: {x: 0, y: -104640}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -4758,7 +4758,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1780203634}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10737,6 +10737,7 @@ GameObject:
   - component: {fileID: 1009857075}
   - component: {fileID: 1009857074}
   - component: {fileID: 1009857073}
+  - component: {fileID: 1009857079}
   m_Layer: 0
   m_Name: PlayerVariables
   m_TagString: Untagged
@@ -10778,6 +10779,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 381768627}
         m_MethodName: IncreasePleiteCounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: BuildTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10937,6 +10949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7a309fd29c6ad4ba18ff360e6e220c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  studKapazitaet: 500
   StudentenAnzahl: 50
   studDisplay: {fileID: 1311427555}
   SaveGameKeeper: {fileID: 559906866}
@@ -10972,6 +10985,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009857079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009857072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a418080a57b9654ebceb657ed23c03f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FeedbackFromBuildings: {fileID: 1413785173}
+  SomethingIsBuilded: 0
+  NumberOfStyles: 0
+  NumberOfBuildingTypes: 0
+  NumberOfBuildingsPerType: 0
+  TypeToBuild: 0
+  StyleToBuild: 0
 --- !u!1 &1012012621
 GameObject:
   m_ObjectHideFlags: 0
@@ -18055,7 +18087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: -2150}
   m_SizeDelta: {x: 540, y: 115}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1987879955
@@ -23107,7 +23139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4030542144095012378}
   m_LocalRotation: {x: 2.839904e-17, y: -2.839904e-17, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.045, y: 0, z: 0}
   m_LocalScale: {x: 0.34554827, y: 0.34550565, z: 0.3455426}
   m_Children: []
   m_Father: {fileID: 4030542144094722674}
@@ -23121,7 +23153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4030542144095012380}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.1318417, z: 1.9721522e-33}
+  m_LocalPosition: {x: -0.045, y: 0, z: 0}
   m_LocalScale: {x: 0.34554827, y: 0.34554824, z: 0.34554824}
   m_Children: []
   m_Father: {fileID: 4030542144094722674}

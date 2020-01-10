@@ -76,8 +76,8 @@ public class CheatMenu : MonoBehaviour
 
 	public void StudentenPlus()
 	{
-		GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += 100;
-		Playervariables.GetComponent<Studenten>().StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
+		Playervariables.GetComponent<Studenten>().studKapazitaet += 100;
+		Playervariables.GetComponent<Studenten>().StudentenAnzahl = Playervariables.GetComponent<Studenten>().studKapazitaet;
 	}
 	public void StudentenMinus()
 	{

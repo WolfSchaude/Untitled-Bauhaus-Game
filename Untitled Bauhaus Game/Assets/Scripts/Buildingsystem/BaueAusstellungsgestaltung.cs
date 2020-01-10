@@ -84,9 +84,9 @@ public class BaueAusstellungsgestaltung : MonoBehaviour
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
 			{
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätAus;
+				Playervariables.GetComponent<Studenten>().studKapazitaet += studKapazitätAus;
 			}
-			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätAus * (float)Qualität);
+			Playervariables.GetComponent<Studenten>().studKapazitaet += (int)((float)studKapazitätAus * (float)Qualität);
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Ausstellungsgestaltung wurde fertiggestellt!");

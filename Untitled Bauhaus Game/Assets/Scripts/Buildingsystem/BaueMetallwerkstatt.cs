@@ -84,9 +84,9 @@ public class BaueMetallwerkstatt : MonoBehaviour
 
 			if (werk2.activeSelf) //wird erst ab werk2 ausgeführt
 			{
-				GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätMetall;
+				Playervariables.GetComponent<Studenten>().studKapazitaet += studKapazitätMetall;
 			}
-			GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += (int)((float)studKapazitätMetall * (float)Qualität);
+			Playervariables.GetComponent<Studenten>().studKapazitaet += (int)((float)studKapazitätMetall * (float)Qualität);
 			MinQualität = 0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Die Metallwerkstatt wurde fertiggestellt!");

@@ -119,7 +119,7 @@ public class BaueLehrsaal : MonoBehaviour
                     break;
             }
 
-            GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += studKapazitätLehr;
+            Playervariables.GetComponent<Studenten>().studKapazitaet += studKapazitätLehr;
             MinQualität = 0.5f + (AnzahlLehrsaal * 0.05f);
 
             GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Der Lehrsaal wurde fertiggestellt!");

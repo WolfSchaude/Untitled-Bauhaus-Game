@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Studenten : MonoBehaviour
 {
 
+    public int studKapazitaet = 500; //Anfangskapazität
+
     public float StudentenAnzahl = 50;
     private float monthlyStudenten = 50;
     private float sliderPercentage;
@@ -28,7 +30,7 @@ public class Studenten : MonoBehaviour
 			StudentenAnzahl = 0;
 		}
 
-        studDisplay.text = "Studenten: " + StudentenAnzahl.ToString("0") + " / " + GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität.ToString(); //Display StudentenAnzahl in UI
+        studDisplay.text = "Studenten: " + StudentenAnzahl.ToString("0") + " / " + studKapazitaet.ToString(); //Display StudentenAnzahl in UI
     }
 
     public void addStudenten()
@@ -39,9 +41,9 @@ public class Studenten : MonoBehaviour
 
 		StudentenAnzahl += monthlyStudenten;
 
-		if (StudentenAnzahl >= GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität)
+		if (StudentenAnzahl >= studKapazitaet)
 		{
-			StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
+			StudentenAnzahl = studKapazitaet;
 		}
     }
     public void Save()
