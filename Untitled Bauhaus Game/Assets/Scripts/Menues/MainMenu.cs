@@ -24,11 +24,20 @@ public class MainMenu : MonoBehaviour
        
     }
 
+    public void ChangeSceneNormal(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void OpenSecondaryMenu()
     {
         Open1.SetActive(true);
         Open2.SetActive(true);
     }
 
-
+    public void CloseSecondaryMenu()
+    {
+        Open1.SetActive(false);
+        Open2.SetActive(false);
+    }
 }

@@ -26,15 +26,18 @@ public class TeacherScript : MonoBehaviour
 
 		for (int i = 0; i < TeacherLoader.tb.Buffer.Count; i++)
 		{
-			var x = Instantiate(prefab, parent.transform);
+			if (!EventSystem.GetComponent<TeacherLoader>().HiredTeachers[i].Hired)
+			{
+				var x = Instantiate(prefab, parent.transform);
 
-			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, Ticker, Playervariables);
-			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[i].Geburtsdatum + Environment.NewLine + "Fachgebiete: " + TeacherLoader.tb.Buffer[i].Interessen;
-			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[i].Name;
-			x.GetComponentsInChildren<Text>()[2].text = "EInstellungskosten: " + TeacherLoader.tb.Buffer[i].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[i].FortlaufendeKosten;
-			x.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[i].Picture;
+				x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, Ticker, Playervariables);
+				x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[i].Geburtsdatum + Environment.NewLine + "Fachgebiete: " + TeacherLoader.tb.Buffer[i].Interessen;
+				x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[i].Name;
+				x.GetComponentsInChildren<Text>()[2].text = "EInstellungskosten: " + TeacherLoader.tb.Buffer[i].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[i].FortlaufendeKosten;
+				x.GetComponentsInChildren<Image>()[1].sprite = TeacherLoader.tb.Buffer[i].Picture;
 
-			Bewerbungen.Add(x);
+				Bewerbungen.Add(x);
+			}
 		}
 	}
 
@@ -42,26 +45,25 @@ public class TeacherScript : MonoBehaviour
 	{
 		var y = EventSystem.GetComponent<TeacherLoader>().HiredTeachers;
 
-		foreach (var hired in y)
+
+		for (int i = 0; i < y.Count; i++)
 		{
-			if (hired.Hired)
+			if (y[i].Hired)
 			{
 				var x = Instantiate(prefab, hiredParent.transform);
 
-				x.GetComponent<Teacher_Memory>().SetMemory(hired, hiredParent, Ticker, Playervariables);
-				x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + hired.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + hired.Interessen;
-				x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + hired.Name;
+				x.GetComponent<Teacher_Memory>().SetMemory(y[i], hiredParent, Ticker, Playervariables);
+				x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + y[i].Geburtsdatum + Environment.NewLine + "Fachgebiete: " + y[i].Interessen;
+				x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + y[i].Name;
 				x.GetComponentsInChildren<Text>()[2].text = "";
 				x.GetComponentsInChildren<Text>()[3].text = "";
-				x.GetComponentsInChildren<Image>()[1].sprite = hired.Picture;
+				x.GetComponentsInChildren<Image>()[1].sprite = y[i].Picture;
 				x.GetComponent<Button>().interactable = false;
 				x.transform.GetChild(5).gameObject.SetActive(true);
 
 				Eingestellte.Add(x);
 			}
 		}
-
-
 	}
 
 	void Update()

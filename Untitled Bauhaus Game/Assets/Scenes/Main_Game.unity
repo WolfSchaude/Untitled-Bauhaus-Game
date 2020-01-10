@@ -2478,7 +2478,7 @@ MonoBehaviour:
     m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -2525,7 +2525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -104640}
+  m_AnchoredPosition: {x: 0, y: -108480}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -3379,6 +3379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveGameKeeper: {fileID: 559906866}
+  Script: {fileID: 4474210237068353046}
 --- !u!114 &381768623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5812,6 +5813,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1009857073}
+        m_MethodName: Load
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 381768622}
         m_MethodName: Load
         m_Mode: 0
         m_Arguments:
@@ -10983,7 +10995,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1009857079
 MonoBehaviour:
@@ -12779,7 +12791,7 @@ Transform:
   - {fileID: 170076735}
   - {fileID: 457337001}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1281533661
 GameObject:
@@ -17668,7 +17680,7 @@ Transform:
   - {fileID: 275452727}
   - {fileID: 1861295531}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918243733
 GameObject:
@@ -24722,10 +24734,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4474210237068353034}
-  - component: {fileID: 4474210237068353046}
   - component: {fileID: 4474210237068353033}
   - component: {fileID: 4474210237068353032}
   - component: {fileID: 4474210237068353035}
+  - component: {fileID: 4474210237068353046}
   m_Layer: 8
   m_Name: ContentEinstellen
   m_TagString: Untagged

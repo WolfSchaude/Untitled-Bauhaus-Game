@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SaveGameLoader : MonoBehaviour
 {
-    public GameObject Open1;
-    public GameObject Open2;
+    public GameObject LoadingOverlay;
 
-    [SerializeField]
-    private bool IsSceneLoading = false;
+    [SerializeField] private bool IsSceneLoading = false;
 
     public bool LoadSaveGame = false;
 
@@ -24,26 +22,25 @@ public class SaveGameLoader : MonoBehaviour
         
     }
 
+    public void ChangeSceneNormal(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void ChangeSceneNew(string sceneName)
     {
         IsSceneLoading = true;
+        LoadingOverlay.SetActive(true);
 
         StartCoroutine(LoadInBackground(sceneName));
-
-        Open1.GetComponentInChildren<Text>().text = "Loading....";
-        Open1.GetComponent<Button>().interactable = false;
-        Open2.GetComponent<Button>().interactable = false;
     }
 
     public void ChangeSceneLoad(string sceneName)
     {
         IsSceneLoading = true;
+        LoadingOverlay.SetActive(true);
 
         StartCoroutine(LoadInBackground(sceneName));
-
-        Open2.GetComponentInChildren<Text>().text = "Loading....";
-        Open1.GetComponent<Button>().interactable = false;
-        Open2.GetComponent<Button>().interactable = false;
 
         LoadSaveGame = true;
     }
