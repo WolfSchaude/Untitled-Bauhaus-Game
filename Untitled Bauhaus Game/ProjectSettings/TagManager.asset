@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Roads
+    uniqueID: 1454079637
+    locked: 0
