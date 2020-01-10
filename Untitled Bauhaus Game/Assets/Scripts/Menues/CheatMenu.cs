@@ -8,6 +8,8 @@ public class CheatMenu : MonoBehaviour
 {
 	public GameObject CheatMenuWindow;
 
+	public GameObject Playervariables;
+
 	public Toggle bauzeitToggle;
 	private bool bauzeitCheater = false;
     void Start()
@@ -65,29 +67,29 @@ public class CheatMenu : MonoBehaviour
 
 	public void AnsehenPlus()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().Ansehen++;
+		Playervariables.GetComponent<AnsehenScript>().Ansehen++;
 	}
 	public void AnsehenMinus()
 	{
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().Ansehen--;
+		Playervariables.GetComponent<AnsehenScript>().Ansehen--;
 	}
 
 	public void StudentenPlus()
 	{
 		GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität += 100;
-		GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
+		Playervariables.GetComponent<Studenten>().StudentenAnzahl = GameObject.Find("EventSystem").GetComponent<StudentenKapazitaet>().studKapazität;
 	}
 	public void StudentenMinus()
 	{
-		GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl -= 100;
+		Playervariables.GetComponent<Studenten>().StudentenAnzahl -= 100;
 	}
 	public void PolitikPlus()
 	{
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += 10;
+		Playervariables.GetComponent<Politikmeter>().Politiklevel += 10;
 	}
 	public void PolitikMinus()
 	{
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel -= 10;
+		Playervariables.GetComponent<Politikmeter>().Politiklevel -= 10;
 	}
 
 	public void cheatExponat()

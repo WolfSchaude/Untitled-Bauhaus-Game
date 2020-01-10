@@ -7,10 +7,11 @@ using UntitledBauhausGame;
 
 public class WinLose : MonoBehaviour
 {
+	public GameObject PlayerVariables;
 
-	public Politikmeter politikmeterSkript;
-	public Money moneySkript;
-	public Studenten studentenSkript;
+	private Politikmeter politikmeterSkript;
+	private Money moneySkript;
+	private Studenten studentenSkript;
 
 	public GameObject GameOverScreen;
 
@@ -21,9 +22,9 @@ public class WinLose : MonoBehaviour
 
 	void Start()
     {
-		politikmeterSkript = GameObject.Find("Politikmeter").GetComponent<Politikmeter>();
-		moneySkript = GameObject.Find("Money Display").GetComponent<Money>();
-		studentenSkript = GameObject.Find("Studenten Counter").GetComponent<Studenten>();
+		politikmeterSkript = PlayerVariables.GetComponent<Politikmeter>();
+		moneySkript = PlayerVariables.GetComponent<Money>();
+		studentenSkript = PlayerVariables.GetComponent<Studenten>();
 		GameOverScreen.SetActive(false);
 	}
 

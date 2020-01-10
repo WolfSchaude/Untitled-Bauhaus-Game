@@ -7,7 +7,7 @@ public class Teacher_Memory : MonoBehaviour
 {
     public GameObject Parent;
     public GameObject Ticker;
-
+    public GameObject Playervariables;
     public GameObject EventSystem;
 
     public Teacher Memory;
@@ -31,11 +31,12 @@ public class Teacher_Memory : MonoBehaviour
     {
     }
 
-    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker)
+    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats)
     {
         Memory = teacher;
         Parent = parent;
         Ticker = ticker;
+        Playervariables = PlayerStats;
 
         Name = Memory.Name;
 
@@ -45,9 +46,9 @@ public class Teacher_Memory : MonoBehaviour
 
         EventSystem = GameObject.Find("EventSystem");
 
-        GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
+        Playervariables.GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });
 
-        var x = GameObject.Find("Datum").GetComponent<NewTimeKeeper>();
+        var x = Playervariables.GetComponent<NewTimeKeeper>();
 
         var TagBuffer = x.CurrentDay;
         var MonatBuffer = x.CurrentMonth;
@@ -65,9 +66,7 @@ public class Teacher_Memory : MonoBehaviour
     {
         var x = gameObject;
 
-		//for (int i = 0; i < TeacherLoader.tb.Buffer.Count; i++)
-		//	GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(TeacherLoader.tb.Buffer[i].Einstellungskosten);
-		GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(1500);
+		Playervariables.GetComponent<Money>().Bezahlen(1500);
 
 
 		x.transform.SetParent(Parent.transform, true);
@@ -93,7 +92,7 @@ public class Teacher_Memory : MonoBehaviour
         {
             gameObject.SetActive(true);
 
-            GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.RemoveListener(() => { DecreaseTimerCounter(); });
+            Playervariables.GetComponent<NewTimeKeeper>().NewDay.RemoveListener(() => { DecreaseTimerCounter(); });
         }
     }
 }

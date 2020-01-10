@@ -12,6 +12,8 @@ public class TeacherScript : MonoBehaviour
 	public GameObject parent;
 	public GameObject hiredParent;
 	public GameObject Ticker;
+	public GameObject EventSystem;
+	public GameObject Playervariables;
 
 	public static List<GameObject> Bewerbungen = new List<GameObject>();
 	public static List<GameObject> Eingestellte = new List<GameObject>();
@@ -26,7 +28,7 @@ public class TeacherScript : MonoBehaviour
 		{
 			var x = Instantiate(prefab, parent.transform);
 
-			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, Ticker);
+			x.GetComponent<Teacher_Memory>().SetMemory(TeacherLoader.tb.Buffer[i], hiredParent, Ticker, Playervariables);
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + TeacherLoader.tb.Buffer[i].Geburtsdatum + Environment.NewLine + "Fachgebiete: " + TeacherLoader.tb.Buffer[i].Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + TeacherLoader.tb.Buffer[i].Name;
 			x.GetComponentsInChildren<Text>()[2].text = "EInstellungskosten: " + TeacherLoader.tb.Buffer[i].Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + TeacherLoader.tb.Buffer[i].FortlaufendeKosten;
@@ -34,6 +36,32 @@ public class TeacherScript : MonoBehaviour
 
 			Bewerbungen.Add(x);
 		}
+	}
+
+	public void GenerateHiredTeachers()
+	{
+		var y = EventSystem.GetComponent<TeacherLoader>().HiredTeachers;
+
+		foreach (var hired in y)
+		{
+			if (hired.Hired)
+			{
+				var x = Instantiate(prefab, hiredParent.transform);
+
+				x.GetComponent<Teacher_Memory>().SetMemory(hired, hiredParent, Ticker, Playervariables);
+				x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + hired.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + hired.Interessen;
+				x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + hired.Name;
+				x.GetComponentsInChildren<Text>()[2].text = "";
+				x.GetComponentsInChildren<Text>()[3].text = "";
+				x.GetComponentsInChildren<Image>()[1].sprite = hired.Picture;
+				x.GetComponent<Button>().interactable = false;
+				x.transform.GetChild(5).gameObject.SetActive(true);
+
+				Eingestellte.Add(x);
+			}
+		}
+
+
 	}
 
 	void Update()
@@ -52,7 +80,7 @@ public class TeacherScript : MonoBehaviour
 		if (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter > 0)
 		{
 			milch = TeacherLoader.tb.Buffer[1].FortlaufendeKosten * GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter;
-			GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(milch);
+			Playervariables.GetComponent<Money>().Bezahlen(milch);
 			GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Gehälter in Höhe von " + milch + " RM bezahlt.");
 		}
 	}

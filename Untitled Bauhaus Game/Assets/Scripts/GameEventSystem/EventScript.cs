@@ -12,9 +12,10 @@ public class EventScript : MonoBehaviour
 	public GameObject parent;
 
 	public GameObject UIToBlendIn;
+	public GameObject Playervariables;
 
 	public static List<GameObject> AllEvents;
-	public GameObject ThatOneRandomEvent;
+	private GameObject ThatOneRandomEvent;
 
 	public Text AnzahlEvents;
 
@@ -36,7 +37,7 @@ public class EventScript : MonoBehaviour
 			{
 				var x = Instantiate(prefab, parent.transform);
 
-				x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+				x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables);
 				x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
 				x.GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
@@ -108,7 +109,7 @@ public class EventScript : MonoBehaviour
 			{
 				AllEvents.Add(Instantiate(prefab, parent.transform));
 
-				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i]);
+				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables);
 				AllEvents[i].GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
 				AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
@@ -138,7 +139,7 @@ public class EventScript : MonoBehaviour
 
 		var rand = UnityEngine.Random.Range(0, EventLoader.rec.RandomEvents.Count);
 
-		x.GetComponent<RandomEvent_Memory>().SetMemory(EventLoader.rec.RandomEvents[rand]);
+		x.GetComponent<RandomEvent_Memory>().SetMemory(EventLoader.rec.RandomEvents[rand], Playervariables);
 
 		x.GetComponent<RandomEvent_Memory>().FeedbackTicker = FeedbackTicker;
 

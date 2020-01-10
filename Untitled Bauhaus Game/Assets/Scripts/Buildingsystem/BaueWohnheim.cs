@@ -23,6 +23,8 @@ public class BaueWohnheim : MonoBehaviour
     public GameObject heim2;
     public GameObject heim3;
 
+    public GameObject Playervariables;
+
     public bool buildInProgress = false;
 	public bool teacherAssigned = false;
 
@@ -94,9 +96,9 @@ public class BaueWohnheim : MonoBehaviour
             switch (AnzahlWohnheime)
             {
                 case 0:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisW)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim1.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //heim1.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
@@ -107,9 +109,9 @@ public class BaueWohnheim : MonoBehaviour
                     }
                     break;
                 case 1:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisW)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim2.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //heim2.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);
@@ -120,9 +122,9 @@ public class BaueWohnheim : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisW)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisW)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisW);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisW);
                         //heim3.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //heim3.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlWohnheime * 0.05f), 1.5f);

@@ -11,7 +11,7 @@ public class FeedbackHighlighting : MonoBehaviour
 
     void Start()
     {
-        GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => Increment());
+        GameObject.Find("PlayerVariables").GetComponent<NewTimeKeeper>().NewDay.AddListener(() => Increment());
     }
 
     // Update is called once per frame

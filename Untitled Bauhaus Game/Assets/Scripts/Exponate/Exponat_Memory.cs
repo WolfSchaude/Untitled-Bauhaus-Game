@@ -7,8 +7,9 @@ public class Exponat_Memory : MonoBehaviour
 {
 	public float Qualitaet;
 	public GameObject FeedbackTicker;
+	public GameObject Playervariables;
 
-    void Start()
+	void Start()
     {
         
     }
@@ -27,11 +28,11 @@ public class Exponat_Memory : MonoBehaviour
 		//	FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
 		//}
 
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(1); //Ansehen +
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(1); //Ansehen +
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
 
 		var i = 15000 * Qualitaet;
-		GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
+		Playervariables.GetComponent<Money>().Spende(i);
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i.ToString("0") + " RM eingebracht.");
 	}
 }

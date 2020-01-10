@@ -5,29 +5,21 @@ using UnityEngine.UI;
 
 public class RandomEvent_Memory : MonoBehaviour
 {
-	public int Politik1 = 0;
-	public int Politik2 = 0;
-	public int Ansehen1 = 0;
-	public int Ansehen2 = 0;
-	public int Geld1 = 0;
-	public int Geld2 = 0;
-	public string Effect1 = "";
-	public string Effect2 = "";
-
 	public int Vorlauf = 90;
 
 	public int TimerCounter = 0;
 
 	public Text Timer;
 
-	public RandomEvent Memory;
+	[SerializeField] public RandomEvent Memory;
 
-	public bool IsFinished = false;
+	[SerializeField] public bool IsFinished = false;
 
-	public bool SelectedOption1 = false;
-	public bool SelectedOption2 = false;
+	[SerializeField] private bool SelectedOption1 = false;
+	[SerializeField] private bool SelectedOption2 = false;
 
 	public GameObject FeedbackTicker;
+	public GameObject Playervariables;
 
 	public Button Option1;
 	public Button Option2;
@@ -37,7 +29,6 @@ public class RandomEvent_Memory : MonoBehaviour
 
 	void Start()
     {
-		Memory = new RandomEvent();
     }
 
     // Update is called once per frame
@@ -71,20 +62,13 @@ public class RandomEvent_Memory : MonoBehaviour
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
-    public void SetMemory(RandomEvent rev)
+    public void SetMemory(RandomEvent rev, GameObject PlayerStats)
     {
+		Playervariables = PlayerStats;
+
 		Memory = rev;
 
-		Politik1 = Memory.Option1_Politik;
-		Politik2 = Memory.Option2_Politik;
-		Ansehen1 = Memory.Option1_Ansehen;
-		Ansehen2 = Memory.Option2_Ansehen;
-		Geld1 = Memory.Option1_Geld;
-		Geld2 = Memory.Option2_Geld;
-		Effect1 = Memory.Option1_EffectTicker;
-		Effect2 = Memory.Option2_EffectTicker;
-
-		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
+		GameObject.Find("PlayerVariables").GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });
 
 		TimerCounter = Random.Range(90, 180);
 
@@ -122,91 +106,30 @@ public class RandomEvent_Memory : MonoBehaviour
 	}
 	private void EventEffect1()
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen1);
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld1);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option1_Ansehen);
+		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option1_Politik;
+		Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect1);
-
-		/*
-		if (Ansehen1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verbessert.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verschlechtert.");
-		}
-
-		if (Politik1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 + " nach rechts verschoben.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 + " nach links verschoben.");
-		}
-
-		if (Geld1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1 + " RM eingebracht.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld1 * -1 + " RM verloren.");
-		}
-		*/
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option1_EffectTicker);
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	private void EventEffect2()
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen2);
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
+		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option2_Politik;
+		Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect2);
-
-		/*
-		if (Ansehen2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verbessert.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verschlechtert.");
-		}
-
-		if (Politik2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 + " nach rechts verschoben.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 + " nach links verschoben.");
-		}
-
-		if (Geld2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + " RM eingebracht.");
-		}
-		else
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld2 * -1 + " RM verloren.");
-		}
-		*/
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	public void TooLate() //To Apologize
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value -= 5;
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(-50000);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
+		Playervariables.GetComponent<Money>().Geld(-50000);
 	}
 
 	public void DecreaseTimerCounter()

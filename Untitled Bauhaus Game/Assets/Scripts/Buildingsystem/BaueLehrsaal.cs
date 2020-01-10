@@ -28,6 +28,7 @@ public class BaueLehrsaal : MonoBehaviour
     public GameObject lehr7;
     //public GameObject lehr8;
 
+    public GameObject Playervariables;
     public bool buildInProgress = false;
 
     void Start()
@@ -136,9 +137,9 @@ public class BaueLehrsaal : MonoBehaviour
             switch (AnzahlLehrsaal)
             {
                 case 0:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                         //lehr1.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr1.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -149,9 +150,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 1:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                         //lehr2.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                        // lehr2.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -162,9 +163,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                         //lehr3.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr3.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -175,9 +176,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 3:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                        // lehr4.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr4.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -188,9 +189,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 4:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                         //lehr5.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr5.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -201,9 +202,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 5:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                        // lehr6.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr6.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
@@ -214,9 +215,9 @@ public class BaueLehrsaal : MonoBehaviour
                     }
                     break;
                 case 6:
-                    if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreisL)
+                    if (Playervariables.GetComponent<Money>().money >= AktPreisL)
                     {
-                        GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreisL);
+                        Playervariables.GetComponent<Money>().Bezahlen(AktPreisL);
                         //lehr7.transform.position = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 0];
                         //lehr7.transform.localScale = StilNum0Pos1Scal[BauStil, BauStilePosnum[BauStil], 1];
                         Qualität = Random.Range(0.5f + (AnzahlLehrsaal * 0.05f), 1.5f);
