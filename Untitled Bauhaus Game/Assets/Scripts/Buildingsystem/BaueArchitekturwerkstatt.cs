@@ -221,4 +221,123 @@ public class BaueArchitekturwerkstatt : MonoBehaviour
 			}
 		}
 	}
+
+	public List<int> SaveBuildings()
+	{
+		List<int> SaveBuildingsList = new List<int>();
+
+		SaveBuildingsList.Add(werk1.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk2.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk3.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk4.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk5.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk6.GetComponent<Werkstatt>().WerkstattTypInt);
+		SaveBuildingsList.Add(werk7.GetComponent<Werkstatt>().WerkstattTypInt);
+
+		GameObject.Find("UI").GetComponent<BaueWohnheim>().SaveBuildings(SaveBuildingsList);
+		GameObject.Find("UI").GetComponent<BaueLehrsaal>().SaveBuildings(SaveBuildingsList);
+
+
+		return SaveBuildingsList;
+	}
+
+	public bool LoadBuildings(List<int> LoadBuildingsList)
+	{
+		GameObject Temp = new GameObject();
+
+		for (int i = 0; i < LoadBuildingsList.Count; i++)
+		{
+			switch (i)
+			{
+				case 0:
+					Temp = werk1;
+					break;
+				case 1:
+					Temp = werk2;
+					break;
+				case 2:
+					Temp = werk3;
+					break;
+				case 3:
+					Temp = werk4;
+					break;
+				case 4:
+					Temp = werk5;
+					break;
+				case 5:
+					Temp = werk6;
+					break;
+				case 6:
+					Temp = werk7;
+					break;
+				case 7:
+					Temp = GameObject.Find("UI").GetComponent<BaueWohnheim>().heim1;
+					break;
+				case 8:
+					Temp = GameObject.Find("UI").GetComponent<BaueWohnheim>().heim2;
+					break;
+				case 9:
+					Temp = GameObject.Find("UI").GetComponent<BaueWohnheim>().heim3;
+					break;
+				case 10:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr1;
+					break;
+				case 11:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr2;
+					break;
+				case 12:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr3;
+					break;
+				case 13:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr4;
+					break;
+				case 14:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr5;
+					break;
+				case 15:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr6;
+					break;
+				case 16:
+					Temp = GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehr7;
+					break;
+				default:
+					return false;
+			}
+
+			switch (LoadBuildingsList[i])
+			{
+				case 0:
+					Temp.SetActive(false);
+					break;
+				case 1:
+					Temp.GetComponent<Werkstatt>().WerkstattTypInt = 1;
+					Temp.GetComponent<Werkstatt>().SetType(1);
+					break;
+				case 2:
+					Temp.GetComponent<Werkstatt>().WerkstattTypInt = 2;
+					Temp.GetComponent<Werkstatt>().SetType(2);
+					break;
+				case 3:
+					Temp.GetComponent<Werkstatt>().WerkstattTypInt = 3;
+					Temp.GetComponent<Werkstatt>().SetType(3);
+					break;
+				case 4:
+					Temp.GetComponent<Werkstatt>().WerkstattTypInt = 4;
+					Temp.GetComponent<Werkstatt>().SetType(4);
+					break;
+				case 5:
+					Temp.GetComponent<Werkstatt>().WerkstattTypInt = 5;
+					Temp.GetComponent<Werkstatt>().SetType(5);
+					break;
+				case 6:
+					Temp.SetActive(true);
+					break;
+				case 7:
+					Temp.SetActive(true);
+					break;
+			}
+		}
+
+		return true;
+	}
 }

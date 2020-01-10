@@ -10,10 +10,12 @@ public class Werkstatt : MonoBehaviour
     public bool IstEinemDozentenZugewiesen;
 
     public int DebugWST;
+    public int WerkstattTypInt;
 
     void Start()
     {
         IstEinemDozentenZugewiesen = false;
+        WerkstattTypInt = 0;
         //Debug.Log("when you see this, then everything is alright with this workshop ^^");
     }
 
@@ -38,5 +40,7 @@ public class Werkstatt : MonoBehaviour
                 EigenerTyp = WerkstattTyp.Tischlerei;
                 break;
         }
+
+        WerkstattTypInt = Typ;
     }
 }
