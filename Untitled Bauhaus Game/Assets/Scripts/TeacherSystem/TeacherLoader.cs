@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TeacherLoader : MonoBehaviour
 {
+	public GameObject SaveGameKeeper;
+
 	private const string path = "XML_Files/LehrerTestList";
 	public static TeacherBuffer tb;
 
@@ -22,23 +24,23 @@ public class TeacherLoader : MonoBehaviour
 		HiredTeachers = tb.Buffer;
 	}
 
-	public void AddTeacher(Teacher teacher)
+	public void Save()
 	{
-		HiredTeachers.Add(teacher);
+		var x = new List<bool>();
+		foreach (var item in HiredTeachers)
+		{
+			x.Add(item.Hired);
+		}
+
+		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.IsTeacherHired = x;
+		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[5] = true;
 	}
 
-	public void RemoveTeacher(Teacher teacher)
+	public void Load(Save save)
 	{
-		HiredTeachers.Remove(HiredTeachers.Find(i => i.Equals(teacher)));
-	}
-
-	public Teacher GetTeacher(int index)
-	{
-		return HiredTeachers[index];
-	}
-
-	public Teacher GetBufferTeacher(int index)
-	{
-		return tb.Buffer[index];
+		for (int i = 0; i < save.IsTeacherHired.Count; i++)
+		{
+			HiredTeachers[i].Hired = save.IsTeacherHired[i];
+		}
 	}
 }

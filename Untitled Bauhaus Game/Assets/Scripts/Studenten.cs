@@ -13,6 +13,7 @@ public class Studenten : MonoBehaviour
     public Text studDisplay;
 
     public GameObject SaveGameKeeper;
+    public GameObject FeedbackTicker;
 
     void Start()
     {
@@ -32,13 +33,9 @@ public class Studenten : MonoBehaviour
 
     public void addStudenten()
     {
-        //sliderPercentage = ((GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value / GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.maxValue) * 100);
+        monthlyStudenten = Mathf.RoundToInt(5f * Mathf.Sqrt(gameObject.GetComponent<AnsehenScript>().Ansehen * Mathf.PI)) * 5;
 
-        //monthlyStudenten = 5f * sliderPercentage;
-
-        monthlyStudenten = Mathf.RoundToInt(5f * Mathf.Sqrt(GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().Ansehen * Mathf.PI)) * 5;
-
-		GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
 
 		StudentenAnzahl += monthlyStudenten;
 
@@ -55,6 +52,5 @@ public class Studenten : MonoBehaviour
     public void Load(Save save)
     {
         StudentenAnzahl = save.StudentenAnzahl;
-        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[4] = true;
     }
 }

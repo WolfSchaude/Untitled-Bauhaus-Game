@@ -11,6 +11,8 @@ public class Money : MonoBehaviour
     */
 	public GameObject SaveGameKeeper;
 
+	public FeedbackScript Feedback;
+
     public float money = 200000;
 	private float oldMoney = 0;
 	private float preCheatMoney = 0;
@@ -38,8 +40,8 @@ public class Money : MonoBehaviour
     public void addGehalt() //Monatliches Gehalt abhängig von der Studentenanzahl und dem Politikmeter
     {
 			oldMoney = money;
-			money += (GameObject.Find("Studenten Counter").GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel / 100);
-			GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
+			money += (gameObject.GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)gameObject.GetComponent<Politikmeter>().Politiklevel / 100);
+			Feedback.NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
 	}
 
 	public void Spende(float spende)

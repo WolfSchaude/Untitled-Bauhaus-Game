@@ -5,37 +5,27 @@ using UnityEngine.UI;
 
 public class Event_Memory : MonoBehaviour
 {
-	public int Politik1					= 0;
-	public int Politik2					= 0;
-	public int Ansehen1					= 0;
-	public int Ansehen2					= 0;
-	public int Geld1					= 0;
-	public int Geld2					= 0;
-	public string Effect1				= "";
-	public string Effect2				= "";
+	public int Vorlauf = 90;
 
-	public int Vorlauf					= 90;
-
-	public int Datum_Tag				= 0;
-	public int Datum_Monat				= 0;
-	public int Datum_Jahr				= 0;
-	
-	public int TimerCounter				= 0;
+	public int TimerCounter = 0;
 
 	public Text Timer;
 
 	public Event Memory;
 
-	public bool IsFinished				= false;
+	[SerializeField] private bool IsFinished				= false;
 
-	public bool SelectedOption1			= false;
-	public bool SelectedOption2			= false;
+	[SerializeField] private bool SelectedOption1			= false;
+	[SerializeField] private bool SelectedOption2			= false;
 
-	public bool ExponateCounterStartet	= false;
-	public int ExponateCounter			= 0;
-	public int ExponateNeeded			= 0;
+	[SerializeField] private bool ExponateCounterStartet	= false;
+
+	[SerializeField] private int ExponateCounter			= 0;
+	[SerializeField] private int ExponateNeeded				= 0;
 
 	public GameObject FeedbackTicker;
+	public GameObject Playervariables;
+
 
 	public Button Option1;
 	public Button Option2;
@@ -99,37 +89,26 @@ public class Event_Memory : MonoBehaviour
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
-	public void SetMemory(Event ev)
+	public void SetMemory(Event ev, GameObject PlayerStats)
 	{
+		Playervariables = PlayerStats;
+
 		Memory = ev;
 
-		Politik1 = Memory.Option1_Politik;
-		Politik2 = Memory.Option2_Politik;
-		Ansehen1 = Memory.Option1_Ansehen;
-		Ansehen2 = Memory.Option2_Ansehen;
-		Geld1 = Memory.Option1_Geld;
-		Geld2 = Memory.Option2_Geld;
-		Effect1 = Memory.Option1_EffectTicker;
-		Effect2 = Memory.Option2_EffectTicker;
+		var x = GameObject.Find("PlayerVariables").GetComponent<NewTimeKeeper>();
 
-		Datum_Tag = Memory.Event_Tag;
-		Datum_Monat = Memory.Event_Monat;
-		Datum_Jahr = Memory.Event_Jahr;
-
-		GameObject.Find("EventSystem").GetComponent<DatumRelatedEvents>().changedDay.AddListener(() => { DecreaseTimerCounter(); });
-
-		var x = GameObject.Find("Datum").GetComponent<NewTimeKeeper>();
+		x.NewDay.AddListener(() => { DecreaseTimerCounter(); });
 
 		var TagBuffer = x.CurrentDay;
 		var MonatBuffer = x.CurrentMonth;
 		var JahrBuffer = x.CurrentYear;
 
-		TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
+		TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
 		
 		//Wenn ein spezielles Einblenddatum gegeben ist, wird das berechnet, ansonsten werden 90 Tage verwendet 
 		if (Memory.Einblenden_Ab_Tag != 0 && ( Memory.Einblenden_Ab_Monat != 0 && Memory.Einblenden_Ab_Jahr != 0))
 		{
-			Vorlauf = NewTimeKeeper.BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Datum_Tag, Datum_Monat, Datum_Jahr);
+			Vorlauf = NewTimeKeeper.BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
 		}
 		else
 		{
@@ -179,117 +158,33 @@ public class Event_Memory : MonoBehaviour
 	}
 	private void EventEffect1()
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen1;
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen1);
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik1;
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld1);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option1_Ansehen);
+		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option1_Politik;
+		Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect1);
-
-		/*
-		if (Ansehen1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 + " verbessert.");
-		}
-		else
-		{
-			if (Ansehen1 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen1 * -1 + " verschlechtert.");
-			}
-		}
-
-		if (Politik1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 + " nach rechts verschoben.");
-		}
-		else
-		{
-			if (Politik1 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik1 * -1 + " nach links verschoben.");
-			}
-		}
-
-		if (Geld1 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld1  + " RM eingebracht.");
-		}
-		else
-		{
-			if (Geld1 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld1 * -1 + " RM verloren.");
-			}
-		}
-		*/
+		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option1_EffectTicker);
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	private void EventEffect2()
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value += Ansehen2;
-		//GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Ansehen2);
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
-		//GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Politik2;
-		GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel += Memory.Option2_Politik;
-		//GameObject.Find("Money Display").GetComponent<Money>().Geld(Geld2);
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(Memory.Option2_Geld);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
+		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option2_Politik;
+		Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);
 
-		//FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Effect2);
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
-
-		/*
-		if (Ansehen2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 + " verbessert.");
-		}
-		else
-		{
-			if (Ansehen2 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dein Ansehen um " + Ansehen2 * -1 + " verschlechtert.");
-			}
-		}
-
-		if (Politik2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 + " nach rechts verschoben.");
-		}
-		else
-		{
-			if (Politik2 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat deine politische Position des Bauhaus um " + Politik2 * -1 + " nach links verschoben.");
-			}
-		}
-
-		if (Geld2 > 0)
-		{
-			FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event hat dir " + Geld2 + " RM eingebracht.");
-		}
-		else
-		{
-			if (Geld2 < 0)
-			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das Event hast du " + Geld2 * -1 + " RM verloren.");
-			}
-		}
-		*/
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
 	public void TooLate() //To Apologize
 	{
-		//GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value -= 5;
-
-		GameObject.Find("AnsehenCounter").GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
+		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
 
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Das Event zu verpassen hat dein Ansehen um 5 verschlechtert.");
 
-		GameObject.Find("Money Display").GetComponent<Money>().Geld(-5000);
+		Playervariables.GetComponent<Money>().Geld(-5000);
 
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Durch das verpasste Event hast du 5000 RM verloren.");
 	}

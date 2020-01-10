@@ -2,11 +2,16 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class NewTimeKeeper : MonoBehaviour
 {
     public GameObject FastForwardScriptObject;
     public GameObject SaveGameKeeper;
+
+    public UnityEvent NewDay;
+    public UnityEvent NewMonth;
+    public UnityEvent NewYear;
 
     public int StartDay = 20;
     public int StartMonth = 11;
@@ -78,22 +83,30 @@ public class NewTimeKeeper : MonoBehaviour
                 {
                     CurrentDay = 1;
                     CurrentMonth++;
+                    NewMonth.Invoke();
                 }
                 else
                 {
                     CurrentDay++;
                 }
+
+                NewDay.Invoke();
+
                 break;
             case 30:
                 if (CurrentMonth == 4 || CurrentMonth == 6 || CurrentMonth == 9 || CurrentMonth == 11)
                 {
                     CurrentDay = 1;
                     CurrentMonth++;
+                    NewMonth.Invoke();
                 }
                 else
                 {
                     CurrentDay++;
                 }
+
+                NewDay.Invoke();
+
                 break;
             case 31:
                 CurrentDay = 1;
@@ -102,14 +115,21 @@ public class NewTimeKeeper : MonoBehaviour
                 {
                     CurrentMonth = 1;
                     CurrentYear++;
+                    NewYear.Invoke();
                 }
                 else
                 {
                     CurrentMonth++;
                 }
+
+                NewMonth.Invoke();
+                NewDay.Invoke();
+
                 break;
             default:
                 CurrentDay++;
+
+                NewDay.Invoke();
                 break;
         }
     }

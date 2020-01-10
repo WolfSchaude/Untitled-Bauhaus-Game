@@ -21,6 +21,8 @@ public class BaueMalerei : MonoBehaviour
 	public GameObject werk6;
 	public GameObject werk7;
 
+	public GameObject Playervariables;
+
 	public bool buildInProgress = false;
 
 	void Start()
@@ -99,12 +101,12 @@ public class BaueMalerei : MonoBehaviour
 	{
 		if (!buildInProgress)
 		{
-			if (GameObject.Find("Money Display").GetComponent<Money>().money >= AktPreis)
+			if (Playervariables.GetComponent<Money>().money >= AktPreis)
 			{
 				switch (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil])
 				{
 					case 0:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk1.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk1.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -115,7 +117,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 1:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk2.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk2.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -126,7 +128,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 2:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk3.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk3.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -137,7 +139,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 3:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk4.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk4.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -148,7 +150,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 4:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk5.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk5.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -159,7 +161,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 5:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk6.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk6.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);
@@ -170,7 +172,7 @@ public class BaueMalerei : MonoBehaviour
 						break;
 
 					case 6:
-						GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(AktPreis);
+						Playervariables.GetComponent<Money>().Bezahlen(AktPreis);
 						//werk7.transform.position = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 0];
 						//werk7.transform.localScale = GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().StilNum0Pos1Scal[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil, GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStilePosnum[GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().BauStil], 1];
 						Qualität = Random.Range(0.5f + (GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette * 0.05f), 1.5f);

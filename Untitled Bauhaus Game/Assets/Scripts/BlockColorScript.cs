@@ -4,35 +4,32 @@ using UnityEngine;
 
 public class BlockColorScript : MonoBehaviour
 {
-	public int PolitiklevelScript;
+	public Politikmeter PolitikmeterScript;
 
 	private float ColorLerp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
 	}
 
     // Update is called once per frame
     void Update()
     {
-		PolitiklevelScript = GameObject.Find("Politikmeter").GetComponent<Politikmeter>().Politiklevel;
-
-		ColorLerp = (float)(PolitiklevelScript/2)/100;
+		ColorLerp = (float)(PolitikmeterScript.Politiklevel / 2)/100;
 
 		//GetComponent<MeshRenderer>().material.color = Color.Lerp(new Color(62, 42, 20), Color.red, ColorLerp);
 
-		if (PolitiklevelScript > 0 && PolitiklevelScript < 100)
+		if (PolitikmeterScript.Politiklevel > 0 && PolitikmeterScript.Politiklevel < 100)
 		{
 			GetComponent<MeshRenderer>().material.color = Color.Lerp(Color.red, Color.white, ColorLerp*2);
 		}
-		if(PolitiklevelScript == 0)
+		if(PolitikmeterScript.Politiklevel == 0)
 		{
 			GetComponent<MeshRenderer>().material.color = Color.white;
 		}
 
-		if (PolitiklevelScript > 100 && PolitiklevelScript <= 200)
+		if (PolitikmeterScript.Politiklevel > 100 && PolitikmeterScript.Politiklevel <= 200)
 		{
 			GetComponent<MeshRenderer>().material.color = Color.Lerp(Color.white, new Color32(108, 71, 15, 255), (ColorLerp - 0.5f)*2);
 		}

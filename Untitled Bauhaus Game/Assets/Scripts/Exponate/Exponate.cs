@@ -7,8 +7,10 @@ using UnityEngine.Events;
 public class Exponate : MonoBehaviour
 {
 	public GameObject FeedbackTicker;
+    public GameObject Playervariables;
 
-	public UnityEvent exponatDone;
+
+    public UnityEvent exponatDone;
     public Slider expoSlider;
     public Text expoText;
 
@@ -53,12 +55,12 @@ public class Exponate : MonoBehaviour
 
     public void checkForButtonPress() //Herstellung mit Button
     {
-        if (GameObject.Find("Money Display").GetComponent<Money>().money > expoPrice) //Exponate können nur hergestellt werden, wenn man das benötigte Geld dafür hat.
+        if (Playervariables.GetComponent<Money>().money > expoPrice) //Exponate können nur hergestellt werden, wenn man das benötigte Geld dafür hat.
         {
             if (exponatCreateTimer == expoSlider.minValue)
             {
                 expoText.text = "Wird hergestellt...\n -Klicken zum abbrechen-";
-                GameObject.Find("Money Display").GetComponent<Money>().Bezahlen(expoPrice);
+                Playervariables.GetComponent<Money>().Bezahlen(expoPrice);
                 exponatInProgress = true;
             }
         }
