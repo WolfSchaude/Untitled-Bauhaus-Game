@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject Open1;
     public GameObject Open2;
 
+    bool Opened = false;
     public void Quit()
     {
         Application.Quit();
@@ -27,6 +28,24 @@ public class MainMenu : MonoBehaviour
     public void ChangeSceneNormal(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ToggleSecondaryMenu()
+    {
+        if (Opened)
+        {
+            Open1.SetActive(false);
+            Open2.SetActive(false);
+
+            Opened = false;
+        }
+        else
+        {
+            Open1.SetActive(true);
+            Open2.SetActive(true);
+
+            Opened = true;
+        }
     }
 
     public void OpenSecondaryMenu()

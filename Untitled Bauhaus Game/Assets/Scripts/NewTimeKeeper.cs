@@ -170,6 +170,7 @@ public class NewTimeKeeper : MonoBehaviour
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMonth = CurrentMonth;
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentYear = CurrentYear;
 
+        Debug.Log("Setting WhoHasSaved 0 to true");
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[0] = true;
     }
 

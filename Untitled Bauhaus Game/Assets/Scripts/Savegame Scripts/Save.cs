@@ -19,7 +19,6 @@ public class Save
 	public bool[] IsTeacherHired;
 
 	//public List<int> BuiltBuildingParts = new List<int>();
-	//public List<bool> IsTeacherHired = new List<bool>();
 	//public List<int> WhereIsTeacherHired = new List<int>();
 	//public List<Exponat_Memory> ExponatesInInventory = new List<Exponat_Memory>();
 	//public List<Event_Memory> CurrentEvents = new List<Event_Memory>();

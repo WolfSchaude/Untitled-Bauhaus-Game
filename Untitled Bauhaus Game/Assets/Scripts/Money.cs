@@ -96,7 +96,7 @@ public class Money : MonoBehaviour
 	public void Save()
 	{
 		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMoney = money;
-
+		Debug.Log("Setting WhoHasSaved 1 to true");
 		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[1] = true;
 	}
 
