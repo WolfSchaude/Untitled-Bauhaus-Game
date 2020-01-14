@@ -29,7 +29,7 @@ public static class SaveLoad {
 		//You can also use any path you like
 		CheckPath(saveGamePath);
 
-		FileStream file = File.Create (saveGamePath + saveGame.savegameName + ".sav"); //you can call it anything you want including the file extension
+		FileStream file = File.Create (saveGamePath + saveGame.savegameName + ".ubsg"); //you can call it anything you want including the file extension
 		bf.Serialize(file, saveGame);
 		file.Close();
 		Debug.Log("Saved Game: " + saveGame.savegameName);
@@ -37,7 +37,7 @@ public static class SaveLoad {
 	}	
 	
 	public static SaveGame Load(string gameToLoad) {
-		if(File.Exists(saveGamePath + gameToLoad + ".sav")) {
+		if(File.Exists(saveGamePath + gameToLoad + ".ubsg")) {
 
 			BinaryFormatter bf = new BinaryFormatter();
 			// 1. Construct a SurrogateSelector object
@@ -47,8 +47,8 @@ public static class SaveLoad {
 			// 3. Have the formatter use our surrogate selector
 			bf.SurrogateSelector = ss;
 			
-			FileStream file = File.Open(saveGamePath + gameToLoad + ".sav", FileMode.Open);
-			SaveGame loadedGame = (SaveGame)bf.Deserialize(file);
+			FileStream file = File.Open(saveGamePath + gameToLoad + ".ubsg", FileMode.Open);
+			SaveGame loadedGame = bf.Deserialize(file) as SaveGame;
 			file.Close();
 			Debug.Log("Loaded Game: " + loadedGame.savegameName);
 			return loadedGame;

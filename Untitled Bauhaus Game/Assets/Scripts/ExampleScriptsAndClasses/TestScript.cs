@@ -36,7 +36,6 @@ public class TestScript : MonoBehaviour {
 					testClass_cur.go_id = null;
 				}
 			}
-
 		}
 	}
 
