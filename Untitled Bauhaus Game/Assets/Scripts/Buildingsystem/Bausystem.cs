@@ -11,11 +11,7 @@ public class Bausystem : MonoBehaviour
 
     private List<GameObject> Structures = new List<GameObject>();
 
-    private List<int> BuildedTypes = new List<int>();
-
-    public Vector3[,,,] StructureData; //Baustil, Haupttyp, Anzahl pro Haupttyp, 0/1 Scale/Position
-
-    [SerializeField] private bool SomethingIsBuilded;
+    public bool CheatActive;
 
     public int MaxBuildPipelines;
     public int TypeToBuild;
@@ -54,6 +50,11 @@ public class Bausystem : MonoBehaviour
             StyleToBuild = 0;
             TimeToBuild = 0;
             IsSlotUsed = false;
+        }
+
+        public void NoBuildTimeCheat()
+        {
+            TimeToBuild = 0;
         }
 
         public bool CheckStatus()
@@ -213,7 +214,11 @@ public class Bausystem : MonoBehaviour
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            if (BuildingPipeline[i].CheckStatus() == true)
+            if (CheatActive)
+            {
+                BuildingPipeline[i].NoBuildTimeCheat();
+            }
+            if (BuildingPipeline[i].CheckStatus())
             {
                 BuildStructure(i);
             }
@@ -301,14 +306,10 @@ public class Bausystem : MonoBehaviour
         {
             BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
         }
-
-        Debug.Log(TypeToBuild + " " + MainTypeToBuild + " " + FreePipelineNumber);
     }
 
     public void BuildStructure(int PipelineNumber)
     {
-        Debug.Log("Building...");
-
         int NumberOfStructures = Structures.Count;
 
         List<GameObject> PotentialFreeStructures = new List<GameObject>();
@@ -332,19 +333,20 @@ public class Bausystem : MonoBehaviour
             }
         }
 
-        GameObject LowestFreeStructure = new GameObject();
+        int buffer = 0;
 
         for (int i = 0; i < NumberOfPotentialFreeStructures; i++)
         {
             if (PotentialFreeStructures[i].GetComponent<Struktur>().TypeID == LowestFreeID)
             {
-                LowestFreeStructure = PotentialFreeStructures[i];
+                buffer = i;
                 break;
             }
         }
 
-        LowestFreeStructure.SetActive(true);
-        LowestFreeStructure.GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
+        PotentialFreeStructures[buffer].SetActive(true);
+
+        PotentialFreeStructures[buffer].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
 
         switch (BuildingPipeline[PipelineNumber].MainTypeToBuild)
         {

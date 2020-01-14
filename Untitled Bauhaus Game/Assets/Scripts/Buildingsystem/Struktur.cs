@@ -11,20 +11,11 @@ public class Struktur : MonoBehaviour
     public Type OwnTypeEnum { get; private set; }
 
     public int TypeID;
-    public int OwmStyle;
+    public int OwnStyle;
     public int OwnMainTypeInt;
     public int OwnTypeInt;
 
     public bool IsPlaced { get; private set; }
-
-    void Start()
-    {
-        IsPlaced = false;
-        OwnMainTypeInt = 0;
-        OwnMainTypeEnum = MainType.Undefiniert;
-        OwnTypeInt = 0;
-        OwnTypeEnum = Type.Undefiniert;
-    }
 
     public void Initialise()
     {
@@ -39,10 +30,11 @@ public class Struktur : MonoBehaviour
     public void SetStructure(int MainType, int Type)
     {
         OwnMainTypeInt = MainType;
-        //OwnMainTypeEnum = (MainType)MainType;
+        OwnMainTypeEnum = (MainType)MainType;
 
         OwnTypeInt = Type;
-        //OwnTypeEnum = (Type)Type;
+        OwnTypeEnum = (Type)Type;
+
         IsPlaced = true;
     }
 }

@@ -63,6 +63,8 @@ public class CheatMenu : MonoBehaviour
 			}
 			bauzeitCheater = false;
 		}
+
+		Playervariables.GetComponent<Bausystem>().CheatActive = bauzeitToggle.isOn;
 	}
 
 	public void AnsehenPlus()
