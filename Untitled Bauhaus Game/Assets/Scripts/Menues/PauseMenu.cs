@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject OptionMenu;
 
+    public GameObject SaveGamemanager;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -48,10 +50,9 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
         GamePaused = false;
         Destroy(GameObject.Find("SceneSwitcher"));
-        SceneManager.LoadScene("Main_Menu");
+        StartCoroutine(LoadInBackground("Main_Menu"));
     }
 
     public void ShowOptions()
@@ -74,5 +75,15 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator LoadInBackground(string sceneName)
+    {
+        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!async.isDone && !SaveGamemanager.GetComponent<SaveGameManager>().SavingATM)
+        {
+            yield return null;
+        }
     }
 }

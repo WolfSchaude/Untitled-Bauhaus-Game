@@ -18,9 +18,11 @@ public class SaveGameManager : MonoBehaviour
 
     public List<bool> WhoHasSaved = new List<bool>(6);
 
+    public bool SavingATM = false;
+
     enum WerSpeichert
     {
-        Datum, Geld, Ansehen, Politik, Studentenanzahl, Gebäude, Lehrer, ZugewieseneLehrer, Exponate, LaufendeEvents
+        Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude,  ZugewieseneLehrer, Exponate, LaufendeEvents
     }
 
     void Start()
@@ -48,14 +50,16 @@ public class SaveGameManager : MonoBehaviour
 
     private IEnumerator SaveGameInternal()
     {
+        SavingATM = true;
+
         Debug.Log("Started Saving Process");
         Savestate = new Save();
 
-        Debug.Log("Invoking Event");
         SaveGameEvent.Invoke();
 
         yield return new WaitUntil(() => WhoHasSaved.Count == WhoHasSaved.FindAll(i => i == true).Count);
 
+        Debug.Log("Saving...");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/gamesave.bhs");
         bf.Serialize(file, Savestate);
@@ -65,6 +69,7 @@ public class SaveGameManager : MonoBehaviour
         Debug.Log("Created Savefile at: " + Application.persistentDataPath + "/gameave.bhs");
 
         Savestate = null;
+        SavingATM = false;
         WhoHasSaved = new List<bool>(new bool[5]);
     }
 
@@ -108,7 +113,6 @@ public class SaveGameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("Clicked on Button, Starting CoRoutine");
         StartCoroutine(SaveGameInternal());
     }
 }

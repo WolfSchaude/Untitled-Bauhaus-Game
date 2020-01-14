@@ -40,7 +40,6 @@ public class AnsehenScript : MonoBehaviour
     public void Save()
     {
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentAnsehen = Ansehen;
-
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[2] = true;
     }
 
