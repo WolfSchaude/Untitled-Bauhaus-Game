@@ -306,6 +306,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Wohnheim
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &36978582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,7 +2085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000022888184}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -2525,7 +2536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -108480}
+  m_AnchoredPosition: {x: 0, y: -135360}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -3423,7 +3434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70408b0b9317b5c48aff847368eea79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "studKapazit\xE4t": 500
 --- !u!114 &381768626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3750,6 +3760,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: toggleMetallwerkstatt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Metallwerkstatt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4759,7 +4780,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1780203634}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4912,6 +4933,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: toggleLehrsaal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Lehrsaal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5937,8 +5969,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550912}
-        m_MethodName: NeuesWohnheim
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6293,8 +6325,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550910}
-        m_MethodName: NeueAusstellungsgestaltung
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6452,6 +6484,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: toggleMalerei
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Malerei
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7231,8 +7274,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550911}
-        m_MethodName: NeuerLehrsaal
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8052,6 +8095,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: toggleArchitekturwerkstatt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Architektur
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9293,8 +9347,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550915}
-        m_MethodName: NeueMetallwerkstatt
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9965,6 +10019,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: toggleTischlerei
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Tischlerei
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11011,10 +11076,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FeedbackFromBuildings: {fileID: 1413785173}
   SomethingIsBuilded: 0
-  NumberOfStyles: 0
-  NumberOfBuildingTypes: 0
-  NumberOfBuildingsPerType: 0
+  MaxBuildPipelines: 0
   TypeToBuild: 0
+  MainTypeToBuild: 0
   StyleToBuild: 0
 --- !u!1 &1012012621
 GameObject:
@@ -14971,6 +15035,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Ausstellungsgestaltung
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1561013739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15085,8 +15160,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550913}
-        m_MethodName: NeueMalerei
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15903,7 +15978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -16511,8 +16586,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550914}
-        m_MethodName: NeueArchitekturwerkstatt
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18983,8 +19058,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 410550916}
-        m_MethodName: NeueTischlerei
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: StartBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
