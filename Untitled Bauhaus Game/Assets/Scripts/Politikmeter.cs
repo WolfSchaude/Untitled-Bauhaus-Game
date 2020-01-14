@@ -56,7 +56,6 @@ public class Politikmeter : MonoBehaviour
 	public void Save()
 	{
 		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentPolitics = Politiklevel;
-		Debug.Log("Setting WhoHasSaved 3 to true");
 		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[3] = true;
 	}
 

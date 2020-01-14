@@ -49,7 +49,6 @@ public class Studenten : MonoBehaviour
     public void Save()
     {
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;
-        Debug.Log("Setting WhoHasSaved 4 to true");
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[4] = true;
     }
     public void Load(Save save)

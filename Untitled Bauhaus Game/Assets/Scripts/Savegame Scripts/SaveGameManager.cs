@@ -55,10 +55,8 @@ public class SaveGameManager : MonoBehaviour
         Debug.Log("Started Saving Process");
         Savestate = new Save();
 
-        Debug.Log("Invoking Event");
         SaveGameEvent.Invoke();
 
-        Debug.Log("Waitung until everybody has Saved!");
         yield return new WaitUntil(() => WhoHasSaved.Count == WhoHasSaved.FindAll(i => i == true).Count);
 
         Debug.Log("Saving...");
@@ -115,7 +113,6 @@ public class SaveGameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("Clicked on Button, Starting CoRoutine");
         StartCoroutine(SaveGameInternal());
     }
 }

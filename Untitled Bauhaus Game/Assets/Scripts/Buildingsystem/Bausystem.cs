@@ -33,25 +33,26 @@ public class Bausystem : MonoBehaviour
 
     void Start()
     {
-        List<GameObject> Structures = new List<GameObject>();
-
-        Structures.Add(GameObject.Find("Abteil_1"));
-        Structures.Add(GameObject.Find("Abteil_2"));
-        Structures.Add(GameObject.Find("Abteil_3"));
-        Structures.Add(GameObject.Find("Abteil_4"));
-        Structures.Add(GameObject.Find("Abteil_5"));
-        Structures.Add(GameObject.Find("Abteil_6"));
-        Structures.Add(GameObject.Find("Abteil_7"));
-        Structures.Add(GameObject.Find("Abteil_9"));
-        Structures.Add(GameObject.Find("Abteil_10"));
-        Structures.Add(GameObject.Find("Abteil_11"));
-        Structures.Add(GameObject.Find("Abteil_12"));
-        Structures.Add(GameObject.Find("Abteil_13"));
-        Structures.Add(GameObject.Find("Abteil_14"));
-        Structures.Add(GameObject.Find("Abteil_15"));
-        Structures.Add(GameObject.Find("Abteil_16"));
-        Structures.Add(GameObject.Find("Abteil_17"));
-        Structures.Add(GameObject.Find("Abteil_18"));
+        Structures = new List<GameObject>
+        {
+            GameObject.Find("Abteil_1"),
+            GameObject.Find("Abteil_2"),
+            GameObject.Find("Abteil_3"),
+            GameObject.Find("Abteil_4"),
+            GameObject.Find("Abteil_5"),
+            GameObject.Find("Abteil_6"),
+            GameObject.Find("Abteil_7"),
+            GameObject.Find("Abteil_9"),
+            GameObject.Find("Abteil_10"),
+            GameObject.Find("Abteil_11"),
+            GameObject.Find("Abteil_12"),
+            GameObject.Find("Abteil_13"),
+            GameObject.Find("Abteil_14"),
+            GameObject.Find("Abteil_15"),
+            GameObject.Find("Abteil_16"),
+            GameObject.Find("Abteil_17"),
+            GameObject.Find("Abteil_18")
+        };
 
         for (int i = 0; i < Structures.Count; i++)
         {
@@ -68,7 +69,7 @@ public class Bausystem : MonoBehaviour
             Structures[i].GetComponent<Struktur>().OwnMainTypeInt = 2;
         }
 
-        for (int i = 12; i <= 17; i++)
+        for (int i = 12; i < 17; i++)
         {
             Structures[i].GetComponent<Struktur>().OwnMainTypeInt = 3;
         }
