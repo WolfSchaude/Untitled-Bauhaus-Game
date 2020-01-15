@@ -94,6 +94,14 @@ public class Bausystem : MonoBehaviour
         public Vector3[] Structure2Positions;
         public Vector3[] Structure3Positions;
 
+        public int[] Structure1Cost;
+        public int[] Structure2Cost;
+        public int[] Structure3Cost;
+
+        public float[] Structure1Quality;
+        public float[] Structure2Quality;
+        public float[] Structure3Quality;
+
         public BuildingStyle()
         {
             Structure1Count = 0;
@@ -118,6 +126,10 @@ public class Bausystem : MonoBehaviour
             Structure1Positions = new Vector3[MaxStructure1];
             Structure2Positions = new Vector3[MaxStructure2];
             Structure3Positions = new Vector3[MaxStructure3];
+
+            Structure1Cost = new int[MaxStructure1];
+            Structure2Cost = new int[MaxStructure2];
+            Structure3Cost = new int[MaxStructure3];
         }
     }
 
@@ -206,6 +218,7 @@ public class Bausystem : MonoBehaviour
         UsableStyles = new BuildingStyle[2] { new BuildingStyle(), new BuildingStyle() };
         
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
+        UsableStyles[0].Structure1Cost[0] = 10000;
 
         StyleToBuild = 0;
     }
@@ -352,14 +365,17 @@ public class Bausystem : MonoBehaviour
         {
             case 1:
                 //Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
+                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
                 break;
             case 2:
                 // Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
+                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
                 break;
             case 3:
                 //Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
+                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
                 break;
         }

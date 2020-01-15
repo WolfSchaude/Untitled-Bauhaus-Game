@@ -2536,7 +2536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115680}
+  m_AnchoredPosition: {x: 0, y: -118080}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -11075,7 +11075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FeedbackFromBuildings: {fileID: 1413785173}
-  SomethingIsBuilded: 0
+  CheatActive: 0
   MaxBuildPipelines: 0
   TypeToBuild: 0
   MainTypeToBuild: 0
