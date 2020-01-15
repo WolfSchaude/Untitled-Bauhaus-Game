@@ -27,13 +27,15 @@ public class Struktur : MonoBehaviour
         TypeID = 0;
     }
 
-    public void SetStructure(int MainType, int Type)
+    public void SetStructure(int Style, int MainType, int Type)
     {
         OwnMainTypeInt = MainType;
         OwnMainTypeEnum = (MainType)MainType;
 
         OwnTypeInt = Type;
         OwnTypeEnum = (Type)Type;
+
+        OwnStyle = Style;
 
         IsPlaced = true;
     }

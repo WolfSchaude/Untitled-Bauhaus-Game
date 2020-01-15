@@ -59,6 +59,7 @@ public class Bausystem : MonoBehaviour
 
         public bool CheckStatus()
         {
+
             if (IsSlotUsed == true)
             {
                 if (TimeToBuild != 0)
@@ -219,6 +220,7 @@ public class Bausystem : MonoBehaviour
         
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
         UsableStyles[0].Structure1Cost[0] = 10000;
+        //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
 
         StyleToBuild = 0;
     }
@@ -227,10 +229,6 @@ public class Bausystem : MonoBehaviour
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            if (CheatActive)
-            {
-                BuildingPipeline[i].NoBuildTimeCheat();
-            }
             if (BuildingPipeline[i].CheckStatus())
             {
                 BuildStructure(i);
@@ -285,6 +283,26 @@ public class Bausystem : MonoBehaviour
         bool FreePipelineFound = false;
         int FreePipelineNumber = 0;
 
+        int NumberOfStructures = Structures.Count;
+
+        List<GameObject> PotentialFreeStructures = new List<GameObject>();
+
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false)
+            {
+                PotentialFreeStructures.Add(Structures[i]);
+            }
+        }
+
+        Debug.Log("PotentialFreeStructures: " + PotentialFreeStructures.Count);
+
+        if (PotentialFreeStructures.Count == 0)
+        {
+            BuildingPipeline[FreePipelineNumber].SetZero();
+            return;
+        }
+
         if (UsableStyles[StyleToBuild].Structure1Count > UsableStyles[StyleToBuild].MaxStructure1 && MainTypeToBuild == 1)
         {
             return;
@@ -306,10 +324,11 @@ public class Bausystem : MonoBehaviour
             {
                 FreePipelineFound = true;
                 FreePipelineNumber = i;
+                Debug.Log("Free Pipeline found: " + FreePipelineFound + " " + FreePipelineNumber);
                 break;
             }
         }
-
+        
         if (FreePipelineFound == false)
         {
             return;
@@ -317,7 +336,16 @@ public class Bausystem : MonoBehaviour
 
         if (FreePipelineFound == true)
         {
-            BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
+            if (!CheatActive)
+            {
+                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
+            }
+            else
+            {
+                Debug.Log("Fúnction Build Called");
+                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
+                BuildStructure(FreePipelineNumber);
+            }
         }
     }
 
@@ -335,6 +363,15 @@ public class Bausystem : MonoBehaviour
             }
         }
 
+        Debug.Log("PotentialFreeStructures: " + PotentialFreeStructures.Count);
+
+        if (PotentialFreeStructures.Count == 0)
+        {
+            BuildingPipeline[PipelineNumber].SetZero();
+            return;
+        }
+
+
         int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
         int LowestFreeID = int.MaxValue;
 
@@ -346,44 +383,41 @@ public class Bausystem : MonoBehaviour
             }
         }
 
-        int buffer = 0;
+        int FreeStructure = 0;
 
         for (int i = 0; i < NumberOfPotentialFreeStructures; i++)
         {
             if (PotentialFreeStructures[i].GetComponent<Struktur>().TypeID == LowestFreeID)
             {
-                buffer = i;
+                FreeStructure = i;
                 break;
             }
         }
 
-        PotentialFreeStructures[buffer].SetActive(true);
+        PotentialFreeStructures[FreeStructure].SetActive(true);
 
-        PotentialFreeStructures[buffer].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
+        PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
 
         switch (BuildingPipeline[PipelineNumber].MainTypeToBuild)
         {
             case 1:
-                //Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
+                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
                 break;
             case 2:
-                // Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
+                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
                 break;
             case 3:
-                //Structures[i].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
+                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
                 break;
         }
 
         BuildingPipeline[PipelineNumber].SetZero();
-
-        TypeToBuild = 0;
-        MainTypeToBuild = 0;
 
         FeedbackFromBuildings.NewTick("Gebäude fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
