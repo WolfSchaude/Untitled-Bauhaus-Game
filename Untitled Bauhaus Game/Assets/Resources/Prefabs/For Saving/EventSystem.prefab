@@ -1,0 +1,262 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1058967184807158185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058967184807158180}
+  - component: {fileID: 1058967184807158183}
+  - component: {fileID: 1058967184807158182}
+  - component: {fileID: 1058967184807158205}
+  - component: {fileID: 1058967184807158203}
+  - component: {fileID: 1058967184807158177}
+  - component: {fileID: 1058967184807158207}
+  - component: {fileID: 1058967184807158179}
+  - component: {fileID: 1058967184807158178}
+  - component: {fileID: 1058967184807158176}
+  - component: {fileID: 1058967184807158204}
+  - component: {fileID: 1058967184807158200}
+  - component: {fileID: 1058967184807158201}
+  - component: {fileID: 1058967184807158181}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1058967184807158180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1058967184807158183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &1058967184807158182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1058967184807158205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e848a9862e377340b8b74ee585cda67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerVariables: {fileID: 0}
+  GameOverScreen: {fileID: 0}
+  GameOverText: {fileID: 0}
+--- !u!114 &1058967184807158203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6deb1098c3d27bc49a8a44c22e31ab43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FeedbackTicker: {fileID: 0}
+  EventSystem: {fileID: 1058967184807158185}
+  inventoryWindow: {fileID: 0}
+  prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
+  parent: {fileID: 0}
+  InventoryAnimator: {fileID: 0}
+--- !u!114 &1058967184807158177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebdb14936f65514e9931f55482983ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detailWindow: {fileID: 0}
+  overviewWindow: {fileID: 0}
+  archButton: {fileID: 0}
+  malButton: {fileID: 0}
+  ausButton: {fileID: 0}
+  metallButton: {fileID: 0}
+  tischbutton: {fileID: 0}
+  lehrButton: {fileID: 0}
+  wohnButton: {fileID: 0}
+  buildingNameText: {fileID: 0}
+  buildingPriceText: {fileID: 0}
+  buildingTeacherText: {fileID: 0}
+  buildingStudentText: {fileID: 0}
+  buildingStilText: {fileID: 0}
+  buildingQualityText: {fileID: 0}
+  buildingTimeTotalText: {fileID: 0}
+  buildingTimeLeftText: {fileID: 0}
+  buildingImage: {fileID: 0}
+  buttonCount: 0
+--- !u!114 &1058967184807158207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70408b0b9317b5c48aff847368eea79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "studKapazit\xE4t": 500
+--- !u!114 &1058967184807158179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e51ec75b44def498eb344ab728388b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExponateUI: {fileID: 0}
+  ExponateUIVisible: 0
+--- !u!114 &1058967184807158178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f026bb6deeee14483e59ef7963e477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bewerbungGameObject: {fileID: 0}
+  zuweisenGameObject: {fileID: 0}
+  zugewiesenenCounter: 0
+--- !u!114 &1058967184807158176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4523e766bde0634093fbbddcc68bae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveGameKeeper: {fileID: 0}
+  Script: {fileID: 0}
+--- !u!114 &1058967184807158204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0025b26acf6e284f84981de06f88d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1058967184807158200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a5b7f24c1933347a41a1b15fe66a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnzahlArchitektur: 0
+  AnzahlMalerei: 0
+  AnzahlAustellung: 0
+  AnzahlMetall: 0
+  AnzahlTisch: 0
+  AnzahlLehr: 0
+  AnzahlWohn: 0
+--- !u!114 &1058967184807158201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22202dde2bb8eb74d93c1f982d3c9a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheatMenuWindow: {fileID: 0}
+  Playervariables: {fileID: 0}
+  bauzeitToggle: {fileID: 0}
+--- !u!114 &1058967184807158181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058967184807158185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0

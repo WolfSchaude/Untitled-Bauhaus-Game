@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 6852908208647300807}
   - component: {fileID: 6852908208647300800}
   - component: {fileID: 8167327735371112486}
+  - component: {fileID: 7024947338670275638}
   m_Layer: 5
   m_Name: bewerbungPrefab
   m_TagString: Untagged
@@ -450,6 +451,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
   Ticker: {fileID: 0}
+  Playervariables: {fileID: 0}
+  EventSystem: {fileID: 0}
+  Kosten: 0
+  Vorlauf: 1
+  Datum_Tag: 0
+  Datum_Monat: 0
+  Datum_Jahr: 0
+  TimerCounter: 0
+--- !u!114 &7024947338670275638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852908208647300802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &6852908209051168772
 GameObject:
   m_ObjectHideFlags: 0

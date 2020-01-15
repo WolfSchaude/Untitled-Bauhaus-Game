@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 397235881467084723}
   - component: {fileID: 5987659729585309516}
   - component: {fileID: 3237334414520400132}
+  - component: {fileID: 1517906739951240633}
   m_Layer: 5
   m_Name: Event_Option_2
   m_TagString: Untagged
@@ -202,6 +203,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1517906739951240633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084371775056625788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &3817826908484898567
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +231,7 @@ GameObject:
   - component: {fileID: 1175146635366686801}
   - component: {fileID: 795092740831727553}
   - component: {fileID: 1834841749658321788}
+  - component: {fileID: 8378740167899543584}
   m_Layer: 5
   m_Name: Time Left To Decide
   m_TagString: Untagged
@@ -279,6 +298,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &8378740167899543584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3817826908484898567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &4835000659218434569
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +331,7 @@ GameObject:
   - component: {fileID: 4835000659218434574}
   - component: {fileID: 2674160011444897658}
   - component: {fileID: 2566313006505213030}
+  - component: {fileID: 503472675044019153}
   m_Layer: 5
   m_Name: RandomEvent_Card
   m_TagString: Untagged
@@ -453,14 +490,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d21c0fb6e4fd7a48a9c6a369f970223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Politik1: 0
-  Politik2: 0
-  Ansehen1: 0
-  Ansehen2: 0
-  Geld1: 0
-  Geld2: 0
-  Effect1: 
-  Effect2: 
   Vorlauf: 90
   TimerCounter: 0
   Timer: {fileID: 1834841749658321788}
@@ -468,10 +497,28 @@ MonoBehaviour:
   SelectedOption1: 0
   SelectedOption2: 0
   FeedbackTicker: {fileID: 0}
+  Playervariables: {fileID: 0}
   Option1: {fileID: 4835000659405173674}
   Option2: {fileID: 3237334414520400132}
   SpriteNormal: {fileID: 21300000, guid: 937ff0a71e753c548a7729a9da438a9c, type: 3}
   SpriteSelected: {fileID: 21300000, guid: 0739817f77b36dc4fb7f4f3e9fb8f1ac, type: 3}
+--- !u!114 &503472675044019153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835000659218434569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &4835000659405173672
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +531,7 @@ GameObject:
   - component: {fileID: 4835000659405173676}
   - component: {fileID: 4835000659405173675}
   - component: {fileID: 4835000659405173674}
+  - component: {fileID: 2458443969533498919}
   m_Layer: 5
   m_Name: Event_Option_1
   m_TagString: Untagged
@@ -597,6 +645,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2458443969533498919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835000659405173672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &4835000659456459883
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +750,7 @@ GameObject:
   - component: {fileID: 4835000659862678148}
   - component: {fileID: 4835000659862678150}
   - component: {fileID: 4835000659862678149}
+  - component: {fileID: 7118822001742673437}
   m_Layer: 5
   m_Name: Event_Description
   m_TagString: Untagged
@@ -751,6 +817,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &7118822001742673437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835000659862678147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &4835000660412624813
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +845,7 @@ GameObject:
   - component: {fileID: 4835000660412624814}
   - component: {fileID: 4835000660412624800}
   - component: {fileID: 4835000660412624815}
+  - component: {fileID: 6398872607324297335}
   m_Layer: 5
   m_Name: Event_Image
   m_TagString: Untagged
@@ -823,3 +907,20 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6398872607324297335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835000660412624813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0

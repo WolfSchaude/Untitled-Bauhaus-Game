@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5989547012135435393}
   - component: {fileID: 979176998780868118}
   - component: {fileID: 5336249165399041571}
+  - component: {fileID: 4696496901612704377}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -77,6 +78,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Exponat verkaufen
+--- !u!114 &4696496901612704377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2162441923139680687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &3956403501247540253
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +107,7 @@ GameObject:
   - component: {fileID: 1321781057593620173}
   - component: {fileID: 8143683176234812491}
   - component: {fileID: 1112698984728839593}
+  - component: {fileID: 5008634560798153370}
   m_Layer: 5
   m_Name: ExponatVerkaufenButton
   m_TagString: Untagged
@@ -202,6 +221,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5008634560798153370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956403501247540253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &4605010614107999551
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +250,7 @@ GameObject:
   - component: {fileID: 7705618248018936259}
   - component: {fileID: 1380160956132390518}
   - component: {fileID: 1956105688910945007}
+  - component: {fileID: 2363454687358765815}
   m_Layer: 5
   m_Name: "Qualit\xE4tFloatText"
   m_TagString: Untagged
@@ -294,6 +331,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Qualitaet: 0
   FeedbackTicker: {fileID: 0}
+  Playervariables: {fileID: 0}
+--- !u!114 &2363454687358765815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605010614107999551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &5088294889362126868
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +360,7 @@ GameObject:
   - component: {fileID: 8585054158415150984}
   - component: {fileID: 3308749612473240140}
   - component: {fileID: 2320778608601357096}
+  - component: {fileID: 6796810986979768507}
   m_Layer: 5
   m_Name: "Qualit\xE4tText"
   m_TagString: Untagged
@@ -371,6 +427,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Qualit\xE4t:"
+--- !u!114 &6796810986979768507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088294889362126868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &5746514488460146739
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +455,7 @@ GameObject:
   - component: {fileID: 5746514488460146738}
   - component: {fileID: 5746514488460146736}
   - component: {fileID: 5746514488460146737}
+  - component: {fileID: 1584653461723614579}
   m_Layer: 5
   m_Name: ExponatPrefab
   m_TagString: Untagged
@@ -449,6 +523,23 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1584653461723614579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746514488460146739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &6431385212163633569
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +551,7 @@ GameObject:
   - component: {fileID: 3011999604409976754}
   - component: {fileID: 2282039851822300134}
   - component: {fileID: 1203055575104116980}
+  - component: {fileID: 4107656252440877823}
   m_Layer: 5
   m_Name: StilrichtungText
   m_TagString: Untagged
@@ -526,6 +618,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Stilrichtung:'
+--- !u!114 &4107656252440877823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431385212163633569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &7547934087564898080
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +646,7 @@ GameObject:
   - component: {fileID: 492613792277492763}
   - component: {fileID: 1515827951278002943}
   - component: {fileID: 8232250760544074671}
+  - component: {fileID: 6259514883199822186}
   m_Layer: 5
   m_Name: HerstellerText
   m_TagString: Untagged
@@ -603,6 +713,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Hergestellt von:'
+--- !u!114 &6259514883199822186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7547934087564898080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
 --- !u!1 &9162604758626422038
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +741,7 @@ GameObject:
   - component: {fileID: 6447243754104024491}
   - component: {fileID: 7239116189585827480}
   - component: {fileID: 3199859060995690339}
+  - component: {fileID: 6878526157099959111}
   m_Layer: 5
   m_Name: ExponatImage
   m_TagString: Untagged
@@ -675,3 +803,20 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &6878526157099959111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9162604758626422038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c19f3e134862e74dbc98cb514a82ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  prefabName: 
+  id: 
+  idParent: 
+  dontSave: 0
