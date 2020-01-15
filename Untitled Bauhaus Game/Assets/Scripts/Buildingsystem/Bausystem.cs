@@ -189,7 +189,7 @@ public class Bausystem : MonoBehaviour
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
-            Structures[i].SetActive(false);
+            //Structures[i].SetActive(false);
         }
 
         MaxBuildPipelines = 3;
