@@ -9,6 +9,8 @@ public class Bausystem : MonoBehaviour
 
     public FeedbackScript FeedbackFromBuildings;
 
+    public GameObject SaveGameKeeper;
+
     private List<GameObject> Structures = new List<GameObject>();
 
     public bool CheatActive;
@@ -422,5 +424,15 @@ public class Bausystem : MonoBehaviour
         FeedbackFromBuildings.NewTick("Gebäude fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
         ManipulateStudents.studKapazitaet += 100;
+    }
+
+    public void Save()
+    {
+        SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[6] = true;
+    }
+
+    public void Load()
+    {
+
     }
 }
