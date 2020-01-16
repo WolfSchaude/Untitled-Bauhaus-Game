@@ -16,7 +16,7 @@ public class SaveGameManager : MonoBehaviour
 
     public Save Savestate;
 
-    public List<bool> WhoHasSaved = new List<bool>(6);
+    public List<bool> WhoHasSaved = new List<bool>(7);
 
     public bool SavingATM = false;
 
@@ -30,7 +30,7 @@ public class SaveGameManager : MonoBehaviour
         //if (LoadGameEvent == null)
         //    LoadGameEvent = new SaveEvent();
 
-        WhoHasSaved = new List<bool>(new bool[6]);
+        WhoHasSaved = new List<bool>(new bool[7]);
 
         if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
         {
