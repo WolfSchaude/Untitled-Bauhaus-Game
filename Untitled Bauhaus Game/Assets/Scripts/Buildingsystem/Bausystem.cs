@@ -399,6 +399,7 @@ public class Bausystem : MonoBehaviour
         PotentialFreeStructures[FreeStructure].SetActive(true);
 
         PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
+        PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().InformCounter();
 
         switch (BuildingPipeline[PipelineNumber].MainTypeToBuild)
         {
@@ -496,6 +497,7 @@ public class Bausystem : MonoBehaviour
             {
                 Structures[i].SetActive(true);
                 Structures[i].GetComponent<Struktur>().SetStructure(save.ActiveBuildings[i, 1], save.ActiveBuildings[i, 2], save.ActiveBuildings[i, 3]);
+                Structures[i].GetComponent<Struktur>().InformCounter();
             }
         }
 

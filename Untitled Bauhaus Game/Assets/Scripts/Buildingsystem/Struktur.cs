@@ -39,4 +39,32 @@ public class Struktur : MonoBehaviour
 
         IsPlaced = true;
     }
+
+    public void InformCounter()
+    {
+        switch(OwnTypeEnum)
+        {
+            case Type.Architektur:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur++;
+                break;
+            case Type.Ausstellungsgestaltung:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlAustellung++;
+                break;
+            case Type.Lehrsaal:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr++;
+                break;
+            case Type.Malerei:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMalerei++;
+                break;
+            case Type.Metallwerkstatt:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlMetall++;
+                break;
+            case Type.Tischlerei:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlTisch++;
+                break;
+            case Type.Wohnheim:
+                GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn++;
+                break;
+        }
+    }
 }
