@@ -204,7 +204,7 @@ public class Bausystem : MonoBehaviour
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
-            //Structures[i].SetActive(false);
+            Structures[i].SetActive(false);
         }
 
         MaxBuildPipelines = 3;
@@ -474,11 +474,13 @@ public class Bausystem : MonoBehaviour
             {
                 StructuresInBuild[i, 0] = 0;
             }
+
             StructuresInBuild[i, 1] = BuildingPipeline[i].TimeToBuild;
             StructuresInBuild[i, 2] = BuildingPipeline[i].StyleToBuild;
             StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
             StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
         }
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StructuresInBuild = StructuresInBuild;
 
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[6] = true;
     }
@@ -506,7 +508,6 @@ public class Bausystem : MonoBehaviour
 
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            Debug.Log("StructureDebug: " + save.StructuresInBuild[0, 0]);
             if (save.StructuresInBuild[i, 0] == 1)
             {
                 BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);

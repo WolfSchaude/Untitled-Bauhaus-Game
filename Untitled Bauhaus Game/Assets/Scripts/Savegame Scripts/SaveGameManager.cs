@@ -52,8 +52,8 @@ public class SaveGameManager : MonoBehaviour
         Debug.Log("Started Saving Process");
         Savestate = new Save();
 
-        Savestate.Kannichdasspeichern = new TestStruct();
-        Savestate.Undwiesiehtsdamitaus = new TestStruct[3] { new TestStruct(), new TestStruct(), new TestStruct() };
+        //Savestate.Kannichdasspeichern = new TestStruct();
+        //Savestate.Undwiesiehtsdamitaus = new TestStruct[3] { new TestStruct(), new TestStruct(), new TestStruct() };
 
         SaveGameEvent.Invoke();
 
