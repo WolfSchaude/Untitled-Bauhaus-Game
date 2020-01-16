@@ -221,7 +221,24 @@ public class Bausystem : MonoBehaviour
         UsableStyles = new BuildingStyle[2] { new BuildingStyle(), new BuildingStyle() };
         
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
-        UsableStyles[0].Structure1Cost[0] = 10000;
+
+        UsableStyles[0].Structure1Cost[0] = 2500;
+        UsableStyles[0].Structure1Cost[1] = 2500;
+        UsableStyles[0].Structure1Cost[2] = 2500;
+        UsableStyles[0].Structure1Cost[3] = 2500;
+        UsableStyles[0].Structure1Cost[4] = 2500;
+        UsableStyles[0].Structure1Cost[5] = 2500;
+        UsableStyles[0].Structure1Cost[6] = 2500;
+        UsableStyles[0].Structure2Cost[0] = 2500;
+        UsableStyles[0].Structure2Cost[1] = 2500;
+        UsableStyles[0].Structure2Cost[2] = 2500;
+        UsableStyles[0].Structure3Cost[0] = 2500;
+        UsableStyles[0].Structure3Cost[1] = 2500;
+        UsableStyles[0].Structure3Cost[2] = 2500;
+        UsableStyles[0].Structure3Cost[3] = 2500;
+        UsableStyles[0].Structure3Cost[4] = 2500;
+        UsableStyles[0].Structure3Cost[5] = 2500;
+        UsableStyles[0].Structure3Cost[6] = 2500;
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
 
         StyleToBuild = 0;

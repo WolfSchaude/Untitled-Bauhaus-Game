@@ -54,7 +54,7 @@ public class Money : MonoBehaviour, ISaveableInterface
 
     public bool Bezahlen(int preis)
     {
-		if (money - preis <= 0)
+		if (money - preis < 0)
 		{
 			return false;
 		}
