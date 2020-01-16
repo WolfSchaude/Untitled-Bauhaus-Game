@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class NewTimeKeeper : MonoBehaviour
+public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 {
     public GameObject FastForwardScriptObject;
     public GameObject SaveGameKeeper;

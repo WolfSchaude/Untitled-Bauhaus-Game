@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnsehenScript : MonoBehaviour
+public class AnsehenScript : MonoBehaviour, ISaveableInterface
 {
     public int Ansehen;
 
@@ -46,7 +46,5 @@ public class AnsehenScript : MonoBehaviour
     public void Load(Save save)
     {
         Ansehen = save.CurrentAnsehen;
-
-        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[2] = true;
     }
 }

@@ -9,6 +9,21 @@ using UnityEngine.Events;
 public class SaveEvent : UnityEvent<Save>
 { }
 
+[System.Serializable]
+public class TestStruct
+{
+    public int Wert1;
+    int Wert2;
+    bool Kartoffel;
+
+    public TestStruct()
+    {
+        Wert1 = 7;
+        Wert2 = 6777;
+        Kartoffel = false;
+    }
+}
+
 public class SaveGameManager : MonoBehaviour
 {
     public UnityEvent SaveGameEvent;
@@ -54,6 +69,9 @@ public class SaveGameManager : MonoBehaviour
 
         Debug.Log("Started Saving Process");
         Savestate = new Save();
+
+        Savestate.Kannichdasspeichern = new TestStruct();
+        Savestate.Undwiesiehtsdamitaus = new TestStruct[3] { new TestStruct(), new TestStruct(), new TestStruct() };
 
         SaveGameEvent.Invoke();
 

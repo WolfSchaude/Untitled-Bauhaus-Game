@@ -18,6 +18,9 @@ public class Save
 
 	public bool[] IsTeacherHired;
 
+	public TestStruct Kannichdasspeichern;
+	public TestStruct[] Undwiesiehtsdamitaus;
+
 	//public List<int> BuiltBuildingParts = new List<int>();
 	//public List<int> WhereIsTeacherHired = new List<int>();
 	//public List<Exponat_Memory> ExponatesInInventory = new List<Exponat_Memory>();
