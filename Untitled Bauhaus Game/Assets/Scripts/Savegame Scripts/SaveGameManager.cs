@@ -9,6 +9,12 @@ using UnityEngine.Events;
 public class SaveEvent : UnityEvent<Save>
 { }
 
+//[System.Serializable]
+//public class BuildingSaveClass
+//{
+//    int balbalb;
+//}
+
 public class SaveGameManager : MonoBehaviour
 {
     public UnityEvent SaveGameEvent;
@@ -20,6 +26,8 @@ public class SaveGameManager : MonoBehaviour
 
     public bool SavingATM = false;
 
+    bool Loaded = false;
+
     enum WerSpeichert
     {
         Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude,  ZugewieseneLehrer, Exponate, LaufendeEvents
@@ -30,18 +38,7 @@ public class SaveGameManager : MonoBehaviour
         //if (LoadGameEvent == null)
         //    LoadGameEvent = new SaveEvent();
 
-        WhoHasSaved = new List<bool>(new bool[7]);
-
-        if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
-        {
-            LoadSave();
-            Debug.Log("Loaded Savegame");
-        }
-        else
-        {
-            LoadStart();
-            Debug.Log("Loaded Start");
-        }
+        StartCoroutine(LoadOnStart());
     }
     void Update()
     {
@@ -108,6 +105,24 @@ public class SaveGameManager : MonoBehaviour
         else
         {
             Debug.Log("No Savegame Found!");
+        }
+    }
+
+    public IEnumerator LoadOnStart()
+    {
+        yield return new WaitForEndOfFrame();
+
+        WhoHasSaved = new List<bool>(new bool[7]);
+
+        if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
+        {
+            LoadSave();
+            Debug.Log("Loaded Savegame");
+        }
+        else
+        {
+            LoadStart();
+            Debug.Log("Loaded Start");
         }
     }
 

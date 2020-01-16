@@ -428,11 +428,94 @@ public class Bausystem : MonoBehaviour
 
     public void Save()
     {
+        int NumberOfStructures = Structures.Count;
+        int NumberOfStyles = UsableStyles.Length;
+
+        int[,] ActiveBuilding = new int[NumberOfStructures, 4];
+        int[,] StyleCounter = new int[NumberOfStyles, 3];
+        int[,] StructuresInBuild = new int[MaxBuildPipelines, 5];
+
+        for (int i = 0; i < NumberOfStructures; i++) 
+        {
+            if (Structures[i].activeSelf)
+            {
+                ActiveBuilding[i, 0] = 1;
+            }
+
+            if (!Structures[i].activeSelf)
+            {
+                ActiveBuilding[i, 0] = 0;
+            }
+
+            ActiveBuilding[i, 1] = Structures[i].GetComponent<Struktur>().OwnStyle;
+            ActiveBuilding[i, 2] = Structures[i].GetComponent<Struktur>().OwnMainTypeInt;
+            ActiveBuilding[i, 3] = Structures[i].GetComponent<Struktur>().OwnTypeInt;
+        }
+
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.ActiveBuildings = ActiveBuilding;
+
+        for (int i = 0; i < NumberOfStyles; i++)
+        {
+            StyleCounter[i, 0] = UsableStyles[i].Structure1Count;
+            StyleCounter[i, 1] = UsableStyles[i].Structure2Count;
+            StyleCounter[i, 2] = UsableStyles[i].Structure3Count;
+        }
+
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleCounter = StyleCounter;
+
+        for (int i = 0; i < MaxBuildPipelines; i++)
+        {
+            if (BuildingPipeline[i].IsSlotUsed)
+            {
+                StructuresInBuild[i, 0] = 1;
+            }
+            
+            if (!BuildingPipeline[i].IsSlotUsed)
+            {
+                StructuresInBuild[i, 0] = 0;
+            }
+            StructuresInBuild[i, 1] = BuildingPipeline[i].TimeToBuild;
+            StructuresInBuild[i, 2] = BuildingPipeline[i].StyleToBuild;
+            StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
+            StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
+        }
+
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[6] = true;
     }
 
-    public void Load()
+    public void Load(Save save)
     {
+        int NumberOfStructures = save.ActiveBuildings.GetLength(0);
+        int NumberOfStyles = 2;
 
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            if (save.ActiveBuildings[i, 0] == 1)
+            {
+                Structures[i].SetActive(true);
+                Structures[i].GetComponent<Struktur>().SetStructure(save.ActiveBuildings[i, 1], save.ActiveBuildings[i, 2], save.ActiveBuildings[i, 3]);
+            }
+        }
+
+        for (int i = 0; i < NumberOfStyles; i++)
+        {
+            UsableStyles[i].Structure1Count = save.StyleCounter[i, 0];
+            UsableStyles[i].Structure2Count = save.StyleCounter[i, 1];
+            UsableStyles[i].Structure3Count = save.StyleCounter[i, 2];
+        }
+
+        for (int i = 0; i < MaxBuildPipelines; i++)
+        {
+            Debug.Log("StructureDebug: " + save.StructuresInBuild[0, 0]);
+            if (save.StructuresInBuild[i, 0] == 1)
+            {
+                BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
+            }
+
+            if (!BuildingPipeline[i].IsSlotUsed)
+            {
+                BuildingPipeline[i].SetZero();
+            }
+        }
     }
 }

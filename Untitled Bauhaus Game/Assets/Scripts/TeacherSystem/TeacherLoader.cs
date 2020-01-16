@@ -28,16 +28,13 @@ public class TeacherLoader : MonoBehaviour
 
 	public void Save()
 	{
-		Debug.Log("Started Saving teachers");
 		var x = new bool[HiredTeachers.Count];
-		Debug.Log("Generating bool array");
 		for (int i = 0; i < HiredTeachers.Count; i++)
 		{
 			x[i] = HiredTeachers[i].Hired;
 		}
-		Debug.Log("Saving bool array");
+
 		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.IsTeacherHired = x;
-		Debug.Log("Setting WhoHasSaved 5 to true");
 		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[5] = true;
 	}
 
