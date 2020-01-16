@@ -40,18 +40,8 @@ public class FeedbackScript : MonoBehaviour
 	public void ToggleFeedback()
 	{
 		TickerFieldAnimator.SetTrigger("Click");
-		//ButtonAnimator.SetTrigger("Click");
 
 		Collapsed = !Collapsed;
-
-		//if (Collapsed)
-		//{
-		//	gameObject.GetComponentInChildren<Text>().text = "▲";
-		//}
-		//else
-		//{
-		//	gameObject.GetComponentInChildren<Text>().text = "▼";
-		//}
 
 		StartCoroutine(ScrollToBottomSec());
 		StartCoroutine(WaitToChangeSymbol());

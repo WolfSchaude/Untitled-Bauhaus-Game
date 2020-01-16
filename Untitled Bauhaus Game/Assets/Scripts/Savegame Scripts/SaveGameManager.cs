@@ -52,6 +52,9 @@ public class SaveGameManager : MonoBehaviour
         Debug.Log("Started Saving Process");
         Savestate = new Save();
 
+        Savestate.Kannichdasspeichern = new TestStruct();
+        Savestate.Undwiesiehtsdamitaus = new TestStruct[3] { new TestStruct(), new TestStruct(), new TestStruct() };
+
         SaveGameEvent.Invoke();
 
         yield return new WaitUntil(() => WhoHasSaved.Count == WhoHasSaved.FindAll(i => i == true).Count);

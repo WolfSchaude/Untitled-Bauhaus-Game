@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Studenten : MonoBehaviour
+public class Studenten : MonoBehaviour, ISaveableInterface
 {
 
     public int studKapazitaet = 500; //Anfangskapazität

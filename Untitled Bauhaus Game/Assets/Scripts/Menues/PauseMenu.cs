@@ -51,6 +51,9 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         GamePaused = false;
+
+        Time.timeScale = 1f;
+
         Destroy(GameObject.Find("SceneSwitcher"));
         StartCoroutine(LoadInBackground("Main_Menu"));
     }

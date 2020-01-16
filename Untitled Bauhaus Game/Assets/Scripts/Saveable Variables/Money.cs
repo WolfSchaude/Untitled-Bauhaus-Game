@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UntitledBauhausGame;
 
-public class Money : MonoBehaviour
+public class Money : MonoBehaviour, ISaveableInterface
 {
 	/*
        (Bug) FUNKTIONIERT ZWAR, "Gehalt" WIRD ABER DIREKT AM ANFANG EIN MAL AUSGEFÜHRT

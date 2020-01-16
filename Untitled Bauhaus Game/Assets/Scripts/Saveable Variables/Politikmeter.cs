@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Politikmeter : MonoBehaviour
+public class Politikmeter : MonoBehaviour, ISaveableInterface
 {
 
 	public int Politiklevel = 100;
