@@ -22,7 +22,7 @@ public class SaveGameManager : MonoBehaviour
 
     public Save Savestate;
 
-    public List<bool> WhoHasSaved = new List<bool>(7);
+    public List<bool> WhoHasSaved = new List<bool>(8);
 
     public bool SavingATM = false;
 
@@ -30,7 +30,7 @@ public class SaveGameManager : MonoBehaviour
 
     enum WerSpeichert
     {
-        Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude,  ZugewieseneLehrer, Exponate, LaufendeEvents
+        Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude, FinishedEvents, ZugewieseneLehrer, Exponate, LaufendeEvents
     }
 
     void Start()
@@ -85,6 +85,7 @@ public class SaveGameManager : MonoBehaviour
             file.Close();
 
             LoadGameEvent.Invoke(save);
+            Debug.Log("Loaded Savegame");
         }
         else
         {
@@ -115,12 +116,11 @@ public class SaveGameManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        WhoHasSaved = new List<bool>(new bool[7]);
+        WhoHasSaved = new List<bool>(new bool[8]);
 
         if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
         {
             LoadSave();
-            Debug.Log("Loaded Savegame");
         }
         else
         {

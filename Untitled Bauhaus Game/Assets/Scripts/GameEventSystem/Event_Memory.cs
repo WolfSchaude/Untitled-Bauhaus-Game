@@ -13,7 +13,7 @@ public class Event_Memory : MonoBehaviour
 
 	public Event Memory;
 
-	[SerializeField] private bool IsFinished				= false;
+	public bool IsFinished { private set; get; } = false;
 
 	[SerializeField] private bool SelectedOption1			= false;
 	[SerializeField] private bool SelectedOption2			= false;
@@ -43,29 +43,36 @@ public class Event_Memory : MonoBehaviour
 	{
 		if (Memory == null) Start();
 
-		if (TimerCounter > Vorlauf)
+		if (!IsFinished)
 		{
-			this.gameObject.SetActive(false);
-		}
-		if (TimerCounter < 0)
-		{
-			if (SelectedOption1)
+			if (TimerCounter > Vorlauf)
 			{
-				EventEffect1();
+				this.gameObject.SetActive(false);
 			}
-			else
+			if (TimerCounter < 0)
 			{
-				if (SelectedOption2)
+				if (SelectedOption1)
 				{
-					EventEffect2();
+					EventEffect1();
 				}
 				else
 				{
-					TooLate();
+					if (SelectedOption2)
+					{
+						EventEffect2();
+					}
+					else
+					{
+						TooLate();
+					}
 				}
-			}
 
-			this.gameObject.SetActive(false);
+				this.gameObject.SetActive(false);
+			}
+		}
+		if(IsFinished)
+		{
+			gameObject.SetActive(false);
 		}
 
 		if (TimerCounter == 7)
@@ -89,11 +96,13 @@ public class Event_Memory : MonoBehaviour
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
-	public void SetMemory(Event ev, GameObject PlayerStats)
+	public void SetMemory(Event ev, GameObject PlayerStats, bool isFinished)
 	{
 		Playervariables = PlayerStats;
 
 		Memory = ev;
+
+		IsFinished = isFinished;
 
 		var x = GameObject.Find("PlayerVariables").GetComponent<NewTimeKeeper>();
 

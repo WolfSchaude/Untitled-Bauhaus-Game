@@ -8,8 +8,8 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 
     public int studKapazitaet = 500; //Anfangskapazität
 
-    public float StudentenAnzahl = 50;
-    private float monthlyStudenten = 50;
+    public int StudentenAnzahl = 50;
+    private int monthlyStudenten = 50;
     private float sliderPercentage;
 
     public Text studDisplay;
@@ -49,10 +49,12 @@ public class Studenten : MonoBehaviour, ISaveableInterface
     public void Save()
     {
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.MaxStudenten = studKapazitaet;
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[4] = true;
     }
     public void Load(Save save)
     {
         StudentenAnzahl = save.StudentenAnzahl;
+        studKapazitaet = save.MaxStudenten;
     }
 }

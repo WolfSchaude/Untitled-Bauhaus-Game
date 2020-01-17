@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bausystem : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Bausystem : MonoBehaviour
     public int TypeToBuild;
     public int MainTypeToBuild;
     public int StyleToBuild;
+
+    [SerializeField] private Text Bauarbeiter;
 
     internal class BuildingOrder
     {
@@ -140,6 +143,8 @@ public class Bausystem : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
+
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));
         Structures.Add(GameObject.Find("Abteil_3"));
@@ -158,6 +163,8 @@ public class Bausystem : MonoBehaviour
         Structures.Add(GameObject.Find("Abteil_17"));
         Structures.Add(GameObject.Find("Abteil_18"));
 
+        Debug.Log("Building System: Prefabs loaded");
+
         int NumberOfStructures = Structures.Count;
 
         for (int i = 0; i < NumberOfStructures; i++)
@@ -165,6 +172,8 @@ public class Bausystem : MonoBehaviour
             Structures[i].AddComponent<Struktur>();
             Structures[i].GetComponent<Struktur>().Initialise();
         }
+
+        Debug.Log("Building System: Scripts attached");
 
         Structures[0].GetComponent<Struktur>().OwnMainTypeInt = 3;
         Structures[1].GetComponent<Struktur>().OwnMainTypeInt = 3;
@@ -242,8 +251,17 @@ public class Bausystem : MonoBehaviour
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
 
         StyleToBuild = 0;
+
+        Debug.Log("Building System: System ready to take off!");
+        Debug.Log("Okay, that system is ready, i gonna drink some Byte Cola, have fun comrade :D");
     }
 
+    private void Update()
+    {
+        var x = 0;
+
+        Bauarbeiter.text = x + "/" + MaxBuildPipelines;
+    }
     public void BuildTime()
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
