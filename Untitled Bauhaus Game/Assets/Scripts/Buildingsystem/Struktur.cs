@@ -5,7 +5,7 @@ using UnityEngine;
 public class Struktur : MonoBehaviour
 {
     public enum MainType { Undefiniert, Werkstatt, Wohnheim, Lehrsaal };
-    public enum Type { Undefiniert, Architektur, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
+    public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
 
     public MainType OwnMainTypeEnum { get; private set; }
     public Type OwnTypeEnum { get; private set; }
@@ -44,7 +44,7 @@ public class Struktur : MonoBehaviour
     {
         switch(OwnTypeEnum)
         {
-            case Type.Architektur:
+            case Type.Architekturwerkstatt:
                 GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlArchitektur++;
                 break;
             case Type.Ausstellungsgestaltung:

@@ -42,6 +42,10 @@ public class Bausystem : MonoBehaviour
     /// </summary>
     public int StyleToBuild;
 
+    public int AnzahlWerkstaette = 0;
+    public int AnzahlLehrsaal = 0;
+    public int AnzahlWohnheime = 0;
+
     /// <summary>
     /// Number of pipes as text to print on detailed build menue
     /// </summary>
@@ -514,16 +518,20 @@ public class Bausystem : MonoBehaviour
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
+                AnzahlWerkstaette++;
+
                 break;
             case 2:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
+                AnzahlWohnheime++;
                 break;
             case 3:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
+                AnzahlLehrsaal++;
                 break;
         }
 
@@ -533,7 +541,7 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Used build pipeline reset");
 
-        FeedbackFromBuildings.NewTick("Gebäude fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
+        FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
         ManipulateStudents.studKapazitaet += 100;
 
