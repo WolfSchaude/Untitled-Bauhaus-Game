@@ -1,142 +1,123 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 
 <EventCollection>
-  <Events>
+	<Events>
+		<Event>
+			<ID>1</ID>
+			<Event_Tag>23</Event_Tag>
+			<Event_Monat>12</Event_Monat>
+			<Event_Jahr>1919</Event_Jahr>
 
-   
+			<EventText>Entwerfe das erste Gemeinschaftsprojekt der Hochschule und baue ein Haus in Berlin.</EventText>
 
-    <Event>
-      <ID>1</ID>
-      <Event_Tag>23</Event_Tag>
-      <Event_Monat>12</Event_Monat>
-      <Event_Jahr>1919</Event_Jahr>
-		
-      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
-      
-      <EventText>Entwerfe das erste Gemeinschaftsprojekt der Hochschule und baue ein Haus in Berlin.</EventText>
-      
-      <EventOption1>Das Haus bauen.</EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>3</Option1_Ansehen>
-      <Option1_Geld>-1000</Option1_Geld>
-      <Option1_EffectTicker>Das Haus wurde erfolgreich gebaut. Es wurden 1000 Reichsmarkt benötigt aber dafür ist deine Hochschule jetzt weiter bekannt.</Option1_EffectTicker>
-      
-      <EventOption2>Ignorieren</EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>-4</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker>Die Zeitungen berichten über deine Weigerung. Dein Ansehen hat sich um 4 verschlechtert.</Option2_EffectTicker>
+			<EventOption1>Das Haus bauen.</EventOption1>
+			<Option1_Politik>0</Option1_Politik>
+			<Option1_Ansehen>3</Option1_Ansehen>
+			<Option1_Geld>-1000</Option1_Geld>
+			<Option1_EffectTicker>Das Haus wurde erfolgreich gebaut. Es wurden 1000 Reichsmarkt benötigt aber dafür ist deine Hochschule jetzt weiter bekannt.</Option1_EffectTicker>
 
-      <Exponate_Needed>0</Exponate_Needed>
-    </Event>
-    
-     <Event>
-      <ID>2</ID>
-      <Event_Tag>23</Event_Tag>
-      <Event_Monat>4</Event_Monat>
-      <Event_Jahr>1921</Event_Jahr>
-      
-      <Einblenden_Ab_Tag>4</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>4</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>1921</Einblenden_Ab_Jahr>
-      
-      <EventText>In Vorträgen und Kursen wendet sich Theo van Doesburg gegen die expressionistische und handwerkliche Ausrichtung des Bauhauses. , Starte eine Aufklärungskampagne um spätere Konflikte zu vermeiden.</EventText>
-      <EventOption1>Organisiere einen Vortrag</EventOption1>
-      <Option1_Politik>0</Option1_Politik>
-      <Option1_Ansehen>1</Option1_Ansehen>
-      <Option1_Geld>-1000</Option1_Geld>
-      <Option1_EffectTicker>Der Vortrag kam gut an. Er kostete 1000 Reichsmark aber dein Ansehen wurde um 1 verbessert.</Option1_EffectTicker>
-       
-      <EventOption2>Ignorieren</EventOption2>
-      <Option2_Politik>0</Option2_Politik>
-      <Option2_Ansehen>-3</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker>Doesburgs unbeantworteten Vorträge leuchten mit einem schlechten Licht auf deine Hochschule. Dein Ansehen wurde um 3 verschlechtert.</Option2_EffectTicker>
+			<EventOption2>Ignorieren</EventOption2>
+			<Option2_Politik>0</Option2_Politik>
+			<Option2_Ansehen>-4</Option2_Ansehen>
+			<Option2_Geld>0</Option2_Geld>
+			<Option2_EffectTicker>Die Zeitungen berichten über deine Weigerung. Dein Ansehen hat sich um 4 verschlechtert.</Option2_EffectTicker>
 
-       <Exponate_Needed>0</Exponate_Needed>
-    </Event>
+			<SpecialEvents></SpecialEvents>
+		</Event>
 
-    <Event>
-      <ID>3</ID>
-      <Event_Tag>15</Event_Tag>
-      <Event_Monat>7</Event_Monat>
-      <Event_Jahr>1922</Event_Jahr>
-      
-      <Einblenden_Ab_Tag>0</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>0</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>0</Einblenden_Ab_Jahr>
-      
-      <EventText>Organisiere die erste Ausstellung der Hochschule, stelle dafür mindestens 2 Exponate her.</EventText>
-     
-      <EventOption1>Event Option 1, Event Example 3</EventOption1>
-      <Option1_Politik>23</Option1_Politik>
-      <Option1_Ansehen>3</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
-      
-      <EventOption2>Event Option 2, Event Example 3</EventOption2>
-      <Option2_Politik>-23</Option2_Politik>
-      <Option2_Ansehen>-2</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+		<Event>
+			<ID>2</ID>
+			<Event_Tag>23</Event_Tag>
+			<Event_Monat>4</Event_Monat>
+			<Event_Jahr>1921</Event_Jahr>
 
-      <Exponate_Needed>2</Exponate_Needed>
-    </Event>
+			<EventText>In Vorträgen und Kursen wendet sich Theo van Doesburg gegen die expressionistische und handwerkliche Ausrichtung des Bauhauses. , Starte eine Aufklärungskampagne um spätere Konflikte zu vermeiden.</EventText>
+			<EventOption1>Organisiere einen Vortrag</EventOption1>
+			<Option1_Politik>0</Option1_Politik>
+			<Option1_Ansehen>1</Option1_Ansehen>
+			<Option1_Geld>-1000</Option1_Geld>
+			<Option1_EffectTicker>Der Vortrag kam gut an. Er kostete 1000 Reichsmark aber dein Ansehen wurde um 1 verbessert.</Option1_EffectTicker>
 
-    <Event>
-      <ID>4</ID>
-      <Event_Tag>25</Event_Tag>
-      <Event_Monat>9</Event_Monat>
-      <Event_Jahr>1923</Event_Jahr>
-      
-      <Einblenden_Ab_Tag>25</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>7</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>1923</Einblenden_Ab_Jahr>
-      
-      <EventText>Nehme an der Leipziger Herbst-Messe teil. Hierfür brauchst du mindestens 4 Exponate.</EventText>
-      
-      <EventOption1>Event Option 1, Event Example 4</EventOption1>
-      <Option1_Politik>23</Option1_Politik>
-      <Option1_Ansehen>3</Option1_Ansehen>
-      <Option1_Geld>0</Option1_Geld>
-      <Option1_EffectTicker></Option1_EffectTicker>
-      
-      <EventOption2>Event Option 2, Event Example 4</EventOption2>
-      <Option2_Politik>-23</Option2_Politik>
-      <Option2_Ansehen>-2</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+			<EventOption2>Ignorieren</EventOption2>
+			<Option2_Politik>0</Option2_Politik>
+			<Option2_Ansehen>-3</Option2_Ansehen>
+			<Option2_Geld>0</Option2_Geld>
+			<Option2_EffectTicker>Doesburgs unbeantworteten Vorträge leuchten mit einem schlechten Licht auf deine Hochschule. Dein Ansehen wurde um 3 verschlechtert.</Option2_EffectTicker>
 
-      <Exponate_Needed>4</Exponate_Needed>
-    </Event>
+			<SpecialEvents>Einblenden:4.4.1921</SpecialEvents>
+		</Event>
 
-    <Event>
-      <ID>5</ID>
-      <Event_Tag>1</Event_Tag>
-      <Event_Monat>4</Event_Monat>
-      <Event_Jahr>1925</Event_Jahr>
-      
-      <Einblenden_Ab_Tag>26</Einblenden_Ab_Tag>
-      <Einblenden_Ab_Monat>12</Einblenden_Ab_Monat>
-      <Einblenden_Ab_Jahr>1924</Einblenden_Ab_Jahr>
-      
-      <EventText>Nach den Wahlen zum Thüringer Landtag erklären die Meister die Auflösung des Bauhauses zum 1. April 1925. Unternimm etwas dagegen!</EventText>
-      
-      <EventOption1>Gründe den Verein „Kreis der Freunde des Bauhauses“</EventOption1>
-      <Option1_Politik>-20</Option1_Politik>
-      <Option1_Ansehen>0</Option1_Ansehen>
-      <Option1_Geld>-10000</Option1_Geld>
-      <Option1_EffectTicker>Den Verein zu Gründen hat dich 10000 Reichsmark gekostet. Deine Politische Position hat sich um 20 nach Links verschoben.</Option1_EffectTicker>
-      
-      <EventOption2>Ignorieren</EventOption2>
-      <Option2_Politik>-201</Option2_Politik>
-      <Option2_Ansehen>-2</Option2_Ansehen>
-      <Option2_Geld>0</Option2_Geld>
-      <Option2_EffectTicker></Option2_EffectTicker>
+		<Event>
+			<ID>3</ID>
+			<Event_Tag>15</Event_Tag>
+			<Event_Monat>7</Event_Monat>
+			<Event_Jahr>1922</Event_Jahr>
 
-      <Exponate_Needed>0</Exponate_Needed>
-    </Event>
-  </Events>
+			<EventText>Organisiere die erste Ausstellung der Hochschule, stelle dafür mindestens 2 Exponate her.</EventText>
+
+			<EventOption1>Event Option 1, Event Example 3</EventOption1>
+			<Option1_Politik>23</Option1_Politik>
+			<Option1_Ansehen>3</Option1_Ansehen>
+			<Option1_Geld>0</Option1_Geld>
+			<Option1_EffectTicker></Option1_EffectTicker>
+
+			<EventOption2>Event Option 2, Event Example 3</EventOption2>
+			<Option2_Politik>-23</Option2_Politik>
+			<Option2_Ansehen>-2</Option2_Ansehen>
+			<Option2_Geld>0</Option2_Geld>
+			<Option2_EffectTicker></Option2_EffectTicker>
+
+			<SpecialEvents>Exponat:2</SpecialEvents>
+		</Event>
+
+		<Event>
+			<ID>4</ID>
+			<Event_Tag>25</Event_Tag>
+			<Event_Monat>9</Event_Monat>
+			<Event_Jahr>1923</Event_Jahr>
+
+			<Einblenden_Ab_Tag>25</Einblenden_Ab_Tag>
+			<Einblenden_Ab_Monat>7</Einblenden_Ab_Monat>
+			<Einblenden_Ab_Jahr>1923</Einblenden_Ab_Jahr>
+
+			<EventText>Nehme an der Leipziger Herbst-Messe teil. Hierfür brauchst du mindestens 4 Exponate.</EventText>
+
+			<EventOption1>Event Option 1, Event Example 4</EventOption1>
+			<Option1_Politik>23</Option1_Politik>
+			<Option1_Ansehen>3</Option1_Ansehen>
+			<Option1_Geld>0</Option1_Geld>
+			<Option1_EffectTicker></Option1_EffectTicker>
+
+			<EventOption2>Event Option 2, Event Example 4</EventOption2>
+			<Option2_Politik>-23</Option2_Politik>
+			<Option2_Ansehen>-2</Option2_Ansehen>
+			<Option2_Geld>0</Option2_Geld>
+			<Option2_EffectTicker></Option2_EffectTicker>
+
+			<SpecialEvents>Exponat:4,Einblenden:25.7.1923</SpecialEvents>
+		</Event>
+
+		<Event>
+			<ID>5</ID>
+			<Event_Tag>1</Event_Tag>
+			<Event_Monat>4</Event_Monat>
+			<Event_Jahr>1925</Event_Jahr>
+
+			<EventText>Nach den Wahlen zum Thüringer Landtag erklären die Meister die Auflösung des Bauhauses zum 1. April 1925. Unternimm etwas dagegen!</EventText>
+
+			<EventOption1>Gründe den Verein „Kreis der Freunde des Bauhauses“</EventOption1>
+			<Option1_Politik>-20</Option1_Politik>
+			<Option1_Ansehen>0</Option1_Ansehen>
+			<Option1_Geld>-10000</Option1_Geld>
+			<Option1_EffectTicker>Den Verein zu Gründen hat dich 10000 Reichsmark gekostet. Deine Politische Position hat sich um 20 nach Links verschoben.</Option1_EffectTicker>
+
+			<EventOption2>Ignorieren</EventOption2>
+			<Option2_Politik>0</Option2_Politik>
+			<Option2_Ansehen>0</Option2_Ansehen>
+			<Option2_Geld>0</Option2_Geld>
+			<Option2_EffectTicker>Aufgrund deiner Entscheidung wurde das Bauhaus geschlossen.</Option2_EffectTicker>
+
+			<SpecialEvent>Einblenden:26.12.1924,GameOverOption:2</SpecialEvent>
+		</Event>
+	</Events>
 </EventCollection>

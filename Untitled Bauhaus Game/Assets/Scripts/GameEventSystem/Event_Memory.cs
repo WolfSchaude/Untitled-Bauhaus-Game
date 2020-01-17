@@ -2,30 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+public class EventSaveClass
+{
+	public int TimeLeft;
+	public int TimeMax;
+
+	public bool Option1;
+	public bool Option2;
+
+	public EventSaveClass(int timeLeft, int timeMax, bool option1, bool option2)
+	{
+		TimeLeft = timeLeft;
+		TimeMax = timeMax;
+
+		Option1 = option1;
+		Option2 = option2;
+	}
+}
 
 public class Event_Memory : MonoBehaviour
 {
-	public int Vorlauf = 90;
+	public int Vorlauf = 0;
 
 	public int TimerCounter = 0;
 
-	public Text Timer;
-
 	public Event Memory;
 
-	[SerializeField] private bool IsFinished				= false;
+	[SerializeField] private bool IsFinished = false;
 
-	[SerializeField] private bool SelectedOption1			= false;
-	[SerializeField] private bool SelectedOption2			= false;
+	public bool SelectedOption1 { get; private set; } = false;
+	public bool SelectedOption2 { get; private set; } = false;
 
-	[SerializeField] private bool ExponateCounterStartet	= false;
+	/// <Summary>
+	/// Dieses Event wird genutzt um verschiedenen Spezialevents das ablaufen der Zeit mitzuteilen
+	/// </Summary>
+	public UnityEvent TimeIsUp;
 
-	[SerializeField] private int ExponateCounter			= 0;
-	[SerializeField] private int ExponateNeeded				= 0;
-
+	//Referenzen, die fuer die einzelnen Funktionalitaeten gebraucht werden
 	public GameObject FeedbackTicker;
 	public GameObject Playervariables;
 
+	public Text Timer;
 
 	public Button Option1;
 	public Button Option2;
@@ -33,99 +52,90 @@ public class Event_Memory : MonoBehaviour
 	public Sprite SpriteNormal;
 	public Sprite SpriteSelected;
 
-	// Start is called before the first frame update
 	void Start()
 	{
+		//Fuege dich zum Event hinzu
+		TimeIsUp.AddListener(() => { TriggerTheEffect(); }) ;
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
-		if (Memory == null) Start();
-
+		//Wenn es noch laenger als der Vorlauf ist, dann blende das Event aus
 		if (TimerCounter > Vorlauf)
 		{
 			this.gameObject.SetActive(false);
 		}
+
+		//Wenn die Zeit abgelaufen ist, Trigger das Event
 		if (TimerCounter < 0)
 		{
-			if (SelectedOption1)
-			{
-				EventEffect1();
-			}
-			else
-			{
-				if (SelectedOption2)
-				{
-					EventEffect2();
-				}
-				else
-				{
-					TooLate();
-				}
-			}
-
-			this.gameObject.SetActive(false);
+			TimeIsUp.Invoke();
 		}
-
-		if (TimerCounter == 7)
-		{
-			GameObject.Find("Button - Event Menu").GetComponent<EventScript>().OpenEvent();
-		}
-
-		if (TimerCounter <= Vorlauf && TimerCounter > 0 && ExponateNeeded != 0 && !ExponateCounterStartet)
-		{
-			ExponateCounterFunktion();
-		}
-		if (ExponateCounterStartet)
-		{
-			gameObject.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text = ExponateCounter + " von " + ExponateNeeded + " Exponaten hergestellt.";
-		}
-		if (ExponateCounter >= ExponateNeeded && ExponateNeeded != 0 && ExponateCounterStartet)
-		{
-			SelectOption1();
-		}
-
-		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
-
+	
 	public void SetMemory(Event ev, GameObject PlayerStats)
 	{
 		Playervariables = PlayerStats;
 
 		Memory = ev;
 
-		var x = GameObject.Find("PlayerVariables").GetComponent<NewTimeKeeper>();
+		//Beim NewTimeKeeper an den Tageswechsel dranhängen
+		Playervariables.GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });
 
-		x.NewDay.AddListener(() => { DecreaseTimerCounter(); });
+		//Berechnung, wieviel zeit noch ist bis zum Eventende
+		TimerCounter = NewTimeKeeper.BerechneTage(
+			Playervariables.GetComponent<NewTimeKeeper>().CurrentDay, 
+			Playervariables.GetComponent<NewTimeKeeper>().CurrentMonth, 
+			Playervariables.GetComponent<NewTimeKeeper>().CurrentYear, 
+			Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
 
-		var TagBuffer = x.CurrentDay;
-		var MonatBuffer = x.CurrentMonth;
-		var JahrBuffer = x.CurrentYear;
+		//Herausfinden, welche SpezialEvents hinzugefügt werden muessen
+		var x = Memory.SpecialEvents.Split(',');
 
-		TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
-		
-		//Wenn ein spezielles Einblenddatum gegeben ist, wird das berechnet, ansonsten werden 90 Tage verwendet 
-		if (Memory.Einblenden_Ab_Tag != 0 && ( Memory.Einblenden_Ab_Monat != 0 && Memory.Einblenden_Ab_Jahr != 0))
+		foreach (var item in x)
 		{
-			Vorlauf = NewTimeKeeper.BerechneTage(Memory.Einblenden_Ab_Tag, Memory.Einblenden_Ab_Monat, Memory.Einblenden_Ab_Jahr, Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
+			if (item.Contains("Exponat"))
+			{
+				gameObject.AddComponent<Exponate_Needed>();
+				char[] ExponatChars = { 'E', 'x', 'p', 'o', 'n', 'a', 't', ':' };
+				var y = item.TrimStart(ExponatChars);
+
+				gameObject.GetComponent<Exponate_Needed>().HowManyNeeded = int.Parse(y);
+			}
+			if (item.Contains("Einblenden"))
+			{
+				char[] EinblendenChars = { 'E', 'i', 'n', 'b', 'l', 'e', 'n', 'd', 'e', 'n', ':' };
+				var y = item.TrimStart(EinblendenChars);
+				var z = y.Split('.');
+				var a = new int[3];
+
+				for (int i = 0; i < z.Length; i++)
+				{
+					a[i] = int.Parse(z[i]);
+				}
+
+				Vorlauf = NewTimeKeeper.BerechneTage(
+					Playervariables.GetComponent<NewTimeKeeper>().CurrentDay,
+					Playervariables.GetComponent<NewTimeKeeper>().CurrentMonth,
+					Playervariables.GetComponent<NewTimeKeeper>().CurrentYear,
+					a[0], a[1], a[2]);
+			}
+			if (item.Contains("GameOverOption"))
+			{
+				gameObject.AddComponent<GameOverOption>();
+				char[] GameOverChars = { 'G', 'a', 'm', 'e', 'O', 'v', 'e', 'r', 'O', 'p', 't', 'i', 'o', 'n', ':' };
+				var y = item.TrimStart(GameOverChars);
+
+				gameObject.GetComponent<GameOverOption>().WhichOptionLoses = int.Parse(y);
+			}
 		}
-		else
+
+		//Wenn kein spezielles Einblenddatum gegeben ist werden 90 Tage verwendet
+		if (Vorlauf == 0)
 		{
 			Vorlauf = 90;
 		}
-
-		if (TimerCounter > Vorlauf)
-		{
-			this.gameObject.SetActive(false);
-		}
-
-		if (Memory.Exponate_Needed != 0)
-		{
-			ExponateNeeded = Memory.Exponate_Needed;
-		}
 	}
-
 	public void SelectOption1()
 	{
 		SelectedOption1 = true;
@@ -137,12 +147,6 @@ public class Event_Memory : MonoBehaviour
 		}
 
 		Option1.image.sprite = SpriteSelected; ;
-
-		if (ExponateNeeded != 0)
-		{
-			gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
-			gameObject.GetComponentsInChildren<Button>()[0].Select();
-		}
 	}
 	public void SelectOption2()
 	{
@@ -155,6 +159,12 @@ public class Event_Memory : MonoBehaviour
 		}
 
 		Option2.image.sprite = SpriteSelected;
+	}
+	public void ExponateDone()
+	{
+		SelectedOption1 = true;
+
+		Option1.image.sprite = SpriteSelected;
 	}
 	private void EventEffect1()
 	{
@@ -178,7 +188,7 @@ public class Event_Memory : MonoBehaviour
 		IsFinished = true;
 		this.gameObject.SetActive(false);
 	}
-	public void TooLate() //To Apologize
+	public void TooLate() //To Apologize, wird aufgerufen, wenn man keine Entscheidung trifft
 	{
 		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
 
@@ -192,32 +202,35 @@ public class Event_Memory : MonoBehaviour
 	{
 		TimerCounter--;
 
+		//Aktualisiere den angezeigten Countdown
+		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
+
 		if ((TimerCounter <= Vorlauf && TimerCounter > 0) && !IsFinished)
 		{
 			gameObject.SetActive(true);
-
-			GameObject.Find("Button - Event Menu").GetComponent<Button>().interactable = true;
 		}
 	}
-
-	public void ExponateCounterFunktion()
+	public void TriggerTheEffect() //Wenn die Zeit abgelaufen ist, führe, je nachdem welche Option ausgewaehlt ist, das Event aus
 	{
-		ExponateCounterStartet = true;
-
-		FindInActiveObjectByName("ExponatSlider").GetComponent<Exponate>().exponatDone.AddListener(() => { IncreaseExponateCounter(); });
-
-		gameObject.GetComponentsInChildren<Button>()[0].interactable = false;
-		gameObject.GetComponentsInChildren<Button>()[1].gameObject.SetActive(false);
-	}
-
-	public void IncreaseExponateCounter()
-	{
-		if (ExponateCounterStartet)
+		if (SelectedOption1)
 		{
-			ExponateCounter++;
+			EventEffect1();
 		}
-	}
+		else
+		{
+			if (SelectedOption2)
+			{
+				EventEffect2();
+			}
+			else
+			{
+				TooLate();
+			}
+		}
+		Playervariables.GetComponent<NewTimeKeeper>().NewDay.RemoveListener(() => { DecreaseTimerCounter(); });
 
+		this.gameObject.SetActive(false);
+	}
 	public static GameObject FindInActiveObjectByName(string name)
 	{
 		Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>() as Transform[];

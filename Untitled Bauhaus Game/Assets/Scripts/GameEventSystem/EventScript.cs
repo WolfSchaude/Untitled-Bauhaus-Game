@@ -97,6 +97,14 @@ public class EventScript : MonoBehaviour
 		{
 			ThatOneRandomEvent = NewRandomEvent();
 		}
+
+		foreach (var Event in AllEvents)
+		{
+			if (Event.GetComponent<Event_Memory>().TimerCounter == 7)
+			{
+				OpenEvent();
+			}
+		}
 	}
 
 	public void GenerateList()

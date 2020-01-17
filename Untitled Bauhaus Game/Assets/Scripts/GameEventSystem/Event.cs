@@ -63,6 +63,8 @@ public class Event
 	[XmlElement("Option2_EffectTicker")]
 	public string Option2_EffectTicker;
 
+	[XmlElement("SpecialEvents")]
+	public string SpecialEvents;
 
 	[XmlElement("Exponate_Needed")]
 	public int Exponate_Needed;

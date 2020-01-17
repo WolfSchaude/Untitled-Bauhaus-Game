@@ -76,4 +76,10 @@ public class WinLose : MonoBehaviour
 			PleiteCounter = 0;
 		}
 	}
+
+	public void GameOverThroughEvent(string announcement)
+	{
+		GameOverScreen.SetActive(true);
+		GameOverText.text = announcement;
+	}
 }
