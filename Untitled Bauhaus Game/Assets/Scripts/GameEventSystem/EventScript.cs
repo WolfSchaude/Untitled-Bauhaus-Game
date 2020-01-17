@@ -28,8 +28,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 	private int ActiveEvents;
 
-	List<bool> AlreadyFinished;
-
 	bool Laedtgerade;
 
     void Start()
@@ -76,7 +74,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 				ThatOneRandomEvent = NewRandomEvent();
 			}
 		}
-		AlreadyFinished = new List<bool>();
 	}
 
     void Update()

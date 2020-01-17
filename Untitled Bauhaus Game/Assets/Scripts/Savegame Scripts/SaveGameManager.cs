@@ -85,21 +85,21 @@ public class SaveGameManager : MonoBehaviour
 
     public void LoadStart()
     {
-        if (File.Exists(Application.persistentDataPath + "/PointBlank.bhs"))
-        {
-            //Maybe Clear rest
+        //if (File.Exists(Application.persistentDataPath + "/PointBlank.bhs"))
+        //{
+        //    //Maybe Clear rest
 
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/PointBlank.bhs", FileMode.Open);
-            Save save = bf.Deserialize(file) as Save;
-            file.Close();
+        //    BinaryFormatter bf = new BinaryFormatter();
+        //    FileStream file = File.Open(Application.persistentDataPath + "/PointBlank.bhs", FileMode.Open);
+        //    Save save = bf.Deserialize(file) as Save;
+        //    file.Close();
 
-            LoadGameEvent.Invoke(save);
-        }
-        else
-        {
-            Debug.Log("No Savegame Found!");
-        }
+        //    LoadGameEvent.Invoke(save);
+        //}
+        //else
+        //{
+        //    Debug.Log("No Savegame Found!");
+        //}
     }
 
     public IEnumerator LoadOnStart()

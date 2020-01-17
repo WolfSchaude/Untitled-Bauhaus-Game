@@ -92,43 +92,46 @@ public class Event_Memory : MonoBehaviour
 			Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
 
 		//Herausfinden, welche SpezialEvents hinzugefügt werden muessen
-		var x = Memory.SpecialEvents.Split(',');
-
-		foreach (var item in x)
+		if (!string.IsNullOrEmpty(Memory.SpecialEvents))
 		{
-			if (item.Contains("Exponat"))
-			{
-				gameObject.AddComponent<Exponate_Needed>();
-				char[] ExponatChars = { 'E', 'x', 'p', 'o', 'n', 'a', 't', ':' };
-				var y = item.TrimStart(ExponatChars);
+			var x = Memory.SpecialEvents.Split(',');
 
-				gameObject.GetComponent<Exponate_Needed>().HowManyNeeded = int.Parse(y);
-			}
-			if (item.Contains("Einblenden"))
+			foreach (var item in x)
 			{
-				char[] EinblendenChars = { 'E', 'i', 'n', 'b', 'l', 'e', 'n', 'd', 'e', 'n', ':' };
-				var y = item.TrimStart(EinblendenChars);
-				var z = y.Split('.');
-				var a = new int[3];
-
-				for (int i = 0; i < z.Length; i++)
+				if (item.Contains("Exponat"))
 				{
-					a[i] = int.Parse(z[i]);
+					gameObject.AddComponent<Exponate_Needed>();
+					char[] ExponatChars = { 'E', 'x', 'p', 'o', 'n', 'a', 't', ':' };
+					var y = item.TrimStart(ExponatChars);
+
+					gameObject.GetComponent<Exponate_Needed>().HowManyNeeded = int.Parse(y);
 				}
+				if (item.Contains("Einblenden"))
+				{
+					char[] EinblendenChars = { 'E', 'i', 'n', 'b', 'l', 'e', 'n', 'd', 'e', 'n', ':' };
+					var y = item.TrimStart(EinblendenChars);
+					var z = y.Split('.');
+					var a = new int[3];
 
-				Vorlauf = NewTimeKeeper.BerechneTage(
-					Playervariables.GetComponent<NewTimeKeeper>().CurrentDay,
-					Playervariables.GetComponent<NewTimeKeeper>().CurrentMonth,
-					Playervariables.GetComponent<NewTimeKeeper>().CurrentYear,
-					a[0], a[1], a[2]);
-			}
-			if (item.Contains("GameOverOption"))
-			{
-				gameObject.AddComponent<GameOverOption>();
-				char[] GameOverChars = { 'G', 'a', 'm', 'e', 'O', 'v', 'e', 'r', 'O', 'p', 't', 'i', 'o', 'n', ':' };
-				var y = item.TrimStart(GameOverChars);
+					for (int i = 0; i < z.Length; i++)
+					{
+						a[i] = int.Parse(z[i]);
+					}
 
-				gameObject.GetComponent<GameOverOption>().WhichOptionLoses = int.Parse(y);
+					Vorlauf = NewTimeKeeper.BerechneTage(
+						Playervariables.GetComponent<NewTimeKeeper>().CurrentDay,
+						Playervariables.GetComponent<NewTimeKeeper>().CurrentMonth,
+						Playervariables.GetComponent<NewTimeKeeper>().CurrentYear,
+						a[0], a[1], a[2]);
+				}
+				if (item.Contains("GameOverOption"))
+				{
+					gameObject.AddComponent<GameOverOption>();
+					char[] GameOverChars = { 'G', 'a', 'm', 'e', 'O', 'v', 'e', 'r', 'O', 'p', 't', 'i', 'o', 'n', ':' };
+					var y = item.TrimStart(GameOverChars);
+
+					gameObject.GetComponent<GameOverOption>().WhichOptionLoses = int.Parse(y);
+				}
 			}
 		}
 
@@ -137,6 +140,9 @@ public class Event_Memory : MonoBehaviour
 		{
 			Vorlauf = 90;
 		}
+
+		//Initialisiere den angezeigten Countdown
+		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 	public void SelectOption1()
 	{
