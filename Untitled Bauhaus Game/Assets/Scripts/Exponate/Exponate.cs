@@ -8,7 +8,11 @@ public class Exponate : MonoBehaviour
 {
 	public GameObject FeedbackTicker;
     public GameObject Playervariables;
+    public FastForward TimeMode;
+    public GameObject StartOrderButton;
 
+    [SerializeField] Button JaAbbrechen;
+    [SerializeField] Button NeinNichtAbbrechen;
 
     public UnityEvent exponatDone;
     public Slider expoSlider;
@@ -33,87 +37,63 @@ public class Exponate : MonoBehaviour
 
         createExponat();
 
-		if (Time.timeScale == 3)
-		{
-			expoSlider.maxValue = -2000;
-		}
-		else if (Time.timeScale == 1)
-		{
-			expoSlider.maxValue = 0;
-		}
-
-		//Debug.Log(dayCounter);
-
-		//if (Random.Range(0, 2000) == 5 && !exponatInProgress) //Random Herstellung
+		//if (TimeMode.Mode == FastForward.TimeMode.FastForward)
 		//{
-		//    expoText.text = "Wird hergestellt...";
-		//    exponatInProgress = true;
+		//	expoSlider.maxValue = -2000;
 		//}
-
-
+		//else if (TimeMode.Mode == FastForward.TimeMode.Normal)
+		//{
+		//	expoSlider.maxValue = 0;
+		//}
 	}
 
     public void checkForButtonPress() //Herstellung mit Button
     {
-        if (Playervariables.GetComponent<Money>().money > expoPrice) //Exponate können nur hergestellt werden, wenn man das benötigte Geld dafür hat.
+        if (exponatInProgress)
         {
-            if (exponatCreateTimer == expoSlider.minValue)
+            TryToCancel();
+        }
+        else
+        {
+            if (Playervariables.GetComponent<Money>().money > expoPrice) //Exponate können nur hergestellt werden, wenn man das benötigte Geld dafür hat.
             {
-                expoText.text = "Wird hergestellt...\n -Klicken zum abbrechen-";
-                Playervariables.GetComponent<Money>().Bezahlen(expoPrice);
-                exponatInProgress = true;
+                if (exponatCreateTimer == expoSlider.minValue)
+                {
+                    expoText.text = "Wird hergestellt...\n -Klicken zum abbrechen-";
+                    Playervariables.GetComponent<Money>().Bezahlen(expoPrice);
+                    exponatInProgress = true;
+                }
             }
         }
     }
 
-    //public void countDays() //Herstellung im Intervall von x Tagen
-    //{
-    //    if (!exponatInProgress)
-    //    {
-    //        dayCounter--;
-
-    //        if (dayCounter == 0)
-    //        {
-    //            expoText.text = "Wird hergestellt...";
-    //            exponatInProgress = true;
-    //            dayCounter = 3;
-    //        }
-    //    }
-    //}
     public void createExponat()
     {
-        if (exponatInProgress)
+        if (exponatInProgress && (TimeMode.Mode == FastForward.TimeMode.Normal || TimeMode.Mode == FastForward.TimeMode.FastForward))
         {
-			exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter);
+            switch (TimeMode.Mode)
+            {
+                case FastForward.TimeMode.Pause:
+                    break;
+                case FastForward.TimeMode.Normal:
+                    exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter);
+                    break;
+                case FastForward.TimeMode.FastForward:
+                    exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter * 4);
+                    break;
+                default:
+                    break;
+            }
 
 			if (exponatCreateTimer >= expoSlider.maxValue)
             {
                 expoText.text = "Exponat hergestellt!";
 
-				//int randomExponat = Random.Range(1, 3); //random number between 1 and 2
-				//switch (randomExponat) //switch for different types of exhibits
-				//{
-				//    case 1:
-				//                  GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value++; //Ansehen +
-				//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dein Ansehen um 1 verbessert.");
-				//var i = Random.Range(5000, 25001);
-				//GameObject.Find("Money Display").GetComponent<Money>().Spende(i);
-				//FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i + " RM eingebracht.");
-				//        break;
-				//    case 2:
-				//        Debug.Log("-rep");
-				//        GameObject.Find("AnsehenCounter").GetComponent<SliderValueToText>().sliderUI.value--; //Ansehen -
-				//        break;
-				//    default:
-				//        Debug.Log("default case");
-				//        break;
-				//}
 				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Ein Exponat wurde dem Inventar hinzugefügt.");
 
 				exponatDone.Invoke();
                 isExponatDone = true;
                 exponatInProgress = false;
-                //exponatCreateTimer = -1000;
             }
         }
 
@@ -123,11 +103,11 @@ public class Exponate : MonoBehaviour
 
 			if (exponatCreateTimer != expoSlider.minValue)
 			{
-				if (Time.timeScale == 1)
+				if (TimeMode.Mode == FastForward.TimeMode.Normal)
 				{
 					exponatCreateTimer -= 2;
 				}
-				else if (Time.timeScale == 3)
+				else if (TimeMode.Mode == FastForward.TimeMode.FastForward)
 				{
 					exponatCreateTimer -= 6;
 				}
@@ -145,14 +125,39 @@ public class Exponate : MonoBehaviour
             {
                 expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
                 textCooldown = 200;
-                
             }
         }
     }
 
+    public void TryToCancel()
+    {
+        JaAbbrechen.gameObject.SetActive(true);
+        NeinNichtAbbrechen.gameObject.SetActive(true);
+
+        StartOrderButton.transform.localScale = Vector3.zero;
+    }
+
+    public void DontCancel()
+    {
+        JaAbbrechen.gameObject.SetActive(false);
+        NeinNichtAbbrechen.gameObject.SetActive(false);
+
+        StartOrderButton.transform.localScale = Vector3.one;
+    }
+
+    public void YesPleaseCancel()
+    {
+        cancelExponat();
+
+        JaAbbrechen.gameObject.SetActive(false);
+        NeinNichtAbbrechen.gameObject.SetActive(false);
+
+        StartOrderButton.transform.localScale = Vector3.one;
+    }
+
     public void cancelExponat()
     {
-        if (exponatInProgress && !isExponatDone && exponatCreateTimer >= -4970)
+        if (exponatInProgress && !isExponatDone /*&& exponatCreateTimer >= -4970*/)
         {
             exponatInProgress = false;
             isExponatDone = false;
