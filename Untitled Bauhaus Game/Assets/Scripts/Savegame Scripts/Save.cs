@@ -14,9 +14,12 @@ public class Save
 	public float CurrentMoney;
 	public int CurrentAnsehen;
 	public int CurrentPolitics;
-	public float StudentenAnzahl;
+	public int StudentenAnzahl;
+	public int MaxStudenten;
 
 	public bool[] IsTeacherHired;
+
+	public bool[] IsEventFinished;
 
 	public int[,] ActiveBuildings;
 	public int[,] StyleCounter;

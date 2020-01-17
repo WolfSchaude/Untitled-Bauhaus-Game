@@ -30,7 +30,7 @@ public class Event_Memory : MonoBehaviour
 
 	public Event Memory;
 
-	[SerializeField] private bool IsFinished = false;
+	public bool IsFinished { private set; get; } = false;
 
 	public bool SelectedOption1 { get; private set; } = false;
 	public bool SelectedOption2 { get; private set; } = false;
@@ -72,8 +72,8 @@ public class Event_Memory : MonoBehaviour
 			TimeIsUp.Invoke();
 		}
 	}
-	
-	public void SetMemory(Event ev, GameObject PlayerStats)
+
+	public void SetMemory(Event ev, GameObject PlayerStats, bool isFinished)
 	{
 		Playervariables = PlayerStats;
 
@@ -81,6 +81,8 @@ public class Event_Memory : MonoBehaviour
 
 		//Beim NewTimeKeeper an den Tageswechsel dranhängen
 		Playervariables.GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });
+
+		IsFinished = isFinished;
 
 		//Berechnung, wieviel zeit noch ist bis zum Eventende
 		TimerCounter = NewTimeKeeper.BerechneTage(
