@@ -23,6 +23,12 @@ public class ToD_Base : MonoBehaviour
     private bool _bUseMoon = true;
 
     /// <summary>
+    /// Do you want to start paused?
+    /// </summary>
+    [SerializeField]
+    private bool _Pause = true;
+
+    /// <summary>
     /// This is used to check if the user want to use weather effects or only the time of day
     /// *Use \link GetSet_bUseWeather \endlink if you want to change it during runtime.
     /// </summary>
@@ -172,6 +178,12 @@ public class ToD_Base : MonoBehaviour
         set { _bUseMoon = value; }
     }
 
+    public bool Pause
+    {
+        get { return _Pause; }
+        set { _Pause = value; }
+    }
+
     public bool GetSet_bUseWeather
     {
         get { return _bUseWeather; }
@@ -245,24 +257,27 @@ public class ToD_Base : MonoBehaviour
     /// </summary>
     void Update()
     {
-        UpdateSunAndMoon();
-        UpdateTimeset();
-
-        // Controls the speed of our "clock"
-        _fCurrentTimeOfDay += (Time.deltaTime / _fSecondInAFullDay) * _fTimeMultiplier;
-
-        // Digital time
-        _fCurrentHour = 24 * _fCurrentTimeOfDay;
-        _fCurrentMinute = 60 * (_fCurrentHour - Mathf.Floor(_fCurrentHour));
-
-        // resets our time of day to 0 + adds a day to our amount of days played
-        if (_fCurrentTimeOfDay >= 1.0f)
+        if (!_Pause)
         {
-            _fCurrentTimeOfDay = 0.0f;
-            _iAmountOfDaysPlayed += 1;
+            UpdateSunAndMoon();
+            UpdateTimeset();
 
-            if (_bUseWeather == true)
-                gWeatherMaster.GetComponent<Weather_Controller>().GetSet_iAmountOfDaysSinceLastWeather += 1;
+            // Controls the speed of our "clock"
+            _fCurrentTimeOfDay += (Time.deltaTime / _fSecondInAFullDay) * _fTimeMultiplier;
+
+            // Digital time
+            _fCurrentHour = 24 * _fCurrentTimeOfDay;
+            _fCurrentMinute = 60 * (_fCurrentHour - Mathf.Floor(_fCurrentHour));
+
+            // resets our time of day to 0 + adds a day to our amount of days played
+            if (_fCurrentTimeOfDay >= 1.0f)
+            {
+                _fCurrentTimeOfDay = 0.0f;
+                _iAmountOfDaysPlayed += 1;
+
+                if (_bUseWeather == true)
+                    gWeatherMaster.GetComponent<Weather_Controller>().GetSet_iAmountOfDaysSinceLastWeather += 1;
+            }
         }
     }
 
