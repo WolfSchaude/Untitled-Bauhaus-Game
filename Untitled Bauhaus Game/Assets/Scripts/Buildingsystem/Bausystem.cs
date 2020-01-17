@@ -441,7 +441,7 @@ public class Bausystem : MonoBehaviour
         {
             Type temp = (Type)TypeToBuild;
 
-            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben");
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: 2500 RM");
 
             if (!CheatActive)
             {
