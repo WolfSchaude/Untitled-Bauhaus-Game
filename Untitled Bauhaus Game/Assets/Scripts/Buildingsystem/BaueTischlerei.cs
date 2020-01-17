@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BaueTischlerei : MonoBehaviour
 {
-	public int studKapazitätTisch = 200;
-	public int AktPreis = 1000;
+	public int studKapazitätTisch = 100;
+	public int AktPreis = 2500;
 	public int tischBuildTimeInMonths = 2;
 
 	public float MinQualität;

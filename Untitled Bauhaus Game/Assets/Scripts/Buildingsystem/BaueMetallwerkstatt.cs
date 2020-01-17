@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BaueMetallwerkstatt : MonoBehaviour
 {
-	public int studKapazitätMetall = 200;
-	public int AktPreis = 1000;
+	public int studKapazitätMetall = 100;
+	public int AktPreis = 2500;
 	public int metallBuildTimeInMonths = 2;
 
 	public float MinQualität;

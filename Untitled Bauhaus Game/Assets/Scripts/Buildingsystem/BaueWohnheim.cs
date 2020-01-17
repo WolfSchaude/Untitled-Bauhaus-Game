@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class BaueWohnheim : MonoBehaviour
 {
     public int AnzahlWohnheime = 0;
-	public int studKapazitätWohn = 200;
-	public int AktPreisW = 1000;
+	public int studKapazitätWohn = 100;
+	public int AktPreisW = 2500;
     public int wohnBuildTimeInMonths = 2;
     public int BauStil;
 

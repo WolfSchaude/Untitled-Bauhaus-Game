@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class BaueArchitekturwerkstatt : MonoBehaviour
 {
 	public int AnzahlWerkstaette = 0;
-	public int studKapazitätArch = 200;
-	public int AktPreis = 1000;
+	public int studKapazitätArch = 100;
+	public int AktPreis = 2500;
 	public int archBuildTimeInMonths = 2;
 	public int BauStil;
 

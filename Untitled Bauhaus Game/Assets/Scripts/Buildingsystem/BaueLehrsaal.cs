@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class BaueLehrsaal : MonoBehaviour
 {
     public int AnzahlLehrsaal = 0;
-	public int studKapazitätLehr = 200;
-    public int AktPreisL = 1000;
+	public int studKapazitätLehr = 100;
+    public int AktPreisL = 2500;
     public int lehrBuildTimeInMonths = 2;
     public int BauStil;
 

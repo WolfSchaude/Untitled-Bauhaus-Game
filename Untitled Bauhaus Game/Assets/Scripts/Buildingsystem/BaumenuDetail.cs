@@ -130,12 +130,12 @@ public class BaumenuDetail : MonoBehaviour
         {
             case 1:
                 buildingNameText.text = "Architekturwerkstatt";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AktPreis.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().archBuildTimeInMonths + " Monat(e)";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().studKapazitätArch.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -167,9 +167,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueMalerei>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueMalerei>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueMalerei>().malBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueMalerei>().AktPreis.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueMalerei>().studKapazitätMal.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -201,9 +201,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().ausBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().AktPreis.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().studKapazitätAus.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -235,9 +235,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().metallBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().AktPreis.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().studKapazitätMetall.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -269,9 +269,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueTischlerei>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueTischlerei>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueTischlerei>().tischBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueTischlerei>().AktPreis.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueTischlerei>().studKapazitätTisch.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -303,9 +303,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehrBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AktPreisL.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueLehrsaal>().studKapazitätLehr.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
                 //buildingImage.sprite
 
@@ -338,9 +338,9 @@ public class BaumenuDetail : MonoBehaviour
                 buildingQualityText.text = "Zu erwartende Qualität: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().MinQualität.ToString() + " - " + GameObject.Find("UI").GetComponent<BaueWohnheim>().MaxQualitaet.ToString();
                 buildingTimeTotalText.text = "Bauzeit: 2 Monate";
                 buildingTimeLeftText.text = "Bauzeit übrig: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().wohnBuildTimeInMonths + " Monat(e)";
-                buildingPriceText.text = "Preis: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().AktPreisW.ToString() + " RM";
+                buildingPriceText.text = "Preis: " + 2500 + " RM";
                 buildingTeacherText.text = "Dozentenkapazität: ";
-                buildingStudentText.text = "Studentenkapazität: " + GameObject.Find("UI").GetComponent<BaueWohnheim>().studKapazitätWohn.ToString();
+                buildingStudentText.text = "Studentenkapazität: " + 100;
 
 				//buildingImage.sprite
 
