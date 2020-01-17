@@ -12,18 +12,42 @@ public class Bausystem : MonoBehaviour
 
     public GameObject SaveGameKeeper;
 
+    /// <summary>
+    /// All available structure prefabs/objects are saved in this list
+    /// </summary>
     private List<GameObject> Structures = new List<GameObject>();
 
+    /// <summary>
+    /// When no build time cheat active, then this bool is true
+    /// </summary>
     public bool CheatActive;
 
+    /// <summary>
+    /// Maximum number of pipelines, that can be used in game
+    /// </summary>
     public int MaxBuildPipelines;
+
+    /// <summary>
+    /// Variable to temporary save the type of the future workshop
+    /// </summary>
     public int TypeToBuild;
+
+    /// <summary>
+    /// Variable to temporary save the main type of the future workshop
+    /// </summary>
     public int MainTypeToBuild;
+
+    /// <summary>
+    /// Variable to temporary save the used style of the future workshop
+    /// </summary>
     public int StyleToBuild;
 
+    /// <summary>
+    /// Number of pipes as text to print on detailed build menue
+    /// </summary>
     [SerializeField] private Text Bauarbeiter;
 
-    internal class BuildingOrder
+    internal class BuildingOrder //Build pipeline objects
     {
         public int TypeToBuild { get; private set; }
         public int MainTypeToBuild { get; private set; }
@@ -31,7 +55,7 @@ public class Bausystem : MonoBehaviour
         public int TimeToBuild { get; private set; }
         public bool IsSlotUsed { get; private set; }
 
-        public BuildingOrder()
+        public BuildingOrder() //When initialized, the set everything to zero
         {
             TypeToBuild = 0;
             MainTypeToBuild = 0;
@@ -39,7 +63,7 @@ public class Bausystem : MonoBehaviour
             TimeToBuild = 0;
             IsSlotUsed = false;
         }
-        public void SetBuilding(int type, int maintype, int style, int time)
+        public void SetBuilding(int type, int maintype, int style, int time) //Should be named SetPipeline or SetOrder, because it only sets the build order of the Player and the Pipeline itself to active
         {
             TypeToBuild = type;
             MainTypeToBuild = maintype;
@@ -48,7 +72,7 @@ public class Bausystem : MonoBehaviour
             IsSlotUsed = true;
         }
 
-        public void SetZero()
+        public void SetZero() //As suggested, it resets the pipeline
         {
             TypeToBuild = 0;
             MainTypeToBuild = 0;
@@ -57,38 +81,41 @@ public class Bausystem : MonoBehaviour
             IsSlotUsed = false;
         }
 
-        public void NoBuildTimeCheat()
+        public void NoBuildTimeCheat() //For cheat mode: sets the build time to 0 (implemented as function because of security reasons)
         {
             TimeToBuild = 0;
         }
 
-        public bool CheckStatus()
+        public bool CheckStatus() //Checks if the build order is ready to build (build time is zero)...
         {
 
-            if (IsSlotUsed == true)
+            if (IsSlotUsed == true) //...but only if the pipeline is active
             {
-                if (TimeToBuild != 0)
+                if (TimeToBuild > 0) //But if the build time is over zero...
                 {
-                    TimeToBuild--;
+                    TimeToBuild--; //Then it actualise the time until the structure is builded
                     return false;
                 }
                 else
                 {
-                    return true;
+                    return true; //It returns true if the build time is zero
                 }
             }
             else
             {
-                return false;
+                return false; //If the build pipeline is not active, then it returns false as "not ready to build"
             }
         }
     }
 
+    /// <summary>
+    /// Array which contains all build pipelines
+    /// </summary>
     private BuildingOrder[] BuildingPipeline;
 
-    internal class BuildingStyle
+    internal class BuildingStyle //Build styles
     {
-        public int Structure1Count;
+        public int Structure1Count; //Maximum amount of main type structures, which are supported by this build style
         public int Structure2Count;
         public int Structure3Count;
 
@@ -104,7 +131,7 @@ public class Bausystem : MonoBehaviour
         public int[] Structure2Cost;
         public int[] Structure3Cost;
 
-        public float[] Structure1Quality;
+        public float[] Structure1Quality; //Quality is not used yet
         public float[] Structure2Quality;
         public float[] Structure3Quality;
 
@@ -144,6 +171,7 @@ public class Bausystem : MonoBehaviour
     void Start()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
+        Debug.Log("Im finaly in Unity ^^");
 
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));
@@ -163,7 +191,7 @@ public class Bausystem : MonoBehaviour
         Structures.Add(GameObject.Find("Abteil_17"));
         Structures.Add(GameObject.Find("Abteil_18"));
 
-        Debug.Log("Building System: Prefabs loaded");
+        Debug.Log("Building System: Structure objects loaded");
 
         int NumberOfStructures = Structures.Count;
 
@@ -211,10 +239,14 @@ public class Bausystem : MonoBehaviour
         Structures[15].GetComponent<Struktur>().TypeID = 6;
         Structures[16].GetComponent<Struktur>().TypeID = 7;
 
+        Debug.Log("Building System: Values of object scripts set");
+
         for (int i = 0; i < NumberOfStructures; i++)
         {
             Structures[i].SetActive(false);
         }
+
+        Debug.Log("Building System: Set objects to inactive");
 
         MaxBuildPipelines = 3;
 
@@ -224,11 +256,15 @@ public class Bausystem : MonoBehaviour
             BuildingPipeline[i] = new BuildingOrder();
         }
 
+        Debug.Log("Building System: Generate build pipeline");
+
         ManipulateMoney = gameObject.GetComponent<Money>();
         ManipulateStudents = gameObject.GetComponent<Studenten>();
 
         UsableStyles = new BuildingStyle[2] { new BuildingStyle(), new BuildingStyle() };
-        
+
+        Debug.Log("Building System: Generate building styles");
+
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
 
         UsableStyles[0].Structure1Cost[0] = 2500;
@@ -250,6 +286,8 @@ public class Bausystem : MonoBehaviour
         UsableStyles[0].Structure3Cost[6] = 2500;
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
 
+        Debug.Log("Building System: Values of building styles set");
+
         StyleToBuild = 0;
 
         Debug.Log("Building System: System ready to take off!");
@@ -260,6 +298,8 @@ public class Bausystem : MonoBehaviour
     {
         int ActivePipelines = MaxBuildPipelines;
 
+        Debug.Log("Building System: Function CalculateFreePipeline called");
+
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
             if (BuildingPipeline[i].IsSlotUsed)
@@ -268,6 +308,8 @@ public class Bausystem : MonoBehaviour
             }
         }
         Bauarbeiter.text = ActivePipelines + "/" + MaxBuildPipelines;
+
+        Debug.Log("Building System: Function CalculateFreePipeline ended");
     }
     public void BuildTime()
     {
@@ -282,48 +324,56 @@ public class Bausystem : MonoBehaviour
 
     public void Architektur()
     {
+        Debug.Log("Building System: Architektur selected");
         MainTypeToBuild = 1;
         TypeToBuild = 1;
     }
 
     public void Ausstellungsgestaltung()
     {
+        Debug.Log("Building System: Ausstellungsgestaltung selected");
         MainTypeToBuild = 1;
         TypeToBuild = 2;
     }
 
     public void Malerei()
     {
+        Debug.Log("Building System: Malerei selected");
         MainTypeToBuild = 1;
         TypeToBuild = 3;
     }
 
     public void Metallwerkstatt()
     {
+        Debug.Log("Building System: Metallwerkstatt selected");
         MainTypeToBuild = 1;
         TypeToBuild = 4;
     }
 
     public void Tischlerei()
     {
+        Debug.Log("Building System: Tischlerei selected");
         MainTypeToBuild = 1;
         TypeToBuild = 5;
     }
 
     public void Wohnheim()
     {
+        Debug.Log("Building System: Wohnheim selected");
         MainTypeToBuild = 2;
         TypeToBuild = 6;
     }
 
     public void Lehrsaal()
     {
+        Debug.Log("Building System: Lehrsaal selected");
         MainTypeToBuild = 3;
         TypeToBuild = 7;
     }
 
     public void StartBuilding()
     {
+        Debug.Log("Building System: Function StartBuilding called");
         bool FreePipelineFound = false;
         int FreePipelineNumber = 0;
 
@@ -339,7 +389,7 @@ public class Bausystem : MonoBehaviour
             }
         }
 
-        Debug.Log("PotentialFreeStructures: " + PotentialFreeStructures.Count);
+        Debug.Log("Building System: Search for number of free structures completed");
 
         if (PotentialFreeStructures.Count == 0)
         {
@@ -362,17 +412,20 @@ public class Bausystem : MonoBehaviour
             return;
         }
 
+        Debug.Log("Building System: Build style maximum number of main type structures checked");
+
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
             if (BuildingPipeline[i].IsSlotUsed == false)
             {
                 FreePipelineFound = true;
                 FreePipelineNumber = i;
-                Debug.Log("Free Pipeline found: " + FreePipelineFound + " " + FreePipelineNumber);
                 break;
             }
         }
-        
+
+        Debug.Log("Building System: Free pipeline searched");
+
         if (FreePipelineFound == false)
         {
             return;
@@ -383,18 +436,22 @@ public class Bausystem : MonoBehaviour
             if (!CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
+                Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
             }
             else
             {
-                Debug.Log("Fúnction Build Called");
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
                 BuildStructure(FreePipelineNumber);
             }
         }
+
+        Debug.Log("Building System: Function StartBuilding ended");
     }
 
     public void BuildStructure(int PipelineNumber)
     {
+        Debug.Log("Building System: Function BuildStructure called");
+
         int NumberOfStructures = Structures.Count;
 
         List<GameObject> PotentialFreeStructures = new List<GameObject>();
@@ -407,13 +464,15 @@ public class Bausystem : MonoBehaviour
             }
         }
 
-        Debug.Log("PotentialFreeStructures: " + PotentialFreeStructures.Count);
+        Debug.Log("Building System: Search for number of free structures completed");
 
         if (PotentialFreeStructures.Count == 0)
         {
             BuildingPipeline[PipelineNumber].SetZero();
             return;
         }
+
+        Debug.Log("Building System: Searched for incorrect build pipelines");
 
 
         int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
@@ -427,6 +486,8 @@ public class Bausystem : MonoBehaviour
             }
         }
 
+        Debug.Log("Building System: Searched lowest main type ID");
+
         int FreeStructure = 0;
 
         for (int i = 0; i < NumberOfPotentialFreeStructures; i++)
@@ -438,10 +499,14 @@ public class Bausystem : MonoBehaviour
             }
         }
 
+        Debug.Log("Building System: Set reference to object with lowest ID");
+
         PotentialFreeStructures[FreeStructure].SetActive(true);
 
         PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
         PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().InformCounter();
+
+        Debug.Log("Building System: Set structure and counter");
 
         switch (BuildingPipeline[PipelineNumber].MainTypeToBuild)
         {
@@ -462,21 +527,32 @@ public class Bausystem : MonoBehaviour
                 break;
         }
 
+        Debug.Log("Building System: Used style actualised");
+
         BuildingPipeline[PipelineNumber].SetZero();
+
+        Debug.Log("Building System: Used build pipeline reset");
 
         FeedbackFromBuildings.NewTick("Gebäude fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
         ManipulateStudents.studKapazitaet += 100;
+
+        Debug.Log("Building System: Student capacity actualised");
+        Debug.Log("Building System: Function BuildStructure ended");
     }
 
     public void Save()
     {
+        Debug.Log("Building System: Function Save called");
+
         int NumberOfStructures = Structures.Count;
         int NumberOfStyles = UsableStyles.Length;
 
         int[,] ActiveBuilding = new int[NumberOfStructures, 4];
         int[,] StyleCounter = new int[NumberOfStyles, 3];
         int[,] StructuresInBuild = new int[MaxBuildPipelines, 5];
+
+        Debug.Log("Building System: Save arrays initialized");
 
         for (int i = 0; i < NumberOfStructures; i++) 
         {
@@ -497,6 +573,8 @@ public class Bausystem : MonoBehaviour
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.ActiveBuildings = ActiveBuilding;
 
+        Debug.Log("Building System: Active buildings and values saved");
+
         for (int i = 0; i < NumberOfStyles; i++)
         {
             StyleCounter[i, 0] = UsableStyles[i].Structure1Count;
@@ -505,6 +583,8 @@ public class Bausystem : MonoBehaviour
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleCounter = StyleCounter;
+
+        Debug.Log("Building System: Style count saved");
 
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
@@ -523,9 +603,15 @@ public class Bausystem : MonoBehaviour
             StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
             StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
         }
+
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StructuresInBuild = StructuresInBuild;
 
+        Debug.Log("Building System: Active build pipelines saved");
+
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[6] = true;
+
+        Debug.Log("Building System: Inform SaveGameManager, building system saved");
+        Debug.Log("Building System: Fucntion Save ended");
     }
 
     public void Load(Save save)
