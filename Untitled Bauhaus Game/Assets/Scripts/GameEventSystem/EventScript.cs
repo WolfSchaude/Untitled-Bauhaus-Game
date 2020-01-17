@@ -15,7 +15,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 	public GameObject Playervariables;
 	public GameObject SaveGamemanager;
 
-	public static List<GameObject> AllEvents;
+	public List<GameObject> AllEvents;
 	private GameObject ThatOneRandomEvent;
 
 	public Text AnzahlEvents;
