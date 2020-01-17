@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Werkstatt : MonoBehaviour
 {
-    public enum WerkstattTyp { Undefiniert, Architektur, Malerei, Ausstellungsgestaltung, Metallwerkstatt, Tischlerei };
+    public enum WerkstattTyp { Undefiniert, Architekturwerkstatt, Malerei, Ausstellungsgestaltung, Metallwerkstatt, Tischlerei };
     public WerkstattTyp EigenerTyp;
 
     public bool IstEinemDozentenZugewiesen;
@@ -25,7 +25,7 @@ public class Werkstatt : MonoBehaviour
         switch (Typ)
         {
             case 1:
-                EigenerTyp = WerkstattTyp.Architektur;
+                EigenerTyp = WerkstattTyp.Architekturwerkstatt;
                 break;
             case 2:
                 EigenerTyp = WerkstattTyp.Malerei;

@@ -7,6 +7,8 @@ public class GebäudeÜbersicht : MonoBehaviour
 {
     public Animator OverviewAnimator;
 
+    public GameObject PlayerVariables;
+
     public Text werkstattCount;
     public Text lehrsaalCount;
     public Text wohnheimCount;
@@ -22,9 +24,9 @@ public class GebäudeÜbersicht : MonoBehaviour
     {
         OverviewAnimator.SetBool("Bool", Collapsed);
 
-        if (werkstattCount != null) werkstattCount.text = "Gebaute Werkstätte: \n" + GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().AnzahlWerkstaette.ToString() + " / 7";
-        if (lehrsaalCount != null) lehrsaalCount.text = "Gebaute Lehrsäle: \n" + GameObject.Find("UI").GetComponent<BaueLehrsaal>().AnzahlLehrsaal.ToString() + " / 7";
-        if ( wohnheimCount != null) wohnheimCount.text = "Gebaute Wohnheime: \n" + GameObject.Find("UI").GetComponent<BaueWohnheim>().AnzahlWohnheime.ToString() + " / 3"; 
+        if (werkstattCount != null) werkstattCount.text = "Gebaute Werkstätte: \n" + PlayerVariables.GetComponent<Bausystem>().AnzahlWerkstaette.ToString() + " / 7";
+        if (lehrsaalCount != null) lehrsaalCount.text = "Gebaute Lehrsäle: \n" + GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr.ToString() + " / 7";
+        if (wohnheimCount != null) wohnheimCount.text = "Gebaute Wohnheime: \n" + GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn.ToString() + " / 3"; 
     }
 
     public void ToggleOpened() //Sets overview window active

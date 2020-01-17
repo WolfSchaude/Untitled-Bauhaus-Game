@@ -2849,7 +2849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000045776367}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -8423,7 +8423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Preis: 5000 RM'
+  m_Text: 'Preis: 2500 RM'
 --- !u!222 &708211487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12189,8 +12189,12 @@ MonoBehaviour:
   CheatActive: 0
   MaxBuildPipelines: 0
   TypeToBuild: 0
+  OwnTypeEnum: 0
   MainTypeToBuild: 0
   StyleToBuild: 0
+  AnzahlWerkstaette: 0
+  AnzahlLehrsaal: 0
+  AnzahlWohnheime: 0
   Bauarbeiter: {fileID: 861834006}
 --- !u!1 &1012012621
 GameObject:
@@ -14935,6 +14939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OverviewAnimator: {fileID: 1357314985}
+  PlayerVariables: {fileID: 1009857072}
   werkstattCount: {fileID: 1193729359}
   lehrsaalCount: {fileID: 2017386128}
   wohnheimCount: {fileID: 1813437916}
@@ -17460,7 +17465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0.000061035156, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -18904,8 +18909,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 851380092}
   m_HandleRect: {fileID: 851380091}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

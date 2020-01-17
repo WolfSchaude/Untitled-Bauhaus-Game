@@ -31,6 +31,8 @@ public class Bausystem : MonoBehaviour
     /// Variable to temporary save the type of the future workshop
     /// </summary>
     public int TypeToBuild;
+    public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
+    public Type OwnTypeEnum;
 
     /// <summary>
     /// Variable to temporary save the main type of the future workshop
@@ -41,6 +43,10 @@ public class Bausystem : MonoBehaviour
     /// Variable to temporary save the used style of the future workshop
     /// </summary>
     public int StyleToBuild;
+
+    public int AnzahlWerkstaette = 0;
+    public int AnzahlLehrsaal = 0;
+    public int AnzahlWohnheime = 0;
 
     /// <summary>
     /// Number of pipes as text to print on detailed build menue
@@ -315,7 +321,7 @@ public class Bausystem : MonoBehaviour
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            if (BuildingPipeline[i].CheckStatus())
+            if (BuildingPipeline[i].CheckStatus() || CheatActive)
             {
                 BuildStructure(i);
             }
@@ -433,6 +439,10 @@ public class Bausystem : MonoBehaviour
 
         if (FreePipelineFound == true)
         {
+            Type temp = (Type)TypeToBuild;
+
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben");
+
             if (!CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
@@ -514,16 +524,20 @@ public class Bausystem : MonoBehaviour
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
+                AnzahlWerkstaette++;
+
                 break;
             case 2:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
+                AnzahlWohnheime++;
                 break;
             case 3:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
                 ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
+                AnzahlLehrsaal++;
                 break;
         }
 
@@ -533,7 +547,7 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Used build pipeline reset");
 
-        FeedbackFromBuildings.NewTick("Gebäude fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
+        FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
         ManipulateStudents.studKapazitaet += 100;
 
