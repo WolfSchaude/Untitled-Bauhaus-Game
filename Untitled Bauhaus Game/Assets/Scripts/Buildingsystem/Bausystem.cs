@@ -256,11 +256,18 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Okay, that system is ready, i gonna drink some Byte Cola, have fun comrade :D");
     }
 
-    private void Update()
+    public void ShowPipelines()
     {
-        var x = 0;
+        int ActivePipelines = MaxBuildPipelines;
 
-        Bauarbeiter.text = x + "/" + MaxBuildPipelines;
+        for (int i = 0; i < MaxBuildPipelines; i++)
+        {
+            if (BuildingPipeline[i].IsSlotUsed)
+            {
+                ActivePipelines--;
+            }
+        }
+        Bauarbeiter.text = ActivePipelines + "/" + MaxBuildPipelines;
     }
     public void BuildTime()
     {
