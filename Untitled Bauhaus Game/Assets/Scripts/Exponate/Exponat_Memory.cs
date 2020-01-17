@@ -11,7 +11,8 @@ public class Exponat_Memory : MonoBehaviour
 
 	void Start()
     {
-        
+		FeedbackTicker = GameObject.Find("Button - Feedback Ticker");
+		Playervariables = GameObject.Find("PlayerVariables");
     }
 
     // Update is called once per frame
