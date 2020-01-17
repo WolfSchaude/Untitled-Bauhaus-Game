@@ -177,7 +177,7 @@ public class Bausystem : MonoBehaviour
     void Start()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
-        Debug.Log("Im finaly in Unity ^^");
+        Debug.Log("Im final ly in Unity ^^");
 
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));
@@ -313,7 +313,7 @@ public class Bausystem : MonoBehaviour
                 ActivePipelines--;
             }
         }
-        Bauarbeiter.text = ActivePipelines + "/" + MaxBuildPipelines;
+        Bauarbeiter.text = "Bauarbeiter: " + ActivePipelines + "/" + MaxBuildPipelines;
 
         Debug.Log("Building System: Function CalculateFreePipeline ended");
     }
@@ -441,7 +441,7 @@ public class Bausystem : MonoBehaviour
         {
             Type temp = (Type)TypeToBuild;
 
-            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben");
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: 2500 RM");
 
             if (!CheatActive)
             {
