@@ -453,6 +453,19 @@ public class Bausystem : MonoBehaviour
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
                 BuildStructure(FreePipelineNumber);
             }
+
+            switch (BuildingPipeline[FreePipelineNumber].MainTypeToBuild)
+            {
+                case 1:
+                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure1Count]);
+                    break;
+                case 2:
+                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure2Count]);
+                    break;
+                case 3:
+                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure3Count]);
+                    break;
+            }
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -522,20 +535,17 @@ public class Bausystem : MonoBehaviour
         {
             case 1:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
-                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
                 AnzahlWerkstaette++;
 
                 break;
             case 2:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
-                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
                 AnzahlWohnheime++;
                 break;
             case 3:
                 //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
-                ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count]);
                 UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
                 AnzahlLehrsaal++;
                 break;
