@@ -31,6 +31,8 @@ public class Bausystem : MonoBehaviour
     /// Variable to temporary save the type of the future workshop
     /// </summary>
     public int TypeToBuild;
+    public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
+    public Type OwnTypeEnum;
 
     /// <summary>
     /// Variable to temporary save the main type of the future workshop
@@ -437,6 +439,10 @@ public class Bausystem : MonoBehaviour
 
         if (FreePipelineFound == true)
         {
+            Type temp = (Type)TypeToBuild;
+
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben");
+
             if (!CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);

@@ -25,8 +25,8 @@ public class GebäudeÜbersicht : MonoBehaviour
         OverviewAnimator.SetBool("Bool", Collapsed);
 
         if (werkstattCount != null) werkstattCount.text = "Gebaute Werkstätte: \n" + PlayerVariables.GetComponent<Bausystem>().AnzahlWerkstaette.ToString() + " / 7";
-        if (lehrsaalCount != null) lehrsaalCount.text = "Gebaute Lehrsäle: \n" + PlayerVariables.GetComponent<Bausystem>().AnzahlLehrsaal.ToString() + " / 7";
-        if (wohnheimCount != null) wohnheimCount.text = "Gebaute Wohnheime: \n" + PlayerVariables.GetComponent<Bausystem>().AnzahlWohnheime.ToString() + " / 3"; 
+        if (lehrsaalCount != null) lehrsaalCount.text = "Gebaute Lehrsäle: \n" + GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlLehr.ToString() + " / 7";
+        if (wohnheimCount != null) wohnheimCount.text = "Gebaute Wohnheime: \n" + GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn.ToString() + " / 3"; 
     }
 
     public void ToggleOpened() //Sets overview window active
