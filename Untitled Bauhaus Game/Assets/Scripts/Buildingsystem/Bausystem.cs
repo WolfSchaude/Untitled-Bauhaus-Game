@@ -353,9 +353,25 @@ public class Bausystem : MonoBehaviour
 
     private void Update()
     {
-        ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-        ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-        ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        if (CheatActive) {
+            for (int i = 0; i < MaxBuildPipelines; i++)
+            {
+                BuildingPipeline[i].NoBuildTimeCheat();
+            }
+        }
+
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        {
+            ActualBuildTime = int.MaxValue;
+            ActualCapacity = int.MaxValue;
+            ActualCosts = int.MaxValue;
+        }
+        else
+        {
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        }
     }
 
     public void ShowPipelines()
@@ -462,7 +478,7 @@ public class Bausystem : MonoBehaviour
             return;
         }
 
-        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] > UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
             return;
         }
@@ -497,14 +513,16 @@ public class Bausystem : MonoBehaviour
             if (CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
+                UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
                 BuildStructure(FreePipelineNumber);
             }
             else
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+                UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
             }
+
             ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
-            UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
