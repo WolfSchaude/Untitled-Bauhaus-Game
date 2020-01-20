@@ -61,16 +61,22 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 				StudentenAnzahl = studKapazitaet;
 			}
 		}
-	}
-	public void Save()
-	{
-		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;
-		SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.MaxStudenten = studKapazitaet;
-		SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[4] = true;
-	}
-	public void Load(Save save)
-	{
-		StudentenAnzahl = save.StudentenAnzahl;
-		studKapazitaet = save.MaxStudenten;
-	}
+    }
+
+    public void MehrKapazitaet(int Kapazität)
+    {
+        studKapazitaet += Kapazität;
+    }
+
+    public void Save()
+    {
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.MaxStudenten = studKapazitaet;
+        SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[4] = true;
+    }
+    public void Load(Save save)
+    {
+        StudentenAnzahl = save.StudentenAnzahl;
+        studKapazitaet = save.MaxStudenten;
+    }
 }
