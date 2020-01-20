@@ -19,7 +19,6 @@ public class RandomSpawnPrefabs : MonoBehaviour
     }
 	public void Spawn()
 	{
-		
 		for (int i = 0; i < 10000; i++)
 		{
 			int spawnPointX = Random.Range(-300, 300);

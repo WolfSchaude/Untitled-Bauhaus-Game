@@ -36,15 +36,6 @@ public class Exponate : MonoBehaviour
 		expoSlider.value = exponatCreateTimer; //set slider value to int value
 
         createExponat();
-
-		//if (TimeMode.Mode == FastForward.TimeMode.FastForward)
-		//{
-		//	expoSlider.maxValue = -2000;
-		//}
-		//else if (TimeMode.Mode == FastForward.TimeMode.Normal)
-		//{
-		//	expoSlider.maxValue = 0;
-		//}
 	}
 
     public void checkForButtonPress() //Herstellung mit Button

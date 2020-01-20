@@ -24,6 +24,8 @@ public class Teacher_Memory : MonoBehaviour
 
     string Name;
 
+    private GameObject TeacherScriptObject;
+
     void Start()
     {
     }
@@ -31,12 +33,13 @@ public class Teacher_Memory : MonoBehaviour
     {
     }
 
-    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats)
+    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats, GameObject script)
     {
         Memory = teacher;
         Parent = parent;
         Ticker = ticker;
         Playervariables = PlayerStats;
+        TeacherScriptObject = script;
 
         Name = Memory.Name;
 
@@ -74,6 +77,8 @@ public class Teacher_Memory : MonoBehaviour
         x.GetComponentsInChildren<Text>()[3].text = "";
         x.GetComponent<Button>().interactable = false;
         x.transform.GetChild(5).gameObject.SetActive(true);
+
+        TeacherScriptObject.GetComponent<TeacherScript>().DeleteSample();
 
         TeacherScript.Eingestellte.Add(x);
 

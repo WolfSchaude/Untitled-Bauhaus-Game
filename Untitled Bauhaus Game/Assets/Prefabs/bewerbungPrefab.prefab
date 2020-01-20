@@ -450,6 +450,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
   Ticker: {fileID: 0}
+  Playervariables: {fileID: 0}
+  EventSystem: {fileID: 0}
+  Kosten: 0
+  Vorlauf: 1
+  Datum_Tag: 0
+  Datum_Monat: 0
+  Datum_Jahr: 0
+  TimerCounter: 0
 --- !u!1 &6852908209051168772
 GameObject:
   m_ObjectHideFlags: 0

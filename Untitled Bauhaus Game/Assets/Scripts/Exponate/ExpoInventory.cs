@@ -11,11 +11,14 @@ public class ExpoInventory : MonoBehaviour
 
 	public GameObject inventoryWindow;
 	public GameObject prefab; //Exponate Prefab
+	public GameObject HieristNochNixPrefab;
 	public GameObject parent; //ScrollView Content
+
 
 	private float Qualität;
 
 	private bool IsShown;
+	private bool Once = true;
 
 	public Animator InventoryAnimator;
 
@@ -23,8 +26,9 @@ public class ExpoInventory : MonoBehaviour
 
 	void Start()
     {
-		Resources.Load("Person1");
-		IsShown = false; 
+		IsShown = false;
+
+		Exponat.Add(Instantiate(HieristNochNixPrefab, parent.GetComponentInParent<Transform>().GetComponentInParent<Transform>().GetComponentInParent<Transform>().transform));
 	}
 
     void Update()
@@ -108,5 +112,15 @@ public class ExpoInventory : MonoBehaviour
 		x.GetComponentInChildren<Button>().onClick.AddListener(() => {Destroy(x); });
 
 		Exponat.Add(x);
+	}
+
+	public void DeleteSample()
+	{
+		if (Once)
+		{
+			Destroy(Exponat[0]);
+			Exponat.Clear();
+			Once = false;
+		}
 	}
 }
