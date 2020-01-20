@@ -23,7 +23,7 @@ public class ToD_Base : MonoBehaviour
     private bool _bUseMoon = true;
 
     /// <summary>
-    /// Do you want to start paused?
+    /// Do you want to start or stay paused?
     /// </summary>
     [SerializeField]
     private bool _Pause = true;
@@ -140,6 +140,11 @@ public class ToD_Base : MonoBehaviour
     /// Weather master is needed so the time of day can update days as this controls when the weather should change. 
     /// </summary>
     public GameObject gWeatherMaster;
+
+    /// <summary>
+    /// Fastforward Gameobject
+    /// </summary>
+    public FastForward FastForwardGO;
 
     /// <summary>
     /// This needs to be a directional light so we have a light that covers the whole world. 
@@ -259,6 +264,14 @@ public class ToD_Base : MonoBehaviour
     {
         if (!_Pause)
         {
+            if (FastForwardGO.Mode == FastForward.TimeMode.Normal)
+            {
+                _fSecondInAFullDay = 60f;
+            }
+            else if (FastForwardGO.Mode == FastForward.TimeMode.FastForward)
+            {
+                _fSecondInAFullDay = 30f;
+            }
             UpdateSunAndMoon();
             UpdateTimeset();
 

@@ -177,7 +177,7 @@ public class Bausystem : MonoBehaviour
     void Start()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
-        Debug.Log("Im final ly in Unity ^^");
+        Debug.Log("Im finally in Unity ^^");
 
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));

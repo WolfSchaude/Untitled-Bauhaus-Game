@@ -76,10 +76,6 @@
 			<Event_Monat>9</Event_Monat>
 			<Event_Jahr>1923</Event_Jahr>
 
-			<Einblenden_Ab_Tag>25</Einblenden_Ab_Tag>
-			<Einblenden_Ab_Monat>7</Einblenden_Ab_Monat>
-			<Einblenden_Ab_Jahr>1923</Einblenden_Ab_Jahr>
-
 			<EventText>Nehme an der Leipziger Herbst-Messe teil. Hierfür brauchst du mindestens 4 Exponate.</EventText>
 
 			<EventOption1>Event Option 1, Event Example 4</EventOption1>
