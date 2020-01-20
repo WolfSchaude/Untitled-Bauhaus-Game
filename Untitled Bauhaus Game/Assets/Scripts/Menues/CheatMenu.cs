@@ -39,28 +39,10 @@ public class CheatMenu : MonoBehaviour
 	{
 		if (bauzeitToggle.isOn)
 		{
-			GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().archBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueMalerei>().malBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().ausBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().metallBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueTischlerei>().tischBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehrBuildTimeInMonths = 0;
-			GameObject.Find("UI").GetComponent<BaueWohnheim>().wohnBuildTimeInMonths = 0;
-
 			bauzeitCheater = true;
 		}
 		else
 		{
-			if (bauzeitCheater)
-			{
-				GameObject.Find("UI").GetComponent<BaueArchitekturwerkstatt>().archBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueMalerei>().malBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueAusstellungsgestaltung>().ausBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueMetallwerkstatt>().metallBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueTischlerei>().tischBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueLehrsaal>().lehrBuildTimeInMonths = 2;
-				GameObject.Find("UI").GetComponent<BaueWohnheim>().wohnBuildTimeInMonths = 2;
-			}
 			bauzeitCheater = false;
 		}
 

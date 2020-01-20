@@ -33,6 +33,7 @@ public class Bausystem : MonoBehaviour
     public int TypeToBuild;
     public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
     public Type OwnTypeEnum;
+    public enum MainType { Undefiniert, Werkstätten, Wohnheime, Lehrsäle };
 
     /// <summary>
     /// Variable to temporary save the main type of the future workshop
@@ -44,9 +45,11 @@ public class Bausystem : MonoBehaviour
     /// </summary>
     public int StyleToBuild;
 
-    public int AnzahlWerkstaette = 0;
-    public int AnzahlLehrsaal = 0;
-    public int AnzahlWohnheime = 0;
+    public int ActualCosts;
+    public int ActualBuildTime;
+    public int ActualCapacity;
+
+    public int[] StructuresCounter;
 
     /// <summary>
     /// Number of pipes as text to print on detailed build menue
@@ -121,54 +124,58 @@ public class Bausystem : MonoBehaviour
 
     internal class BuildingStyle //Build styles
     {
-        public int Structure1Count; //Maximum amount of main type structures, which are supported by this build style
-        public int Structure2Count;
-        public int Structure3Count;
+        public int[] StructureCount; //Maximum amount of main type structures, which are supported by this build style
 
-        public int MaxStructure1 { get; private set; }
-        public int MaxStructure2 { get; private set; }
-        public int MaxStructure3 { get; private set; }
+        public int[] MaxStructures { get; private set; }
 
-        public Vector3[] Structure1Positions;
-        public Vector3[] Structure2Positions;
-        public Vector3[] Structure3Positions;
+        public Vector3[,] StructurePositions;
 
-        public int[] Structure1Cost;
-        public int[] Structure2Cost;
-        public int[] Structure3Cost;
+        public int[,] StructureCost;
 
-        public float[] Structure1Quality; //Quality is not used yet
-        public float[] Structure2Quality;
-        public float[] Structure3Quality;
+        public int[,] StructureCapacity;
+
+        public float[,] StructureQuality; //Quality is not used yet
+
+        public int[,] StructureBuildTime;
 
         public BuildingStyle()
         {
-            Structure1Count = 0;
-            Structure2Count = 0;
-            Structure3Count = 0;
 
-            MaxStructure1 = 0;
-            MaxStructure2 = 0;
-            MaxStructure3 = 0;
         }
 
         public void SetBuildingStyle(int MS1, int MS2, int MS3)
         {
-            Structure1Count = 0;
-            Structure2Count = 0;
-            Structure3Count = 0;
+            MaxStructures = new int[4];
 
-            MaxStructure1 = MS1;
-            MaxStructure2 = MS2;
-            MaxStructure3 = MS3;
+            MaxStructures[0] = 0;
+            MaxStructures[1] = MS1;
+            MaxStructures[2] = MS2;
+            MaxStructures[3] = MS3;
 
-            Structure1Positions = new Vector3[MaxStructure1];
-            Structure2Positions = new Vector3[MaxStructure2];
-            Structure3Positions = new Vector3[MaxStructure3];
+            StructureCount = new int[4];
+            StructureCount[0] = 0;
+            StructureCount[1] = 0;
+            StructureCount[2] = 0;
+            StructureCount[3] = 0;
 
-            Structure1Cost = new int[MaxStructure1];
-            Structure2Cost = new int[MaxStructure2];
-            Structure3Cost = new int[MaxStructure3];
+            int Temp = 0;
+
+            for (int i = 0; i < MaxStructures.Length; i++)
+            {
+                if (Temp < MaxStructures[i])
+                {
+                    Temp = MaxStructures[i];
+                }
+            }
+
+            StructureCapacity = new int[4, Temp];
+
+            StructurePositions = new Vector3[4, Temp];
+
+            StructureCost = new int[4, Temp];
+
+            StructureBuildTime = new int[4, Temp];
+
         }
     }
 
@@ -177,7 +184,7 @@ public class Bausystem : MonoBehaviour
     void Start()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
-        Debug.Log("Im final ly in Unity ^^");
+        Debug.Log("Im finally in Unity ^^");
 
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));
@@ -273,31 +280,82 @@ public class Bausystem : MonoBehaviour
 
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
 
-        UsableStyles[0].Structure1Cost[0] = 2500;
-        UsableStyles[0].Structure1Cost[1] = 2500;
-        UsableStyles[0].Structure1Cost[2] = 2500;
-        UsableStyles[0].Structure1Cost[3] = 2500;
-        UsableStyles[0].Structure1Cost[4] = 2500;
-        UsableStyles[0].Structure1Cost[5] = 2500;
-        UsableStyles[0].Structure1Cost[6] = 2500;
-        UsableStyles[0].Structure2Cost[0] = 2500;
-        UsableStyles[0].Structure2Cost[1] = 2500;
-        UsableStyles[0].Structure2Cost[2] = 2500;
-        UsableStyles[0].Structure3Cost[0] = 2500;
-        UsableStyles[0].Structure3Cost[1] = 2500;
-        UsableStyles[0].Structure3Cost[2] = 2500;
-        UsableStyles[0].Structure3Cost[3] = 2500;
-        UsableStyles[0].Structure3Cost[4] = 2500;
-        UsableStyles[0].Structure3Cost[5] = 2500;
-        UsableStyles[0].Structure3Cost[6] = 2500;
+        UsableStyles[0].StructureCapacity[3, 0] = 100;
+        UsableStyles[0].StructureCapacity[3, 1] = 100;
+        UsableStyles[0].StructureCapacity[3, 2] = 100;
+        UsableStyles[0].StructureCapacity[3, 3] = 100;
+        UsableStyles[0].StructureCapacity[3, 4] = 100;
+        UsableStyles[0].StructureCapacity[3, 5] = 100;
+        UsableStyles[0].StructureCapacity[3, 6] = 100;
+        UsableStyles[0].StructureCapacity[2, 0] = 100;
+        UsableStyles[0].StructureCapacity[2, 1] = 100;
+        UsableStyles[0].StructureCapacity[2, 2] = 100;
+        UsableStyles[0].StructureCapacity[1, 0] = 100;
+        UsableStyles[0].StructureCapacity[1, 1] = 100;
+        UsableStyles[0].StructureCapacity[1, 2] = 100;
+        UsableStyles[0].StructureCapacity[1, 3] = 100;
+        UsableStyles[0].StructureCapacity[1, 4] = 100;
+        UsableStyles[0].StructureCapacity[1, 5] = 100;
+        UsableStyles[0].StructureCapacity[1, 6] = 100;
+
+        UsableStyles[0].StructureCost[3, 0] = 2500;
+        UsableStyles[0].StructureCost[3, 1] = 3000;
+        UsableStyles[0].StructureCost[3, 2] = 3500;
+        UsableStyles[0].StructureCost[3, 3] = 4000;
+        UsableStyles[0].StructureCost[3, 4] = 4500;
+        UsableStyles[0].StructureCost[3, 5] = 5000;
+        UsableStyles[0].StructureCost[3, 6] = 5500;
+        UsableStyles[0].StructureCost[2, 0] = 2500;
+        UsableStyles[0].StructureCost[2, 1] = 4000;
+        UsableStyles[0].StructureCost[2, 2] = 5500;
+        UsableStyles[0].StructureCost[1, 0] = 2500;
+        UsableStyles[0].StructureCost[1, 1] = 3000;
+        UsableStyles[0].StructureCost[1, 2] = 3500;
+        UsableStyles[0].StructureCost[1, 3] = 4000;
+        UsableStyles[0].StructureCost[1, 4] = 4500;
+        UsableStyles[0].StructureCost[1, 5] = 5000;
+        UsableStyles[0].StructureCost[1, 6] = 5500;
+
+        UsableStyles[0].StructureBuildTime[3, 0] = 30;
+        UsableStyles[0].StructureBuildTime[3, 1] = 35;
+        UsableStyles[0].StructureBuildTime[3, 2] = 40;
+        UsableStyles[0].StructureBuildTime[3, 3] = 45;
+        UsableStyles[0].StructureBuildTime[3, 4] = 50;
+        UsableStyles[0].StructureBuildTime[3, 5] = 55;
+        UsableStyles[0].StructureBuildTime[3, 6] = 60;
+        UsableStyles[0].StructureBuildTime[2, 0] = 30;
+        UsableStyles[0].StructureBuildTime[2, 1] = 45;
+        UsableStyles[0].StructureBuildTime[2, 2] = 60;
+        UsableStyles[0].StructureBuildTime[1, 0] = 30;
+        UsableStyles[0].StructureBuildTime[1, 1] = 35;
+        UsableStyles[0].StructureBuildTime[1, 2] = 40;
+        UsableStyles[0].StructureBuildTime[1, 3] = 45;
+        UsableStyles[0].StructureBuildTime[1, 4] = 50;
+        UsableStyles[0].StructureBuildTime[1, 5] = 55;
+        UsableStyles[0].StructureBuildTime[1, 6] = 60;
+
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
 
         Debug.Log("Building System: Values of building styles set");
 
         StyleToBuild = 0;
 
+        StructuresCounter = new int[4];
+        StructuresCounter[0] = 0;
+        StructuresCounter[1] = 0;
+        StructuresCounter[2] = 0;
+        StructuresCounter[3] = 0;
+
+
         Debug.Log("Building System: System ready to take off!");
         Debug.Log("Okay, that system is ready, i gonna drink some Byte Cola, have fun comrade :D");
+    }
+
+    private void Update()
+    {
+        ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
     }
 
     public void ShowPipelines()
@@ -399,21 +457,12 @@ public class Bausystem : MonoBehaviour
 
         if (PotentialFreeStructures.Count == 0)
         {
+            FeedbackFromBuildings.NewTick("Maximale Anzahl an " + (MainType)MainTypeToBuild + " gebaut");
             BuildingPipeline[FreePipelineNumber].SetZero();
             return;
         }
 
-        if (UsableStyles[StyleToBuild].Structure1Count > UsableStyles[StyleToBuild].MaxStructure1 && MainTypeToBuild == 1)
-        {
-            return;
-        }
-
-        if (UsableStyles[StyleToBuild].Structure2Count > UsableStyles[StyleToBuild].MaxStructure2 && MainTypeToBuild == 2)
-        {
-            return;
-        }
-
-        if (UsableStyles[StyleToBuild].Structure3Count > UsableStyles[StyleToBuild].MaxStructure3 && MainTypeToBuild == 3)
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] > UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
             return;
         }
@@ -442,30 +491,18 @@ public class Bausystem : MonoBehaviour
             Type temp = (Type)TypeToBuild;
 
             FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: 2500 RM");
-
-            if (!CheatActive)
-            {
+           
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
-                Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
-            }
-            else
+            Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
+            
+            if (CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
                 BuildStructure(FreePipelineNumber);
             }
 
-            switch (BuildingPipeline[FreePipelineNumber].MainTypeToBuild)
-            {
-                case 1:
-                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure1Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure1Count]);
-                    break;
-                case 2:
-                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure2Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure2Count]);
-                    break;
-                case 3:
-                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure3Cost[UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].Structure3Count]);
-                    break;
-            }
+            BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+            ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -531,25 +568,8 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Set structure and counter");
 
-        switch (BuildingPipeline[PipelineNumber].MainTypeToBuild)
-        {
-            case 1:
-                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count];
-                UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure1Count++;
-                AnzahlWerkstaette++;
-
-                break;
-            case 2:
-                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count];
-                UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure2Count++;
-                AnzahlWohnheime++;
-                break;
-            case 3:
-                //PotentialFreeStructures[buffer].transform.position = UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Positions[UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count];
-                UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].Structure3Count++;
-                AnzahlLehrsaal++;
-                break;
-        }
+        UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]++;
+        StructuresCounter[BuildingPipeline[PipelineNumber].MainTypeToBuild]++;
 
         Debug.Log("Building System: Used style actualised");
 
@@ -573,7 +593,7 @@ public class Bausystem : MonoBehaviour
         int NumberOfStyles = UsableStyles.Length;
 
         int[,] ActiveBuilding = new int[NumberOfStructures, 4];
-        int[,] StyleCounter = new int[NumberOfStyles, 3];
+        int[,] StyleCounter = new int[NumberOfStyles, 4];
         int[,] StructuresInBuild = new int[MaxBuildPipelines, 5];
 
         Debug.Log("Building System: Save arrays initialized");
@@ -601,9 +621,9 @@ public class Bausystem : MonoBehaviour
 
         for (int i = 0; i < NumberOfStyles; i++)
         {
-            StyleCounter[i, 0] = UsableStyles[i].Structure1Count;
-            StyleCounter[i, 1] = UsableStyles[i].Structure2Count;
-            StyleCounter[i, 2] = UsableStyles[i].Structure3Count;
+            StyleCounter[i, 1] = UsableStyles[i].StructureCount[1];
+            StyleCounter[i, 2] = UsableStyles[i].StructureCount[2];
+            StyleCounter[i, 3] = UsableStyles[i].StructureCount[3];
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleCounter = StyleCounter;
@@ -650,14 +670,16 @@ public class Bausystem : MonoBehaviour
                 Structures[i].SetActive(true);
                 Structures[i].GetComponent<Struktur>().SetStructure(save.ActiveBuildings[i, 1], save.ActiveBuildings[i, 2], save.ActiveBuildings[i, 3]);
                 Structures[i].GetComponent<Struktur>().InformCounter();
+
+                StructuresCounter[Structures[i].GetComponent<Struktur>().OwnMainTypeInt]++;
             }
         }
 
         for (int i = 0; i < NumberOfStyles; i++)
         {
-            UsableStyles[i].Structure1Count = save.StyleCounter[i, 0];
-            UsableStyles[i].Structure2Count = save.StyleCounter[i, 1];
-            UsableStyles[i].Structure3Count = save.StyleCounter[i, 2];
+            UsableStyles[i].StructureCount[1] = save.StyleCounter[i, 1];
+            UsableStyles[i].StructureCount[2] = save.StyleCounter[i, 2];
+            UsableStyles[i].StructureCount[3] = save.StyleCounter[i, 3];
         }
 
         for (int i = 0; i < MaxBuildPipelines; i++)
