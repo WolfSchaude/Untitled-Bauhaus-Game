@@ -7,24 +7,7 @@ public class AnimationStarter : MonoBehaviour
 {
 	public Animator SelfDropDown;
 
-	public bool Collapsed;
-
-	public void ToggleOpened()
-	{
-		//SelfDropDown.SetTrigger("Click");
-
-		Collapsed = !Collapsed;
-	}
-
-	public void CloseMenu()
-	{
-		//if (!Collapsed)
-		//{
-			//SelfDropDown.SetTrigger("Click)");
-
-			Collapsed = true;
-		//}
-	}
+	[SerializeField] private bool Collapsed;
 
 	void Start()
 	{
@@ -33,5 +16,15 @@ public class AnimationStarter : MonoBehaviour
 	void Update()
 	{
 		SelfDropDown.SetBool("Bool", Collapsed);
+	}
+
+	public void ToggleOpened()
+	{
+		Collapsed = !Collapsed;
+	}
+
+	public void CloseMenu()
+	{
+		Collapsed = true;
 	}
 }

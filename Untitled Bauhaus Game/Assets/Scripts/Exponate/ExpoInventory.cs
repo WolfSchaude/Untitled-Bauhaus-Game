@@ -28,7 +28,7 @@ public class ExpoInventory : MonoBehaviour
     {
 		IsShown = false;
 
-		Exponat.Add(Instantiate(HieristNochNixPrefab, parent.GetComponentInParent<Transform>().GetComponentInParent<Transform>().GetComponentInParent<Transform>().transform));
+		Exponat.Add(Instantiate(HieristNochNixPrefab, parent.GetComponentInParent<Transform>().transform));
 	}
 
     void Update()
