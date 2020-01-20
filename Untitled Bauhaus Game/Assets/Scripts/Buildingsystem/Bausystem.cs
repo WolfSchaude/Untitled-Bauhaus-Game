@@ -492,7 +492,6 @@ public class Bausystem : MonoBehaviour
 
             FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: 2500 RM");
            
-                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 60);
             Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
             
             if (CheatActive)
@@ -500,9 +499,12 @@ public class Bausystem : MonoBehaviour
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
                 BuildStructure(FreePipelineNumber);
             }
-
-            BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+            else
+            {
+                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+            }
             ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+            UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -568,7 +570,6 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Set structure and counter");
 
-        UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]++;
         StructuresCounter[BuildingPipeline[PipelineNumber].MainTypeToBuild]++;
 
         Debug.Log("Building System: Used style actualised");
@@ -579,7 +580,7 @@ public class Bausystem : MonoBehaviour
 
         FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
-        ManipulateStudents.studKapazitaet += 100;
+        ManipulateStudents.studKapazitaet += UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCapacity[BuildingPipeline[PipelineNumber].MainTypeToBuild, UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]];
 
         Debug.Log("Building System: Student capacity actualised");
         Debug.Log("Building System: Function BuildStructure ended");
