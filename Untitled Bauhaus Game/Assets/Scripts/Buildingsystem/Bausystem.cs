@@ -379,7 +379,7 @@ public class Bausystem : MonoBehaviour
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            if (BuildingPipeline[i].CheckStatus() || CheatActive)
+            if (BuildingPipeline[i].CheckStatus() || (CheatActive && BuildingPipeline[i].CheckStatus()))
             {
                 BuildStructure(i);
             }
