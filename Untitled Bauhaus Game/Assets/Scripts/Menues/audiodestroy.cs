@@ -18,11 +18,6 @@ public class audiodestroy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "Credits")
-        {
-            Destroy(this.gameObject);
-        }
-        
+    {        
     }
 }

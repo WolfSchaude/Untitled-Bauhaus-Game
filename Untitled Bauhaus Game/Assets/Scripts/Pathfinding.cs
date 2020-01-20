@@ -22,18 +22,24 @@ public class Pathfinding : MonoBehaviour
     {
 		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Pause) //Pause
 		{
-			nav.speed = 0;
-			nav.acceleration = 0;
-			nav.angularSpeed = 0;
+			//nav.speed = 0;
+			//nav.acceleration = 0;
+			//nav.angularSpeed = 0;
+			nav.isStopped = true;
+
 		}
 		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Normal) //Normal
 		{
+			nav.isStopped = false;
+
 			nav.speed = 3.5f;
 			nav.acceleration = 8;
 			nav.angularSpeed = 120;
 		}
 		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.FastForward) //Schnell
 		{
+			nav.isStopped = false;
+
 			nav.speed = 14f;
 			nav.acceleration = 32;
 			nav.angularSpeed = 480;
