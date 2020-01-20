@@ -14,19 +14,10 @@ public class Event
 	public int Event_Tag = 0;
 
 	[XmlElement("Event_Monat")]
-	public int Event_Monat;
+	public int Event_Monat = 0;
 
 	[XmlElement("Event_Jahr")]
-	public int Event_Jahr;
-
-	[XmlElement("Einblenden_Ab_Tag")]
-	public int Einblenden_Ab_Tag;
-
-	[XmlElement("Einblenden_Ab_Monat")]
-	public int Einblenden_Ab_Monat;
-
-	[XmlElement("Einblenden_Ab_Jahr")]
-	public int Einblenden_Ab_Jahr;
+	public int Event_Jahr = 0;
 
 	[XmlElement("EventText")]
 	public string EventText = "Hello World!";

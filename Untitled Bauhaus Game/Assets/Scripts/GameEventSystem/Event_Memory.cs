@@ -119,10 +119,8 @@ public class Event_Memory : MonoBehaviour
 					}
 
 					Vorlauf = NewTimeKeeper.BerechneTage(
-						Playervariables.GetComponent<NewTimeKeeper>().CurrentDay,
-						Playervariables.GetComponent<NewTimeKeeper>().CurrentMonth,
-						Playervariables.GetComponent<NewTimeKeeper>().CurrentYear,
-						a[0], a[1], a[2]);
+						a[0], a[1], a[2],
+						Memory.Event_Tag, Memory.Event_Monat, Memory.Event_Jahr);
 				}
 				if (item.Contains("GameOverOption"))
 				{
@@ -143,6 +141,8 @@ public class Event_Memory : MonoBehaviour
 
 		//Initialisiere den angezeigten Countdown
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
+
+		Debug.Log("Vorlauf Event: " + Memory.ID + " = " +  Vorlauf + " , Verbleibende Tage: " + TimerCounter);
 	}
 	public void SelectOption1()
 	{
