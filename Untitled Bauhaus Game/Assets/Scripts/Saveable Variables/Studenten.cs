@@ -46,6 +46,12 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 			StudentenAnzahl = studKapazitaet;
 		}
     }
+
+    public void MehrKapazitaet(int Kapazität)
+    {
+        studKapazitaet += Kapazität;
+    }
+
     public void Save()
     {
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StudentenAnzahl = StudentenAnzahl;

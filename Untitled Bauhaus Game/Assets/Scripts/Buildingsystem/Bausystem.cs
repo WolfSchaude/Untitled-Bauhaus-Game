@@ -502,6 +502,12 @@ public class Bausystem : MonoBehaviour
             return;
         }
 
+        if (ActualCosts > ManipulateMoney.money)
+        {
+            FeedbackFromBuildings.NewTick("Nicht genug Geld um " + (Type)TypeToBuild + " zu bauen");
+            return;
+        }
+
         if (FreePipelineFound == true)
         {
             Type temp = (Type)TypeToBuild;
@@ -513,16 +519,17 @@ public class Bausystem : MonoBehaviour
             if (CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
-                UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
+                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 BuildStructure(FreePipelineNumber);
+                UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
+                BuildingPipeline[FreePipelineNumber].SetZero();
             }
             else
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
             }
-
-            ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -592,15 +599,19 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Used style actualised");
 
-        BuildingPipeline[PipelineNumber].SetZero();
+        ManipulateStudents.MehrKapazitaet(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCapacity[BuildingPipeline[PipelineNumber].MainTypeToBuild, UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]]);
+
+        Debug.Log("Building System: Student capacity actualised");
+
+        if (!CheatActive)
+        {
+            BuildingPipeline[PipelineNumber].SetZero();
+        }
 
         Debug.Log("Building System: Used build pipeline reset");
 
         FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
-        ManipulateStudents.studKapazitaet += UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCapacity[BuildingPipeline[PipelineNumber].MainTypeToBuild, UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]];
-
-        Debug.Log("Building System: Student capacity actualised");
         Debug.Log("Building System: Function BuildStructure ended");
     }
 
