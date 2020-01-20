@@ -372,6 +372,8 @@ public class Bausystem : MonoBehaviour
             ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
             ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
         }
+
+        ShowPipelines();
     }
 
     public void ShowPipelines()
@@ -391,6 +393,7 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Function CalculateFreePipeline ended");
     }
+
     public void BuildTime()
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
