@@ -42,6 +42,11 @@ public class ToD_Editor : Editor
         // USING WEATHER
         GUILayout.BeginHorizontal();        GUILayout.Label("Use weather system: ");        cl.GetSet_bUseWeather = EditorGUILayout.Toggle(cl.GetSet_bUseWeather, GUILayout.MaxWidth(iMinWidth));        GUILayout.EndHorizontal();
         if (cl.GetSet_bUseWeather == true)        {            GUILayout.BeginHorizontal();            GUILayout.Label("Weather master: ");            cl.gWeatherMaster = EditorGUILayout.ObjectField("", cl.gWeatherMaster, typeof(GameObject), true, GUILayout.MaxWidth(iMedWidth)) as GameObject;            GUILayout.EndHorizontal();        }
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("FastForward GameObject");
+        cl.FastForwardGO = EditorGUILayout.ObjectField("", cl.FastForwardGO, typeof(FastForward), true, GUILayout.MaxWidth(iMedWidth)) as FastForward;
+        GUILayout.EndHorizontal();
+
         // DAY CYCLE LENGTH        EditorGUILayout.HelpBox(("Time of day settings"), MessageType.None, true);        if (bShowTips == true)            EditorGUILayout.HelpBox("Length of a full (game) day and night cycle in seconds", MessageType.Info, true);
         GUILayout.BeginHorizontal();        GUILayout.Label("Full day cycle in seconds: ");        cl.GetSet_fSecondInAFullDay = EditorGUILayout.FloatField("", cl.GetSet_fSecondInAFullDay, GUILayout.MaxWidth(iMedWidth));        GUILayout.EndHorizontal();
         // STARTING TIME FOR THE GAME        if (bShowTips == true)            EditorGUILayout.HelpBox("*Uses 24 hour clock \n\nGame starting hour - Choose when you want the game to begin. \n\nTimeset Settings - Choose when you want the different changes of the day to be.", MessageType.Info, true);
