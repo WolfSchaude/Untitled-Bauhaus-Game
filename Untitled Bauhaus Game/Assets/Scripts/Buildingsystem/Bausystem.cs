@@ -380,8 +380,6 @@ public class Bausystem : MonoBehaviour
     {
         int ActivePipelines = MaxBuildPipelines;
 
-        Debug.Log("Building System: Function CalculateFreePipeline called");
-
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
             if (BuildingPipeline[i].IsSlotUsed)
@@ -390,8 +388,6 @@ public class Bausystem : MonoBehaviour
             }
         }
         Bauarbeiter.text = "Bauarbeiter: " + ActivePipelines + "/" + MaxBuildPipelines;
-
-        Debug.Log("Building System: Function CalculateFreePipeline ended");
     }
 
     public void BuildTime()

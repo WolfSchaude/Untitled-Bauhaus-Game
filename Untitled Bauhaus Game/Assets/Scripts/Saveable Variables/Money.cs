@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UntitledBauhausGame;
 
 public class Money : MonoBehaviour, ISaveableInterface
 {
@@ -39,9 +38,9 @@ public class Money : MonoBehaviour, ISaveableInterface
 
     public void addGehalt() //Monatliches Gehalt abhängig von der Studentenanzahl und dem Politikmeter
     {
-			oldMoney = money;
-			money += (gameObject.GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)gameObject.GetComponent<Politikmeter>().Politiklevel / 100);
-			Feedback.NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
+		oldMoney = money;
+		money += (gameObject.GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)gameObject.GetComponent<Politikmeter>().Politiklevel / 100);
+		Feedback.NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
 	}
 
 	public void Spende(float spende)

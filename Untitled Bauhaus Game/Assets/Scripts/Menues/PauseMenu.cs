@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UntitledBauhausGame;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -35,7 +34,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
 
         GamePaused = false;
-        Kamera.AbleToMove = true;
+        Kamera.FreeCameraMovement.Invoke();
     }
 
     void Pause()
@@ -45,7 +44,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0;
 
         GamePaused = true;
-        Kamera.AbleToMove = false;
+        Kamera.LockCameraMovement.Invoke();
     }
 
     public void LoadMenu()

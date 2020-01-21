@@ -35,13 +35,20 @@ public class bewerbungvisible : MonoBehaviour
 			if (bewerbungGameObject.activeSelf)
 			{
 				bewerbungGameObject.SetActive(false);
+
+				Kamera.FreeCameraMovement.Invoke();
 			}
 			else
 			{
 				bewerbungGameObject.SetActive(true);
                 GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
 
-            }
+				Kamera.LockCameraMovement.Invoke();
+			}
+		}
+		else
+		{
+			zuweisenGameObject.SetActive(false);
 		}
 	}
 
@@ -52,12 +59,20 @@ public class bewerbungvisible : MonoBehaviour
 			if (zuweisenGameObject.activeSelf)
 			{
 				zuweisenGameObject.SetActive(false);
+
+				Kamera.FreeCameraMovement.Invoke();
 			}
 			else
 			{
 				zuweisenGameObject.SetActive(true);
                 GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
-            }
+
+				Kamera.LockCameraMovement.Invoke();
+			}
+		}
+		else
+		{
+			bewerbungGameObject.SetActive(false);
 		}
 	}
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UntitledBauhausGame;
 
 public class WinLose : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class WinLose : MonoBehaviour
 		if (GameOverScreen.activeSelf)
 		{
 			Time.timeScale = 0;
-			Kamera.AbleToMove = false;
+			Kamera.LockCameraMovement.Invoke();
 		}
         if(politikmeterSkript.Politiklevel >= 200)
 		{
