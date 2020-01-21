@@ -369,7 +369,6 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Building System: Values of building styles set");
 
         StyleToBuild = 0;
-        TypeToBuild = 1;
 
         StructuresCounter = new int[4];
         StructuresCounter[0] = 0;
@@ -499,6 +498,7 @@ public class Bausystem : MonoBehaviour
     public void Werkstatt()
     {
         MainTypeToBuild = 1;
+        TypeToBuild = 1;
     }
 
     public void Wohnheim()
