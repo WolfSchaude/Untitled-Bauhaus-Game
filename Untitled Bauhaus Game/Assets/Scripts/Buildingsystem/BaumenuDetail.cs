@@ -5,11 +5,7 @@ public class BaumenuDetail : MonoBehaviour
 {
     public GameObject detailWindow;
 
-    public GameObject overviewWindow;
-
     public GameObject Playervariables;
-
-    public GameObject StartBuild;
 
     public GameObject BuildDropDown;
 
@@ -26,14 +22,6 @@ public class BaumenuDetail : MonoBehaviour
 
     public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
 
-    bool archwerkstattDetailOpen = false;
-    bool malereiDetailOpen = false;
-    bool ausstellungDetailOpen = false;
-    bool metallwerkstattDetailOpen = false;
-    bool tischlereiDetailOpen = false;
-    bool lehrsaalDetailOpen = false;
-    bool wohnheimDetailOpen = false;
-
     private int BuildType;
 
     void Start()
@@ -43,7 +31,6 @@ public class BaumenuDetail : MonoBehaviour
     void Update()
     {
         UpdateContent(); //Updates detail windows content depending on which button was pressed
-        CheckCloseButton(); //Checks if the Close Button was pressed
     }
 
     public void ShowWindow(int Baum) //Sets detail window active
@@ -52,9 +39,6 @@ public class BaumenuDetail : MonoBehaviour
         {
             Kamera.LockCameraMovement.Invoke();
             detailWindow.SetActive(true);
-            GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
-            GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
-            //GameObject.Find("EventSystem").GetComponent<ExpoInventory>().showWindow();
             
             if (Baum == 1)
             {
@@ -79,20 +63,7 @@ public class BaumenuDetail : MonoBehaviour
         buildingPriceText.text = "Preis: " + Playervariables.GetComponent<Bausystem>().ActualCosts + " RM";
         buildingQualityText.text = "Zu erwartende Qualität: " + "100%";
         buildingTimeTotalText.text = "Bauzeit: " + Playervariables.GetComponent<Bausystem>().ActualBuildTime + " Tage";
-        buildingTimeLeftText.text = "Bauzeit übrig: Lol, noch nicht drin";
         buildingTeacherText.text = "Dozentenkapazität: ";
         buildingStudentText.text = "Studentenkapazität: " + Playervariables.GetComponent<Bausystem>().ActualCapacity + " Studenten";
-        buildingTimeLeftText.gameObject.SetActive(false);
-    }
-
-    public void CheckCloseButton()  //Checks if the Close Button was pressed
-    {
-        archwerkstattDetailOpen = false;
-        malereiDetailOpen = false;
-        ausstellungDetailOpen = false;
-        metallwerkstattDetailOpen = false;
-        tischlereiDetailOpen = false;
-        lehrsaalDetailOpen = false;
-        wohnheimDetailOpen = false;
     }
 }
