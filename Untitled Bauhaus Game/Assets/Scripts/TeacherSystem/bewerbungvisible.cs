@@ -30,49 +30,57 @@ public class bewerbungvisible : MonoBehaviour
 
 	public void ToggleBewerbung()
 	{
-		if (!zuweisenGameObject.activeSelf)
+		if (zuweisenGameObject.activeSelf)
+		{
+			zuweisenGameObject.SetActive(false);
+			Kamera.FreeCameraMovement.Invoke();
+			QuickAccesskeys.IClosedAWindow.Invoke();
+		}
+		else
 		{
 			if (bewerbungGameObject.activeSelf)
 			{
 				bewerbungGameObject.SetActive(false);
-
 				Kamera.FreeCameraMovement.Invoke();
+				QuickAccesskeys.IClosedAWindow.Invoke();
 			}
 			else
 			{
 				bewerbungGameObject.SetActive(true);
-                GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
-
 				Kamera.LockCameraMovement.Invoke();
+				QuickAccesskeys.IOpenedAWindow.Invoke();
 			}
-		}
-		else
-		{
-			zuweisenGameObject.SetActive(false);
 		}
 	}
 
 	public void ToggleZuweisen()
 	{
-		if (!bewerbungGameObject.activeSelf)
+		if (bewerbungGameObject.activeSelf)
+		{
+			bewerbungGameObject.SetActive(false);
+			Kamera.FreeCameraMovement.Invoke();
+			QuickAccesskeys.IClosedAWindow.Invoke();
+		}
+		else
 		{
 			if (zuweisenGameObject.activeSelf)
 			{
 				zuweisenGameObject.SetActive(false);
-
 				Kamera.FreeCameraMovement.Invoke();
+				QuickAccesskeys.IClosedAWindow.Invoke();
 			}
 			else
 			{
 				zuweisenGameObject.SetActive(true);
-                GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
-
 				Kamera.LockCameraMovement.Invoke();
+				QuickAccesskeys.IOpenedAWindow.Invoke();
 			}
 		}
-		else
-		{
-			bewerbungGameObject.SetActive(false);
-		}
+	}
+
+	public void CloseWindows()
+	{
+		bewerbungGameObject.SetActive(false);
+		zuweisenGameObject.SetActive(false);
 	}
 }

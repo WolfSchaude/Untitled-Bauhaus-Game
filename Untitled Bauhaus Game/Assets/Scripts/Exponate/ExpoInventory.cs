@@ -43,9 +43,6 @@ public class ExpoInventory : MonoBehaviour
 
 		if (IsShown)
 		{
-			GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
-			GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
-			GameObject.Find("EventSystem").GetComponent<BaumenuDetail>().detailWindow.SetActive(false);
 		}
 	}
 

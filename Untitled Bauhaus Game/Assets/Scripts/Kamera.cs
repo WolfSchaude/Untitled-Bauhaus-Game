@@ -191,17 +191,13 @@ public class Kamera : MonoBehaviour
 	/// </summary>
 	public void LockMovement()
 	{
-		Debug.Log(AbleToMove);
 		AbleToMove = false;
-		Debug.Log(AbleToMove);
 	}
 	/// <summary>
 	/// This function sets AbletoMove to true, allowing Camera Movements
 	/// </summary>
 	public void FreeMovement()
 	{
-		Debug.Log(AbleToMove);
 		AbleToMove = true;
-		Debug.Log(AbleToMove);
 	}
 }

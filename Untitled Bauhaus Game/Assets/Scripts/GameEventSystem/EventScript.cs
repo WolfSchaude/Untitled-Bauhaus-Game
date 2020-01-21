@@ -11,16 +11,15 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 	public GameObject randomprefab;
 	public GameObject parent;
 
-	public GameObject UIToBlendIn;
 	public GameObject Playervariables;
 	public GameObject SaveGamemanager;
+	public AnimationStarter AnimStarter;
+
 
 	public List<GameObject> AllEvents;
 	private GameObject ThatOneRandomEvent;
 
 	public Text AnzahlEvents;
-
-	public Animator EventsAnimator;
 
 	public bool Collapsed;
 
@@ -81,20 +80,19 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 		if (!Laedtgerade)
 		{
 			ActiveEvents = AllEvents.FindAll(actives => actives.activeSelf == true).Count;
-			if (ThatOneRandomEvent.activeSelf)
+			if (ThatOneRandomEvent != null)
 			{
-				ActiveEvents++;
-			}
-
-			if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count && !ThatOneRandomEvent.activeSelf)
-			{
-				if (!Collapsed)
+				if (ThatOneRandomEvent.activeSelf)
 				{
-					EventsAnimator.SetTrigger("Click");
-
-					Collapsed = true;
+					ActiveEvents++;
 				}
 			}
+
+			if (ActiveEvents == 0)
+			{
+				AnimStarter.CloseMenu();
+			}
+
 			if (ActiveEvents == 1)
 			{
 				AnzahlEvents.text = ActiveEvents + " Event aktiv";
@@ -104,9 +102,12 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 				AnzahlEvents.text = ActiveEvents + " Events aktiv";
 			}
 
-			if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
+			if (ThatOneRandomEvent != null)
 			{
-				ThatOneRandomEvent = NewRandomEvent();
+				if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
+				{
+					ThatOneRandomEvent = NewRandomEvent();
+				}
 			}
 		}
 
@@ -114,7 +115,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 		{
 			if (Event.GetComponent<Event_Memory>().TimerCounter == 7)
 			{
-				OpenEvent();
+				AnimStarter.OpenMenu();
 			}
 		}
 	}
@@ -159,14 +160,9 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 				ActiveEvents++;
 			}
 
-			if (AllEvents.FindAll(actives => actives.activeSelf == false).Count >= AllEvents.Count && !ThatOneRandomEvent.activeSelf)
+			if (ActiveEvents == 0)
 			{
-				if (!Collapsed)
-				{
-					EventsAnimator.SetTrigger("Click");
-
-					Collapsed = true;
-				}
+				AnimStarter.CloseMenu();
 			}
 			if (ActiveEvents == 1)
 			{
@@ -204,33 +200,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 					+ "Politische Tragweite: " + EventLoader.rec.RandomEvents[rand].Option2_Politik;
 
 		return x;
-	}
-
-	public void ToggleEvent()
-	{
-		EventsAnimator.SetTrigger("Click");
-
-		Collapsed = !Collapsed;
-	}
-
-	public void CloseEvent()
-	{
-		if (!Collapsed)
-		{
-			EventsAnimator.SetTrigger("Click");
-
-			Collapsed = true;
-		}
-	}
-
-	public void OpenEvent()
-	{
-		if (Collapsed)
-		{
-			EventsAnimator.SetTrigger("Click");
-
-			Collapsed = false;
-		}
 	}
 
 	public void Save()
