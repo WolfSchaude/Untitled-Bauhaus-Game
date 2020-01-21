@@ -17,6 +17,11 @@ public class Bausystem : MonoBehaviour
     /// </summary>
     private List<GameObject> Structures = new List<GameObject>();
 
+    public GameObject PipelinePrefab;
+    public GameObject PipelineParent;
+
+    public List<GameObject> Pipelines = new List<GameObject>();
+
     /// <summary>
     /// When no build time cheat active, then this bool is true
     /// </summary>
@@ -62,6 +67,7 @@ public class Bausystem : MonoBehaviour
         public int MainTypeToBuild { get; private set; }
         public int StyleToBuild { get; private set; }
         public int TimeToBuild { get; private set; }
+        private int WholeTime;
         public bool IsSlotUsed { get; private set; }
 
         public BuildingOrder() //When initialized, the set everything to zero
@@ -70,6 +76,7 @@ public class Bausystem : MonoBehaviour
             MainTypeToBuild = 0;
             StyleToBuild = 0;
             TimeToBuild = 0;
+            WholeTime = 0;
             IsSlotUsed = false;
         }
         public void SetBuilding(int type, int maintype, int style, int time) //Should be named SetPipeline or SetOrder, because it only sets the build order of the Player and the Pipeline itself to active
@@ -78,6 +85,7 @@ public class Bausystem : MonoBehaviour
             MainTypeToBuild = maintype;
             StyleToBuild = style;
             TimeToBuild = time;
+            WholeTime = time;
             IsSlotUsed = true;
         }
 
@@ -87,6 +95,7 @@ public class Bausystem : MonoBehaviour
             MainTypeToBuild = 0;
             StyleToBuild = 0;
             TimeToBuild = 0;
+            WholeTime = 0;
             IsSlotUsed = false;
         }
 
@@ -114,6 +123,20 @@ public class Bausystem : MonoBehaviour
             {
                 return false; //If the build pipeline is not active, then it returns false as "not ready to build"
             }
+        }
+
+        public float CalculateProgress()
+        {
+            if ((WholeTime - TimeToBuild) == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return Mathf.Round((float)(WholeTime - TimeToBuild) / WholeTime * 100f);
+            }
+
+            //(WholeTime - TimeToBuild) == 0 ? return 0 : return (WholeTime - TimeToBuild) / WholeTime;
         }
     }
 
@@ -186,6 +209,7 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
         Debug.Log("Im finally in Unity ^^");
 
+        #region FindStructures
         Structures.Add(GameObject.Find("Abteil_1"));
         Structures.Add(GameObject.Find("Abteil_2"));
         Structures.Add(GameObject.Find("Abteil_3"));
@@ -203,6 +227,7 @@ public class Bausystem : MonoBehaviour
         Structures.Add(GameObject.Find("Abteil_16"));
         Structures.Add(GameObject.Find("Abteil_17"));
         Structures.Add(GameObject.Find("Abteil_18"));
+        #endregion
 
         Debug.Log("Building System: Structure objects loaded");
 
@@ -216,6 +241,7 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Scripts attached");
 
+        #region StructuresInit
         Structures[0].GetComponent<Struktur>().OwnMainTypeInt = 3;
         Structures[1].GetComponent<Struktur>().OwnMainTypeInt = 3;
         Structures[2].GetComponent<Struktur>().OwnMainTypeInt = 3;
@@ -251,6 +277,7 @@ public class Bausystem : MonoBehaviour
         Structures[14].GetComponent<Struktur>().TypeID = 5;
         Structures[15].GetComponent<Struktur>().TypeID = 6;
         Structures[16].GetComponent<Struktur>().TypeID = 7;
+        #endregion
 
         Debug.Log("Building System: Values of object scripts set");
 
@@ -280,6 +307,8 @@ public class Bausystem : MonoBehaviour
 
         UsableStyles[0].SetBuildingStyle(7, 3, 7);
 
+
+        #region Style0Init
         UsableStyles[0].StructureCapacity[3, 0] = 100;
         UsableStyles[0].StructureCapacity[3, 1] = 100;
         UsableStyles[0].StructureCapacity[3, 2] = 100;
@@ -335,6 +364,7 @@ public class Bausystem : MonoBehaviour
         UsableStyles[0].StructureBuildTime[1, 6] = 60;
 
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
+        #endregion
 
         Debug.Log("Building System: Values of building styles set");
 
@@ -346,6 +376,15 @@ public class Bausystem : MonoBehaviour
         StructuresCounter[2] = 0;
         StructuresCounter[3] = 0;
 
+        for (int i = 0; i < MaxBuildPipelines; i++)
+        {
+            Pipelines.Add(Instantiate(PipelinePrefab, PipelineParent.transform));
+        }
+
+        for (int i = 0; i < MaxBuildPipelines; i++)
+        {
+            Pipelines[i].SetActive(false);
+        }
 
         Debug.Log("Building System: System ready to take off!");
         Debug.Log("Okay, that system is ready, i gonna drink some Byte Cola, have fun comrade :D");
@@ -372,7 +411,6 @@ public class Bausystem : MonoBehaviour
             ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
             ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
         }
-
         ShowPipelines();
     }
 
@@ -398,6 +436,13 @@ public class Bausystem : MonoBehaviour
             {
                 BuildStructure(i);
             }
+        }
+
+        int temp = Pipelines.Count;
+        for (int i = 0; i < temp; i++)
+        {
+            Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
+            Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
         }
     }
 
@@ -522,6 +567,7 @@ public class Bausystem : MonoBehaviour
                 BuildStructure(FreePipelineNumber);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
                 BuildingPipeline[FreePipelineNumber].SetZero();
+                return;
             }
             else
             {
@@ -529,6 +575,11 @@ public class Bausystem : MonoBehaviour
                 ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
             }
+            Pipelines[FreePipelineNumber].SetActive(true);
+            Pipelines[FreePipelineNumber].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
+            Pipelines[FreePipelineNumber].GetComponentsInChildren<Text>()[2].text = "0%";
+
+            Pipelines[FreePipelineNumber].GetComponentInChildren<Button>().onClick.AddListener(() => BreakBuilding(FreePipelineNumber));
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -612,6 +663,12 @@ public class Bausystem : MonoBehaviour
         FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
         Debug.Log("Building System: Function BuildStructure ended");
+    }
+
+    public void BreakBuilding(int PipelineNumber)
+    {
+        BuildingPipeline[PipelineNumber].SetZero();
+        Pipelines[PipelineNumber].SetActive(false);
     }
 
     public void Save()

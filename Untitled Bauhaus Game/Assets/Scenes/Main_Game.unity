@@ -2849,7 +2849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0.000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312858777
@@ -11540,6 +11540,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FeedbackFromBuildings: {fileID: 1413785173}
   SaveGameKeeper: {fileID: 559906866}
+  PipelinePrefab: {fileID: 4291362811738924677, guid: 27cd25fc4825dd941bb1f7f04797a73a,
+    type: 3}
+  PipelineParent: {fileID: 1682917362}
+  Pipelines: []
   CheatActive: 0
   MaxBuildPipelines: 0
   TypeToBuild: 0
