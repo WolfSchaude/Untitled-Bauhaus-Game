@@ -5,7 +5,7 @@ using System.Collections;
 [CustomEditor(typeof(ToD_Base))]
 public class ToD_Editor : Editor 
 {
-    public bool bShowTips;    private int iMinWidth = 30; // Was 30    private int iMedWidth = 80; // Was 130    private int iMaxWidth = 140; // Was 200
+    public bool bShowTips;    private readonly int iMinWidth = 30; // Was 30    private readonly int iMedWidth = 80; // Was 130    private readonly int iMaxWidth = 140; // Was 200
     public override void OnInspectorGUI()
     {
         DrawToDGUI();
@@ -43,8 +43,8 @@ public class ToD_Editor : Editor
         GUILayout.BeginHorizontal();        GUILayout.Label("Use weather system: ");        cl.GetSet_bUseWeather = EditorGUILayout.Toggle(cl.GetSet_bUseWeather, GUILayout.MaxWidth(iMinWidth));        GUILayout.EndHorizontal();
         if (cl.GetSet_bUseWeather == true)        {            GUILayout.BeginHorizontal();            GUILayout.Label("Weather master: ");            cl.gWeatherMaster = EditorGUILayout.ObjectField("", cl.gWeatherMaster, typeof(GameObject), true, GUILayout.MaxWidth(iMedWidth)) as GameObject;            GUILayout.EndHorizontal();        }
         GUILayout.BeginHorizontal();
-        GUILayout.Label("FastForward GameObject");
-        cl.FastForwardGO = EditorGUILayout.ObjectField("", cl.FastForwardGO, typeof(FastForward), true, GUILayout.MaxWidth(iMedWidth)) as FastForward;
+        GUILayout.Label("TimeKeeper GameObject");
+        cl.TimeKeeperGO = EditorGUILayout.ObjectField("", cl.TimeKeeperGO, typeof(NewTimeKeeper), true, GUILayout.MaxWidth(iMedWidth)) as NewTimeKeeper;
         GUILayout.EndHorizontal();
 
         // DAY CYCLE LENGTH        EditorGUILayout.HelpBox(("Time of day settings"), MessageType.None, true);        if (bShowTips == true)            EditorGUILayout.HelpBox("Length of a full (game) day and night cycle in seconds", MessageType.Info, true);

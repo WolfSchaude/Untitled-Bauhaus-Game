@@ -8,8 +8,9 @@ public class Exponate : MonoBehaviour
 {
 	public GameObject FeedbackTicker;
     public GameObject Playervariables;
-    public FastForward TimeMode;
     public GameObject StartOrderButton;
+
+    NewTimeKeeper TimeIsImportant;
 
     [SerializeField] Button JaAbbrechen;
     [SerializeField] Button NeinNichtAbbrechen;
@@ -21,12 +22,14 @@ public class Exponate : MonoBehaviour
     int exponatCreateTimer = -5000;
     //private int dayCounter = 3; //Intervall in Tagen, wie oft ein Exponat hergestellt werden soll.
     private int textCooldown = 200;
-    private int expoPrice = 7500; //Herstellungspreis
+    private readonly int expoPrice = 7500; //Herstellungspreis
 
     private bool exponatInProgress;
     public static bool isExponatDone = false;
     void Start()
     {
+        TimeIsImportant = Playervariables.GetComponent<NewTimeKeeper>();
+
         expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
         expoSlider.minValue = exponatCreateTimer;
     }
@@ -60,16 +63,16 @@ public class Exponate : MonoBehaviour
 
     public void createExponat()
     {
-        if (exponatInProgress && (TimeMode.Mode == FastForward.TimeMode.Normal || TimeMode.Mode == FastForward.TimeMode.FastForward))
+        if (exponatInProgress && (TimeIsImportant.Mode == NewTimeKeeper.TimeMode.Normal || TimeIsImportant.Mode == NewTimeKeeper.TimeMode.FastForward))
         {
-            switch (TimeMode.Mode)
+            switch (TimeIsImportant.Mode)
             {
-                case FastForward.TimeMode.Pause:
+                case NewTimeKeeper.TimeMode.Pause:
                     break;
-                case FastForward.TimeMode.Normal:
+                case NewTimeKeeper.TimeMode.Normal:
                     exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter);
                     break;
-                case FastForward.TimeMode.FastForward:
+                case NewTimeKeeper.TimeMode.FastForward:
                     exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter * 4);
                     break;
                 default:
@@ -94,11 +97,11 @@ public class Exponate : MonoBehaviour
 
 			if (exponatCreateTimer != expoSlider.minValue)
 			{
-				if (TimeMode.Mode == FastForward.TimeMode.Normal)
+				if (TimeIsImportant.Mode == NewTimeKeeper.TimeMode.Normal)
 				{
 					exponatCreateTimer -= 2;
 				}
-				else if (TimeMode.Mode == FastForward.TimeMode.FastForward)
+				else if (TimeIsImportant.Mode == NewTimeKeeper.TimeMode.FastForward)
 				{
 					exponatCreateTimer -= 6;
 				}

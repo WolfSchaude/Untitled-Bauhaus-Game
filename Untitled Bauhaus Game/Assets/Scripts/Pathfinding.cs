@@ -9,7 +9,7 @@ public class Pathfinding : MonoBehaviour
 	private NavMeshAgent nav;
 	private int destPoint;
 
-	public GameObject FastForwardObject;
+	public NewTimeKeeper TimeKeeperObject;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,7 +20,7 @@ public class Pathfinding : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Pause) //Pause
+		if (TimeKeeperObject.Mode == NewTimeKeeper.TimeMode.Pause) //Pause
 		{
 			//nav.speed = 0;
 			//nav.acceleration = 0;
@@ -28,7 +28,7 @@ public class Pathfinding : MonoBehaviour
 			nav.isStopped = true;
 
 		}
-		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.Normal) //Normal
+		if (TimeKeeperObject.Mode == NewTimeKeeper.TimeMode.Normal) //Normal
 		{
 			nav.isStopped = false;
 
@@ -36,7 +36,7 @@ public class Pathfinding : MonoBehaviour
 			nav.acceleration = 8;
 			nav.angularSpeed = 120;
 		}
-		if (FastForwardObject.GetComponent<FastForward>().Mode == FastForward.TimeMode.FastForward) //Schnell
+		if (TimeKeeperObject.Mode == NewTimeKeeper.TimeMode.FastForward) //Schnell
 		{
 			nav.isStopped = false;
 
