@@ -6,24 +6,69 @@ using UnityEngine.Events;
 
 public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 {
-    public GameObject FastForwardScriptObject;
     public GameObject SaveGameKeeper;
+
+    //---------------------( General Time / Date Stuff )---------------------//
 
     public UnityEvent NewDay;
     public UnityEvent NewMonth;
     public UnityEvent NewYear;
 
-    public int StartDay = 20;
-    public int StartMonth = 11;
-    public int StartYear = 1919;
+    public int StartDay { get; private set; } = 20;
+    public int StartMonth { get; private set; } = 11;
+    public int StartYear { get; private set; } = 1919;
 
-    public int CurrentDay;
-    public int CurrentMonth;
-    public int CurrentYear;
+    public int CurrentDay { get; private set; }
+    public int CurrentMonth { get; private set; }
+    public int CurrentYear { get; private set; }
 
     public Text Display;
 
+    /// <summary>
+    /// Necessary to prevent running multiple Coroutines for adding a Day
+    /// </summary>
     bool AlreadyRunningCoroutine = false;
+
+
+    //------------------------( Fast Forward Stuff )------------------------//
+    /// <summary>
+    /// Reference to the WeatherController to be able to Stop the Sun Movement
+    /// </summary>
+    [SerializeField] private ToD_Base WeatherController;
+    /// <summary>
+    /// Enum to switch between the three states which the times system knows and uses
+    /// </summary>
+    public TimeMode Mode;
+
+    /// <summary>
+    /// The Sprite that is applied to the buttons when not selected
+    /// </summary>
+    [SerializeField] Sprite Normal;
+    /// <summary>
+    /// The Sprite that is applied to the buttons when selected
+    /// </summary>
+    [SerializeField] Sprite Selected;
+
+    /// <summary>
+    /// The Image that changes, when the corresponging Button (Pause) is pressed
+    /// </summary>
+    [SerializeField] Image ButtonPause;
+    /// <summary>
+    /// The Image that changes, when the corresponging Button (Normal) is pressed
+    /// </summary>
+    [SerializeField] Image ButtonNormal;
+    /// <summary>
+    /// The Image that changes, when the corresponging Button (FastForward) is pressed
+    /// </summary>
+    [SerializeField] Image ButtonFastForward;
+
+    /// <summary>
+    /// Enum for managing the different TimeModes
+    /// </summary>
+    public enum TimeMode
+    {
+        Pause, Normal, FastForward
+    }
 
     private void Awake()
     {
@@ -33,19 +78,20 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
     }
     void Start()
     {
+        SetPause();
     }
 
     void FixedUpdate()
     {
-        switch (FastForwardScriptObject.GetComponent<FastForward>().Mode)
+        switch (Mode)
         {
-            case FastForward.TimeMode.Pause:
+            case TimeMode.Pause:
 
                 //Keine Zeit vergeht
 
                 break;
 
-            case FastForward.TimeMode.Normal:
+            case TimeMode.Normal:
 
                 if (!AlreadyRunningCoroutine)
                 {
@@ -54,7 +100,7 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 
                 break;
 
-            case FastForward.TimeMode.FastForward:
+            case TimeMode.FastForward:
 
                 if (!AlreadyRunningCoroutine)
                 {
@@ -164,6 +210,51 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         return (Ende - Start).Days;
     }
 
+	#region Here are the functions to change the speed of time
+
+	/// <summary>
+	/// Sets the TimeMode to Paused. Causes no longer counting new days, stopping exponat and Buildung progress e.g.
+	/// </summary>
+	public void SetPause()
+    {
+        WeatherController.Pause = true;
+
+        Mode = TimeMode.Pause;
+
+        ButtonPause.sprite = Selected;
+        ButtonNormal.sprite = Normal;
+        ButtonFastForward.sprite = Normal;
+    }
+
+    /// <summary>
+    /// Sets the TimeMode to Normal, causing normal flow of time with one day lasting two seconds
+    /// </summary>
+    public void SetNormal()
+    {
+        WeatherController.Pause = false;
+
+        Mode = TimeMode.Normal;
+
+        ButtonPause.sprite = Normal;
+        ButtonNormal.sprite = Selected;
+        ButtonFastForward.sprite = Normal;
+    }
+
+    /// <summary>
+    /// Sets the TimeMode to FastForward, causing accelerated flow of time with one day lasting half a second
+    /// </summary>
+    public void SetFastforward()
+    {
+        WeatherController.Pause = false;
+
+        Mode = TimeMode.FastForward;
+
+        ButtonPause.sprite = Normal;
+        ButtonNormal.sprite = Normal;
+        ButtonFastForward.sprite = Selected;
+    }
+
+    #endregion
     public void Save()
     {
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentDay = CurrentDay;

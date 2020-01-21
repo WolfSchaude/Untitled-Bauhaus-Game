@@ -144,7 +144,7 @@ public class ToD_Base : MonoBehaviour
     /// <summary>
     /// Fastforward Gameobject
     /// </summary>
-    public FastForward FastForwardGO;
+    public NewTimeKeeper TimeKeeperGO;
 
     /// <summary>
     /// This needs to be a directional light so we have a light that covers the whole world. 
@@ -264,11 +264,11 @@ public class ToD_Base : MonoBehaviour
     {
         if (!_Pause)
         {
-            if (FastForwardGO.Mode == FastForward.TimeMode.Normal)
+            if (TimeKeeperGO.Mode == NewTimeKeeper.TimeMode.Normal)
             {
                 _fSecondInAFullDay = 60f;
             }
-            else if (FastForwardGO.Mode == FastForward.TimeMode.FastForward)
+            else if (TimeKeeperGO.Mode == NewTimeKeeper.TimeMode.FastForward)
             {
                 _fSecondInAFullDay = 30f;
             }
