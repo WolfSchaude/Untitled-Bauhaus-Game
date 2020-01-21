@@ -43,14 +43,15 @@ public class BaumenuDetail : MonoBehaviour
 
     void Update()
     {
-        updateContent(); //Updates detail windows content depending on which button was pressed
-        checkCloseButton(); //Checks if the Close Button was pressed
+        UpdateContent(); //Updates detail windows content depending on which button was pressed
+        CheckCloseButton(); //Checks if the Close Button was pressed
     }
 
-    public void showWindow(int Baum) //Sets detail window active
+    public void ShowWindow(int Baum) //Sets detail window active
     {
         if (!detailWindow.activeSelf)
         {
+            Kamera.LockCameraMovement.Invoke();
             detailWindow.SetActive(true);
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
@@ -67,11 +68,12 @@ public class BaumenuDetail : MonoBehaviour
         }
         else
         {
+            Kamera.FreeCameraMovement.Invoke();
             detailWindow.SetActive(false);
         }
     }
 
-    public void updateContent() //Updates detail windows content depending on which button was pressed
+    public void UpdateContent() //Updates detail windows content depending on which button was pressed
     {
         BuildType = Playervariables.GetComponent<Bausystem>().TypeToBuild;
         buildingNameText.text = ((Type)BuildType).ToString();
@@ -84,7 +86,7 @@ public class BaumenuDetail : MonoBehaviour
         buildingTimeLeftText.gameObject.SetActive(false);
     }
 
-    public void checkCloseButton()  //Checks if the Close Button was pressed
+    public void CheckCloseButton()  //Checks if the Close Button was pressed
     {
         archwerkstattDetailOpen = false;
         malereiDetailOpen = false;
