@@ -123,7 +123,8 @@ public class Exponate : MonoBehaviour
         }
     }
 
-    public void TryToCancel()
+	#region Methods needed to do the cancel and cancel-check for exponates
+	public void TryToCancel()
     {
         JaAbbrechen.gameObject.SetActive(true);
         NeinNichtAbbrechen.gameObject.SetActive(true);
@@ -160,4 +161,5 @@ public class Exponate : MonoBehaviour
             expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
         }
     }
+	#endregion
 }

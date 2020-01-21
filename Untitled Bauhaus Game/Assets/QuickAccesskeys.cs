@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class QuickAccesskeys : MonoBehaviour
 {
@@ -42,6 +43,18 @@ public class QuickAccesskeys : MonoBehaviour
     /// Reference to: AnimationsStarter-Script on EventMenu-Scrollview, necessary for controlling the overview
     /// </summary>
     [SerializeField] AnimationStarter EventOverview;
+    /// <summary>
+    /// Reference to: Expoante-Script on Expoant-Slider, needed to Start a new Expoante on A button click
+    /// </summary>
+    [SerializeField] Exponate ExponateStarter;
+    /// <summary>
+    /// Reference to: Button of Sidebar-Statistiken, needed to open / close the Statistics panel (Subject to changes as Statistics will need to improve
+    /// </summary>
+    [SerializeField] Button Statistics;
+    /// <summary>
+    /// Reference to: Button of Sidebar-Gebaeude, needed to open / close Baumenue
+    /// </summary>
+    [SerializeField] Button Baumenue;
     void Start()
     {
         if (IOpenedAWindow != null)
@@ -69,15 +82,15 @@ public class QuickAccesskeys : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B)) //Baumenue oeffnen
         {
-
+            Baumenue.onClick.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.E)) //Exponat herstellen
         {
-
+            ExponateStarter.checkForButtonPress();
         }
-        if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken
+        if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken //Hacky ATM
         {
-
+            Statistics.onClick.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.I)) //Inventar oeffnen
         {
@@ -85,7 +98,7 @@ public class QuickAccesskeys : MonoBehaviour
             {
                 CloseAllWindows.Invoke();
             }
-            ExponatInventory.OpenMenu();
+            ExponatInventory.ToggleOpened();
         }
         if (Input.GetKeyDown(KeyCode.T)) //Ticker oeffnen / schliessen
         {
@@ -97,17 +110,17 @@ public class QuickAccesskeys : MonoBehaviour
             {
                 CloseAllWindows.Invoke();
             }
-            EventOverview.OpenMenu();
+            EventOverview.ToggleOpened();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0)) //Tempo auf Pause
+        if (Input.GetKeyDown(KeyCode.Alpha1)) //Tempo auf Pause
         {
             TimeKeeper.SetPause();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1)) //Tempo auf Normal
+        if (Input.GetKeyDown(KeyCode.Alpha2)) //Tempo auf Normal
         {
             TimeKeeper.SetNormal();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) //Tempo auf Fast
+        if (Input.GetKeyDown(KeyCode.Alpha3)) //Tempo auf Fast
         {
             TimeKeeper.SetFastforward();
         }
