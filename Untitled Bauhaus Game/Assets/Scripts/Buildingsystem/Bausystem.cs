@@ -556,7 +556,7 @@ public class Bausystem : MonoBehaviour
         {
             Type temp = (Type)TypeToBuild;
 
-            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: 2500 RM");
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]] + " RM");
            
             Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
             
@@ -578,8 +578,7 @@ public class Bausystem : MonoBehaviour
             Pipelines[FreePipelineNumber].SetActive(true);
             Pipelines[FreePipelineNumber].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
             Pipelines[FreePipelineNumber].GetComponentsInChildren<Text>()[2].text = "0%";
-
-            Pipelines[FreePipelineNumber].GetComponentInChildren<Button>().onClick.AddListener(() => BreakBuilding(FreePipelineNumber));
+            Pipelines[FreePipelineNumber].GetComponentInChildren<Button>().onClick.AddListener(() => StopBuilding(FreePipelineNumber));
         }
 
         Debug.Log("Building System: Function StartBuilding ended");
@@ -665,7 +664,7 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Building System: Function BuildStructure ended");
     }
 
-    public void BreakBuilding(int PipelineNumber)
+    public void StopBuilding(int PipelineNumber)
     {
         BuildingPipeline[PipelineNumber].SetZero();
         Pipelines[PipelineNumber].SetActive(false);
