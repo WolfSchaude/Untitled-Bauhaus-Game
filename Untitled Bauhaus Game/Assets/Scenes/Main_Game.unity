@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 185289914}
   - component: {fileID: 185289913}
   - component: {fileID: 185289916}
+  - component: {fileID: 185289917}
   m_Layer: 5
   m_Name: Scrollview - Event_Overview
   m_TagString: Untagged
@@ -2081,6 +2082,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &185289917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185289911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDropDown: {fileID: 185289916}
+  Collapsed: 0
 --- !u!1 &188860708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,6 +4690,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecb5e2e29bc2694fb0192d7685874bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloseAllWindows:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1292603758}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 397381470}
+        m_MethodName: CloseWindows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 978475645}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NumberOfOpenedWindows: 0
+  TimeKeeper: {fileID: 1009857074}
+  Pausemenu: {fileID: 410550917}
+  FeedbackTicker: {fileID: 1413785173}
+  ExponatInventory: {fileID: 978475645}
+  EventOverview: {fileID: 185289917}
 --- !u!114 &410550917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6907,8 +6964,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381768629}
-        m_MethodName: showWindow
+      - m_Target: {fileID: 978475645}
+        m_MethodName: ToggleOpened
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11092,12 +11149,11 @@ MonoBehaviour:
   randomprefab: {fileID: 4835000659218434569, guid: ef78605e31885f04a93dcf5366169a19,
     type: 3}
   parent: {fileID: 312858775}
-  UIToBlendIn: {fileID: 185289911}
   Playervariables: {fileID: 1009857072}
   SaveGamemanager: {fileID: 559906866}
+  AnimStarter: {fileID: 185289917}
   AllEvents: []
   AnzahlEvents: {fileID: 658325854}
-  EventsAnimator: {fileID: 185289916}
   Collapsed: 0
 --- !u!1 &978475642
 GameObject:
@@ -11109,6 +11165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978475643}
   - component: {fileID: 978475644}
+  - component: {fileID: 978475645}
   m_Layer: 10
   m_Name: Menu - Exponate Inventar
   m_TagString: Untagged
@@ -11155,6 +11212,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &978475645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978475642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDropDown: {fileID: 978475644}
+  Collapsed: 0
 --- !u!1 &979879525
 GameObject:
   m_ObjectHideFlags: 0
@@ -13737,6 +13808,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292603756}
+  - component: {fileID: 1292603757}
+  - component: {fileID: 1292603758}
   m_Layer: 10
   m_Name: Baumenu Detailansicht
   m_TagString: Untagged
@@ -13753,7 +13826,7 @@ RectTransform:
   m_GameObject: {fileID: 1292603755}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children:
   - {fileID: 271689760}
   - {fileID: 344910036}
@@ -13766,6 +13839,39 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 980, y: 890}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1292603757
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292603755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1490b836c0413324bbdde9e2abf30276, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1292603758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292603755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDropDown: {fileID: 1292603757}
+  Collapsed: 0
 --- !u!1001 &1310382226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14607,7 +14713,6 @@ MonoBehaviour:
   prefab: {fileID: 493047835009044846, guid: 9e8c9569a35aa9a49a0edeeb03f99fc8, type: 3}
   parent: {fileID: 254456425}
   UIToBlendIn: {fileID: 1876372767}
-  FeedbackTicks: []
   TicksCount: []
   TickerFieldAnimator: {fileID: 1876372772}
   Collapsed: 0
@@ -18268,8 +18373,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 851380092}
   m_HandleRect: {fileID: 851380091}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

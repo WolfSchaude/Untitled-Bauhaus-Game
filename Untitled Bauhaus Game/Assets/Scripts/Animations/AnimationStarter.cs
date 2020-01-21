@@ -27,4 +27,9 @@ public class AnimationStarter : MonoBehaviour
 	{
 		Collapsed = true;
 	}
+
+	public void OpenMenu()
+	{
+		Collapsed = false;
+	}
 }

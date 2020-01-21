@@ -10,54 +10,51 @@ public class FeedbackScript : MonoBehaviour
 
 	public GameObject UIToBlendIn;
 
-	public List<GameObject> FeedbackTicks;
 	public List<GameObject> TicksCount;
 
 	public Animator TickerFieldAnimator;
-	public bool Collapsed;
+
+	public bool Collapsed = false;
 
     void Start()
     {
-		FeedbackTicks = new List<GameObject>();
+		TicksCount = new List<GameObject>();
 		Collapsed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-		if (FeedbackTicks.Count >= 100)
-		{
-			FeedbackTicks.RemoveRange(100, FeedbackTicks.Count - 100);
-		}
-
 		if(TicksCount.Count>=36)
 		{
 			Destroy(TicksCount[0]);
 			TicksCount.Remove(TicksCount[0]);
 		}
+
+		TickerFieldAnimator.SetBool("Bool", Collapsed);
     }
 
 	public void ToggleFeedback()
 	{
-		TickerFieldAnimator.SetTrigger("Click");
-
 		Collapsed = !Collapsed;
 
-		StartCoroutine(ScrollToBottomSec());
+		StartCoroutine(ScrollToBottom());
 		StartCoroutine(WaitToChangeSymbol());
 	}
 
 	public void CloseFeedback()
 	{
-		if (!Collapsed)
-		{
-			TickerFieldAnimator.SetTrigger("Click");
-			//ButtonAnimator.SetTrigger("Click");
+		Collapsed = true;
 
-			Collapsed = true;
+		gameObject.GetComponentInChildren<Text>().text = "▲";
+	}
 
-			gameObject.GetComponentInChildren<Text>().text = "▲";
-		}
+	public void OpenFeedback()
+	{
+		Collapsed = false;
+
+		StartCoroutine(ScrollToBottom());
+		StartCoroutine(WaitToChangeSymbol());
 	}
 
 	public void NewTick(string message)
@@ -66,7 +63,6 @@ public class FeedbackScript : MonoBehaviour
 
 		newthing.GetComponentInChildren<Text>().text = message;
 
-		FeedbackTicks.Add(newthing);
 		TicksCount.Add(newthing);
 
 		StartCoroutine(ScrollToBottom());
@@ -74,19 +70,22 @@ public class FeedbackScript : MonoBehaviour
 		if (Collapsed)
 		{
 			TickerFieldAnimator.SetTrigger("Click");
-			//ButtonAnimator.SetTrigger("Click");
 
 			Collapsed = false;
 		}
 	}
-
+	/// <summary>
+	/// Coroutine used to Scroll after Generating a new Ticker Notification
+	/// </summary>
 	IEnumerator ScrollToBottom()
 	{
 		yield return new WaitForEndOfFrame();
 
 		UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
 	}
-
+	/// <summary>
+	/// Coroutine used to Scroll after switching between opened and closed
+	/// </summary>
 	IEnumerator ScrollToBottomSec()
 	{
 		yield return new WaitForSecondsRealtime(0.6f);

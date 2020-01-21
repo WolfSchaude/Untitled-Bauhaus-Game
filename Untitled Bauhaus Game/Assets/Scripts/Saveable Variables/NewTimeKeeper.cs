@@ -40,6 +40,8 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
     /// </summary>
     public TimeMode Mode;
 
+    TimeMode ModeBuffer;
+
     /// <summary>
     /// The Sprite that is applied to the buttons when not selected
     /// </summary>
@@ -234,6 +236,7 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         WeatherController.Pause = false;
 
         Mode = TimeMode.Normal;
+        ModeBuffer = TimeMode.Normal;
 
         ButtonPause.sprite = Normal;
         ButtonNormal.sprite = Selected;
@@ -248,10 +251,42 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         WeatherController.Pause = false;
 
         Mode = TimeMode.FastForward;
+        ModeBuffer = TimeMode.FastForward;
 
         ButtonPause.sprite = Normal;
         ButtonNormal.sprite = Normal;
         ButtonFastForward.sprite = Selected;
+    }
+
+    /// <summary>
+    /// Cycles through TimeModes, Pause --> Normal --> Fast --> Pause
+    /// </summary>
+    public void CycleTimeModes()
+    {
+        switch (Mode)
+        {
+            case TimeMode.Pause: SetNormal(); break;
+            case TimeMode.Normal: SetFastforward(); break;
+            case TimeMode.FastForward: SetPause(); break;
+            default: break;
+        }
+    }
+
+    /// <summary>
+    /// Saves the current Mode and Pauses, if called again resumes to previously saved Mode
+    /// </summary>
+    public void PauseAndReturn()
+    {
+        if (Mode != TimeMode.Pause)
+        {
+            ModeBuffer = Mode;
+
+            SetPause();
+        }
+        else
+        {
+            Mode = ModeBuffer;
+        }
     }
 
     #endregion

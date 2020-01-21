@@ -15,16 +15,6 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GamePaused)
-            {
-                Resume();
-            } else
-            {
-                Pause();
-            }
-        }
     }
 
     public void Resume()
@@ -37,7 +27,7 @@ public class PauseMenu : MonoBehaviour
         Kamera.FreeCameraMovement.Invoke();
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
 

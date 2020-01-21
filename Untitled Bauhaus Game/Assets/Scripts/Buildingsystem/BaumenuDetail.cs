@@ -38,7 +38,6 @@ public class BaumenuDetail : MonoBehaviour
 
     void Start()
     {
-        detailWindow.SetActive(false);
     }
 
     void Update()
