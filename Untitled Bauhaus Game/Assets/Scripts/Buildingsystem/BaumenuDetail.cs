@@ -9,6 +9,8 @@ public class BaumenuDetail : MonoBehaviour
 
     public GameObject BuildDropDown;
 
+    public AnimationStarter AnimStarter;
+
     public Text buildingNameText;
     public Text buildingPriceText;
     public Text buildingTeacherText;
@@ -30,29 +32,28 @@ public class BaumenuDetail : MonoBehaviour
 
     void Update()
     {
+
+
         UpdateContent(); //Updates detail windows content depending on which button was pressed
     }
 
     public void ShowWindow(int Baum) //Sets detail window active
     {
-        if (!detailWindow.activeSelf)
+        if (!AnimStarter.Collapsed)
         {
             Kamera.LockCameraMovement.Invoke();
-            detailWindow.SetActive(true);
-            
-            if (Baum == 1)
-            {
-                BuildDropDown.SetActive(true);
-            }
-            else
-            {
-                BuildDropDown.SetActive(false);
-            }
         }
         else
         {
             Kamera.FreeCameraMovement.Invoke();
-            detailWindow.SetActive(false);
+        }
+        if (Baum == 1)
+        {
+            BuildDropDown.SetActive(true);
+        }
+        else
+        {
+            BuildDropDown.SetActive(false);
         }
     }
 

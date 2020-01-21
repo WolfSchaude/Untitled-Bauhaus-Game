@@ -7,7 +7,7 @@ public class AnimationStarter : MonoBehaviour
 {
 	public Animator SelfDropDown;
 
-	[SerializeField] private bool Collapsed;
+	[SerializeField] public bool Collapsed { get; private set; }
 
 	void Start()
 	{

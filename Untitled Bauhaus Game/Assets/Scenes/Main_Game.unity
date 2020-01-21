@@ -362,7 +362,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2106,7 +2106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 185289916}
-  Collapsed: 0
 --- !u!1 &188860708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,7 +3461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 336543483}
-  Collapsed: 0
 --- !u!114 &336543488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3729,7 +3727,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 337604030}
-  Collapsed: 0
 --- !u!1 &344910035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3806,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1292603758}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: ShowWindow
         m_Mode: 3
@@ -4265,6 +4273,7 @@ MonoBehaviour:
   detailWindow: {fileID: 1292603755}
   Playervariables: {fileID: 1009857072}
   BuildDropDown: {fileID: 1735618557}
+  AnimStarter: {fileID: 1292603758}
   buildingNameText: {fileID: 627101522}
   buildingPriceText: {fileID: 708211486}
   buildingTeacherText: {fileID: 675801730}
@@ -5652,7 +5661,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8741,7 +8750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 754967063}
-  Collapsed: 0
 --- !u!1 &759203501
 GameObject:
   m_ObjectHideFlags: 0
@@ -11256,7 +11264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 978475644}
-  Collapsed: 0
 --- !u!1 &979879525
 GameObject:
   m_ObjectHideFlags: 0
@@ -13902,7 +13909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1292603757}
-  Collapsed: 0
 --- !u!1001 &1310382226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14439,7 +14445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1357314985}
-  Collapsed: 0
 --- !u!1 &1382382681
 GameObject:
   m_ObjectHideFlags: 0
@@ -16829,7 +16834,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1719962157}
-  Collapsed: 0
 --- !u!95 &1719962157
 Animator:
   serializedVersion: 3
@@ -18327,8 +18331,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 851380092}
   m_HandleRect: {fileID: 851380091}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
