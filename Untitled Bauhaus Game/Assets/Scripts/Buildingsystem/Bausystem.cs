@@ -369,6 +369,7 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Building System: Values of building styles set");
 
         StyleToBuild = 0;
+        TypeToBuild = 1;
 
         StructuresCounter = new int[4];
         StructuresCounter[0] = 0;
@@ -446,53 +447,75 @@ public class Bausystem : MonoBehaviour
         }
     }
 
-    public void Architektur()
-    {
-        Debug.Log("Building System: Architektur selected");
-        MainTypeToBuild = 1;
-        TypeToBuild = 1;
-    }
+    //public void Architektur()
+    //{
+    //    Debug.Log("Building System: Architektur selected");
+    //    MainTypeToBuild = 1;
+    //    TypeToBuild = 1;
+    //}
 
-    public void Ausstellungsgestaltung()
-    {
-        Debug.Log("Building System: Ausstellungsgestaltung selected");
-        MainTypeToBuild = 1;
-        TypeToBuild = 2;
-    }
+    //public void Ausstellungsgestaltung()
+    //{
+    //    Debug.Log("Building System: Ausstellungsgestaltung selected");
+    //    MainTypeToBuild = 1;
+    //    TypeToBuild = 2;
+    //}
 
-    public void Malerei()
-    {
-        Debug.Log("Building System: Malerei selected");
-        MainTypeToBuild = 1;
-        TypeToBuild = 3;
-    }
+    //public void Malerei()
+    //{
+    //    Debug.Log("Building System: Malerei selected");
+    //    MainTypeToBuild = 1;
+    //    TypeToBuild = 3;
+    //}
 
-    public void Metallwerkstatt()
-    {
-        Debug.Log("Building System: Metallwerkstatt selected");
-        MainTypeToBuild = 1;
-        TypeToBuild = 4;
-    }
+    //public void Metallwerkstatt()
+    //{
+    //    Debug.Log("Building System: Metallwerkstatt selected");
+    //    MainTypeToBuild = 1;
+    //    TypeToBuild = 4;
+    //}
 
-    public void Tischlerei()
+    //public void Tischlerei()
+    //{
+    //    Debug.Log("Building System: Tischlerei selected");
+    //    MainTypeToBuild = 1;
+    //    TypeToBuild = 5;
+    //}
+
+    //public void Wohnheim()
+    //{
+    //    Debug.Log("Building System: Wohnheim selected");
+    //    MainTypeToBuild = 2;
+    //    TypeToBuild = 6;
+    //}
+
+    //public void Lehrsaal()
+    //{
+    //    Debug.Log("Building System: Lehrsaal selected");
+    //    MainTypeToBuild = 3;
+    //    TypeToBuild = 7;
+    //}
+
+    public void Werkstatt()
     {
-        Debug.Log("Building System: Tischlerei selected");
         MainTypeToBuild = 1;
-        TypeToBuild = 5;
     }
 
     public void Wohnheim()
     {
-        Debug.Log("Building System: Wohnheim selected");
         MainTypeToBuild = 2;
         TypeToBuild = 6;
     }
 
     public void Lehrsaal()
     {
-        Debug.Log("Building System: Lehrsaal selected");
         MainTypeToBuild = 3;
         TypeToBuild = 7;
+    }
+
+    public void SetType(int Type)
+    {
+        TypeToBuild = Type + 1;
     }
 
     public void StartBuilding()

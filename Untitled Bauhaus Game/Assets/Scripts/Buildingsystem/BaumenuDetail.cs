@@ -11,6 +11,8 @@ public class BaumenuDetail : MonoBehaviour
 
     public GameObject StartBuild;
 
+    public GameObject BuildDropDown;
+
     public Text buildingNameText;
     public Text buildingPriceText;
     public Text buildingTeacherText;
@@ -45,7 +47,7 @@ public class BaumenuDetail : MonoBehaviour
         checkCloseButton(); //Checks if the Close Button was pressed
     }
 
-    public void showWindow() //Sets detail window active
+    public void showWindow(int Baum) //Sets detail window active
     {
         if (!detailWindow.activeSelf)
         {
@@ -53,41 +55,20 @@ public class BaumenuDetail : MonoBehaviour
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().bewerbungGameObject.SetActive(false);
             GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zuweisenGameObject.SetActive(false);
             //GameObject.Find("EventSystem").GetComponent<ExpoInventory>().showWindow();
-
+            
+            if (Baum == 1)
+            {
+                BuildDropDown.SetActive(true);
+            }
+            else
+            {
+                BuildDropDown.SetActive(false);
+            }
         }
         else
         {
             detailWindow.SetActive(false);
         }
-    }
-
-    public void toggleArchitekturwerkstatt()
-    {
-        archwerkstattDetailOpen = !archwerkstattDetailOpen;
-    }
-    public void toggleMalerei()
-    {
-        malereiDetailOpen = !malereiDetailOpen;
-    }
-    public void toggleAusstellungsgestaltung()
-    {
-        ausstellungDetailOpen = !ausstellungDetailOpen;
-    }
-    public void toggleMetallwerkstatt()
-    {
-        metallwerkstattDetailOpen = !metallwerkstattDetailOpen;
-    }
-    public void toggleTischlerei()
-    {
-        tischlereiDetailOpen = !tischlereiDetailOpen;
-    }
-    public void toggleLehrsaal()
-    {
-        lehrsaalDetailOpen = !lehrsaalDetailOpen;
-    }
-    public void toggleWohnheim()
-    {
-        wohnheimDetailOpen = !wohnheimDetailOpen;
     }
 
     public void updateContent() //Updates detail windows content depending on which button was pressed
