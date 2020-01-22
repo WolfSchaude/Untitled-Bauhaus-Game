@@ -541,7 +541,6 @@ public class Bausystem : MonoBehaviour
         if (PotentialFreeStructures.Count == 0)
         {
             FeedbackFromBuildings.NewTick("Maximale Anzahl an " + (MainType)MainTypeToBuild + " gebaut");
-            BuildingPipeline[FreePipelineNumber].SetZero();
             return;
         }
 
@@ -566,6 +565,7 @@ public class Bausystem : MonoBehaviour
 
         if (FreePipelineFound == false)
         {
+            FeedbackFromBuildings.NewTick("Du kannst gerade kein weiteres Gebäude in auftrag geben. Warte bis ein anderer Auftrag abgeschlossen wurde");
             return;
         }
 
