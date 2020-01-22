@@ -46,6 +46,8 @@ public class Exponate : MonoBehaviour
     /// </summary>
     [SerializeField] List<GameObject> Exponat = new List<GameObject>();
 
+    [SerializeField] AnimationStarter AnimStarter;
+
     void Start()
     {
         TimeIsImportant = Playervariables.GetComponent<NewTimeKeeper>();
@@ -68,7 +70,7 @@ public class Exponate : MonoBehaviour
         {
             ExpoCreateButton.interactable = true;
         }
-	}
+    }
 
     public void StartExponat() //Herstellung mit Button
     {
@@ -201,6 +203,20 @@ public class Exponate : MonoBehaviour
         x.GetComponentInChildren<Button>().onClick.AddListener(() => { Destroy(x); });
 
         Exponat.Add(x);
+    }
+
+    public void ToggleCamMoveAndWindowCount()
+    {
+        if (!AnimStarter.Collapsed)
+        {
+            Kamera.LockCameraMovement.Invoke();
+            QuickAccesskeys.IOpenedAWindow.Invoke();
+        }
+        else
+        {
+            Kamera.FreeCameraMovement.Invoke();
+            QuickAccesskeys.IClosedAWindow.Invoke();
+        }
     }
 
     #region Methods needed to do the cancel and cancel-check for exponates

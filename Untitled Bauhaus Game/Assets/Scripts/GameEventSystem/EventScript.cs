@@ -42,30 +42,9 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 				for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 				{
-					var x = Instantiate(prefab, parent.transform);
-
-					x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables, false);
-					x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
-
-					x.GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
-
-					x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
-						= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
-						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
-						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
-						+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
-
-
-					x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
-						+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
-
-					AllEvents.Add(x);
-
-					x = null;
+					AllEvents.Add(NewEvent(i, false));
 				}
+
 				AlreadyGenerated = true;
 				Collapsed = true;
 
@@ -130,26 +109,9 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 			for (int i = 0; i < EventLoader.ec.Events.Count; i++)
 			{
-				AllEvents.Add(Instantiate(prefab, parent.transform));
-
-				AllEvents[i].GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables, save[i]);
-				AllEvents[i].GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
-
-				AllEvents[i].GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
-
-				AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
-					= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
-					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
-					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
-					+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
-
-
-				AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-					= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
-					+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
+				AllEvents.Add(NewEvent(i, save[i]));
 			}
+
 			AlreadyGenerated = true;
 
 			ThatOneRandomEvent = NewRandomEvent();
@@ -175,6 +137,31 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 			Laedtgerade = false;
 		}
+	}
+
+	public GameObject NewEvent(int i, bool SavedHired)
+	{
+		var x = Instantiate(prefab, parent.transform);
+
+		x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables, SavedHired);
+		x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
+
+		x.GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
+
+		x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
+			= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
+			+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
+			+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
+			+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
+
+
+		x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+			= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
+			+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
+			+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
+			+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
+
+		return x;
 	}
 
 	public GameObject NewRandomEvent()
