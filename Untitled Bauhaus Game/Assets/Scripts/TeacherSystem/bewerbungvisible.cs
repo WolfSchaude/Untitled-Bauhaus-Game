@@ -5,21 +5,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class bewerbungvisible : MonoBehaviour
-{
-
+{ 
 	public GameObject bewerbungGameObject;
 	public GameObject zuweisenGameObject;
 
 	public int zugewiesenenCounter;
 
-    // Start is called before the first frame update
     void Start()
 	{
 		bewerbungGameObject.SetActive(false);
 		zuweisenGameObject.SetActive(false);
 	}
-
-	// Update is called once per frame
 	void Update()
 	{
 		if(zugewiesenenCounter < 0)

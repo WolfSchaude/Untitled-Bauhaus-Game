@@ -50,7 +50,6 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 			}
 			else
 			{
-				Debug.Log("StudKapazität hat noch platz.");
 				FeedbackTicker.GetComponent<FeedbackScript>().NewTick(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
 			}
 
