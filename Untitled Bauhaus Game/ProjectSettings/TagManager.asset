@@ -6,6 +6,7 @@ TagManager:
   tags:
   - music
   - slider
+  - Clickable
   layers:
   - Default
   - TransparentFX

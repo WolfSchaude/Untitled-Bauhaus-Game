@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Struktur : MonoBehaviour
+public class Struktur : MonoBehaviour, IClickable
 {
     public enum MainType { Undefiniert, Werkstatt, Wohnheim, Lehrsaal };
     public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
@@ -66,5 +66,10 @@ public class Struktur : MonoBehaviour
                 GameObject.Find("EventSystem").GetComponent<CountGebaeude>().AnzahlWohn++;
                 break;
         }
+    }
+
+    public void OnClick()
+    {
+        print(gameObject.name + OwnMainTypeEnum + OwnTypeEnum);
     }
 }

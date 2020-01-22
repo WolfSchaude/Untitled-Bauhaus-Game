@@ -4576,6 +4576,7 @@ GameObject:
   - component: {fileID: 410550917}
   - component: {fileID: 410550918}
   - component: {fileID: 410550910}
+  - component: {fileID: 410550911}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -4744,6 +4745,20 @@ MonoBehaviour:
   Statistics: {fileID: 1357314981}
   Baumenue: {fileID: 754967060}
   TeacherDropdown: {fileID: 336543484}
+--- !u!114 &410550911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410550905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312796632339bdc4d9e24ddf692a04d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: Clickable
+  _selection: {fileID: 4476412911584875956}
 --- !u!114 &410550917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16764,7 +16779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27540, y: 158760}
+  m_AnchoredPosition: {x: -79380, y: 1007280}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -25808,7 +25823,7 @@ GameObject:
   - component: {fileID: 4476412911584709025}
   m_Layer: 0
   m_Name: Abteil_2
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25841,7 +25856,7 @@ GameObject:
   - component: {fileID: 4476412911584709027}
   m_Layer: 0
   m_Name: Abteil_3
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25874,7 +25889,7 @@ GameObject:
   - component: {fileID: 4476412911584709029}
   m_Layer: 0
   m_Name: Abteil_17
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25907,7 +25922,7 @@ GameObject:
   - component: {fileID: 4476412911584709031}
   m_Layer: 0
   m_Name: Abteil_18
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25940,7 +25955,7 @@ GameObject:
   - component: {fileID: 4476412911584709033}
   m_Layer: 0
   m_Name: Abteil_6
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25973,7 +25988,7 @@ GameObject:
   - component: {fileID: 4476412911584709035}
   m_Layer: 0
   m_Name: Abteil_7
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26006,7 +26021,7 @@ GameObject:
   - component: {fileID: 4476412911584709037}
   m_Layer: 0
   m_Name: Abteil_4
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26039,7 +26054,7 @@ GameObject:
   - component: {fileID: 4476412911584709039}
   m_Layer: 0
   m_Name: Abteil_5
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26072,7 +26087,7 @@ GameObject:
   - component: {fileID: 4476412911584709041}
   m_Layer: 0
   m_Name: Abteil_11
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26105,7 +26120,7 @@ GameObject:
   - component: {fileID: 4476412911584709043}
   m_Layer: 0
   m_Name: Abteil_12
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26138,7 +26153,7 @@ GameObject:
   - component: {fileID: 4476412911584709045}
   m_Layer: 0
   m_Name: Abteil_1
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26171,7 +26186,7 @@ GameObject:
   - component: {fileID: 4476412911584709047}
   m_Layer: 0
   m_Name: Abteil_10
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26204,7 +26219,7 @@ GameObject:
   - component: {fileID: 4476412911584709049}
   m_Layer: 0
   m_Name: Abteil_15
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26237,7 +26252,7 @@ GameObject:
   - component: {fileID: 4476412911584709051}
   m_Layer: 0
   m_Name: Abteil_16
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26270,7 +26285,7 @@ GameObject:
   - component: {fileID: 4476412911584709053}
   m_Layer: 0
   m_Name: Abteil_13
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26303,7 +26318,7 @@ GameObject:
   - component: {fileID: 4476412911584709055}
   m_Layer: 0
   m_Name: Abteil_14
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26353,7 +26368,7 @@ GameObject:
   - component: {fileID: 4476412911584709077}
   m_Layer: 0
   m_Name: Abteil_8
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26386,7 +26401,7 @@ GameObject:
   - component: {fileID: 4476412911584709079}
   m_Layer: 0
   m_Name: Abteil_9
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
