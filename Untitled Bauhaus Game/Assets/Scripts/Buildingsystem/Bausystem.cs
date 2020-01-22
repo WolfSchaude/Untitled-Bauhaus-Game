@@ -67,7 +67,7 @@ public class Bausystem : MonoBehaviour
         public int MainTypeToBuild { get; private set; }
         public int StyleToBuild { get; private set; }
         public int TimeToBuild { get; private set; }
-        private int WholeTime;
+        public int WholeTime { get; private set; }
         public bool IsSlotUsed { get; private set; }
 
         public BuildingOrder() //When initialized, the set everything to zero
@@ -86,6 +86,16 @@ public class Bausystem : MonoBehaviour
             StyleToBuild = style;
             TimeToBuild = time;
             WholeTime = time;
+            IsSlotUsed = true;
+        }
+
+        public void SetBuilding(int wholetime, int type, int maintype, int style, int time)
+        {
+            TypeToBuild = type;
+            MainTypeToBuild = maintype;
+            StyleToBuild = style;
+            TimeToBuild = time;
+            WholeTime = wholetime;
             IsSlotUsed = true;
         }
 
@@ -546,6 +556,7 @@ public class Bausystem : MonoBehaviour
 
         if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
+            FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
             return;
         }
 
@@ -702,7 +713,7 @@ public class Bausystem : MonoBehaviour
 
         int[,] ActiveBuilding = new int[NumberOfStructures, 4];
         int[,] StyleCounter = new int[NumberOfStyles, 4];
-        int[,] StructuresInBuild = new int[MaxBuildPipelines, 5];
+        int[,] StructuresInBuild = new int[MaxBuildPipelines, 6];
 
         Debug.Log("Building System: Save arrays initialized");
 
@@ -754,6 +765,7 @@ public class Bausystem : MonoBehaviour
             StructuresInBuild[i, 2] = BuildingPipeline[i].StyleToBuild;
             StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
             StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
+            StructuresInBuild[i, 5] = BuildingPipeline[i].WholeTime;
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StructuresInBuild = StructuresInBuild;
@@ -794,7 +806,11 @@ public class Bausystem : MonoBehaviour
         {
             if (save.StructuresInBuild[i, 0] == 1)
             {
-                BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
+                BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i, 5] ,save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
+                Pipelines[i].SetActive(true);
+                Pipelines[i].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
+                Pipelines[i].GetComponentsInChildren<Text>()[2].text = "0%";
+                Pipelines[i].GetComponentInChildren<Button>().onClick.AddListener(() => StopBuilding(i));
             }
 
             if (!BuildingPipeline[i].IsSlotUsed)
