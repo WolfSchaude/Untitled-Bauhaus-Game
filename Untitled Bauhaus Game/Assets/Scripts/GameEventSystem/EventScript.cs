@@ -52,15 +52,15 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 					x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
 						= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
 						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
-						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
+						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
+						+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
 
-					if (EventLoader.ec.Events[i].Exponate_Needed == 0)
-					{
-						x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-							= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-							+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-							+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
-					}
+
+					x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
+						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
+						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
+						+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
 
 					AllEvents.Add(x);
 
@@ -140,15 +140,15 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 				AllEvents[i].GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
 					= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
 					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
-					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik;
+					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
+					+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
 
-				if (EventLoader.ec.Events[i].Exponate_Needed == 0)
-				{
-					AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-						= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-						+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-						+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik;
-				}
+
+				AllEvents[i].GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
+					= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
+					+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
+					+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
+					+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
 			}
 			AlreadyGenerated = true;
 
@@ -192,12 +192,14 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 		x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
 					= EventLoader.rec.RandomEvents[rand].EventOption1 + Environment.NewLine
 					+ "Ansehensveränderung: " + EventLoader.rec.RandomEvents[rand].Option1_Ansehen + Environment.NewLine
-					+ "Politische Tragweite: " + EventLoader.rec.RandomEvents[rand].Option1_Politik;
+					+ "Politische Tragweite: " + EventLoader.rec.RandomEvents[rand].Option1_Politik + Environment.NewLine
+					+ "Kosten: " + EventLoader.rec.RandomEvents[rand].Option1_Geld * -1 + " RM";
 
 		x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
 					= EventLoader.rec.RandomEvents[rand].EventOption2 + Environment.NewLine
 					+ "Ansehensveränderung: " + EventLoader.rec.RandomEvents[rand].Option2_Ansehen + Environment.NewLine
-					+ "Politische Tragweite: " + EventLoader.rec.RandomEvents[rand].Option2_Politik;
+					+ "Politische Tragweite: " + EventLoader.rec.RandomEvents[rand].Option2_Politik + Environment.NewLine
+					+ "Kosten: " + EventLoader.rec.RandomEvents[rand].Option2_Geld * -1 + " RM";
 
 		return x;
 	}

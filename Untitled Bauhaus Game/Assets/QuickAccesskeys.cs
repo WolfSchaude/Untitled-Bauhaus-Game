@@ -44,9 +44,9 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     [SerializeField] AnimationStarter EventOverview;
     /// <summary>
-    /// Reference to: Expoante-Script on Expoant-Slider, needed to Start a new Expoante on A button click
+    /// Reference to: Button of Create-Exponat-Funktion, needed to Start a new Expoante on A button click
     /// </summary>
-    [SerializeField] Exponate ExponateStarter;
+    [SerializeField] Button ExponateStarter;
     /// <summary>
     /// Reference to: Button of Sidebar-Statistiken, needed to open / close the Statistics panel (Subject to changes as Statistics will need to improve
     /// </summary>
@@ -55,6 +55,10 @@ public class QuickAccesskeys : MonoBehaviour
     /// Reference to: Button of Sidebar-Gebaeude, needed to open / close Baumenue
     /// </summary>
     [SerializeField] Button Baumenue;
+    /// <summary>
+    /// Reference to: Button of Sidebar-Dormmeister, needed to open/close the dropdown
+    /// </summary>
+    [SerializeField] Button TeacherDropdown;
     void Start()
     {
         if (IOpenedAWindow != null)
@@ -86,7 +90,11 @@ public class QuickAccesskeys : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E)) //Exponat herstellen
         {
-            ExponateStarter.checkForButtonPress();
+            ExponateStarter.onClick.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TeacherDropdown.onClick.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken //Hacky ATM
         {
