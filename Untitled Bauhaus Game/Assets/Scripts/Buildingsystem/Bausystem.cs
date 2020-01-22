@@ -69,6 +69,7 @@ public class Bausystem : MonoBehaviour
         public int TimeToBuild { get; private set; }
         public int WholeTime { get; private set; }
         public bool IsSlotUsed { get; private set; }
+        public int StructureID { get; private set; }
 
         public BuildingOrder() //When initialized, the set everything to zero
         {
@@ -79,7 +80,7 @@ public class Bausystem : MonoBehaviour
             WholeTime = 0;
             IsSlotUsed = false;
         }
-        public void SetBuilding(int type, int maintype, int style, int time) //Should be named SetPipeline or SetOrder, because it only sets the build order of the Player and the Pipeline itself to active
+        public void SetBuilding(int ID, int type, int maintype, int style, int time) //Should be named SetPipeline or SetOrder, because it only sets the build order of the Player and the Pipeline itself to active
         {
             TypeToBuild = type;
             MainTypeToBuild = maintype;
@@ -89,7 +90,7 @@ public class Bausystem : MonoBehaviour
             IsSlotUsed = true;
         }
 
-        public void SetBuilding(int wholetime, int type, int maintype, int style, int time)
+        public void SetBuilding(int wholetime, int ID, int type, int maintype, int style, int time)
         {
             TypeToBuild = type;
             MainTypeToBuild = maintype;
@@ -157,9 +158,13 @@ public class Bausystem : MonoBehaviour
 
     internal class BuildingStyle //Build styles
     {
+        public int HighestNumberOfStrutures { get; private set; }
+
         public int[] StructureCount; //Maximum amount of main type structures, which are supported by this build style
 
         public int[] MaxStructures { get; private set; }
+
+        public bool[,] StructuresOrder;
 
         public Vector3[,] StructurePositions;
 
@@ -200,6 +205,9 @@ public class Bausystem : MonoBehaviour
                     Temp = MaxStructures[i];
                 }
             }
+            HighestNumberOfStrutures = Temp;
+
+            StructuresOrder = new bool[4, Temp];
 
             StructureCapacity = new int[4, Temp];
 
@@ -373,10 +381,15 @@ public class Bausystem : MonoBehaviour
         UsableStyles[0].StructureBuildTime[1, 5] = 55;
         UsableStyles[0].StructureBuildTime[1, 6] = 60;
 
-        UsableStyles[0].StructureCount[0] = 0;
-        UsableStyles[0].StructureCount[1] = 0;
-        UsableStyles[0].StructureCount[2] = 0;
-        UsableStyles[0].StructureCount[3] = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < UsableStyles[0].HighestNumberOfStrutures; j++)
+            {
+                UsableStyles[0].StructuresOrder[i, j] = false;
+            }
+        }
+
+        Debug.Log("Debuglol: " + UsableStyles[0].StructuresOrder[1, 4]);
 
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
         #endregion
@@ -632,7 +645,7 @@ public class Bausystem : MonoBehaviour
             
             if (CheatActive)
             {
-                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, 0, 0);
+                BuildingPipeline[FreePipelineNumber].SetBuilding(0 ,TypeToBuild, MainTypeToBuild, 0, 0);
                 ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 BuildStructure(FreePipelineNumber);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
@@ -641,7 +654,7 @@ public class Bausystem : MonoBehaviour
             }
             else
             {
-                BuildingPipeline[FreePipelineNumber].SetBuilding(TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+                BuildingPipeline[FreePipelineNumber].SetBuilding(0, TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
             }
@@ -752,7 +765,19 @@ public class Bausystem : MonoBehaviour
 
         int[,] ActiveBuilding = new int[NumberOfStructures, 4];
         int[,] StyleCounter = new int[NumberOfStyles, 4];
-        int[,] StructuresInBuild = new int[MaxBuildPipelines, 6];
+        int[,] StructuresInBuild = new int[MaxBuildPipelines, 7];
+
+        int HighestNumberOfStructuresOverStyles = 0;
+
+        for (int i = 0; i < NumberOfStyles; i++)
+        {
+            if (HighestNumberOfStructuresOverStyles < UsableStyles[i].HighestNumberOfStrutures)
+            {
+                HighestNumberOfStructuresOverStyles = UsableStyles[i].HighestNumberOfStrutures;
+            }
+        }
+
+        bool[,,] StyleOrder = new bool[NumberOfStyles, 4, HighestNumberOfStructuresOverStyles];
 
         Debug.Log("Building System: Save arrays initialized");
 
@@ -784,6 +809,19 @@ public class Bausystem : MonoBehaviour
             StyleCounter[i, 3] = UsableStyles[i].StructureCount[3];
         }
 
+        for (int h = 0; h < UsableStyles.Length; h++)
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                for (int j = 0; j < UsableStyles[h].HighestNumberOfStrutures; j++)
+                {
+                    StyleOrder[h, i, j] = UsableStyles[h].StructuresOrder[i, j];
+                }
+            }
+        }
+
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleOrder = StyleOrder;
+
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleCounter = StyleCounter;
 
         Debug.Log("Building System: Style count saved");
@@ -805,6 +843,7 @@ public class Bausystem : MonoBehaviour
             StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
             StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
             StructuresInBuild[i, 5] = BuildingPipeline[i].WholeTime;
+            StructuresInBuild[i, 6] = BuildingPipeline[i].StructureID;
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StructuresInBuild = StructuresInBuild;
@@ -822,7 +861,8 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Building System: Function Load called");
 
         int NumberOfStructures = save.ActiveBuildings.GetLength(0);
-        int NumberOfStyles = 2;
+        int NumberOfStyles = save.StyleOrder.GetLength(0);
+        int NumberOfMaximalStructuresOnStyles = save.StyleOrder.GetLength(1);
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
@@ -845,13 +885,24 @@ public class Bausystem : MonoBehaviour
             UsableStyles[i].StructureCount[3] = save.StyleCounter[i, 3];
         }
 
+        for (int h = 0; h < NumberOfStyles; h++)
+        {
+            for (int i = 0; i <= 3; i++)
+            {
+                for (int j = 0; j < NumberOfMaximalStructuresOnStyles; j++)
+                {
+                    UsableStyles[h].StructuresOrder[i, j] = save.StyleOrder[h, i, j];
+                }
+            }
+        }
+
         Debug.Log("Building System: Style counter set");
 
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
             if (save.StructuresInBuild[i, 0] == 1)
             {
-                BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i, 5] ,save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
+                BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i,5] ,save.StructuresInBuild[i, 6] ,save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
                 Pipelines[i].SetActive(true);
                 Pipelines[i].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
                 Pipelines[i].GetComponentsInChildren<Text>()[2].text = "0%";
