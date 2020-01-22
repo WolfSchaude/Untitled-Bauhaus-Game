@@ -56,7 +56,4 @@ public class Event
 
 	[XmlElement("SpecialEvents")]
 	public string SpecialEvents;
-
-	[XmlElement("Exponate_Needed")]
-	public int Exponate_Needed;
 }

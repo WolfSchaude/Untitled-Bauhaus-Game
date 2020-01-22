@@ -117,7 +117,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 250}
+  m_SizeDelta: {x: 400, y: 275}
   m_Pivot: {x: 0, y: 1}
 --- !u!223 &841084718031056257
 Canvas:
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 112
+  m_PreferredHeight: 275
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -246,27 +246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9f055c427a8e24690fabb468db166a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Politik1: 0
-  Politik2: 0
-  Ansehen1: 0
-  Ansehen2: 0
-  Geld1: 0
-  Geld2: 0
-  Effect1: 
-  Effect2: 
   Vorlauf: 0
-  Datum_Tag: 0
-  Datum_Monat: 0
-  Datum_Jahr: 0
   TimerCounter: 0
-  Timer: {fileID: 5891789932909716720}
-  IsFinished: 0
-  SelectedOption1: 0
-  SelectedOption2: 0
-  ExponateCounterStartet: 0
-  ExponateCounter: 0
-  ExponateNeeded: 0
+  TimeIsUp:
+    m_PersistentCalls:
+      m_Calls: []
   FeedbackTicker: {fileID: 0}
+  Playervariables: {fileID: 0}
+  Timer: {fileID: 5891789932909716720}
   Option1: {fileID: 841084718255526950}
   Option2: {fileID: 7230581002230046344}
   SpriteNormal: {fileID: 21300000, guid: 937ff0a71e753c548a7729a9da438a9c, type: 3}
@@ -308,7 +295,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 201, y: 60}
+  m_SizeDelta: {x: 201, y: 80}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &841084718255526944
 CanvasRenderer:
@@ -664,7 +651,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 201, y: 60}
+  m_SizeDelta: {x: 201, y: 80}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &5563703170340542527
 CanvasRenderer:
