@@ -409,7 +409,9 @@ public class Bausystem : MonoBehaviour
 
                 if (BuildingPipeline[i].CheckStatus())
                 {
+                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCost[BuildingPipeline[i].MainTypeToBuild, UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]]);
                     BuildStructure(i);
+                    UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]++;
                     BuildingPipeline[i].SetZero();
                 }
             }
@@ -446,19 +448,22 @@ public class Bausystem : MonoBehaviour
 
     public void BuildTime()
     {
-        for (int i = 0; i < MaxBuildPipelines; i++)
+        if (!CheatActive)
         {
-            if (BuildingPipeline[i].CheckStatus() || !CheatActive)
+            for (int i = 0; i < MaxBuildPipelines; i++)
             {
-                BuildStructure(i);
+                if (BuildingPipeline[i].CheckStatus())
+                {
+                    BuildStructure(i);
+                }
             }
-        }
 
-        int temp = Pipelines.Count;
-        for (int i = 0; i < temp; i++)
-        {
-            Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
-            Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
+            int temp = Pipelines.Count;
+            for (int i = 0; i < temp; i++)
+            {
+                Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
+                Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
+            }
         }
     }
 
@@ -696,6 +701,8 @@ public class Bausystem : MonoBehaviour
         {
             BuildingPipeline[PipelineNumber].SetZero();
         }
+
+        Pipelines[PipelineNumber].SetActive(false);
 
         Debug.Log("Building System: Used build pipeline reset");
 
