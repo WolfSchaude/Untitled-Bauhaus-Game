@@ -311,7 +311,7 @@ public class Bausystem : MonoBehaviour
         ManipulateMoney = gameObject.GetComponent<Money>();
         ManipulateStudents = gameObject.GetComponent<Studenten>();
 
-        UsableStyles = new BuildingStyle[2] { new BuildingStyle(), new BuildingStyle() };
+        UsableStyles = new BuildingStyle[1] { new BuildingStyle() };
 
         Debug.Log("Building System: Generate building styles");
 
@@ -406,6 +406,12 @@ public class Bausystem : MonoBehaviour
             for (int i = 0; i < MaxBuildPipelines; i++)
             {
                 BuildingPipeline[i].NoBuildTimeCheat();
+
+                if (BuildingPipeline[i].CheckStatus())
+                {
+                    BuildStructure(i);
+                    BuildingPipeline[i].SetZero();
+                }
             }
         }
 
@@ -442,7 +448,7 @@ public class Bausystem : MonoBehaviour
     {
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
-            if (BuildingPipeline[i].CheckStatus() || (CheatActive && BuildingPipeline[i].CheckStatus()))
+            if (BuildingPipeline[i].CheckStatus() || !CheatActive)
             {
                 BuildStructure(i);
             }
@@ -780,6 +786,8 @@ public class Bausystem : MonoBehaviour
 
     public void Load(Save save)
     {
+        Debug.Log("Building System: Function Load called");
+
         int NumberOfStructures = save.ActiveBuildings.GetLength(0);
         int NumberOfStyles = 2;
 
@@ -795,12 +803,16 @@ public class Bausystem : MonoBehaviour
             }
         }
 
+        Debug.Log("Building System: Active structures loaded");
+
         for (int i = 0; i < NumberOfStyles; i++)
         {
             UsableStyles[i].StructureCount[1] = save.StyleCounter[i, 1];
             UsableStyles[i].StructureCount[2] = save.StyleCounter[i, 2];
             UsableStyles[i].StructureCount[3] = save.StyleCounter[i, 3];
         }
+
+        Debug.Log("Building System: Style counter set");
 
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
@@ -818,5 +830,9 @@ public class Bausystem : MonoBehaviour
                 BuildingPipeline[i].SetZero();
             }
         }
+
+        Debug.Log("Building System: Pipelines load and UI pipelines activated");
+
+        Debug.Log("Building System: Function Load ended");
     }
 }
