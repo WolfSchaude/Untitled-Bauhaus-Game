@@ -38,6 +38,11 @@ public class FeedbackScript : MonoBehaviour
 	{
 		Collapsed = !Collapsed;
 
+		if (Collapsed)
+		{
+			UIToBlendIn.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+		}
+
 		StartCoroutine(ScrollToBottom());
 		StartCoroutine(WaitToChangeSymbol());
 	}

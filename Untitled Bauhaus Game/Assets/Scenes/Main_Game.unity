@@ -4750,6 +4750,9 @@ MonoBehaviour:
   FeedbackTicker: {fileID: 1413785173}
   ExponatInventory: {fileID: 978475645}
   EventOverview: {fileID: 185289917}
+  ExponateStarter: {fileID: 1914841644}
+  Statistics: {fileID: 1357314981}
+  Baumenue: {fileID: 744717900}
 --- !u!114 &410550917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18332,7 +18335,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 851380091}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999999
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

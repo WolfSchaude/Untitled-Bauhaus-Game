@@ -42,10 +42,12 @@ public class BaumenuDetail : MonoBehaviour
         if (!AnimStarter.Collapsed)
         {
             Kamera.LockCameraMovement.Invoke();
+            QuickAccesskeys.IOpenedAWindow.Invoke();
         }
         else
         {
             Kamera.FreeCameraMovement.Invoke();
+            QuickAccesskeys.IClosedAWindow.Invoke();
         }
         if (Baum == 1)
         {
