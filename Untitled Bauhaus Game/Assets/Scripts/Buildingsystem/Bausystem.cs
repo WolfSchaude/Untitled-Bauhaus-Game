@@ -414,12 +414,31 @@ public class Bausystem : MonoBehaviour
 
                 if (BuildingPipeline[i].CheckStatus())
                 {
+                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCost[BuildingPipeline[i].MainTypeToBuild, UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]]);
                     BuildStructure(i);
+                    UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]++;
                     BuildingPipeline[i].SetZero();
                 }
             }
         }
 
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        {
+            ActualBuildTime = int.MaxValue;
+            ActualCapacity = int.MaxValue;
+            ActualCosts = int.MaxValue;
+        }
+        else
+        {
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        }
+        ShowPipelines();
+    }
+
+    public void ManualUpdate()
+    {
         if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
             ActualBuildTime = int.MaxValue;
@@ -451,19 +470,22 @@ public class Bausystem : MonoBehaviour
 
     public void BuildTime()
     {
-        for (int i = 0; i < MaxBuildPipelines; i++)
+        if (!CheatActive)
         {
-            if (BuildingPipeline[i].CheckStatus() || !CheatActive)
+            for (int i = 0; i < MaxBuildPipelines; i++)
             {
-                BuildStructure(i);
+                if (BuildingPipeline[i].CheckStatus())
+                {
+                    BuildStructure(i);
+                }
             }
-        }
 
-        int temp = Pipelines.Count;
-        for (int i = 0; i < temp; i++)
-        {
-            Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
-            Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
+            int temp = Pipelines.Count;
+            for (int i = 0; i < temp; i++)
+            {
+                Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
+                Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
+            }
         }
     }
 
@@ -520,18 +542,21 @@ public class Bausystem : MonoBehaviour
     {
         MainTypeToBuild = 1;
         TypeToBuild = 1;
+        ManualUpdate();
     }
 
     public void Wohnheim()
     {
         MainTypeToBuild = 2;
         TypeToBuild = 6;
+        ManualUpdate();
     }
 
     public void Lehrsaal()
     {
         MainTypeToBuild = 3;
         TypeToBuild = 7;
+        ManualUpdate();
     }
 
     public void SetType(int Type)
@@ -702,6 +727,8 @@ public class Bausystem : MonoBehaviour
             BuildingPipeline[PipelineNumber].SetZero();
         }
 
+        Pipelines[PipelineNumber].SetActive(false);
+
         Debug.Log("Building System: Used build pipeline reset");
 
         FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
@@ -711,6 +738,7 @@ public class Bausystem : MonoBehaviour
 
     public void StopBuilding(int PipelineNumber)
     {
+        FeedbackFromBuildings.NewTick("Bau von " + (Type)BuildingPipeline[PipelineNumber].TypeToBuild + " abgebrochen");
         BuildingPipeline[PipelineNumber].SetZero();
         Pipelines[PipelineNumber].SetActive(false);
     }
