@@ -432,6 +432,23 @@ public class Bausystem : MonoBehaviour
         ShowPipelines();
     }
 
+    public void ManualUpdate()
+    {
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        {
+            ActualBuildTime = int.MaxValue;
+            ActualCapacity = int.MaxValue;
+            ActualCosts = int.MaxValue;
+        }
+        else
+        {
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+        }
+        ShowPipelines();
+    }
+
     public void ShowPipelines()
     {
         int ActivePipelines = MaxBuildPipelines;
@@ -520,18 +537,21 @@ public class Bausystem : MonoBehaviour
     {
         MainTypeToBuild = 1;
         TypeToBuild = 1;
+        ManualUpdate();
     }
 
     public void Wohnheim()
     {
         MainTypeToBuild = 2;
         TypeToBuild = 6;
+        ManualUpdate();
     }
 
     public void Lehrsaal()
     {
         MainTypeToBuild = 3;
         TypeToBuild = 7;
+        ManualUpdate();
     }
 
     public void SetType(int Type)
