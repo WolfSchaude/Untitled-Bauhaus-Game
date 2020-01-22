@@ -47,48 +47,9 @@ public class Teacher
 	[XmlIgnore]
 	public GameObject Occupation;
 	[XmlIgnore]
-	public Status TeacherStatus = Status.NotHired;
-	[XmlIgnore]
 	public bool Hired = false;
 	[XmlIgnore]
 	public bool Zugewiesen = false;
-
-	public enum Status
-	{
-		Employed, NotEmployed, WorkingOnExponate, NotHired
-	}
-	public enum Beruf
-	{
-		Architekt, Kunstmaler, Bildhauer, Schlosser
-	}
-
-	//public Teacher(string name, Beruf beruf, int gehalt, int politik, Sprite sprite, bool hireable)
-	//{
-	//	Name = name;
-	//	TeacherBeruf = beruf;
-	//	Gehalt = gehalt;
-	//	Politik = politik;
-	//	Picture = sprite;
-
-	//	TeacherStatus = Status.NotHired;
-	//	Occupation = null;
-
-	//	Hireable = hireable;
-	//}
-
-	//public Teacher()
-	//{
-	//	Name = "Max Musterman";
-	//	Picture = null;
-	//	TeacherStatus = Status.NotHired;
-	//	TeacherBeruf = Beruf.Architekt;
-	//	Hireable = true;
-	//}
-
-	public void ChangeStatus(Status status)
-	{
-		TeacherStatus = status;
-	}
 
 	public void ChangeOccupation(GameObject gameObject)
 	{
