@@ -140,8 +140,7 @@ public class QuickAccesskeys : MonoBehaviour
         {
             if (NumberOfOpenedWindows != 0)
             {
-                CloseAllWindows.Invoke();
-                NumberOfOpenedWindows = 0;
+                InvokeCloseAllWindows();
             }
             else if (NumberOfOpenedWindows == 0)
             {
@@ -170,5 +169,15 @@ public class QuickAccesskeys : MonoBehaviour
     public void CountDownWindows()
     {
         NumberOfOpenedWindows--;
+    }
+
+    /// <summary>
+    /// A small function for being able to invoke CloseAllWindows from a Button
+    /// </summary>
+    public void InvokeCloseAllWindows()
+    {
+        CloseAllWindows.Invoke();
+        NumberOfOpenedWindows = 0;
+        Kamera.FreeCameraMovement.Invoke();
     }
 }

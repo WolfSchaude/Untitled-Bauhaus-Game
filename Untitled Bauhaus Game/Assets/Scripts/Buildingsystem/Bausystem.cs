@@ -43,7 +43,7 @@ public class Bausystem : MonoBehaviour
     /// <summary>
     /// Variable to temporary save the main type of the future workshop
     /// </summary>
-    public int MainTypeToBuild;
+    public int MainTypeToBuild = 1;
 
     /// <summary>
     /// Variable to temporary save the used style of the future workshop
@@ -418,7 +418,7 @@ public class Bausystem : MonoBehaviour
         Debug.Log("Okay, that system is ready, i gonna drink some Byte Cola, have fun comrade :D");
     }
 
-    private void Update()
+    void Update()
     {
         if (CheatActive) {
             for (int i = 0; i < MaxBuildPipelines; i++)
