@@ -4241,7 +4241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveGameKeeper: {fileID: 559906866}
-  Script: {fileID: 0}
+  Script: {fileID: 336543489}
 --- !u!114 &381768623
 MonoBehaviour:
   m_ObjectHideFlags: 0
