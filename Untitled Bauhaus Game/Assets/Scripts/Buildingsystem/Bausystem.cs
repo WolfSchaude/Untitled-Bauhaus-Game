@@ -713,6 +713,7 @@ public class Bausystem : MonoBehaviour
 
     public void StopBuilding(int PipelineNumber)
     {
+        FeedbackFromBuildings.NewTick("Bau von " + (Type)BuildingPipeline[PipelineNumber].TypeToBuild + " abgebrochen");
         BuildingPipeline[PipelineNumber].SetZero();
         Pipelines[PipelineNumber].SetActive(false);
     }
