@@ -356,9 +356,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381768623}
-        m_MethodName: ShowWindow
-        m_Mode: 3
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Wohnheim
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -367,8 +367,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1009857079}
-        m_MethodName: Wohnheim
+      - m_Target: {fileID: 381768623}
+        m_MethodName: UpdateContent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -380,6 +380,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1009857079}
         m_MethodName: ShowPipelines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1980,6 +1991,7 @@ GameObject:
   - component: {fileID: 185289913}
   - component: {fileID: 185289916}
   - component: {fileID: 185289917}
+  - component: {fileID: 185289918}
   m_Layer: 5
   m_Name: Scrollview - Event_Overview
   m_TagString: Untagged
@@ -2106,6 +2118,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 185289916}
+--- !u!114 &185289918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185289911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2863b0df0376140b12d55f8c292af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &188860708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,7 +4265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveGameKeeper: {fileID: 559906866}
-  Script: {fileID: 0}
+  Script: {fileID: 336543489}
 --- !u!114 &381768623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4267,6 +4291,8 @@ MonoBehaviour:
   buildingTimeTotalText: {fileID: 441370726}
   buildingTimeLeftText: {fileID: 0}
   buildingImage: {fileID: 1745690656}
+  MainBuildType: 0
+  BuildType: 0
 --- !u!114 &381768626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5482,8 +5508,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1780203635}
   m_HandleRect: {fileID: 1780203634}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.48790896
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5623,9 +5649,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381768623}
-        m_MethodName: ShowWindow
-        m_Mode: 3
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Lehrsaal
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5634,8 +5660,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1009857079}
-        m_MethodName: Lehrsaal
+      - m_Target: {fileID: 381768623}
+        m_MethodName: UpdateContent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5647,6 +5673,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1009857079}
         m_MethodName: ShowPipelines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6964,6 +7001,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978475645}
         m_MethodName: ToggleOpened
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1914841644}
+        m_MethodName: ToggleCamMoveAndWindowCount
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8421,13 +8469,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381768623}
-        m_MethodName: ShowWindow
-        m_Mode: 3
+      - m_Target: {fileID: 1009857079}
+        m_MethodName: Werkstatt
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 381768623}
+        m_MethodName: UpdateContent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8443,8 +8502,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1009857079}
-        m_MethodName: Werkstatt
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11190,7 +11249,7 @@ RectTransform:
   m_GameObject: {fileID: 978475642}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children:
   - {fileID: 567905609}
   m_Father: {fileID: 410550909}
@@ -16705,7 +16764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000030517578}
+  m_AnchoredPosition: {x: -27000, y: 156960}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -17067,6 +17126,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1009857079}
         m_MethodName: SetType
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 381768623}
+        m_MethodName: UpdateContent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18109,6 +18179,7 @@ GameObject:
   - component: {fileID: 1876372770}
   - component: {fileID: 1876372769}
   - component: {fileID: 1876372772}
+  - component: {fileID: 1876372773}
   m_Layer: 5
   m_Name: ScrollView - FeedbackTicker
   m_TagString: Untagged
@@ -18222,6 +18293,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1876372773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876372767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac2863b0df0376140b12d55f8c292af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1890753741
 GameObject:
   m_ObjectHideFlags: 0
@@ -18300,8 +18383,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 851380092}
   m_HandleRect: {fileID: 851380091}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18634,6 +18717,7 @@ MonoBehaviour:
   prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
   Exponat: []
+  AnimStarter: {fileID: 0}
 --- !u!1 &1917047966
 GameObject:
   m_ObjectHideFlags: 0
