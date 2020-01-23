@@ -722,7 +722,7 @@ public class Bausystem : MonoBehaviour
         int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
         int LowestFreeID = int.MaxValue;
 
-        for (int i = 0; i < NumberOfPotentialFreeStructures; i++) //old
+        for (int i = 0; i < NumberOfPotentialFreeStructures; i++) //Old
         {
             if (PotentialFreeStructures[i].GetComponent<Struktur>().TypeID <= LowestFreeID)
             {
