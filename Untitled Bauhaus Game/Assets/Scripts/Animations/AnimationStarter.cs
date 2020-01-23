@@ -38,7 +38,6 @@ public class AnimationStarter : MonoBehaviour
 	}
 	void Update()
 	{
-		//SelfDropDown.SetBool("Bool", Collapsed);
 	}
 
 	/// <summary>
