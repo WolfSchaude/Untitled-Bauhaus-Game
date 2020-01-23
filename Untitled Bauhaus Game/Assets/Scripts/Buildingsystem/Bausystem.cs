@@ -160,9 +160,9 @@ public class Bausystem : MonoBehaviour
     {
         public int HighestNumberOfStrutures { get; private set; }
 
-        public int[] StructureCount; //Maximum amount of main type structures, which are supported by this build style
+        public int[] StructureCount;
 
-        public int[] MaxStructures { get; private set; }
+        public int[] MaxStructures { get; private set; } //Maximum amount of main type structures, which are supported by this build style
 
         public bool[,] StructuresOrder;
 
@@ -208,6 +208,14 @@ public class Bausystem : MonoBehaviour
             HighestNumberOfStrutures = Temp;
 
             StructuresOrder = new bool[4, Temp];
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < Temp; j++)
+                {
+                    StructuresOrder[i, j] = true;
+                }
+            }
 
             StructureCapacity = new int[4, Temp];
 
@@ -381,14 +389,6 @@ public class Bausystem : MonoBehaviour
         UsableStyles[0].StructureBuildTime[1, 5] = 55;
         UsableStyles[0].StructureBuildTime[1, 6] = 60;
 
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < UsableStyles[0].HighestNumberOfStrutures; j++)
-            {
-                UsableStyles[0].StructuresOrder[i, j] = false;
-            }
-        }
-
         Debug.Log("Debuglol: " + UsableStyles[0].StructuresOrder[1, 4]);
 
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
@@ -493,8 +493,7 @@ public class Bausystem : MonoBehaviour
                 }
             }
 
-            int temp = Pipelines.Count;
-            for (int i = 0; i < temp; i++)
+            for (int i = 0; i < MaxBuildPipelines; i++)
             {
                 Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
                 Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
@@ -584,6 +583,10 @@ public class Bausystem : MonoBehaviour
         int FreePipelineNumber = 0;
 
         int NumberOfStructures = Structures.Count;
+        int MaxNumberOfTypeStructures = UsableStyles[StyleToBuild].HighestNumberOfStrutures;
+        int FreeID = int.MaxValue;
+
+        bool StyleSupportsNextStructure = false;
 
         List<GameObject> PotentialFreeStructures = new List<GameObject>();
 
@@ -603,11 +606,29 @@ public class Bausystem : MonoBehaviour
             return;
         }
 
-        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        for (int i = 0; i < MaxNumberOfTypeStructures; i++) //New
+        {
+            if (UsableStyles[StyleToBuild].StructuresOrder[MainTypeToBuild, i] == true && i < UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+            {
+                StyleSupportsNextStructure = true;
+                FreeID = i;
+                break;
+            }
+        } //New
+
+        Debug.Log("Building System: Search for next free Style ID completed");
+
+        if (StyleSupportsNextStructure == false) //New
         {
             FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
             return;
-        }
+        } //New
+
+        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild]) //Old
+        {
+            FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
+            return;
+        } //New
 
         Debug.Log("Building System: Build style maximum number of main type structures checked");
 
@@ -905,7 +926,8 @@ public class Bausystem : MonoBehaviour
                 BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i,5] ,save.StructuresInBuild[i, 6] ,save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
                 Pipelines[i].SetActive(true);
                 Pipelines[i].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
-                Pipelines[i].GetComponentsInChildren<Text>()[2].text = "0%";
+                Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
+                Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
                 Pipelines[i].GetComponentInChildren<Button>().onClick.AddListener(() => StopBuilding(i));
             }
 
