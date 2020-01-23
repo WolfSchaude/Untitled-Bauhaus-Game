@@ -9,8 +9,6 @@ public class bewerbungvisible : MonoBehaviour
 	public GameObject bewerbungGameObject;
 	public GameObject zuweisenGameObject;
 
-	public int zugewiesenenCounter;
-
     void Start()
 	{
 		bewerbungGameObject.SetActive(false);
@@ -18,10 +16,7 @@ public class bewerbungvisible : MonoBehaviour
 	}
 	void Update()
 	{
-		if(zugewiesenenCounter < 0)
-		{
-			zugewiesenenCounter = 0;
-		}
+
     }
 
 	public void ToggleBewerbung()

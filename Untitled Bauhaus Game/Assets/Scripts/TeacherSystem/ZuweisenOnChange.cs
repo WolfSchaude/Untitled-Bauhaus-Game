@@ -7,15 +7,14 @@ using UnityEngine.UI;
 public class ZuweisenOnChange : MonoBehaviour
 {
 
-	public bewerbungvisible Script;
+	public TeacherScript Script;
 	public bool checkeingestellt = false;
 
 	public int oldVal = 0;
 
 	void Start()
 	{
-		Script = GameObject.Find("EventSystem").GetComponent<bewerbungvisible>();
-
+		Script = GameObject.Find("Sidebar - Dropdown Formmeister").GetComponent<TeacherScript>();
 	}
 
 	void Update()

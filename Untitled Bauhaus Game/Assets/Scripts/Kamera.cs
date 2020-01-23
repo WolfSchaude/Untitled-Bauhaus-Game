@@ -24,12 +24,8 @@ public class Kamera : MonoBehaviour
 
 	[SerializeField] bool AbleToMove;
 
-	void Start()
+	private void Awake()
 	{
-		height = 20;
-
-		AbleToMove = true;
-
 		if (LockCameraMovement != null)
 		{
 			LockCameraMovement.AddListener(() => { LockMovement(); });
@@ -40,12 +36,19 @@ public class Kamera : MonoBehaviour
 			LockCameraMovement.AddListener(() => { LockMovement(); });
 		}
 
-		if (FreeCameraMovement != null)	FreeCameraMovement.AddListener(() => { FreeMovement(); });
+		if (FreeCameraMovement != null) FreeCameraMovement.AddListener(() => { FreeMovement(); });
 		else
 		{
 			FreeCameraMovement = new UnityEvent();
 			FreeCameraMovement.AddListener(() => { FreeMovement(); });
 		}
+	}
+
+	void Start()
+	{
+		height = 20;
+
+		AbleToMove = true;
 	}
 
 	void Update()
