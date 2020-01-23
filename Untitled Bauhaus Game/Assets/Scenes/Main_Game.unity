@@ -2118,6 +2118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 185289916}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &185289918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,6 +3488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 336543483}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &336543488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3510,6 +3516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a42cdb364bdcb947bbf0a0a72fe3ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zugewiesenenCounter: 0
   prefab: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615, type: 3}
   HereIsNothingPrefab: {fileID: 7387914773222583169, guid: a49628087f44caa43950f6f87578ed03,
     type: 3}
@@ -3751,6 +3758,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 337604030}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &344910035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,7 +4187,6 @@ GameObject:
   - component: {fileID: 381768616}
   - component: {fileID: 381768627}
   - component: {fileID: 381768623}
-  - component: {fileID: 381768620}
   - component: {fileID: 381768622}
   - component: {fileID: 381768626}
   - component: {fileID: 381768630}
@@ -4237,21 +4246,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &381768620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381768615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f026bb6deeee14483e59ef7963e477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bewerbungGameObject: {fileID: 4474210237657922295}
-  zuweisenGameObject: {fileID: 2957053225309383928}
-  zugewiesenenCounter: 0
 --- !u!114 &381768622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4367,7 +4361,6 @@ GameObject:
   - component: {fileID: 397381468}
   - component: {fileID: 397381467}
   - component: {fileID: 397381466}
-  - component: {fileID: 397381470}
   m_Layer: 5
   m_Name: Panel - Container Dozenten
   m_TagString: Untagged
@@ -4473,21 +4466,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397381464}
   m_CullTransparentMesh: 0
---- !u!114 &397381470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397381464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f026bb6deeee14483e59ef7963e477, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bewerbungGameObject: {fileID: 4474210237657922295}
-  zuweisenGameObject: {fileID: 2957053225309383928}
-  zugewiesenenCounter: 0
 --- !u!1 &400080705
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,8 +4691,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 397381470}
-        m_MethodName: CloseWindows
+      - m_Target: {fileID: 978475645}
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4724,7 +4702,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 978475645}
+      - m_Target: {fileID: 4474210237657922298}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2957053225309383933}
         m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
@@ -7025,17 +7014,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1914841644}
-        m_MethodName: ToggleCamMoveAndWindowCount
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &568044906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7645,8 +7623,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397381470}
-        m_MethodName: ToggleBewerbung
+      - m_Target: {fileID: 4474210237657922298}
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8793,6 +8771,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 754967063}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &759203501
 GameObject:
   m_ObjectHideFlags: 0
@@ -11248,6 +11229,7 @@ GameObject:
   - component: {fileID: 978475643}
   - component: {fileID: 978475644}
   - component: {fileID: 978475645}
+  - component: {fileID: 978475646}
   m_Layer: 10
   m_Name: Menu - Exponate Inventar
   m_TagString: Untagged
@@ -11307,6 +11289,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 978475644}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 978475646}
+        m_MethodName: ToggleState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &978475646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978475642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0979918b9eb74683794e8b40d956e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OldState: 0
 --- !u!1 &979879525
 GameObject:
   m_ObjectHideFlags: 0
@@ -12672,8 +12681,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397381470}
-        m_MethodName: ToggleZuweisen
+      - m_Target: {fileID: 2957053225309383933}
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13891,6 +13900,7 @@ GameObject:
   - component: {fileID: 1292603756}
   - component: {fileID: 1292603757}
   - component: {fileID: 1292603758}
+  - component: {fileID: 1292603759}
   m_Layer: 10
   m_Name: Baumenu Detailansicht
   m_TagString: Untagged
@@ -13952,6 +13962,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1292603757}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1292603759}
+        m_MethodName: ToggleState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1292603759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292603755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0979918b9eb74683794e8b40d956e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OldState: 0
 --- !u!1001 &1310382226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14488,6 +14525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1357314985}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1382382681
 GameObject:
   m_ObjectHideFlags: 0
@@ -15810,8 +15850,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397381470}
-        m_MethodName: ToggleZuweisen
+      - m_Target: {fileID: 4474210237657922298}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2957053225309383933}
+        m_MethodName: ToggleOpened
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16779,7 +16830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79380, y: 1007280}
+  m_AnchoredPosition: {x: -113940, y: 1260360}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -16877,6 +16928,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelfDropDown: {fileID: 1719962157}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1719962157
 Animator:
   serializedVersion: 3
@@ -18698,7 +18752,7 @@ MonoBehaviour:
   Playervariables: {fileID: 1009857072}
   StartOrderButton: {fileID: 509407485}
   EventSystem: {fileID: 381768615}
-  NumberOfHiredTeachers: {fileID: 381768620}
+  NumberOfHiredTeachers: {fileID: 336543489}
   JaAbbrechen: {fileID: 2021718295}
   NeinNichtAbbrechen: {fileID: 2132582431}
   ExpoCreateButton: {fileID: 509407487}
@@ -18732,7 +18786,6 @@ MonoBehaviour:
   prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
   Exponat: []
-  AnimStarter: {fileID: 0}
 --- !u!1 &1917047966
 GameObject:
   m_ObjectHideFlags: 0
@@ -20046,8 +20099,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 397381470}
-        m_MethodName: ToggleBewerbung
+      - m_Target: {fileID: 2957053225309383933}
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4474210237657922298}
+        m_MethodName: ToggleOpened
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20852,8 +20916,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2957053225306972670}
   m_HandleRect: {fileID: 2957053225306972671}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20954,7 +21018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000073250135}
+  m_AnchoredPosition: {x: -2205, y: 83640}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -21382,7 +21446,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21436,13 +21500,29 @@ GameObject:
   - component: {fileID: 2957053225309383924}
   - component: {fileID: 2957053225309383925}
   - component: {fileID: 2957053225309383930}
+  - component: {fileID: 2957053225309383932}
+  - component: {fileID: 2957053225309383933}
+  - component: {fileID: 2957053225309383929}
   m_Layer: 8
   m_Name: Scrollview - PersonalZuweisen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &2957053225309383929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957053225309383928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0979918b9eb74683794e8b40d956e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OldState: 0
 --- !u!114 &2957053225309383930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21479,7 +21559,7 @@ RectTransform:
   m_GameObject: {fileID: 2957053225309383928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children:
   - {fileID: 2957053224788816735}
   - {fileID: 2957053225195407646}
@@ -21493,6 +21573,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 7.000004}
   m_SizeDelta: {x: 630, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &2957053225309383932
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957053225309383928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1490b836c0413324bbdde9e2abf30276, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2957053225309383933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957053225309383928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDropDown: {fileID: 2957053225309383932}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2957053225309383929}
+        m_MethodName: ToggleState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &2957053225639918310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24174,8 +24300,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4474210237041864009}
   m_HandleRect: {fileID: 4474210237041864008}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -24309,7 +24435,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -24425,7 +24551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000022932}
+  m_AnchoredPosition: {x: -2205, y: 88060}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -24735,7 +24861,7 @@ RectTransform:
   m_GameObject: {fileID: 4474210237657922295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children:
   - {fileID: 4474210236591371564}
   - {fileID: 4474210237146594700}
@@ -24788,13 +24914,75 @@ GameObject:
   - component: {fileID: 4474210237657922283}
   - component: {fileID: 4474210237657922282}
   - component: {fileID: 4474210237657922293}
+  - component: {fileID: 4474210237657922297}
+  - component: {fileID: 4474210237657922298}
+  - component: {fileID: 4474210237657922296}
   m_Layer: 8
   m_Name: Scrollview - PersonalEinstellen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &4474210237657922296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474210237657922295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0979918b9eb74683794e8b40d956e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OldState: 0
+--- !u!95 &4474210237657922297
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474210237657922295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1490b836c0413324bbdde9e2abf30276, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4474210237657922298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474210237657922295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e84a1217cf7fad469e7f1ea81f1a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelfDropDown: {fileID: 4474210237657922297}
+  BoolChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4474210237657922296}
+        m_MethodName: ToggleState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &4476412911575366260
 Animator:
   serializedVersion: 3

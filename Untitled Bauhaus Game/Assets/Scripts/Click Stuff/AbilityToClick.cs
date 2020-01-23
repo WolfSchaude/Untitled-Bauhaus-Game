@@ -33,7 +33,7 @@ public class AbilityToClick : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 1000.0f))
+            if (Physics.Raycast(ray, out hit, 426.0f))
             {
                 if (hit.transform.CompareTag(Tag))
                 {

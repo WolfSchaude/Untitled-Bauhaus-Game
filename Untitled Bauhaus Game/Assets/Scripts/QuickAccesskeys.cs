@@ -59,7 +59,7 @@ public class QuickAccesskeys : MonoBehaviour
     /// Reference to: Button of Sidebar-Dormmeister, needed to open/close the dropdown
     /// </summary>
     [SerializeField] Button TeacherDropdown;
-    void Start()
+    void Awake()
     {
         if (IOpenedAWindow != null)
         {
@@ -161,6 +161,8 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     public void CountUpWindows()
     {
+        print("Number of WIndows just got increased. Now : " + NumberOfOpenedWindows);
+
         NumberOfOpenedWindows++;
     }
     /// <summary>
@@ -168,6 +170,8 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     public void CountDownWindows()
     {
+        print("Number of WIndows just got decreased. Now : " + NumberOfOpenedWindows);
+
         NumberOfOpenedWindows--;
     }
 

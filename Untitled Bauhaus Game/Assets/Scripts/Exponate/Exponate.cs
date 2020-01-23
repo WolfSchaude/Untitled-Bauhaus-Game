@@ -12,7 +12,7 @@ public class Exponate : MonoBehaviour
     public GameObject EventSystem;
 
     NewTimeKeeper TimeIsImportant;
-    [SerializeField] bewerbungvisible NumberOfHiredTeachers;
+    [SerializeField] TeacherScript NumberOfHiredTeachers;
 
     [SerializeField] Button JaAbbrechen;
     [SerializeField] Button NeinNichtAbbrechen;
@@ -45,8 +45,6 @@ public class Exponate : MonoBehaviour
     /// List to Save the GameObjects of the Exponates and to keep a reference to them
     /// </summary>
     [SerializeField] List<GameObject> Exponat = new List<GameObject>();
-
-    [SerializeField] AnimationStarter AnimStarter;
 
     void Start()
     {
@@ -105,10 +103,10 @@ public class Exponate : MonoBehaviour
                 case NewTimeKeeper.TimeMode.Pause:
                     break;
                 case NewTimeKeeper.TimeMode.Normal:
-                    exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter);
+                    exponatCreateTimer += (NumberOfHiredTeachers.zugewiesenenCounter);
                     break;
                 case NewTimeKeeper.TimeMode.FastForward:
-                    exponatCreateTimer += (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter * 4);
+                    exponatCreateTimer += (NumberOfHiredTeachers.zugewiesenenCounter * 4);
                     break;
                 default:
                     break;
@@ -203,20 +201,6 @@ public class Exponate : MonoBehaviour
         x.GetComponentInChildren<Button>().onClick.AddListener(() => { Destroy(x); });
 
         Exponat.Add(x);
-    }
-
-    public void ToggleCamMoveAndWindowCount()
-    {
-        if (!AnimStarter.Collapsed)
-        {
-            Kamera.LockCameraMovement.Invoke();
-            QuickAccesskeys.IOpenedAWindow.Invoke();
-        }
-        else
-        {
-            Kamera.FreeCameraMovement.Invoke();
-            QuickAccesskeys.IClosedAWindow.Invoke();
-        }
     }
 
     #region Methods needed to do the cancel and cancel-check for exponates

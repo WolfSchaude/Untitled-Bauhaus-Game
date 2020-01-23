@@ -8,6 +8,9 @@ public class TeacherScript : MonoBehaviour
 {
 	private int GesammeleteGehälter;
 
+	public int zugewiesenenCounter;
+
+
 	public GameObject prefab;
 	public GameObject HereIsNothingPrefab;
 	public GameObject parent;
@@ -84,13 +87,18 @@ public class TeacherScript : MonoBehaviour
 				item.SetActive(true);
 			}
 		}
+
+		if (zugewiesenenCounter < 0)
+		{
+			zugewiesenenCounter = 0;
+		}
 	}
 
-	public void laufendeKosten()
+	public void LaufendeKosten()
 	{
-		if (GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter > 0)
+		if (zugewiesenenCounter > 0)
 		{
-			GesammeleteGehälter = TeacherLoader.tb.Buffer[1].FortlaufendeKosten * GameObject.Find("EventSystem").GetComponent<bewerbungvisible>().zugewiesenenCounter;
+			GesammeleteGehälter = TeacherLoader.tb.Buffer[1].FortlaufendeKosten * zugewiesenenCounter;
 			Playervariables.GetComponent<Money>().Bezahlen(GesammeleteGehälter);
 			GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Gehälter in Höhe von " + GesammeleteGehälter + " RM bezahlt.");
 		}
