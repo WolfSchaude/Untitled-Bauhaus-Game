@@ -493,8 +493,7 @@ public class Bausystem : MonoBehaviour
                 }
             }
 
-            int temp = Pipelines.Count;
-            for (int i = 0; i < temp; i++)
+            for (int i = 0; i < MaxBuildPipelines; i++)
             {
                 Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
                 Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
@@ -905,7 +904,8 @@ public class Bausystem : MonoBehaviour
                 BuildingPipeline[i].SetBuilding(save.StructuresInBuild[i,5] ,save.StructuresInBuild[i, 6] ,save.StructuresInBuild[i, 4], save.StructuresInBuild[i, 3], save.StructuresInBuild[i, 2], save.StructuresInBuild[i, 1]);
                 Pipelines[i].SetActive(true);
                 Pipelines[i].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
-                Pipelines[i].GetComponentsInChildren<Text>()[2].text = "0%";
+                Pipelines[i].GetComponentInChildren<Slider>().value = BuildingPipeline[i].CalculateProgress();
+                Pipelines[i].GetComponentsInChildren<Text>()[2].text = (int)BuildingPipeline[i].CalculateProgress() + "%";
                 Pipelines[i].GetComponentInChildren<Button>().onClick.AddListener(() => StopBuilding(i));
             }
 
