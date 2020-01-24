@@ -698,29 +698,29 @@ public class Bausystem : MonoBehaviour
 
         int NumberOfStructures = Structures.Count;
 
-        List<GameObject> PotentialFreeStructures = new List<GameObject>();
+        //List<GameObject> PotentialFreeStructures = new List<GameObject>();
 
-        for (int i = 0; i < NumberOfStructures; i++) //Old
-        {
-            if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false)
-            {
-                PotentialFreeStructures.Add(Structures[i]);
-            }
-        } //Old
+        //for (int i = 0; i < NumberOfStructures; i++) //Old
+        //{
+        //    if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false)
+        //    {
+        //        PotentialFreeStructures.Add(Structures[i]);
+        //    }
+        //} //Old
 
-        Debug.Log("Building System: Search for number of free structures completed");
+        //Debug.Log("Building System: Search for number of free structures completed");
 
-        if (PotentialFreeStructures.Count == 0)
-        {
-            BuildingPipeline[PipelineNumber].SetZero();
-            return;
-        }
+        //if (PotentialFreeStructures.Count == 0)
+        //{
+        //    BuildingPipeline[PipelineNumber].SetZero();
+        //    return;
+        //}
 
-        Debug.Log("Building System: Searched for incorrect build pipelines");
+        //Debug.Log("Building System: Searched for incorrect build pipelines");
 
 
-        int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
-        int LowestFreeID = int.MaxValue;
+        //int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
+        //int LowestFreeID = int.MaxValue;
 
         //for (int i = 0; i < NumberOfPotentialFreeStructures; i++) //Old
         //{
@@ -815,7 +815,6 @@ public class Bausystem : MonoBehaviour
         int NumberOfStyles = UsableStyles.Length;
 
         int[,] ActiveBuilding = new int[NumberOfStructures, 4];
-        int[,] StyleCounter = new int[NumberOfStyles, 4];
         int[,] StructuresInBuild = new int[MaxBuildPipelines, 7];
 
         int HighestNumberOfStructuresOverStyles = 0;
@@ -997,6 +996,35 @@ public class Bausystem : MonoBehaviour
                 }
             }
         }
+        return Temp;
+    }
+
+    public string AktiveStrukturen(int MainType)
+    {
+        string Temp = "";
+        int NumberOfStructures = Structures.Count;
+
+        switch (MainType)
+        {
+            case 1:
+                Temp = "Werkstätte: \n";
+                break;
+            case 2:
+                Temp = "Wohnheim: \n";
+                break;
+            case 3:
+                Temp = "Lehrsähle: \n";
+                break;
+        }
+
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            if (Structures[i].GetComponent<Struktur>().IsPlaced && Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainType)
+            {
+                Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnMainTypeInt;
+            }
+        }
+
         return Temp;
     }
 }

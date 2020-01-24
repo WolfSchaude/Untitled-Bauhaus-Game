@@ -22,7 +22,6 @@ public class Save
 	public bool[] IsEventFinished;
 
 	public int[,] ActiveBuildings;
-	public int[,] StyleCounter;
 	public int[,] StructuresInBuild;
 	public bool[,,] StyleOrder;
 	//public List<int> WhereIsTeacherHired = new List<int>();
