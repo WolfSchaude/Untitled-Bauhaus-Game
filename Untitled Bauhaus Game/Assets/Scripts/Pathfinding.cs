@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
+	public Animator anim;
 	public Transform[] points;
 	private NavMeshAgent nav;
 	private int destPoint;
@@ -15,6 +16,7 @@ public class Pathfinding : MonoBehaviour
 	void Start()
     {
 		nav = GetComponent<NavMeshAgent>();
+		anim = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class Pathfinding : MonoBehaviour
 			//nav.acceleration = 0;
 			//nav.angularSpeed = 0;
 			nav.isStopped = true;
+			anim.SetBool("isWalking", false);
 
 		}
 		if (TimeKeeperObject.Mode == NewTimeKeeper.TimeMode.Normal) //Normal
@@ -35,6 +38,7 @@ public class Pathfinding : MonoBehaviour
 			nav.speed = 3.5f;
 			nav.acceleration = 8;
 			nav.angularSpeed = 120;
+			anim.SetBool("isWalking", true);
 		}
 		if (TimeKeeperObject.Mode == NewTimeKeeper.TimeMode.FastForward) //Schnell
 		{
@@ -43,6 +47,7 @@ public class Pathfinding : MonoBehaviour
 			nav.speed = 14f;
 			nav.acceleration = 32;
 			nav.angularSpeed = 480;
+			anim.SetBool("isWalking", true);
 		}
 		if (!nav.pathPending && nav.remainingDistance < 0.5f)
 			GoToNextPoint();
