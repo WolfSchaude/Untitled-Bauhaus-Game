@@ -10,7 +10,6 @@ public class CheatMenu : MonoBehaviour
 	public GameObject Playervariables;
 
 	public Toggle bauzeitToggle;
-	private bool bauzeitCheater = false;
     void Start()
     {
         
@@ -36,15 +35,6 @@ public class CheatMenu : MonoBehaviour
 
 	public void deactivateBuildTime()
 	{
-		if (bauzeitToggle.isOn)
-		{
-			bauzeitCheater = true;
-		}
-		else
-		{
-			bauzeitCheater = false;
-		}
-
 		Playervariables.GetComponent<Bausystem>().CheatActive = bauzeitToggle.isOn;
 	}
 

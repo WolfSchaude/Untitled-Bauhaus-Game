@@ -571,7 +571,7 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
     Build: 0
-    Collab: 1
+    Collab: 0
     ErrorHub: 0
     Hub: 0
     UNet: 1
@@ -594,7 +594,7 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 57b8b860-e19e-4e9c-9454-10881f416fa5
+  cloudProjectId: dacbc4f4-4e23-426f-8224-b68ec3543b0f
   framebufferDepthMemorylessMode: 0
   projectName: Untitled Bauhaus Game (1)
   organizationId: shatterdprism
