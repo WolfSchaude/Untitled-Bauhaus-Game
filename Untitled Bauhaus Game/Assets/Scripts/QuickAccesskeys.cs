@@ -46,7 +46,7 @@ public class QuickAccesskeys : MonoBehaviour
     /// <summary>
     /// Reference to: Button of Create-Exponat-Funktion, needed to Start a new Expoante on A button click
     /// </summary>
-    [SerializeField] Button ExponateStarter;
+    [SerializeField] Exponate ExponateStarter;
     /// <summary>
     /// Reference to: Button of Sidebar-Statistiken, needed to open / close the Statistics panel (Subject to changes as Statistics will need to improve
     /// </summary>
@@ -90,7 +90,10 @@ public class QuickAccesskeys : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E)) //Exponat herstellen
         {
-            ExponateStarter.onClick.Invoke();
+            if (ExponateStarter.IsAllowedToMakeExpo)
+            {
+                ExponateStarter.StartExponat();
+            }
         }
         if (Input.GetKeyDown(KeyCode.F))
         {

@@ -46,6 +46,12 @@ public class Exponate : MonoBehaviour
     /// </summary>
     [SerializeField] List<GameObject> Exponat = new List<GameObject>();
 
+    /// <summary>
+    /// Toggle to reference from QuickAcceskeys, if you can make an Exponate
+    /// </summary>
+    [SerializeField] public bool IsAllowedToMakeExpo { get; private set; }
+
+
     void Start()
     {
         TimeIsImportant = Playervariables.GetComponent<NewTimeKeeper>();
@@ -56,18 +62,20 @@ public class Exponate : MonoBehaviour
 
     void Update()
     {
-		expoSlider.value = exponatCreateTimer; //set slider value to int value
+        expoSlider.value = exponatCreateTimer; //set slider value to int value
 
         CreateExponat();
 
         if (NumberOfHiredTeachers.zugewiesenenCounter == 0)
         {
-            ExpoCreateButton.interactable = false;
+            IsAllowedToMakeExpo = false;
         }
         else
         {
-            ExpoCreateButton.interactable = true;
+            IsAllowedToMakeExpo = true;
         }
+
+        ExpoCreateButton.interactable = IsAllowedToMakeExpo;
     }
 
     public void StartExponat() //Herstellung mit Button
