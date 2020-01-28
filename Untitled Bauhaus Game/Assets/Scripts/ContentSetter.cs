@@ -11,6 +11,22 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Money Script on PlayerVariables to get the Data to Display
     /// </summary>
     [SerializeField] Money Script_Money;
+    /// <summary>
+    /// Reference to: Bausystem Script on PlayerVariables to get the Data to Display
+    /// </summary>
+    [SerializeField] Bausystem Script_Bausystem;
+    /// <summary>
+    /// Reference to: Studenten Script on PlayerVariables to get the Data to Display
+    /// </summary>
+    [SerializeField] Studenten Script_Studenten;
+    /// <summary>
+    /// Reference to: Ansehen Script on PlayerVariables to get the Data to Display
+    /// </summary>
+    [SerializeField] AnsehenScript Script_Ansehen;
+    /// <summary>
+    /// Reference to: Exponate Script on ExponateSlider to get the Data to Display
+    /// </summary>
+    [SerializeField] Exponate Script_Exponate;
 
 	#endregion
 
@@ -114,15 +130,33 @@ public class ContentSetter : MonoBehaviour
     /// </summary>
     [SerializeField] Text ExponateDurschnittErloes;
 
-	#endregion
-	void Start()
+    #endregion
+    void Start()
     {
-        
+        UpdateText();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateText()
     {
-        
+        Vermoegen.text = Script_Money.money.ToString() + " RM";
+        Einkommen.text = Script_Money.monthlyCosts.ToString() + " RM/Monat" + " Not Implemented";
+        Ausgaben.text = "Diesen Monat: " + " RM" + " Not Implemented";
+        PlusMinusTendenz.text = "Not Implemented";
+
+        StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
+        StudentenKapazitaet.text = Script_Studenten.studKapazitaet.ToString() + " Studenten";
+        StudentenTendenz.text = "Steigend (Zitat Angela Merkel, 2012)";
+
+        AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
+        AnsehenLetztes.text = "Not implemented";
+
+
+
+        ExponateBisherHergestellt.text = "Not Implemented";
+        ExponateBisherVerkauft.text = "Not Implemented";
+        ExponateBisherVerkauftErloes.text = "Not Implemented";
+        ExponateDurschnittQuali.text = "Not Implemented";
+        ExponateDurschnittStil.text = "Not Implemented";
+        ExponateDurschnittErloes.text = "Not Implemented";
     }
 }

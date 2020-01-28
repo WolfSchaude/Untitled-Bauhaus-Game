@@ -999,32 +999,9 @@ public class Bausystem : MonoBehaviour
         return Temp;
     }
 
-    public string AktiveStrukturen(int MainType)
+    public string AktiveStrukturen(int Strucuture, int MainType)
     {
-        string Temp = "";
-        int NumberOfStructures = Structures.Count;
 
-        switch (MainType)
-        {
-            case 1:
-                Temp = "Werkstätte: \n";
-                break;
-            case 2:
-                Temp = "Wohnheim: \n";
-                break;
-            case 3:
-                Temp = "Lehrsähle: \n";
-                break;
-        }
-
-        for (int i = 0; i < NumberOfStructures; i++)
-        {
-            if (Structures[i].GetComponent<Struktur>().IsPlaced && Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainType)
-            {
-                Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnMainTypeInt;
-            }
-        }
-
-        return Temp;
+        return "Lol";
     }
 }

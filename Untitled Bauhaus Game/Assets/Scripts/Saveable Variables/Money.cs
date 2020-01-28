@@ -13,6 +13,7 @@ public class Money : MonoBehaviour, ISaveableInterface
 	public FeedbackScript Feedback;
 
     public float money = 200000;
+	public float monthlyCosts = 0;
 	private float oldMoney = 0;
 	private float preCheatMoney = 0;
 

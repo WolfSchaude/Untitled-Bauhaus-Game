@@ -7,6 +7,8 @@ TagManager:
   - music
   - slider
   - Clickable
+  - lb_groundTarget
+  - lb_perchTarget
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Personal
   - Ereignissystem
   - Baumenu Detailansicht
-  - 
+  - Boden
   - 
   - 
   - 
