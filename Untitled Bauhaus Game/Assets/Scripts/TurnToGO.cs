@@ -8,10 +8,12 @@ public class TurnToGO : MonoBehaviour
 
     void Update()
     {
-        Vector3 lookPoint = transform.position - TurnToTarget.position;
-        lookPoint.y = TurnToTarget.position.y;
-        transform.LookAt(lookPoint);
+        transform.LookAt(TurnToTarget, Vector3.down);
 
-        //transform.LookAt(TurnToTarget);
+        var x = transform.rotation.eulerAngles;
+
+        x.x += 180;
+
+        transform.rotation = Quaternion.Euler(x);
     }
 }
