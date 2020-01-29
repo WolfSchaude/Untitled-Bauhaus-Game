@@ -33,6 +33,8 @@ public class Exponate : MonoBehaviour
     public Slider expoSlider;
     public Text expoText;
 
+    public List<float> exponatQualitaeten = new List<float>();
+    public List<int> exponateStil = new List<int>();
     public int exponatCounter = 0;
     int exponatCreateTimer = -5000;
     private int textCooldown = 200;
@@ -232,7 +234,10 @@ public class Exponate : MonoBehaviour
         x.GetComponentInChildren<Button>().onClick.AddListener(() => { Destroy(x); });
 
         Exponat.Add(x);
+        exponatQualitaeten.Add(Qualität);
+        exponateStil.Add(stilText);
         exponatCounter++;
+
         Debug.Log("Exponate: " + exponatCounter);
     }
 

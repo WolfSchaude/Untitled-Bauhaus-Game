@@ -187,8 +187,20 @@ public class ContentSetter : MonoBehaviour
         ExponateBisherHergestellt.text = Script_Exponate.exponatCounter.ToString() + " Exponate";
         ExponateBisherVerkauft.text = Script_Exponate.BisherVerkauftAnzahl + " Exponate";
         ExponateBisherVerkauftErloes.text = Script_Exponate.BisherGebautErloes + " RM";
-        ExponateDurschnittQuali.text = "100%";
-        ExponateDurschnittStil.text = "Not Implemented";
+        float ATemp = 0;
+        for (int i = 0; i < Script_Exponate.exponatCounter; i++)
+        {
+            ATemp = ATemp + Script_Exponate.exponatQualitaeten[i];
+        }
+        float ATemp2 = ATemp / Script_Exponate.exponatCounter;
+        ExponateDurschnittQuali.text = ATemp2.ToString("0.00");
+        int BTemp = 0;
+        for (int i = 0; i < Script_Exponate.exponatCounter; i++)
+        {
+            BTemp = BTemp + Script_Exponate.exponateStil[i];
+        }
+        int BTemp2 = BTemp / Script_Exponate.exponatCounter;
+        ExponateDurschnittStil.text = BTemp2.ToString();
         if (Script_Exponate.exponatCounter != 0)
         {
             ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";

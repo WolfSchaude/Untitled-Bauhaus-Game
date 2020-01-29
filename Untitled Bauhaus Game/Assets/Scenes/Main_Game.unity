@@ -2601,7 +2601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000038146973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -6665,7 +6665,6 @@ MonoBehaviour:
       Avail: 
       Hire: 
       Assig: 
-    IsTeacherHired: 
     IsEventFinished: 
   WhoHasSaved: 
   SavingATM: 0
@@ -14473,7 +14472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -147265.23}
+  m_AnchoredPosition: {x: 0, y: -149490.48}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1351432637
@@ -17074,7 +17073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -255960, y: 10914480}
+  m_AnchoredPosition: {x: -259200, y: 10919520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -19040,6 +19039,7 @@ MonoBehaviour:
         m_CallState: 2
   expoSlider: {fileID: 1914841643}
   expoText: {fileID: 1141301272}
+  exponatQualitaeten: []
   exponatCounter: 0
   prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
@@ -80538,7 +80538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44730, y: 9275540}
+  m_AnchoredPosition: {x: -45675, y: 9280980}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -84257,7 +84257,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -53550, y: 9858980}
+  m_AnchoredPosition: {x: -54495, y: 9864420}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -91878,7 +91878,7 @@ RectTransform:
   - {fileID: 4742372529508950360}
   - {fileID: 4742372527857948393}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
