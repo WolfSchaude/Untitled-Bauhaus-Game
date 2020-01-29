@@ -22,7 +22,7 @@ public class Bausystem : MonoBehaviour
     /// <summary>
     /// All available structure prefabs/objects are saved in this list
     /// </summary>
-    private List<GameObject> Structures = new List<GameObject>();
+    public List<GameObject> Structures = new List<GameObject>();
 
     public GameObject PipelinePrefab;
     public GameObject PipelineParent;
