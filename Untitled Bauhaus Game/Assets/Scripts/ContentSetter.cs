@@ -198,7 +198,7 @@ public class ContentSetter : MonoBehaviour
 
                 var x = Instantiate(PreFab_Building, ParentWerkstaette);
 
-                x.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+                x.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID, Script_Bausystem);
 
                 x.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
 
@@ -209,7 +209,7 @@ public class ContentSetter : MonoBehaviour
 
                 var y = Instantiate(PreFab_Building, ParentWohnheime);
 
-                y.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+                y.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID, Script_Bausystem);
 
                 y.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
 
@@ -220,7 +220,7 @@ public class ContentSetter : MonoBehaviour
 
                 var z = Instantiate(PreFab_Building, ParentLehrsaele);
 
-                z.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+                z.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID, Script_Bausystem);
 
                 z.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
 

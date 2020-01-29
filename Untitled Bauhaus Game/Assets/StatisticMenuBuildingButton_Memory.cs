@@ -8,30 +8,22 @@ public class StatisticMenuBuildingButton_Memory : MonoBehaviour
     public int _MainType { get; private set; }
     public int _Type { get; private set; }
     public int _MainTypeID { get; private set; }
+    public Vector3 _ReferencePosition { get; private set; }
+    public Bausystem _BausystemRef { get; private set; }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SetValues(int a, int b, int c, int d)
+    public void SetValues(int a, int b, int c, int d, Bausystem system)
     {
         _uniqueID = a;
         _MainType = b;
         _Type = c;
         _MainTypeID = d;
+        _BausystemRef = system;
+        _ReferencePosition = _BausystemRef.Structures[_uniqueID].transform.position;
     }
 
     public void OnKlick()
     {
         print("Werte dieses Buttons: " +  _uniqueID + " "+ _MainType + " " + _Type + " " + _MainTypeID);
+        print("Position: " + _ReferencePosition);
     }
 }
