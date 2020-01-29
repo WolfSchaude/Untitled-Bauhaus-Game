@@ -97,6 +97,8 @@ public class ContentSetter : MonoBehaviour
 
     List<Button> Buttons;
 
+    public enum Typ { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
+
     #endregion
     #region Lehrer
     //------------------------------------( Leher     )------------------------------------//
@@ -198,6 +200,8 @@ public class ContentSetter : MonoBehaviour
 
                 x.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
 
+                x.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
+
                 WerkstattButtons.Add(x);
 
                 break;
@@ -207,6 +211,8 @@ public class ContentSetter : MonoBehaviour
 
                 y.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
 
+                y.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
+
                 WohnheimButtons.Add(y);
 
                 break;
@@ -215,6 +221,8 @@ public class ContentSetter : MonoBehaviour
                 var z = Instantiate(PreFab_Building, ParentLehrsaele);
 
                 z.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+
+                z.GetComponentInChildren<Text>().text = ((Typ)Type).ToString();
 
                 WohnheimButtons.Add(z);
 
