@@ -27,11 +27,19 @@ public class SaveGameManager : MonoBehaviour
 
     void Start()
     {
-        //if (LoadGameEvent == null)
-        //    LoadGameEvent = new SaveEvent();
         WhoHasSaved = new List<bool>(new bool[8]);
 
-        StartCoroutine(LoadOnStart());
+        if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
+        {
+            LoadSave();
+        }
+        else
+        {
+            LoadStart();
+            Debug.Log("Loaded Start");
+        }
+
+        //StartCoroutine(LoadOnStart());
     }
     void Update()
     {
@@ -85,21 +93,21 @@ public class SaveGameManager : MonoBehaviour
 
     public void LoadStart()
     {
-        //if (File.Exists(Application.persistentDataPath + "/PointBlank.bhs"))
-        //{
-        //    //Maybe Clear rest
+        if (File.Exists(Application.persistentDataPath + "/PointBlank.bhs"))
+        {
+            //Maybe Clear rest
 
-        //    BinaryFormatter bf = new BinaryFormatter();
-        //    FileStream file = File.Open(Application.persistentDataPath + "/PointBlank.bhs", FileMode.Open);
-        //    Save save = bf.Deserialize(file) as Save;
-        //    file.Close();
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/PointBlank.bhs", FileMode.Open);
+            Save save = bf.Deserialize(file) as Save;
+            file.Close();
 
-        //    LoadGameEvent.Invoke(save);
-        //}
-        //else
-        //{
-        //    Debug.Log("No Savegame Found!");
-        //}
+            LoadGameEvent.Invoke(save);
+        }
+        else
+        {
+            Debug.Log("No Savegame Found!");
+        }
     }
 
     public IEnumerator LoadOnStart()

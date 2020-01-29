@@ -2601,7 +2601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000038146973}
+  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -3257,7 +3257,6 @@ GameObject:
   - component: {fileID: 336543483}
   - component: {fileID: 336543487}
   - component: {fileID: 336543488}
-  - component: {fileID: 336543489}
   m_Layer: 5
   m_Name: Sidebar - Dropdown Formmeister
   m_TagString: Untagged
@@ -3465,27 +3464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Second: {fileID: 397381466}
---- !u!114 &336543489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336543481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a42cdb364bdcb947bbf0a0a72fe3ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zugewiesenenCounter: 0
-  prefab: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615, type: 3}
-  HereIsNothingPrefab: {fileID: 7387914773222583169, guid: a49628087f44caa43950f6f87578ed03,
-    type: 3}
-  parent: {fileID: 4474210237068353045}
-  hiredParent: {fileID: 2957053224773068096}
-  Ticker: {fileID: 1413785168}
-  EventSystem: {fileID: 381768615}
-  Playervariables: {fileID: 1009857072}
 --- !u!1 &337604028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,7 +4198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveGameKeeper: {fileID: 559906866}
-  Script: {fileID: 336543489}
+  Script: {fileID: 0}
 --- !u!114 &381768623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6550,7 +6528,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 381768622}
+      - m_Target: {fileID: 1009857080}
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -6641,7 +6619,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 381768622}
+      - m_Target: {fileID: 1009857080}
         m_MethodName: Load
         m_Mode: 0
         m_Arguments:
@@ -6683,6 +6661,10 @@ MonoBehaviour:
     CurrentPolitics: 0
     StudentenAnzahl: 0
     MaxStudenten: 0
+    CurrentTeacherState:
+      Avail: 
+      Hire: 
+      Assig: 
     IsTeacherHired: 
     IsEventFinished: 
   WhoHasSaved: 
@@ -11747,6 +11729,7 @@ GameObject:
   - component: {fileID: 1009857075}
   - component: {fileID: 1009857076}
   - component: {fileID: 1009857079}
+  - component: {fileID: 1009857080}
   m_Layer: 0
   m_Name: PlayerVariables
   m_TagString: Untagged
@@ -11942,18 +11925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BauZuEndeEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4742372528775010899}
-        m_MethodName: NewBuildingButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   FeedbackFromBuildings: {fileID: 1413785173}
   SaveGameKeeper: {fileID: 559906866}
   PipelinePrefab: {fileID: 4291362811738924677, guid: 27cd25fc4825dd941bb1f7f04797a73a,
@@ -11972,6 +11944,34 @@ MonoBehaviour:
   ActualCapacity: 0
   StructuresCounter: 
   Bauarbeiter: {fileID: 861834006}
+--- !u!114 &1009857080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009857072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a42cdb364bdcb947bbf0a0a72fe3ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zugewiesenenCounter: 0
+  prefab: {fileID: 6852908208647300802, guid: fde383b4cea03074a9e3a3263c0df615, type: 3}
+  HereIsNothingPrefab: {fileID: 7387914773222583169, guid: a49628087f44caa43950f6f87578ed03,
+    type: 3}
+  parent: {fileID: 4474210237068353045}
+  hiredParent: {fileID: 2957053224773068096}
+  Ticker: {fileID: 1413785168}
+  EventSystem: {fileID: 381768615}
+  Playervariables: {fileID: 1009857072}
+  SaveGameKeeper: {fileID: 559906866}
+  _Transform_Hired: {fileID: 4742372528405072078}
+  _Transform_Assigned: {fileID: 4742372527619773084}
+  Teachers_Available: []
+  Teachers_Hired_Old: []
+  Teachers_Hired: []
+  Teachers_Assigned: []
 --- !u!1 &1012012621
 GameObject:
   m_ObjectHideFlags: 0
@@ -14461,7 +14461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23706.873}
+  m_AnchoredPosition: {x: 0, y: -58839.574}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1351432637
@@ -17062,7 +17062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -205740, y: 10612440}
+  m_AnchoredPosition: {x: -243540, y: 10696320}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -18997,7 +18997,7 @@ MonoBehaviour:
   Playervariables: {fileID: 1009857072}
   StartOrderButton: {fileID: 509407485}
   EventSystem: {fileID: 381768615}
-  NumberOfHiredTeachers: {fileID: 336543489}
+  NumberOfHiredTeachers: {fileID: 1009857080}
   JaAbbrechen: {fileID: 2021718295}
   NeinNichtAbbrechen: {fileID: 2132582431}
   ExpoCreateButton: {fileID: 509407487}
@@ -80422,7 +80422,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2957053225306972670}
   m_HandleRect: {fileID: 2957053225306972671}
-  m_Direction: 3
+  m_Direction: 2
   m_Value: 1
   m_Size: 0.5
   m_NumberOfSteps: 0
@@ -80456,7 +80456,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: -0.000030518}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!1 &2957053224654590539
 GameObject:
   m_ObjectHideFlags: 0
@@ -80525,7 +80525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28980, y: 8965800}
+  m_AnchoredPosition: {x: -40950, y: 9053520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -83945,7 +83945,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: -0.000030518}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &4474210236375328980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -83992,7 +83992,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4474210237041864009}
   m_HandleRect: {fileID: 4474210237041864008}
-  m_Direction: 3
+  m_Direction: 2
   m_Value: 1
   m_Size: 0.5
   m_NumberOfSteps: 0
@@ -84244,7 +84244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37800, y: 9549240}
+  m_AnchoredPosition: {x: -49770, y: 9636960}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -89861,7 +89861,7 @@ RectTransform:
   - {fileID: 4742372529372632418}
   - {fileID: 4742372529180279552}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -92409,7 +92409,7 @@ RectTransform:
   - {fileID: 4742372529508950360}
   - {fileID: 4742372527857948393}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -93139,8 +93139,7 @@ MonoBehaviour:
   ParentWerkstaette: {fileID: 4742372528987282749}
   ParentLehrsaele: {fileID: 4742372529492635106}
   ParentWohnheime: {fileID: 4742372527915639589}
-  PreFab_Building: {fileID: 780331003458501572, guid: a8ac618ac659dc84f83527edcc801ff1,
-    type: 3}
+  PreFab_Building: {fileID: 0}
   ParentZugewiesen: {fileID: 4742372527619773084}
   ParentFrei: {fileID: 4742372528405072078}
   ExponateBisherHergestellt: {fileID: 4742372528947875165}
@@ -93211,8 +93210,8 @@ RectTransform:
   - {fileID: 4742372528599036700}
   - {fileID: 4742372528632320714}
   - {fileID: 4742372527505744729}
-  - {fileID: 4742372528614567571}
   - {fileID: 4742372528069425074}
+  - {fileID: 4742372528614567571}
   m_Father: {fileID: 4742372527835446537}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -17,7 +17,7 @@ public class Save
 	public int StudentenAnzahl;
 	public int MaxStudenten;
 
-	public bool[] IsTeacherHired;
+	public TeacherSave CurrentTeacherState;
 
 	public bool[] IsEventFinished;
 
