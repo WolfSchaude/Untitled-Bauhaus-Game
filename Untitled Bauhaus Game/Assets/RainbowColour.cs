@@ -204,14 +204,7 @@ public class RainbowColour : MonoBehaviour
 {
     SpriteRenderer Rainbowrenderer;
 
-    public float Speed = 1;
-
-    bool HasReachedBlue = false;
-
-    Color Red = Color.red;
-    Color Blue = Color.blue;
-
-    
+    public float Speed = 1;    
 
     // Start is called before the first frame update
     void Start()
@@ -223,5 +216,7 @@ public class RainbowColour : MonoBehaviour
     void Update()
     {
         Rainbowrenderer.color = HSBColor.ToColor(new HSBColor(Mathf.PingPong(Time.time * Speed, 1), 1, 1));
+        Rainbowrenderer.flipY = !Rainbowrenderer.flipY;
+        Rainbowrenderer.flipX = !Rainbowrenderer.flipX;
     }
 }

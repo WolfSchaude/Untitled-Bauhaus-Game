@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Politikmeter : MonoBehaviour, ISaveableInterface
 {
 
-	public int Politiklevel = 100;
-
+	public int Politiklevel { get; private set; } = 100;
+		
     public Slider PolitikOutput;
 
 	public GameObject SaveGameKeeper;
@@ -34,6 +34,9 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 	public void ManipulatePolitics(int manipulator)
 	{
+		print("Vorheriges Level: " + Politiklevel);
+		print("Manipulator: " + manipulator);
+
 		Politiklevel += manipulator;
 
 		if (Politiklevel <= 0)
@@ -51,6 +54,8 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 		{
 			Politiklevel = 200;
 		}
+
+		print("Politiklevel jetzt: " + Politiklevel);
 	}
 
 	public void Save()

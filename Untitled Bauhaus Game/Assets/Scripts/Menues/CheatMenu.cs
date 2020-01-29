@@ -58,11 +58,11 @@ public class CheatMenu : MonoBehaviour
 	}
 	public void PolitikPlus()
 	{
-		Playervariables.GetComponent<Politikmeter>().Politiklevel += 10;
+		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(10);
 	}
 	public void PolitikMinus()
 	{
-		Playervariables.GetComponent<Politikmeter>().Politiklevel -= 10;
+		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(-10);
 	}
 
 	public void cheatExponat()

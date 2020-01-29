@@ -186,20 +186,23 @@ public class Exponate : MonoBehaviour
 
         x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true)[herstellerText].Name;
 
-        int stilText = Random.Range(1, 4);
+        int stilText = EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true)[herstellerText].Politik;
 
-        switch (stilText)
+
+        if (stilText < 100)
         {
-            case 1:
-                x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Rechts";
-                break;
-            case 2:
-                x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Links";
-                break;
-            case 3:
-                x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Neutral";
-                break;
+            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Links";
         }
+        else if (stilText == 100)
+        {
+            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Neutral";
+        }
+        else if (stilText > 100)
+        {
+            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Rechts";
+        }
+
+        x.GetComponentInChildren<Exponat_Memory>().Politik = stilText;
 
         float Qualität = Random.Range(0.5f, 1.5f);
         x.GetComponentsInChildren<Text>()[2].text = Qualität.ToString("0.0");

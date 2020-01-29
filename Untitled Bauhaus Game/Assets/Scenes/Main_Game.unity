@@ -3154,7 +3154,6 @@ GameObject:
   - component: {fileID: 321413802}
   - component: {fileID: 321413801}
   - component: {fileID: 321413800}
-  - component: {fileID: 321413799}
   m_Layer: 0
   m_Name: InWorldEvents Prototype
   m_TagString: Untagged
@@ -3162,19 +3161,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &321413799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321413798}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f753e963728824987130ac7b4abcc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1
 --- !u!212 &321413800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7114,6 +7100,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 978475645}
         m_MethodName: ToggleOpened
         m_Mode: 1
@@ -7144,7 +7141,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ca141044b77e5674d82da75be7718850, type: 3}
-  m_Type: 3
+  m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11957,7 +11954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ee2d6b18e91d842b83f21c8d6319eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Politiklevel: 100
   PolitikOutput: {fileID: 2127398154}
   SaveGameKeeper: {fileID: 559906866}
 --- !u!114 &1009857076
@@ -14695,8 +14691,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1357314987}
-        m_MethodName: ToggleOpened
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16148,8 +16144,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4474210237657922298}
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17128,7 +17124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -190620, y: 10488240}
+  m_AnchoredPosition: {x: -216540, y: 10902240}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -19579,7 +19575,7 @@ GameObject:
   - component: {fileID: 1976757301}
   - component: {fileID: 1976757300}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: RedCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20573,8 +20569,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2957053225309383933}
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 410550910}
+        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -80150,7 +80146,6 @@ GameObject:
   - component: {fileID: 2182059402450103970}
   - component: {fileID: 2241675965165901973}
   - component: {fileID: 2241675965165901974}
-  - component: {fileID: 2242746915009186869}
   m_Layer: 0
   m_Name: Basic Motions Dummy - Walk
   m_TagString: Untagged
@@ -80158,19 +80153,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2242746915009186869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2242746915009186868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7290280a89f8b4bb01e954c0266a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PolitikmeterScript: {fileID: 1009857075}
 --- !u!1 &2242755588459100068
 GameObject:
   m_ObjectHideFlags: 0
@@ -80616,7 +80598,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2957053225306972670}
   m_HandleRect: {fileID: 2957053225306972671}
-  m_Direction: 2
+  m_Direction: 3
   m_Value: 1
   m_Size: 0.5
   m_NumberOfSteps: 0
@@ -80650,7 +80632,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: -0.000030518}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!1 &2957053224654590539
 GameObject:
   m_ObjectHideFlags: 0
@@ -80719,7 +80701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -24570, y: 8839660}
+  m_AnchoredPosition: {x: -33705, y: 9242560}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -84139,7 +84121,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: -0.000030518}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &4474210236375328980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -84186,7 +84168,7 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 4474210237041864009}
   m_HandleRect: {fileID: 4474210237041864008}
-  m_Direction: 2
+  m_Direction: 3
   m_Value: 1
   m_Size: 0.5
   m_NumberOfSteps: 0
@@ -84438,7 +84420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33390, y: 9423100}
+  m_AnchoredPosition: {x: -42525, y: 9826000}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -93833,7 +93815,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4742372529187409682}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -97482,6 +97464,7 @@ Transform:
   - {fileID: 2241675964511089924}
   - {fileID: 2241675965112949163}
   - {fileID: 2241675964902873873}
+  - {fileID: 4383891034646603613}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97730,7 +97713,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6902694877014161306}
   - component: {fileID: 6902694877021116418}
-  - component: {fileID: 6902694877013863035}
   m_Layer: 0
   m_Name: Basic Motions Dummy
   m_TagString: Untagged
@@ -97738,19 +97720,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6902694877013863035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6902694877013863034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7290280a89f8b4bb01e954c0266a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PolitikmeterScript: {fileID: 1009857075}
 --- !u!1 &6902694877013863038
 GameObject:
   m_ObjectHideFlags: 0

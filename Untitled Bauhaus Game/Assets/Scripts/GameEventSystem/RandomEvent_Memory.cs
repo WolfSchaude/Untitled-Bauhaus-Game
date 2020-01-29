@@ -107,7 +107,7 @@ public class RandomEvent_Memory : MonoBehaviour
 	private void EventEffect1()
 	{
 		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option1_Ansehen);
-		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option1_Politik;
+		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option1_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
 
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option1_EffectTicker);
@@ -118,7 +118,7 @@ public class RandomEvent_Memory : MonoBehaviour
 	private void EventEffect2()
 	{
 		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
-		Playervariables.GetComponent<Politikmeter>().Politiklevel += Memory.Option2_Politik;
+		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option2_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);
 
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
