@@ -33,6 +33,7 @@ public class Exponat_Memory : MonoBehaviour
 		int i = (int)(15000 * Qualitaet);
 		Playervariables.GetComponent<Money>().Spende(i);
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat dir " + i.ToString("0") + " RM eingebracht.");
+		Exponate._ExponatSellEvent.Invoke(i);
 
 		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics((int)((Politik - 100) / 10 * Qualitaet));
 		FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Dein Exponat hat die Politische Position deiner Hochschule verschoben.");

@@ -27,6 +27,7 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Exponate Script on ExponateSlider to get the Data to Display
     /// </summary>
     [SerializeField] Exponate Script_Exponate;
+    [SerializeField] Exponat_Memory Script_ExponatMemory;
 
 	#endregion
 
@@ -162,13 +163,16 @@ public class ContentSetter : MonoBehaviour
 
     public void UpdateText()
     {
-        //int Temp1 = WerkstattButtons.Count;
-        //int Temp2 = WohnheimButtons.Count;
-        //int Temp3 = LehrsaalButtons.Count;
+        StartCoroutine(UpdateTextInternal());
+    }
+
+    private IEnumerator UpdateTextInternal()
+    {
+        yield return new WaitForEndOfFrame();
 
         Vermoegen.text = Script_Money.money.ToString() + " RM";
         Einkommen.text = Script_Money.monthlyCosts.ToString() + " RM/Monat" + " Not Implemented";
-        Ausgaben.text = "Diesen Monat: " + " RM" + " Not Implemented";
+        Ausgaben.text = "Diesen Monat: " + " RM";
         PlusMinusTendenz.text = "Not Implemented";
 
         StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
@@ -178,14 +182,21 @@ public class ContentSetter : MonoBehaviour
         AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
         AnsehenLetztes.text = "Not implemented";
 
-        
 
-        ExponateBisherHergestellt.text = "Not Implemented";
-        ExponateBisherVerkauft.text = "Not Implemented";
-        ExponateBisherVerkauftErloes.text = "Not Implemented";
-        ExponateDurschnittQuali.text = "Not Implemented";
+
+        ExponateBisherHergestellt.text = Script_Exponate.exponatCounter.ToString() + " Exponate";
+        ExponateBisherVerkauft.text = Script_Exponate.BisherVerkauftAnzahl + " Exponate";
+        ExponateBisherVerkauftErloes.text = Script_Exponate.BisherGebautErloes + " RM";
+        ExponateDurschnittQuali.text = "100%";
         ExponateDurschnittStil.text = "Not Implemented";
-        ExponateDurschnittErloes.text = "Not Implemented";
+        if (Script_Exponate.exponatCounter != 0)
+        {
+            ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";
+        }
+        else
+        {
+            ExponateDurschnittErloes.text = "0 RM/Exponat";
+        }
     }
 
     public void NewBuildingButton(int uniqueStructureID, int MainType, int Type, int MainTypeID)

@@ -4,8 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+
+public class ExponatSellEvent : UnityEvent<int>
+{
+}
+
 public class Exponate : MonoBehaviour
 {
+    public static ExponatSellEvent _ExponatSellEvent;
+
+    public int BisherVerkauftAnzahl { get; private set; }
+    public int BisherGebautErloes { get; private set; }
+
 	public GameObject FeedbackTicker;
     public GameObject Playervariables;
     public GameObject StartOrderButton;
@@ -23,6 +33,7 @@ public class Exponate : MonoBehaviour
     public Slider expoSlider;
     public Text expoText;
 
+    public int exponatCounter = 0;
     int exponatCreateTimer = -5000;
     private int textCooldown = 200;
     [SerializeField] private readonly int expoPrice = 7500; //Herstellungspreis
@@ -51,6 +62,15 @@ public class Exponate : MonoBehaviour
     /// </summary>
     [SerializeField] public bool IsAllowedToMakeExpo { get; private set; }
 
+    private void Awake()
+    {
+        if (_ExponatSellEvent ==  null)
+        {
+            _ExponatSellEvent = new ExponatSellEvent();
+        }
+
+        _ExponatSellEvent.AddListener((x) => { BisherGebautErloes += x; BisherVerkauftAnzahl++; });
+    }
 
     void Start()
     {
@@ -212,6 +232,8 @@ public class Exponate : MonoBehaviour
         x.GetComponentInChildren<Button>().onClick.AddListener(() => { Destroy(x); });
 
         Exponat.Add(x);
+        exponatCounter++;
+        Debug.Log("Exponate: " + exponatCounter);
     }
 
     #region Methods needed to do the cancel and cancel-check for exponates
