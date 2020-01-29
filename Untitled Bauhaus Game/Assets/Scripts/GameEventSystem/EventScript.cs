@@ -194,6 +194,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 	public void Save()
 	{
 		var x = new bool[AllEvents.Count];
+
 		for (int i = 0; i < AllEvents.Count; i++)
 		{
 			x[i] = AllEvents[i].GetComponent<Event_Memory>().IsFinished;

@@ -24,9 +24,9 @@ public class Teacher_Memory : MonoBehaviour
 
     string Name;
 
-    private GameObject TeacherScriptObject;
+    private TeacherScript TeacherScriptObject;
 
-    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats, GameObject script)
+    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats, TeacherScript script)
     {
         Memory = teacher;
         Parent = parent;
@@ -60,41 +60,14 @@ public class Teacher_Memory : MonoBehaviour
 
     public void StelleEin()
     {
-        print(gameObject.transform.localScale);
+        TeacherScriptObject.DeleteSample();
 
-        var x = gameObject;
+        Memory.Hired = true;
 
-		Playervariables.GetComponent<Money>().Bezahlen(1500);
+        TeacherScript._Teachers_Hired.Add(Memory);
+        TeacherScriptObject.Teachers_Hired_Old.Add(TeacherScriptObject.NewTeacher(Memory));
 
-        print(x.transform.localScale);
-
-		x.transform.SetParent(Parent.transform);
-
-        x.transform.localScale = Vector3.one;
-
-        x.GetComponentsInChildren<Text>()[2].text = "";
-
-        print(x.transform.localScale);
-
-        x.GetComponentsInChildren<Text>()[3].text = "";
-
-        print(x.transform.localScale);
-
-        x.GetComponent<Button>().interactable = false;
-
-        print(x.transform.localScale);
-
-        x.transform.GetChild(5).gameObject.SetActive(true);
-
-        print(x.transform.localScale);
-
-        TeacherScriptObject.GetComponent<TeacherScript>().DeleteSample();
-
-        print(x.transform.localScale);
-
-        TeacherScript.Eingestellte.Add(x);
-
-        EventSystem.GetComponent<TeacherLoader>().HiredTeachers.Find(i => i.Name == Name).Hired = true;
+		Playervariables.GetComponent<Money>().Bezahlen(Memory.Einstellungskosten);
 
         Ticker.GetComponent<FeedbackScript>().NewTick("Du hast den Formmeister " + Name + " eingestellt.");
 

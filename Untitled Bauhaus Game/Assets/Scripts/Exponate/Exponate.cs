@@ -202,11 +202,11 @@ public class Exponate : MonoBehaviour
                 x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat3");
                 break;
         }
-        int herstellerText = Random.Range(0, EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true).Count);
+        int herstellerText = Random.Range(0, TeacherScript._Teachers_Hired.Count);
 
-        x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true)[herstellerText].Name;
+        x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + TeacherScript._Teachers_Hired[herstellerText].Name;
 
-        int stilText = EventSystem.GetComponent<TeacherLoader>().HiredTeachers.FindAll(i => i.Hired == true)[herstellerText].Politik;
+        int stilText = TeacherScript._Teachers_Hired[herstellerText].Politik;
 
 
         if (stilText < 100)
