@@ -241,7 +241,7 @@ public class Bausystem : MonoBehaviour
 
     private BuildingStyle[] UsableStyles;
 
-    private void Awake()
+    void Awake()
     {
         if (_BauZuEndeEvent == null)
         {
@@ -499,6 +499,7 @@ public class Bausystem : MonoBehaviour
             }
         }
         Bauarbeiter.text = "Bauarbeiter: " + ActivePipelines + "/" + MaxBuildPipelines;
+
     }
 
     public void BuildTime()
