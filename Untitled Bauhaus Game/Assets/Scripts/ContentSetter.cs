@@ -89,6 +89,13 @@ public class ContentSetter : MonoBehaviour
     /// Refernece to: Parent used to Spawn the buttons on the right positions
     /// </summary>
     [SerializeField] Transform ParentWohnheime;
+    [SerializeField] Button PreFab_Building;
+
+    List<Button> WerkstattButtons = new List<Button>();
+    List<Button> WohnheimButtons = new List<Button>();
+    List<Button> LehrsaalButtons = new List<Button>();
+
+    List<Button> Buttons;
 
     #endregion
     #region Lehrer
@@ -133,11 +140,30 @@ public class ContentSetter : MonoBehaviour
     #endregion
     void Start()
     {
+        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(1); i++)
+        {
+            
+        }
+
+        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(2); i++)
+        {
+
+        }
+
+        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(3); i++)
+        {
+
+        }
+
         UpdateText();
     }
 
     public void UpdateText()
     {
+        //int Temp1 = WerkstattButtons.Count;
+        //int Temp2 = WohnheimButtons.Count;
+        //int Temp3 = LehrsaalButtons.Count;
+
         Vermoegen.text = Script_Money.money.ToString() + " RM";
         Einkommen.text = Script_Money.monthlyCosts.ToString() + " RM/Monat" + " Not Implemented";
         Ausgaben.text = "Diesen Monat: " + " RM" + " Not Implemented";
@@ -150,7 +176,7 @@ public class ContentSetter : MonoBehaviour
         AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
         AnsehenLetztes.text = "Not implemented";
 
-
+        
 
         ExponateBisherHergestellt.text = "Not Implemented";
         ExponateBisherVerkauft.text = "Not Implemented";
@@ -158,5 +184,43 @@ public class ContentSetter : MonoBehaviour
         ExponateDurschnittQuali.text = "Not Implemented";
         ExponateDurschnittStil.text = "Not Implemented";
         ExponateDurschnittErloes.text = "Not Implemented";
+    }
+
+    public void NewBuildingButton(int uniqueStructureID, int MainType, int Type, int MainTypeID)
+    {
+        Debug.Log("EventButton triggert");
+
+        switch (MainType)
+        {
+            case 1:
+
+                var x = Instantiate(PreFab_Building, ParentWerkstaette);
+
+                x.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+
+                WerkstattButtons.Add(x);
+
+                break;
+            case 2:
+
+                var y = Instantiate(PreFab_Building, ParentWohnheime);
+
+                y.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+
+                WohnheimButtons.Add(y);
+
+                break;
+            case 3:
+
+                var z = Instantiate(PreFab_Building, ParentLehrsaele);
+
+                z.GetComponent<StatisticMenuBuildingButton_Memory>().SetValues(uniqueStructureID, MainType, Type, MainTypeID);
+
+                WohnheimButtons.Add(z);
+
+                break;
+            default:
+                break;
+        }
     }
 }

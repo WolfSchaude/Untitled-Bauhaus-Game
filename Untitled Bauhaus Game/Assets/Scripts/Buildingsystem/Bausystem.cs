@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class BauZuEndeEvent : UnityEvent<int, int, int, int>
+{ }
 
 public class Bausystem : MonoBehaviour
 {
+    public BauZuEndeEvent _BauZuEndeEvent;
+
     private Money ManipulateMoney;
     private Studenten ManipulateStudents;
 
@@ -49,6 +56,8 @@ public class Bausystem : MonoBehaviour
     /// Variable to temporary save the used style of the future workshop
     /// </summary>
     public int StyleToBuild;
+
+    public int NumberOfStructures;
 
     public int ActualCosts;
     public int ActualBuildTime;
@@ -232,6 +241,15 @@ public class Bausystem : MonoBehaviour
 
     private BuildingStyle[] UsableStyles;
 
+    private void Awake()
+    {
+        if (_BauZuEndeEvent == null)
+        {
+           _BauZuEndeEvent = new BauZuEndeEvent();
+        }
+
+    }
+
     void Start()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
@@ -259,7 +277,7 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Structure objects loaded");
 
-        int NumberOfStructures = Structures.Count;
+        NumberOfStructures = Structures.Count;
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
@@ -751,11 +769,12 @@ public class Bausystem : MonoBehaviour
             {
                 if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().TypeID == BuildingPipeline[PipelineNumber].StructureID)
                 {
-                    Debug.Log("Lol RoFL: " + Structures[i].GetComponent<Struktur>().OwnMainTypeInt);
                     Structures[i].SetActive(true);
 
                     Structures[i].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
                     Structures[i].GetComponent<Struktur>().InformCounter();
+
+                    _BauZuEndeEvent.Invoke(i, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild, BuildingPipeline[PipelineNumber].StructureID);
 
                     if (!CheatActive)
                     {
@@ -769,7 +788,11 @@ public class Bausystem : MonoBehaviour
                     return;
                 }
             }
-        } //New
+        } 
+        
+
+        
+        //New
 
         //PotentialFreeStructures[FreeStructure].SetActive(true);
 
@@ -999,9 +1022,39 @@ public class Bausystem : MonoBehaviour
         return Temp;
     }
 
-    public string AktiveStrukturen(int Strucuture, int MainType)
+    public int StructureTest(int NumberOfStructure)
     {
+        if (!Structures[NumberOfStructure].GetComponent<Struktur>().IsPlaced)
+        {
+            return Structures[NumberOfStructure].GetComponent<Struktur>().OwnMainTypeInt;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
+    public int UsableMainTypeStructures(int MainTypeToSearch)
+    {
+        int Temp = 0;
+
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            if (Structures[i].GetComponent<Struktur>().IsPlaced)
+            {
+                if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToSearch)
+                {
+                    Temp++;
+                }
+            }
+        }
+
+        return Temp;
+    }
+
+    public string AktiveStrukturen(int StrucutureID, int MainType)
+    {
+        
         return "Lol";
     }
 }
