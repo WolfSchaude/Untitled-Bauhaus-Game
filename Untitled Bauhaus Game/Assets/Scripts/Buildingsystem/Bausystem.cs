@@ -522,55 +522,6 @@ public class Bausystem : MonoBehaviour
         }
     }
 
-    //public void Architektur()
-    //{
-    //    Debug.Log("Building System: Architektur selected");
-    //    MainTypeToBuild = 1;
-    //    TypeToBuild = 1;
-    //}
-
-    //public void Ausstellungsgestaltung()
-    //{
-    //    Debug.Log("Building System: Ausstellungsgestaltung selected");
-    //    MainTypeToBuild = 1;
-    //    TypeToBuild = 2;
-    //}
-
-    //public void Malerei()
-    //{
-    //    Debug.Log("Building System: Malerei selected");
-    //    MainTypeToBuild = 1;
-    //    TypeToBuild = 3;
-    //}
-
-    //public void Metallwerkstatt()
-    //{
-    //    Debug.Log("Building System: Metallwerkstatt selected");
-    //    MainTypeToBuild = 1;
-    //    TypeToBuild = 4;
-    //}
-
-    //public void Tischlerei()
-    //{
-    //    Debug.Log("Building System: Tischlerei selected");
-    //    MainTypeToBuild = 1;
-    //    TypeToBuild = 5;
-    //}
-
-    //public void Wohnheim()
-    //{
-    //    Debug.Log("Building System: Wohnheim selected");
-    //    MainTypeToBuild = 2;
-    //    TypeToBuild = 6;
-    //}
-
-    //public void Lehrsaal()
-    //{
-    //    Debug.Log("Building System: Lehrsaal selected");
-    //    MainTypeToBuild = 3;
-    //    TypeToBuild = 7;
-    //}
-
     public void Werkstatt()
     {
         MainTypeToBuild = 1;
@@ -637,19 +588,11 @@ public class Bausystem : MonoBehaviour
             }
         } //New
 
-        //Debug.Log("Building System: Search for next free Style ID completed");
-
         if (StyleSupportsNextStructure == false) //New
         {
             FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
             return;
         } //New
-
-        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild]) //Old
-        {
-            FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
-            return;
-        } //Old
 
         Debug.Log("Building System: Build style maximum number of main type structures checked");
 
@@ -717,51 +660,6 @@ public class Bausystem : MonoBehaviour
 
         int NumberOfStructures = Structures.Count;
 
-        //List<GameObject> PotentialFreeStructures = new List<GameObject>();
-
-        //for (int i = 0; i < NumberOfStructures; i++) //Old
-        //{
-        //    if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false)
-        //    {
-        //        PotentialFreeStructures.Add(Structures[i]);
-        //    }
-        //} //Old
-
-        //Debug.Log("Building System: Search for number of free structures completed");
-
-        //if (PotentialFreeStructures.Count == 0)
-        //{
-        //    BuildingPipeline[PipelineNumber].SetZero();
-        //    return;
-        //}
-
-        //Debug.Log("Building System: Searched for incorrect build pipelines");
-
-
-        //int NumberOfPotentialFreeStructures = PotentialFreeStructures.Count;
-        //int LowestFreeID = int.MaxValue;
-
-        //for (int i = 0; i < NumberOfPotentialFreeStructures; i++) //Old
-        //{
-        //    if (PotentialFreeStructures[i].GetComponent<Struktur>().TypeID <= LowestFreeID)
-        //    {
-        //        LowestFreeID = PotentialFreeStructures[i].GetComponent<Struktur>().TypeID;
-        //    }
-        //} //Old
-
-        //Debug.Log("Building System: Searched lowest main type ID");
-
-        //int FreeStructure = 0;
-
-        //for (int i = 0; i < NumberOfPotentialFreeStructures; i++) //Old
-        //{
-        //    if (PotentialFreeStructures[i].GetComponent<Struktur>().TypeID == LowestFreeID)
-        //    {
-        //        FreeStructure = i;
-        //        break;
-        //    }
-        //} //Old
-
         Debug.Log("Building System: Set reference to object with lowest ID"); //\n environment.newline
 
         for (int i = 0; i < NumberOfStructures; i++) //New
@@ -790,37 +688,6 @@ public class Bausystem : MonoBehaviour
                 }
             }
         } 
-        
-
-        
-        //New
-
-        //PotentialFreeStructures[FreeStructure].SetActive(true);
-
-        //PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
-        //PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().InformCounter();
-
-        //Debug.Log("Building System: Set structure and counter");
-
-        //StructuresCounter[BuildingPipeline[PipelineNumber].MainTypeToBuild]++;
-
-        //Debug.Log("Building System: Used style actualised");
-
-        //ManipulateStudents.MehrKapazitaet(UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCapacity[BuildingPipeline[PipelineNumber].MainTypeToBuild, UsableStyles[BuildingPipeline[PipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[PipelineNumber].MainTypeToBuild]]);
-
-        //Debug.Log("Building System: Student capacity actualised");
-
-        //if (!CheatActive)
-        //{
-        //    BuildingPipeline[PipelineNumber].SetZero();
-        //}
-
-        //Pipelines[PipelineNumber].SetActive(false);
-
-        //Debug.Log("Building System: Used build pipeline reset");
-
-        //FeedbackFromBuildings.NewTick(PotentialFreeStructures[FreeStructure].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
-
         Debug.Log("Building System: Function BuildStructure ended");
     }
 
@@ -876,13 +743,6 @@ public class Bausystem : MonoBehaviour
 
         Debug.Log("Building System: Active buildings and values saved");
 
-        //for (int i = 0; i < NumberOfStyles; i++)
-        //{
-        //    StyleCounter[i, 1] = UsableStyles[i].StructureCount[1];
-        //    StyleCounter[i, 2] = UsableStyles[i].StructureCount[2];
-        //    StyleCounter[i, 3] = UsableStyles[i].StructureCount[3];
-        //}
-
         for (int h = 0; h < UsableStyles.Length; h++)
         {
             for (int i = 0; i <= 3; i++)
@@ -895,8 +755,6 @@ public class Bausystem : MonoBehaviour
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleOrder = StyleOrder;
-
-        //SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StyleCounter = StyleCounter;
 
         Debug.Log("Building System: Style count saved");
 
@@ -951,13 +809,6 @@ public class Bausystem : MonoBehaviour
         }
 
         Debug.Log("Building System: Active structures loaded");
-
-        //for (int i = 0; i < NumberOfStyles; i++)
-        //{
-        //    UsableStyles[i].StructureCount[1] = save.StyleCounter[i, 1];
-        //    UsableStyles[i].StructureCount[2] = save.StyleCounter[i, 2];
-        //    UsableStyles[i].StructureCount[3] = save.StyleCounter[i, 3];
-        //}
 
         for (int h = 0; h < NumberOfStyles; h++)
         {
