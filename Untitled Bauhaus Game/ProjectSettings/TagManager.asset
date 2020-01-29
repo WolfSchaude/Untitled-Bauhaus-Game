@@ -9,6 +9,7 @@ TagManager:
   - Clickable
   - lb_groundTarget
   - lb_perchTarget
+  - InWorldEvent
   layers:
   - Default
   - TransparentFX

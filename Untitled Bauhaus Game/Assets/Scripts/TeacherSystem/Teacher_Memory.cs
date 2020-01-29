@@ -26,13 +26,6 @@ public class Teacher_Memory : MonoBehaviour
 
     private GameObject TeacherScriptObject;
 
-    void Start()
-    {
-    }
-    void Update()
-    {
-    }
-
     public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats, GameObject script)
     {
         Memory = teacher;
@@ -67,18 +60,37 @@ public class Teacher_Memory : MonoBehaviour
 
     public void StelleEin()
     {
+        print(gameObject.transform.localScale);
+
         var x = gameObject;
 
 		Playervariables.GetComponent<Money>().Bezahlen(1500);
 
+        print(x.transform.localScale);
 
-		x.transform.SetParent(Parent.transform, true);
+		x.transform.SetParent(Parent.transform);
+
+        x.transform.localScale = Vector3.one;
+
         x.GetComponentsInChildren<Text>()[2].text = "";
+
+        print(x.transform.localScale);
+
         x.GetComponentsInChildren<Text>()[3].text = "";
+
+        print(x.transform.localScale);
+
         x.GetComponent<Button>().interactable = false;
+
+        print(x.transform.localScale);
+
         x.transform.GetChild(5).gameObject.SetActive(true);
 
+        print(x.transform.localScale);
+
         TeacherScriptObject.GetComponent<TeacherScript>().DeleteSample();
+
+        print(x.transform.localScale);
 
         TeacherScript.Eingestellte.Add(x);
 
