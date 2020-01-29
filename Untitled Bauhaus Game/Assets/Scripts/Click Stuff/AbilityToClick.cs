@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AbilityToClick : MonoBehaviour
 {
@@ -23,51 +24,94 @@ public class AbilityToClick : MonoBehaviour
     /// </summary>
     [SerializeField] private Transform _selection;
 
+    /// <summary>
+    /// Stores the status if cursor is elegible to click, gets disabled when over UI-Elements
+    /// </summary>
+    [SerializeField] private bool AmIAllowedToClick;
+
+    /// <summary>
+    /// Static Event to disable the clicking / raycasting
+    /// </summary>
+    [SerializeField] public static UnityEvent DisableClickable;
+
+    /// <summary>
+    /// Static Event to enable the clicking / raycisting
+    /// </summary>
+    [SerializeField] public static UnityEvent EnableClickable;
+
+    private void Awake()
+    {
+        if (DisableClickable == null)
+        {
+            DisableClickable = new UnityEvent();
+        }
+        if (EnableClickable == null)
+        {
+            EnableClickable = new UnityEvent();
+        }
+
+        DisableClickable.AddListener(() => { DisableClicking(); });
+        EnableClickable.AddListener(() => { EnableClicking(); });
+    }
+
     void Start()
     {
         //Standard = Shader.Find("Standard");
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (AmIAllowedToClick)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 426.0f))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (hit.transform.CompareTag(Tag))
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, 426.0f))
                 {
-                    if (hit.transform != _selection)
+                    if (hit.transform.CompareTag(Tag))
                     {
-                        if (_selection != null)
+                        if (hit.transform != _selection)
                         {
-                            _selection.transform.localScale = Vector3.one;
+                            if (_selection != null)
+                            {
+                                _selection.transform.localScale = Vector3.one;
+                            }
+
+                            _selection = hit.transform;
+
+                            hit.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+
+                            Struktur struktur;
+                            if (struktur = hit.transform.GetComponent<Struktur>())
+                            {
+                                struktur.OnClick();
+                            }
                         }
-
-                        _selection = hit.transform;
-
-                        hit.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-
-                        Struktur struktur;
-                        if (struktur = hit.transform.GetComponent<Struktur>())
+                        else
                         {
-                            struktur.OnClick();
+                            print("Das Hast du doch schon angeclickt;");
                         }
                     }
                     else
                     {
-                        print("Das Hast du doch schon angeclickt;");
-                    }
-                }
-                else
-                {
-                    if (_selection != null)
-                    {
-                        _selection.transform.localScale = Vector3.one;
-                        _selection = null;
+                        if (_selection != null)
+                        {
+                            _selection.transform.localScale = Vector3.one;
+                            _selection = null;
+                        }
                     }
                 }
             }
         }
+    }
+
+    void DisableClicking()
+    {
+        AmIAllowedToClick = false;
+    }
+
+    void EnableClicking()
+    {
+        AmIAllowedToClick = true;
     }
 }
