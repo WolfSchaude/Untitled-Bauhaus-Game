@@ -17,7 +17,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 
 	public List<GameObject> AllEvents;
-	private GameObject ThatOneRandomEvent;
+	public GameObject ThatOneRandomEvent;
 
 	public Text AnzahlEvents;
 
@@ -29,7 +29,18 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 	bool Laedtgerade;
 
-    void Start()
+	//-------------------------------( Addition for InWorldEvents )-------------------------------//
+	/// <summary>
+	/// Testingwise here the prototype reference hardcoded, alter runtime generation for more flexibility
+	/// </summary>
+	[SerializeField] InWorldEvent_Memory InWorldEvent1;
+
+	/// <summary>
+	/// Reference to: AnimationStarter for the EventMenu for the InWorldEvents
+	/// </summary>
+	[SerializeField] AnimationStarter AnimStarterInWorld;
+
+	void Start()
     {
 		Laedtgerade = GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame;
 		if (!Laedtgerade)
@@ -44,6 +55,8 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 				{
 					AllEvents.Add(NewEvent(i, false));
 				}
+
+				InWorldEvent1.SetValues(EventLoader.ec.Events[0], AnimStarterInWorld);
 
 				AlreadyGenerated = true;
 				Collapsed = true;
@@ -142,24 +155,25 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 	public GameObject NewEvent(int i, bool SavedHired)
 	{
 		var x = Instantiate(prefab, parent.transform);
+		var y = EventLoader.ec.Events[i];
 
-		x.GetComponent<Event_Memory>().SetMemory(EventLoader.ec.Events[i], Playervariables, SavedHired);
+		x.GetComponent<Event_Memory>().SetMemory(y, Playervariables, SavedHired);
 		x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
-		x.GetComponentInChildren<Text>().text = EventLoader.ec.Events[i].EventText;
+		x.GetComponentInChildren<Text>().text = y.EventText;
 
 		x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
-			= EventLoader.ec.Events[i].EventOption1 + Environment.NewLine
-			+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option1_Ansehen + Environment.NewLine
-			+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option1_Politik + Environment.NewLine
-			+ "Kosten: " + EventLoader.ec.Events[i].Option1_Geld * -1 + " RM";
+			= y.EventOption1 + Environment.NewLine
+			+ "Ansehensveränderung: " + y.Option1_Ansehen + Environment.NewLine
+			+ "Politische Tragweite: " + y.Option1_Politik + Environment.NewLine
+			+ "Kosten: " + y.Option1_Geld * -1 + " RM";
 
 
 		x.GetComponentsInChildren<Button>()[1].GetComponentInChildren<Text>().text
-			= EventLoader.ec.Events[i].EventOption2 + Environment.NewLine
-			+ "Ansehensveränderung: " + EventLoader.ec.Events[i].Option2_Ansehen + Environment.NewLine
-			+ "Politische Tragweite: " + EventLoader.ec.Events[i].Option2_Politik + Environment.NewLine
-			+ "Kosten: " + EventLoader.ec.Events[i].Option2_Geld * -1 + " RM";
+			= y.EventOption2 + Environment.NewLine
+			+ "Ansehensveränderung: " + y.Option2_Ansehen + Environment.NewLine
+			+ "Politische Tragweite: " + y.Option2_Politik + Environment.NewLine
+			+ "Kosten: " + y.Option2_Geld * -1 + " RM";
 
 		return x;
 	}

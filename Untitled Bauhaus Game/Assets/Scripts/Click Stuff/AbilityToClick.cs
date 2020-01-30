@@ -8,7 +8,12 @@ public class AbilityToClick : MonoBehaviour
     /// <summary>
     /// The Tag we use to discern if something is even Highlightable
     /// </summary>
-    [SerializeField] string Tag = "Clickable";
+    [SerializeField] string Tag_Highlight = "Clickable";
+
+    /// <summary>
+    /// The tag we use to discern if something is a InWorldEvent
+    /// </summary>
+    [SerializeField] string Tag_InWorld = "InWorldEvent";
 
     ///// <summary>
     ///// Stores the Highlighted Shader
@@ -64,11 +69,10 @@ public class AbilityToClick : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, 426.0f))
+                if (Physics.Raycast(ray, out RaycastHit hit, 426.0f))
                 {
-                    if (hit.transform.CompareTag(Tag))
+                    if (hit.transform.CompareTag(Tag_Highlight))
                     {
                         if (hit.transform != _selection)
                         {
@@ -100,6 +104,16 @@ public class AbilityToClick : MonoBehaviour
                             _selection = null;
                         }
                     }
+                }
+
+                RaycastHit2D hit2D = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), 426);
+                if (hit2D)
+                {
+                    if (hit2D.transform.CompareTag(Tag_InWorld))
+                    {
+                        hit2D.transform.GetComponent<InWorldEvent_Memory>().OnClick();
+                    }
+                    
                 }
             }
         }
