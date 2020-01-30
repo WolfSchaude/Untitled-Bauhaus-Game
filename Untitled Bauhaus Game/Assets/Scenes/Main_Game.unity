@@ -2716,7 +2716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: -0.000038146973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &254456427
@@ -15154,7 +15154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -347755.9}
+  m_AnchoredPosition: {x: 0, y: -149490.48}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1351432637
@@ -18096,7 +18096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -258660, y: 11472120}
+  m_AnchoredPosition: {x: -259200, y: 10919520}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -20062,6 +20062,8 @@ MonoBehaviour:
         m_CallState: 2
   expoSlider: {fileID: 1914841643}
   expoText: {fileID: 1141301272}
+  exponatQualitaeten: []
+  exponatCounter: 0
   prefab: {fileID: 5746514488460146739, guid: 1c0ec66c55a73de4d93734c1554c2262, type: 3}
   parent: {fileID: 1718482597}
   Exponat: []
@@ -81636,7 +81638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47565, y: 9801520}
+  m_AnchoredPosition: {x: -45675, y: 9280980}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -85355,7 +85357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56385, y: 10384960}
+  m_AnchoredPosition: {x: -54495, y: 9864420}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -88318,7 +88320,7 @@ RectTransform:
   - {fileID: 4742372527732160621}
   - {fileID: 4742372529318419714}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -90776,7 +90778,7 @@ RectTransform:
   - {fileID: 4742372529372632418}
   - {fileID: 4742372529180279552}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -93016,7 +93018,7 @@ RectTransform:
   - {fileID: 4742372529508950360}
   - {fileID: 4742372527857948393}
   m_Father: {fileID: 4742372528775010903}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -93733,7 +93735,8 @@ MonoBehaviour:
   Script_Bausystem: {fileID: 1009857079}
   Script_Studenten: {fileID: 1009857076}
   Script_Ansehen: {fileID: 1009857073}
-  Script_Exponate: {fileID: 0}
+  Script_Exponate: {fileID: 1914841644}
+  Script_ExponatMemory: {fileID: 0}
   Vermoegen: {fileID: 4742372528306639904}
   Einkommen: {fileID: 4742372528653459698}
   Ausgaben: {fileID: 4742372528659011067}
@@ -93816,9 +93819,9 @@ RectTransform:
   - {fileID: 4742372527772381660}
   - {fileID: 4742372528599036700}
   - {fileID: 4742372528632320714}
+  - {fileID: 4742372527505744729}
   - {fileID: 4742372528614567571}
   - {fileID: 4742372528069425074}
-  - {fileID: 4742372527505744729}
   m_Father: {fileID: 4742372527835446537}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
