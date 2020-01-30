@@ -334,6 +334,7 @@ public class Bausystem : MonoBehaviour
         for (int i = 0; i < NumberOfStructures; i++)
         {
             Structures[i].GetComponent<Struktur>().OwnContructionPrefab = Instantiate(ConstructionWithParticle);
+            Structures[i].GetComponent<Struktur>().Bausystem = this.gameObject;
             Structures[i].GetComponent<Struktur>().SetContructionPrefab();
         }
         #endregion
@@ -935,13 +936,13 @@ public class Bausystem : MonoBehaviour
         return Temp;
     }
 
-    public void DestroyStructure(int MainType, int TypeID)
+    public void DestroyStructure(int MainType, int TypeID, int Style, int StyleID)
     {
         for (int i = 0; i < NumberOfStructures; i++)
         {
             if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainType && Structures[i].GetComponent<Struktur>().TypeID == TypeID)
             {
-                UsableStyles[Structures[i].GetComponent<Struktur>().OwnStyle].StructuresOrder[Structures[i].GetComponent<Struktur>().OwnMainTypeInt, Structures[i].GetComponent<Struktur>().OwnStyleMainTypeID] = true;
+                UsableStyles[Style].StructuresOrder[Structures[i].GetComponent<Struktur>().OwnMainTypeInt, Structures[i].GetComponent<Struktur>().OwnStyleMainTypeID] = true;
                 Structures[i].GetComponent<Struktur>().DestroyStructure();
                 Structures[i].SetActive(false);
             }

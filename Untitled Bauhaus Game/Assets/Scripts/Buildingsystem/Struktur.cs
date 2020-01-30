@@ -5,6 +5,7 @@ using UnityEngine;
 public class Struktur : MonoBehaviour, IClickable
 {
     public GameObject OwnContructionPrefab;
+    public GameObject Bausystem;
     public enum MainType { Undefiniert, Werkstatt, Wohnheim, Lehrsaal };
     public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
 
@@ -44,13 +45,18 @@ public class Struktur : MonoBehaviour, IClickable
         TypeID = 0;
     }
 
-    public void DestroyStructure()
+    public void StartDestroy()
     {
+        int Temp1 = OwnMainTypeInt;
+        int Temp2 = TypeID;
+        int Temp3 = OwnStyle;
+        int Temp4 = OwnStyleMainTypeID;
         OwnStyle = 0;
         OwnStyleMainTypeID = 0;
         IsPlaced = false;
         IsInBuild = false;
         OwnContructionPrefab.SetActive(false);
+        Bausystem.GetComponent<Bausystem>().DestroyStructure(Temp1, Temp2, Temp3, Temp4);
     }
 
     public void SetStructure(int Style, int MainType, int Type, int StyleID)
