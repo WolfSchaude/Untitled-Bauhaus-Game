@@ -40,11 +40,11 @@ public class BaumenuDetail : MonoBehaviour
         MainBuildType = Playervariables.GetComponent<Bausystem>().MainTypeToBuild;
         BuildType = Playervariables.GetComponent<Bausystem>().TypeToBuild;
         buildingNameText.text = ((Type)BuildType).ToString();
-        buildingPriceText.text = "Preis: " + Playervariables.GetComponent<Bausystem>().ActualCosts + " RM";
+        buildingPriceText.text = "Preis: " + Playervariables.GetComponent<Bausystem>().ActualCosts;
         buildingQualityText.text = "Zu erwartende Qualität: " + "100%";
-        buildingTimeTotalText.text = "Bauzeit: " + Playervariables.GetComponent<Bausystem>().ActualBuildTime + " Tage";
+        buildingTimeTotalText.text = "Bauzeit: " + Playervariables.GetComponent<Bausystem>().ActualBuildTime;
         buildingTeacherText.text = "Dozentenkapazität: ";
-        buildingStudentText.text = "Studentenkapazität: " + Playervariables.GetComponent<Bausystem>().ActualCapacity + " Studenten";
+        buildingStudentText.text = "Studentenkapazität: " + Playervariables.GetComponent<Bausystem>().ActualCapacity;
 
         if (MainBuildType == 1)
         {

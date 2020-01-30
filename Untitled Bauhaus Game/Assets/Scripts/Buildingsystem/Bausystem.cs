@@ -63,9 +63,9 @@ public class Bausystem : MonoBehaviour
 
     public int[] LowestMainTypeID;
 
-    public int ActualCosts;
-    public int ActualBuildTime;
-    public int ActualCapacity;
+    public string ActualCosts;
+    public string ActualBuildTime;
+    public string ActualCapacity;
 
     public int[] StructuresCounter;
 
@@ -476,15 +476,15 @@ public class Bausystem : MonoBehaviour
 
         if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
-            ActualBuildTime = int.MaxValue;
-            ActualCapacity = int.MaxValue;
-            ActualCosts = int.MaxValue;
+            ActualBuildTime = "Max. Anzahl";
+            ActualCapacity = "Max. Anzahl";
+            ActualCosts = "Max. Anzahl";
         }
         else
         {
-            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]];
-            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]];
-            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]];
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " Tage";
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " Studenten";
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " RM";
         }
         ShowPipelines();
     }
@@ -493,15 +493,15 @@ public class Bausystem : MonoBehaviour
     {
         if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
-            ActualBuildTime = int.MaxValue;
-            ActualCapacity = int.MaxValue;
-            ActualCosts = int.MaxValue;
+            ActualBuildTime = "Max. Anzahl";
+            ActualCapacity = "Max. Anzahl";
+            ActualCosts = "Max. Anzahl";
         }
         else
         {
-            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Tage";
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Studenten";
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " RM";
         }
         ShowPipelines();
     }
@@ -635,7 +635,7 @@ public class Bausystem : MonoBehaviour
             return;
         }
 
-        if (ActualCosts > ManipulateMoney.money)
+        if (UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]] > ManipulateMoney.money)
         {
             FeedbackFromBuildings.NewTick("Nicht genug Geld um " + (Type)TypeToBuild + " zu bauen");
             return;
