@@ -12463,7 +12463,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BauZuEndeEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4742372528775010899}
+        m_MethodName: NewBuildingButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FeedbackFromBuildings: {fileID: 1413785173}
   SaveGameKeeper: {fileID: 559906866}
   Structures: []
@@ -12480,6 +12491,7 @@ MonoBehaviour:
   MainTypeToBuild: 0
   StyleToBuild: 0
   NumberOfStructures: 0
+  LowestMainTypeID: 
   ActualCosts: 0
   ActualBuildTime: 0
   ActualCapacity: 0
@@ -15156,7 +15168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -158152.38}
+  m_AnchoredPosition: {x: 0, y: -171613.28}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1351432637
@@ -18098,7 +18110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -263520, y: 10937880}
+  m_AnchoredPosition: {x: -270000, y: 10969560}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1718482599
@@ -81641,7 +81653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47250, y: 9301720}
+  m_AnchoredPosition: {x: -49455, y: 9335040}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2957053224773068156
@@ -85360,7 +85372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -56070, y: 9885160}
+  m_AnchoredPosition: {x: -58275, y: 9918480}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4474210237068353035
@@ -93752,7 +93764,8 @@ MonoBehaviour:
   ParentWerkstaette: {fileID: 4742372528987282749}
   ParentLehrsaele: {fileID: 4742372529492635106}
   ParentWohnheime: {fileID: 4742372527915639589}
-  PreFab_Building: {fileID: 0}
+  PreFab_Building: {fileID: 780331003458501572, guid: a8ac618ac659dc84f83527edcc801ff1,
+    type: 3}
   ParentZugewiesen: {fileID: 4742372527619773084}
   ParentFrei: {fileID: 4742372528405072078}
   ExponateBisherHergestellt: {fileID: 4742372528947875165}

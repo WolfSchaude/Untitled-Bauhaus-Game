@@ -33,6 +33,7 @@ public class ContentSetter : MonoBehaviour
 
 	#region Finanzen
 	//------------------------------------( Finanzen  )------------------------------------//
+    [Header("Finanzen")]
 	/// <summary>
 	/// Reference to: Text-Object to change
 	/// </summary>

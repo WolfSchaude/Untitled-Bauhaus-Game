@@ -13,6 +13,7 @@ public class Struktur : MonoBehaviour, IClickable
 
     public int TypeID;
     public int OwnStyle;
+    public int OwnStyleMainTypeID;
     public int OwnMainTypeInt;
     public int OwnTypeInt;
 
@@ -43,7 +44,16 @@ public class Struktur : MonoBehaviour, IClickable
         TypeID = 0;
     }
 
-    public void SetStructure(int Style, int MainType, int Type)
+    public void DestroyStructure()
+    {
+        OwnStyle = 0;
+        OwnStyleMainTypeID = 0;
+        IsPlaced = false;
+        IsInBuild = false;
+        OwnContructionPrefab.SetActive(false);
+    }
+
+    public void SetStructure(int Style, int MainType, int Type, int StyleID)
     {
         OwnMainTypeInt = MainType;
         OwnMainTypeEnum = (MainType)MainType;
@@ -52,6 +62,7 @@ public class Struktur : MonoBehaviour, IClickable
         OwnTypeEnum = (Type)Type;
 
         OwnStyle = Style;
+        OwnStyleMainTypeID = StyleID;
 
         IsPlaced = true;
         IsInBuild = false;
