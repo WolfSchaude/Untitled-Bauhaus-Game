@@ -943,7 +943,6 @@ public class Bausystem : MonoBehaviour
             if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainType && Structures[i].GetComponent<Struktur>().TypeID == TypeID)
             {
                 UsableStyles[Style].StructuresOrder[Structures[i].GetComponent<Struktur>().OwnMainTypeInt, Structures[i].GetComponent<Struktur>().OwnStyleMainTypeID] = true;
-                Structures[i].GetComponent<Struktur>().DestroyStructure();
                 Structures[i].SetActive(false);
             }
         }
