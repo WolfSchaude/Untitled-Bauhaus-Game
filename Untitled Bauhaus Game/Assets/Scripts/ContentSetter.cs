@@ -189,7 +189,7 @@ public class ContentSetter : MonoBehaviour
         Vermoegen.text = Script_Money.money.ToString() + " RM";
         Einkommen.text = MonthlyMoneyI.ToString("0.00") + " RM";
         Ausgaben.text = MonthlyMoneyO.ToString("0.00") + " RM";
-        PlusMinusTendenz.text = "Not Implemented";
+        PlusMinusTendenz.text = (MonthlyMoneyI - MonthlyMoneyO).ToString("0.00") + " RM";
 
         StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
         StudentenKapazitaet.text = Script_Studenten.studKapazitaet.ToString() + " Studenten";
