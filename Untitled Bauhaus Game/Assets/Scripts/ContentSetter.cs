@@ -50,13 +50,17 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Text-Object to change
     /// </summary>
     [SerializeField] public Text PlusMinusTendenz;
-	#endregion
-	#region Studenten
-	//------------------------------------( Studenten )------------------------------------//
-	/// <summary>
-	/// Reference to: Text-Object to change
-	/// </summary>
-	[SerializeField] Text StudentenAnzahl;
+
+    public float MonthlyMoneyI;
+    public float MonthlyMoneyO;
+
+    #endregion
+    #region Studenten
+    //------------------------------------( Studenten )------------------------------------//
+    /// <summary>
+    /// Reference to: Text-Object to change
+    /// </summary>
+    [SerializeField] Text StudentenAnzahl;
     /// <summary>
     /// Reference to: Text-Object to change
     /// </summary>
@@ -167,13 +171,24 @@ public class ContentSetter : MonoBehaviour
         StartCoroutine(UpdateTextInternal());
     }
 
+
+    public void UpdateMonthlyMoneyIncome()
+    {
+        MonthlyMoneyI = Script_Money.MonthlyMoneyI();
+    }
+
+    public void UpdateMonethlyMoneyOutgo()
+    {
+        MonthlyMoneyO = Script_Money.MonthlyMoneyO();
+    }
+
     private IEnumerator UpdateTextInternal()
     {
         yield return new WaitForEndOfFrame();
 
         Vermoegen.text = Script_Money.money.ToString() + " RM";
-        Einkommen.text = Script_Money.monthlyCosts.ToString() + " RM/Monat" + " Not Implemented";
-        Ausgaben.text = "Diesen Monat: " + " RM";
+        Einkommen.text = MonthlyMoneyI.ToString("0.00") + " RM";
+        Ausgaben.text = MonthlyMoneyO.ToString("0.00") + " RM";
         PlusMinusTendenz.text = "Not Implemented";
 
         StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
