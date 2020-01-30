@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Struktur : MonoBehaviour, IClickable
 {
+    public GameObject OwnContructionPrefab;
     public enum MainType { Undefiniert, Werkstatt, Wohnheim, Lehrsaal };
     public enum Type { Undefiniert, Architekturwerkstatt, Ausstellungsgestaltung, Malerei, Metallwerkstatt, Tischlerei, Wohnheim, Lehrsaal };
 
@@ -15,10 +16,25 @@ public class Struktur : MonoBehaviour, IClickable
     public int OwnMainTypeInt;
     public int OwnTypeInt;
 
+    public bool IsInBuild { get; private set; }
     public bool IsPlaced { get; private set; }
+
+    public void SetContructionPrefab()
+    {
+        OwnContructionPrefab.transform.position = new Vector3(gameObject.transform.position.x, 1.032f, gameObject.transform.position.z);
+        OwnContructionPrefab.SetActive(false);
+    }
+
+    public void StartBuilding()
+    {
+        OwnContructionPrefab.SetActive(true);
+
+        IsInBuild = true;
+    }
 
     public void Initialise()
     {
+        IsInBuild = false;
         IsPlaced = false;
         OwnMainTypeInt = 0;
         OwnMainTypeEnum = MainType.Undefiniert;
@@ -38,6 +54,8 @@ public class Struktur : MonoBehaviour, IClickable
         OwnStyle = Style;
 
         IsPlaced = true;
+        IsInBuild = false;
+        OwnContructionPrefab.SetActive(false);
     }
 
     public void InformCounter()

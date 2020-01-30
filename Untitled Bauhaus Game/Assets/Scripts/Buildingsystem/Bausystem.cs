@@ -27,6 +27,8 @@ public class Bausystem : MonoBehaviour
     public GameObject PipelinePrefab;
     public GameObject PipelineParent;
 
+    public GameObject ConstructionWithParticle;
+
     public List<GameObject> Pipelines = new List<GameObject>();
 
     /// <summary>
@@ -326,6 +328,12 @@ public class Bausystem : MonoBehaviour
         Structures[15].GetComponent<Struktur>().TypeID = 5;
         Structures[16].GetComponent<Struktur>().TypeID = 6;
         Structures[17].GetComponent<Struktur>().TypeID = 0;
+
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            Structures[i].GetComponent<Struktur>().OwnContructionPrefab = Instantiate(ConstructionWithParticle);
+            Structures[i].GetComponent<Struktur>().SetContructionPrefab();
+        }
         #endregion
 
         Debug.Log("Building System: Values of object scripts set");
@@ -451,7 +459,6 @@ public class Bausystem : MonoBehaviour
 
                 if (BuildingPipeline[i].CheckStatus())
                 {
-                    ManipulateMoney.Bezahlen(UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCost[BuildingPipeline[i].MainTypeToBuild, UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]]);
                     BuildStructure(i);
                     UsableStyles[BuildingPipeline[i].StyleToBuild].StructureCount[BuildingPipeline[i].MainTypeToBuild]++;
                     BuildingPipeline[i].SetZero();
@@ -568,7 +575,7 @@ public class Bausystem : MonoBehaviour
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
-            if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false)
+            if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToBuild && Structures[i].GetComponent<Struktur>().IsPlaced == false && Structures[i].GetComponent<Struktur>().IsInBuild == false)
             {
                 PotentialFreeStructures.Add(Structures[i]);
             }
@@ -648,6 +655,15 @@ public class Bausystem : MonoBehaviour
                 ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
                 UsableStyles[StyleToBuild].StructuresOrder[MainTypeToBuild, FreeID] = false;
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
+
+                for (int i = 0; i < NumberOfStructures; i++)
+                {
+                    if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToBuild && Structures[i].GetComponent<Struktur>().TypeID == FreeID)
+                    {
+                        Structures[i].GetComponent<Struktur>().StartBuilding();
+                        break;
+                    }
+                }
             }
             Pipelines[FreePipelineNumber].SetActive(true);
             Pipelines[FreePipelineNumber].GetComponentsInChildren<Text>()[0].text = ((Type)TypeToBuild).ToString();
@@ -908,9 +924,8 @@ public class Bausystem : MonoBehaviour
         return Temp;
     }
 
-    public string AktiveStrukturen(int StrucutureID, int MainType)
+    public void AktiveStrukturen(int StrucutureID, int MainType)
     {
         
-        return "Lol";
     }
 }
