@@ -273,6 +273,7 @@ public class Bausystem : MonoBehaviour
         Structures.Add(GameObject.Find("Abteil_16"));
         Structures.Add(GameObject.Find("Abteil_17"));
         Structures.Add(GameObject.Find("Abteil_18"));
+        Structures.Add(GameObject.Find("Abteil_8"));
         #endregion
 
         Debug.Log("Building System: Structure objects loaded");
@@ -305,6 +306,7 @@ public class Bausystem : MonoBehaviour
         Structures[14].GetComponent<Struktur>().OwnMainTypeInt = 1;
         Structures[15].GetComponent<Struktur>().OwnMainTypeInt = 1;
         Structures[16].GetComponent<Struktur>().OwnMainTypeInt = 1;
+        Structures[17].GetComponent<Struktur>().OwnMainTypeInt = 0;
 
         Structures[0].GetComponent<Struktur>().TypeID = 6;
         Structures[1].GetComponent<Struktur>().TypeID = 5;
@@ -323,6 +325,7 @@ public class Bausystem : MonoBehaviour
         Structures[14].GetComponent<Struktur>().TypeID = 4;
         Structures[15].GetComponent<Struktur>().TypeID = 5;
         Structures[16].GetComponent<Struktur>().TypeID = 6;
+        Structures[17].GetComponent<Struktur>().TypeID = 0;
         #endregion
 
         Debug.Log("Building System: Values of object scripts set");
@@ -331,6 +334,7 @@ public class Bausystem : MonoBehaviour
         {
             Structures[i].SetActive(false);
         }
+        Structures[17].SetActive(true);
 
         Debug.Log("Building System: Set objects to inactive");
 
