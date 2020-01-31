@@ -351,7 +351,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 			_Events_Waiting.Add(ev);
 		}
 
-		AddRandomEvent();
+		//AddRandomEvent();
 
 		//Set up the Count-Downs
 		foreach (var ev in _Events_Waiting)
