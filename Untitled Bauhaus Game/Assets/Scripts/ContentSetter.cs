@@ -33,6 +33,7 @@ public class ContentSetter : MonoBehaviour
 
 	#region Finanzen
 	//------------------------------------( Finanzen  )------------------------------------//
+    [Header("Finanzen")]
 	/// <summary>
 	/// Reference to: Text-Object to change
 	/// </summary>
@@ -49,13 +50,17 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Text-Object to change
     /// </summary>
     [SerializeField] public Text PlusMinusTendenz;
-	#endregion
-	#region Studenten
-	//------------------------------------( Studenten )------------------------------------//
-	/// <summary>
-	/// Reference to: Text-Object to change
-	/// </summary>
-	[SerializeField] Text StudentenAnzahl;
+
+    public float MonthlyMoneyI;
+    public float MonthlyMoneyO;
+
+    #endregion
+    #region Studenten
+    //------------------------------------( Studenten )------------------------------------//
+    /// <summary>
+    /// Reference to: Text-Object to change
+    /// </summary>
+    [SerializeField] Text StudentenAnzahl;
     /// <summary>
     /// Reference to: Text-Object to change
     /// </summary>
@@ -75,6 +80,7 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Text-Object to change
     /// </summary>
     [SerializeField] Text AnsehenLetztes;
+    public int Buffer;
 	#endregion
 	#region Gebäude
 	//------------------------------------( Gebaeude  )------------------------------------//
@@ -143,21 +149,6 @@ public class ContentSetter : MonoBehaviour
     #endregion
     void Start()
     {
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(1); i++)
-        {
-            
-        }
-
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(2); i++)
-        {
-
-        }
-
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(3); i++)
-        {
-
-        }
-
         UpdateText();
     }
 
@@ -166,21 +157,36 @@ public class ContentSetter : MonoBehaviour
         StartCoroutine(UpdateTextInternal());
     }
 
+    public void UpdateMonthlyReputation()
+    {
+        Buffer = Script_Ansehen.Ansehen;
+    }
+
+    public void UpdateMonthlyMoneyIncome()
+    {
+        MonthlyMoneyI = Script_Money.MonthlyMoneyI();
+    }
+
+    public void UpdateMonethlyMoneyOutgo()
+    {
+        MonthlyMoneyO = Script_Money.MonthlyMoneyO();
+    }
+
     private IEnumerator UpdateTextInternal()
     {
         yield return new WaitForEndOfFrame();
 
         Vermoegen.text = Script_Money.money.ToString() + " RM";
-        Einkommen.text = Script_Money.monthlyCosts.ToString() + " RM/Monat" + " Not Implemented";
-        Ausgaben.text = "Diesen Monat: " + " RM";
-        PlusMinusTendenz.text = "Not Implemented";
+        Einkommen.text = MonthlyMoneyI.ToString("0.00") + " RM";
+        Ausgaben.text = MonthlyMoneyO.ToString("0.00") + " RM";
+        PlusMinusTendenz.text = (MonthlyMoneyI - MonthlyMoneyO).ToString("0.00") + " RM";
 
         StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
         StudentenKapazitaet.text = Script_Studenten.studKapazitaet.ToString() + " Studenten";
-        StudentenTendenz.text = "Steigend (Zitat Angela Merkel, 2012)";
+        StudentenTendenz.text = Script_Studenten.monthlyStudenten.ToString();
 
         AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
-        AnsehenLetztes.text = "Not implemented";
+        AnsehenLetztes.text = Buffer + " Ansehenspunkte";
 
 
 
@@ -201,12 +207,18 @@ public class ContentSetter : MonoBehaviour
         {
            ExponateDurschnittQuali.text = (ATemp / Script_Exponate.exponatCounter).ToString("0.00");
            ExponateDurschnittStil.text = (BTemp / Script_Exponate.exponatCounter).ToString();
-           ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";
         }
         else
         {
             ExponateDurschnittQuali.text = "1";
             ExponateDurschnittStil.text = "1";
+        }
+        if (Script_Exponate.BisherVerkauftAnzahl != 0)
+        {
+            ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";
+        }
+        else
+        {
             ExponateDurschnittErloes.text = "0 RM/Exponat";
         }
     }

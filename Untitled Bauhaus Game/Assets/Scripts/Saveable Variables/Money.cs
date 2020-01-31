@@ -14,10 +14,14 @@ public class Money : MonoBehaviour, ISaveableInterface
 
     public float money = 200000;
 	public float monthlyCosts = 0;
+	private float moneyOPerMonth = 0;
+	private float moneyIPerMonth = 0;
 	private float oldMoney = 0;
 	private float preCheatMoney = 0;
+	private float pipelineMoney = 25000;
 
 	bool isToggleOn = false;
+	private bool pipelineUpdate;
 
     public Text moneyText;
 
@@ -41,7 +45,23 @@ public class Money : MonoBehaviour, ISaveableInterface
     {
 		oldMoney = money;
 		money += (gameObject.GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)gameObject.GetComponent<Politikmeter>().Politiklevel / 100);
+		moneyIPerMonth += money - oldMoney;
 		Feedback.NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
+	}
+
+	public float MonthlyMoneyI()
+	{
+
+		float Temp = pipelineMoney;
+		pipelineMoney = moneyIPerMonth;
+		return Temp;
+	}
+
+	public float MonthlyMoneyO()
+	{
+		float Temp = moneyOPerMonth;
+		moneyOPerMonth = 0;
+		return Temp;
 	}
 
 	public void Spende(float spende)
@@ -49,6 +69,7 @@ public class Money : MonoBehaviour, ISaveableInterface
         if (spende > 0)
         {
             money += spende;
+			moneyIPerMonth += spende;
         }
     }
 
@@ -61,6 +82,7 @@ public class Money : MonoBehaviour, ISaveableInterface
 		else
 		{
 			money -= preis;
+			moneyOPerMonth += preis;
 			return true;
 		}
 		
@@ -69,6 +91,14 @@ public class Money : MonoBehaviour, ISaveableInterface
 	public void Geld(int value)
 	{
 		money += value;
+		if (value < 0)
+		{
+			moneyOPerMonth -= value;
+		}
+		else
+		{
+			moneyIPerMonth += value;
+		}
 	}
 
 	public void infiniteMoney()

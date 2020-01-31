@@ -61,9 +61,11 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
     public int NumberOfStructures;
 
-    public int ActualCosts;
-    public int ActualBuildTime;
-    public int ActualCapacity;
+    public int[] LowestMainTypeID;
+
+    public string ActualCosts;
+    public string ActualBuildTime;
+    public string ActualCapacity;
 
     public int[] StructuresCounter;
 
@@ -80,7 +82,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         public int TimeToBuild { get; private set; }
         public int WholeTime { get; private set; }
         public bool IsSlotUsed { get; private set; }
-        public int StructureID { get; private set; }
+        public int StyleID { get; private set; }
 
         public BuildingOrder() //When initialized, the set everything to zero
         {
@@ -98,7 +100,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             StyleToBuild = style;
             TimeToBuild = time;
             WholeTime = time;
-            StructureID = ID;
+            StyleID = ID;
             IsSlotUsed = true;
         }
 
@@ -109,7 +111,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             StyleToBuild = style;
             TimeToBuild = time;
             WholeTime = wholetime;
-            StructureID = ID;
+            StyleID = ID;
             IsSlotUsed = true;
         }
 
@@ -332,6 +334,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         for (int i = 0; i < NumberOfStructures; i++)
         {
             Structures[i].GetComponent<Struktur>().OwnContructionPrefab = Instantiate(ConstructionWithParticle);
+            Structures[i].GetComponent<Struktur>().Bausystem = this.gameObject;
             Structures[i].GetComponent<Struktur>().SetContructionPrefab();
         }
         #endregion
@@ -421,8 +424,6 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         UsableStyles[0].StructureBuildTime[1, 5] = 55;
         UsableStyles[0].StructureBuildTime[1, 6] = 60;
 
-        Debug.Log("Debuglol: " + UsableStyles[0].StructuresOrder[1, 4]);
-
         //UsableStyles[0].Structure1Positions[0] = new Vector3(10, 10, 10);
         #endregion
 
@@ -435,6 +436,12 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         StructuresCounter[1] = 0;
         StructuresCounter[2] = 0;
         StructuresCounter[3] = 0;
+
+        LowestMainTypeID = new int[4];
+        LowestMainTypeID[0] = 0;
+        LowestMainTypeID[1] = 0;
+        LowestMainTypeID[2] = 0;
+        LowestMainTypeID[3] = 0;
 
         for (int i = 0; i < MaxBuildPipelines; i++)
         {
@@ -466,18 +473,18 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             }
         }
 
-        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
-        {
-            ActualBuildTime = int.MaxValue;
-            ActualCapacity = int.MaxValue;
-            ActualCosts = int.MaxValue;
-        }
-        else
-        {
-            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-        }
+        //if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        //{
+        //    ActualBuildTime = "Max. Anzahl";
+        //    ActualCapacity = "Max. Anzahl";
+        //    ActualCosts = "Max. Anzahl";
+        //}
+        //else
+        //{
+        //    ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " Tage";
+        //    ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " Studenten";
+        //    ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]].ToString() + " RM";
+        //}
         ShowPipelines();
     }
 
@@ -485,15 +492,15 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
     {
         if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
         {
-            ActualBuildTime = int.MaxValue;
-            ActualCapacity = int.MaxValue;
-            ActualCosts = int.MaxValue;
+            ActualBuildTime = "Max. Anzahl";
+            ActualCapacity = "Max. Anzahl";
+            ActualCosts = "Max. Anzahl";
         }
         else
         {
-            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
-            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]];
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Tage";
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Studenten";
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " RM";
         }
         ShowPipelines();
     }
@@ -599,6 +606,10 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             }
         } //New
 
+        Debug.Log("FreeID: " + FreeID);
+
+        LowestMainTypeID[MainTypeToBuild] = FreeID;
+
         if (StyleSupportsNextStructure == false) //New
         {
             FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
@@ -625,7 +636,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             return;
         }
 
-        if (ActualCosts > ManipulateMoney.money)
+        if (UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]] > ManipulateMoney.money)
         {
             FeedbackFromBuildings.NewTick("Nicht genug Geld um " + (Type)TypeToBuild + " zu bauen");
             return;
@@ -635,14 +646,14 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         {
             Type temp = (Type)TypeToBuild;
 
-            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]] + " RM");
+            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID] + " RM");
            
             Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
             
             if (CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(FreeID ,TypeToBuild, MainTypeToBuild, 0, 0);
-                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID]);
                 UsableStyles[StyleToBuild].StructuresOrder[MainTypeToBuild, FreeID] = false;
                 BuildStructure(FreePipelineNumber);
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
@@ -652,7 +663,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             else
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(FreeID, TypeToBuild, MainTypeToBuild, StyleToBuild, UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
-                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]]);
+                ManipulateMoney.Bezahlen(UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID]);
                 UsableStyles[StyleToBuild].StructuresOrder[MainTypeToBuild, FreeID] = false;
                 UsableStyles[BuildingPipeline[FreePipelineNumber].StyleToBuild].StructureCount[BuildingPipeline[FreePipelineNumber].MainTypeToBuild]++;
 
@@ -686,14 +697,14 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         {
             if (!Structures[i].GetComponent<Struktur>().IsPlaced)
             {
-                if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().TypeID == BuildingPipeline[PipelineNumber].StructureID)
+                if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == BuildingPipeline[PipelineNumber].MainTypeToBuild && Structures[i].GetComponent<Struktur>().TypeID == BuildingPipeline[PipelineNumber].StyleID)
                 {
                     Structures[i].SetActive(true);
 
-                    Structures[i].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild);
+                    Structures[i].GetComponent<Struktur>().SetStructure(BuildingPipeline[PipelineNumber].StyleToBuild, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild, BuildingPipeline[PipelineNumber].StyleID);
                     Structures[i].GetComponent<Struktur>().InformCounter();
 
-                    _BauZuEndeEvent.Invoke(i, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild, BuildingPipeline[PipelineNumber].StructureID);
+                    _BauZuEndeEvent.Invoke(i, BuildingPipeline[PipelineNumber].MainTypeToBuild, BuildingPipeline[PipelineNumber].TypeToBuild, BuildingPipeline[PipelineNumber].StyleID);
 
                     if (!CheatActive)
                     {
@@ -725,7 +736,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         int NumberOfStructures = Structures.Count;
         int NumberOfStyles = UsableStyles.Length;
 
-        int[,] ActiveBuilding = new int[NumberOfStructures, 4];
+        int[,] ActiveBuilding = new int[NumberOfStructures, 5];
         int[,] StructuresInBuild = new int[MaxBuildPipelines, 7];
 
         int HighestNumberOfStructuresOverStyles = 0;
@@ -757,6 +768,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             ActiveBuilding[i, 1] = Structures[i].GetComponent<Struktur>().OwnStyle;
             ActiveBuilding[i, 2] = Structures[i].GetComponent<Struktur>().OwnMainTypeInt;
             ActiveBuilding[i, 3] = Structures[i].GetComponent<Struktur>().OwnTypeInt;
+            ActiveBuilding[i, 4] = Structures[i].GetComponent<Struktur>().OwnStyleMainTypeID;
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.ActiveBuildings = ActiveBuilding;
@@ -795,7 +807,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             StructuresInBuild[i, 3] = BuildingPipeline[i].MainTypeToBuild;
             StructuresInBuild[i, 4] = BuildingPipeline[i].TypeToBuild;
             StructuresInBuild[i, 5] = BuildingPipeline[i].WholeTime;
-            StructuresInBuild[i, 6] = BuildingPipeline[i].StructureID;
+            StructuresInBuild[i, 6] = BuildingPipeline[i].StyleID;
         }
 
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.StructuresInBuild = StructuresInBuild;
@@ -821,7 +833,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             if (save.ActiveBuildings[i, 0] == 1)
             {
                 Structures[i].SetActive(true);
-                Structures[i].GetComponent<Struktur>().SetStructure(save.ActiveBuildings[i, 1], save.ActiveBuildings[i, 2], save.ActiveBuildings[i, 3]);
+                Structures[i].GetComponent<Struktur>().SetStructure(save.ActiveBuildings[i, 1], save.ActiveBuildings[i, 2], save.ActiveBuildings[i, 3], save.ActiveBuildings[i, 4]);
                 Structures[i].GetComponent<Struktur>().InformCounter();
 
                 StructuresCounter[Structures[i].GetComponent<Struktur>().OwnMainTypeInt]++;
@@ -866,33 +878,33 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         Debug.Log("Building System: Function Load ended");
     }
 
-    public string ActiveStructuresName()
-    {
-        string Temp;
-        int NumberOfStructures = Structures.Count;
+    //public string ActiveStructuresName()
+    //{
+    //    string Temp;
+    //    int NumberOfStructures = Structures.Count;
 
-        Temp = "Strukturen: \n";
+    //    Temp = "Strukturen: \n";
 
-        for (int i = 0; i < NumberOfStructures; i++)
-        {
-            if (Structures[i].GetComponent<Struktur>().IsPlaced)
-            {
-                switch (Structures[i].GetComponent<Struktur>().OwnMainTypeInt)
-                {
-                    case 1:
-                        Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Werkstatt)\n";
-                        break;
-                    case 2:
-                        Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Wohnheim)\n";
-                        break;
-                    case 3:
-                        Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Lehrsaal)\n";
-                        break;
-                }
-            }
-        }
-        return Temp;
-    }
+    //    for (int i = 0; i < NumberOfStructures; i++)
+    //    {
+    //        if (Structures[i].GetComponent<Struktur>().IsPlaced)
+    //        {
+    //            switch (Structures[i].GetComponent<Struktur>().OwnMainTypeInt)
+    //            {
+    //                case 1:
+    //                    Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Werkstatt)\n";
+    //                    break;
+    //                case 2:
+    //                    Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Wohnheim)\n";
+    //                    break;
+    //                case 3:
+    //                    Temp = Temp + (Type)Structures[i].GetComponent<Struktur>().OwnTypeInt + "(Lehrsaal)\n";
+    //                    break;
+    //            }
+    //        }
+    //    }
+    //    return Temp;
+    //}
 
     public int StructureTest(int NumberOfStructure)
     {
@@ -906,8 +918,9 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         }
     }
 
-    public int UsableMainTypeStructures(int MainTypeToSearch)
+    public List<int> PlacedMainTypeStructures(int MainTypeToSearch)
     {
+        List<int> TempUniqueID = new List<int>();
         int Temp = 0;
 
         for (int i = 0; i < NumberOfStructures; i++)
@@ -916,16 +929,23 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
             {
                 if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainTypeToSearch)
                 {
-                    Temp++;
+                    TempUniqueID.Add(i);
                 }
             }
         }
-
-        return Temp;
+        return TempUniqueID;
     }
 
-    public void AktiveStrukturen(int StrucutureID, int MainType)
+    public void DestroyStructure(int MainType, int TypeID, int Style, int StyleID)
     {
-        
+        for (int i = 0; i < NumberOfStructures; i++)
+        {
+            if (Structures[i].GetComponent<Struktur>().OwnMainTypeInt == MainType && Structures[i].GetComponent<Struktur>().TypeID == TypeID)
+            {
+                UsableStyles[Style].StructuresOrder[MainType, StyleID] = true;
+                UsableStyles[Style].StructureCount[MainType]--;
+                Structures[i].SetActive(false);
+            }
+        }
     }
 }

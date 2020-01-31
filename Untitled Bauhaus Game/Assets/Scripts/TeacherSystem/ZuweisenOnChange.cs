@@ -14,7 +14,7 @@ public class ZuweisenOnChange : MonoBehaviour
 
 	void Start()
 	{
-		Script = GameObject.Find("Sidebar - Dropdown Formmeister").GetComponent<TeacherScript>();
+		Script = GameObject.Find("PlayerVariables").GetComponent<TeacherScript>();
 	}
 
 	void Update()

@@ -9,7 +9,7 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 	public int studKapazitaet = 500; //Anfangskapazität
 
 	public int StudentenAnzahl = 50;
-	private int monthlyStudenten = 50;
+	public int monthlyStudenten { get; private set; } = 50;
 
 	public Text studDisplay;
 
@@ -58,6 +58,10 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 			{
 				StudentenAnzahl = studKapazitaet;
 			}
+		}
+		else
+		{
+			monthlyStudenten = 0;
 		}
     }
 
