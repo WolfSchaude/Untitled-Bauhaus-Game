@@ -8707,7 +8707,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1155.85, y: -330}
-  m_SizeDelta: {x: 628.2, y: 407.1}
+  m_SizeDelta: {x: 628.2, y: 245.6}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &944080560
 MonoBehaviour:
@@ -19614,7 +19614,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 655.35, y: -330}
-  m_SizeDelta: {x: 374, y: 446}
+  m_SizeDelta: {x: 374, y: 591.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1992789791
 MonoBehaviour:
@@ -19648,7 +19648,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Programmierung:\n- Oliver M\xF6nch\n- Wolf Schaude\n- Bastian Blochberger\n-
-    Julian Kraus\n\nGame Design:\n- Calvin Krobath\n\nOrganisation:\n- Burak Burdulu"
+    Julian Kraus\n\nArt:\n- Oliver M\xF6nch\n- Julian Kraus\n\nGame Design:\n- Calvin
+    Krobath\n\nOrganisation:\n- Burak Burdulu"
 --- !u!222 &1992789792
 CanvasRenderer:
   m_ObjectHideFlags: 0
