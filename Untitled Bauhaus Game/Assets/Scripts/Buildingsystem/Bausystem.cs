@@ -490,17 +490,31 @@ public class Bausystem : MonoBehaviour
 
     public void ManualUpdate()
     {
-        if (UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild] >= UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+        int MaxNumberOfTypeStructures = UsableStyles[StyleToBuild].HighestNumberOfStrutures;
+        int FreeID = int.MaxValue;
+        bool StyleSupportsNextStructure = false;
+
+        for (int i = 0; i < MaxNumberOfTypeStructures; i++)
+        {
+            if (UsableStyles[StyleToBuild].StructuresOrder[MainTypeToBuild, i] == true && i < UsableStyles[StyleToBuild].MaxStructures[MainTypeToBuild])
+            {
+                FreeID = i;
+                StyleSupportsNextStructure = true;
+                break;
+            }
+        }
+
+        if (StyleSupportsNextStructure)
+        {
+            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, FreeID].ToString();
+            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, FreeID].ToString();
+            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID].ToString();
+        }
+        else
         {
             ActualBuildTime = "Max. Anzahl";
             ActualCapacity = "Max. Anzahl";
             ActualCosts = "Max. Anzahl";
-        }
-        else
-        {
-            ActualBuildTime = UsableStyles[StyleToBuild].StructureBuildTime[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Tage";
-            ActualCapacity = UsableStyles[StyleToBuild].StructureCapacity[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " Studenten";
-            ActualCosts = UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, UsableStyles[StyleToBuild].StructureCount[MainTypeToBuild]].ToString() + " RM";
         }
         ShowPipelines();
     }
@@ -649,7 +663,7 @@ public class Bausystem : MonoBehaviour
             FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID] + " RM");
            
             Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
-            
+
             if (CheatActive)
             {
                 BuildingPipeline[FreePipelineNumber].SetBuilding(FreeID ,TypeToBuild, MainTypeToBuild, 0, 0);
