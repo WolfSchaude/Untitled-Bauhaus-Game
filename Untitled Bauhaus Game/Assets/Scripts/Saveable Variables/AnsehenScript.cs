@@ -13,7 +13,7 @@ public class AnsehenScript : MonoBehaviour, ISaveableInterface
 
     void Start()
     {
-        Ansehen = 1;
+        //Start is replaced by LoadStart triggered by SaveGameManager
     }
 
     // Update is called once per frame
@@ -46,5 +46,10 @@ public class AnsehenScript : MonoBehaviour, ISaveableInterface
     public void Load(Save save)
     {
         Ansehen = save.CurrentAnsehen;
+    }
+
+    public void LoadStart()
+    {
+        Ansehen = 1;
     }
 }

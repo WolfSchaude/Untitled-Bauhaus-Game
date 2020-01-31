@@ -11,7 +11,7 @@ public class RandomEvent_Memory : MonoBehaviour
 
 	public Text Timer;
 
-	[SerializeField] public RandomEvent Memory;
+	[SerializeField] public Event Memory;
 
 	[SerializeField] public bool IsFinished = false;
 
@@ -62,7 +62,7 @@ public class RandomEvent_Memory : MonoBehaviour
 		Timer.text = "Noch " + TimerCounter.ToString() + " Tage";
 	}
 
-    public void SetMemory(RandomEvent rev, GameObject PlayerStats)
+    public void SetMemory(Event rev, GameObject PlayerStats)
     {
 		Playervariables = PlayerStats;
 

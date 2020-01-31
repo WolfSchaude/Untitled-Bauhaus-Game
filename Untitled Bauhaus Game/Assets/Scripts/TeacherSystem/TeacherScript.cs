@@ -259,6 +259,16 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		GenerateAllTeacherGOs();
 	}
 
+	public void LoadStart()
+		{
+			foreach (var fm in TeacherLoader.tb.Buffer)
+			{
+				_Teachers_Available.Add(fm);
+			}
+
+			GenerateAllTeacherGOs();
+		}
+
 	private void GenerateAllTeacherGOs()
 	{
 		foreach (var go in Teachers_Available)

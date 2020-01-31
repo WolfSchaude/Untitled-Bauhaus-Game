@@ -23,6 +23,8 @@
 			<Option2_EffectTicker>Die Zeitungen berichten über deine Weigerung. Dein Ansehen hat sich um 4 verschlechtert.</Option2_EffectTicker>
 
 			<SpecialEvents></SpecialEvents>
+
+			<CorrespondingBuildingID>17</CorrespondingBuildingID>
 		</Event>
 
 		<Event>
@@ -45,6 +47,8 @@
 			<Option2_EffectTicker>Doesburgs unbeantworteten Vorträge leuchten mit einem schlechten Licht auf deine Hochschule. Dein Ansehen wurde um 3 verschlechtert.</Option2_EffectTicker>
 
 			<SpecialEvents>Einblenden:4.4.1921</SpecialEvents>
+
+			<CorrespondingBuildingID>17</CorrespondingBuildingID>
 		</Event>
 
 		<Event>
@@ -68,6 +72,8 @@
 			<Option2_EffectTicker></Option2_EffectTicker>
 
 			<SpecialEvents>Exponat:2</SpecialEvents>
+
+			<CorrespondingBuildingID>17</CorrespondingBuildingID>
 		</Event>
 
 		<Event>
@@ -91,6 +97,8 @@
 			<Option2_EffectTicker></Option2_EffectTicker>
 
 			<SpecialEvents>Exponat:4,Einblenden:25.7.1923</SpecialEvents>
+
+			<CorrespondingBuildingID>17</CorrespondingBuildingID>
 		</Event>
 
 		<Event>
@@ -114,6 +122,8 @@
 			<Option2_EffectTicker>Aufgrund deiner Entscheidung wurde das Bauhaus geschlossen.</Option2_EffectTicker>
 
 			<SpecialEvent>Einblenden:26.12.1924,GameOverOption:2</SpecialEvent>
+
+			<CorrespondingBuildingID>17</CorrespondingBuildingID>
 		</Event>
 	</Events>
 </EventCollection>

@@ -102,7 +102,10 @@ public class Money : MonoBehaviour, ISaveableInterface
 	public void Load(Save save)
 	{
 		money = save.CurrentMoney;
+	}
 
-		//SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[1] = true;
+	public void LoadStart()
+	{
+		preCheatMoney = money;
 	}
 }

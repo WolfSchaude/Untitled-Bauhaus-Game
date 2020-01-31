@@ -1,21 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using System.Xml;
 using System.Xml.Serialization;
 
 public class RandomEvent
 {
     [XmlIgnore]
+    public int ID = 0;
+
+    [XmlIgnore]
     public int Event_Tag;
+
     [XmlIgnore]
     public int Event_Monat;
+
     [XmlIgnore]
     public int Event_Jahr;
 
-
     [XmlElement("EventText")]
     public string EventText;
+
 
 
     [XmlElement("EventOption1")]

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Politikmeter : MonoBehaviour, ISaveableInterface
 {
-
 	public int Politiklevel { get; private set; } = 100;
 		
     public Slider PolitikOutput;
@@ -14,21 +13,11 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 	void Start()
 	{
-		PolitikOutput.maxValue = 200;
-		PolitikOutput.minValue = 0;
+		//Start replaced by LoadStart triggered by SaveGameManager
 	}
 
     void Update()
     {
-		//if (Input.GetKeyDown(KeyCode.UpArrow))
-		//{
-		//	ManipulatePolitics(10);
-		//}
-		//if (Input.GetKeyDown(KeyCode.DownArrow))
-		//{
-		//	ManipulatePolitics(-10);
-		//}
-
 		PolitikOutput.value = Politiklevel;
     }
 
@@ -66,7 +55,15 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 	public void Load(Save save)
 	{
+		PolitikOutput.maxValue = 200;
+		PolitikOutput.minValue = 0;
+
 		Politiklevel = save.CurrentPolitics;
-		//SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[3] = true;
+	}
+
+	public void LoadStart()
+	{
+		PolitikOutput.maxValue = 200;
+		PolitikOutput.minValue = 0;
 	}
 }

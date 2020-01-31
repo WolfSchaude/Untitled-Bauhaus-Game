@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
@@ -176,6 +174,8 @@ public class Event_Memory : MonoBehaviour
 	}
 	private void EventEffect1()
 	{
+		print("ID: " + Memory.ID + ", EventText: " + Memory.EventText + ", Option: " + SelectedOption1 + SelectedOption2);
+
 		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option1_Ansehen);
 		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option1_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
@@ -187,6 +187,8 @@ public class Event_Memory : MonoBehaviour
 	}
 	private void EventEffect2()
 	{
+		print("ID: " + Memory.ID + ", EventText: " + Memory.EventText + ", Option: " + SelectedOption1 + SelectedOption2);
+
 		Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(Memory.Option2_Ansehen);
 		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option2_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);

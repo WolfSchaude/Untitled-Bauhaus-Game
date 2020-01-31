@@ -6,6 +6,14 @@ public class TurnToGO : MonoBehaviour
 {
     [SerializeField] Transform TurnToTarget;
 
+    private void Awake()
+    {
+        if (TurnToTarget == null)
+        {
+            TurnToTarget = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+    }
+        
     void Update()
     {
         transform.LookAt(TurnToTarget, Vector3.down);
