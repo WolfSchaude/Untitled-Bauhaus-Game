@@ -80,6 +80,7 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Text-Object to change
     /// </summary>
     [SerializeField] Text AnsehenLetztes;
+    public int Buffer;
 	#endregion
 	#region Gebäude
 	//------------------------------------( Gebaeude  )------------------------------------//
@@ -171,6 +172,10 @@ public class ContentSetter : MonoBehaviour
         StartCoroutine(UpdateTextInternal());
     }
 
+    public void UpdateMonthlyReputation()
+    {
+        Buffer = Script_Ansehen.Ansehen;
+    }
 
     public void UpdateMonthlyMoneyIncome()
     {
@@ -196,7 +201,7 @@ public class ContentSetter : MonoBehaviour
         StudentenTendenz.text = "Steigend (Zitat Angela Merkel, 2012)";
 
         AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
-        AnsehenLetztes.text = "Not implemented";
+        AnsehenLetztes.text = Buffer + " Ansehenspunkte";
 
 
 
