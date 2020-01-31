@@ -198,7 +198,7 @@ public class ContentSetter : MonoBehaviour
 
         StudentenAnzahl.text = Script_Studenten.StudentenAnzahl.ToString() + " Studenten";
         StudentenKapazitaet.text = Script_Studenten.studKapazitaet.ToString() + " Studenten";
-        StudentenTendenz.text = "Steigend (Zitat Angela Merkel, 2012)";
+        StudentenTendenz.text = Script_Studenten.monthlyStudenten.ToString();
 
         AnsehenJetzt.text = Script_Ansehen.Ansehen.ToString() + " Ansehenspunkte";
         AnsehenLetztes.text = Buffer + " Ansehenspunkte";
@@ -222,12 +222,18 @@ public class ContentSetter : MonoBehaviour
         {
            ExponateDurschnittQuali.text = (ATemp / Script_Exponate.exponatCounter).ToString("0.00");
            ExponateDurschnittStil.text = (BTemp / Script_Exponate.exponatCounter).ToString();
-           ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";
         }
         else
         {
             ExponateDurschnittQuali.text = "1";
             ExponateDurschnittStil.text = "1";
+        }
+        if (Script_Exponate.BisherVerkauftAnzahl != 0)
+        {
+            ExponateDurschnittErloes.text = (Script_Exponate.BisherGebautErloes / Script_Exponate.BisherVerkauftAnzahl).ToString() + " RM/Exponat";
+        }
+        else
+        {
             ExponateDurschnittErloes.text = "0 RM/Exponat";
         }
     }
