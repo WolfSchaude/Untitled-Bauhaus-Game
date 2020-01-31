@@ -47,16 +47,19 @@ public class Struktur : MonoBehaviour, IClickable
 
     public void StartDestroy()
     {
-        int Temp1 = OwnMainTypeInt;
-        int Temp2 = TypeID;
-        int Temp3 = OwnStyle;
-        int Temp4 = OwnStyleMainTypeID;
-        OwnStyle = 0;
-        OwnStyleMainTypeID = 0;
-        IsPlaced = false;
-        IsInBuild = false;
-        OwnContructionPrefab.SetActive(false);
-        Bausystem.GetComponent<Bausystem>().DestroyStructure(Temp1, Temp2, Temp3, Temp4);
+        if (OwnMainTypeInt != 0)
+        {
+            int Temp1 = OwnMainTypeInt;
+            int Temp2 = TypeID;
+            int Temp3 = OwnStyle;
+            int Temp4 = OwnStyleMainTypeID;
+            OwnStyle = 0;
+            OwnStyleMainTypeID = 0;
+            IsPlaced = false;
+            IsInBuild = false;
+            OwnContructionPrefab.SetActive(false);
+            Bausystem.GetComponent<Bausystem>().DestroyStructure(Temp1, Temp2, Temp3, Temp4);
+        }
     }
 
     public void SetStructure(int Style, int MainType, int Type, int StyleID)
@@ -106,5 +109,6 @@ public class Struktur : MonoBehaviour, IClickable
     public void OnClick()
     {
         print(gameObject.name + OwnMainTypeEnum + OwnTypeEnum);
+        StartDestroy();
     }
 }

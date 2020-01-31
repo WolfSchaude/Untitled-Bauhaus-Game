@@ -149,21 +149,6 @@ public class ContentSetter : MonoBehaviour
     #endregion
     void Start()
     {
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(1); i++)
-        {
-            
-        }
-
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(2); i++)
-        {
-
-        }
-
-        for (int i = 0; i < Script_Bausystem.UsableMainTypeStructures(3); i++)
-        {
-
-        }
-
         UpdateText();
     }
 
