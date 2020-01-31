@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Xml;
 using System.Xml.Serialization;
 
+[System.Serializable]
 public class Event
 {
 	[XmlElement("ID")]
@@ -56,4 +57,13 @@ public class Event
 
 	[XmlElement("SpecialEvents")]
 	public string SpecialEvents;
+
+	[XmlElement("CorrespondingBuildingID")]
+	public int CorrespondingBuildingID;
+
+	[XmlIgnore]
+	public int TimeLeftToShow = -1;
+
+	[XmlIgnore]
+	public int TimeLeftToLife = 0;
 }

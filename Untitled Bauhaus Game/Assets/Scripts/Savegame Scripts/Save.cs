@@ -10,6 +10,8 @@ public class Save
 	public int CurrentDay;
 	public int CurrentMonth;
 	public int CurrentYear;
+	public NewTimeKeeper.TimeMode CurrentMode;
+
 
 	public float CurrentMoney;
 	public int CurrentAnsehen;
@@ -18,6 +20,8 @@ public class Save
 	public int MaxStudenten;
 
 	public TeacherSave CurrentTeacherState;
+
+	public EventSave CurrentEventState;
 
 	public bool[] IsEventFinished;
 

@@ -11,20 +11,6 @@ public class AbilityToClick : MonoBehaviour
     [SerializeField] string Tag_Highlight = "Clickable";
 
     /// <summary>
-    /// The tag we use to discern if something is a InWorldEvent
-    /// </summary>
-    [SerializeField] string Tag_InWorld = "InWorldEvent";
-
-    ///// <summary>
-    ///// Stores the Highlighted Shader
-    ///// </summary>
-    //[SerializeField] Shader Outline;
-    ///// <summary>
-    ///// Stores the normal Unity Standard Shader
-    ///// </summary>
-    //[SerializeField] Shader Standard;
-
-    /// <summary>
     /// Stores the last Seleted/highlighed object
     /// </summary>
     [SerializeField] private Transform _selection;
@@ -59,10 +45,6 @@ public class AbilityToClick : MonoBehaviour
         EnableClickable.AddListener(() => { EnableClicking(); });
     }
 
-    void Start()
-    {
-        //Standard = Shader.Find("Standard");
-    }
     void Update()
     {
         if (AmIAllowedToClick)
@@ -104,16 +86,6 @@ public class AbilityToClick : MonoBehaviour
                             _selection = null;
                         }
                     }
-                }
-
-                RaycastHit2D hit2D = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition), 426);
-                if (hit2D)
-                {
-                    if (hit2D.transform.CompareTag(Tag_InWorld))
-                    {
-                        hit2D.transform.GetComponent<InWorldEvent_Memory>().OnClick();
-                    }
-                    
                 }
             }
         }

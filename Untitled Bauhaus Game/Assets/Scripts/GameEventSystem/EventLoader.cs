@@ -7,12 +7,13 @@ public class EventLoader : MonoBehaviour
 	private const string path = "XML_Files/XML_Events";
 	private const string randompath = "XML_Files/XML_RandomEvents";
 
-	public static EventContainer ec;
-	public static RandomEventContainer rec;
+	[SerializeField] public static EventContainer ec;
+	[SerializeField] public static EventContainer ec_random;
+
 
 	void Awake()
     {
 		ec = EventContainer.Load(path);
-		rec = RandomEventContainer.Load(randompath);
-    }
+		ec_random = EventContainer.Load(randompath);
+	}
 }

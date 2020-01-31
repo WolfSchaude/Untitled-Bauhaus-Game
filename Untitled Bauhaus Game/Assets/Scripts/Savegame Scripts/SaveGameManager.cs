@@ -13,6 +13,7 @@ public class SaveGameManager : MonoBehaviour
 {
     public UnityEvent SaveGameEvent;
     public SaveEvent LoadGameEvent;
+    public UnityEvent LoadStartEvent;
 
     public Save Savestate;
 
@@ -29,16 +30,23 @@ public class SaveGameManager : MonoBehaviour
     {
         WhoHasSaved = new List<bool>(new bool[8]);
 
-        if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
-        {
-            LoadSave();
-        }
-        else
-        {
-            LoadStart();
-            Debug.Log("Loaded Start");
-        }
+        SaveGameLoader x;
 
+        if (x = GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>())
+        {
+            if (x.LoadSaveGame)
+            {
+                LoadSave();
+            }
+            else
+            {
+                print("Invoked LoadStartEvent");
+                LoadStartEvent.Invoke();
+
+                //LoadStart();
+                Debug.Log("Loaded Start");
+            }
+        }
         //StartCoroutine(LoadOnStart());
     }
     void Update()
@@ -107,21 +115,6 @@ public class SaveGameManager : MonoBehaviour
         else
         {
             Debug.Log("No Savegame Found!");
-        }
-    }
-
-    public IEnumerator LoadOnStart()
-    {
-        yield return new WaitForEndOfFrame();
-
-        if (GameObject.Find("SceneSwitcher").GetComponent<SaveGameLoader>().LoadSaveGame)
-        {
-            LoadSave();
-        }
-        else
-        {
-            LoadStart();
-            Debug.Log("Loaded Start");
         }
     }
 

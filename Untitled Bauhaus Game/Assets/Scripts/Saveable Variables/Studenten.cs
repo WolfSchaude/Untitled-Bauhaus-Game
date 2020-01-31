@@ -18,8 +18,7 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 
 	void Start()
 	{
-		//InvokeRepeating("addStudenten", 0.1f, 2.0f); //repeats a function every x seconds
-		StudentenAnzahl = 50;
+		//Start replaced by LoadStart triggered by SaveGameManager
 	}
 
 	void Update()
@@ -82,4 +81,9 @@ public class Studenten : MonoBehaviour, ISaveableInterface
         StudentenAnzahl = save.StudentenAnzahl;
         studKapazitaet = save.MaxStudenten;
     }
+
+	public void LoadStart()
+	{
+		StudentenAnzahl = 50;
+	}
 }

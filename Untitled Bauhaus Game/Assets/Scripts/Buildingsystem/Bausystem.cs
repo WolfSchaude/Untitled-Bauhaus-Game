@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class BauZuEndeEvent : UnityEvent<int, int, int, int>
 { }
 
-public class Bausystem : MonoBehaviour
+public class Bausystem : MonoBehaviour, ISaveableInterface
 {
     public BauZuEndeEvent _BauZuEndeEvent;
 
@@ -254,7 +254,7 @@ public class Bausystem : MonoBehaviour
 
     }
 
-    void Start()
+    public void LoadStart()
     {
         Debug.Log("Hi, im Bertram the debug log. I help you if something goes wrong :D");
         Debug.Log("Im finally in Unity ^^");

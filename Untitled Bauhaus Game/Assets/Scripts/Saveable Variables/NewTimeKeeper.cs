@@ -72,15 +72,9 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         Pause, Normal, FastForward
     }
 
-    private void Awake()
-    {
-        CurrentDay = StartDay;
-        CurrentMonth = StartMonth;
-        CurrentYear = StartYear;
-    }
     void Start()
     {
-        SetPause();
+        //Start replaced by LoadStart triggered by SaveGameManager
     }
 
     void FixedUpdate()
@@ -212,6 +206,14 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         return (Ende - Start).Days;
     }
 
+    public int BerechneTageVonJetzt(int EndTag, int Endmonat, int EndJahr)
+    {
+        DateTime Start = new DateTime(CurrentYear, CurrentMonth, CurrentDay);
+        DateTime Ende = new DateTime(EndJahr, Endmonat, EndTag);
+
+        return (Ende - Start).Days;
+    }
+
 	#region Here are the functions to change the speed of time
 
 	/// <summary>
@@ -295,6 +297,7 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentDay = CurrentDay;
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMonth = CurrentMonth;
         SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentYear = CurrentYear;
+        SaveGameKeeper.GetComponent<SaveGameManager>().Savestate.CurrentMode = Mode;
 
         SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasSaved[0] = true;
     }
@@ -304,7 +307,15 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         CurrentDay = save.CurrentDay;
         CurrentMonth = save.CurrentMonth;
         CurrentYear = save.CurrentYear;
+        Mode = save.CurrentMode;
+    }
 
-        //SaveGameKeeper.GetComponent<SaveGameManager>().WhoHasLoaded[0] = true;
+    public void LoadStart()
+    {
+        CurrentDay = StartDay;
+        CurrentMonth = StartMonth;
+        CurrentYear = StartYear;
+
+        SetPause();
     }
 }

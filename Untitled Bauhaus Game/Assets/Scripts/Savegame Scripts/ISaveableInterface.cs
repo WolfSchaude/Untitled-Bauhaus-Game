@@ -13,4 +13,8 @@ public interface ISaveableInterface
 	/// </summary>
 	/// <param name="save"></param>
 	void Load(Save save);
+	/// <summary>
+	/// Loads the beginning of the game with standard values
+	/// </summary>
+	void LoadStart();
 }
