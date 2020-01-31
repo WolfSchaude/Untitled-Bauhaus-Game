@@ -109,6 +109,5 @@ public class Struktur : MonoBehaviour, IClickable
     public void OnClick()
     {
         print(gameObject.name + OwnMainTypeEnum + OwnTypeEnum);
-        StartDestroy();
     }
 }
