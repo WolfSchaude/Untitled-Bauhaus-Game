@@ -79,6 +79,7 @@ public class FeedbackScript : MonoBehaviour
 			Collapsed = false;
 		}
 	}
+
 	/// <summary>
 	/// Coroutine used to Scroll after Generating a new Ticker Notification
 	/// </summary>
