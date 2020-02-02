@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class Politikmeter : MonoBehaviour, ISaveableInterface
 {
-	public int Politiklevel { get; private set; } = 100;
+	public float Politiklevel { get; private set; } = 100;
 		
     public Slider PolitikOutput;
+
+	[SerializeField] Image _Eisernes_Kreuz;
+	[SerializeField] Image _HammerUndSichel;
 
 	public GameObject SaveGameKeeper;
 
@@ -18,14 +21,18 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
     void Update()
     {
-		PolitikOutput.value = Politiklevel;
+		if (Input.GetKeyDown(KeyCode.DownArrow))
+		{
+			ManipulatePolitics(10);
+		}
+		if (Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			ManipulatePolitics(-10);
+		}
     }
 
 	public void ManipulatePolitics(int manipulator)
 	{
-		print("Vorheriges Level: " + Politiklevel);
-		print("Manipulator: " + manipulator);
-
 		Politiklevel += manipulator;
 
 		if (Politiklevel <= 0)
@@ -44,7 +51,12 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 			Politiklevel = 200;
 		}
 
-		print("Politiklevel jetzt: " + Politiklevel);
+		float temp = Politiklevel / 200;
+
+		_HammerUndSichel.fillAmount = temp;
+		_Eisernes_Kreuz.fillAmount = 1 - temp;
+
+		print(temp);
 	}
 
 	public void Save()

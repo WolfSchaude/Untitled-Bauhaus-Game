@@ -42,6 +42,7 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 
     TimeMode ModeBuffer;
 
+    /*
     /// <summary>
     /// The Sprite that is applied to the buttons when not selected
     /// </summary>
@@ -63,6 +64,7 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
     /// The Image that changes, when the corresponging Button (FastForward) is pressed
     /// </summary>
     [SerializeField] Image ButtonFastForward;
+    */
 
     /// <summary>
     /// Enum for managing the different TimeModes
@@ -225,9 +227,9 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 
         Mode = TimeMode.Pause;
 
-        ButtonPause.sprite = Selected;
-        ButtonNormal.sprite = Normal;
-        ButtonFastForward.sprite = Normal;
+        //ButtonPause.sprite = Selected;
+        //ButtonNormal.sprite = Normal;
+        //ButtonFastForward.sprite = Normal;
     }
 
     /// <summary>
@@ -240,9 +242,9 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         Mode = TimeMode.Normal;
         ModeBuffer = TimeMode.Normal;
 
-        ButtonPause.sprite = Normal;
-        ButtonNormal.sprite = Selected;
-        ButtonFastForward.sprite = Normal;
+        //ButtonPause.sprite = Normal;
+        //ButtonNormal.sprite = Selected;
+        //ButtonFastForward.sprite = Normal;
     }
 
     /// <summary>
@@ -255,9 +257,9 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         Mode = TimeMode.FastForward;
         ModeBuffer = TimeMode.FastForward;
 
-        ButtonPause.sprite = Normal;
-        ButtonNormal.sprite = Normal;
-        ButtonFastForward.sprite = Selected;
+        //ButtonPause.sprite = Normal;
+        //ButtonNormal.sprite = Normal;
+        //ButtonFastForward.sprite = Selected;
     }
 
     /// <summary>

@@ -19,6 +19,9 @@ public class AnimationStarter : MonoBehaviour
 	/// </summary>
 	[SerializeField] public bool Collapsed { get; private set; }
 
+	[Tooltip("True = Starts Collapses, False = Starts Opened")]
+	[SerializeField] bool StartState;
+
 	public AnimChangeEvent BoolChange;
 
 	private void Awake()
@@ -31,7 +34,7 @@ public class AnimationStarter : MonoBehaviour
 
 	void Start()
 	{
-		Collapsed = true;
+		Collapsed = StartState;
 
 		SelfDropDown.SetBool("Bool", Collapsed);
 		BoolChange.Invoke(Collapsed);

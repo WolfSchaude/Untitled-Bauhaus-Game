@@ -113,7 +113,7 @@ public class InWorldEvent_Memory : MonoBehaviour
         _Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option1_Politik);
         _Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
 
-        _FeedbackScript.GetComponent<FeedbackScript>().NewTick(Memory.Option1_EffectTicker);
+        Ticker.NewTick.Invoke(Memory.Option1_EffectTicker);
     }
 
     private void EventEffect2()
@@ -122,7 +122,7 @@ public class InWorldEvent_Memory : MonoBehaviour
         _Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option2_Politik);
         _Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);
 
-        _FeedbackScript.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
+        Ticker.NewTick.Invoke(Memory.Option2_EffectTicker);
     }
 
     private void TooLate()
@@ -131,11 +131,11 @@ public class InWorldEvent_Memory : MonoBehaviour
 
         _Playervariables.GetComponent<AnsehenScript>().ManipulateAnsehen(-5);
 
-        _FeedbackScript.GetComponent<FeedbackScript>().NewTick("Das Event zu verpassen hat dein Ansehen um 5 verschlechtert.");
+        Ticker.NewTick.Invoke("Das Event zu verpassen hat dein Ansehen um 5 verschlechtert.");
 
         _Playervariables.GetComponent<Money>().Geld(-5000);
 
-        _FeedbackScript.GetComponent<FeedbackScript>().NewTick("Durch das verpasste Event hast du 5000 RM verloren.");
+        Ticker.NewTick.Invoke("Durch das verpasste Event hast du 5000 RM verloren.");
     }
 	#endregion
 

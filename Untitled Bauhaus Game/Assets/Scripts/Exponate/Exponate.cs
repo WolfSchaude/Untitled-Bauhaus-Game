@@ -119,7 +119,7 @@ public class Exponate : MonoBehaviour
             }
             else
             {
-                FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Du hast nicht genügend Geld um ein Exponat herzustellen");
+                Ticker.NewTick.Invoke("Du hast nicht genügend Geld um ein Exponat herzustellen");
             }
         }
     }
@@ -146,7 +146,7 @@ public class Exponate : MonoBehaviour
             {
                 expoText.text = "Exponat hergestellt!";
 
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Ein Exponat wurde dem Inventar hinzugefügt.");
+				Ticker.NewTick.Invoke("Ein Exponat wurde dem Inventar hinzugefügt.");
 
                 isExponatDone = true;
                 exponatInProgress = false;
@@ -275,7 +275,7 @@ public class Exponate : MonoBehaviour
             exponatInProgress = false;
             isExponatDone = false;
             exponatCreateTimer = -5000;
-            FeedbackTicker.GetComponent<FeedbackScript>().NewTick("Exponat-Herstellung abgebrochen.");
+            Ticker.NewTick.Invoke("Exponat-Herstellung abgebrochen.");
             expoText.text = "Exponat-Herstellung\n" + expoPrice + " RM";
         }
     }

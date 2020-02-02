@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+public class NewTickEvent : UnityEvent<string>
+{
+}
 
 public class Ticker : MonoBehaviour
 {
@@ -25,6 +30,21 @@ public class Ticker : MonoBehaviour
     /// </summary>
     [SerializeField] bool _IsScrolling;
 
+    /// <summary>
+    /// Global Event to let them create New Ticks from everywhere without annoying references
+    /// </summary>
+    public static NewTickEvent NewTick;
+
+    private void Awake()
+    {
+        if (NewTick == null)
+        {
+            NewTick = new NewTickEvent();
+        }
+
+        NewTick.AddListener((x) => { AddText(x); });
+    }
+
     void Update()
     {
         if (_IsScrolling)
@@ -38,7 +58,7 @@ public class Ticker : MonoBehaviour
     /// <summary>
     /// Adds a new Message to the Ticker box. 
     /// </summary>
-    /// <param name="message"> is the string that will be displayed with the current date</param>
+    /// <param name="message"> message is the string that will be displayed with the current date</param>
     public void AddText(string message)
     {
         TextBox.text = TextBox.text + "\n" + "<color=#ffdd00ff>[" + DatumBox.text + "]</color> \n" + message;

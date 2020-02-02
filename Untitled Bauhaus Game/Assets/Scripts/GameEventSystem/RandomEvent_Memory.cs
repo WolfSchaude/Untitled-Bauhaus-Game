@@ -110,7 +110,7 @@ public class RandomEvent_Memory : MonoBehaviour
 		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option1_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option1_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option1_EffectTicker);
+		Ticker.NewTick.Invoke(Memory.Option1_EffectTicker);
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);
@@ -121,7 +121,7 @@ public class RandomEvent_Memory : MonoBehaviour
 		Playervariables.GetComponent<Politikmeter>().ManipulatePolitics(Memory.Option2_Politik);
 		Playervariables.GetComponent<Money>().Geld(Memory.Option2_Geld);
 
-		FeedbackTicker.GetComponent<FeedbackScript>().NewTick(Memory.Option2_EffectTicker);
+		Ticker.NewTick.Invoke(Memory.Option2_EffectTicker);
 
 		IsFinished = true;
 		this.gameObject.SetActive(false);

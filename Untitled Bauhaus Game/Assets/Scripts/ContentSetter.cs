@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ContentSetter : MonoBehaviour
 {
     #region Script Referencen um die Daten zu bekommen
-
+    [Header("Referenzen")]
     /// <summary>
     /// Reference to: Money Script on PlayerVariables to get the Data to Display
     /// </summary>
@@ -27,7 +27,6 @@ public class ContentSetter : MonoBehaviour
     /// Reference to: Exponate Script on ExponateSlider to get the Data to Display
     /// </summary>
     [SerializeField] Exponate Script_Exponate;
-    [SerializeField] Exponat_Memory Script_ExponatMemory;
 
 	#endregion
 
@@ -56,6 +55,7 @@ public class ContentSetter : MonoBehaviour
 
     #endregion
     #region Studenten
+    [Header("Studenten")]
     //------------------------------------( Studenten )------------------------------------//
     /// <summary>
     /// Reference to: Text-Object to change
@@ -71,6 +71,7 @@ public class ContentSetter : MonoBehaviour
     [SerializeField] Text StudentenTendenz;
 	#endregion
 	#region Ansehen
+    [Header("Ansehen")]
 	//------------------------------------( Ansehen   )------------------------------------//
 	/// <summary>
 	/// Reference to: Text-Object to change
@@ -83,6 +84,7 @@ public class ContentSetter : MonoBehaviour
     public int Buffer;
 	#endregion
 	#region Gebäude
+    [Header("Gebäude")]
 	//------------------------------------( Gebaeude  )------------------------------------//
 	/// <summary>
 	/// Refernece to: Parent used to Spawn the buttons on the right positions
@@ -108,6 +110,7 @@ public class ContentSetter : MonoBehaviour
 
     #endregion
     #region Lehrer
+    [Header("Lehrer")]
     //------------------------------------( Leher     )------------------------------------//
     /// <summary>
     /// Reference tp: Parent used to Spawn the Formmeister Lists for the already assigned Formmeisters
@@ -120,6 +123,7 @@ public class ContentSetter : MonoBehaviour
 
     #endregion
     #region Exponate
+    [Header("Exponate")]
     //------------------------------------( Exponate  )------------------------------------//
     /// <summary>
     /// Reference to: Text-Object to change

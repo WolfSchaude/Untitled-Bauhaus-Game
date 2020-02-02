@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Teacher_Memory : MonoBehaviour
 {
     public GameObject Parent;
-    public GameObject Ticker;
     public GameObject Playervariables;
     public GameObject EventSystem;
 
@@ -26,11 +25,10 @@ public class Teacher_Memory : MonoBehaviour
 
     private TeacherScript TeacherScriptObject;
 
-    public void SetMemory(Teacher teacher, GameObject parent, GameObject ticker, GameObject PlayerStats, TeacherScript script)
+    public void SetMemory(Teacher teacher, GameObject parent, GameObject PlayerStats, TeacherScript script)
     {
         Memory = teacher;
         Parent = parent;
-        Ticker = ticker;
         Playervariables = PlayerStats;
         TeacherScriptObject = script;
 
@@ -69,7 +67,7 @@ public class Teacher_Memory : MonoBehaviour
 
 		Playervariables.GetComponent<Money>().Bezahlen(Memory.Einstellungskosten);
 
-        Ticker.GetComponent<FeedbackScript>().NewTick("Du hast den Formmeister " + Name + " eingestellt.");
+        Ticker.NewTick.Invoke("Du hast den Formmeister " + Name + " eingestellt.");
 
         gameObject.SetActive(false);
     }

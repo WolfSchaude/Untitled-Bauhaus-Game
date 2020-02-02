@@ -34,7 +34,7 @@ public class QuickAccesskeys : MonoBehaviour
     /// <summary>
     /// Reference to: AnimationsStarter-Script on Feedback-Scrollview (atm), necessary for collapsing the Tickerpanel
     /// </summary>
-    [SerializeField] FeedbackScript FeedbackTicker;
+    [SerializeField] AnimationStarter FeedbackTicker;
     /// <summary>
     /// Reference to: AnimationsStarter-Script on ExponateInventar, necessary for collapsing the Inventory
     /// </summary>
@@ -50,7 +50,7 @@ public class QuickAccesskeys : MonoBehaviour
     /// <summary>
     /// Reference to: Button of Sidebar-Statistiken, needed to open / close the Statistics panel (Subject to changes as Statistics will need to improve
     /// </summary>
-    [SerializeField] Button Statistics;
+    [SerializeField] AnimationStarter Statistics;
     /// <summary>
     /// Reference to: Button of Sidebar-Gebaeude, needed to open / close Baumenue
     /// </summary>
@@ -101,7 +101,7 @@ public class QuickAccesskeys : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken //Hacky ATM
         {
-            Statistics.onClick.Invoke();
+            Statistics.ToggleOpened();
         }
         if (Input.GetKeyDown(KeyCode.I)) //Inventar oeffnen
         {
@@ -113,7 +113,7 @@ public class QuickAccesskeys : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T)) //Ticker oeffnen / schliessen
         {
-            FeedbackTicker.ToggleFeedback();
+            FeedbackTicker.ToggleOpened();
         }
         if (Input.GetKeyDown(KeyCode.U)) //Eventmenue oeffnen
         {

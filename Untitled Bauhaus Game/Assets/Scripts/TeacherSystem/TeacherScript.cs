@@ -29,7 +29,6 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	public GameObject HereIsNothingPrefab;
 	public GameObject parent;
 	public GameObject hiredParent;
-	public GameObject Ticker;
 	public GameObject EventSystem;
 	public GameObject Playervariables;
 
@@ -108,7 +107,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 		if (hired)
 		{
-			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Ticker, Playervariables, gameObject.GetComponent<TeacherScript>());
+			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + y.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + y.Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + y.Name;
 			x.GetComponentsInChildren<Text>()[2].text = "";
@@ -121,7 +120,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		}
 		else
 		{
-			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Ticker, Playervariables, gameObject.GetComponent<TeacherScript>());
+			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + y.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + y.Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + y.Name;
 			x.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + y.Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + y.FortlaufendeKosten;
@@ -136,7 +135,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 		if (teacher.Hired)
 		{
-			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Ticker, Playervariables, gameObject.GetComponent<TeacherScript>());
+			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
 			x.GetComponentsInChildren<Text>()[2].text = "";
@@ -149,7 +148,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		}
 		else
 		{
-			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Ticker, Playervariables, gameObject.GetComponent<TeacherScript>());
+			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
 			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
 			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
 			x.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + teacher.Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + teacher.FortlaufendeKosten;
@@ -168,7 +167,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		var x = Instantiate(prefab, hiredParent.transform);
 
 
-		x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Ticker, Playervariables, gameObject.GetComponent<TeacherScript>());
+		x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
 		x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
 		x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
 		x.GetComponentsInChildren<Text>()[2].text = "";
@@ -195,7 +194,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		if (GesammeleteGehälter > 0)
 		{
 			Playervariables.GetComponent<Money>().Bezahlen(GesammeleteGehälter);
-			GameObject.Find("Button - Feedback Ticker").GetComponent<FeedbackScript>().NewTick("Gehälter in Höhe von " + GesammeleteGehälter + " RM bezahlt.");
+			Ticker.NewTick.Invoke("Gehälter in Höhe von " + GesammeleteGehälter + " RM bezahlt.");
 		}
 	}
 

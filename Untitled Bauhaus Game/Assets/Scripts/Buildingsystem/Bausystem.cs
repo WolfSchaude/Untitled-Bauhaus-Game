@@ -606,7 +606,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
         if (PotentialFreeStructures.Count == 0)
         {
-            FeedbackFromBuildings.NewTick("Maximale Anzahl an " + (MainType)MainTypeToBuild + " gebaut");
+            Ticker.NewTick.Invoke("Maximale Anzahl an " + (MainType)MainTypeToBuild + " gebaut");
             return;
         }
 
@@ -626,7 +626,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
         if (StyleSupportsNextStructure == false) //New
         {
-            FeedbackFromBuildings.NewTick("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
+            Ticker.NewTick.Invoke("Dieser Baustil unterstützt keine weiteren Gebäude vom Typ " + (Type)TypeToBuild);
             return;
         } //New
 
@@ -646,13 +646,13 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
         if (FreePipelineFound == false)
         {
-            FeedbackFromBuildings.NewTick("Du kannst gerade kein weiteres Gebäude in auftrag geben. Warte bis ein anderer Auftrag abgeschlossen wurde");
+            Ticker.NewTick.Invoke("Du kannst gerade kein weiteres Gebäude in auftrag geben. Warte bis ein anderer Auftrag abgeschlossen wurde");
             return;
         }
 
         if (UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, LowestMainTypeID[MainTypeToBuild]] > ManipulateMoney.money)
         {
-            FeedbackFromBuildings.NewTick("Nicht genug Geld um " + (Type)TypeToBuild + " zu bauen");
+            Ticker.NewTick.Invoke("Nicht genug Geld um " + (Type)TypeToBuild + " zu bauen");
             return;
         }
 
@@ -660,7 +660,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         {
             Type temp = (Type)TypeToBuild;
 
-            FeedbackFromBuildings.NewTick(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID] + " RM");
+            Ticker.NewTick.Invoke(temp.ToString() + " in Auftrag gegeben. Kosten: " + UsableStyles[StyleToBuild].StructureCost[MainTypeToBuild, FreeID] + " RM");
            
             Debug.Log("Building System: Free pipeline found, ID: " + FreePipelineNumber);
 
@@ -727,7 +727,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
                     Pipelines[PipelineNumber].SetActive(false);
 
-                    FeedbackFromBuildings.NewTick(Structures[i].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
+                    Ticker.NewTick.Invoke(Structures[i].GetComponent<Struktur>().OwnTypeEnum.ToString() + " fertiggestellt. Die Studentenkapazität hat sich um 100 erhöht");
 
                     return;
                 }
@@ -738,7 +738,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
 
     public void StopBuilding(int PipelineNumber)
     {
-        FeedbackFromBuildings.NewTick("Bau von " + (Type)BuildingPipeline[PipelineNumber].TypeToBuild + " abgebrochen");
+        Ticker.NewTick.Invoke("Bau von " + (Type)BuildingPipeline[PipelineNumber].TypeToBuild + " abgebrochen");
         BuildingPipeline[PipelineNumber].SetZero();
         Pipelines[PipelineNumber].SetActive(false);
     }

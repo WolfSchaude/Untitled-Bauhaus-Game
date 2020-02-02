@@ -15,7 +15,7 @@ public class Save
 
 	public float CurrentMoney;
 	public int CurrentAnsehen;
-	public int CurrentPolitics;
+	public float CurrentPolitics;
 	public int StudentenAnzahl;
 	public int MaxStudenten;
 

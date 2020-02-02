@@ -36,7 +36,7 @@ public class Money : MonoBehaviour, ISaveableInterface
 
     void Update()
     {
-		moneyText.text = "Geld: " + money.ToString("N") + " RM";
+		moneyText.text = money.ToString("N") + " RM";
 		infiniteMoney();
         //checkMonth();
     }
@@ -46,7 +46,7 @@ public class Money : MonoBehaviour, ISaveableInterface
 		oldMoney = money;
 		money += (gameObject.GetComponent<Studenten>().StudentenAnzahl * 10) * ((float)gameObject.GetComponent<Politikmeter>().Politiklevel / 100);
 		moneyIPerMonth += money - oldMoney;
-		Feedback.NewTick("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
+		Ticker.NewTick.Invoke("Monatliche Einnahmen: + " + (money - oldMoney) + " RM.");
 	}
 
 	public float MonthlyMoneyI()

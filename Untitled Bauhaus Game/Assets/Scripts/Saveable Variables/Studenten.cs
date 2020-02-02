@@ -28,7 +28,7 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 			StudentenAnzahl = 0;
 		}
 
-		studDisplay.text = "Studenten: " + StudentenAnzahl.ToString("0") + " / " + studKapazitaet.ToString(); //Display StudentenAnzahl in UI
+		studDisplay.text = StudentenAnzahl.ToString("0") + " / " + studKapazitaet.ToString(); //Display StudentenAnzahl in UI
 	}
 
 	public void addStudenten()
@@ -40,16 +40,16 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 			{
 				if (studKapazitaet - StudentenAnzahl == 1)
 				{
-					FeedbackTicker.GetComponent<FeedbackScript>().NewTick(studKapazitaet - StudentenAnzahl + " Student ist der Hochschule beigetreten.");
+					Ticker.NewTick.Invoke(studKapazitaet - StudentenAnzahl + " Student ist der Hochschule beigetreten.");
 				}
 				else
 				{
-					FeedbackTicker.GetComponent<FeedbackScript>().NewTick(studKapazitaet - StudentenAnzahl + " Studenten sind der Hochschule beigetreten.");
+					Ticker.NewTick.Invoke(studKapazitaet - StudentenAnzahl + " Studenten sind der Hochschule beigetreten.");
 				}
 			}
 			else
 			{
-				FeedbackTicker.GetComponent<FeedbackScript>().NewTick(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
+				Ticker.NewTick.Invoke(monthlyStudenten + " Studenten sind der Hochschule beigetreten.");
 			}
 
 			StudentenAnzahl += monthlyStudenten;
