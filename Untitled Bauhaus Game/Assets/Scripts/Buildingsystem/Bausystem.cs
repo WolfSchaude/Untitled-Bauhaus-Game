@@ -935,6 +935,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
     public List<int> PlacedMainTypeStructures(int MainTypeToSearch)
     {
         List<int> TempUniqueID = new List<int>();
+        int Temp = 0;
 
         for (int i = 0; i < NumberOfStructures; i++)
         {
@@ -948,7 +949,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
         }
         return TempUniqueID;
     }
-    
+
     public void DestroyStructure(int MainType, int TypeID, int Style, int StyleID)
     {
         for (int i = 0; i < NumberOfStructures; i++)
