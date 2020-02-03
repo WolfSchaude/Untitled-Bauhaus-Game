@@ -8,6 +8,8 @@ public class RandomSpawnPrefabs : MonoBehaviour
 	public GameObject[] prefab;
 	public GameObject parent;
 
+	public int prefabCount;
+
 	void Start()
     {
 		Spawn();
@@ -19,7 +21,7 @@ public class RandomSpawnPrefabs : MonoBehaviour
     }
 	public void Spawn()
 	{
-		for (int i = 0; i < 10000; i++)
+		for (int i = 0; i < prefabCount; i++)
 		{
 			int spawnPointX = Random.Range(-300, 300);
 			int spawnPointZ = Random.Range(-150, 360);
