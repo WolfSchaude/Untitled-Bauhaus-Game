@@ -39,7 +39,6 @@ public class Event_Memory : MonoBehaviour
 	public UnityEvent TimeIsUp;
 
 	//Referenzen, die fuer die einzelnen Funktionalitaeten gebraucht werden
-	public GameObject FeedbackTicker;
 	public GameObject Playervariables;
 
 	public Text Timer;

@@ -18,7 +18,6 @@ public class RandomEvent_Memory : MonoBehaviour
 	[SerializeField] private bool SelectedOption1 = false;
 	[SerializeField] private bool SelectedOption2 = false;
 
-	public GameObject FeedbackTicker;
 	public GameObject Playervariables;
 
 	public Button Option1;

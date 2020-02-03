@@ -19,8 +19,6 @@ public class EventSave
 
 public class EventScript : MonoBehaviour, ISaveableInterface
 {
-	public GameObject FeedbackTicker;
-
 	public GameObject prefab;
 	public GameObject randomprefab;
 	public GameObject parent;
@@ -212,7 +210,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 		var y = EventLoader.ec.Events[i];
 
 		x.GetComponent<Event_Memory>().SetMemory(y, Playervariables, SavedHired);
-		x.GetComponent<Event_Memory>().FeedbackTicker = FeedbackTicker;
 
 		x.GetComponentInChildren<Text>().text = y.EventText;
 
@@ -240,8 +237,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
 		x.GetComponent<RandomEvent_Memory>().SetMemory(EventLoader.ec_random.Events[rand], Playervariables);
 
-		x.GetComponent<RandomEvent_Memory>().FeedbackTicker = FeedbackTicker;
-
 		x.GetComponentInChildren<Text>().text = EventLoader.ec_random.Events[rand].EventText;
 
 		x.GetComponentsInChildren<Button>()[0].GetComponentInChildren<Text>().text
@@ -263,7 +258,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 	{
 		var x = Instantiate(_PreFab_InWorldEvent, _Transform_InWorldParent);
 
-		x.GetComponent<InWorldEvent_Memory>().SetValues(ev, AnimStarterInWorld, Playervariables, FeedbackTicker.GetComponent<FeedbackScript>());
+		x.GetComponent<InWorldEvent_Memory>().SetValues(ev, AnimStarterInWorld, Playervariables);
 
 		Vector3 newPos = _Bausystem.Structures[ev.CorrespondingBuildingID].transform.position + new Vector3(UnityEngine.Random.Range(-11, 10), 0, UnityEngine.Random.Range(-11, 10));
 		newPos.y = 20;
@@ -326,7 +321,7 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 			//List<GameObjects> wiederherstellen
 			var x = Instantiate(_PreFab_InWorldEvent, _Transform_InWorldParent);
 
-			x.GetComponent<InWorldEvent_Memory>().SetValues(_Events_Running[i], AnimStarterInWorld, Playervariables, FeedbackTicker.GetComponent<FeedbackScript>());
+			x.GetComponent<InWorldEvent_Memory>().SetValues(_Events_Running[i], AnimStarterInWorld, Playervariables);
 
 			x.GetComponent<InWorldEvent_Memory>().EventLoad(save.CurrentEventState.Run[i]);
 
