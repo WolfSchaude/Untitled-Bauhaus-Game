@@ -53,6 +53,10 @@ public class InWorldEvent_Memory : MonoBehaviour
     public UnityEvent TimeIsUp;
 
     /// <summary>
+    /// Reference to: The Feedbackscript, used to generate Ticks when Event is up
+    /// </summary>
+    [SerializeField] FeedbackScript _FeedbackScript;
+    /// <summary>
     /// Reference to: PlayerVariables, used to make the Events effects possible
     /// </summary>
     [SerializeField] GameObject _Playervariables;
@@ -143,11 +147,12 @@ public class InWorldEvent_Memory : MonoBehaviour
         AnimStarter.OpenMenu();
     }
 
-    public void SetValues(Event ev, AnimationStarter animationStarter, GameObject PlayerStats)
+    public void SetValues(Event ev, AnimationStarter animationStarter, GameObject PlayerStats, FeedbackScript feedbackScript)
     {
         Memory = ev;
         AnimStarter = animationStarter;
         _Playervariables = PlayerStats;
+        _FeedbackScript = feedbackScript;
 
         //Beim NewTimeKeeper an den Tageswechsel dranhängen
         _Playervariables.GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });

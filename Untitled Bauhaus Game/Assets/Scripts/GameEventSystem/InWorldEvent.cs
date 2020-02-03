@@ -16,7 +16,16 @@ public class InWorldEvent : MonoBehaviour
 	/// </summary>
 	public static InWorldClickEvent _InWorldClickEvent;
 
+	/// <summary>
+	/// The EventScript, needed to gain access to the random Event, for now
+	/// </summary>
+	[SerializeField] EventScript _EventScript;
+
 	#region References to the UI Elements, which shall be updated
+	/// <summary>
+	/// The title Text field of the window
+	/// </summary>
+	[SerializeField] Text _EventTitle;
 	/// <summary>
 	/// The description Text field of the window
 	/// </summary>
@@ -24,11 +33,11 @@ public class InWorldEvent : MonoBehaviour
 	/// <summary>
 	/// The Button which selects option 1
 	/// </summary>
-	[SerializeField] Text _EventOption1;
+	[SerializeField] Button _EventOption1;
 	/// <summary>
 	/// The button which selects option 2
 	/// </summary>
-	[SerializeField] Text _EventOption2;
+	[SerializeField] Button _EventOption2;
 
 	#endregion
 	private void Awake()
@@ -42,15 +51,16 @@ public class InWorldEvent : MonoBehaviour
 
 	void SetContent(Event eventValues)
 	{
+		_EventTitle.text = "ID: " + eventValues.ID.ToString();
 		_EventDescription.text = eventValues.EventText;
 
-		_EventOption1.text
+		_EventOption1.GetComponentInChildren<Text>().text
 			= eventValues.EventOption1 + Environment.NewLine
 			+ "Ansehensveränderung: " + eventValues.Option1_Ansehen + Environment.NewLine
 			+ "Politische Tragweite: " + eventValues.Option1_Politik + Environment.NewLine
 			+ "Kosten: " + eventValues.Option1_Geld * -1 + " RM";
 
-		_EventOption2.text
+		_EventOption2.GetComponentInChildren<Text>().text
 			= eventValues.EventOption2 + Environment.NewLine
 			+ "Ansehensveränderung: " + eventValues.Option2_Ansehen + Environment.NewLine
 			+ "Politische Tragweite: " + eventValues.Option2_Politik + Environment.NewLine
