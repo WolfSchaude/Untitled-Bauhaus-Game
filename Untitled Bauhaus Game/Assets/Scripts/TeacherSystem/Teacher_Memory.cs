@@ -5,50 +5,22 @@ using UnityEngine.UI;
 
 public class Teacher_Memory : MonoBehaviour
 {
-    public GameObject Parent;
-    public GameObject Playervariables;
-    public GameObject EventSystem;
+    NewTimeKeeper _TimeKeeper;
 
     public Teacher Memory;
 
-	public int Kosten;
-
     public int Vorlauf = 1;
-
-    public int Datum_Tag = 0;
-    public int Datum_Monat = 0;
-    public int Datum_Jahr = 0;
 
     public int TimerCounter = 0;
 
-    string Name;
-
-    private TeacherScript TeacherScriptObject;
-
-    public void SetMemory(Teacher teacher, GameObject parent, GameObject PlayerStats, TeacherScript script)
+    public void SetMemory(Teacher teacher, NewTimeKeeper time)
     {
         Memory = teacher;
-        Parent = parent;
-        Playervariables = PlayerStats;
-        TeacherScriptObject = script;
+        _TimeKeeper = time;
 
-        Name = Memory.Name;
+        _TimeKeeper.NewDay.AddListener(() => { DecreaseTimerCounter(); });
 
-        Datum_Tag = Memory.SichtbarAb_Tag;
-        Datum_Monat = Memory.SichtbarAb_Monat;
-        Datum_Jahr = Memory.SichtbarAb_Jahr;
-
-        EventSystem = GameObject.Find("EventSystem");
-
-        Playervariables.GetComponent<NewTimeKeeper>().NewDay.AddListener(() => { DecreaseTimerCounter(); });
-
-        var x = Playervariables.GetComponent<NewTimeKeeper>();
-
-        var TagBuffer = x.CurrentDay;
-        var MonatBuffer = x.CurrentMonth;
-        var JahrBuffer = x.CurrentYear;
-
-        TimerCounter = NewTimeKeeper.BerechneTage(TagBuffer, MonatBuffer, JahrBuffer, Datum_Tag, Datum_Monat, Datum_Jahr);
+        TimerCounter = _TimeKeeper.BerechneTageVonJetzt(Memory.SichtbarAb_Tag, Memory.SichtbarAb_Monat, Memory.SichtbarAb_Jahr);
 
         if (TimerCounter > Vorlauf)
         {
@@ -58,21 +30,10 @@ public class Teacher_Memory : MonoBehaviour
 
     public void StelleEin()
     {
-        TeacherScriptObject.DeleteSample();
-
-        Memory.Hired = true;
-
-        TeacherScript._Teachers_Hired.Add(Memory);
-        TeacherScriptObject.Teachers_Hired_Old.Add(TeacherScriptObject.NewTeacher(Memory));
-
-		Playervariables.GetComponent<Money>().Bezahlen(Memory.Einstellungskosten);
-
-        Ticker.NewTick.Invoke("Du hast den Formmeister " + Name + " eingestellt.");
-
-        gameObject.SetActive(false);
+        TeacherScript.TeacherHired.Invoke(Memory);
     }
 
-    public void DecreaseTimerCounter()
+    void DecreaseTimerCounter()
     {
         TimerCounter--;
 
@@ -80,7 +41,7 @@ public class Teacher_Memory : MonoBehaviour
         {
             gameObject.SetActive(true);
 
-            Playervariables.GetComponent<NewTimeKeeper>().NewDay.RemoveListener(() => { DecreaseTimerCounter(); });
+            _TimeKeeper.NewDay.RemoveListener(() => { DecreaseTimerCounter(); });
         }
     }
 }

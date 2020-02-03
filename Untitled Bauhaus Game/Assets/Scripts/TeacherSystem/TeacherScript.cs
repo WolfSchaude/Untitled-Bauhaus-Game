@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class TeacherMovementEvent : UnityEvent<Teacher>
+{
+}
 
 [System.Serializable]
 public class TeacherSave
@@ -25,16 +31,6 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 	public int zugewiesenenCounter = 0;
 
-	public GameObject prefab;
-	public GameObject HereIsNothingPrefab;
-	public GameObject parent;
-	public GameObject hiredParent;
-	public GameObject EventSystem;
-	public GameObject Playervariables;
-
-	//public static List<GameObject> Bewerbungen = new List<GameObject>();
-	//public static List<GameObject> Eingestellte = new List<GameObject>();
-
 	private bool Once = true;
 
 	//------------------------------( Teacher Organisation Overhaul )------------------------------//
@@ -42,7 +38,15 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	/// Reference to: Savegamemanager GO
 	/// </summary>
 	[SerializeField] GameObject SaveGameKeeper;
+	/// <summary>
+	/// The PreFab which gets cloned to instantiate the different Teachers in the various lists
+	/// </summary>
+	[SerializeField] GameObject _Formmeister_PreFab;
 
+	/// <summary>
+	///  Reference to: Transform to generate / subordinate the Cards in the scrollviews available
+	/// </summary>
+	[SerializeField] Transform _Transform_Available;
 	/// <summary>
 	/// Reference to: Transform to generate / subordinate the Cards in the scrollviews Hired BUT NOT assigned
 	/// </summary>
@@ -70,10 +74,6 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	/// </summary>
 	public List<GameObject> Teachers_Available = new List<GameObject>();
 	/// <summary>
-	/// GameObject version of _Teachers_Hired, holds references to the GO in the Scrollview, old system
-	/// </summary>
-	public List<GameObject> Teachers_Hired_Old = new List<GameObject>();
-	/// <summary>
 	/// GameObject version of _Teachers_Hired, holds references to the GO in the Scrollview
 	/// </summary>
 	public List<GameObject> Teachers_Hired = new List<GameObject>();
@@ -82,102 +82,40 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	/// </summary>
 	public List<GameObject> Teachers_Assigned = new List<GameObject>();
 
+	public static TeacherMovementEvent TeacherHired;
 
-	void Start()
+	public static TeacherMovementEvent TeacherAssigned;
+
+	public static TeacherMovementEvent TeacherDeAssigned;
+
+	private void Awake()
 	{
-		for (int i = 0; i < TeacherLoader.tb.Buffer.Count; i++)
-		{
-			Teachers_Available.Add(NewTeacher(TeacherLoader.tb.Buffer[i], parent.transform, false));
+		if (TeacherHired == null)
+			TeacherHired = new TeacherMovementEvent();
+		if (TeacherAssigned == null)
+			TeacherAssigned = new TeacherMovementEvent();
+		if (TeacherDeAssigned == null)
+			TeacherDeAssigned = new TeacherMovementEvent();
 
-		}
-
-		if (Teachers_Hired_Old.Count == 0)
-		{
-			Teachers_Hired_Old.Add(Instantiate(HereIsNothingPrefab, hiredParent.transform));
-		}
+		TeacherHired.AddListener((x) => { HireTeacher(x); });
+		TeacherAssigned.AddListener((x) => { AssignTeacher(x); });
+		TeacherDeAssigned.AddListener((x) => { DeAssignTeacher(x); });
 	}
 
-	void Update()
-	{
-	}
-
-	public GameObject NewTeacher(Teacher y, Transform parent, bool hired)
-	{
-		var x = Instantiate(prefab, parent);
-
-		if (hired)
-		{
-			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
-			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + y.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + y.Interessen;
-			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + y.Name;
-			x.GetComponentsInChildren<Text>()[2].text = "";
-			x.GetComponentsInChildren<Text>()[3].text = "";
-			x.GetComponentsInChildren<Image>()[1].sprite = y.Picture;
-			x.GetComponent<Button>().interactable = false;
-			x.transform.GetChild(5).gameObject.SetActive(true);
-
-			return x;
-		}
-		else
-		{
-			x.GetComponent<Teacher_Memory>().SetMemory(y, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
-			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + y.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + y.Interessen;
-			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + y.Name;
-			x.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + y.Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + y.FortlaufendeKosten;
-			x.GetComponentsInChildren<Image>()[1].sprite = y.Picture;
-
-			return x;
-		}
-	}
 	public GameObject NewTeacher(Teacher teacher, Transform parent)
 	{
-		var x = Instantiate(prefab, parent);
+		var x = Instantiate(_Formmeister_PreFab, parent);
 
-		if (teacher.Hired)
-		{
-			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
-			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
-			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
-			x.GetComponentsInChildren<Text>()[2].text = "";
-			x.GetComponentsInChildren<Text>()[3].text = "";
-			x.GetComponentsInChildren<Image>()[1].sprite = teacher.Picture;
-			x.GetComponent<Button>().interactable = false;
-			x.transform.GetChild(5).gameObject.SetActive(true);
+		x.GetComponent<Teacher_Memory>().SetMemory(teacher, gameObject.GetComponent<NewTimeKeeper>());
 
-			return x;
-		}
-		else
-		{
-			x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
-			x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
-			x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
-			x.GetComponentsInChildren<Text>()[2].text = "Einstellungskosten: " + teacher.Einstellungskosten + Environment.NewLine + "Fortlaufende Kosten: " + teacher.FortlaufendeKosten;
-			x.GetComponentsInChildren<Image>()[1].sprite = teacher.Picture;
-
-			return x;
-		}
-	}
-	/// <summary>
-	/// Generates in hired
-	/// </summary>
-	/// <param name="teacher"></param>
-	/// <returns></returns>
-	public GameObject NewTeacher(Teacher teacher)
-	{
-		var x = Instantiate(prefab, hiredParent.transform);
-
-
-		x.GetComponent<Teacher_Memory>().SetMemory(teacher, hiredParent, Playervariables, gameObject.GetComponent<TeacherScript>());
-		x.GetComponentsInChildren<Text>()[0].text = "Geboren: " + teacher.Geburtsdatum + Environment.NewLine + "Fachgebiete: " + teacher.Interessen;
-		x.GetComponentsInChildren<Text>()[1].text = "Formmeister: " + teacher.Name;
-		x.GetComponentsInChildren<Text>()[2].text = "";
-		x.GetComponentsInChildren<Text>()[3].text = "";
-		x.GetComponentsInChildren<Image>()[1].sprite = teacher.Picture;
-		x.GetComponent<Button>().interactable = false;
-		x.transform.GetChild(5).gameObject.SetActive(true);
+		x.GetComponentsInChildren<Text>()[0].text = teacher.Name;
+		x.GetComponentsInChildren<Text>()[1].text = teacher.Geburtsdatum;
+		x.GetComponentsInChildren<Text>()[2].text = teacher.Interessen;
+		x.GetComponentsInChildren<Text>()[3].text = "Gehalt: " + teacher.FortlaufendeKosten;
 
 		return x;
 	}
+
 	public void LaufendeKosten()
 	{
 		GesammeleteGehälter = 0;
@@ -193,23 +131,11 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 		if (GesammeleteGehälter > 0)
 		{
-			Playervariables.GetComponent<Money>().Bezahlen(GesammeleteGehälter);
+			gameObject.GetComponent<Money>().Bezahlen(GesammeleteGehälter);
 			Ticker.NewTick.Invoke("Gehälter in Höhe von " + GesammeleteGehälter + " RM bezahlt.");
 		}
 	}
-
-	public void DeleteSample()
-	{
-		Debug.Log("Called DeleteSample");
-		if (Once)
-		{
-			Destroy(Teachers_Hired_Old[0]);
-			Teachers_Hired_Old.Clear();
-			Once = false;
-			Debug.Log("Sample Teacher message got destroyed");
-		}
-	}
-
+	#region ISaveableInterface Methods
 	public void Save()
 	{
 		int[] avail = new int[_Teachers_Available.Count];
@@ -268,6 +194,8 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 			GenerateAllTeacherGOs();
 		}
 
+	#endregion
+
 	private void GenerateAllTeacherGOs()
 	{
 		foreach (var go in Teachers_Available)
@@ -278,30 +206,24 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		{
 			Destroy(go);
 		}
-		foreach (var go in Teachers_Hired_Old)
+		foreach (var go in Teachers_Hired)
 		{
 			Destroy(go);
 		}
 
 		Teachers_Available.Clear();
 		Teachers_Assigned.Clear();
-		Teachers_Hired_Old.Clear();
+		Teachers_Hired.Clear();
 
 
 		foreach (var fm in _Teachers_Available)
 		{
-			Teachers_Available.Add(NewTeacher(fm, parent.transform));
+			Teachers_Available.Add(NewTeacher(fm, _Transform_Available));
 		}
 
 		foreach (var fm in _Teachers_Hired)
 		{
-			Teachers_Hired_Old.Add(NewTeacher(fm, hiredParent.transform));
 			Teachers_Hired.Add(NewTeacher(fm, _Transform_Hired));
-		}
-
-		if (_Teachers_Hired.Count == 0)
-		{
-			Teachers_Hired_Old.Add(Instantiate(HereIsNothingPrefab, hiredParent.transform));
 		}
 
 		foreach (var fm in _Teachers_Assigned)
@@ -310,5 +232,38 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		}
 
 		zugewiesenenCounter = _Teachers_Assigned.Count;
+	}
+
+	private void HireTeacher(Teacher teacher)
+	{
+		gameObject.GetComponent<Money>().Bezahlen(teacher.Einstellungskosten);
+
+		teacher.Hired = true;
+
+		_Teachers_Available.Remove(teacher);
+		Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+
+		_Teachers_Hired.Add(teacher);
+		Teachers_Hired.Add(NewTeacher(teacher, _Transform_Hired));
+
+		Ticker.NewTick.Invoke("Du hast den Formmeister " + teacher.Name + " eingestellt.");
+	}
+
+	private void AssignTeacher(Teacher teacher)
+	{
+		_Teachers_Available.Remove(teacher);
+		Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+
+		_Teachers_Assigned.Add(teacher);
+		Teachers_Assigned.Add(NewTeacher(teacher, _Transform_Assigned));
+	}
+
+	private void DeAssignTeacher(Teacher teacher)
+	{
+		_Teachers_Assigned.Remove(teacher);
+		Destroy(Teachers_Assigned.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+
+		_Teachers_Available.Add(teacher);
+		Teachers_Available.Add(NewTeacher(teacher, _Transform_Available));
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+[System.Serializable]
 public class NewTickEvent : UnityEvent<string>
 {
 }
