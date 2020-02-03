@@ -8547,7 +8547,7 @@ MonoBehaviour:
   Playervariables: {fileID: 1009857072}
   BuildDropDown: {fileID: 1735618557}
   AnimStarter: {fileID: 1292603758}
-  buildingNameText: {fileID: 627101522}
+  buildingNameText: {fileID: 2043480396}
   buildingPriceText: {fileID: 58436733}
   buildingTeacherText: {fileID: 675801730}
   buildingStudentText: {fileID: 2027014837}
@@ -9101,7 +9101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.000045776367}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 388, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &397381464
