@@ -530,7 +530,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
                 ActivePipelines--;
             }
         }
-        Bauarbeiter.text = "Bauarbeiter: " + ActivePipelines + "/" + MaxBuildPipelines;
+        Bauarbeiter.text = ActivePipelines + "/" + MaxBuildPipelines;
 
     }
 
@@ -578,6 +578,7 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
     public void SetType(int Type)
     {
         TypeToBuild = Type + 1;
+        ManualUpdate();
     }
 
     public void StartBuilding()
