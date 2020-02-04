@@ -267,18 +267,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7732869811289108171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7334833796117769676}
-        m_MethodName: StelleEin
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4304449519096919603
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +421,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Anheuern
+  m_Text: Freistellen
 --- !u!1 &6228031965190218555
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefb008ed739f5f4fbdff69cca5d82d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playervariables: {fileID: 0}
   Vorlauf: 1
   TimerCounter: 0
 --- !u!1 &8753454410761455223

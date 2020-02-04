@@ -31,8 +31,6 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 	public int zugewiesenenCounter = 0;
 
-	private bool Once = true;
-
 	//------------------------------( Teacher Organisation Overhaul )------------------------------//
 	/// <summary>
 	/// Reference to: Savegamemanager GO
@@ -88,6 +86,12 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 	public static TeacherMovementEvent TeacherDeAssigned;
 
+	const string _Zuweisen = "assign";
+
+	const string _Einstellen = "hire";
+
+	const string _DeZuweisen = "deassign";
+
 	private void Awake()
 	{
 		if (TeacherHired == null)
@@ -102,7 +106,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		TeacherDeAssigned.AddListener((x) => { DeAssignTeacher(x); });
 	}
 
-	public GameObject NewTeacher(Teacher teacher, Transform parent)
+	public GameObject NewTeacher(Teacher teacher, Transform parent, string buttonFunction)
 	{
 		var x = Instantiate(_Formmeister_PreFab, parent);
 
@@ -112,6 +116,19 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		x.GetComponentsInChildren<Text>()[1].text = teacher.Geburtsdatum;
 		x.GetComponentsInChildren<Text>()[2].text = teacher.Interessen;
 		x.GetComponentsInChildren<Text>()[3].text = "Gehalt: " + teacher.FortlaufendeKosten;
+
+		if (buttonFunction == _Einstellen)
+		{
+			x.GetComponent<Teacher_Memory>().SetButtonHire();
+		}
+		else if (buttonFunction == _Zuweisen)
+		{
+			x.GetComponent<Teacher_Memory>().SetButtonAssign();
+		}
+		else if (buttonFunction == _DeZuweisen)
+		{
+			x.GetComponent<Teacher_Memory>().SetButtonDeAssign();
+		}
 
 		return x;
 	}
@@ -218,17 +235,17 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 
 		foreach (var fm in _Teachers_Available)
 		{
-			Teachers_Available.Add(NewTeacher(fm, _Transform_Available));
+			Teachers_Available.Add(NewTeacher(fm, _Transform_Available, _Einstellen));
 		}
 
 		foreach (var fm in _Teachers_Hired)
 		{
-			Teachers_Hired.Add(NewTeacher(fm, _Transform_Hired));
+			Teachers_Hired.Add(NewTeacher(fm, _Transform_Hired, _Zuweisen));
 		}
 
 		foreach (var fm in _Teachers_Assigned)
 		{
-			Teachers_Assigned.Add(NewTeacher(fm, _Transform_Assigned));
+			Teachers_Assigned.Add(NewTeacher(fm, _Transform_Assigned, _DeZuweisen));
 		}
 
 		zugewiesenenCounter = _Teachers_Assigned.Count;
@@ -244,18 +261,27 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
 
 		_Teachers_Hired.Add(teacher);
-		Teachers_Hired.Add(NewTeacher(teacher, _Transform_Hired));
+		Teachers_Hired.Add(NewTeacher(teacher, _Transform_Hired, _Zuweisen));
 
 		Ticker.NewTick.Invoke("Du hast den Formmeister " + teacher.Name + " eingestellt.");
 	}
 
 	private void AssignTeacher(Teacher teacher)
 	{
-		_Teachers_Available.Remove(teacher);
-		Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().GetGesamtAnzahl() > zugewiesenenCounter)
+		{
+			_Teachers_Available.Remove(teacher);
+			Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
 
-		_Teachers_Assigned.Add(teacher);
-		Teachers_Assigned.Add(NewTeacher(teacher, _Transform_Assigned));
+			_Teachers_Assigned.Add(teacher);
+			Teachers_Assigned.Add(NewTeacher(teacher, _Transform_Assigned, _DeZuweisen));
+
+			zugewiesenenCounter++;
+		}
+		else
+		{
+			Ticker.NewTick.Invoke("Du hast momentan keine Posten zu besetzen.");
+		}
 	}
 
 	private void DeAssignTeacher(Teacher teacher)
@@ -264,6 +290,8 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		Destroy(Teachers_Assigned.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
 
 		_Teachers_Available.Add(teacher);
-		Teachers_Available.Add(NewTeacher(teacher, _Transform_Available));
+		Teachers_Available.Add(NewTeacher(teacher, _Transform_Available, _Zuweisen));
+
+		zugewiesenenCounter--;
 	}
 }

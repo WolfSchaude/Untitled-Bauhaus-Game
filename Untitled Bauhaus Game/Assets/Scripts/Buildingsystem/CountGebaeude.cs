@@ -12,15 +12,8 @@ public class CountGebaeude : MonoBehaviour
 	public int AnzahlLehr;
 	public int AnzahlWohn;
 
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public int GetGesamtAnzahl()
+	{
+		return AnzahlArchitektur + AnzahlAustellung + AnzahlLehr + AnzahlMalerei + AnzahlMetall + AnzahlTisch;
+	}
 }

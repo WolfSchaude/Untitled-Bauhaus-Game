@@ -28,11 +28,6 @@ public class Teacher_Memory : MonoBehaviour
         }
     }
 
-    public void StelleEin()
-    {
-        TeacherScript.TeacherHired.Invoke(Memory);
-    }
-
     void DecreaseTimerCounter()
     {
         TimerCounter--;
@@ -43,5 +38,23 @@ public class Teacher_Memory : MonoBehaviour
 
             _TimeKeeper.NewDay.RemoveListener(() => { DecreaseTimerCounter(); });
         }
+    }
+
+    public void SetButtonHire()
+    {
+        gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { TeacherScript.TeacherHired.Invoke(Memory); });
+        gameObject.GetComponentsInChildren<Text>()[4].text = "Anheuern";
+    }
+
+    public void SetButtonAssign()
+    {
+        gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { TeacherScript.TeacherAssigned.Invoke(Memory); });
+        gameObject.GetComponentsInChildren<Text>()[4].text = "Zuweisen";
+    }
+
+    public void SetButtonDeAssign()
+    {
+        gameObject.GetComponentInChildren<Button>().onClick.AddListener(() => { TeacherScript.TeacherDeAssigned.Invoke(Memory); });
+        gameObject.GetComponentsInChildren<Text>()[4].text = "Freistellen";
     }
 }
