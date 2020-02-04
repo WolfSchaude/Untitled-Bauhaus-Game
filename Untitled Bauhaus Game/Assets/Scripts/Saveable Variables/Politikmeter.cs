@@ -14,23 +14,6 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 	public GameObject SaveGameKeeper;
 
-	void Start()
-	{
-		//Start replaced by LoadStart triggered by SaveGameManager
-	}
-
-    void Update()
-    {
-		if (Input.GetKeyDown(KeyCode.DownArrow))
-		{
-			ManipulatePolitics(10);
-		}
-		if (Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			ManipulatePolitics(-10);
-		}
-    }
-
 	public void ManipulatePolitics(int manipulator)
 	{
 		Politiklevel += manipulator;

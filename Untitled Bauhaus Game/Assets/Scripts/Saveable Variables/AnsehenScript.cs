@@ -7,8 +7,6 @@ public class AnsehenScript : MonoBehaviour, ISaveableInterface
 {
     public int Ansehen;
 
-    public Text AnsehenText;
-
     public GameObject SaveGameKeeper;
 
     void Start()
@@ -23,8 +21,6 @@ public class AnsehenScript : MonoBehaviour, ISaveableInterface
 		{
 			Ansehen = 1;
 		}
-
-		AnsehenText.text = "Ansehen: " + Ansehen;
     }
 
     public void ManipulateAnsehen(int wert)
