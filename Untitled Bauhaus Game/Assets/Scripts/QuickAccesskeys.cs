@@ -74,6 +74,7 @@ public class QuickAccesskeys : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B)) //Baumenue oeffnen
         {
+            CloseAllWindows.Invoke();
             Baumenue.onClick.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.E)) //Exponat herstellen
@@ -85,6 +86,7 @@ public class QuickAccesskeys : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken //Hacky ATM
         {
+            CloseAllWindows.Invoke();
             Statistics.ToggleOpened();
         }
         if (Input.GetKeyDown(KeyCode.T)) //Ticker oeffnen / schliessen

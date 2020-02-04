@@ -51,20 +51,30 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
     /// The Sprite that is applied to the buttons when selected
     /// </summary>
     [SerializeField] Sprite Selected;
+    */
+
+    /// <summary>
+    /// Color to Highlight the Buttons
+    /// </summary>
+    [SerializeField] Color HighlightColor;
+    /// <summary>
+    /// Normal Color of the Buttons
+    /// </summary>
+    [SerializeField] Color NormalColor;
 
     /// <summary>
     /// The Image that changes, when the corresponging Button (Pause) is pressed
     /// </summary>
-    [SerializeField] Image ButtonPause;
+    [SerializeField] Button ButtonPause;
     /// <summary>
     /// The Image that changes, when the corresponging Button (Normal) is pressed
     /// </summary>
-    [SerializeField] Image ButtonNormal;
+    [SerializeField] Button ButtonNormal;
     /// <summary>
     /// The Image that changes, when the corresponging Button (FastForward) is pressed
     /// </summary>
-    [SerializeField] Image ButtonFastForward;
-    */
+    [SerializeField] Button ButtonFastForward;
+    
 
     /// <summary>
     /// Enum for managing the different TimeModes
@@ -227,9 +237,14 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
 
         Mode = TimeMode.Pause;
 
-        //ButtonPause.sprite = Selected;
-        //ButtonNormal.sprite = Normal;
-        //ButtonFastForward.sprite = Normal;
+        var x = ButtonPause.colors;
+        x.normalColor = HighlightColor;
+        ButtonPause.colors = x;
+
+        x.normalColor = NormalColor;
+
+        ButtonNormal.colors = x;
+        ButtonFastForward.colors = x;
     }
 
     /// <summary>
@@ -242,9 +257,14 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         Mode = TimeMode.Normal;
         ModeBuffer = TimeMode.Normal;
 
-        //ButtonPause.sprite = Normal;
-        //ButtonNormal.sprite = Selected;
-        //ButtonFastForward.sprite = Normal;
+        var x = ButtonNormal.colors;
+        x.normalColor = HighlightColor;
+        ButtonNormal.colors = x;
+
+        x.normalColor = NormalColor;
+
+        ButtonPause.colors = x;
+        ButtonFastForward.colors = x;
     }
 
     /// <summary>
@@ -257,9 +277,14 @@ public class NewTimeKeeper : MonoBehaviour, ISaveableInterface
         Mode = TimeMode.FastForward;
         ModeBuffer = TimeMode.FastForward;
 
-        //ButtonPause.sprite = Normal;
-        //ButtonNormal.sprite = Normal;
-        //ButtonFastForward.sprite = Selected;
+        var x = ButtonFastForward.colors;
+        x.normalColor = HighlightColor;
+        ButtonFastForward.colors = x;
+
+        x.normalColor = NormalColor;
+
+        ButtonNormal.colors = x;
+        ButtonPause.colors = x;
     }
 
     /// <summary>

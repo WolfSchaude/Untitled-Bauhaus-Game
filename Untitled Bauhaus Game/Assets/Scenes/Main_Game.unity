@@ -9342,17 +9342,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1733028023}
         m_MethodName: OpenMenu
         m_Mode: 1
@@ -9502,17 +9491,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: UpdateContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11212,17 +11190,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: UpdateContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22437,17 +22404,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1733028023}
         m_MethodName: OpenMenu
         m_Mode: 1
@@ -24897,6 +24853,11 @@ MonoBehaviour:
   Display: {fileID: 1746767849}
   WeatherController: {fileID: 353347307}
   Mode: 0
+  HighlightColor: {r: 0.8901961, g: 0, b: 0.05882353, a: 1}
+  NormalColor: {r: 1, g: 1, b: 1, a: 1}
+  ButtonPause: {fileID: 1289256336}
+  ButtonNormal: {fileID: 1216793984}
+  ButtonFastForward: {fileID: 793018905}
 --- !u!114 &1009857075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26113,17 +26074,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: UpdateContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31310,17 +31260,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: UpdateContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44680,17 +44619,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 381768623}
         m_MethodName: UpdateContent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 213531617}
-        m_MethodName: InvokeCloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

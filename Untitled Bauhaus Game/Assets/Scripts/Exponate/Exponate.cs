@@ -209,9 +209,6 @@ public class Exponate : MonoBehaviour
         }
         int herstellerText = Random.Range(0, _TeacherScript._Teachers_Assigned.Count);
 
-        print(herstellerText);
-        print(_TeacherScript._Teachers_Assigned.Count);
-
         x.GetComponentsInChildren<Text>()[1].text = "Hergestellt von:\n - " + _TeacherScript._Teachers_Assigned[herstellerText].Name;
 
         int stilText = _TeacherScript._Teachers_Assigned[herstellerText].Politik;

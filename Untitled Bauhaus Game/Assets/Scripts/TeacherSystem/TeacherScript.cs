@@ -299,8 +299,8 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		Teachers_Assigned.Remove(buffer);
 		Destroy(buffer);
 
-		_Teachers_Available.Add(teacher);
-		Teachers_Available.Add(NewTeacher(teacher, _Transform_Available, _Zuweisen));
+		_Teachers_Hired.Add(teacher);
+		Teachers_Hired.Add(NewTeacher(teacher, _Transform_Hired, _Zuweisen));
 
 		zugewiesenenCounter--;
 	}
