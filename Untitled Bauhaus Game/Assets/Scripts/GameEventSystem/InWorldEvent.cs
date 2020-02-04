@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class InWorldClickEvent : UnityEvent<Event>
+public class InWorldClickEvent : UnityEvent<InWorldEvent_Memory>
 {
 }
 
@@ -15,23 +15,27 @@ public class InWorldEvent : MonoBehaviour
 	/// <summary>
 	/// Public static Event called be the clickable InWorldEvents to open and update the bigger event overview
 	/// </summary>
-	public static InWorldClickEvent _InWorldClickEvent;
+	[SerializeField] public static InWorldClickEvent _InWorldClickEvent;
 
 	#region References to the UI Elements, which shall be updated
 	/// <summary>
 	/// The description Text field of the window
 	/// </summary>
-	[SerializeField] Text _EventDescription;
+	[SerializeField] Text eventDescription;
 	/// <summary>
 	/// The Button which selects option 1
 	/// </summary>
-	[SerializeField] Text _EventOption1;
+	[SerializeField] Text eventOption1;
 	/// <summary>
 	/// The button which selects option 2
 	/// </summary>
-	[SerializeField] Text _EventOption2;
-
+	[SerializeField] Text eventOption2;
+	/// <summary>
+	/// The InWorldEvent_Memory Component of _lastCalledEventObject
+	/// </summary>
+	InWorldEvent_Memory _inWorldEvent_Memory;
 	#endregion
+
 	private void Awake()
 	{
 		if (_InWorldClickEvent == null)
@@ -42,22 +46,39 @@ public class InWorldEvent : MonoBehaviour
 		_InWorldClickEvent.AddListener(SetContent);
 	}
 
-	void SetContent(Event eventValues)
+	void SetContent(InWorldEvent_Memory eventValues)
 	{
-		print(eventValues + " " + eventValues.EventText);
+		_inWorldEvent_Memory = eventValues;
 
-		_EventDescription.text = eventValues.EventText;
+		eventDescription.text = _inWorldEvent_Memory.Memory.EventText;
 
-		_EventOption1.text
-			= eventValues.EventOption1 + Environment.NewLine
-			+ "Ansehensveränderung: " + eventValues.Option1_Ansehen + Environment.NewLine
-			+ "Politische Tragweite: " + eventValues.Option1_Politik + Environment.NewLine
-			+ "Kosten: " + eventValues.Option1_Geld * -1 + " RM";
+		if (_inWorldEvent_Memory.Memory.SpecialEvents.Contains("Exponat:"))
+		{
+			eventOption1.text = "";
+			eventOption2.text = "";
+		}
+		else
+		{
+			eventOption1.text
+				= _inWorldEvent_Memory.Memory.EventOption1 + Environment.NewLine
+				+ "Ansehensveränderung: " + _inWorldEvent_Memory.Memory.Option1_Ansehen + Environment.NewLine
+				+ "Politische Tragweite: " + _inWorldEvent_Memory.Memory.Option1_Politik + Environment.NewLine
+				+ "Kosten: " + _inWorldEvent_Memory.Memory.Option1_Geld * -1 + " RM";
 
-		_EventOption2.text
-			= eventValues.EventOption2 + Environment.NewLine
-			+ "Ansehensveränderung: " + eventValues.Option2_Ansehen + Environment.NewLine
-			+ "Politische Tragweite: " + eventValues.Option2_Politik + Environment.NewLine
-			+ "Kosten: " + eventValues.Option2_Geld * -1 + " RM";
+			eventOption2.text
+				= _inWorldEvent_Memory.Memory.EventOption2 + Environment.NewLine
+				+ "Ansehensveränderung: " + _inWorldEvent_Memory.Memory.Option2_Ansehen + Environment.NewLine
+				+ "Politische Tragweite: " + _inWorldEvent_Memory.Memory.Option2_Politik + Environment.NewLine
+				+ "Kosten: " + _inWorldEvent_Memory.Memory.Option2_Geld * -1 + " RM";
+		}
 	}
+
+	public void SetOption1()
+	{
+		_inWorldEvent_Memory.OptionSet = InWorldEvent_Memory.Selection.Option1;
+	}
+	public void SetOption2()
+	{
+		_inWorldEvent_Memory.OptionSet = InWorldEvent_Memory.Selection.Option2;
+	} 
 }

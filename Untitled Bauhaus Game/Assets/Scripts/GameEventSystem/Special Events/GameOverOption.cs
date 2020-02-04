@@ -7,12 +7,7 @@ public class GameOverOption : MonoBehaviour
     public int WhichOptionLoses;
     void Start()
     {
-        gameObject.GetComponent<Event_Memory>().TimeIsUp.AddListener(() => { GameOver(); });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        gameObject.GetComponent<InWorldEvent_Memory>().TimeIsUp.AddListener(() => { GameOver(); });
     }
 
     void GameOver()

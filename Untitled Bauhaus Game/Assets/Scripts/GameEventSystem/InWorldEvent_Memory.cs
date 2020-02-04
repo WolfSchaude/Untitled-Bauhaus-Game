@@ -45,7 +45,7 @@ public class InWorldEvent_Memory : MonoBehaviour
     /// <summary>
     /// Instance of Selection, Saves Selection Status of Event Options
     /// </summary>
-    public Selection OptionSet { get; private set; } = Selection.Nothing;
+    public Selection OptionSet { get; set; } = Selection.Nothing;
 
     /// <Summary>
     /// Dieses Event wird genutzt um verschiedenen Spezialevents das ablaufen der Zeit mitzuteilen
@@ -138,7 +138,7 @@ public class InWorldEvent_Memory : MonoBehaviour
 
 	private void OnMouseDown()
     {
-        InWorldEvent._InWorldClickEvent.Invoke(Memory);
+        InWorldEvent._InWorldClickEvent.Invoke(this);
 
         AnimStarter.OpenMenu();
     }

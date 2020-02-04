@@ -7059,9 +7059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ce6562ddc378b4c9a7aa1e892e8b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EventDescription: {fileID: 607163886}
-  _EventOption1: {fileID: 0}
-  _EventOption2: {fileID: 0}
+  eventDescription: {fileID: 0}
+  eventOption1: {fileID: 0}
+  eventOption2: {fileID: 0}
 --- !u!114 &320605822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7176,6 +7176,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 845412246}
+        m_MethodName: SetOption2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 845412247}
         m_MethodName: MoveToLastSibling
         m_Mode: 2
@@ -9657,7 +9668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.000045776367}
+  m_AnchoredPosition: {x: 0, y: 0.000015258789}
   m_SizeDelta: {x: 388, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &397381464
@@ -12348,7 +12359,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2039502173}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14426,7 +14437,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1577208862}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -15489,7 +15500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &626076286
@@ -15608,7 +15619,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2042197641}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19040,7 +19051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000061504245}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0.000060566068}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &815317799
@@ -20178,9 +20189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ce6562ddc378b4c9a7aa1e892e8b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _EventDescription: {fileID: 1773751286}
-  _EventOption1: {fileID: 1125247128}
-  _EventOption2: {fileID: 968772191}
+  eventDescription: {fileID: 1773751286}
+  eventOption1: {fileID: 1125247128}
+  eventOption2: {fileID: 968772191}
 --- !u!114 &845412247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21835,7 +21846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &906849449
@@ -24531,7 +24542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &994187138
@@ -24650,6 +24661,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 845412246}
+        m_MethodName: SetOption1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 845412247}
         m_MethodName: MoveToLastSibling
         m_Mode: 2
@@ -42406,8 +42428,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 548129426}
   m_HandleRect: {fileID: 548129425}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
