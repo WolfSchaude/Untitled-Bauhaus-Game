@@ -5507,7 +5507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BACK
+  m_Text: "ZUR\xDCCK\n"
 --- !u!222 &659243445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13215,7 +13215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREDITS
+  m_Text: MITWIRKENDE
 --- !u!222 &1358692210
 CanvasRenderer:
   m_ObjectHideFlags: 0
