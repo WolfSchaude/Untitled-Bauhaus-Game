@@ -20818,7 +20818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Load Game '
+  m_Text: Spiel laden
 --- !u!222 &859158189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21010,7 +21010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREDITS
+  m_Text: MITWIRKENDE
 --- !u!222 &1147914526
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21791,7 +21791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: BEENDEN
 --- !u!222 &1500978646
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21868,7 +21868,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: START
+  m_Text: STARTEN
 --- !u!222 &1546444301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22035,7 +22035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' New Game '
+  m_Text: Neues Spiel
 --- !u!222 &1785604819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22112,7 +22112,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: OPTIONEN
 --- !u!222 &1947725540
 CanvasRenderer:
   m_ObjectHideFlags: 0
