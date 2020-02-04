@@ -57,15 +57,15 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	/// <summary>
 	/// All the teachers available for hiring
 	/// </summary>
-	public static List<Teacher> _Teachers_Available = new List<Teacher>();
+	public List<Teacher> _Teachers_Available = new List<Teacher>();
 	/// <summary>
 	/// All the hired but not assigned teachers
 	/// </summary>
-	public static List<Teacher> _Teachers_Hired = new List<Teacher>();
+	public List<Teacher> _Teachers_Hired = new List<Teacher>();
 	/// <summary>
 	/// All the hired AND assigned teachers
 	/// </summary>
-	public static List<Teacher> _Teachers_Assigned = new List<Teacher>();
+	public List<Teacher> _Teachers_Assigned = new List<Teacher>();
 
 	/// <summary>
 	/// GameObject version of _Teachers_Available, holds references to the GO in the Scrollview
@@ -101,9 +101,9 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		if (TeacherDeAssigned == null)
 			TeacherDeAssigned = new TeacherMovementEvent();
 
-		TeacherHired.AddListener((x) => { HireTeacher(x); });
-		TeacherAssigned.AddListener((x) => { AssignTeacher(x); });
-		TeacherDeAssigned.AddListener((x) => { DeAssignTeacher(x); });
+		TeacherHired.AddListener((x) => { print("Invoked Hired by : " + x.Name); HireTeacher(x); });
+		TeacherAssigned.AddListener((x) => { print("Invoked Assigned by: " + x.Name); AssignTeacher(x); });
+		TeacherDeAssigned.AddListener((x) => { print("Invoked DeAssigned by: " + x.Name); DeAssignTeacher(x); });
 	}
 
 	public GameObject NewTeacher(Teacher teacher, Transform parent, string buttonFunction)
@@ -152,6 +152,7 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 			Ticker.NewTick.Invoke("Gehälter in Höhe von " + GesammeleteGehälter + " RM bezahlt.");
 		}
 	}
+
 	#region ISaveableInterface Methods
 	public void Save()
 	{
@@ -258,7 +259,10 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 		teacher.Hired = true;
 
 		_Teachers_Available.Remove(teacher);
-		Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+
+		var buffer = Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory.ID == teacher.ID);
+		Teachers_Available.Remove(buffer);
+		Destroy(buffer);
 
 		_Teachers_Hired.Add(teacher);
 		Teachers_Hired.Add(NewTeacher(teacher, _Transform_Hired, _Zuweisen));
@@ -270,8 +274,11 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	{
 		if (GameObject.Find("EventSystem").GetComponent<CountGebaeude>().GetGesamtAnzahl() > zugewiesenenCounter)
 		{
-			_Teachers_Available.Remove(teacher);
-			Destroy(Teachers_Available.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+			_Teachers_Hired.Remove(teacher);
+
+			var buffer = Teachers_Hired.Find(j => j.GetComponent<Teacher_Memory>().Memory.ID == teacher.ID);
+			Teachers_Hired.Remove(buffer);
+			Destroy(buffer);
 
 			_Teachers_Assigned.Add(teacher);
 			Teachers_Assigned.Add(NewTeacher(teacher, _Transform_Assigned, _DeZuweisen));
@@ -287,7 +294,10 @@ public class TeacherScript : MonoBehaviour, ISaveableInterface
 	private void DeAssignTeacher(Teacher teacher)
 	{
 		_Teachers_Assigned.Remove(teacher);
-		Destroy(Teachers_Assigned.Find(j => j.GetComponent<Teacher_Memory>().Memory == teacher));
+
+		var buffer = Teachers_Assigned.Find(j => j.GetComponent<Teacher_Memory>().Memory.ID == teacher.ID);
+		Teachers_Assigned.Remove(buffer);
+		Destroy(buffer);
 
 		_Teachers_Available.Add(teacher);
 		Teachers_Available.Add(NewTeacher(teacher, _Transform_Available, _Zuweisen));

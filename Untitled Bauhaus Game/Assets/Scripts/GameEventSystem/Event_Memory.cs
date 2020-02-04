@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+[System.Serializable]
 public class EventSaveClass
 {
 	public int TimeLeft;

@@ -138,8 +138,6 @@ public class RandomEvent_Memory : MonoBehaviour
 		if ((TimerCounter <= Vorlauf && TimerCounter > 0) && !IsFinished)
 		{
 			gameObject.SetActive(true);
-
-			GameObject.Find("Button - Event Menu").GetComponent<Button>().interactable = true;
 		}
 	}
 }

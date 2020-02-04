@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Xml;
 using System.Xml.Serialization;
+
+[System.Serializable]
 public class Teacher
 {
 

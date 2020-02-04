@@ -16,7 +16,6 @@ public class Exponate : MonoBehaviour
     public int BisherVerkauftAnzahl { get; private set; }
     public int BisherGebautErloes { get; private set; }
 
-	public GameObject FeedbackTicker;
     public GameObject Playervariables;
     public GameObject StartOrderButton;
     public GameObject EventSystem;
@@ -47,13 +46,17 @@ public class Exponate : MonoBehaviour
     //---------------------------------( Stuff to actually create an Exponat ) --------------------------------//
 
     /// <summary>
+    /// Reference to: the TEacherscript to get the list of hired Teachers
+    /// </summary>
+    [SerializeField] TeacherScript _TeacherScript;
+    /// <summary>
     /// Reference to: PreFab used to instantiante the new Exponat
     /// </summary>
     public GameObject prefab;
     /// <summary>
     /// Reference to: The Parent GameObject the new Exponat will be subordinated to
     /// </summary>
-    public GameObject parent; //ScrollView Content
+    public Transform parent; //ScrollView Content
     /// <summary>
     /// List to Save the GameObjects of the Exponates and to keep a reference to them
     /// </summary>
@@ -189,47 +192,49 @@ public class Exponate : MonoBehaviour
 
     public void AddToInventory() //Gebunden an Exponat Done Event
     {
-        var x = Instantiate(prefab, parent.transform);
+        var x = Instantiate(prefab, parent);
 
         int images = Random.Range(1, 4);
         switch (images)
         {
             case 1:
-                x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat1");
+                x.GetComponentsInChildren<Image>()[2].sprite = Resources.Load<Sprite>("Sprites/Exponat1");
                 break;
             case 2:
-                x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat2");
+                x.GetComponentsInChildren<Image>()[2].sprite = Resources.Load<Sprite>("Sprites/Exponat2");
                 break;
             case 3:
-                x.GetComponentsInChildren<Image>()[1].sprite = Resources.Load<Sprite>("Sprites/Exponat3");
+                x.GetComponentsInChildren<Image>()[2].sprite = Resources.Load<Sprite>("Sprites/Exponat3");
                 break;
         }
-        int herstellerText = Random.Range(0, TeacherScript._Teachers_Hired.Count);
+        int herstellerText = Random.Range(0, _TeacherScript._Teachers_Assigned.Count);
 
-        x.GetComponentsInChildren<Text>()[0].text = "Hersteller: " + TeacherScript._Teachers_Hired[herstellerText].Name;
+        print(herstellerText);
+        print(_TeacherScript._Teachers_Assigned.Count);
 
-        int stilText = TeacherScript._Teachers_Hired[herstellerText].Politik;
+        x.GetComponentsInChildren<Text>()[1].text = "Hergestellt von:\n - " + _TeacherScript._Teachers_Assigned[herstellerText].Name;
+
+        int stilText = _TeacherScript._Teachers_Assigned[herstellerText].Politik;
 
 
         if (stilText < 100)
         {
-            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Links";
+            x.GetComponentsInChildren<Text>()[2].text = "Stilrichtung: Links";
         }
         else if (stilText == 100)
         {
-            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Neutral";
+            x.GetComponentsInChildren<Text>()[2].text = "Stilrichtung: Neutral";
         }
         else if (stilText > 100)
         {
-            x.GetComponentsInChildren<Text>()[1].text = "Polit. Stilrichtung: Rechts";
+            x.GetComponentsInChildren<Text>()[2].text = "Stilrichtung: Rechts";
         }
 
-        x.GetComponentInChildren<Exponat_Memory>().Politik = stilText;
+        x.GetComponent<Exponat_Memory>().Politik = stilText;
 
         float Qualität = Random.Range(0.5f, 1.5f);
-        x.GetComponentsInChildren<Text>()[2].text = Qualität.ToString("0.0");
+        x.GetComponentsInChildren<Text>()[3].text = "Qualität: " + Qualität.ToString("0.0");
         x.GetComponentInChildren<Exponat_Memory>().Qualitaet = Qualität;
-        x.GetComponentInChildren<Exponat_Memory>().FeedbackTicker = FeedbackTicker;
 
         x.GetComponentInChildren<Button>().onClick.AddListener(() => { Destroy(x); });
 

@@ -36,14 +36,6 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     [SerializeField] AnimationStarter FeedbackTicker;
     /// <summary>
-    /// Reference to: AnimationsStarter-Script on ExponateInventar, necessary for collapsing the Inventory
-    /// </summary>
-    [SerializeField] AnimationStarter ExponatInventory;
-    /// <summary>
-    /// Reference to: AnimationsStarter-Script on EventMenu-Scrollview, necessary for controlling the overview
-    /// </summary>
-    [SerializeField] AnimationStarter EventOverview;
-    /// <summary>
     /// Reference to: Button of Create-Exponat-Funktion, needed to Start a new Expoante on A button click
     /// </summary>
     [SerializeField] Exponate ExponateStarter;
@@ -52,13 +44,9 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     [SerializeField] AnimationStarter Statistics;
     /// <summary>
-    /// Reference to: Button of Sidebar-Gebaeude, needed to open / close Baumenue
+    /// Reference to: Button on the Bottom, needed to open / close Baumenue
     /// </summary>
     [SerializeField] Button Baumenue;
-    /// <summary>
-    /// Reference to: Button of Sidebar-Dormmeister, needed to open/close the dropdown
-    /// </summary>
-    [SerializeField] Button TeacherDropdown;
     void Awake()
     {
         if (IOpenedAWindow != null)
@@ -95,33 +83,13 @@ public class QuickAccesskeys : MonoBehaviour
                 ExponateStarter.StartExponat();
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TeacherDropdown.onClick.Invoke();
-        }
         if (Input.GetKeyDown(KeyCode.H)) //Buerogebaeude anzeigen / Statistiken //Hacky ATM
         {
             Statistics.ToggleOpened();
         }
-        if (Input.GetKeyDown(KeyCode.I)) //Inventar oeffnen
-        {
-            if (NumberOfOpenedWindows > 0)
-            {
-                CloseAllWindows.Invoke();
-            }
-            ExponatInventory.ToggleOpened();
-        }
         if (Input.GetKeyDown(KeyCode.T)) //Ticker oeffnen / schliessen
         {
             FeedbackTicker.ToggleOpened();
-        }
-        if (Input.GetKeyDown(KeyCode.U)) //Eventmenue oeffnen
-        {
-            if (NumberOfOpenedWindows > 0)
-            {
-                CloseAllWindows.Invoke();
-            }
-            EventOverview.ToggleOpened();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1)) //Tempo auf Pause
         {

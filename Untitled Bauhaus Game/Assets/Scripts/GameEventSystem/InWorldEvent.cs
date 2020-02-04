@@ -42,6 +42,8 @@ public class InWorldEvent : MonoBehaviour
 
 	void SetContent(Event eventValues)
 	{
+		print(eventValues + " " + eventValues.EventText);
+
 		_EventDescription.text = eventValues.EventText;
 
 		_EventOption1.text

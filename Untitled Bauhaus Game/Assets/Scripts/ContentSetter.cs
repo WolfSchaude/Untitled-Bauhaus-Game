@@ -112,14 +112,6 @@ public class ContentSetter : MonoBehaviour
     #region Lehrer
     [Header("Lehrer")]
     //------------------------------------( Leher     )------------------------------------//
-    /// <summary>
-    /// Reference tp: Parent used to Spawn the Formmeister Lists for the already assigned Formmeisters
-    /// </summary>
-    [SerializeField] Transform ParentZugewiesen;
-    /// <summary>
-    /// Reference to: Parent used to Spawn the Formmeister Lists for not assigned Formmeisters
-    /// </summary>
-    [SerializeField] Transform ParentFrei;
 
     #endregion
     #region Exponate

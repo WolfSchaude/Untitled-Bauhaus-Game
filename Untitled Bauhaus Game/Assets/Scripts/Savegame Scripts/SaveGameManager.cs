@@ -23,7 +23,7 @@ public class SaveGameManager : MonoBehaviour
 
     enum WerSpeichert
     {
-        Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude, FinishedEvents, ZugewieseneLehrer, Exponate, LaufendeEvents
+        Datum, Geld, Ansehen, Politik, Studentenanzahl, Lehrer, Gebäude, FinishedEvents, Exponate
     }
 
     void Start()

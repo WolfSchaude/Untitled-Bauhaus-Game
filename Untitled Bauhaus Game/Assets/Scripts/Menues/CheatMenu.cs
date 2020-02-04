@@ -17,21 +17,14 @@ public class CheatMenu : MonoBehaviour
 
     void Update()
     {
-		showWindow();
+		if (Input.GetKeyDown(KeyCode.F11))
+		{
+			print("Toggled Cheatmenu");
+			CheatMenuWindow.SetActive(!CheatMenuWindow.activeSelf);
+		}
+
 		deactivateBuildTime();
     }
-
-	public void showWindow()
-	{
-		if (Input.GetKeyDown(KeyCode.F11) && !CheatMenuWindow.activeSelf)
-		{
-			CheatMenuWindow.SetActive(true);
-		}
-		else if (Input.GetKeyDown(KeyCode.F11) && CheatMenuWindow.activeSelf)
-		{
-			CheatMenuWindow.SetActive(false);
-		}
-	}
 
 	public void deactivateBuildTime()
 	{

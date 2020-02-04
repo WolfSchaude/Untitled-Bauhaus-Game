@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class EventSave
 {
 	public int[] Wait;
@@ -114,54 +115,6 @@ public class EventScript : MonoBehaviour, ISaveableInterface
 
     void Update()
     {
-		#region Altes EventSystem
-		if (!Laedtgerade)
-		{
-			ActiveEvents = AllEvents.FindAll(actives => actives.activeSelf == true).Count;
-			if (ThatOneRandomEvent != null)
-			{
-				if (ThatOneRandomEvent.activeSelf)
-				{
-					ActiveEvents++;
-				}
-			}
-
-			if (ActiveEvents == 0)
-			{
-				AnimStarter.CloseMenu();
-			}
-
-			if (ActiveEvents == 1)
-			{
-				AnzahlEvents.text = ActiveEvents + " Event aktiv";
-			}
-			else
-			{
-				AnzahlEvents.text = ActiveEvents + " Events aktiv";
-			}
-
-			if (ThatOneRandomEvent != null)
-			{
-				if (ThatOneRandomEvent.GetComponent<RandomEvent_Memory>().IsFinished)
-				{
-					ThatOneRandomEvent = NewRandomEvent();
-				}
-			}
-		}
-
-		foreach (var Event in AllEvents)
-		{
-			if (Event.GetComponent<Event_Memory>().TimerCounter == 7)
-			{
-				AnimStarter.OpenMenu();
-			}
-		}
-		#endregion
-
-		if (!RandomEventVorhanden)
-		{
-
-		}
 	}
 
 	public void GenerateList(bool[] save)

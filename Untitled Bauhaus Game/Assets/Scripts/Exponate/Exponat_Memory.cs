@@ -7,12 +7,10 @@ public class Exponat_Memory : MonoBehaviour
 {
 	public float Qualitaet;
 	public int Politik;
-	public GameObject FeedbackTicker;
 	public GameObject Playervariables;
 
 	void Start()
     {
-		FeedbackTicker = GameObject.Find("Button - Feedback Ticker");
 		Playervariables = GameObject.Find("PlayerVariables");
     }
 
