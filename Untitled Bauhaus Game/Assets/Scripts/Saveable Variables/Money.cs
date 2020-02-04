@@ -10,8 +10,6 @@ public class Money : MonoBehaviour, ISaveableInterface
     */
 	public GameObject SaveGameKeeper;
 
-	public FeedbackScript Feedback;
-
     public float money = 200000;
 	public float monthlyCosts = 0;
 	private float moneyOPerMonth = 0;

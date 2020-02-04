@@ -15,8 +15,6 @@ public class Bausystem : MonoBehaviour, ISaveableInterface
     private Money ManipulateMoney;
     private Studenten ManipulateStudents;
 
-    public FeedbackScript FeedbackFromBuildings;
-
     public GameObject SaveGameKeeper;
 
     /// <summary>

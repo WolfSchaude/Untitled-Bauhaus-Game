@@ -14,7 +14,6 @@ public class Studenten : MonoBehaviour, ISaveableInterface
 	public Text studDisplay;
 
 	public GameObject SaveGameKeeper;
-	public GameObject FeedbackTicker;
 
 	void Start()
 	{
