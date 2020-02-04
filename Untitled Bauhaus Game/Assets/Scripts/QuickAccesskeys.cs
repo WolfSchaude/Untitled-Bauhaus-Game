@@ -49,25 +49,17 @@ public class QuickAccesskeys : MonoBehaviour
     [SerializeField] Button Baumenue;
     void Awake()
     {
-        if (IOpenedAWindow != null)
-        {
-            IOpenedAWindow.AddListener(() => {CountUpWindows(); });
-        }
-        else
+        if (IOpenedAWindow == null)
         {
             IOpenedAWindow = new UnityEvent();
-            IOpenedAWindow.AddListener(() => {CountUpWindows(); });
         }
+        IOpenedAWindow.AddListener(CountUpWindows);
 
-        if (IClosedAWindow != null)
-        {
-            IClosedAWindow.AddListener(() => {CountDownWindows(); });
-        }
-        else
+        if (IClosedAWindow == null)
         {
             IClosedAWindow = new UnityEvent();
-            IClosedAWindow.AddListener(() => {CountDownWindows(); });
         }
+        IClosedAWindow.AddListener(CountDownWindows);
     }
 
     void Update()
@@ -134,18 +126,19 @@ public class QuickAccesskeys : MonoBehaviour
     /// </summary>
     public void CountUpWindows()
     {
-        print("Number of WIndows just got increased. Now : " + NumberOfOpenedWindows);
-
         NumberOfOpenedWindows++;
+
+        print("Number of Windows just got increased. Now : " + NumberOfOpenedWindows);
     }
     /// <summary>
     /// Counts NumberOfOpenedWindows down
     /// </summary>
     public void CountDownWindows()
     {
-        print("Number of WIndows just got decreased. Now : " + NumberOfOpenedWindows);
-
         NumberOfOpenedWindows--;
+        if (NumberOfOpenedWindows < 0) NumberOfOpenedWindows = 0;
+
+        print("Number of Windows just got decreased. Now : " + NumberOfOpenedWindows);
     }
 
     /// <summary>

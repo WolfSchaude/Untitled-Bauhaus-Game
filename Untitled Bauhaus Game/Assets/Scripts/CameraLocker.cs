@@ -8,14 +8,6 @@ public class CameraLocker : MonoBehaviour
     /// Buffer to store the old value, to detect, if a change has even occured
     /// </summary>
     [SerializeField] bool OldState;
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     /// <summary>
     /// Locks Cameramovement and tells Quickaccesskeys, that a window got openend

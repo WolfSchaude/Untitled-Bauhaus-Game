@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Politikmeter : MonoBehaviour, ISaveableInterface
 {
 	public float Politiklevel { get; private set; } = 100;
-		
-    public Slider PolitikOutput;
+
+	[SerializeField] const float politikMaximum = 200;
+	[SerializeField] const float politikMinimum = 0;
 
 	[SerializeField] Image _Eisernes_Kreuz;
 	[SerializeField] Image _HammerUndSichel;
@@ -24,11 +25,11 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 		}
 		if (Politiklevel >= 200)
 
-		if (Politiklevel <= PolitikOutput.minValue)
+		if (Politiklevel <= politikMinimum)
 		{
 			Politiklevel = 0;
 		}
-		if (Politiklevel >= PolitikOutput.maxValue)
+		if (Politiklevel >= politikMaximum)
 
 		{
 			Politiklevel = 200;
@@ -38,8 +39,6 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 		_HammerUndSichel.fillAmount = temp;
 		_Eisernes_Kreuz.fillAmount = 1 - temp;
-
-		print(temp);
 	}
 
 	public void Save()
@@ -50,15 +49,10 @@ public class Politikmeter : MonoBehaviour, ISaveableInterface
 
 	public void Load(Save save)
 	{
-		PolitikOutput.maxValue = 200;
-		PolitikOutput.minValue = 0;
-
 		Politiklevel = save.CurrentPolitics;
 	}
 
 	public void LoadStart()
 	{
-		PolitikOutput.maxValue = 200;
-		PolitikOutput.minValue = 0;
 	}
 }

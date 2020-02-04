@@ -37,7 +37,7 @@ public class AnimationStarter : MonoBehaviour
 		Collapsed = StartState;
 
 		SelfDropDown.SetBool("Bool", Collapsed);
-		BoolChange.Invoke(Collapsed);
+		//BoolChange.Invoke(Collapsed);
 	}
 	void Update()
 	{
