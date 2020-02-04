@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class InWorldClickEvent : UnityEvent<Event>
 {
 }
@@ -37,7 +38,8 @@ public class InWorldEvent : MonoBehaviour
 		{
 			_InWorldClickEvent = new InWorldClickEvent();
 		}
-		_InWorldClickEvent.AddListener((x) => { SetContent(x); });
+		_InWorldClickEvent.RemoveAllListeners();
+		_InWorldClickEvent.AddListener(SetContent);
 	}
 
 	void SetContent(Event eventValues)
