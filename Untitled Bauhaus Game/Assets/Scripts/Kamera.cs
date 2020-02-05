@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Kamera : MonoBehaviour
 {
 	[SerializeField] float MaxHeight = 30;
-	[SerializeField] float MinHeight = 5;
+	[SerializeField] float MinHeight = -10000;
 
 	[SerializeField] float MaxRoamSpace = 100;
 
@@ -46,7 +46,7 @@ public class Kamera : MonoBehaviour
 
 	void Start()
 	{
-		height = 20;
+		height = 2;
 
 		AbleToMove = true;
 	}
