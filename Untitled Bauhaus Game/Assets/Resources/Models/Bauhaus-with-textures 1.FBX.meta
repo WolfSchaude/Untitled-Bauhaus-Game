@@ -22,6 +22,8 @@ ModelImporter:
     100032: Abteil_8
     100034: Abteil_9
     100036: //RootNode
+    100038: TextPlus001
+    100040: TextPlus002
     400000: Abteil_1
     400002: Abteil_10
     400004: Abteil_11
@@ -41,6 +43,8 @@ ModelImporter:
     400032: Abteil_8
     400034: Abteil_9
     400036: //RootNode
+    400038: TextPlus001
+    400040: TextPlus002
     2100000: Putz
     2100002: material
     2100004: material_8
@@ -115,6 +119,7 @@ ModelImporter:
     2100142: material_24_24
     2100144: material_4
     2100146: material_4_35
+    2100148: No Name
     2300000: Abteil_1
     2300002: Abteil_10
     2300004: Abteil_11
@@ -133,6 +138,8 @@ ModelImporter:
     2300030: Abteil_7
     2300032: Abteil_8
     2300034: Abteil_9
+    2300036: TextPlus001
+    2300038: TextPlus002
     3300000: Abteil_1
     3300002: Abteil_10
     3300004: Abteil_11
@@ -151,6 +158,8 @@ ModelImporter:
     3300030: Abteil_7
     3300032: Abteil_8
     3300034: Abteil_9
+    3300036: TextPlus001
+    3300038: TextPlus002
     4300000: Abteil_12
     4300002: Abteil_18
     4300004: Abteil_17
@@ -169,6 +178,8 @@ ModelImporter:
     4300030: Abteil_10
     4300032: Abteil_11
     4300034: Abteil_13
+    4300036: TextPlus001
+    4300038: TextPlus002
     7400000: Take 001
     9500000: //RootNode
     2186277476908879412: ImportLogs
